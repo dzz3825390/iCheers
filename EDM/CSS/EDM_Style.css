@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+.bg {
+	background-color: #eaeaea;
+	width: 100%;
+	position: relative;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+
+
+.Top{
+	width:955px;
+	height:110px;
+	margin:0 auto;
+	*padding-top:5px;}
+	
+a.LOGO{
+	display:inline-block;
+	width:185px;
+	height:85px;
+	background-image:url(../images/LOGO.png);
+	background-repeat:no-repeat;
+	background-position:bottom;
+	padding-top:5px;
+	float:left;}
+	
+	
+.LINKALL{
+	float:right;
+	display:block;
+	width:410px;
+	height:100px;
+	position:relative;
+	display:block;}	
+		
+.LINK{
+	position:absolute;
+	width:410px;
+	line-height:20px;
+	right:0px;
+	top:0px;
+	*top:30px;
+	padding:10px 0px 0px 0px;
+	font-size:12px;
+	font-family:"微軟正黑體"、"新細明體"}
+
+.LINK a{
+	color:#999;
+	text-decoration:none;
+	padding:0px 10px;}
+	
+.LINK a:hover{
+	color:#000;
+	text-decoration:underline;}	
+	
+.fb-like{
+	display:block;
+	right:0px;
+	top:50px;
+	width:130px;
+	height:20px;}
+
+
+.Center{
+	margin:0 auto;
+	width:955px;
+	border:1px solid #CCC;
+	margin-bottom:78px;}	
+	
+
+.Warning{
+	background:#000;
+	text-align: center;
+	width:100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index:99999;}
+
+.WarningIMG{
+	width:1023px;
+	height:77px;
+	margin:0 auto;
+	background-image:url(../images/footer_bg.jpg);}
+	
+	
+

@@ -1,0 +1,510 @@
+@charset "utf-8";
+/* CSS Document */
+
+.beer_index{
+	background-image: url(../images/beer_bg5.jpg);
+	background-repeat: repeat;
+}
+
+
+.beer_TagALL{
+	height: 45px;
+	background-image: url(../images/beer_TagAll_bg.png);
+	background-repeat: repeat-x;
+}
+
+.beer_TagALL ul li.TagLogo{
+	top: -32px;
+}
+
+.beer_TagALL ul li.TagLogo{
+	background-image: url(../images/Logo_beer.png);
+}
+
+.TagBeer {
+    background-image: url(../images/TagBeer.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.beer_TagALL .TagWine,
+.beer_TagALL .TagWhisky,
+.beer_TagALL .TagBeer{
+	margin-top: 3px;
+}
+
+.beer_TagALL .Tag_FocusBG{
+	width: 130px;
+	height: 45px;
+	background-image: url(../images/index_top_tag_focusBG_beer2.png);
+}
+
+.Tag_FocusBG .TagBeer{
+	background-image: url(../images/TagBeer-H.png);
+}
+
+/***************首頁*****************/
+
+.beer_index_ExpiredDate{
+	width: 95px;
+	height: 40px;
+	float: left;
+	color: #666;
+	font-size: 9px;
+	margin-left: 5px;
+}
+
+
+/***************首頁 end*****************/
+
+/*******詳目頁**************/
+
+.beer_DetailedHeand{
+	background-color: rgba(255,255,255,.5);
+}
+
+.beer_DetailedALL{
+	background-color: rgba(255,255,255,.5);
+}
+
+/*20161229 Roger 新增價格樣式*/
+.beer_detail_wineinfo_price_preorder{
+    margin-left: 110px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    height: 38px;
+}
+/*20161229 Roger 新增價格樣式 end*/
+
+ul.beer_Detail li em.Tittle{
+	width: 130px;
+}
+
+/*20161229 Roger 新增訊息欄位寬度設定*/
+ul.beer_Detail li em.Info{
+	width: 435px;
+}
+/*20161229 Roger 新增訊息欄位寬度設定 end*/
+
+#Price > div span.beer_detail_price{
+	width: 120px;
+}
+
+/*20170220 Roger 修改文字對齊、寬度、padding*/
+.beer_detail_ExpiredDate{
+	width: 140px;
+	height: 30px;
+	border: 1px solid #e6e6e6;
+	background-color: #e6e6e6;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 30px;
+	color: #666666;
+	text-align: left;
+	float: right;
+	padding-left: 5px;
+}
+/*20170220 Roger 修改文字對齊、寬度、padding*/
+
+/*20161229 Roger 新增樣式*/
+.beer_detail_wineinfo_OrginalPrice {
+	min-width: 70px;
+	display: inline-block;
+}
+/*20161229 Roger 新增樣式 end*/
+
+	/*重設em標籤行高*/
+	ul.Detail li .beer_detail_ExpiredDate em{
+		line-height: 30px;
+	}
+
+	.beer_detail_ExpiredDate em{
+		font-weight: bold;
+	}
+
+.beer_detail_SRM_color{
+	display: inline-block;
+	width: 25px;
+	height: 15px;
+	border: 1px solid #cccccc;
+	margin-bottom: -2px;
+}
+
+/*一目了然*/
+
+.beer_AllYear{	
+}
+
+	.DetailedALL .beer_AllYear h3,
+	.DetailedALL .beer_AllYear h4,
+	.DetailedALL .beer_AllYear h6{
+		width: 24%;
+	}
+
+	.beer_AllYear .Detail_AllYearTitle_ExpressOrPreorder{
+		width: 27%;
+		width: calc(28% - 4px);
+	}
+
+	.beer_AllYear .Detail_AllYear_ExpressOrPreorder{
+		width: 27%;
+		width: calc(28% - 4px);
+	}
+
+/*不可錯過酒款*/
+.beer_Detail_DontMiss_ExpiredDate{
+	display: inline-block;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.beer_Detail_DontMiss_Award{
+	margin-left: 30px;
+}
+
+/*******詳目頁 end**************/
+
+/***********簡目頁*************/
+
+.beer_Sign_WineInfo_ExpiredDate{
+	font-size: 18px;
+    color: #666666;
+    float: left;
+    margin-top: 5px;
+}
+
+.Project .beer_Project_ExpiredDate {
+    width: 80px;
+    text-align: center;
+}
+
+/*20161230 roger 修改寬度*/
+.Project .beer_Project_Evaluate{
+	width: 166px;
+}
+/*20161230 roger 修改寬度 end*/
+
+.Project .beer_Project_Price{
+	width: 80px;
+}
+
+/*20161230 Roger 修改寬度與選擇器*/
+.WineInformation li.beer_List_ExpiredDate {
+    width: 84px;
+    margin-left: 3px;
+    text-align: center;
+}
+/*20161230 Roger 修改寬度與選擇器 end*/
+
+.WineInformation li.beer_List_Discount{
+	width: 80px;
+	text-align: center;
+}
+
+/*20161230 Roger 修改寬度*/
+.WineInformation li.beer_List_Award{
+	height: 68px;
+	width: 169px;
+}
+/*20161230 Roger 修改寬度 end*/
+
+.beer_List_Award a{
+	display: inline-block;
+	width: 50px;
+}
+
+	.beer_List_Award a span{
+		display: inline-block;
+		width: 100%;
+		height: 14px;
+		background-color: #939393;
+		text-align: center;
+		line-height: 15px;
+		color: #fff;
+		font-size: 6px;
+		margin-top: 2px;
+	}
+
+/*20161230 roger 修改寬度*/
+.WineInformation li.beer_List_Award a.beer_List_Award_rate{
+	width: 169px;
+}
+/*20161230 roger 修改寬度 end*/
+
+
+.beer_Medals{
+	display: block;
+	width: 38px;
+	height: auto;
+	padding:2px;
+	margin: 0 auto;
+	margin-top: 8px; 
+}
+
+/***********簡目頁 end*************/
+
+
+
+
+/*********advanced_search***************/
+.beer_Wine_Search_List_ALL {
+	background-color: rgba(255,255,255,.7);
+}
+
+.beer_Advanced_Block_flavor ul{
+	margin-left: 15px;
+}
+
+.beer_Advanced_Block_flavor ul li{
+	font-size: 16px;
+	font-weight: normal;
+	width: 150px;
+	height: 35px;
+	text-align: left;
+}
+
+.beer_Advanced_Block_flavor ul li input{
+	margin-right: 10px;
+}
+
+.beer_Advanced_Block_special ul{
+	margin-left: 15px;
+}
+
+
+.beer_Advanced_Block_special ul li{
+	font-size: 16px;
+	font-weight: normal;
+	width: 150px;
+	height: 35px;
+	text-align: left;
+}
+
+.beer_Advanced_Block_special ul li input{
+	margin-right: 10px;
+}
+
+.beer_Advanced_Capacity ul{
+	margin-left: 15px;
+}
+
+
+.beer_Advanced_Capacity ul li{
+	font-size: 16px;
+	font-weight: normal;
+	width: 150px;
+	height: 35px;
+	text-align: left;
+}
+
+.beer_Advanced_Capacity ul li input{
+	margin-right: 10px;
+}
+
+.beer_Advanced_Block_IBU input{
+	width: 90px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 0 5px;
+    outline: none;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.beer_Advanced_Block_IBU input:last-child{
+	margin-left: 0;
+}
+
+.beer_Advanced_Block_SRM input{
+	width: 90px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 0 5px;
+    outline: none;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.beer_Advanced_Block_SRM input:last-child{
+	margin-left: 0;
+}
+
+/*酒色範例條*/
+
+.beer_Advanced_Block_SRM_colorRow{
+	display: inline-block;
+	height: 10px;
+	position: relative;
+}
+
+	.beer_Advanced_Block_SRM_colorRow span{
+		display: inline-block;
+		float: left;
+		width: 80px;
+		height: 10px;
+		border: 1px solid #cccccc;
+		border-left: none;
+	}
+
+	.beer_Advanced_Block_SRM_colorRow span:first-child{
+		border-left:1px solid #cccccc;
+	}
+
+	.beer_Advanced_Block_SRM_colorRow span:hover{
+		border: 1px solid #666666;
+	}
+
+	.beer_Advanced_Block_SRM_colorRow em{
+		position: absolute;
+		font-size: 16px;
+		top:-25px
+	}
+
+/*20170222 Roger 新增熱門搜尋選項樣式*/
+
+.beer_Advanced_Block_HotSearch{
+
+}
+
+	.beer_Advanced_Block_HotSearch ul{
+		margin-left: 15px;
+	}
+
+		.beer_Advanced_Block_HotSearch ul li{
+			float: left;
+			font-size: 16px;
+		    text-align: left;
+		    line-height: 35px;
+		    margin-right: 25px;
+		}
+
+		.beer_Advanced_Block_HotSearch ul li input{
+			margin-right: 10px;
+		}
+
+/*20170222 Roger 新增熱門搜尋選項樣式 end*/
+
+/*********advanced_search end***************/
+
+/***********topic_b*********************/
+
+.beer_topicB_OneWineBox_WineStatus_ExpiredDate{
+	width: 191px;
+	height: 20px;
+	color: #666;
+	font-size: 14px;
+	margin: 5px 0;
+	float: right;
+}
+
+/***********topic_b end*********************/
+
+/***********topic_c*********************/
+
+.beer_topicC_OneWineBox_WineStatus_ExpiredDate{
+	color: #666;
+	font-size: 14px;
+}
+
+/***********topic_c end*********************/
+
+
+/************wine_list_viewed*****************/
+
+.Wine_Search_List_ALL .beer_WineListViewed_Project{
+	height: 36px;
+	background-image: url(../images/beer_ProjectBG_ForYear.png);
+}
+
+	.beer_WineListViewed_Project ul li{
+		height: 30px;
+		margin: 3px;
+		line-height: 30px;
+	}
+
+.beer_WineListViewed_Project ul li.beer_viewed_Project_Year{
+	width: 113px;
+}
+
+/*20161229 Roger 修改寬度*/
+.beer_WineListViewed_Project ul li.beer_viewed_Project_Capacity{
+	width: 60px;
+}
+/*20161229 Roger 修改寬度 end*/
+
+.beer_WineListViewed_Project ul li.beer_viewed_Project_Price{
+	width: 90px;
+}
+
+.WineInformation li.beer_viewed_List_Year{
+	width: 120px;
+}
+
+/*20161229 Roger 修改寬度*/
+.WineInformation li.beer_viewed_List_Capacity{
+	width: 60px;
+	text-align: center;
+}
+/*20161229 Roger 修改寬度 end*/
+
+/************wine_list_viewed end*****************/
+
+/************wine_list_winery**********************/
+
+.WineryInformation li.beer_List_Name{
+	width: 500px;
+}
+
+.WineryInformation li.beer_List_Award{
+	width: 70px;
+}
+
+.WineryInformation li.beer_List_Capacity{
+	width: 50px;
+}
+
+.WineryInformation li.beer_List_ExpiredDate{
+	width: 70px;
+	text-align: center;
+}
+
+.WineryInformation li.beer_List_SellingPrice{
+	width: 80px;
+}
+
+.WineryInformation li.beer_List_Buy{
+	width: 30px;
+}
+
+/*20170904 Roger 新增*/
+.WineryInformation li.beer_OutOfStock{
+	width: 30px;
+}
+/*20170904 Roger 新增 end*/
+
+.beer_List_Award .Medals{
+	margin-top: 0;	
+}
+
+/************wine_list_winery end**********************/
+
+/*20170214 Roger 新增啤酒產區總表banner樣式*/
+#listBeerRegionIndex{
+	background:url(../images/banners/beer_RegionIndexList.jpg) left top no-repeat;
+	border-top:#824821 double 3px;
+	border-bottom:#824821 double 3px;
+}	
+
+/*20170214 Roger 新增啤酒產區總表banner樣式 end*/
+
+/*20170214 Roger 新增啤酒類型總表banner樣式*/
+#listStyleIndex{
+	background:url(../images/banners/beer_StyleList.jpg) left top no-repeat;
+	border-top:#824821 double 3px;
+	border-bottom:#824821 double 3px;
+}	
+
+/*20170214 Roger 新增啤酒類型總表banner樣式 end*/

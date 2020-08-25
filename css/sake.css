@@ -1,0 +1,416 @@
+@charset "utf-8";
+
+body{
+	font-family: "Arial", "微軟正黑體", "Apple LiGothic", "Meiryo";
+}
+
+.sake_index .TagALL{
+	background-image: url(../images/Tag_SakeBG2.jpg);
+	margin-bottom: 20px;
+}
+
+.sake_index .TagALL .TagWine{
+	background-image: url(../images/TagWine_sake.png);
+}
+
+.sake_index .TagALL .TagWhisky{
+	background-image: url(../images/TagWhisky_sake.png);
+}
+
+.sake_index .TagALL .TagBeer{
+	background-image: url(../images/TagBeer_sake.png);
+}
+
+.sake_index .TagALL .TagSake{
+	background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sake_index .TagALL .Tag_FocusBG{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.sake_index .TagALL .Tag_FocusBG .TagSake{
+	background-image: url(../images/TagSake-H.png);
+}
+
+
+/*custom slider font*/
+.sake_index .caption{
+	font-family:"Arial", "微軟正黑體", "Apple LiGothic", "Meiryo";
+}
+
+#Menu_Water_More .Left_Menu_price_title{
+	margin-left: 0;
+	font-weight: bold;
+}
+
+#Menu_Water_More .Left_Menu_price_title .Left_Menu_price_title_text{
+	color: #333;
+}
+
+
+/******wine_list*****/
+
+.Project .sake_Project_Evaluate{
+	width: 166px;
+}
+
+.Project .sake_Project_Sale{
+	width: 70px;
+    text-align: center;
+}
+
+.Project .sake_Project_Price{
+	width: 97px;
+    text-align: center;
+}
+
+.Project .sake_Project_Preorder{
+	width: 96px;
+    text-align: center;
+}
+
+.WineInformation li.sake_List_Award {
+    height: 68px;
+    width: 169px;
+}
+
+.sake_List_Award a{
+	width: 50px;
+}
+
+.WineInformation li.sake_List_Award a.sake_List_Award_rate{
+	width: 169px;
+}
+
+.sake_Medals{
+	display: block;
+    width: 38px;
+    height: auto;
+    padding: 2px;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
+.WineInformation li.sake_List_Discount {
+    width: 74px;
+    margin-left: 3px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.WineInformation li.sake_List_SellingPrice{
+	width: 69px;
+}
+
+.WineInformation li.sake_List_PreorderPrice{
+	width: 69px;
+}
+
+/**********wine_detail***********/
+.sake_index .wine_detail_wineinfo_layout h1{
+	font-family: "Arial", "微軟正黑體", "Apple LiGothic", "Meiryo";
+}
+
+.sake_index .thermometer{
+	width: 357px;
+	height: 43px;
+	background-image: url(../images/sake_thermometer.png);
+	float: left;
+	margin: 10px 0;
+	position: relative;
+}
+
+.sake_index .thermometer .thermometer_botder{
+	width: 357px;
+	height: 43px;
+	background-image: url(../images/sake_thermometer_border.png);
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.sake_index .thermometer .view{
+	width: 321px;
+	height: 9px;
+	position: absolute;
+	left: 33px;
+	top: 9px;
+}
+
+.sake_index .thermometer .view .temp_show{
+	width: 8.3%;
+	height: 9px;
+	float: left;
+	background-color: #228de9;
+	opacity: 0;
+}
+
+.sake_index .thermometer .view .temp_show:nth-child(5){
+	background-color: #d81500;
+}
+.sake_index .thermometer .view .temp_show:nth-child(6){
+	background-color: #d81500;
+}
+.sake_index .thermometer .view .temp_show:nth-child(7){
+	background-color: #d81500;
+}
+.sake_index .thermometer .view .temp_show:nth-child(8){
+	background-color: #d81500;
+}
+.sake_index .thermometer .view .temp_show:nth-child(9){
+	background-color: #d81500;
+}
+.sake_index .thermometer .view .temp_show:nth-child(10){
+	background-color: #d81500;
+}
+
+.sake_index .thermometer .view .temp_show:nth-child(11){
+	background-color: #d81500;
+}
+
+/* sake region*/
+
+#listSakeRegionIndex{
+	background: url(../images/banners/sake_RegionIndexList.jpg) left top no-repeat;
+    border-top: #824821 double 3px;
+    border-bottom: #824821 double 3px;
+}
+
+#listSakeRiceVarietyIndex{
+	background: url(../images/banners/sake_RiceVarietyList.jpg) left top no-repeat;
+    border-top: #824821 double 3px;
+    border-bottom: #824821 double 3px;
+}
+
+#listSakeYeastStrainsIndex{
+	background: url(../images/banners/sake_YeastStrainsList.jpg) left top no-repeat;
+    border-top: #824821 double 3px;
+    border-bottom: #824821 double 3px;
+}
+
+/*advanced search*/
+
+.sake_Advanced_type{
+	margin-top: 20px;
+}
+
+.sake_Advanced_type ul{
+	margin-left: 15px;
+}
+
+.sake_Advanced_type ul li {
+    font-size: 16px;
+    float: none;
+    text-align: left;
+    line-height: 35px;
+    margin: 0;
+}
+
+.sake_Advanced_type ul li input {
+    margin-right: 10px;
+}
+
+.sake_Advanced_Process{
+
+}
+
+.sake_Advanced_Process ul{
+	margin-left: 15px;
+}
+
+.sake_Advanced_Process ul li {
+    font-size: 16px;
+    float: none;
+    text-align: left;
+    line-height: 35px;
+    margin: 0;
+}
+
+.sake_Advanced_Process ul li input {
+    margin-right: 10px;
+}
+
+.sake_Advanced_Water{
+	margin-top: 20px;
+}
+
+.sake_Advanced_Water ul{
+	margin-left: 15px;
+}
+
+.sake_Advanced_Water ul li {
+    font-size: 16px;
+    float: none;
+    text-align: left;
+    line-height: 35px;
+    margin: 0;
+}
+
+.sake_Advanced_Water ul li input {
+    margin-right: 10px;
+}
+
+.sake_Advanced_Block_AmineAcidity input {
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 0 5px;
+    outline: none;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+
+/***************首頁*****************/
+
+.sake_index_ProductDate{
+	width: 95px;
+	height: 40px;
+	float: left;
+	color: #666;
+	font-size: 9px;
+	margin-left: 5px;
+}
+
+
+/***************首頁 end*****************/
+
+
+/**wine_list*/
+.sake_Sign_WineInfo_ExpiredDate {
+    font-size: 16px;
+    color: #666666;
+    float: left;
+    margin-top: 5px;
+}
+
+.sake_Sign_WineInfo_ExpiredDate span{
+	font-size: 18px; 
+	display: inline-block;
+}
+
+.Project .sake_Project_ProductDate {
+    width: 70px;
+    text-align: center;
+}
+
+.WineInformation li.sake_List_ProductDate {
+    width: 74px;
+    margin-left: 3px;
+    text-align: center;
+}
+
+.WineInformation li.sake_List_ProductDate span{
+    display: inline-block;
+    margin-top: -12px;
+}
+
+.sake_index .Left_Menu_ClassifySearch_layout{
+    background-color: #c2c2c2;
+}
+
+.sake_index .Left_Menu_ClassifySearch_condition_layout{
+    background-color: #a1a1a1;
+}
+
+.sake_index .Left_Menu_ClassifySearch_condition_text{
+    color: #f2f2f2;
+}
+
+.sake_index .Sign_WineInfo_titleBG{
+    background-color: #b9b9b9;
+}
+
+/**wine_list_viewed**/
+.sake_WineListViewed_Project ul li.sake_viewed_Project_Year {
+    width: 113px;
+}
+
+.WineInformation li.sake_viewed_List_Year {
+    width: 120px;
+}
+
+/**advanced search**/
+.sake_Advanced_HotSearch {
+    margin-top: 0;
+}
+
+.sake_Advanced_Type{
+	margin-top: 20px;
+}
+
+.sake_Advanced_Block_rice{
+	float: left;
+    height: 92px;
+    width: 380px;
+    margin-left: 16px;
+    margin-top: 0px;
+}
+
+.sake_Advanced_Block_SMV{
+	width: 380px;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.sake_Advanced_Block_SMV input{  
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 0 5px;
+    outline: none;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.sake_Advanced_Block_SMV input:last-child{
+    margin-left: 0;
+}
+
+/*topic_b*/
+
+.sake_topicB_OneWineBox_WineStatus_ExpiredDate {
+    width: 195px;
+    height: 20px;
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0;
+    float: right;
+}
+
+/*wine_deatil*/
+
+ul.sake_Detail li.wine_detail_wineinfo_price{
+    border-bottom: none;
+}
+
+ul.Detail li em.Info .sake_aged{
+    margin-left: 10px;
+    color: #999;
+    font-size: 13px;
+    display: inline-block;
+    margin-top: -4px;
+    vertical-align: middle;
+    /*border-bottom: 1px dotted #999;*/
+    line-height: 13px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+/*
+ul.Detail li em.Info .sake_aged:after{
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: url(../images/icon/infomark.png);
+    float: right;
+    margin-left: 3px;
+}*/

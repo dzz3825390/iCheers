@@ -1,0 +1,2242 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+
+/*=============會員專區==============*/
+
+
+.member_FooterALL {
+    clear: both;
+    display: block;
+    width: 100%;
+    height: 35px;
+    margin: 0 auto;
+    background-color: #252525;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    margin-bottom: 77px;
+}
+
+.member_FooterALL > .Footer_position{
+    width:1160px;
+}
+
+
+
+/*============= Center 中段 ==============*/
+
+
+
+.member_CenterALL {
+    clear: both;
+    display: block;
+    width: 1280px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    margin-bottom: 150px;
+}
+
+
+.member_Center {
+    display: block;
+    min-height: 650px;
+    margin: 0 53px;
+    background-repeat: repeat-y;
+    border: 1px solid #ECECEC;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.member_Center2 {
+    display: block;
+    margin: 0 auto;
+    width: 830px;
+    height: 70px;
+    background-image: url(../images/member_Center2.png);
+    background-position: bottom;
+}
+
+
+
+
+
+.Center_Shadow {
+    position: absolute;
+    left: -18px;
+    top: -3px;
+    display: inline-block;
+    width: 18px;
+    height: 58px;
+    background-image: url(../images/Shadow.png);
+}
+
+
+.member_Info {
+    width: 80%;
+    margin: 0 10%;
+    margin-top: 20px;
+    min-height: 556px;
+    display: inline-block;
+    background-image: url(../images/member_InfoBG.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+ul.member_Form {
+    font-family: 微軟正黑體, Arial, serif;
+    display: block;
+    line-height: 22px;
+    color: #231815;
+    font-size: 13px;
+    padding: 0px 4% 0px 4%;
+    margin-top: 35px;
+}
+
+
+    ul.member_Form a {
+        text-decoration: underline;
+        color: #333;
+        padding: 0px 5px;
+        line-height: 22px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+        ul.member_Form a:hover {
+            text-decoration: none;
+        }
+
+    ul.member_Form li {
+        margin-bottom: 25px;
+        padding-left: 12px;
+        min-height: 30px;
+        font-size: 16px;
+    }
+
+        ul.member_Form li input {
+            width: 40%;
+            padding:0 5px; 
+            height: 28px;
+            font-size: 14px;
+            line-height: 28px;
+            outline: none;
+        }
+
+        ul.member_Form li h1{
+            line-height: 30px;
+            height: 30px;
+            font-size: 16px;
+        }
+
+        ul.member_Form li select{
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        ul.member_Form li select:first-child{
+            margin-left: 0;
+        }
+
+
+.Captcha {
+    display: inline-block;
+    height: 24px;
+    width: 81px;
+    float: left;
+}
+
+.CaptchaAA {
+    display: inline-block;
+    float: left;
+}
+
+.LoginTitle {
+    display: block;
+    width: 30%;
+    line-height: 24px;
+    text-align: right;
+    float: left;
+}
+
+
+ul.member_Form li input.CheckBoxA {
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+    margin: 4px 4px 0px 0px;
+    display: inline;
+    float: left;
+}
+
+
+a.JoinUs {
+    width: 100px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    color: #785472;
+    margin-bottom: 10px;
+}
+
+.FormTittle{
+    width: 96px;
+    height: 24px;
+    margin: 0 auto;
+    background-image: url(../images/LoginTitleBG.png);
+}
+
+.FormTittle2 {
+    width: 96px;
+    height: 24px;
+    margin: 0 auto;
+    background-image: url(../images/LoginTitleBG2.png);
+}
+
+.FormTittle3 {
+    width: 151px;
+    height: 24px;
+    margin: 0 auto;
+    background-image: url(../images/LoginTitleBG3.png);
+}
+
+ul.member_Form a.SubmitBTN {
+    width: 80px;
+    display: block;
+    line-height: 1;
+    color: #FFF;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+    background-color: #8B8B8B;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+    ul.member_Form a.SubmitBTN:hover {
+        background-color: #333;
+    }
+
+.Information{
+    width: 383px;
+    font-family: "微軟正黑體", Arial, serif;
+    position: absolute;
+    bottom: 30px;
+    left: 395px;
+    font-size: 14px;
+    color: #231815;
+    line-height: 28px;
+}
+
+    .Information a {
+        font-family: "微軟正黑體", Arial, serif;
+        font-size: 14px;
+        color: #231815;
+        line-height: 28px;
+        text-decoration: none;
+    }
+
+    .Information a:hover {
+        text-decoration: underline;
+    }
+
+    .Information span {
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    .Information span:first-child {
+        margin-left: 0;
+    }
+
+.member_Message {
+    display: inline-block;
+    font-family: "微軟正黑體", Arial, serif;
+    font-size: 16px;
+    line-height: 30px;
+    color: #231815;
+    margin-left: 261px;
+    margin-top: 150px;
+}
+
+.LeftMore {
+    margin-left: 314px;
+}
+
+
+
+ul.member_Form li input.InputRadio {
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+    display: inline;
+    float: left;
+    margin: 4px 0px 0px 3px;
+}
+
+.InputRadio2 {
+    float: left;
+    margin-left: 3px;
+}
+
+ul.member_Form li input.ShortInput {
+    width: 100px;
+}
+
+ul.member_Form li input.ShortInput2 {
+    width: 50px;
+}
+
+ul.MarginMore {
+    margin-top: 65px;
+}
+
+
+.slogan_member {
+    display: inline-block;
+    width: 480px;
+    height: 47px;
+    background-image: url(../images/slogan_member.png);
+    position: absolute;
+    top: 300px;
+    left: 347px;
+}
+
+
+.ChangePlace {
+    top: 420px;
+}
+
+
+
+/* 彈出條款 */
+
+
+.MemberClause {
+    display: none;
+    width: 538px;
+    height: 486px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 999999;
+}
+
+.Clause_TOP {
+    width: 100%;
+    height: 41px;
+    background-image: url(../images/MemberClause.png);
+    position: relative;
+}
+
+.Close_Clause {
+    display: block;
+    background: url(../images/icon/btn_close.png) left top;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 13px;
+}
+
+    .Close_Clause:hover {
+        background: url(../images/icon/btn_close2.png) left top;
+    }
+
+.Clause_Center {
+    width: 100%;
+    height: 445px;
+    background-image: url(../images/MemberClause2.png);
+    position: relative;
+}
+
+.Info_Clause {
+    width: 480px;
+    height: 350px;
+    position: absolute;
+    top: 21px;
+    left: 32px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.Clause_BTN1 {
+    display: block;
+    background: url(../images/Clause_BTN1.png);
+    width: 221px;
+    height: 22px;
+    cursor: pointer;
+    position: absolute;
+    left: 85px;
+    bottom: 30px;
+}
+
+    .Clause_BTN1:hover {
+        background: url(../images/Clause_BTN1-2.png);
+    }
+
+.Clause_BTN2 {
+    display: block;
+    background: url(../images/Clause_BTN2.png);
+    width: 121px;
+    height: 22px;
+    cursor: pointer;
+    position: absolute;
+    left: 330px;
+    bottom: 30px;
+}
+
+    .Clause_BTN2:hover {
+        background: url(../images/Clause_BTN2-2.png);
+    }
+
+
+.memberIndexRR {
+    display: inline-block;
+    width: 340px;
+    height: 700px;
+    position: absolute;
+    right: 20px;
+    top: 35px;
+}
+
+
+.ChangeData{
+    display: inline-block;
+    width: 337px;
+    height: 50px;
+    background-position: top left;
+    background-image: url(../images/ChangeData.png);
+    margin-bottom: 10px;
+}
+
+
+    .ChangeData:hover {
+        background-position: bottom left;
+    }
+
+.ChangeData2 {
+    display: inline-block;
+    margin: 10px 0;
+    width: 280px;
+    height: 46px;
+    background-position: top left;
+    background-image: url(../images/ChangeDataAll.png);
+}
+
+
+    .ChangeData2:hover {
+        background-position: bottom left;
+    }
+
+
+
+/* 首頁左邊欄 */
+
+.MemberInformation {
+    font-family: "微軟正黑體";
+    position: relative;
+    color: #231815;
+    font-size: 13px;
+    display: inline-block;
+    width: 339px;
+    height: 400px;
+    background-image: url(../images/MemberInformationBG.jpg);
+}
+
+    .MemberInformation h1 {
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+        display: inline-block;
+        width: 276px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50px;
+        padding: 12px 0px 10px 27px;
+        margin: 20px 0px 0px 17px;
+        box-shadow: -2px 5px 0 rgba(200,200,200,1);
+    }
+
+    .MemberInformation h1.glass_icon:after{
+        content:'';
+        width: 45px;
+        height: 45px;
+        background: url(../images/Dialog.svg);
+        background-size: cover;
+        display: block;
+        position: absolute;
+        top: 9px;
+        right: 15px;
+    }
+
+    .MemberInformation h1 span{
+        font-weight: bold;
+        color: #C29C20;
+    }
+
+    .MemberInformation h1 strong{
+        font-weight: bold;
+        color: #333;
+    }
+
+
+    .MemberInformation h2 {
+        position: relative;
+        width: 82%;
+        font-size: 16px;
+        display: inline-block;
+        padding-left: 15px;
+        line-height: 24px;
+        margin: 15px 0px 10px 20px;
+    }
+
+    .MemberInformation h2 span{
+        font-weight: bold;
+        color: #C29C20;
+    }
+
+    .MemberInformation h2 div{
+        font-size: 14px;
+        line-height: 22px;
+        color: #666;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+
+    .MemberInformation h2:before,.MemberInformation h3:before{
+        position: absolute;
+        content: '';
+        width: 5px;
+        height: 5px;
+        display: block;
+        border-radius: 50%;
+        background-color: #666;
+        left: 1px;
+        top: 9px;
+    }
+
+    .MemberInformation h3 {
+        position: relative;
+        width: 82%;
+        font-size: 16px;
+        display: inline-block;
+        padding-left: 15px;
+        line-height: 24px;
+        color: #333;
+        font-weight: bold;
+        margin: 15px 0px 10px 20px;
+    }
+
+    .MemberInformation h3 div{
+        font-size: 14px;
+        line-height: 22px;
+        color: #666;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+
+    .MemberInformation h3 div span{
+        font-weight: bold;
+        color: #C29C20;
+    }
+
+    .MemberInformation h3 div strong{
+        font-weight: bold;
+        color: #75526F;
+    }
+
+    .MemberInformation h4 {
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+        display: inline-block;
+        width: 296px;
+        background-color: #fff;
+        border-radius: 7px;
+        padding: 12px 10px 10px 20px;
+        margin: 5px 0px 15px 17px;
+        box-shadow: -2px 5px 0 rgba(200,200,200,1);
+        box-sizing: border-box;
+    }
+
+    .MemberInformation h4 span{
+        font-weight: bold;
+        color: #C29C20;
+    }
+
+    .MemberInformation h4 strong{
+        font-weight: bold;
+        color: #75526F;
+    }
+
+    .MemberInformation h4 div{
+        font-size: 14px;
+        line-height: 22px;
+        color: #666;
+        font-weight: normal;
+        margin-top: 3px;
+    }
+
+        .MemberInformation h2 em {
+            color: #75526F;
+            font-weight: bold;
+        }
+
+
+.Sommelier {
+    position: relative;
+    display: inline-block;
+    width: 263px;
+    height: 263px;
+    background-image: url(../images/Sommelier.png);
+    margin-top: 26px;
+    margin-left: 107px;
+}
+
+.MemberInformationIcon {
+    position: absolute;
+    display: inline-block;
+    width: 130px;
+    height: 132px;
+    background-image: url(../images/MemberInformationIcon.png);
+    top: 122px;
+}
+
+.MemberInformationNotice{
+    margin: 3px 0px 10px 25px;
+    color: #666;
+}
+
+.MemberInformationNotice:before{
+    content: '*';
+    display: block;
+    float: left;
+    margin-top: 3px;
+    margin-right: 2px;
+}
+
+.LINE2 {
+    display: block;
+    width: 80%;
+    margin: 0 10% 0 10%;
+    height: 1px;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #999;
+}
+
+.member_Name {
+    display: inline-block;
+    width: 95%;
+    font-size: 16px;
+    color: #808087;
+    font-family: "微軟正黑體";
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    font-weight: bolder;
+}
+/*////20141124 Roger 新增勳章icon與調整member_Name位置 start////*/
+.member_Name_Medal{
+	float: left;
+}
+.member_Name_position{
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+/*////20141124 Roger 新增勳章icon與調整member_Name位置 end////*/
+    .member_Name em {
+        color: #75526F;
+        font-weight: bolder;
+    }
+
+    .member_Name span {
+        color: #C29C20;
+    }
+
+
+/* 首頁左邊欄 */
+
+.memberIndexLL {
+    display: inline-block;
+    width: 770px;
+    height: 700px;
+    position: absolute;
+    left: 20px;
+    top: 35px;
+}
+
+    .memberIndexLL h1,
+    .member_Menu h1 {
+        font-family: "微軟正黑體";
+        display: block;
+        font-size: 18px;
+        padding: 5px;
+        padding-left: 15px;
+        color: #333;
+        font-weight: 900;
+        background-color: #E2E2E2;
+        border-left: 3px #666 solid;
+        margin: 5px 0 5px 0;
+    }
+
+    .memberIndexLL h1{
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    .memberIndexLL h1:first-child{
+        margin-top: 5px;
+    }
+
+
+
+/* 項目 */
+
+.MemberProject {
+    font-family: "微軟正黑體";
+    font-size: 16px;
+    line-height: 32px;
+    height: 32px;
+    width: 97%;
+    padding-left: 3%;
+    margin: 5px 0px;
+}
+
+    .MemberProject a {
+        display: inline-block;
+        height: 32px;
+        color: #231815;
+        margin-right: 10px;
+    }
+
+    .MemberProject span {
+        margin: 0 2px;
+        display: inline-block;
+        width: 20px;
+    }
+
+
+.MemberSpacing span {
+    display: inline-block;
+    width: 20px;
+}
+
+.MemberSpacing a.member_Menu_BTN {
+}
+
+
+/*  會員內頁 查詢頁 */
+
+.member_Center_SS {
+    display: inline-block;
+    width: 866px;
+    min-height: 600px;
+    background-repeat: repeat-y;
+    border: 1px solid #CCC;
+    position: relative;
+    float: left;
+    margin-left: 15px;
+}
+
+.member_Center2_SS {
+    display: inline-block;
+    width: 666px;
+    height: 70px;
+    background-image: url(../images/member_Center2_SS.png);
+    background-position: bottom;
+    float: right;
+    margin-right: 40px;
+}
+
+.member_Menu {
+    display: inline-block;
+    width: 280px;
+    min-height: 600px;
+    margin-left: 57px;
+    float: left;
+}
+
+
+    .member_Menu a:hover {
+        color: #000;
+    }
+
+.member_Name2 {
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    color: #808087;
+    font-family: "微軟正黑體";
+    font-weight: bolder;
+    line-height: 24px;
+}
+    /*20170303 Roger 移除display設定*/
+    .member_Name2 em {
+       /*  display: block; */
+        font-weight: bolder;
+    }
+    
+    .member_Name2 span {
+        /* display: block; */
+        color: #C29C20;
+    }
+    /*20170303 Roger 移除display設定 end*/
+
+.member_Center_Tittle {
+    display: block;
+    width: 100%;
+    height: 36px;
+    background-image: url(../images/TittleBG.png);
+    border-bottom: 1px solid #CCC;
+    position: relative;
+}
+
+
+.member_Center_Info {
+    width: 91%;
+    height: 100%;
+    padding: 0 3% 0 5%;
+    color: #666666;
+    margin: 25px auto 0 auto;
+    font-family: "微軟正黑體";
+    font-size: 16px;
+    line-height: 30px;
+}
+
+    .member_Center_Info h1,
+    .member_Center_Info h2 {
+        font-size: 16px;
+    }
+
+    .member_Center_Info h1 {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+        .member_Center_Info h1 span,
+        .member_Center_Info h2 span,
+        .MemberProject a.member_Menu_BTN strong {
+            font-weight: bold;
+            font-family: Arial,"微軟正黑體";
+            color: #C29C20;
+        }
+
+.MemberProject a.member_Menu_BTN strong {
+    padding: 0px 3px;
+}
+
+table.Coupon {
+    background-color: #F0F0F0;
+    text-align: center;
+    margin: 10px 0;
+    font-family: "微軟正黑體";
+    line-height: 28px;
+    font-size: 14px;
+}
+
+    table.Coupon tr.TableTittle {
+        background-color: #D2D2D2;
+        color: #565656;
+    }
+
+tr.TableTittle td,
+.Coupon tr td {
+    border-bottom: 2px solid #FFF;
+    border-right: 2px solid #FFF;
+}
+
+td.TD_Project {
+    width: 8%;
+}
+
+td.TD_Name,
+td.TD_Money,
+td.TD_Number,
+td.TD_Day {
+    width: 23%;
+}
+
+
+tr.TableTittle td {
+    border-right: none;
+}
+
+    tr.TableTittle td.TD_Day {
+        border-right: 2px solid #FFF;
+    }
+
+
+
+
+
+
+ul.member_Center_Info {
+    width: 88%;
+    margin-top: 15px;
+    padding: 0 2% 0 8%;
+}
+
+    ul.member_Center_Info li {
+        text-indent: -21px;
+        line-height: 30px;
+        margin-bottom: 5px;
+    }
+
+/*////////20141124 Roger調整樣式 start/////////*/
+        ul.member_Center_Info li span {
+            padding: 1px 2px;
+            margin-right: 3px;
+            background-color: #666666;
+            font-family: Arial, "微軟正黑體";
+            /*font-weight: 900;*/
+            border: 1px solid #666666;
+            color: #FFF;
+            margin-right: 10px;
+        }
+/*////////20141124 Roger調整樣式 end/////////*/
+
+.Hierarchy {
+    width: 600px;
+    font-family: "微軟正黑體";
+    line-height: 24px;
+    font-size: 13px;
+    background-color: #F0F0F0;
+    background-repeat: no-repeat;
+    background-position: top left;
+    margin-top: 15px;
+    margin-left: 55px;
+    margin-bottom: 30px;
+    padding: 15px;
+    padding-left: 30px;
+}
+
+    .Hierarchy h3 {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+.Hierarchy_text{
+    width: 290px;
+    height: 55px;
+    background-image: url(../images/HierarchyBG.png);
+}
+
+.Hierarchy_row{
+    width: 505px;
+    height: 35px;
+    font-size: 16px;
+    color: #666666;
+    margin-top: 5px;
+}
+
+.Hierarchy_memberstatus{
+    width: 250px;
+    height: 35px;
+    background-color: #fff;
+    float: left;
+    text-align: center;
+    line-height: 35px;
+}
+
+.Hierarchy_memberdiscount{
+    width: 250px;
+    height: 35px;
+    background-color: #fff;
+    float: left;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 5px;
+}
+
+/*  選單按鈕 */
+
+
+.member_Menu_BTN2 {
+    height: 45px;
+    line-height: 20px;
+}
+
+    .member_Menu_BTN:hover, .member_Menu_BTN2:hover {
+        background-color: #efefef;
+    }
+
+    .member_Menu_BTN2 strong {
+        height: 45px;
+        line-height: 45px;
+        font-weight: bold;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: "微軟正黑體";
+        color: #808087;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+
+    .member_Menu_BTN2 span {
+        display: inline-block;
+        width: 32px;
+        height: 35px;
+        float: left;
+        margin: 0 5px;
+    }
+
+
+
+        .member_Menu_BTN2 span.Icon_Cloud {
+            background-image: url(../images/Icon_Cloud.png);
+        }
+
+        .member_Menu_BTN2 span.Icon_Car {
+            background-image: url(../images/Icon_Car.png);
+        }
+
+        .member_Menu_BTN2 span.Icon_Wine {
+            background-image: url(../images/Icon_Wine.png);
+        }
+
+        .member_Menu_BTN2 span.Icon_Letter {
+            background-image: url(../images/Icon_Letter.png);
+        }
+
+        .member_Menu_BTN2 span.Icon_Money {
+            background-image: url(../images/Icon_Money.png);
+        }
+
+        .member_Menu_BTN2 span.Icon_Pig {
+            background-image: url(../images/Icon_Pig.png);
+        }
+
+
+        .member_Menu_BTN2 span.Icon_Money,
+        .member_Menu_BTN2 span.Icon_Pig {
+            margin-top: 6px;
+        }
+
+
+.MemberProject a.member_Menu_BTN {
+    margin: 0px;
+    margin-right: 10px;
+    color: #999;
+}
+
+    .MemberProject a.member_Menu_BTN:hover {
+        color: #000;
+    }
+
+
+/*  註冊完的會員頁 */
+
+
+.member_Project {
+    display: block;
+    position: absolute;
+    top: 240px;
+    left: 475px;
+}
+
+    .member_Project a {
+        display: inline-block;
+        width: 110px;
+        height: 85px;
+    }
+	
+/*//////201411Roger修改 調整位置start//////*/
+.member_Bonus {
+    background-image: url(../images/member_Bonus.png);
+}
+
+    .member_Bonus:hover {
+        background-image: url(../images/member_Bonus_H.png);
+    }
+
+.member_Birthday {
+    background-image: url(../images/member_Birthday.png);
+}
+
+    .member_Birthday:hover {
+        background-image: url(../images/member_Birthday_H.png);
+    }
+/*//////201411Roger修改 調整位置end//////*/
+
+/*/////20141227Roger新增"挑酒去"按鈕 start/////*/
+
+.go_shopping{
+	display: block;
+	position: absolute;
+	left: 537px;
+	top: 360px;
+	cursor:pointer;
+}
+.go_shopping a{
+	display: inline-block;
+    height: 41px;
+	width: 100px;
+	}
+
+.go_shopping_passwordvalidate{
+    display: block;
+    position: absolute;
+    left: 537px;
+    top: 240px;
+    cursor:pointer;
+}
+
+.btn_go_shopping{
+	background-image: url(../images/icon/btn_goshopping.png);
+}
+.btn_go_shopping:hover{
+	background-image: url(../images/icon/btn_goshopping2.png);
+}
+/*/////20141227Roger新增"挑酒去"按鈕 end/////*/
+
+.member_WineCellar {
+    background-image: url(../images/member_WineCellar.png);
+}
+
+    .member_WineCellar:hover {
+        background-image: url(../images/member_WineCellar_H.png);
+    }
+
+.member_Comment {
+    background-image: url(../images/member_Comment.png);
+}
+
+    .member_Comment:hover {
+        background-image: url(../images/member_Comment_H.png);
+    }
+
+.member_Freight {
+    background-image: url(../images/member_Freight.png);
+}
+
+    .member_Freight:hover {
+        background-image: url(../images/member_Freight_H.png);
+    }
+
+
+a.member_Comment {
+    margin-left: 60px;
+}
+
+
+.slogan2 {
+    display: block;
+    width: 113px;
+    height: 29px;
+    background-image: url(../images/slogan2.png);
+    position: absolute;
+    left: 530px;
+    top: 180px;
+}
+
+
+.slogan3 {
+    display: inline-block;
+    position: absolute;
+    font-size: 22px;
+    color: #333;
+    left: 329px;
+    top: 120px;
+}
+
+
+/*  各頁的大標題 */
+.member_Center_Tittle em {
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    top: 7px;
+}
+
+em.coupon_TittleBG {
+    width: 279px;
+    height: 42px;
+    background-image: url(../images/coupon_TittleBG.png);
+}
+
+
+em.bonus_TittleBG {
+    width: 230px;
+    top: 4px;
+    height: 46px;
+    background-image: url(../images/bonus_TittleBG.png);
+}
+
+
+
+
+/* 第二段標 */
+.member_Center_Tittle2 {
+    height: 35px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #666;
+    display: block;
+    width: 95%;
+    padding-left: 5%;
+    line-height: 35px;
+    background-color: #F0F0F0;
+    margin: 10px 0;
+}
+
+    .member_Center_Tittle2 em,
+    .member_revise_TittleBG2 em {
+        display: inherit;
+        padding-left: 20px;
+        border-left: 10px solid #FFF;
+    }
+
+.member_Center_Tittle2_fitstline {
+    margin-top: 30px;
+}
+
+.Tittle2_couponBG {
+    font-weight: bold;
+}
+
+
+.Tittle2_bonusBG {
+    font-weight: bold;
+}
+
+
+/*  ======= 修改個人資料 ======  */
+
+
+.revise_TittleBG {
+    width: 170px;
+    top: 4px;
+    height: 43px;
+    background-image: url(../images/revise_TittleBG.png);
+}
+
+.member_revise_TittleBG2 {
+    display: block;
+    width: 95%;
+    padding-left: 5%;
+    height: 24px;
+    background-color: #F0F0F0;
+    margin: 20px 0 10px 0;
+}
+
+
+    .member_revise_TittleBG2 .Tittle2_bonusBG {
+        background-image: url(../images/revise_TittleBG2.png);
+    }
+
+
+.Modification_Info {
+    width: 76%;
+    min-height: 15px;
+    margin-left: 80px;
+    font-family: "微軟正黑體";
+    line-height: 24px;
+    font-size: 14px;
+}
+
+    .Modification_Info li {
+        line-height: 50px;
+    }
+
+    .Modification_Info li:last-child {
+        padding-bottom: 10px;
+    }
+
+        .Modification_Info li em {
+            display: inline-block;
+            width: 130px;
+        }
+
+        .Modification_Info li input{
+            display: inline-block;
+            height: 22px;
+            padding: 0 5px;
+            line-height: 22px;
+        }
+
+.InputButton {
+    cursor: pointer;
+    padding: 0px 18px;
+    margin-left: 10px;
+}
+
+li.revise_PasswordBTN {
+    display: block;
+    height: 22px;
+    padding: 5px 0px;
+    margin-left: 5%;
+    background-color: #D2D2D2;
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-image: url(../images/revise_PasswordBTN.png);
+}
+
+.LeftMore2 {
+    margin-left: 100px;
+}
+
+input.Password {
+    width: 175px;
+}
+
+.Modification_Info li.Line {
+    width: 100%;
+    height: 5px;
+    background-color: #FFF;
+    padding: 0%;
+}
+
+
+
+/*  ======= 訂單查詢 ======  */
+
+.order_bonusBG {
+    width: 119px;
+    top: 4px;
+    height: 35px;
+    background-image: url(../images/Orders_TittleBG.png);
+}
+
+
+.SearchCondition {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 15px;
+    background-color: #F0F0F0;
+    font-family: "微軟正黑體";
+    line-height: 28px;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+    .SearchCondition h1 {
+        background-color: #D2D2D2;
+        padding: 5px;
+        padding-left: 15px;
+        border-left: 5px solid #75526F;
+        font-size: 18px;
+        color: #75526F;
+        font-weight: 900;
+    }
+
+        .SearchCondition h1 em {
+            font-family: "微軟正黑體";
+            font-size: 14px;
+            display: inline-block;
+            float: right;
+            margin-right: 10px;
+            color: #808087;
+        }
+
+    .SearchCondition h2 {
+        margin-left: 20px;
+        font-size: 16px;
+        line-height: 36px;
+        color: #333333;
+    }
+
+        .SearchCondition h2 em {
+            display: inline-block;
+            width: 16px;
+            height: 15px;
+            margin: 3px 2px 0 3px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(../images/CalendarICON.png);
+            cursor: pointer;
+        }
+
+        .SearchCondition h2 .InputRadio {
+            margin: 0px 3px 0px 3px;
+        }
+
+.order_Tittle2 {
+    display: inline-block;
+    width: 100%;
+    line-height: 24px;
+    font-family: "微軟正黑體";
+    font-size: 13px;
+    margin-top: 35px;
+}
+
+    .order_Tittle2 h1 {
+        float: left;
+        display: inline-block;
+        width: 16.3%;
+        font-size: 18px;
+        color: #75526F;
+        font-weight: 900;
+        text-align: center;
+        padding: 0px 10px;
+        border-bottom: 3px solid #75526F;
+    }
+
+    .order_Tittle2 em {
+        float: left;
+        display: inline-block;
+        width: 80%;
+        border-bottom: 3px solid #E2E2E2;
+        font-size: 14px;
+    }
+
+        .order_Tittle2 em span {
+            font-weight: bold;
+            font-family: Arial,"微軟正黑體";
+            color: #C29C20;
+        }
+
+/* 訂單項目 */
+
+.OrderStatus {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+
+
+    .OrderStatus h2 {
+        font-family: "微軟正黑體";
+        line-height: 22px;
+        font-size: 14px;
+        display: inline-block;
+        margin: 10px 0px;
+        margin-left: 5px;
+    }
+
+
+    .OrderStatus h1 {
+        font-family: "微軟正黑體";
+        line-height: 22px;
+        font-size: 14px;
+        display: inline-block;
+        margin: 10px 0px;
+        padding: 0px 8px;
+        color: #FFF;
+    }
+
+        /*未到貨*/
+        .OrderStatus h1.NotYet {
+            background-color: #B5404B;
+        }
+        /*已到貨*/
+        .OrderStatus h1.Get {
+            background-color: #A0A04F;
+            width: auto;
+        }
+        /*取消訂單*/
+        .OrderStatus h1.CancelOrder {
+            background-color: #E8B115;
+        }
+
+        /*隔日到貨*/
+        .OrderStatus_24HRexpress{
+            display: inline-block;
+            line-height: 1;
+            padding: 5px;
+            background-color: #ef9c00;
+            color: #fff; 
+        }
+
+
+        /*一般到貨*/
+        .OrderStatus_normal{
+            display: inline-block;
+            line-height: 1;
+            padding: 5px;
+            background-color: #4d4d4d;
+            color: #fff; 
+        }
+
+        /*預訂商品*/
+        .OrderStatus_preorder{
+            display: inline-block;
+            line-height: 1;
+            padding: 5px;
+            background-color: #0065a9;
+            color: #fff; 
+        }
+
+.OrderStatus_separate {
+    width: 96.6%;
+    background-color: #f2f2f2;
+    padding: 0 10px;
+    border: 1px solid #d2d2d2;
+    border-top: none;
+}
+
+    .OrderStatus_separate .ShipTimeline{
+        border-top: 1px solid #d2d2d2;
+    }
+
+.OrdersTittle{
+    width: 100%;
+}
+
+ul.OrdersTittle li,
+ul.OrdersData li {
+    font-family: "微軟正黑體";
+    line-height: 30px;
+    font-size: 16px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+
+ul.OrdersTittle li {
+    background-color: #D2D2D2;
+    border-right: 2px solid #D2D2D2;
+}
+
+ul.OrdersData li {
+    background-color: #F0F0F0;
+    border-right: 2px solid #FFF;
+}
+
+    ul.OrdersData li.OrderInvoice {
+        border-right: 2px solid #F0F0F0;
+    }
+
+ul.OrdersData {
+    clear: both;
+    height: 30px;
+}
+
+
+.OrderTime {
+    width: 26.8%;
+}
+
+.OrderMoney {
+    width: 20.3%;
+}
+
+.OrderRed {
+    color: #CF3448;
+}
+
+.Situation {
+    width: 15%;
+}
+
+.OrderPaying {
+    width: 18%;
+}
+
+.OrderInvoice {
+    width: 18%;
+}
+
+.OrderNo {
+    width: 100%;
+    color: #B5404B;
+}
+
+
+/*訂單聯絡資訊*/
+
+.OrdersInformation {
+    color: #808087;
+    text-align: center;
+    margin-top: 150px;
+}
+
+    .OrdersInformation p {
+        margin-bottom: 8px;
+    }
+
+        .OrdersInformation p a {
+            color: #808087;
+            text-decoration: underline;
+        }
+
+            .OrdersInformation p a:hover {
+                color: #808087;
+                text-decoration: none;
+            }
+
+
+
+
+
+/*出貨狀態時間軸*/
+
+.ShipTimeline {
+    display: block;
+    width: 96.6%;
+    padding: 0px 10px;
+    height: 36px;
+    border: 1px solid #D2D2D2;
+    border-top: none;
+}
+    
+    /*20170710 Rogerfix*/
+    .ShipTimeline h3,
+    .ShipTimeline h4 {
+        float: left;
+        display: inline-block;
+        font-family: "微軟正黑體";
+        line-height: 36px;
+        font-size: 14px;
+        padding: 0px 3px;
+    }
+    /*20170710 Rogerfix*/
+
+    /*20170824 Roger 新增*/
+    .ShipTimeline h3 a{
+        text-decoration: underline;
+        color: #0eacd3;
+    }
+    
+    .OrderStatus_separate h3{
+        display: inline-block;
+        font-family: "微軟正黑體";
+        line-height: 36px;
+        font-size: 14px;
+        padding: 0px 3px;
+        margin: 10px 0;
+    }
+
+    .OrderStatus_separate h3 a{
+        text-decoration: underline;
+        color: #0eacd3;
+    }
+    /*20170824 Roger 新增 end*/
+
+    .ShipTimeline h4 {
+        padding: 0px 2px;
+    }
+
+    .ShipTimeline span {
+        float: left;
+        display: inline-block;
+        width: 60px;
+        height: 28px;
+    }
+
+    .ShipTimeline span.RouteICON {
+        width: 27px;
+    }
+
+/*20170710 Rogerfix*/
+.RouteICON {
+    background-image: url(../images/RouteICON.png);
+    margin-top: 3px;
+}
+
+.TruckICON {
+    background-image: url(../images/TruckICON.png);
+    margin-top: 3px;
+}
+/*20170710 Rogerfix end*/
+
+.ShipTimeline input {
+    padding: 0px 5px;
+    display: inline-block;
+    float: right;
+    margin-top: 8px;
+    line-height: 18px;
+    cursor: pointer;
+    * padding: 0px;
+}
+
+
+/*展開詳細酒單*/
+
+
+/*收件資訊*/
+ul.ReceivingData {
+    border: 1px dotted #D2D2D2;
+    border-left: 1px solid #D2D2D2;
+    border-right: 1px solid #D2D2D2;
+    border-bottom: 0px dotted #D2D2D2;
+  
+}
+ul.ReceivingData li{
+    font-family: "微軟正黑體";
+    line-height: 30px;
+    font-size: 16px;
+    float: left;
+    display: inline-block;
+    padding:0px 15px;
+}
+.ReceivingConsignee {
+    width: 25%;
+}
+.ReceivingAdd {
+    width: 60%;
+}
+
+/*發票收件資訊*/
+ul.InvReceivingData {
+    border: 1px dotted #D2D2D2;
+    border-left: 1px solid #D2D2D2;
+    border-right: 1px solid #D2D2D2;
+    border-bottom: 0px dotted #D2D2D2;
+    border-top: 0px dotted #D2D2D2;
+}
+ul.InvReceivingData li{
+    font-family: "微軟正黑體";
+    line-height: 30px;
+    font-size: 16px;
+    float: left;
+    display: inline-block;
+      padding:0px 15px;
+}
+.InvoiceRec {
+    width: 25%;
+}
+.InvoiceAdd {
+    width: 60%;
+}
+.InvoiceVatNo {
+    width: 25%;
+}
+.InvoiceTitle {
+    width: 60%;
+}
+
+/*訂單商品資訊*/
+.ShoppingDetails {
+    display: block;
+    width: 99.4%;
+}
+
+ul.DetailsTittle li,
+ul.DetailsData li{
+    font-family: "微軟正黑體";
+    line-height: 28px;
+    font-size: 14px;
+    font-weight:bold;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+
+ul.DetailsTittle {
+    border: 1px dotted #D2D2D2;
+    border-left: 1px solid #D2D2D2;
+    border-right: 1px solid #D2D2D2;
+}
+
+ul.DetailsData {
+    clear: both;
+    padding: 10px 0px;
+    border-bottom: 1px dotted #D2D2D2;
+    border-left: 1px solid #D2D2D2;
+    border-right: 1px solid #D2D2D2;
+    width: 99.7%;
+    float: left;
+}
+
+ul.DetailsData1 {
+    clear: both;
+    padding: 10px 0px;
+    border-top: 1px dotted #D2D2D2;
+    float: left;
+    width: 99.7%;
+}
+
+    ul.DetailsData1 .wineSet {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+        ul.DetailsData1 .wineSet h5, ul.DetailsData1 .wineSet h6 {
+            width: 336px;
+        }
+
+.DetailsName {
+    width: 40.9%;
+}
+
+.GroupName {
+    width: 56.9%;
+   color: #75526F;
+}
+.GroupName h5 {
+    display: inline-block;
+    font-family: "微軟正黑體";
+    line-height: 30px;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 20px;
+    float: left;
+}
+
+.GroupDetailsName {
+    width: 49%;
+    padding: 0px 30px;
+    margin: 10px 0;
+}
+.GroupDetailsName h5,
+.GroupDetailsName h6 {
+    display: inline-block;
+    width: 300px;
+    font-family: "微軟正黑體";
+    line-height: 22px;
+    font-size: 14px;
+    text-align: left;
+    float: right;
+}
+.GroupDetailsName h5 {
+    color: #75526F;
+}
+
+.GroupDetailsName h6 {
+    color: #969551;
+}
+
+.DetailsName2 {
+    width: 70.8%;
+    margin-right: 7px;
+}
+
+.DetailsName h5,
+.DetailsName h6 {
+    display: inline-block;
+    width: 240px;
+    font-family: "微軟正黑體";
+    line-height: 22px;
+    font-size: 14px;
+    text-align: left;
+    float: right;
+}
+
+.DetailsName h5 {
+    color: #75526F;
+}
+
+.DetailsName h6 {
+    color: #969551;
+}
+
+ul.DetailsData .wineSet .wineSetList {
+    text-align: left;
+}
+
+
+.WineIMG2 {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    padding: 3px;
+    background-color: #FFF;
+    border: 1px solid #D2D2D2;
+    overflow: hidden;
+    float: left;
+    margin-left: 5px;
+}
+
+    .WineIMG2 img {
+        width: 55px;
+        height: auto;
+    }
+
+.DetailsYears {
+    width: 16%;
+}
+
+.DetailsPrice {
+    width: 16%;
+}
+
+.DetailsQuantity {
+    width: 11%;
+}
+
+.DetailsTotal {
+    width: 16%;
+}
+
+.DetailsList {
+    width: 99.8%;
+}
+
+.ThisYear2 {
+    display: inline-block;
+    padding: 0px 17px;
+    line-height: 17px;
+    color: #FFF;
+    margin-top: 5px;
+    background-color: #929091;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.ThisYear2ML {
+    margin-left: 5px;
+}
+
+
+
+
+
+/*金黃色的數字*/
+.OrderStatus h2 span,
+.ShipTimeline h4 {
+    font-weight: bold;
+    font-family: Arial,"微軟正黑體";
+    color: #C29C20;
+}
+
+
+
+.TagALL_Buy {
+    background-image: none;
+    border: none;
+    background-color: #F0F0F0;
+}
+
+
+/**********member_register*****************/
+
+.member_register_information_noticeText{
+    display: inline-block;
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+    margin-left: 225px;
+}
+
+/**********member_register end*****************/
+
+/***********password*****************/
+
+.password_noticeText{
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+    margin-left: 253px;
+}
+
+/***********password end*****************/
+
+
+/**************revise_personal_data******************/
+
+ul.personal_data_info_layout{
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 80px;
+    padding: 0;
+    width: auto;
+}
+
+    ul.personal_data_info_layout li{
+        text-indent: 0;
+        line-height: 50px;
+    }
+
+        ul.personal_data_info_layout li input{
+            display: inline-block;
+            height: 22px;
+            line-height: 22px;
+        }
+
+.personal_data_btns_layout{
+    width: 210px;
+    height: 41px;
+    margin: 20px auto;
+}
+
+    .personal_data_btns_layout div{
+        width: 80px;
+        float: left;
+        padding:10px;
+        font-size: 16px;
+        text-align: center;
+        background-color: #8B8B8B;
+        color: #fff;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .personal_data_btns_layout div:first-child{
+        margin-left: 0;
+    }
+
+    .personal_data_btns_layout div:hover{
+        background-color: #333333;
+    }
+
+/**************revise_personal_data end******************/
+
+/*20170710 Rogerfix*/
+/**********order_progress_wishlist*******************/
+
+
+.wishlist_bonusBG {
+    width: 155px;
+    top: 4px;
+    height: 35px;
+    background-image: url(../images/wishlist_TittleBG.png);
+}
+
+.WishListStatus{
+    width: 780px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.WishListTittle{
+    width: 100%;
+    border: 1px solid #999999;
+}
+
+    .WishListTittle li{
+        font-family: "微軟正黑體";
+        line-height: 30px;
+        font-size: 16px;
+        float: left;
+        display: table-cell;
+        text-align: center;
+        background-color: #d2d2d2;
+        border-right: 1px solid #b2b2b2;
+    }
+
+    .WishListTittle li:last-child{
+        border-right: none;
+    }
+
+.WishListTittle:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.WishListStatus_Date{
+    width:94px;
+}
+
+.WishListStatus_Name{
+    width:330px;
+}
+
+.WishListStatus_Year{
+    width:100px;
+}
+
+/* .WishListStatus_CL{
+    width:77px;
+} */
+
+.WishListStatus_Stock{
+    width:120px;
+}
+
+.WishListStatus_Others{
+    width:132px;
+}
+
+.WishListData{
+    width: 780px;
+    border: 1px solid #999999;
+    margin: 0 auto;
+    border-top:none;
+    display: table;
+}
+
+    .WishListData td{
+        min-height: 30px;
+        line-height: 30px;;
+        text-align: center;
+        color: #666;
+        /* border-right: 1px solid #b2b2b2; */
+        border-bottom: 1px dotted #b2b2b2;
+        font-size: 14px;
+    }
+
+    .WishListData td:last-child{
+        border-right:none;
+    }
+
+    .WishListData > table:last-child td{
+        border-bottom:none;
+    } 
+
+
+.WishListData .WishListStatus_Name{
+    padding: 10px 0;
+}
+
+.WishListData .WishListStatus_Name:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.WishListStatus_Name_zhTW{
+    display: inline-block;
+    width: 250px;
+    font-family: "微軟正黑體";
+    line-height: 22px;
+    font-size: 14px;
+    text-align: left;
+    color: #75526F;
+    float: right;
+    margin-right: 5px;
+}
+
+    .WishListStatus_Name_zhTW > a{
+        color: #75526F;
+    }
+
+    .WishListStatus_Name_zhTW > a:hover{
+        text-decoration: underline;
+    }
+
+.WishListStatus_Name_EN{
+    display: inline-block;
+    width: 250px;
+    font-family: "微軟正黑體";
+    line-height: 22px;
+    font-size: 14px;
+    text-align: left;
+    float: right;
+    color: #969551;
+    margin-right: 5px;
+}
+
+    .WishListStatus_Name_EN > a{
+        color: #969551;
+    }
+
+    .WishListStatus_Name_EN > a:hover{
+        text-decoration: underline;
+    }
+
+.WishListStatus_Price{
+    width: 80px;
+    color: #CF3448;
+    font-size: 13px;
+    font-family: Arial, "微軟正黑體";
+    font-weight: 900;
+    text-align: right;
+    float: left; 
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.WishListStatus_PriceFast{
+    width: 80px;
+    color: #ef9c00;
+    font-size: 13px;
+    font-family: Arial, "微軟正黑體";
+    font-weight: 900;
+    text-align: right;
+    float: left; 
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.WishListStatus_PricePreorder{
+    width: 80px;
+    color: #0071bc;
+    font-size: 13px;
+    font-family: Arial, "微軟正黑體";
+    font-weight: 900;
+    text-align: right;
+    float: left; 
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.WishListStatus_BuyIcon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin-top:7px; 
+    background-image: url(../images/icon/BuyICON.png);
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.WishListStatus_BuyIcon:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/BuyICONH.png);
+}
+
+.WishListStatus_BuyIconFast{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin-top:7px; 
+    background-image: url(../images/icon/Fast_Icon.png);
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.WishListStatus_BuyIconFast:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/Fast_IconH.png);
+}
+
+.WishListStatus_BuyIconPreorder{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin-top:7px; 
+    background-image: url(../images/icon/PreOrder_ICON.png);
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.WishListStatus_BuyIconPreorder:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/PreOrder_ICON_Winelist_hover.png);
+}
+
+.WishListStatus_inputBTN{
+    width: 100px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 5px;
+}
+
+.WishListStatus_inputBTN:last-child{
+    margin-bottom: 5px;
+}
+
+/**********order_progress_wishlist end*******************/
+
+/*20170710 Rogerfix end*/
+
+/*20180731 Roger add keepaccount style*/
+
+.keepaccount{
+    display: inline-block;
+    margin-left: 30%;
+    margin-top: 10px;
+}
+
+.keepaccount span{
+    color: #666;
+    font-size: 14px;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+}
+
+/*custuon checkbox*/
+ul.member_Form li input[type=checkbox]{
+    width: auto;
+    height: auto;
+}
+
+/*20180731 Roger add keepaccount style end*/

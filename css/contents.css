@@ -1,0 +1,219 @@
+@charset "utf-8";
+/* CSS Document */
+
+.Right_Content_wrapper{ 
+	font-family:"微軟正黑體", Arial, serif;
+	font-size:12px;
+	width:866px;
+	float:right;
+}
+
+.Right_Content_wrapper .Title{
+	font-size:25px;
+	color:#333;
+	padding: 10px 15px;
+	font-weight:bold;
+	letter-spacing:3px;
+	border-top:1px #dfdfdf solid;
+	border-right:1px #dfdfdf solid;
+	border-left:5px #666 solid;
+	background-color:#f2f2f2;
+}
+
+
+.Contents,
+.Contents_AboutUs{
+	border-left:#dfdfdf 1px solid;
+	border-right:#dfdfdf 1px solid;
+	border-bottom:#dfdfdf 2px solid;
+	font-family:"微軟正黑體", Arial, serif;
+	padding: 20px 30px 30px;
+	font-size:12px;
+	line-height:24px; text-align:justify;
+	background-color:#FFF;
+	/*min-height: 2327px;*/
+	position: relative;
+}
+	
+.Contents p,
+.Contents_AboutUs p{
+	width: 750px;
+	margin: 0 auto;
+	margin-top: 5px;
+	color:#666;
+	font-size: 16px;
+	line-height:30px;
+}
+
+.Contents p strong,
+.Contents_AboutUs p strong,
+.Content_wrapper  p strong a{
+	color: #333333;
+	font-weight:bold;
+	font-size:20px;
+}
+	
+.Content_wrapper  p strong a{
+	text-decoration:underline;}
+	
+.Content_wrapper  p strong a:hover{
+	text-decoration:none;}	
+	
+	
+.Contents ul{
+	display:block;
+	line-height:24px;
+	color:#666;
+}
+	
+.Contents ul.Emphasis li{
+	margin-top: 8px;
+	font-size: 14px;
+}
+
+.Contents ul.Emphasis .EM2 li{
+	font-size: 16px;
+}
+
+.Contents ul.Emphasis li:nth-child(odd){
+	margin-top: 35px;
+}
+
+.Contents ul.Emphasis li:first-child{
+	margin-top: 0;
+}
+
+.Contents_IMG{
+	display: inline-block;
+	margin-top: 30px;
+	width: 680px;
+}
+
+
+/*201605 Rogerfix*/
+.topic_d_content ul li{
+	padding-bottom: 0;
+}
+/*201605 Rogerfix*/
+.Contents ul.style01{
+	list-style:decimal;
+	margin:0 0 15px 32px;
+}
+	
+.Contents a{
+	color:#666;
+	font-size:16px;
+	text-decoration: underline;
+}
+	
+.Contents ul.style02{
+	width:500px;
+	margin:0 auto;
+	margin-top: 45px;
+	text-align:center;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.Contents a.about_us_quality_title{
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+.Contents ul.style02 a{
+	font-size: 14px;
+}
+	
+.Contents ul.style02 button.HeadMsn2{
+	display:block;
+	height:25px;
+	width:100px;
+	margin:0 auto;
+	background-image:url(../images/icon/MSN.png);
+	text-indent:-9999px;
+	outline:none;
+}
+	
+.Contents ul.style02 button.HeadMsn2:hover{
+	background-image:url(../images/icon/MSN-H.png);}
+	
+	
+
+
+.ContactUs_Title{
+	display: inline-block;
+}
+
+.Contents ul li .ContactUs_codes{
+	float: left;
+	display:inline-block;
+	width:150px;
+} 
+
+.Contents ul li .ContactUs_codes_img{
+	height: 30px;
+	width: auto;
+	float: left;
+	margin-left: 10px;
+	border: 1px solid #cccccc;
+}
+
+.Contents ul li .ContactUs_codes_text{
+	font-size: 14px;
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.contact_us_sendBTN{
+	width: 100px;
+	height: 30px;
+	border: none;
+	font-size: 16px;
+	font-family: "微軟正黑體";
+	background-color: #666;
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 30px;
+	outline: none;
+}
+
+.LOGO2{
+	width: 570px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.Contents .contact_us_icheers{
+	margin-bottom: 20px;
+}
+
+.Contents .contact_us_icheers strong{
+	font-size: 28px;
+	color: #333333;
+}
+
+.Contents p.privacy_policy_secondTitle{
+	margin-top: 30px;
+}
+	
+.Contents ul.privacy_policy_list{
+	width: 750px;
+	margin: 15px auto;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.Contents p.condition_secondTitle{
+	margin-top: 30px;
+}
+	
+.Contents ul.condition_list{
+	width: 750px;
+	margin: 15px auto;
+	font-size: 14px;
+	line-height: 28px;
+}

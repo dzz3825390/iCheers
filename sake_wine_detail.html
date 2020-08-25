@@ -1,0 +1,1467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>wine_detail  酒款詳目頁 </title>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" >
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="stylesheet" type="text/css" href="css/sake.css"/>
+
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+
+
+<!-- 拆掉 LeftMenu.js -->
+<script type="text/javascript" src="Scripts/ChangeTag.js"></script> <!-- 換館別 -->
+<script type="text/javascript" src="Scripts/index.js"></script> <!-- 首頁輪撥 -->
+<script type="text/javascript" src="Scripts/WineLeftMenu.js"></script> <!-- 紅酒館的分類找酒 -->
+<script type="text/javascript" src="Scripts/ShoppingCart.js"/></script> <!-- 浮動購物車 -->
+<script type="text/javascript" src="Scripts/Head.js"/></script> <!-- 有沒有收到確認信彈出 -->
+<script type="text/javascript" src="Scripts/WineDetail.js"></script> <!-- 酒款詳目頁 -->
+
+
+<script type="text/javascript" src="Scripts/ddsmoothmenu.js"></script>
+<script type="text/javascript" src="Scripts/LightBox.js"></script>
+
+
+
+
+
+
+
+
+<!--WinInfo現貨與預訂格線-->
+<script type="text/javascript">
+ $(document).ready(function() {
+    var x = document.getElementById("Price");
+	var y = document.getElementById("PreorderPrice");
+	
+	if (x!=null && y!=null){
+		document.getElementById("Price").style.border = "0px dotted #999";
+		}
+		else{
+		return;	
+		};
+});  
+</script>
+
+	
+
+
+</head>
+
+
+<body class="sake_index">
+
+
+<div class="Label_LightBox" id="Label_LightBox">
+	<div style="position:relative;">
+        <img src="images/pic/L01.jpg" />
+        <div class="OFF"></div>
+    </div>
+</div>
+
+<!-- LightBox  -->
+
+<div class="HeadALL">
+    <!--20180327 Roger 新增手機板-->
+    <div class="HeadMenu">
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="MobileVer">手機版</a>
+    </div>
+    <!--20180327 Roger 新增手機板-->
+    <div class="TagALL">
+        <ul>
+            <li class="TagLogo"><a href="index.html"></a></li>
+            <li><a href="#" class="TagWine"></a></li>
+            <li><a href="Whisky_index.html" class="TagWhisky"></a></li>
+            <li style="width:120px;"><a href="beer_index.html" class="TagBeer"></a></li>
+            <li style="width:130px;" class="Tag_FocusBG"><a href="sake_index.html" class="TagSake"></a></li>
+        </ul>
+    </div>   
+</div>
+<!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+
+
+<div class="CenterALL_BG">
+    <div class="MyWineList" id="MyWineList">
+            <div class="WineList_Posation">
+                <div class="WineList_ALL" id="WineList_ALL">
+                    <div class="WineList_Info"> 
+                        <h1></h1>
+                        <h4>
+                            <div class="WineList_Info_text">清單內有(<span class="RED14">3</span>)款酒
+                            <span style="margin-left: 15px;"></span>
+                            總價$<span class="RED17">114,010</span></div>
+                            <div class="SeeDetailsICON"></div>
+                        </h4>
+                        <div class="Commodity">
+                            <div class="GoLeft2" id="GoLeft2"> <img src="images/icon/ICON_GoLeft2.png"></div>
+                            <div class="GoRight2" id="GoRight2"> <img src="images/icon/ICON_GoRight2.png"></div>
+                            <div class="GoLeft3" id="GoLeft3"> <img src="images/icon/ICON_GoLeft2.png"></div>
+                            <div class="GoRight3" id="GoRight3"> <img src="images/icon/ICON_GoRight2.png"></div>
+                            <a class="WineList_WineName">史坦因布赫麗絲玲白酒史坦史坦因布赫麗絲玲白酒史坦因史坦因史坦</a>
+                            <a class="WineList_WineName2">Brewery Hill Chardonnay Brewery Hill Chardonnay</a>
+                            <a class="WineList_WineName3">史坦因布赫麗絲玲白酒史坦史坦因布赫麗絲玲白酒史坦因史坦因史坦</a>
+                            <a class="WineList_WineName4">Brewery Hill Chardonnay Brewery Hill Chardonnay</a>
+                            <a href="" class="WineList_More">More &gt;&gt;</a>
+                            <div class="Added">
+                                <div class="Recent_IMG_GO">
+                                    <div style="height:90px; width:500px; position:absolute; top:50px; left:0px;">
+                                        <div class="Recent_IMG_GO ui-droppable" id="reRecent_IMG_GO"></div>
+                                    </div>
+                                    <ul id="Recent_IMG" class="ui-droppable" style="margin-top:205px;">
+                                        <li class="ui-draggable" style="border:2px solid #C08F1A">
+                                        <img src="images/pic/SW1.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW2.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW3.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW4.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW1.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                    </ul>
+                                </div>
+                                <!-- Recent_IMG_GO -->
+                            </div>
+                            <!-- Added -->
+                        </div>
+                        <!-- Commodity -->
+                    </div>
+                    <!-- WineList_Info 定寬度 -->
+                </div>
+                <!-- WineList_ALL 實質移動（+ width）位置 -->
+            </div>
+            <!-- WineList_Posation 全部定位  -->
+    </div>
+    <!-- MyWineList 我的清單 -->
+</div>
+<div class="CenterALL">
+
+	<div class="Left_Menu_layout Left_Menu_bg"><!--左邊欄-->
+        <div class="Left_Menu_ClassifySearch_layout"><!--灰底分類搜尋-->
+            <div class="Left_Menu_ClassifySearch_searchICON"></div>
+            <div class="Left_Menu_ClassifySearch_title"></div>
+            <input type="text" value="請輸入關鍵字"  class="Left_Menu_ClassifySearch_input" />
+            <div class="Left_Menu_Advancedoption_layout">
+                <div class="Left_Menu_AdvancedSearch">
+                    <span class="Left_Menu_AdvancedSearch_icon"></span>
+                    <span class="Left_Menu_AdvancedSearch_text">進階搜尋</span>
+                </div>
+                <div class="Left_Menu_AdvancedOrignal_layout">
+                    <span class="Left_Menu_AdvancedOrignal_icon"></span>
+                    <span class="Left_Menu_AdvancedOrignal_text">轉為原文選單</span>
+                </div>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Left_Menu_ClassifySearch_separateline"></div>
+            <div class="Left_Menu_YearWinery_layout">
+                <div class="Left_Menu_Winery">
+                    <span class="Left_Meni_YearWinery_diamond_icon"></span>
+                    <span class="Left_Menu_YearWinery_text">找酒造</span>
+                </div>
+                <!--
+                <div class="Left_Menu_Year">
+                    <span class="Left_Meni_YearWinery_diamond_icon"></span>
+                    <span class="Left_Menu_YearWinery_text">找年份</span>
+                </div>
+                -->
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--灰底分類搜尋 end-->
+        <div class="Left_Menu_block"><!--熱門搜尋-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">熱門搜尋</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Type" class="Left_Menu_options">
+                <li>
+                    <input name="" type="checkbox" value=""/><a href="">快速到貨(1234)</a>
+                    
+                    <span class="Left_Menu_options_noteText">三點下單隔天到</span>
+                </li>
+                <li><input name="" type="checkbox" value=""/><a href="">薰酒(1234)</a></li>
+                <li>
+                    <input name="" type="checkbox" value=""/><a href="">爽酒(1234)</a>
+                </li>
+                <li><input name="" type="checkbox" value=""/><a href="">熟酒(1234)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">醇酒(1234)</a></li>
+            </ul>
+        </div><!--熱門搜尋 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--類型-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">類型</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Type" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">大吟釀(142)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">吟釀(60)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">純米酒(3)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">本釀造(14)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">普通酒(20)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">梅酒(13)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">燒酌(13)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">水果酒/其它(13)</a></li>
+                <li><a id="TypeOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+        </div><!--類型 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--米種-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">米種</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Rice" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">山田錦(206)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">五百萬石(71)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">雄町(52)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">出羽燦燦(50)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">吟乙女(38)</a></li>
+                <div class="Menu_More" id="Menu_Rice_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">吟風(28)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">初雫(15)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">彗星(7)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">古城錦(6)</a></li>
+                </div>
+                <li><a id="RiceOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+            <div id="RiceOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+            <div class="GoToList" id="GoToList">
+                <a>全部列表<img src="images/icon/Menu_List.png" /></a>
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--米種 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--單價-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">單價</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Price" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">低於 $500 (21)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$500-1000 (107)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$1001-2000 (104)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$2001-3000 (68)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$3001-4000 (45)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$4001-5000 (33)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$5000 以上 (113)</a></li>
+            </ul>
+            <div class="Left_Menu_price_layout">
+                <div class="Left_Menu_price_title">
+                    <span class="Left_Menu_price_title_line"></span>
+                    <span class="Left_Menu_price_title_text">輸入價格</span>
+                </div>
+                <div class="CLEAR"></div>
+                <div class="Left_Menu_price_second_title">例：0~5000</div>
+                <div class="Left_Menu_price_input_layout">
+                    <input type="text" />
+                    <span>~</span>
+                    <input type="text" />
+                    <span>元之間</span>
+                    <img src="images/icon/Sent.png"/>
+                </div>
+                <div class="CLEAR"></div>
+            </div>
+        </div><!--單價 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--特殊製程-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">特殊製程</span>
+            </div>
+            <div id="VarietyOpen3" class="Left_Menu_moreBTN" style="display:none;">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+
+            <div class="GoToList" id="GoToList22" style="display:none;">
+                <a>全部列表<img src="images/icon/Menu_List.png" /></a>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Variety" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">山廢(40)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">雫酒(36)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">無濾過(36)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">氣泡清酒(69)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">秋卸酒(48)</a></li>
+                <div class="Menu_More" id="Menu_Variety_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">中取(40)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">生酒(37)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">生儲藏(36)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">生詰(32)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">渣滓酒(30)</a></li>
+                </div>
+                <li><a id="VarietyOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+            <div id="VarietyOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+            <div class="GoToList" id="GoToList2">
+                <a>全部列表<img src="images/icon/Menu_List.png" /></a>
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--特殊製程 end-->
+        <div class="Left_Menu_separateline"></div>
+        
+        <div class="Left_Menu_block"><!--產區-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">產區</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Place" class="Left_Menu_options">
+                <li style="font-style:italic;color:#929292;font-size:14px;">
+                日本
+                </li>
+                <li><input name="" type="checkbox" value=""/><a href="">東北地方(216)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">九州(170)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">北海道(130)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">關東地方(118)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">甲信越地方(83)</a></li>
+                <div class="Menu_More" id="Menu_Place_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">關東地方(37)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">北陸地方(37)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">東海地方(30)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">近畿地方(29)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">中國地方(18)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">四國(16)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">九州(7)</a></li>
+                </div>
+                <li><a id="PlaceOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li> 
+            </ul>
+            <div id="PlaceOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--產區-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--日本酒度-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">日本酒度</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_grade" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">非常辛口(338)</a>
+                    <span class="Left_Menu_options_noteText">（+6以上）</span>
+                </li>
+                <li><input name="" type="checkbox" value=""/><a href="">辛口(939)</a>
+
+                    <span class="Left_Menu_options_noteText">（0~+5.9）</span>
+                </li>
+                <li><input name="" type="checkbox" value=""/><a href="">甘口(262)</a>
+                    <span class="Left_Menu_options_noteText">（0~-5）</span>
+                </li>
+                <li><input name="" type="checkbox" value=""/><a href="">非常甘口(188)</a>
+                    <span class="Left_Menu_options_noteText">（-5.1以下）</span>
+                </li>
+                <li><a id="GradeOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+            <div id="GradeOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--日本酒度 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--適飲溫度-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">  適飲溫度</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Year" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">建議冰鎮(21)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">常溫OK (107)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">建議溫熱(104)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">冷熱皆宜(68)</a></li>
+            </ul>
+        </div><!--適飲溫度 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--  杜式集團-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">杜式集團</span>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Menu_More" id="Menu_Capacity_More">
+                <ul class="Left_Menu_options">
+                    <li><input name="" type="checkbox" value=""/><a href="">南部杜氏(1)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">山內杜氏(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">會津杜氏(3)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">下野杜氏(682)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">越後杜氏(11)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">長野杜氏(8)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">福井杜氏(8)</a></li>
+                    <li><a href="" id="CapacityOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+                </ul>
+            </div>
+            <div id="CapacityOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--杜式集團 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--酵母-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">酵母</span>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Menu_More" id="Menu_Yeasts_More">
+                <ul class="Left_Menu_options">
+                    <li><input name="" type="checkbox" value=""/><a href="">協會酵母(1)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">地區酵母(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">自家酵母(3)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">不公開(682)</a></li>
+                    <li><a href="" id="CapacityOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" />複選</a></li>
+                </ul>
+            </div>
+            <div id="YeastsOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--酵母 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--水-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">水</span>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Menu_More" id="Menu_Water_More">
+                <ul class="Left_Menu_options">
+                    <div class="Left_Menu_price_title">
+                        <span class="Left_Menu_price_title_line"></span>
+                        <span class="Left_Menu_price_title_text">水質</span>
+                    </div>
+                    <li><input name="" type="checkbox" value=""/><a href="">軟水(1)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">硬水(34)</a></li><div class="Left_Menu_price_title" style="margin-top: 30px;">
+                        <span class="Left_Menu_price_title_line"></span>
+                        <span class="Left_Menu_price_title_text">水源</span>
+                    </div>
+                    <li><input name="" type="checkbox" value=""/><a href="">金澤清水(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">龍泉洞地底湖(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">馬淵川(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">信濃川(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">阿賀野川(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">福島潟(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">角田山靈水(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">天龍川(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">太田川(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">大井川(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">狩野川(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">富士山伏流水(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">御香水(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">宮水(34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">不公開(34)</a></li>
+                    <li><a href="" id="CapacityOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" />複選</a></li>
+                </ul>
+            </div>
+            <div id="WaterOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--水 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--容量-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">容量</span>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Menu_More" id="Menu_Capacity_More">
+                <ul class="Left_Menu_options">
+                    <li><input name="" type="checkbox" value=""/><a href="">200ml (1)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">375ml (34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">700ml (3)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">750ml (682)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">1.5L (11)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                    <li><a href="" id="CapacityOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+                </ul>
+            </div>
+            <div id="CapacityOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--容量 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--評價-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">評價</span>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Menu_More" id="Menu_Evaluate_More">
+                <ul class="Left_Menu_options">
+                    <li><input name="" type="checkbox" value=""/><a href="">IWC Sake (1)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">全國新酒鑑評會 (34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">最適合用葡萄酒杯品飲的日本酒 (3)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">全美日本酒歡評會 (682)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">日本酒競賽 (11)</a></li>
+                    <li><a href="" id="EvaluateOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+                </ul>
+            </div>
+            <div id="EvaluateOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--評價 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_bottom_layout">
+            <div class="Left_Menu_Advancedoption_layout">
+                <div class="Left_Menu_bottom Left_Menu_AdvancedSearch">
+                    <span class="Left_Menu_AdvancedSearch_icon"></span>
+                    <span class="Left_Menu_AdvancedSearch_text">進階搜尋</span>
+                </div>
+                <div class="Left_Menu_bottom Left_Menu_AdvancedRecent_layout">
+                    <span class="Left_Menu_AdvancedRecent_icon"></span>
+                    <span class="Left_Menu_AdvancedRecent_text">近期瀏覽</span>
+                </div>
+            </div>
+        </div>
+    </div><!--左邊欄 end-->
+
+    <div class="Right_content"><!--右邊欄-->
+        <div class="ThirdSign"><!-- ThirdSign 詳細酒資訊  --> 
+            <div class="DetailedHeand beer_DetailedHeand"><!-- DetailedHeand  詳細酒資訊 -->
+                <!-- 標題  -->
+                <div class="IntroImg"><!-- IntroImg 酒瓶圖片-->
+        	        <div class="DetailedIMG" style="background-image:url(images/sake/SWR000004005_btl.jpg);"></div>
+                    <div class="Label">
+                        <img src="images/pic/L01.jpg" />
+                    </div> 
+                    <div class="WineCapacity">
+                        <span>375ml</span>
+                    </div>
+                </div><!-- IntroImg 酒瓶圖片 end-->
+                <div class="wine_detail_wineinfo_layout">
+                	<h2>
+                		秀鳳酒造 秀鳳 純米大吟釀 山田錦 四割七分原酒
+                	</h2>
+                	<h1>有限会社秀鳳酒造場,秀鳳 純米大吟醸 山田錦 四割七分原酒 NV</h1>
+                	<ul class="Detail sake_Detail"><!-- Detail 細項資料 --> 
+                        <li class="MarketingINFO"> 適合週末的午後，與三五好友共享的輕鬆酒款。 </li>
+                        <li class="wine_detail_wineinfo_status">
+                            <span class="wine_detail_wineinfo_status_number">#1234</span>
+                            <img src="images/icon/NoBouns_26x26.png" width="26" height="26" class="wine_detail_wineinfo_status_nobouns" title="特殊商品不適用紅利累計"/>
+
+                        </li>
+                        <li id="Price" class="wine_detail_wineinfo_price">
+                            <div>
+                                定價
+                                <strong style="text-decoration:line-through" class="wine_detail_wineinfo_OrginalPrice">$ 1,100</strong>
+                                ／ 酒窩價
+                                <span>
+                                    <strong class="Detail_RED16">$</strong>
+                                    <strong class="RED28">5,548,000</strong>
+                                </span>
+                                <button class="wine_detail_wineinfo_addcartBTN"></button>
+                                <div class="wine_detail_wineinfo_inventory">3-5工作天到貨</div>
+                            </div>
+                            <div>
+                                定價
+                                <strong style="text-decoration:line-through" class="wine_detail_wineinfo_OrginalPrice">$ 1,100</strong>
+                                ／ 預訂價
+                                <span>
+                                    <strong class="Detail_blue16">$</strong>
+                                    <strong class="blue28">5,548,000</strong>
+                                </span>
+                                <button class="wine_detail_wineinfo_preorderBTN"></button>
+                                <div class="wine_detail_wineinfo_inventory">2019/07 到貨</div>
+                            </div>
+                            <div class="wine_detail_wineinfo_price_preorder">
+                                ／ 酒窩價
+                                <span>
+                                    <strong class="Detail_orange16">$</strong>
+                                    <strong class="orange28">48,000</strong>
+                                </span>
+                                <button class="wine_detail_wineinfo_FastaddcartBTN"></button>
+                                <div class="wine_detail_wineinfo_inventory fast">快速到貨<div class="infomark"></div></div>
+                            </div>
+                            <div class="wine_detail_wineinfo_price_preorder">
+                                ／ 預訂價
+                                <span>
+                                    <strong class="Detail_blue16">$</strong>
+                                    <strong class="blue28">48,000</strong>
+                                </span>
+                                <button class="wine_detail_wineinfo_preorderBTN"></button>
+                                <div class="wine_detail_wineinfo_inventory">2019/07 到貨</div>
+                            </div>
+                        </li>
+                        <li class="ProductDate">
+                            <em class="Tittle">出廠日：</em>
+                            <em class="Info">
+                                2018&nbsp;年&nbsp;6&nbsp;月&nbsp;15&nbsp;日
+                                <span class="sake_aged">適合陳年</span> 
+                            </em>
+                            <div class="CLEAR"></div>
+                        </li>
+                        <li>
+                            <em class="Tittle">產區：</em>
+                            <em class="Info">
+                                <a href="">日本</a>
+                                ／
+                                <a href="">東北地方</a>
+                                ／
+                                <a href="">山形県</a>
+                            </em>
+                            <div class="CLEAR"></div>
+                        </li> 
+                        
+                        <li>
+                            <em class="Tittle">酒造：</em>
+                            <em class="Info"><a href="">有限会社秀鳳酒造場</a></em>
+                            <div class="CLEAR"></div>
+                        </li>
+                        
+                        <li>
+                            <em class="Tittle">酒精濃度：</em>
+                            <em class="Info">15~16 % abv.</em>
+                            <div class="CLEAR"></div>
+                        </li>
+                        
+                        <li>
+                            <em class="Tittle">類型：</em>
+                            <em class="Info"><a href="">純米吟釀</a></em>
+                            <div class="CLEAR"></div>
+                        </li>
+                        
+                        <li>
+                            <em class="Tittle">米種/精米比例：</em>
+                            <em class="Info">麴米<a href="">出羽燦燦</a>72%,掛米<a href="">出羽燦燦</a>72%</em>
+                            <div class="CLEAR"></div>
+                        </li>
+                        
+                        <li>
+                            <em class="Tittle">酵母：</em>
+                            <em class="Info"><a href="">地區酵母</a>
+                            ／
+                            <a href="">秋田流華酵母AK-1</a></em>
+                            <div class="CLEAR"></div>
+                        </li>
+                        <li>
+                            <em class="Tittle">水：</em>
+                            <em class="Info"><a href="">軟水</a>
+                            ／
+                            <a href="">富士山伏流水</a></em>
+                            <div class="CLEAR"></div>
+                        </li>
+                        <li>
+                            <em class="Tittle">其他資訊：</em>
+                            <em class="Info"><a href="">爽酒</a>
+                            ／
+                            微辛口 +2.3
+                            ／
+                            酸度 0.7
+                            ／
+                            胺基酸度 1.2
+                            </em>
+                            <div class="CLEAR"></div>
+                        </li>
+
+                        <li>
+                            <em class="Tittle" style="margin-top: 10px;">建議適飲溫度：</em>
+                            <div class="thermometer">
+                                <div class="view">
+                                    <div class="temp_show"></div>
+                                    <div class="temp_show"></div>
+                                    <div class="temp_show" style="opacity: 1;"></div>
+                                    <div class="temp_show"></div>
+                                    <div class="temp_show"></div>
+                                    <div class="temp_show"></div>
+                                    <div class="temp_show"></div>
+                                    <div class="temp_show" style="opacity: 1;"></div>
+                                    <div class="temp_show" style="opacity: 1;"></div>
+                                    <div class="temp_show"></div>
+                                    <div class="temp_show"></div>
+                                    <!--never show-->
+                                    <div class="temp_show"></div>
+                                    <!--never show-->
+                                </div>
+                                <div class="thermometer_botder"></div>
+                            </div>
+                            <div class="CLEAR"></div>  
+                        </li>
+                        
+                        <li class="SpecialEvents">
+                            <em class="Tittle">搭配折扣活動：</em>
+                            <em class="Info" >
+                                <a href="">回歸本質，蓄勢待發的正面力量：2012愛酒窩百大回顧展 </a>
+                            </em>
+                            <div class="CLEAR"></div>  
+                        </li>
+                            
+                    </ul><!-- Detail 細項資料 end-->
+                </div>   
+            </div><!-- DetailedHeand  詳細酒資訊 end-->
+        </div><!-- ThirdSign 詳細酒資訊 end--> 
+        <div class="DetailedALL beer_DetailedALL">
+        	<div class="Part"><!-- Part 組合商品-->
+        		<h3>組合商品：</h3>
+        		<div class="wine_detail_part_combined_title">【娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」組合】</div>
+        		<div class="wine_detail_part_combined_layout">
+                    <div class="wine_detail_part_combined_wineinfo_row">
+        			    <div class="wine_detail_part_combined_wineinfo">
+        				    <div class="wine_detail_part_combined_wineinfo_img">
+                                <div class="wine_detail_part_combined_wineinfo_img_number">x3</div>
+        					    <img src="images/pic/beer_square04.jpg">
+            				</div>
+            				<div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+            				<div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+        	   	       	</div>
+        			    <div class="wine_detail_part_combined_plus_icon"></div>
+        			    <div class="wine_detail_part_combined_wineinfo">
+        				    <div class="wine_detail_part_combined_wineinfo_img">
+        					   <img src="images/pic/beer_square04.jpg">
+        				    </div>
+        				    <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+        				    <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+        			    </div>
+        			    <div class="wine_detail_part_combined_plus_icon"></div>
+        			    <div class="wine_detail_part_combined_wineinfo">
+            				<div class="wine_detail_part_combined_wineinfo_img">
+            					<img src="images/pic/beer_square04.jpg">
+            				</div>
+        	       			<div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+        			     	<div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+        			    </div>
+        			    <div class="wine_detail_part_combined_equal_icon"></div>
+        			    <div class="wine_detail_part_combined_price_layout">
+        				    <div class="wine_detail_part_combined_price">
+        					    <div>
+        						    <span>組合價</span>
+        						    <span class="Detail_RED16">$</span>
+        						    <span class="RED24">48,000</span>
+        					    </div>
+        					    <div class="wine_detail_part_combined_addcartBTN"></div>
+        				    </div>
+        			    </div>
+                        <div class="CLEAR"></div>
+                    </div>
+        		</div>
+                <div class="wine_detail_part_combined_title">【娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」組合】</div>
+                <div class="wine_detail_part_combined_layout">
+                    <div class="wine_detail_part_combined_wineinfo_row">
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                                <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_plus_icon"></div>
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                                <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_plus_icon"></div>
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                                <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_plus_icon"></div>
+                    </div>
+                    <div class="CLEAR"></div>
+                    <div class="wine_detail_part_combined_wineinfo_row">
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                                <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_plus_icon"></div>
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                                <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_equal_icon"></div>
+                        <div class="wine_detail_part_combined_price_layout">
+                            <div class="wine_detail_part_combined_price">
+                                <div>
+                                    <span>組合價</span>
+                                    <span class="Detail_RED16">$</span>
+                                    <span class="RED24">48,000</span>
+                                </div>
+                                <div class="wine_detail_part_combined_addcartBTN"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="CLEAR"></div>
+                </div>
+        	</div><!-- Part 組合商品 end-->
+        	<div class="CLEAR"></div>
+            <div class="Part"><!-- Part 組合商品(快速到貨)-->
+                <h3>組合商品：</h3>
+                <div class="wine_detail_part_combined_title">【娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」組合】</div>
+                <div class="wine_detail_part_combined_layout">
+                    <div class="wine_detail_part_combined_wineinfo_row">
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                                <div class="wine_detail_part_combined_wineinfo_img_number">x3</div>
+                                <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_plus_icon"></div>
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                               <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_plus_icon"></div>
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                                <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_equal_icon"></div>
+                        <div class="wine_detail_part_combined_price_layout">
+                            <div class="wine_detail_part_combined_price">
+                                <div>
+                                    <span>組合價</span>
+                                    <span class="Detail_orange16">$</span>
+                                    <span class="orange24">48,000</span>
+                                </div>
+                                <div class="wine_detail_part_combined_FastaddcartBTN"></div>
+                            </div>
+                        </div>
+                        <div class="CLEAR"></div>
+                    </div>    
+                </div>
+            </div><!-- Part 組合商品(快速到貨) end-->
+            <div class="Part"><!-- Part 組合商品(預訂商品)-->
+                <h3>組合商品：</h3>
+                <div class="wine_detail_part_combined_title">【娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」組合】</div>
+                <div class="wine_detail_part_combined_layout">
+                    <div class="wine_detail_part_combined_wineinfo_row">
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                                <div class="wine_detail_part_combined_wineinfo_img_number">x3</div>
+                                <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_plus_icon"></div>
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                               <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_plus_icon"></div>
+                        <div class="wine_detail_part_combined_wineinfo">
+                            <div class="wine_detail_part_combined_wineinfo_img">
+                                <img src="images/pic/beer_square04.jpg">
+                            </div>
+                            <div class="wine_detail_part_combined_wineinfo_ChineseName">橋克岩丘蜜思嘉白酒</div>
+                            <div class="wine_detail_part_combined_wineinfo_EnglishName">Château Suduiraut 2009</div>
+                        </div>
+                        <div class="wine_detail_part_combined_equal_icon"></div>
+                        <div class="wine_detail_part_combined_price_layout">
+                            <div class="wine_detail_part_combined_price">
+                                <div>
+                                    <span>組合價</span>
+                                    <span class="Detail_blue16">$</span>
+                                    <span class="blue24">48,000</span>
+                                </div>
+                                <div class="wine_detail_part_combined_preorderBTN"></div>
+                            </div>
+                        </div>
+                        <div class="CLEAR"></div>
+                    </div>    
+                </div>
+            </div><!-- Part 組合商品(預訂商品) end-->
+            <div class="CLEAR"></div>
+        	<div class="Part"><!-- Part 加價優惠商品-->
+        		<h3>加價優惠商品：</h3>
+        		<div class="wine_detail_part_discount_title">【娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」】</div>
+        		<div class="wine_detail_part_discount_wineinfo">
+        			<div class="wine_detail_part_discount_wineinfo_img">
+        				<img src="images/pic/beer_square04.jpg">
+        			</div>
+        			<div class="wine_detail_part_discount_wineinfo_text_layout">
+        				<div class="wine_detail_part_discount_wineinfo_text_ChineseName">
+        					旭第侯堡 旭第侯甜白酒
+        				</div>
+        				<div class="wine_detail_part_discount_wineinfo_text_EnglishName">
+        					Château Suduiraut ,Château Suduiraut 2009
+        				</div>
+        				<div class="wine_detail_part_discount_wineinfo_text_price">
+        					定價 $1100
+        				</div>
+        				<div class="wine_detail_part_discount_wineinfo_text_iCheersprice">
+        					<span>組合價</span>
+        					<span class="Detail_RED16">$</span>
+        					<span class="RED24">48,000</span>
+        					<button class="wine_detail_part_discount_addcartBTN"></button>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="CLEAR"></div>
+        		<div class="wine_detail_part_discount_title">【娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」】</div>
+        		<div class="wine_detail_part_discount_wineinfo">
+        			<div class="wine_detail_part_discount_wineinfo_img">
+        				<img src="images/pic/beer_square04.jpg">
+        			</div>
+        			<div class="wine_detail_part_discount_wineinfo_text_layout">
+        				<div class="wine_detail_part_discount_wineinfo_text_ChineseName">
+        					旭第侯堡 旭第侯甜白酒
+        				</div>
+        				<div class="wine_detail_part_discount_wineinfo_text_EnglishName">
+        					Château Suduiraut ,Château Suduiraut 2009
+        				</div>
+        				<div class="wine_detail_part_discount_wineinfo_text_price">
+        					定價 $1100
+        				</div>
+        				<div class="wine_detail_part_discount_wineinfo_text_iCheersprice">
+        					<span>組合價</span>
+        					<span class="Detail_orange16">$</span>
+        					<span class="orange24">48,000</span>
+        					<button class="wine_detail_part_discount_FastaddcartBTN"></button>
+        				</div>
+        			</div>
+        		</div>
+                <div class="CLEAR"></div>
+                <div class="wine_detail_part_discount_title">【娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」】</div>
+                <div class="wine_detail_part_discount_wineinfo">
+                    <div class="wine_detail_part_discount_wineinfo_img">
+                        <img src="images/pic/beer_square04.jpg">
+                    </div>
+                    <div class="wine_detail_part_discount_wineinfo_text_layout">
+                        <div class="wine_detail_part_discount_wineinfo_text_ChineseName">
+                            旭第侯堡 旭第侯甜白酒
+                        </div>
+                        <div class="wine_detail_part_discount_wineinfo_text_EnglishName">
+                            Château Suduiraut ,Château Suduiraut 2009
+                        </div>
+                        <div class="wine_detail_part_discount_wineinfo_text_price">
+                            定價 $1100
+                        </div>
+                        <div class="wine_detail_part_discount_wineinfo_text_iCheersprice">
+                            <span>組合價</span>
+                            <span class="Detail_blue16">$</span>
+                            <span class="blue24">48,000</span>
+                            <button class="wine_detail_part_discount_preorderBTN"></button>
+                        </div>
+                    </div>
+                </div>
+        	</div><!-- Part 加價優惠商品 end-->
+        	<div class="CLEAR"></div>
+            <div class="Part"><!-- Part 專家評價-->
+    	        <h3>評價網站：</h3>
+    	        <div class="WineDetail_Rank"><!--一個評分--> 
+        	        <h1>Rate Beer</h1>
+                    <h2>92</h2>
+                    /
+                    <h3>100分</h3>
+                </div><!--一個評分 end-->
+                <div class="WineDetail_Rank"><!--一個評分--> 
+                    <h1>Beeradvocate</h1>
+                    <h2>92</h2>
+                    /
+                    <h3>100分</h3>
+                </div><!--一個評分 end-->
+                <!--20170220 Roger 新增評分範例樣式-->
+                <div class="WineDetail_Rank"><!--一個評分--> 
+                    <h1>Beeradvocate Bros</h1>
+                    <h2>92</h2>
+                    /
+                    <h3>100分</h3>
+                </div><!--一個評分 end-->
+                <!--20170220 Roger 新增評分範例樣式 end-->
+                <div class="CLEAR"></div>
+                <h3 style="margin-top:10px;">得獎記綠：</h3>
+                <div class="WineDetail_Award_layout" title="WBC金牌獎">
+                    <div class="WineDetail_Award_img" style="background-image: url(images/award/AW70.png);"></div>
+                    <div class="WineDetail_Award_text">2014</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="WBC銀牌獎">
+                    <div class="WineDetail_Award_img" style="background-image: url(images/award/AW71.png);"></div>
+                    <div class="WineDetail_Award_text">2013</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="WBC銅牌獎">
+                    <div class="WineDetail_Award_img" style="background-image: url(images/award/AW72.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="歐洲啤酒之星金牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW74.png);"></div>
+                    <div class="WineDetail_Award_text">2012</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="歐洲啤酒之星銀牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW75.png);"></div>
+                    <div class="WineDetail_Award_text">2012</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="歐洲啤酒之星銅牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW76.png);"></div>
+                    <div class="WineDetail_Award_text">2012</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Beer Cup金賞">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW77.png);"></div>
+                    <div class="WineDetail_Award_text">2016</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Beer Cup銀賞">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW78.png);"></div>
+                    <div class="WineDetail_Award_text">2016</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Beer Cup銅賞">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW79.png);"></div>
+                    <div class="WineDetail_Award_text">2016</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Asia Beer Cup金賞">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW80.png);"></div>
+                    <div class="WineDetail_Award_text">2016</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Asia Beer Cup銀賞">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW81.png);"></div>
+                    <div class="WineDetail_Award_text">2016</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Asia Beer Cup銅賞">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW82.png);"></div>
+                    <div class="WineDetail_Award_text">2016</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="AIBA金牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW83.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="AIBA銀牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW84.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="AIBA銅牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW85.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Meininger's International Craft Beer Award白金獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW86.png);"></div>
+                    <div class="WineDetail_Award_text">2012</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Meininger's International Craft Beer Award金獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW87.png);"></div>
+                    <div class="WineDetail_Award_text">2012</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Meininger's International Craft Beer Award銀獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW88.png);"></div>
+                    <div class="WineDetail_Award_text">2012</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="GABF金牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW89.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="GABF銀牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW90.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="GABF銅牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW91.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="USBTC冠軍">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW9293.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="WBA World's Best Beer">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW94.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Beer Challenge特別獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW207.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Beer Challenge金獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW208.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Beer Challenge銀獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW209.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Beer Challenge銅獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW210.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Brewing Awards金牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW211.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Brewing Awards銀牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW212.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="International Brewing Awards銅牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW213.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Champion Beer of Britain金牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW214_Dclass.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Champion Beer of Britain銀牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW215_Eclass.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Champion Beer of Britain銅牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW216_Fclass.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Champion Beer of Britain金牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW229-1.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Champion Beer of Britain銀牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW230-1.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="WineDetail_Award_layout" title="Champion Beer of Britain銅牌獎">
+                    <div class="WineDetail_Award_img2" style="background-image: url(images/award/AW231-1.png);"></div>
+                    <div class="WineDetail_Award_text">2011</div>
+                </div>
+                <div class="CLEAR"></div>
+            </div><!-- Part 專家評價 end-->
+            <div class="CLEAR"></div>
+            <div class="Part"><!-- Part 酒款介紹-->
+    	        <h3>酒款介紹：</h3>
+                <p>
+                    現任的溫貝希特酒莊莊主非常慶幸前一代的堅持：種植格烏茲塔明那 (Gewürztraminer) 葡萄品種，該品種在年輕時與熟齡時所生產出的葡萄品質差異性非常大，成長的過程中也較難掌控，不過酒莊對於格烏茲塔明那一直以來的努力，終於在2005年開始表現出來，如今已擁有將近40年樹齡的葡萄藤深根入地並能結出品質卓越、果香濃郁無比的果實。這款勁道十足的好酒，除了格烏茲塔明那常見的荔枝、玫瑰與蜂蜜香氣，更多了煙燻、肉桂等獨特層次，料理上也相對擁有多元化的搭配選擇，其中烤龍蝦、鵝肝、油脂豐厚的鹹水魚、爆米花與牛舌都是絕配。
+                </p>
+            </div><!-- Part 酒款介紹 end-->
+            <div class="Part"><!-- Part 品飲筆記 -->
+    	        <h3>品飲筆記：</h3>
+                <p>
+                    香氣呈現極致經典的馥郁芬芳：玫瑰、天竺葵和荔枝，隨著陳年時間拉長，已經發展出些許薑與丁香等香料氣息；入口後味蕾所感受到的風味和香氣非常一致，除了煙燻、野花、辛香料等風味，也許還有絲毫礦石般的風味飄渺，口感柔潤甜蜜，如今已是相當可口的美酒，若繼續陳放也將會演化出更有趣的風格，無疑是高品質的象徵。
+                </p>
+            </div><!-- Part 品飲筆記 end-->
+            <div class="CLEAR"></div>
+            <div class="Part"><!-- Part 不能錯過以下酒款 -->
+    	        <h3>不可錯過的相關酒款推薦：</h3>
+                <!-- OneWine 這樣是一瓶 -->
+                <div class="OneWine">
+                    <div class="SingleBottle_IMG">
+                        <img src="images/pic/beer_square01.jpg">
+                    </div>
+                    <div class="Detail_DontMiss_OneWine_info_layout">
+                        <h1><a href="">布魯克林東岸印度淡色愛爾啤酒</a></h1>
+                        <h2><a href="">Brooklyn East IPA </a></h2>
+                        <div class="Detail_DontMiss_OneWine_info_row">
+                            <div class="DontMiss_Capacity">355ml</div>
+                            <div class="DontMiss_Year"></div>
+                            <div class="DontMiss_Award beer_Detail_DontMiss_Award"  title="超級無敵金牌獎">
+                                <img src="images/Award/beer_award01.png" />
+                            </div>
+                        </div>
+                        <div class="CLEAR"></div>
+                        <div class="beer_Detail_DontMiss_ExpiredDate">
+                            <span style="color:#666;">到期日：2106/11</span>
+                        </div>
+                        <div class="CLEAR"></div>
+                        <div class="Detail_DontMiss_OneWine_info_row">
+                            <div class="Detail_DontMiss_Price_Layout">
+                                <h4>
+                                    <b>
+                                        <span class="Detail_DontMiss_dollarsign">$</span>
+                                        <span class="RED20">4,010</span>
+                                        <span class="Detail_DontMiss_PreorderIcon_float"></span>
+                                    </b>
+                                    <div class="wine_detail_DontMiss_soldoutTEXT">
+                                        <a href="#" title="可訂時通知我">可訂通知</a>
+                                        <button title="可訂時通知我" class="Detail_DontMiss_soldoutIcon"></button>
+                                    </div>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>          
+                </div>
+                <!-- OneWine 這樣是一瓶 end-->
+                <!-- OneWine 這樣是一瓶 -->
+                <div class="OneWine">
+                    <div class="SingleBottle_IMG">
+                        <img src="images/pic/beer_square04.jpg">
+                    </div>
+                    <div class="Detail_DontMiss_OneWine_info_layout">
+                    	<h1><a href="">布魯克林東岸印度淡色愛爾啤酒</a></h1>
+                    	<h2><a href="">Brooklyn East IPA </a></h2>
+                        <div class="Detail_DontMiss_OneWine_info_row">
+                            <div class="DontMiss_Capacity">750ml</div>
+                            <div class="DontMiss_Year"></div> 
+                            <div class="DontMiss_Award beer_Detail_DontMiss_Award"  title="超級無敵金牌獎">
+                                <img src="images/Award/beer_award01.png" />
+                            </div>
+                        </div>
+                        <div class="CLEAR"></div>
+                        <div class="beer_Detail_DontMiss_ExpiredDate">
+                            <span style="color:#666;">到期日：2106/11</span>
+                        </div>
+                        <div class="CLEAR"></div>
+                        <div class="Detail_DontMiss_OneWine_info_row">
+                            <div class="Detail_DontMiss_Price_Layout">
+                                <h4>
+                                    <b>
+                                        <span class="Detail_DontMiss_dollarsign">$</span>
+                                        <span class="RED20">4,010</span>
+                                        <span class="Detail_DontMiss_PreorderIcon_float">
+                                            <button title="預訂商品" class="Detail_DontMiss_addCartIcon"></button>
+                                        </span>
+                                    </b>
+                                </h4>
+                            </div>
+                            <div class="Detail_DontMiss_Price_Layout">
+                                <h4>
+                                    <b>
+                                        <span class="Detail_DontMiss_dollarsign">$</span>
+                                        <span class="blue20">4,010</span>
+                                        <span class="Detail_DontMiss_PreorderIcon_float">
+                                            <button title="預訂商品" class="Detail_DontMiss_PreorderIcon"></button>
+                                        </span>
+                                    </b>
+                                </h4>
+                            </div>
+                        </div>    	
+                    </div>
+                </div>
+                <!-- OneWine 這樣是一瓶 end-->
+                <!-- OneWine 這樣是一瓶 -->
+                <div class="OneWine">
+                    <div class="SingleBottle_IMG">
+                        <img src="images/pic/beer_square05.jpg">
+                    </div>
+                    <div class="Detail_DontMiss_OneWine_info_layout">
+                        <h1><a href="">布魯克林東岸印度淡色愛爾啤酒</a></h1>
+                        <h2><a href="">Brooklyn East IPA</a></h2>
+                        <div class="Detail_DontMiss_OneWine_info_row">
+                            <div class="DontMiss_Capacity">355ml</div>
+                            <div class="DontMiss_Year"></div> 
+                            <div class="DontMiss_Award beer_Detail_DontMiss_Award"  title="超級無敵金牌獎">
+                                <strong class="Award3 DontMiss">
+                                    <span class="AwardName">RVF</span>
+                                    <span class="AwardNO">品種賞</span>
+                                </strong>
+                            </div>
+                            
+                        </div>
+                        <div class="CLEAR"></div>
+                        <div class="beer_Detail_DontMiss_ExpiredDate">
+                            <span style="color:#666;">到期日：2106/11</span>
+                        </div>
+                        <div class="CLEAR"></div>
+                        <div class="Detail_DontMiss_OneWine_info_row">
+                            <div class="Detail_DontMiss_Price_Layout">
+                                <h4>
+                                    <b>
+                                        <span class="Detail_DontMiss_dollarsign">$</span>
+                                        <span class="blue20">4,010</span>
+                                        <span class="Detail_DontMiss_PreorderIcon_float">
+                                            <button title="預訂商品" class="Detail_DontMiss_PreorderIcon"></button>
+                                        </span>
+                                    </b>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>      	
+                </div>
+                <!-- OneWine 這樣是一瓶 end-->
+                <!-- OneWine 這樣是一瓶 -->
+                <div class="OneWine">
+                    <div class="SingleBottle_IMG">
+                        <img src="images/pic/beer_square06.jpg">
+                    </div>
+                    <div class="Detail_DontMiss_OneWine_info_layout">
+                        <h1><a href="">布魯克林東岸印度淡色愛爾啤酒</a></h1>
+                        <h2><a href="">Brooklyn East IPA</a></h2>
+                        <div class="Detail_DontMiss_OneWine_info_row">
+                            <div class="DontMiss_Capacity">355ml</div>
+                            <div class="DontMiss_Year"></div> 
+                            <div class="DontMiss_Award beer_Detail_DontMiss_Award"  title="超級無敵金牌獎">
+                                <img src="images/Award/beer_award02.png" />
+                            </div>
+                            
+                        </div>
+                        <div class="CLEAR"></div>
+                        <div class="beer_Detail_DontMiss_ExpiredDate">
+                            <span style="color:#666;">到期日：2106/11</span>
+                        </div>
+                        <div class="CLEAR"></div>
+                        <div class="Detail_DontMiss_OneWine_info_row">
+                            <div class="Detail_DontMiss_Price_Layout">
+                                <h4>
+                                    <b>
+                                        <span class="Detail_DontMiss_dollarsign">$</span>
+                                        <span class="orange20">4,010</span>
+                                        <span class="Detail_DontMiss_PreorderIcon_float">
+                                            <button title="快速到貨" class="Detail_DontMiss_FastaddCartIcon"></button>
+                                        </span>
+                                    </b>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>    	
+                </div>
+                <!-- OneWine 這樣是一瓶 end-->
+                <div class="CLEAR"></div>
+            </div><!-- Part 不能錯過以下酒款 end-->
+            <!-- Part 品飲筆記 201606暫時移除  
+            <div class="Part" >
+    	        <h3>分享我的品飲筆記 :</h3>
+                <div class="View">
+        	        <h4>
+                        <a href="" class="Whose">小艾專業來批判</a><br />
+                        <a href="" class="Where">台北</a><br />
+                        <a href="" class="WithWho">跟朋友一起喝</a>
+        	        </h4>
+                    <h5>
+            	        <img src="images/icon/Evaluate_ALL.png" />
+                        <img src="images/icon/Evaluate_ALL.png" />
+                        <img src="images/icon/Evaluate_ALL.png" />
+                        <img src="images/icon/Evaluate_Half.png" />
+                        <span class="JiuziFraction">3.5分</span>
+           		        <div class="WhatTime">2001年11月12</div><br />
+                        <div class="WhatInfo">
+                    	   口感柔潤甜蜜，如今已是相當可口的美酒，若繼續陳放也將會演化出更有趣的風格，無疑是高品質的象徵。
+                        </div>
+                    </h5>
+                </div>
+                <div class="CLEAR"></div> 
+                <div class="View">
+        	        <h4>
+                        <a href="" class="Whose">踢哪</a><br />
+                        <a href="" class="Where">陰暗的角落</a><br />
+                        <a href="" class="WithWho">獨自一人</a>
+        	        </h4>
+                    <h5>
+            	        <img src="images/icon/Evaluate_Half.png" />
+                        <span class="JiuziFraction">0.5分</span>
+           		        <div class="WhatTime">2011年11月12</div> <br />
+                        <div class="WhatInfo">
+                	        冷淡的光線 哀怨的歌聲 飲酒的人無心晟 世間的繁華 親像夢一攤 也是無較詛 暗淡酒店內 悲傷誰人知 痛苦吞腹內 一杯擱再來 你若有瞭解 甭問阮對叼位來 不願講出來 鬱卒放心內 感情失落的無奈 苦苦塊等待 還是等無愛 虛情的對待 多情的世界 找無真情愛 引阮心悲哀 有愛也罷 無愛嘛快活 今夜伴阮是孤單
+                        </div>
+                    </h5>
+                </div>
+                <div class="CLEAR"></div>  
+                <div class="View">
+        	        <h4>
+                        <a href="" class="Whose">林裕森</a><br />
+                        <a href="" class="Where">專業星球</a><br />
+                        <a href="" class="WithWho">在課堂上喝</a>
+        	        </h4>
+                    <h5>
+            	        <img src="images/icon/Evaluate_ALL.png" />
+                        <img src="images/icon/Evaluate_ALL.png" />
+                        <img src="images/icon/Evaluate_ALL.png" />
+                        <img src="images/icon/Evaluate_ALL.png" />
+                        <img src="images/icon/Evaluate_ALL.png" />
+                        <span class="JiuziFraction">5分</span>
+            	        <div class="WhatTime">2001年1月8</div> <br />
+                        <div class="WhatInfo">
+               		       許多人深信，唯有剛建強固的葡萄酒才能經得起數十年的瓶中熟成，才能慢慢地變化出迷人的陳年滋味。有如比例協調，雄偉穩固的希臘神殿，歷數千年而不倒，許多恆固耐久的葡萄酒，如Pauillac、Barolo、Hermitage、Brunello di Montalcino和Ribera del Duero這些歐陸最經典的紅酒也一樣有著強健的酒體與嚴密的結構。這些酒確實常能歷數十年而不壞，不止屹立不搖，而且還變得更加美味迷人。這是葡萄酒世界裡最完美的古典美貌，即使是貴腐甜酒中的Sauterne、白酒中的Montrachet以及加烈酒中的年份波特都帶有同樣的酒風與格局。
+                        </div>
+                    </h5>
+                </div>
+                <div class="CLEAR"></div>
+                <div class="View">
+        	        <h4>
+                        <a href="" class="Whose">路人甲</a><br />
+                        <a href="" class="Where">在愛情的盡頭...</a><br />
+                        <a href="" class="WithWho">跟路人乙</a>
+                    </h4>
+                    <h5>
+            	        <img src="images/icon/Evaluate_ALL.png" />
+                        <img src="images/icon/Evaluate_ALL.png" />
+                        <img src="images/icon/Evaluate_Half.png" />
+                        <span class="JiuziFraction">2.5分</span>
+                        <div class="WhatTime">2001年11月12</div> <br />
+                    </h5>   
+                </div>
+                <div class="CLEAR"></div>      
+            </div> Part 品飲筆記 201606暫時移除-->   
+        </div>
+    </div>
+</div>
+<!-- CenterALLBG  中段全部 -->
+<div class="CLEAR" ></div>
+
+<div class="FooterALL" >
+	<div class="Footer_position">
+        <ul class="FooterMenu">
+            <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+            <li><a href="" target="_parent">條款及細則</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a></li>
+        </ul>
+        <div class="FooterICON">
+           <button class="Quality"></button>
+           <button class="Join"></button>
+           <button class="Novice"></button>
+        </div>
+    </div>
+</div>
+<!-- FooterALL  頁腳 -->
+
+
+
+<div class="TC_And_UK_ALL">
+	<div class="TC_And_UK">
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul> 
+    
+    </div>
+</div> 
+<!-- TC_And_UK_ALL 中英翻譯 -->
+
+
+<div class="CLEAR"></div>
+
+<div class="CopyRight"> Copyright © 2012 iCheers.tw All Rrights Reserved </div>
+
+
+
+<div class="Warning"><p></p></div>
+
+
+<!-- Warning 警語 -->
+
+</body>
+</html>

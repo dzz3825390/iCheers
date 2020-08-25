@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iCheers愛酒窩 ─ 會員專區</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico">
+
+
+    <link rel="stylesheet" type="text/css" href="css/Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/cart.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/member.css" />
+
+
+
+    <script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//footermenu置中
+		    var FooterMenuWidth = $('.FooterMenu').width();
+		    var FooterWidth = $('.FooterMenu').parent().width();
+		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+		    $('.FooterMenu').css('margin-left',FooterPositionX);
+		})
+	</script>
+
+</head>
+
+
+<body class="index">
+
+    <div class="HeadALL">
+        <div class="HeadMenu">
+            <a href="" class="LogOut">會員登出</a>
+            <a href="" class="HeadMenuLogin">會員專區</a>
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <span class="AccountNumber">ich******, 您好</span>
+        </div>
+        <div class="TagALL_Buy Buy2_margin">
+            <ul>
+                <li class="TagLogo"><a href="index.html"></a></li>
+                <li class="TagMember"></li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+    <div class="member_CenterALL">
+        <div class="member_Center">
+            <div class="Center_Shadow"></div>
+            <div class="member_Name">
+             <em>普級會員</em> <span>ich******</span> 您好:
+            </div>
+            <div class="memberIndexRR">
+                <a href="#" class="ChangeData"></a>
+                <div class="MemberInformation">
+                    
+                    <!--普通會員-->
+                    <div>
+                        <h1 class="glass_icon">您近六個月內累計消費<br />
+                        金額為<span>45,000</span>元，您只要再...</h1>
+                        <h2>YYYY/MM/DD前再消費<span>XX,XXX</span>元<br/>即可升級<em>白銀會員勳章</em>，紅利更優惠！</h2>
+                    </div>
+                    <!--普通會員 end-->
+                    <!--已是白銀會員，未達維持門檻-->
+                    <div style="display: none;">
+                        <h2>您的白銀會員效期為<br />
+                        <span>YYYY/MM/DD～YYYY/MM/DD</span></h2>
+                        <h4><strong>維持白銀資格</strong><br/>
+							<div>目前累計消費金額為XX,XXX元，您只要
+								 YYYY/MM/DD前再消費<span>XX,XXX</span>元，即可維持白銀會員資格
+							</div>
+                        </h4>
+                        
+                        <h4><strong>升等鑽石會員</strong><br/>
+							<div>近六個月內累計消費金額為XX,XXX元，您只要
+								 YYYY/MM/DD前再消費<span>XX,XXX</span>元，即可升等<strong>鑽石會員勳章</strong>，紅利三倍送！
+							</div>
+                        </h4>
+                    </div>
+                    <!--已是白銀會員，未達維持門檻 end-->
+                    <!--已是白銀會員，已達維持門檻-->
+                    <div style="display: none;">
+                    	<h2>您的白銀會員效期為<br />
+                        <span>YYYY/MM/DD～YYYY/MM/DD</span><br/>
+						<div>您已符合續會資格，會員效期將於到期後展延一年。</div>
+                    	</h2>
+                        <h4><strong>升等鑽石會員</strong><br/>
+							<div>近六個月內累計消費金額為XX,XXX元，您只要
+								 YYYY/MM/DD前再消費<span>XX,XXX</span>元，即可升等<strong>鑽石會員勳章</strong>，紅利三倍送！
+							</div>
+                        </h4>
+                    </div>
+                    <!--已是白銀會員，已達維持門檻 end-->
+                    <!--已是鑽石會員，未達維持門檻-->
+                    <div style="display: none;">
+                        <h2>您的鑽石會員效期為<br />
+                        <span>YYYY/MM/DD～YYYY/MM/DD</span></h2>
+                        <h4><strong>維持鑽石資格</strong><br/>
+							<div>目前累計消費金額為XX,XXX元，您只要
+								 YYYY/MM/DD前再消費<span>XX,XXX</span>元，即可維持鑽石會員資格
+							</div>
+                        </h4>
+                    </div>
+                    <!--已是鑽石會員，未達維持門檻 end-->
+                    <!--已是鑽石會員，已達維持門檻-->
+                    <div style="display: none;">
+                    	<h2>您的鑽石會員效期為<br />
+                        <span>YYYY/MM/DD～YYYY/MM/DD</span><br/>
+						<div>目前累計消費金額為XX,XXX元，<br />您已符合續會資格，會員效期將於到期後展延一年。</div></h2>
+                    </div>
+                    <!--已是鑽石會員，已達維持門檻 end-->
+                    <!--手動會員-->
+                    <div style="display: none;">
+                        <h2>您的XX會員效期為
+                        <span>YYYY/MM/DD</span><br/>
+                        <div>目前累計消費金額為XX,XXX元</div>
+                    	</h2>
+                    </div>
+                    <!--手動會員-->
+                    <div class="MemberInformationNotice">會員消費金額以「已出貨訂單金額」計算</div>
+                    <div class="Sommelier">
+                        <a href="#" class="MemberInformationIcon"></a>
+                    </div>
+                </div>
+            </div>
+            <!--memberIndexRR 左欄-->
+            <div class="memberIndexLL">
+                <h1>出貨進度查詢</h1>
+                <div class="MemberProject MemberSpacing">
+                    <a class="member_Menu_BTN"><em></em><span class="Icon_Car"></span>未出貨訂單<strong>3</strong>張</a>
+                    (未付款:<span>2</span>處理中:<span>1</span>已出貨 :<span>12</span>)
+                </div>
+                <!--<div class="MemberProject">
+                    <a class="member_Menu_BTN" style="min-width: 50px; width: 115px; margin-right: 5px;"><em></em><span class="Icon_Cloud"></span>線上酒窖</a>
+                    (酒窖共有<span>21</span>支酒、待評論有<span>5</span>支酒。填寫心得賺紅利)
+                </div>-->
+                <h1>會員紅利/e-Coupon</h1>
+                <div class="MemberProject">
+                    <a href="#" class="member_Menu_BTN"><em></em><span class="Icon_Money"></span>可用的e-Coupon<strong>5</strong>張</a>
+                </div>
+                <!--MemberProject -->
+                <table width="90%" border="0" cellspacing="0" cellpadding="0" class="Coupon" style="margin-left: 5%;">
+                    <tr class="TableTittle">
+                        <td class="TD_Money">e-Coupon面額</td>
+                        <td class="TD_Number">e-Coupon序號</td>
+                        <td class="TD_Day">到期日</td>
+                    </tr>
+                    <tr>
+                        <td class="TD_Money">滿1000折<span>30</span></td>
+                        <td class="TD_Number">33880274</td>
+                        <td class="TD_Day">2013/11/19</td>
+                    </tr>
+                    <tr>
+                        <td class="TD_Money">無低消折<span>30</span></td>
+                        <td class="TD_Number">5858958</td>
+                        <td class="TD_Day">2013/11/19</td>
+                    </tr>
+                </table>
+                <div class="MemberProject">
+                    <a class="member_Menu_BTN"><em></em><span class="Icon_Pig"></span>累計的紅利點數<strong>50</strong>點</a>
+                    (可折抵<strong>50</strong>元)
+                </div>
+                <!--20161011 Roger 移除追蹤記錄功能-->
+                <!--
+                <h1>追蹤紀錄</h1>
+                <div class="MemberProject MemberSpacing">
+                    <a class="member_Menu_BTN"><em></em><span class="Icon_Wine"></span>下次再喝查詢<strong>50</strong>款酒</a>
+                    (有庫存:<span>1</span>已搶購一空 :<span>1</span>可預定:<span>1</span>)
+                </div>
+                -->
+                <!--20161011 Roger 移除追蹤記錄功能 end-->
+                <!--MemberProject -->
+                <div class="MemberProject MemberSpacing">
+                    <a class="member_Menu_BTN"><em></em><span class="Icon_Letter"></span>可訂通知有<strong>3</strong>款酒</a>
+                    (有庫存:<span>1</span>已搶購一空 :<span>1</span>可預定:<span>1</span>)
+                </div>
+                <!--MemberProject -->
+            </div>
+            <!--memberIndexLL 右欄-->
+        </div>
+    </div>
+    <!-- member_CenterALL  中段全部 -->
+
+    <div class="member_FooterALL">
+        <div class="Footer_position">
+            <ul class="FooterMenu">
+                <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+                <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+                <li><a href="" target="_parent">條款及細則</a>｜</li>
+                <li><a href="privacy_policy.html" target="_parent">隱私條款</a></li>
+            </ul>
+            <div class="FooterICON">
+                <a href="qualityGarentee.html" target="_blank">
+                    <button class="Quality"></button>
+                </a>
+                <button class="Join"></button>
+                <button class="Novice"></button>
+            </div>
+        </div>
+    </div>
+    <!-- FooterALL  頁腳 -->
+
+
+    <div class="Warning">
+        <p></p>
+    </div>
+    <!-- Warning 警語 -->
+
+
+
+
+
+
+
+    <div id="notice">
+        <div class="notice_close"><a>關閉</a></div>
+        <div id="notice_body">
+            <p>
+                依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，<br />
+                客服人員將會盡快與您e-mail聯繫！
+            </p>
+            <input name="Email" type="text" />
+            <div class="btn"><a href="" target="_self" class="btn_submit">確定</a></div>
+        </div>
+    </div>
+    <!-- 彈出 發送確認信視窗 -->
+
+
+
+
+
+</body>
+</html>

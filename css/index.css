@@ -1,0 +1,300 @@
+@charset "utf-8";
+/* CSS Document */
+
+.index_Groups{
+	width:330px;
+	height:179px;
+	margin-top:8px;
+	border-bottom:1px #988780 dotted;} 
+		
+.index_IMG{
+	float:left;
+	width:150px;
+	height:120px;
+	overflow:hidden;}
+
+.index_IMG img{
+	height:120px;
+	width:auto;}
+
+.index_Groups h5{
+	float:right;
+	width:180px;
+	color: #000;
+	margin-bottom:5px;
+	max-height:32px;
+	max-height:30px\0;
+	*max-height:28px;
+	overflow:hidden;
+	cursor:pointer;}
+	
+.index_Groups h5:hover{
+	text-decoration:underline;}
+
+.index_Groups p{
+	float:right;
+	width:180px;
+	max-height:80px;
+	overflow:hidden;
+	line-height:20px;
+	color: #999;}
+	
+.index_Groups p a{
+	color: #999;
+	cursor:pointer;}
+	
+
+
+
+	
+.GroupsPriceArea div.DollarSign{
+	margin-top:20px;
+	margin-right:0px;}
+	
+body.index .GroupsPriceArea h3{
+	color:#717071;}	
+
+body.index .SellPrice{
+	color: #CF3448;
+	font-size: 20px;
+	font-weight:300;
+	padding: 0px 2px;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height:normal;
+	margin-top:15px;}
+	
+/*body.index .GroupsPriceArea button{
+	margin-right:0px;
+	margin-top:15px;
+	margin-left:-10px;}
+	*/
+	
+/*20180124 Roger add*/
+.PopWindow_layout{
+	background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666666;
+    box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+    position: fixed;
+    z-index: 999999;
+}
+
+.PopWindow_title_layout{
+	width: 100%;
+    height: 40px;
+    background-color: #666666;
+    border-radius: 4px 4px 0 0;
+}
+
+.PopWindow_title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+}
+
+.PopWindow_title_closeBTN {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon/btn_close.png);
+    float: right;
+    margin-top: -30px;
+    margin-right: 10px;
+}
+
+.PopWindow_body {
+    padding: 20px;
+    max-height: 400px;
+}
+
+.PopWindow_body p {
+    font-size: 14px;
+    color: #333333;
+    line-height: 22px;
+    margin-top: 5px;
+}
+
+.PopWindow_body p:first-child {
+	margin-top: 0;
+}
+
+.PopWindow_body p em{
+	font-weight: bold;
+	color: #c20012;
+	font-size: 20px;
+	margin: 0 5px;
+}
+
+.PopWindow_body p.PopWindow_body_coupon{
+	text-align: center;
+	color: #8e6681;
+	font-weight: bolder;
+	font-size: 42px;
+	line-height: 42px;
+}
+
+.PopWindow_body_notice{
+	font-size: 10px;
+	text-align: center;
+	color: #c20012;
+	margin-top: 5px;
+}
+
+.PopWindow_body_btnRow{
+	margin-top: 30px;
+	height: 44px;
+	display: inline-block;
+}
+
+.PopWindow_body_btnRow:after{
+	content: '';
+	display: block;
+	clear: both;
+
+}
+
+.PopWindow_body_btn{
+	display: inline-block;
+	float: left;
+	text-align: center;
+	margin-right: 5px;
+	padding: 10px;
+	border: 1px solid #999;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	background: linear-gradient(#c3bd6a 50%, #a49f56 50%);
+}
+
+.PopWindow_body_btn:hover{
+	cursor: pointer;
+	margin-top: 1px;
+	background: linear-gradient(to top, #c3bd6a 50%, #a49f56 50%);
+}
+
+.PopWindow_body_btn:last-child{
+	margin-right: 0;
+}
+
+.PopWindow_body_input_layout {
+    width: 100%;
+    height: 32px;
+    margin: 16px 0 16px 0;
+    display: none;
+}
+
+.PopWindow_body_input_layout:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.PopWindow_body_input_layout span {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+    float: left;
+}
+
+.PopWindow_body_input_layout input {
+    display: inline-block;
+    height: 30px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    line-height: 30px;
+    float: left;
+    margin-left: 16px;
+    padding: 0 5px;
+    color: #333333;
+    outline: none;
+}
+
+.PopWindow_body_input_submitBTN{
+	width: 80px;
+	height: 32px;
+	background-color: #4d4d4d;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	line-height: 32px;
+	border-radius: 8px;
+	float: left;
+	margin-left: 8px;
+}
+
+.PopWindow_body_input_submitBTN:hover{
+	cursor: pointer;
+	background-color: #666666;
+}
+
+.PopWindow_row{
+	margin-top: 16px;
+}
+
+.PopWindow_row:first-child{
+	margin-top: 0;
+}
+
+.PopWindow_row_title{
+	font-size: 14px;
+	color: #666; 
+}
+
+.PopWindow_row input[type=text]{
+	width: calc(100% - 12px);
+	display: inline-block;
+    height: 30px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    line-height: 30px;
+    padding: 0 5px;
+    color: #333333;
+    outline: none;
+    margin-top: 5px;
+}
+
+.PopWindow_row_radio{
+	margin-top: 5px;
+	color: #666;
+	padding: 0 10px;
+}
+
+.PopWindow_row_radio:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.PopWindow_row_radio input[type=radio]{
+	margin-top: 3px;
+	margin-right: 5px;
+	float: left;
+}
+
+.PopWindow_row_radio_active{
+	background-color: yellow;
+	color: #c20012;
+}
+
+/*20180124 Roger add end*/
+
+
+
+
+
+
+
+
+
+
+
+

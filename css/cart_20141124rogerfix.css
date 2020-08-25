@@ -1,0 +1,1075 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 版型尺寸 */
+.CartALL{ clear:both; display:block; width:950px; margin:0 auto; position: relative; }
+.Cart_Border{ background-color:#fff; border: 2px solid #ececec; width: 946px; margin:0 auto; }
+.Cart_List{ background-color:#fff; margin:2px; width:942px; padding-bottom:20px; }
+.MemberTitle{ line-height:35px;	font-size:13px;	color:#717071; text-indent: 20px; }
+.MemberTitle a{ color:#785472; }
+.CartALL h4{ background-color:#000; color:#fff; line-height:32px; font-size:15px; padding:0 0 0 15px; margin:0 0 10px 0; border-left:#C90 3px solid; border-right:#C90 3px solid; font-weight:bold; clear:both;}
+.CartALL h4 span{ color:#FFC; font-size:12px;}
+.CartALL h5{ 
+	font-size:15px;
+	color:#666;
+	height:35px;
+	font-weight:bold;
+	letter-spacing:3px;
+	border-left:3px #666 solid;
+	background-color:#f2f2f2;
+	line-height:35px;
+	margin-bottom: 10px;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 17px; 
+	font-family: "微軟正黑體", Arial, serif;}
+.CartALL h5 span{ color:#C33; font-size:12px; font-weight:normal; padding:0 5px;}
+
+/*--------------------------------------------------------- 我的酒單 START ---------------------------------------------------------*/
+
+/* 我的酒單表頭 */
+.CartList_Title { display:block; background-color: #7b7c7d; height: 31px; border-top: 6px solid #000; }
+.CartList_Title li{ float:left; }
+
+.CartList_Title li a { display:block; color:#fff; font-size:13px; text-decoration:none; line-height:29px; padding:0; margin:0; text-align: center; margin-right:10px;}
+.CartList_Checkbox { display:block; width:40px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Checkbox.png) no-repeat right bottom; }
+.CartList_Pic a { display: block; width:90px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Pic.png) no-repeat right bottom; }
+.CartList_Name a { display: block; width:450px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Name.png) no-repeat right bottom; }
+.CartList_Price a { display: block; width:120px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Price.png) no-repeat right bottom; }
+.CartList_Amount a { display: block; width:80px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Amount.png) no-repeat right bottom; }
+.CartList_Sum a { display: block; width:120px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Sum.png) no-repeat right bottom; }
+.CartList_Del a { display: block; width:80px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Del.png) no-repeat right bottom; }
+.CartList_Auto a { display: block; width:80px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Auto.png) no-repeat right bottom; }
+
+
+/* 我的酒單列表 */
+.CartList_Item{ padding:8px 0; border-bottom:1px dotted #cccccc; overflow:auto; }
+.CartList_Item li{ float:left; padding-top:10px; font-family: Arial, "微軟正黑體";}
+.CartList_Item strong { font-weight: bold; color: #333333; font-size: 18px; line-height: 40px; float: left; display: block; width: 100%; text-align: center; border-bottom: 1px dotted #b4b4b4; }
+.CartList_Item em{ font-weight: bold; color: #333; font-size: 14px; line-height: 30px; margin-bottom: 5px; float: left; display: block; width: 100%; text-align:left; background: #ece7e6; }
+.CartList_Item em span{ font: bold 16px Arial, Helvetica, sans-serif; }
+.CartList_Item em a { color:#333; text-decoration:none; }
+.CartList_ItemCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
+.CartList_ItemPic { display:block; width:80px; margin-right:10px; text-align: center; }
+.CartList_ItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartList_ItemName { display:block; width:350px; margin-right:10px; padding-left:5px; }
+.CartList_ItemName p { color:#999; line-height:21px; }
+.CartList_ItemNameEN a { color:#999; text-decoration:none; }
+.CartList_ItemNameCN a { color:#000; font-weight:bold; text-decoration:none; padding:0 0 3px 0; font-size:14px; }
+.CartList_ItemPlace a { color:#666; text-decoration:none; padding:0 0 3px 0; }
+.CartList_ItemSales a { color:#333; line-height:21px; }
+.CartList_ItemPrice { display:block; width:120px; margin-right:10px; padding-left:5px; font-weight:bold; line-height:18px; color:#717071; text-align: center; }
+/*//20141124 Rober 新增無紅利icon start//*/
+.CartList_ItemPrice_NoBouns{
+	margin-top: 10px;
+}
+/*//20141124 Rober 新增無紅利icon end//*/
+.CartList_ItemPrice strike{font-size: 16px; }
+.CartList_ItemPrice dd { font-size: 11px; font-weight: normal; }
+.CartList_ItemPrice input { vertical-align: middle; }
+.CartList_ItemAmount { display:block; width:60px; margin-right:10px; color:#717071; text-align: center; }
+.CartList_ItemAmount input{ vertical-align: middle; width: 60px; text-align: center; height: 19px; }
+.CartList_ItemUnit { display:block; width:60px; margin-right:10px; padding-left:10px; color:#717071; text-align: center; }
+.CartList_ItemSum { display:block; width:120px; margin-right:20px; font-weight:bold; line-height:18px; color:#717071; text-align:right;}
+.CartList_ItemDel { display:block; width:80px;  margin-right:10px; margin-left:10px; }
+.CartList_ItemDel img { margin-bottom: 5px; }
+.CartList_ItemAuto { display:block; width:80px; text-align: center; }
+.CartList_ItemNameEN a span, .CartList_ItemNameCN a span, .CartList_ItemPlace a span { /*white-space:nowrap;*/  line-height:18px; }
+.CartList_ItemPrice span, .CartList_ItemSum span, .CartList_GiftPrice span{ color:#c20012; font-size: 16px; }
+.CartList_Item_line{ border-bottom:1px solid #BFBFBF; }
+
+/* 我的酒單組合細項 */
+.CartList_GroupWrap { padding:0; margin:0; clear:both;width:100%; }
+.CartList_Group { display:block; overflow:auto; padding: 5px 0 5px 130px; *width:750px; }
+.CartList_Group li { float:left; padding-top:10px; font-family: Arial, "微軟正黑體";}
+.CartList_GroupPic { width:80px; text-align: center; }
+.CartList_GroupPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartList_GroupName { display:block; width:350px; padding:0 0 0 15px; *padding-bottom:10px; line-height: 21px; margin-right:10px; }
+.CartList_GroupNameEN a { color:#999; text-decoration:none; padding:0 0 3px 0; }
+.CartList_GroupNameCN a { color:#333; font-weight:bold; text-decoration:none; padding:0 0 3px 0; }
+.CartList_GroupPlace a { color:#333333; text-decoration:none; padding:0 0 3px 0; }
+.CartList_GroupSum { color:#999999; }
+.CartList_GroupAmount{ display:block; width:70px; color:#717071; text-align: center; }
+.CartList_GroupListPrice{ display:block; width:80px; margin-right:10px; padding-left:5px; font-weight:bold; line-height:18px; color:#717071; text-align: center; }
+.CartList_GroupListPrice strike{font-size: 16px; }
+
+/* 我的酒單任選優惠價 */
+.CartList_ChooseGroupWrap { padding:0; margin:0; clear:both;width:100%; }
+.CartList_ChooseGroupName { display:block; width:440px; margin-right:10px; padding-left:5px; }
+.CartList_ChooseGroupNameCN a { color:#000; font-weight:bold; text-decoration:none; padding:0 0 3px 0; font-size:14px; }
+.CartList_ChooseGroupName p { color:#999; line-height:21px; }
+.CartList_ChooseGroupAmount { display:block; width:60px; margin-right:10px;  font-weight:bold; line-height:18px; color:#717071; text-align: center; }
+.CartList_ChooseGroupAmount span{ color:#c20012; font-size: 16px; }
+.CartList_ChooseItem { display:block; overflow:auto; padding: 5px 0 5px 0px; width:100%; }
+.CartList_ChooseItem li{ float:left; padding-top:10px; font-family: Arial, "微軟正黑體";}
+.CartList_ChooseItem strong { font-weight: bold; color: #333333; font-size: 18px; line-height: 40px; float: left; display: block; width: 100%; text-align: center; border-bottom: 1px dotted #b4b4b4; }
+.CartList_ChooseItem em{ font-weight: bold; color: #333; font-size: 14px; line-height: 30px; margin-bottom: 5px; float: left; display: block; width: 100%; text-align:left; background: #ece7e6; }
+.CartList_ChooseItem em span{ font: bold 16px Arial, Helvetica, sans-serif; }
+.CartList_ChooseItem em a { color:#333; text-decoration:none; }
+.CartList_ChooseItemCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
+.CartList_ChooseItemPic { display:block; width:80px; margin-right:10px; text-align: center; }
+.CartList_ChooseItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartList_ChooseItemName { display:block; width:350px; margin-right:10px; padding-left:5px; }
+.CartList_ChooseItemName p { color:#999; line-height:21px; }
+.CartList_ChooseItemNameEN a { color:#999; text-decoration:none; }
+.CartList_ChooseItemNameCN a { color:#000; font-weight:bold; text-decoration:none; padding:0 0 3px 0; font-size:14px; }
+.CartList_ChooseItemPlace a { color:#666; text-decoration:none; padding:0 0 3px 0; }
+.CartList_ChooseItemSales a { color:#333; line-height:21px; }
+.CartList_ChooseItemPrice { display:block; width:120px; margin-right:10px; padding-left:5px; font-weight:bold; line-height:18px; color:#717071; text-align: center; }
+.CartList_ChooseItemPrice strike{font-size: 16px; }
+.CartList_ChooseItemPrice dd { font-size: 11px; font-weight: normal; }
+.CartList_ChooseItemPrice input { vertical-align: middle; }
+.CartList_ChooseItemAmount { display:block; width:60px; margin-right:10px; color:#717071; text-align: center; }
+.CartList_ChooseItemAmount input{ vertical-align: middle; width: 60px; text-align: center; height: 19px; }
+.CartList_ChooseItemUnit { display:block; width:60px; margin-right:10px; padding-left:10px; color:#717071; text-align: center; }
+.CartList_ChooseItemSum { display:block; width:120px; margin-right:20px; font-weight:bold; line-height:18px; color:#717071; text-align:right;}
+.CartList_ChooseItemDel { display:block; width:80px;  margin-right:10px; margin-left:10px; }
+.CartList_ChooseItemDel img { margin-bottom: 5px; }
+.CartList_ChooseItemAuto { display:block; width:80px; text-align: center; }
+.CartList_ChooseItemNameEN a span, .CartList_ChooseItemNameCN a span, .CartList_ChooseItemPlace a span { /*white-space:nowrap;*/  line-height:18px; }
+.CartList_ChooseItemPrice span, .CartList_ChooseItemSum span{ color:#c20012; font-size: 16px; }
+.CartList_ChooseItem_line{ border-bottom:1px solid #BFBFBF; }
+
+/* 我的酒單優惠加購 */
+.CartList_AddItem{ padding:8px 0; border-bottom:1px dotted #cccccc; overflow:auto; }
+.CartList_AddItem li{ float:left; padding-top:10px; font-family: Arial, "微軟正黑體";}
+.CartList_AddItem strong { font-weight: bold; color: #333333; font-size: 18px; line-height: 40px; float: left; display: block; width: 100%; text-align: center; border-bottom: 1px dotted #b4b4b4; }
+.CartList_AddItem em{ font-weight: bold; color: #333; font-size: 14px; line-height: 30px; margin-bottom: 5px; float: left; display: block; width: 100%; text-align:left; background: #ece7e6; }
+.CartList_AddItem em span{ font: bold 16px Arial, Helvetica, sans-serif; }
+.CartList_AddItem em a { color:#333; text-decoration:none; }
+.CartList_AddItemCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
+.CartList_AddItemPic { display:block; width:80px; margin-right:10px; text-align: center; }
+.CartList_AddItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartList_AddItemName { display:block; width:350px; margin-right:10px; padding-left:5px; }
+.CartList_AddItemName p { color:#999; line-height:21px; }
+.CartList_AddItemNameEN a { color:#999; text-decoration:none; }
+.CartList_AddItemNameCN a { color:#000; font-weight:bold; text-decoration:none; padding:0 0 3px 0; font-size:14px; }
+.CartList_AddItemPlace a { color:#666; text-decoration:none; padding:0 0 3px 0; }
+.CartList_AddItemSales a { color:#333; line-height:21px; }
+.CartList_AddItemPrice { display:block; width:120px; margin-right:10px; padding-left:5px; font-weight:bold; line-height:18px; color:#717071; text-align: center; }
+.CartList_AddItemPrice strike{font-size: 16px; }
+.CartList_AddItemPrice dd { font-size: 11px; font-weight: normal; }
+.CartList_AddItemPrice input { vertical-align: middle; }
+.CartList_AddItemAmount { display:block; width:60px; margin-right:10px; color:#717071; text-align: center; }
+.CartList_AddItemAmount input{ vertical-align: middle; width: 60px; text-align: center; height: 19px; }
+.CartList_AddItemUnit { display:block; width:60px; margin-right:10px; padding-left:10px; color:#717071; text-align: center; }
+.CartList_AddItemSum { display:block; width:120px; margin-right:20px; font-weight:bold; line-height:18px; color:#717071; text-align:right;}
+.CartList_AddItemDel { display:block; width:80px;  margin-right:10px; margin-left:10px; }
+.CartList_AddItemDel img { margin-bottom: 5px; }
+.CartList_AddItemAuto { display:block; width:80px; text-align: center; }
+.CartList_AddItemNameEN a span, .CartList_AddItemNameCN a span, .CartList_AddItemPlace a span { /*white-space:nowrap;*/  line-height:18px; }
+.CartList_AddItemPrice span, .CartList_AddItemSum span{ color:#c20012; font-size: 16px; }
+.CartList_AddItem_line{ border-bottom:1px solid #BFBFBF; }
+
+/* 我的酒單贈品 */
+.CartList_GiftItem{ padding:8px 0; border-bottom:1px dotted #cccccc; overflow:auto; }
+.CartList_GiftItem li{ float:left; padding-top:10px; font-family: Arial, "微軟正黑體";}
+.CartList_GiftItem strong { font-weight: bold; color: #333333; font-size: 18px; line-height: 40px; float: left; display: block; width: 100%; text-align: center; border-bottom: 1px dotted #b4b4b4; }
+.CartList_GiftItem em{ font-weight: bold; color: #333; font-size: 14px; line-height: 30px; margin-bottom: 5px; float: left; display: block; width: 100%; text-align:left; background: #ece7e6; }
+.CartList_GiftItem em span{ font: bold 16px Arial, Helvetica, sans-serif; }
+.CartList_GiftItem em a { color:#333; text-decoration:none; }
+.CartList_GiftItemCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
+/*//20141124 Roger新增checkbox位置調整 start//*/
+.CartList_ItemCheckbox_position{
+	margin-top: 25px;
+	margin-left: 15px;
+}
+/*//20141124 Roger新增checkbox位置調整 end//*/
+.CartList_GiftItemPic { display:block; width:80px; margin-right:10px; text-align: center; }
+.CartList_GiftItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartList_GiftItemName { display:block; width:350px; margin-right:10px; padding-left:5px; }
+.CartList_GiftItemName p { color:#999; line-height:21px; }
+.CartList_GiftItemNameEN a { color:#999; text-decoration:none; }
+.CartList_GiftItemNameCN a { color:#000; font-weight:bold; text-decoration:none; padding:0 0 3px 0; font-size:14px; }
+.CartList_GiftItemNameBonus span{ color:#333; font-weight:bold; text-decoration:none; padding:0 0 3px 0; font-size:14px; }
+.CartList_GiftItemNameCoupon span{ color:#333; font-weight:bold; text-decoration:none; padding:0 0 3px 0; font-size:14px; }
+.CartList_GiftItemPlace a { color:#666; text-decoration:none; padding:0 0 3px 0; }
+.CartList_GiftItemSales a { color:#333; line-height:21px; }
+.CartList_GiftItemPrice { display:block; width:120px; margin-right:10px; padding-left:5px; font-weight:bold; line-height:18px; color:#717071; text-align: center; }
+.CartList_GiftItemPrice strike{font-size: 16px; }
+.CartList_GiftItemPrice dd { font-size: 11px; font-weight: normal; }
+.CartList_GiftItemPrice input { vertical-align: middle; }
+.CartList_GiftItemAmount { display:block; width:60px; margin-right:10px; color:#717071; text-align: center; }
+.CartList_GiftItemAmount input{ vertical-align: middle; width: 60px; text-align: center; height: 19px; }
+.CartList_GiftItemAmount span{ display:block; width:60px; margin-right:10px; font-weight:bold; line-height:18px;font-size: 16px;  color:#c20012; text-align:center; }
+.CartList_GiftItemUnit { display:block; width:60px; margin-right:10px; padding-left:10px; color:#717071; text-align: center; }
+.CartList_GiftItemSum { display:block; width:120px; margin-right:20px; font-weight:bold; line-height:18px; color:#717071; text-align:right;}
+.CartList_GiftItemDel { display:block; width:80px;  margin-right:10px; margin-left:10px; }
+.CartList_GiftItemDel img { margin-bottom: 5px; }
+.CartList_GiftItemAuto { display:block; width:80px; text-align: center; }
+.CartList_GiftItemNameEN a span, .CartList_GiftItemNameCN a span, .CartList_GiftItemPlace a span { /*white-space:nowrap;*/  line-height:18px; }
+.CartList_GiftItemPrice span, .CartList_GiftItemSum span{ color:#c20012; font-size: 16px; }
+.CartList_GiftItem_line{ border-bottom:1px solid #BFBFBF; }
+
+
+/* 我的酒單 購買以上商品的人也買了 */
+.CartGift { display:block; overflow:auto; border: 1px solid #dfdfdf; margin-bottom: 20px; background-color:#FFF; }
+.CartGift_Item{ float:left; width:280px; margin:0 0 10px 10px; border:#dfdfdf 1px solid; padding:10px; position:relative; display:block;}
+.CartGift_Item li{float:left;font-family:Arial, Helvetica, sans-serif;}
+.CartGift_ItemPic { width:80px; text-align: center;}
+.CartGift_ItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartGift_ItemName a{ width:200px; display:block; color:#999;	text-decoration:none; padding-bottom: 3px; }
+.CartGift_ItemExchange{ display: block; float: right; }
+.CartGift_ItemPrice{ width:100px; display:block; font-weight:bold; line-height:18px; color:#717071; }
+
+ 
+ /* 我的酒單總計 */
+.Cart_Total{ clear:both; margin-bottom: 10px; overflow: auto; background: #ECE7E6; }
+.Cart_Total ul { width:600px; margin: 10px 0 10px 300px; }
+.Cart_Total li { font: 12px/32px ; color: #717071; height: 32px;text-align: right; font-family: Arial, "微軟正黑體"; font-weight:bold;}
+.Cart_Total li span { float: left; width: 500px; }
+.Cart_Total li span a,
+.cart_data a.btn_bonus{ text-decoration: underline; color: #296993;}
+.cart_data a.btn_bonus:hover{ text-decoration:none; }
+
+.Cart_Total li span.b { font-size: 15px; font-weight: bold; }
+.Cart_Total li strong { float: right;}
+.Cart_Total li strong.b{ font-size: 15px; font-weight: bold; color: #c20012; }
+.Cart_Total li strong.b2{ font-size: 15px; font-weight: bold;}
+.Cart_Total li.line{ border-bottom: 1px solid #c0c0c0; }
+
+
+a.Fee{
+	color:#296993;
+	text-decoration:underline;}
+
+  
+.Cart_Total li.FreightNotches{
+	display:none;
+	width:100%;
+	height:100px;
+	padding-bottom:10px;
+	text-align: right;
+	  }
+ 
+	
+
+.cart_data li.FreightNotches2{
+	 display:none;
+	 height:100px;
+	 padding-left:12%;
+	 width:86%;
+	 height:100px;
+	 border-bottom:none;}
+	 
+
+
+	
+.Cart_Total li.FreightNotches table,
+li.FreightNotches2 table{
+	border:#BEBEBE 1px solid;
+	text-align:center;}
+
+
+.Cart_Total li.FreightNotches table tr th,
+li.FreightNotches2 table tr th{
+	background-color:#999;
+	color:#FFF;
+	text-align:center;}	
+
+
+/* 確認送出 */
+.BTN_CONSULT {
+	width:100%;
+	text-align:center;
+	vertical-align: middle;
+	margin-bottom:30px; }
+
+
+.BTN_CONSULT p {  font-size: 12px; line-height: 20px; color: #575757;  padding-top: 10px; }
+.BTN_CONSULT span { color: #575757; font: 30px Arial, Helvetica, sans-serif; }
+/*
+.btn_ContinueShopping  { background: url(../images/icon/btn_ContinueShopping.png) no-repeat left top; width: 160px; height: 41px; border:none; cursor:pointer; text-indent:-999em; vertical-align:middle; }
+.btn_ContinueShopping:hover { background: url(../images/icon/btn_ContinueShopping2.png) no-repeat left top; width: 160px; height: 41px; border:none; cursor:pointer; text-indent:-999em; vertical-align:middle; }
+*/
+.btn_ContinueShopping { font-size: 15px; color: #333; text-decoration: underline; }
+.btn_SendConfirmEmail3 { background: url(../images/icon/btn_SendConfirmEmail3.png) no-repeat left top; width: 160px; height: 41px; border:none; cursor:pointer; text-indent:-999em; vertical-align:middle; }
+.btn_SendConfirmEmail3:hover { background: url(../images/icon/btn_SendConfirmEmail2.png) no-repeat left top; width: 160px; height: 41px; border:none; cursor:pointer; text-indent:-999em; vertical-align:middle; }
+.btn_SendConfirmEmail { background: url(../images/icon/btn_SendConfirmEmail.png) no-repeat left top; width: 160px; height: 41px; border:none; cursor:pointer; text-indent:-999em; vertical-align:middle; }
+.btn_SendConfirmEmail:hover { background: url(../images/icon/btn_SendConfirmEmail2.png) no-repeat left top; width: 160px; height: 41px; border:none; cursor:pointer; text-indent:-999em; vertical-align:middle; }
+
+
+/* 我的酒單eCoupon */
+.Cart_eCoupon{ background-color: #edf0c8; width: 900px; display: block; padding: 5px 20px 5px; margin: 0 auto 20px; color: #666666; font-family: Arial, Helvetica, sans-serif; border: 1px solid #ced471; }
+.Cart_eCoupon p{ float:right; line-height: 25px;}
+.Cart_eCoupon span{ color: #c20012;	font-weight: bold; }
+.Cart_eCoupon a img, .Cart_eCoupon input { vertical-align:middle; }
+
+
+/* 年份無差別說明 */
+.AboutAuto{ cursor:pointer;}
+.AboutAutoInfo{ display:block; background-color:#eeeeee; padding:25px 20px; margin:5px 9px 0; border:1px solid #D7D7D7; position:absolute; width:220px; left: 675px; top: 200px; z-index:30000; display:none; }
+.AboutAutoInfo p{ color:#717071; line-height:18px; font-size:12px;}
+.AboutAutoInfo p.CLOSE { display:block; width:13px; height:13px;	background:url(../images/icon/btn_del_1.png) left top no-repeat; position:absolute;	left: 240px;top: 10px; cursor:pointer; }
+
+
+
+
+/* 我的酒整批按鈕 */
+.CartList_Batch { background-color: #f2f2f2; padding: 10px; height: 25px; }
+.CartList_Batch span{ color: #666666; height: 50px; }
+
+
+/* 我的酒單頁籤按鈕 */
+.Cart_Label { height: 35px; overflow: auto; position: relative; }
+.Cart_Label li{	height: 35px; width: 100px; padding-right: 5px; float: left; cursor:pointer; }
+.btn_Batch { background: url(../images/icon/btn_MyList2.png) no-repeat left top; }
+.btn_Batch2 { background: url(../images/icon/btn_NextTime2.png) no-repeat left top; }
+.selected { background-image: url(../images/icon/btn_MyList.png); }
+.selected2 { background-image: url(../images/icon/btn_NextTime.png); }
+
+
+/* 我的酒單列表(當酒單內有已售完商品時) */
+
+
+.CartStrike_Item{ padding:8px 0; border-bottom:#b4b4b4 dotted 1px; overflow:auto; }
+.CartStrike_Item li{ float:left; padding-top:10px; font-family:Arial, Helvetica, sans-serif; }
+.CartStrike_ItemCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
+.CartStrike_ItemPic { display:block; width:80px; margin-right:10px; text-align: center; }
+.CartStrike_ItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartStrike_ItemName { display:block; width:350px; margin-right:10px; padding-left:5px; }
+.CartStrike_ItemName p { color:#999999; line-height:21px; text-decoration: line-through; }
+.CartStrike_ItemNameEN a { color:#999999; text-decoration:none; text-decoration:line-through; }
+.CartStrike_ItemNameCN a { color:#999999; font-weight:bold; text-decoration:line-through; padding:0 0 3px 0; }
+.CartStrike_ItemPlace a { color:#999999; text-decoration:none; padding:0 0 3px 0; }
+.CartStrike_ItemSales a { color:#999999; line-height:21px; text-decoration:line-through; }
+.CartStrike_ItemPrice { display:block; width:120px; margin-right:10px; padding-left:5px; font-weight:bold; line-height:18px; color:#999999; text-align: center; text-decoration: line-through; }
+.CartStrike_ItemPrice strike, .CartStrike_ItemPrice span{ font-size:16px;}
+
+.CartStrike_ItemAmount { display:block; width:60px; margin-right:10px; color:#999999;  text-align: center; text-decoration: line-through;}
+.CartStrike_ItemAmount input{ vertical-align: middle; width: 45px; text-align: center; }
+.CartStrike_ItemUnit { display:block; width:60px; margin-right:10px; padding-left:10px; color:#999999; }
+.CartStrike_ItemSum { display:block; width:120px; margin-right:20px; font-weight:bold; line-height:18px; color:#999999; text-align:right; text-decoration: line-through; font-size:16px; }
+.CartStrike_ItemDel { display:block; width:80px;  margin-right:10px; }
+.CartStrike_ItemDel img { margin-bottom: 5px; }
+.CartStrike_ItemAuto { display:block; width:80px; text-align: center; }
+.CartStrike_ItemNameEN a span, .CartStrike_ItemNameCN a span, .CartStrike_ItemPlace a span { white-space:nowrap; line-height:18px; }
+.CartStrike_ItemPrice span, CartStrike_ItemSum span, .CartStrike_GiftPrice span{ color:#999999; }
+
+
+/* 我的酒單組合細項(當酒單內有已售完商品時) */
+.CartStrike_GroupWrap { padding:0; margin:0; clear:both;width:100%; }
+.CartStrike_Group { display:block; overflow:auto; padding: 5px 0 5px 130px; *width:750px; }
+.CartStrike_Group li { float:left; padding-top:10px; font-family:Arial, Helvetica, sans-serif; }
+.CartStrike_GroupPic { width:80px; text-align: center; }
+.CartStrike_GroupPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartStrike_GroupName { display:block; width:350px; padding:0 0 0 15px; *padding-bottom:10px; line-height: 21px; margin-right:10px; }
+.CartStrike_GroupNameEN a { color:#999999; text-decoration:none; padding:0 0 3px 0;  text-decoration: line-through; }
+.CartStrike_GroupNameCN a { color:#999999; font-weight:bold; text-decoration:none; padding:0 0 3px 0;  text-decoration: line-through; }
+.CartStrike_GroupPlace a { color:#999999; text-decoration:none; padding:0 0 3px 0; text-decoration: line-through;  text-decoration: line-through; }
+.CartStrike_GroupSum { color:#999999;  text-decoration: line-through;}
+.CartStrike_GroupAmount{ display:block; width:60px; color:#999999;  text-decoration: line-through; text-align: center;}
+
+/* 預定 */
+.Cart_Booking { background: #F8F5F5; }
+.Cart_Booking strong { font-weight: bold; color: #333333; font-size: 18px; line-height: 40px; float: left; display: block; width: 100%; text-align: center; }
+.Cart_Booking_line{ border-bottom:2px solid #d1d1d1; }
+/*--------------------------------------------------------- 我的酒單 END ---------------------------------------------------------*/
+
+/*--------------------------------------------------------- 彈跳視窗 START ---------------------------------------------------------*/
+
+/* 發送確認信視窗 */
+#notice { width:470px; height:284px; display:none; z-index:30000; background:url(../images/notice_bg.png) center center no-repeat; position:fixed; left:35%; top:30%; }
+.notice_close{ width:20px; height:20px; float:right; margin:20px 20px 0 0; cursor:pointer; }
+.notice_close a{ display:block; background:url(../images/icon/btn_close.png) left top; width:20px; height:20px; text-indent:-9999px;}
+.notice_close a:hover{ background:url(../images/icon/btn_close2.png) left top; }
+#notice_body h1{ text-align:center; font-size:12px; font-weight:normal; color:#ffc98f; padding:0; }
+#notice_body input{background:url(../images/loginError_input_bg.png) left center no-repeat; width:280px; height:35px; line-height:38px; padding:0 15px; margin-left:120px; margin-top:12px; color:#be9d4f; border:none; font-family:Verdana, Geneva, sans-serif;}
+#notice_body p{	color:#717071; padding:78px 45px 0 60px; line-height:18px; }
+
+#notice_body em{
+	color:#717071;
+	line-height:18px;
+	clear:both;
+	float:left;
+	display:inline-block;
+	margin-left:60px;
+	margin-top:8px;}
+
+#notice_body .btn{ display:block; width:248px;  margin:30px 0 0 180px; overflow:auto; }
+#notice_body .btn a{ text-indent:-9999px; outline:none; float:left; }
+
+#notice_body .btn a.btn_submit{
+	display:inline-block;
+	width:100px;
+	height:41px;
+	background:url(../images/icon/btn_sumit.png) left top no-repeat;
+	margin-top:10px;
+	cursor:pointer; }
+
+
+
+#notice_body .btn a:hover.btn_submit{ display:block; width:100px; height:41px; background:url(../images/icon/btn_sumit2.png) left top no-repeat; cursor:pointer; }
+#notice_body .btn a:hover.btn_cancel{ background:url(../images/btn_cancel.png) left bottom no-repeat;}
+#notice_body input{
+	outline:none;}
+
+
+/* 送出確認視窗 */
+#notice2{ width:470px; height:250px;  background:url(../images/submit_sucess_bg.png) left top no-repeat; display:none; z-index:3100; position:fixed; left:35%; top:30%; }
+#notice2_body p{ color:#717071; padding:90px 0 0 190px; line-height:18px; }
+#notice2_body .btn{ width:96px; margin:30px 0 0 186px;}
+#notice2_body .btn a{ display:block; width:100px; height:41px; background:url(../images/icon/btn_home.png) left top no-repeat; text-indent:-9999px; outline:none; cursor:pointer; }
+#notice2_body .btn a:hover{ background:url(../images/icon/btn_home2.png) left top no-repeat; cursor:pointer; }
+
+
+/* 滿18歲視窗 */
+#notice8{ 
+	width:470px;
+	height:250px;
+	display:none;
+	z-index:9999;
+	background:url(../images/notice8_bg.png) left top no-repeat;
+	position:fixed;
+	left:30%;
+	top:30%;
+	cursor:pointer; }
+	
+#notice8_body p{ color:#717071; padding:90px 0 0 190px; line-height:18px; }
+#notice8_body .btn{ width:96px; margin:30px 0 0 186px;}
+#notice8_body .btn a{ display:block; width:160px; height:41px; background:url(../images/icon/btn_above18.png) left top no-repeat; text-indent:-9999px; outline:none; cursor:pointer;}
+#notice8_body .btn a:hover{ background:url(../images/icon/btn_above182.png) left top no-repeat;	cursor:pointer; }
+
+
+
+
+
+/* 資料已送出視窗 */
+#notice3{ width:470px; height:250px; background:url(../images/notice3_bg.png) left top no-repeat; display:none; z-index:3000; position:fixed; left:35%; top:30%; }
+#notice3_body p{ color:#717071; padding:90px 0 0 190px; line-height:18px; }
+#notice3_body .btn{ width:96px; margin:25px 0 0 186px; }
+#notice3_body .btn a{ display:block; width:100px; height:41px; background:url(../images/icon/btn_home.png) left top no-repeat; text-indent:-9999px; outline:none; cursor:pointer; }
+#notice3_body .btn a:hover{ background:url(../images/icon/btn_home2.png) left top no-repeat; cursor:pointer; }
+
+/* 訂單優惠序號不正確 */
+#notice11{ width:470px; height:250px; background:url(../images/notice11_bg.png) left top no-repeat; display:none; z-index:3000; position:fixed; left:35%; top:30%; }
+#notice11_body p{ color:#717071; padding:90px 0 0 190px; line-height:18px; }
+#notice11_body .btn{ width:96px; margin:25px 0 0 186px; }
+#notice11_body .btn a{ display:block; width:100px; height:41px; background:url(../images/icon/btn_confirm.png) left top no-repeat; text-indent:-9999px; outline:none; cursor:pointer; }
+#notice11_body .btn a:hover{ background:url(../images/icon/btn_confirm2.png) left top no-repeat; cursor:pointer; }
+
+
+
+/* 資料未填寫完全視窗 */
+#notice4{ width:470px; height:250px;  background:url(../images/notice4_bg.png) left top no-repeat; display:none; z-index:3200; position:fixed; left:35%; top:30%; }
+#notice4_body p{ color:#717071; padding:90px 0 0 190px; line-height:18px; }
+#notice4_body .btn{ width:96px; margin:30px 0 0 186px;}
+#notice4_body .btn a{ display:block; width:100px; height:41px; background:url(../images/icon/btn_confirm.png) left top no-repeat; text-indent:-9999px; outline:none; cursor:pointer; }
+#notice4_body .btn a:hover{ background:url(../images/icon/btn_confirm2.png) left top no-repeat; cursor:pointer; }
+
+
+/* 酒單內有已售完商品視窗 */
+#notice5{ width:470px; height:250px; background:url(../images/notice5_bg.png) left top no-repeat; display:none; z-index:3000; position:fixed; left:35%; top:30%; }
+#notice5_body p{ color:#717071; padding:90px 0 0 190px; line-height:18px; }
+#notice5_body .btn{ width:96px; margin:35px 0 0 186px; }
+#notice5_body .btn a{ display:block; width:100px; height:41px; background:url(../images/icon/btn_confirm.png) left top no-repeat; text-indent:-9999px; outline:none; cursor:pointer; }
+#notice5_body .btn a:hover{ background:url(../images/icon/btn_confirm2.png) left top no-repeat; cursor:pointer; }
+
+
+/* e-Coupon優惠視窗 */
+#notice6{ width:470px; height:250px;  background:url(../images/notice6_bg.png) left top no-repeat; display:none; z-index:3100; position:fixed; left:35%; top:30%; }
+
+#notice6_body p{
+	color:#717071;
+	padding:80px 0 0 190px;
+	line-height:20px; }
+	
+#notice6_body p .Whisky{
+	font-size:10px;
+	color:#c20012;
+	display:inline-block;
+	margin-bottom:10px;}
+	
+#notice6_body .btn{ width:96px; margin:30px 0 0 186px;}
+#notice6_body .btn a{ display:block; width:100px; height:41px; background:url(../images/icon/btn_confirm.png) left top no-repeat; text-indent:-9999px; outline:none; cursor:pointer; }
+#notice6_body .btn a:hover{ background:url(../images/icon/btn_confirm2.png) left top no-repeat; cursor:pointer; }
+
+
+/* 紅利折點視窗 */
+/*// 20141124 Roger 修改height//*/
+#notice7{ width:530px; height:275px;  background:url(../images/notice7_bg.png) left top no-repeat; display:none; z-index:3100; position:fixed; left:35%; top:30%; }
+#notice7_body p {
+	color: #717071;
+	line-height: 18px;
+	padding-top: 90px;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 190px;
+}
+#notice7_body p input{
+	margin-top: 8px;
+}
+/*//20141124 Roger新增紅利點數重點提醒樣式 start//*/
+#notice7_body em {
+	line-height: 18px;
+	font-weight: 900;
+	color: #C1272D;
+}
+/*//20141124 Roger新增紅利點數重點提醒樣式 end//*/
+#notice7_body p span{ color: #ce3341; }
+#notice7_body .btn{ width:96px; margin:30px 0 0 186px;}
+#notice7_body .btn a{ display:block; width:100px; height:41px; background:url(../images/icon/btn_confirm.png) left top no-repeat; text-indent:-9999px; outline:none; cursor:pointer; }
+#notice7_body .btn a:hover{ background:url(../images/icon/btn_confirm2.png) left top no-repeat; cursor:pointer; }
+
+/*#notice6{
+	width:470px;
+	height:270px;
+	display:none;
+	z-index:30000;
+	background:url(../images/notice6_bg.png) left top no-repeat;
+	position:fixed;
+	left:30%;
+	top:30%;
+	cursor:pointer;
+}
+#notice7{
+	width:470px;
+	height:270px;
+	display:none;
+	z-index:30000;
+	background:url(../images/notice7_bg.png) left top no-repeat;
+	position:fixed;
+	left:30%;
+	top:30%;
+	cursor:pointer;
+}*/
+
+#notice9{
+	width:470px;
+	height:270px;
+	display:none;
+	z-index:30000;
+	background:url(../images/notice9_bg.png) left top no-repeat;
+	position:fixed;
+	left:30%;
+	top:30%;
+	cursor:pointer;
+}
+
+
+/* 登入會員 */
+#notice10{
+	width:467px;
+	height:324px;
+	background:url(../images/notice10_bg.png) left top no-repeat;
+	display:none;
+	z-index:3100;
+	position:fixed;
+	left:35%;
+	top:20%;}
+	
+#notice10 p{
+	color:#717071;
+	padding:70px 0 0 170px;
+	line-height:18px;}
+	
+.notice10_Login{
+	margin:12px 0 0 205px;}
+	
+#notice10 span{
+	color:#666;
+	text-decoration:underline;
+	cursor:pointer;
+	margin-left:10px;}
+	
+#notice10 span:hover{
+	text-decoration:none;}
+	
+#notice10_body .btn{ 
+	margin:15px 0 0 186px;}
+	
+#notice10_body .btn a{
+	display:block;
+	width:100px;
+	height:41px;
+	background:url(../images/icon/btn_confirm.png) left top no-repeat;
+	text-indent:-9999px;
+	outline:none;
+	cursor:pointer;}
+	
+#notice10_body .btn a:hover{
+	background:url(../images/icon/btn_confirm2.png) left top no-repeat;
+	cursor:pointer; }
+	
+#notice10_body input{
+	background-color:transparent;
+	display:inline-block;
+	height:25px;
+	width:197px;
+	border:none;
+	margin-left:220px;}
+	
+
+	
+
+
+#notice7_body .BTN, #notice9_body .BTN{ width:280px; margin-top:152px; margin-left:99px;}
+#notice7_body .BTN a, #notice9_body .BTN a{ float:left; cursor:pointer;}
+#notice7_body .BTN a.btn_confirm, #notice9_body .BTN a.btn_confirm{ float:left; display:block; width:111px; height:52px; background:url(../images/btn_confirm2.png) left top no-repeat;}
+#notice7_body .BTN a.checkMyList, #notice9_body .BTN a.checkMyList{ float:left; display:block; width:165px; height:52px; background:url(../images/btn_checkMyList.png) left top no-repeat;}
+#notice7_body .BTN a.btn_confirm:hover, #notice9_body .BTN a.btn_confirm:hover{ background:url(../images/btn_confirm2.png) left bottom no-repeat;}
+#notice7_body .BTN a.checkMyList:hover, #notice9_body .BTN a.checkMyList:hover{background:url(../images/btn_checkMyList.png) left bottom no-repeat;}
+#notice8_body .BTN a.btn_above18{ display:block; margin-top:49px; margin-left:156px; width:138px; height:38px; background:url(../images/icon/btn_above18.png) left top no-repeat; cursor:pointer;}
+#notice8_body .BTN a.btn_above18:hover{ background:url(../images/btn_above182.png) left bottom no-repeat;}
+
+
+/*--------------------------------------------------------- 彈跳視窗 END ---------------------------------------------------------*/
+
+/*--------------------------------------------------------- 客戶基本資料填寫頁 START ---------------------------------------------------------*/
+
+/* 客戶基本資料填寫頁 */
+.cart_data{ 
+	margin: 0 auto;
+	width: 900px;
+	margin-bottom:15px;
+	padding-bottom:15px;
+	border:#dfdfdf 1px solid;
+	overflow: auto;
+	background-color: #FFF; }
+		
+.cart_data p{
+	/*width:750px;*/
+	width:700px;}
+
+
+
+
+.cart_data h1{ text-align:right; width:180px; }
+.cart_data li{ display:block; float:left; font-size: 13px; line-height: 30px; height:30px; color: #000; padding:15px 0 5px 0; *padding:0; border-bottom: 1px dotted #dfdfdf; }
+.cart_data2 li{padding:3px 0 3px 0;}
+
+.cart_data h1 span{ color:#F00;}
+.cart_data h2{ font-size:13px; color:#664b07; padding:0 0 0 24px; margin:0; line-height:24px; }
+.cart_data h3{ font-size:12px; font-weight:normal; color:#717071; padding:0 0 0 54px; margin:0; line-height:24px; }
+.cart_data h3 span{ color: #900; }
+.cart_data h3 strong { color: #CCC; }
+.cart_data h6{ color:#717071; line-height:24px; float:right; width:750px; padding:5px 0 5px 5px; font-size:12px; font-weight:normal; *padding:0; border-bottom:1px dotted #976b2e; border-top:1px dotted #976b2e; background-color:#ececec; }
+.cart_data p img{ margin:0 0 -6px 0; }
+.cart_data h5 span.color { color:#717171;}
+.cart_data .Invoice{ font-size:13px; color:#333333; padding:10px 0 0 54px; margin:0; clear:both; }
+.cart_data .Invoice span{ color: #900; }
+.cart_data .Invoice strong{ color: #ccc; }
+.cart_data .Invoice2{ color:#717071; line-height:24px; }
+
+
+
+.cart_data .Invoice3{
+	color:#717071;
+	padding:0 0 0 50px;
+	line-height:24px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #dfdfdf;
+	clear:both; }
+	
+.cart_data .Invoice3 p{ clear:both; float:none; }
+
+#Invo1 { margin-left:40px;}
+
+
+.btn_send { background: url(../images/icon/btn_send.png) no-repeat left top; width: 160px; height: 41px; border:none; cursor:pointer; vertical-align:middle; margin:0 auto;}
+.btn_send:hover { background: url(../images/icon/btn_send2.png) ;width: 160px; height: 41px; border:none; cursor:pointer; text-indent:-999em; vertical-align:middle; }
+
+
+
+.cart_data .DataTextarea {height:80px;}
+.cart_data .DataTextarea p { *margin-top:5px;}
+
+li.DeliveryTime{
+	padding-top:0px;}
+
+
+/*--------------------------------------------------------- 客戶基本資料填寫頁 END ---------------------------------------------------------*
+
+/*--------------------------------------------------------- 修改確認信 START ---------------------------------------------------------*/
+/* 修改確認信文字 */
+.reviseOrderInfo { line-height:35px; font-size:13px; color:#333333; text-indent: 20px; }
+.reviseOrderInfo .redword{ color:#c20012; font-weight: bold; text-decoration: underline; }
+.cursorPointer{ cursor:pointer;}
+
+/* 修改確認信表頭 */
+.ReviseOrder_Title { display:block; background-color: #7b7c7d; height: 31px; border-top: 6px solid #000; }
+.ReviseOrder_Title li{ float:left; }
+.ReviseOrder_Title li a{ display:block; color:#fff; font-size:13px; text-decoration:none; line-height:29px; padding:0; margin:0; text-align: center; }
+.ReviseOrder_Pic a { display:block; width:90px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartWish_Pic.png) no-repeat right bottom; }
+.ReviseOrder_Name a{ display:block; width:540px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_ReviseOrder_Name.png) no-repeat right bottom; }
+.ReviseOrder_Price a{ display:block; width:110px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_ReviseOrder_Price.png) no-repeat right bottom; }
+.ReviseOrder_Amount a{ display:block; width:80px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_ReviseOrder_Amount.png) no-repeat right bottom; }
+.ReviseOrder_Unit a{ display:block; width:100px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_ReviseOrder_Unit.png) no-repeat right bottom; }
+.ReviseOrder_Sum a{ display:block; width:110px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_ReviseOrder_Sum.png) no-repeat right bottom; }
+
+/* 修改確認信列表 */
+.ReviseOrder_Item { padding:8px 0; border-bottom:#b4b4b4 dotted 1px; overflow:auto; }
+.ReviseOrder_Item li { float:left; padding-top:10px; font-family:Arial, Helvetica, sans-serif; }
+.ReviseOrder_ItemPic { display:block; width:80px; margin-left:10px; text-align: center; }
+.ReviseOrder_ItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.ReviseOrder_ItemName { display:block; width:430px; padding-left:10px; margin-right:10px; }
+.ReviseOrder_ItemName p { color:#666666; line-height:21px; }
+.ReviseOrder_ItemNameEN a { color:#a3a34f; text-decoration:none; padding:0 0 3px 0; }
+.ReviseOrder_ItemNameCN a { color:#785472; font-weight:bold; text-decoration:none; padding:0 0 3px 0; }
+.ReviseOrder_ItemPlace a { color:#333333; text-decoration:none; padding:0 0 3px 0; }
+.ReviseOrder_ItemSales a { color:#785472; line-height:21px; }
+.ReviseOrder_ItemPrice { display:block; width:90px; margin-right:10px; padding-left:10px; font-weight:bold; line-height:18px; color:#717071; text-align: left; }
+.ReviseOrder_ItemPrice span{ font-size: 15px; }
+.ReviseOrder_ItemPrice strike{ font-size: 15px; }
+.ReviseOrder_ItemAmount { display:block; width:70px; margin-right:10px; color:#717071; text-align: center; }
+.ReviseOrder_ItemUnit { display:block; width:90px; margin-right:10px; color:#717071; text-align: center; }
+.ReviseOrder_ItemSum { display:block; width:100px; font-weight:bold; line-height:18px; color:#717071; text-align: center; }
+.ReviseOrder_ItemSum span{ font-size: 15px; }
+
+.ReviseOrder_ItemNameEN a span, .ReviseOrder_ItemNameCN a span, .ReviseOrder_ItemPlace a span { white-space:nowrap; line-height:18px; }
+.ReviseOrder_ItemPrice span, .ReviseOrder_ItemSum span, .ReviseOrder_GiftPrice span{ color:#c20012; }
+
+/* 修改確認信組合細項 */
+.ReviseOrder_GroupWrap { padding:0; margin:0; clear:both;width:100%; }
+.ReviseOrder_Group { overflow:auto; padding: 5px 0 5px 130px; *width:750px; display:block; }
+.ReviseOrder_Group li { float:left; padding-top:10px; font-family:Arial, Helvetica, sans-serif; }
+.ReviseOrder_GroupPic { width:80px; text-align: center; }
+.ReviseOrder_GroupPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.ReviseOrder_GroupName { width:500px; padding:0 0 0 15px; *padding-bottom:10px; line-height: 21px; margin-right:10px; }
+.ReviseOrder_GroupNameEN a { color:#a3a34f; text-decoration:none; padding:0 0 3px 0; }
+.ReviseOrder_GroupNameCN a { color:#785472; font-weight:bold; text-decoration:none; padding:0 0 3px 0; }
+.ReviseOrder_GroupPlace a { color:#333333; text-decoration:none; padding:0 0 3px 0; }
+.ReviseOrder_GroupSum { color:#999999; }
+.ReviseOrder_GroupAmount { display:block; width:90px; color:#717071; text-align: center; }
+
+.ReviseOrder_Total { background-color: #f2f2f2; padding: 10px; margin-bottom: 10px; }
+.ReviseOrder_Total{ clear:both; margin-bottom: 10px; overflow: auto; background: #ECE7E6; }
+.ReviseOrder_Total ul { width:600px; margin: 10px 0 10px 300px; }
+.ReviseOrder_Total li { font: 12px/32px ; color: #717071; height: 32px;text-align: right; font-family: Arial, "微軟正黑體"; font-weight:bold;}
+.ReviseOrder_Total li span { float: left; width: 500px; }
+.ReviseOrder_Total li span a,
+.ReviseOrder_Total a.btn_bonus{ text-decoration: underline; color: #296993;}
+.ReviseOrder_Total a.btn_bonus:hover{ text-decoration:none; }
+
+.ReviseOrder_Total li span.b { font-size: 15px; font-weight: bold; }
+.ReviseOrder_Total li strong { float: right;}
+.ReviseOrder_Total li strong.b{ font-size: 15px; font-weight: bold; color: #c20012; }
+.ReviseOrder_Total li strong.b2{ font-size: 15px; font-weight: bold;}
+.ReviseOrder_Total li.line{ border-bottom: 1px solid #c0c0c0; }
+
+
+/* 修改確認信(當酒單內有已售完商品時) */
+.ReviseOrderStrike_Item { padding:8px 0; border-bottom:#b4b4b4 dotted 1px; overflow:auto; }
+.ReviseOrderStrike_Item strong { font-weight: bold; color: #333333; font-size: 18px; line-height: 40px; float: left; display: block; width: 100%; text-align: center; border-bottom: 1px dotted #b4b4b4; }
+.ReviseOrderStrike_Item em{ font-weight: bold; color: #333; font-size: 14px; line-height: 30px; margin-bottom: 5px; float: left; display: block; width: 100%; text-align:left; background: #ece7e6; }
+.ReviseOrderStrike_Item em span{ font: bold 16px Arial, Helvetica, sans-serif; }
+.ReviseOrderStrike_Item em a { color:#333; text-decoration:none; }
+.ReviseOrderStrike_Item li { float:left; padding-top:10px; font-family:Arial,"微軟正黑體"; }
+.ReviseOrderStrike_ItemPic { display:block; width:80px; margin-left:10px; text-align: center; }
+.ReviseOrderStrike_ItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.ReviseOrderStrike_ItemName { display:block; width:430px; padding-left:10px; margin-right:10px; }
+.ReviseOrderStrike_ItemName p { color:#999999; line-height:21px; text-decoration: line-through;}
+.ReviseOrderStrike_ItemNameEN a { color:#999999; text-decoration:none; padding:0 0 3px 0; text-decoration: line-through; }
+.ReviseOrderStrike_ItemNameCN a { color:#999999; font-weight:bold; text-decoration:none; padding:0 0 3px 0; text-decoration: line-through; }
+.ReviseOrderStrike_ItemNameCN span { font-size:14px; color:#000; font-weight:bold;  padding:0 0 3px 0;  }
+.ReviseOrderStrike_ItemPlace a { color:#999999; text-decoration:none; padding:0 0 3px 0; text-decoration: line-through; }
+.ReviseOrderStrike_ItemSales a { color:#999999; line-height:21px; text-decoration: line-through; }
+.ReviseOrderStrike_ItemPrice { display:block; width:90px; margin-right:10px; padding-left:10px; font-weight:bold; line-height:18px; color:#717071; text-align: center; text-decoration: line-through; }
+.ReviseOrderStrike_ItemPrice strike{ font-size: 15px; }
+.ReviseOrderStrike_ItemPrice span{ font-size: 15px; }
+.ReviseOrderStrike_ItemAmount { display:block; width:70px; margin-right:10px; color:#717071; text-align: center; text-decoration: line-through; }
+.ReviseOrderStrike_ItemUnit { display:block; width:90px; margin-right:10px; color:#717071; text-align: center; text-decoration: line-through; }
+.ReviseOrderStrike_ItemSum { display:block; width:100px; font-weight:bold; line-height:18px; color:#717071; text-align: center; text-decoration: line-through; }
+.ReviseOrderStrike_ItemSum  span{ font-size: 15px; }
+
+.ReviseOrderStrike_ItemNameEN a span,
+.ReviseOrderStrike_ItemNameCN a span,
+.ReviseOrderStrike_ItemPlace a span {
+	white-space:nowrap;
+	line-height:18px;}
+	
+.ReviseOrderStrike_ItemNameCN a span{
+	color:#000;}	
+	
+.ReviseOrderStrike_ItemNameCN a span{
+	font-size:14px;
+	color:#000;}
+
+
+	
+.ReviseOrderStrike_ItemPrice span, .ReviseOrderStrike_ItemSum span, .ReviseOrderStrike_GiftPrice span{ color:#999999; }
+
+/* 修改確認信組合細項(當酒單內有已售完商品 */
+.ReviseOrderStrike_GroupWrap { padding:0; margin:0; clear:both;width:100%; }
+.ReviseOrderStrike_Group { overflow:auto; padding: 5px 0 5px 130px; *width:750px; display:block; }
+.ReviseOrderStrike_Group li { float:left; padding-top:10px;}
+.ReviseOrderStrike_GroupPic { width:80px; text-align: center; }
+.ReviseOrderStrike_GroupPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.ReviseOrderStrike_GroupName { width:305px; padding:0 0 0 15px; *padding-bottom:10px; line-height: 21px; margin-right:10px; text-decoration: line-through; }
+.ReviseOrderStrike_GroupNameEN a { color:#999999; text-decoration:none; padding:0 0 3px 0; text-decoration: line-through; }
+.ReviseOrderStrike_GroupNameCN a { color:#999999; font-weight:bold; text-decoration:none; padding:0 0 3px 0; text-decoration: line-through; }
+.ReviseOrderStrike_GroupPlace a { color:#999999; text-decoration:none; padding:0 0 3px 0; text-decoration: line-through; }
+.ReviseOrderStrike_GroupPrice { display:block; width:90px; margin-right:10px; padding-left:10px; font-weight:bold; line-height:18px; color:#717071; text-align: center; text-decoration: line-through; }
+.ReviseOrderStrike_GroupPrice strike{ font-size: 15px; }
+.ReviseOrderStrike_GroupSum { color:#999999; text-decoration: line-through; }
+.ReviseOrderStrike_GroupAmount { display:block; width:70px; margin-right:10px; color:#717071; text-align: center; text-decoration: line-through; }
+.ReviseOrderStrike_GroupUnit { display:block; width:90px; margin-right:10px; color:#717071; text-align: center; text-decoration: line-through; }
+.ReviseOrderStrike_Total { background-color: #f2f2f2; padding: 10px; margin-bottom: 10px; }
+.ReviseOrderStrike_Total P { color:#999999; border-bottom: 1px dotted #999999; text-align: right; height: 30px; line-height: 30px; padding-right: 20px; }
+.ReviseOrderStrike_Total li {	color:#999999; text-align: right; height: 30px; line-height: 30px; padding-right: 20px; list-style-type: none; }
+.ReviseOrderStrike_Total li span{	color:#999999; margin: 0 20px; }
+.ReviseOrderStrike_Total h2 {	border-top: 1px dotted #999999;	color:#717071; text-align: right; padding: 10px 20px 0; }
+.ReviseOrderStrike_Total P span {	color:#999999; font-weight: bold; margin: 0 10px; }
+.ReviseOrderStrike_Total h2 span { color:#999999;	font-weight: bold; font-size: 18px; margin: 0 10px; }
+
+
+.btn_InputInfo {
+	background: url(../images/icon/btn_InputInfo.png) no-repeat left top;
+	width: 160px;
+	height: 41px;
+	border:none;
+	cursor:pointer;
+	/*text-indent:-999em;*/
+	vertical-align:middle;}
+	
+.btn_InputInfo:hover{
+	background: url(../images/icon/btn_InputInfo2.png) ;}
+	
+	
+
+/*--------------------------------------------------------- 修改確認信 END ---------------------------------------------------------*/
+
+/*--------------------------------------------------------- 追蹤清單 START ---------------------------------------------------------*/
+
+/* 追蹤清單表頭 */
+.CartWish_Title { display:block; background-color: #7b7c7d; height: 31px; border-top: 6px solid #000; }
+.CartWish_Title li{ float:left; }
+.CartWish_Title li a { display:block; color:#fff; font-size:13px; text-decoration:none; line-height:29px; padding:0; margin:0; text-align: center; }
+.CartWish_Checkbox { display:block; width:40px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartWish_Checkbox.png) no-repeat right bottom; }
+.CartWish_Pic a { display:block; width:90px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartWish_Pic.png) no-repeat right bottom; }
+.CartWish_Name a { display:block; width:670px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartWish_Name.png) no-repeat right bottom; }
+.CartWish_Price a { display:block; width:90px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartWish_Price.png) no-repeat right bottom; }
+.CartWish_Del a { display:block; width:140px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartWish_Del.png) no-repeat right bottom; }
+
+/* 追蹤清單列表 */
+.CartWish_Item{ padding:8px 0; border-bottom:#b4b4b4 dotted 1px; overflow:auto; }
+.CartWish_Item li{ float:left; padding-top:10px; font-family:Arial, Helvetica, sans-serif; }
+.CartWish_ItemCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
+.CartWish_ItemPic { display:block; width:80px; margin-right:10px; text-align: center; }
+.CartWish_ItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartWish_ItemName { display:block; width:570px; margin-right:10px; padding-left:5px; }
+.CartWish_ItemName p { color:#666666; line-height:21px; }
+.CartWish_ItemNameEN a { color:#999; text-decoration:none; }
+.CartWish_ItemNameCN a { color:#333; font-weight:bold; text-decoration:none; padding:0 0 3px 0; }
+.CartWish_ItemPlace a { color:#333333; text-decoration:none; padding:0 0 3px 0; }
+.CartWish_ItemSales a { color:#666; line-height:21px; }
+.CartWish_ItemPrice { display:block; width:80px; margin-right:10px; padding-left:5px; font-weight:bold; line-height:18px; color:#717071; text-align: left; }
+.CartWish_ItemPrice strike { font-size: 16px; }
+.CartWish_ItemDel { display:block; width:120px;  margin-right:10px; }
+.CartWish_ItemDel img { margin-bottom: 5px; }
+.CartWish_ItemNameEN a span, .CartWish_ItemNameCN a span, .CartWish_ItemPlace a span { white-space:nowrap; line-height:18px; }
+.CartWish_ItemPrice span, .CartWish_ItemSum span, .CartWish_GiftPrice span{ color:#c20012; font-size: 16px; }
+
+/* 追蹤清單細項 */
+.CartWish_GroupWrap { padding:0; margin:0; clear:both;width:100%; }
+.CartWish_Group { overflow:auto; padding: 5px 0 5px 130px; *width:750px; display:block; }
+.CartWish_Group li { float:left; padding-top:10px; font-family:Arial, Helvetica, sans-serif; }
+.CartWish_GroupPic { width:80px; text-align: center; }
+.CartWish_GroupPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
+.CartWish_GroupName { display:block; width:560px; padding:0 0 0 15px; *padding-bottom:10px; line-height: 21px; }
+.CartWish_GroupNameEN a { color:#999; text-decoration:none; padding:0 0 3px 0; }
+.CartWish_GroupNameCN a { color:#333; font-weight:bold; text-decoration:none; padding:0 0 3px 0; }
+.CartWish_GroupPlace a { color:#333333; text-decoration:none; padding:0 0 3px 0; }
+.CartWish_GroupSum { color:#999999; }
+.CartWish_GroupAmount{ display:block; width:60px; margin-left:10px; color:#717071; }
+
+
+
+/*--------------------------------------------------------- 追蹤清單 END ---------------------------------------------------------*/
+
+/*--------------------------------------------------------- 網頁警語 START ---------------------------------------------------------*/
+
+/* 警語 */
+.above18Proclaim{ display:block; padding:25px 25px 17px; color:#666; line-height:18px; border: 1px solid #dcdcdc; filter:alpha(opacity=75); -moz-opacity:0.8; -khtml-opacity: 0.8; opacity: 0.8; background-color: #FFF; margin: 20px 0; }
+.above18Proclaim li{ padding-bottom:8px; list-style:disc; margin-left:20px; line-height: 22px; color: #717071; font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+.above18Proclaim li .redword{ color:#c20012;}
+.above18Proclaim li strong{ font-weight:bold; text-decoration:underline;}
+.above18Proclaim form{ text-align:center; color:#000; padding:5px; background-color:#f2f2f2;}
+.above18Proclaim a{ color: #717071; font: 12px Arial, Helvetica, sans-serif; text-decoration: underline; }
+
+
+
+
+
+/*--------------------------------------------------------- 網頁警語 END ---------------------------------------------------------*/
+
+
+.Cart_Del { color:#F00; text-decoration: line-through; font: 10px Arial, Helvetica, sans-serif; }
+
+/*標題*/
+.Content_wrapper{ font-family:"微軟正黑體", Arial, serif; font-size:12px; width:632px; float:right; }
+.Content_wrapper .Title{ font-size:15px; color:#785472;  height:35px; padding: 0 0 0 17px; font-weight:bold; letter-spacing:3px; border-top:1px #dfdfdf solid; border-left:5px #785472 solid; border-right:#785472 2px solid; background-color:#f2f2f2; line-height:35px;}
+
+
+
+/*--- 選擇運送方式---*/
+.hide_msg{ border-bottom:1px solid #e0e0e0;}
+
+
+.redword-two{ color:#C33; font-weight:bold; }
+
+
+/*--- e-coupon序號查詢按鈕 ---*/
+.Confirm{ cursor:pointer;text-decoration:underline; }
+.Confirm:hover{text-decoration:none;}
+
+
+
+/*============ 手續費級距 ==========*/
+
+.Bracket{
+	display:none;
+	width:250px;
+	margin:5px 0px 5px 50px;}
+	
+
+.Bracket table{
+	border:1px solid #c0c0c0;
+	color:rgb(113, 112, 113);}	
+	
+.Bracket tr th,.Bracket tr td{
+	text-align:center;
+	line-height:24px;}
+	
+.Bracket tr th{
+	border-right:1px solid #c0c0c0;}
+	
+.BracketTitle th{
+	border-bottom:1px solid #c0c0c0;
+	background-color:#785472;
+	color:#FFF;}
+	
+.BracketFirst th,.BracketFirst td{
+	border-bottom:1px solid #c0c0c0;}
+	
+
+.Bracket table td{
+	background-color:#FFF;}	
+	
+
+/*============ 訂單優惠 ==========*/
+
+
+.ModifyDeals{
+	color:#717071;
+	text-decoration:underline;
+	padding-left:5px;}
+
+
+.ModifyDeals:hover{
+	text-decoration:none;}
+	
+
+.PaymentTotal li{
+	border:none;
+	border-top:1px dotted #dfdfdf;}
+.PaymentTotal li h1,.PaymentTotal li p{
+	font-weight:900;
+	font-size:14px;}
+
+
+
+
+
+	
+	
+/*數量不足：數量*/	
+.QtyChange {
+	display: block;
+	width: 70px;
+	margin-right: 10px;
+	text-align: center;
+	font-weight:bold;
+	font-size:14px;
+	color:#c20012;
+	text-decoration:none;}
+
+/*數量不足：小計*/	
+.SubSumChange{
+	display: block;
+	width: 100px;
+	font-weight: bold;
+	line-height: 18px;
+	text-align: center;
+	font-weight:bold;
+	font-size:14px;
+	color:#c20012;
+	text-decoration:none;}
+
+
+/*有貨：小計*/	
+.SubSumNoChange{
+	display: block;
+	width: 100px;
+	font-weight: bold;
+	line-height: 18px;
+	color:#717071;
+	text-align: center;
+	font-weight:bold;
+	font-size:14px;
+	text-decoration:none;}
+	
+/*有貨：數量*/	
+.QtyNoChange {
+	display: block;
+	width: 70px;
+	margin-right: 10px;
+	color: #717071;
+	text-align: center;}
+
+
+
+.ReviseOrderStrike_ItemPrice .NoDecoration span,
+.NoDecoration,
+.NoDecoration a,
+.NoDecoration a span,
+.NoDecoration span,
+p.NoDecoration,
+p.NoDecoration p{
+	text-decoration:none;}
+	
+.ReviseOrderStrike_GroupNameCN a span{
+	color:#000;}
+
+
+.cart_data li.BorderBottom{
+	height:60px;}
+
+li.BorderBottom,
+.cart_data li.BorderBottom{
+	border-bottom:none;}
+
+
+
+/* ====== 取消最後一個LI的底線 ======  */
+
+
+
+li.Last_NoBorder,
+.cart_data .Last_NoBorder{
+	border-bottom:none;}
+	
+
+
+
+
+
+
+/*11/4修訂 新增start*/
+.ordercart_data{ margin: 0 auto; width:900px; margin-bottom:15px; padding-bottom:15px; border:#dfdfdf 1px solid; overflow:auto; background-color:#FFF; }
+.ordercart_data h5{ margin: 0px auto;}		
+.ordercart_data ul{ margin: 0px auto;}		
+.ordercart_data  li{  list-style-type:none; float:left; font-size: 13px; color: #000; padding:0px;}/*10/29修正*/
+.ordercart_data .ordercart_data_all{display:inline-block;width: 100%; margin: 10px auto; }
+.ordercart_data_de{border-top:1px dotted #dfdfdf;width:100%;clear: both;}
+.ordercart_data_title{text-align: right;width: 180px;}
+.ordercart_data_info{min-width: 70px;text-align: right;margin:0px 10px 0px 10px;}
+.ordercart_data .ordercart_data_info_sumtitle{font-weight: bold;font-size: 15px;text-align: right;width: 180px;}
+.ordercart_data .ordercart_data_info_sum{font-weight: bold;font-size: 14px; min-width: 70px;text-align: right;margin:0px 10px 0px 10px;}
+.ordercart_data a.btn_bonus:hover {text-decoration: none;}
+.ordercart_data a.btn_bonus {text-decoration: underline;color: #296993;}
+.ordercart_data li.FreightNotches2 {display: none;padding-left: 12%;width: 86%;height: 100px;border-bottom: medium none;line-height:30px; margin-bottom:8px;}
+
+/*11/4修訂 新增end*/

@@ -1,0 +1,1357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> advanced_search  進階搜尋  </title>
+
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" >
+<link rel="stylesheet" type="text/css" href="css/sake.css"/>
+
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+
+
+<!-- 拆掉 LeftMenu.js -->
+<script type="text/javascript" src="Scripts/ChangeTag.js"></script> <!-- 換館別 -->
+<script type="text/javascript" src="Scripts/WineLeftMenu.js"></script> <!-- 紅酒館的分類找酒 -->
+<script type="text/javascript" src="Scripts/Head.js"/></script> <!-- 有沒有收到確認信彈出 -->
+
+<script type="text/javascript" src="Scripts/ShoppingCart.js"/></script> <!-- 浮動購物車 -->
+<script type="text/javascript" src="Scripts/advanced_search.js"/></script> <!--  進階搜尋 -->
+
+
+
+<!-- 外掛搜尋  -->
+<link rel="stylesheet" href="css/chosen.css" />	
+<script type="text/javascript" src="Scripts/chosen.jquery.js"></script> 
+
+<script type="text/javascript">
+    //呼叫外掛搜尋
+    $(function(){
+        $(".chosen").data("placeholder","點我選取...").chosen();
+    });
+</script>
+
+
+
+	
+
+
+</head>
+<!-- class="advanced_search"-->
+
+<body class="sake_index">
+
+<div class="HeadALL">
+    <!--20180327 Roger 新增手機板-->
+    <div class="HeadMenu">
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="MobileVer">手機版</a>
+    </div>
+    <!--20180327 Roger 新增手機板-->
+    <div class="TagALL">
+        <ul>
+            <li class="TagLogo"><a href="index.html"></a></li>
+            <li><a href="#" class="TagWine"></a></li>
+            <li><a href="Whisky_index.html" class="TagWhisky"></a></li>
+            <li style="width:120px;"><a href="beer_index.html" class="TagBeer"></a></li>
+            <li style="width:130px;" class="Tag_FocusBG"><a href="sake_index.html" class="TagSake"></a></li>
+        </ul>
+    </div>   
+</div>
+
+<!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+
+
+
+<div class="CenterALL_BG">
+    <div class="MyWineList" id="MyWineList">
+            <div class="WineList_Posation">
+                <div class="WineList_ALL" id="WineList_ALL">
+                    <div class="WineList_Info"> 
+                        <h1></h1>
+                        <h4>
+                            <div class="WineList_Info_text">清單內有(<span class="RED14">3</span>)款酒
+                            <span style="margin-left: 15px;"></span>
+                            總價$<span class="RED17">114,010</span></div>
+                            <div class="SeeDetailsICON"></div>
+                        </h4>
+                        <div class="Commodity">
+                            <div class="GoLeft2" id="GoLeft2"> <img src="images/icon/ICON_GoLeft2.png"></div>
+                            <div class="GoRight2" id="GoRight2"> <img src="images/icon/ICON_GoRight2.png"></div>
+                            <div class="GoLeft3" id="GoLeft3"> <img src="images/icon/ICON_GoLeft2.png"></div>
+                            <div class="GoRight3" id="GoRight3"> <img src="images/icon/ICON_GoRight2.png"></div>
+                            <a class="WineList_WineName">史坦因布赫麗絲玲白酒史坦史坦因布赫麗絲玲白酒史坦因史坦因史坦</a>
+                            <a class="WineList_WineName2">Brewery Hill Chardonnay Brewery Hill Chardonnay</a>
+                            <a class="WineList_WineName3">史坦因布赫麗絲玲白酒史坦史坦因布赫麗絲玲白酒史坦因史坦因史坦</a>
+                            <a class="WineList_WineName4">Brewery Hill Chardonnay Brewery Hill Chardonnay</a>
+                            <a href="" class="WineList_More">More &gt;&gt;</a>
+                            <div class="Added">
+                                <div class="Recent_IMG_GO">
+                                    <div style="height:90px; width:500px; position:absolute; top:50px; left:0px;">
+                                        <div class="Recent_IMG_GO ui-droppable" id="reRecent_IMG_GO"></div>
+                                    </div>
+                                    <ul id="Recent_IMG" class="ui-droppable" style="margin-top:205px;">
+                                        <li class="ui-draggable" style="border:2px solid #C08F1A">
+                                        <img src="images/pic/SW1.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW2.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW3.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW4.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW1.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                    </ul>
+                                </div>
+                                <!-- Recent_IMG_GO -->
+                            </div>
+                            <!-- Added -->
+                        </div>
+                        <!-- Commodity -->
+                    </div>
+                    <!-- WineList_Info 定寬度 -->
+                </div>
+                <!-- WineList_ALL 實質移動（+ width）位置 -->
+            </div>
+            <!-- WineList_Posation 全部定位  -->
+    </div>
+    <!-- MyWineList 我的清單 -->
+</div>
+
+<div class="CenterALL"><!-- CenterALL-->
+
+	<div class="Left_Menu_layout Left_Menu_bg"><!--左邊欄-->
+        <div class="Left_Menu_ClassifySearch_layout"><!--灰底分類搜尋-->
+            <div class="Left_Menu_ClassifySearch_searchICON"></div>
+            <div class="Left_Menu_ClassifySearch_title"></div>
+            <input type="text" value="請輸入關鍵字" class="Left_Menu_ClassifySearch_input">
+            <div class="Left_Menu_Advancedoption_layout">
+                <div class="Left_Menu_AdvancedSearch">
+                    <span class="Left_Menu_AdvancedSearch_icon"></span>
+                    <span class="Left_Menu_AdvancedSearch_text">進階搜尋</span>
+                </div>
+                <div class="Left_Menu_AdvancedOrignal_layout">
+                    <span class="Left_Menu_AdvancedOrignal_icon"></span>
+                    <span class="Left_Menu_AdvancedOrignal_text">轉為原文選單</span>
+                </div>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Left_Menu_ClassifySearch_separateline"></div>
+            <div class="Left_Menu_YearWinery_layout">
+                <!-- <div class="Left_Menu_Winery">
+                    <span class="Left_Meni_YearWinery_diamond_icon"></span>
+                    <span class="Left_Menu_YearWinery_text">找酒莊</span>
+                </div>
+                <div class="Left_Menu_Year">
+                    <span class="Left_Meni_YearWinery_diamond_icon"></span>
+                    <span class="Left_Menu_YearWinery_text">找年份</span>
+                </div> -->
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--灰底分類搜尋 end-->
+        <div class="Left_Menu_block"><!--類型-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">類型</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Type" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""><a href="">印度淺色艾爾(142)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">英式深色啤酒(60)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">美式淺色艾爾(3)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">修道院啤酒(14)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">德式小麥啤酒(20)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">比利時烈艾爾(13)</a></li>
+                <li><a href="" id="TypeOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png"> 複選</a></li>
+            </ul>
+        </div><!--類型 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--產區-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">產區</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Place" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""><a href="">美國(206)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">英國(71)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">比利時(52)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">日本(50)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">台灣(38)</a></li>
+                <div class="Menu_More" id="Menu_Place_More" style="display: none;">
+                    <li><input name="" type="checkbox" value=""><a href="">阿根廷(28)</a></li>
+                    <li><input name="" type="checkbox" value=""><a href="">智利(15)</a></li>
+                    <li><input name="" type="checkbox" value=""><a href="">德國(7)</a></li>
+                    <li><input name="" type="checkbox" value=""><a href="">紐西蘭(6)</a></li>
+                </div>
+                <li><a id="PlaceOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png"> 複選</a></li>
+            </ul>
+            <div id="PlaceOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png"></div>
+            <div class="CLEAR"></div>
+            <div class="GoToList" id="GoToList">
+                <a>全部列表<img src="images/icon/Menu_List.png"></a>
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--產區 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--風味-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">風味</span>
+            </div>
+            <div id="VarietyOpen3" class="Left_Menu_moreBTN" style="display:none;">展開更多<img src="images/icon/Menu_Open.png"></div>
+            <div class="CLEAR"></div>
+            <div class="GoToList" id="GoToList22" style="display:none;">
+                <a>全部列表<img src="images/icon/Menu_List.png"></a>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Variety" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""><a href="">麥味(40)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">啤酒花味(36)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">苦味(36)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">水果味(69)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">煙燻味(48)</a></li>
+                <div class="Menu_More" id="Menu_Variety_More" style="display: none;">
+                    <li><input name="" type="checkbox" value=""><a href="">煙燻味(40)</a></li>
+                    <li><input name="" type="checkbox" value=""><a href="">煙燻味(37)</a></li>
+                    <li><input name="" type="checkbox" value=""><a href="">煙燻味(36)</a></li>
+                    <li><input name="" type="checkbox" value=""><a href="">煙燻味(32)</a></li>
+                    <li><input name="" type="checkbox" value=""><a href="">煙燻味(30)</a></li>
+                </div>
+                <li><a id="VarietyOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png"> 複選</a></li>
+            </ul>
+            <div id="VarietyOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png"></div>
+            <div class="CLEAR"></div>
+            <div class="GoToList" id="GoToList2">
+                <a>全部列表<img src="images/icon/Menu_List.png"></a>
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--風味 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--酒精濃度-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">酒精濃度</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Price" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""><a href="">低於 4% (21)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">4到6% (107)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">6到8% (104)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">8到10% (68)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">10%以上 (45)</a></li>
+                <li><a id="VarietyOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png"> 複選</a></li>
+            </ul>
+        </div><!--酒精濃度 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--特殊原料-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">特殊原料</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Evaluate" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""><a href="">??? (216)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">??? (170)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">??? (130)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">??? (118)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">??? (83)</a></li>
+                <li><a id="EvaluateOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png"> 複選</a></li> 
+            </ul>
+            <div id="EvaluateOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png"></div>
+            <div class="CLEAR"></div>
+        </div><!--特殊原料 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--容量-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">容量</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""><a href="">330ml (1)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">500ml (34)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">750ml (3)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">275ml (682)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">1L (11)</a></li>
+                <li><a href="" id="CapacityOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png"> 複選</a></li>
+            </ul>
+            <div id="CapacityOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png"></div>
+            <div class="CLEAR"></div>
+        </div><!--容量 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--評價-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">評價</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Year" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""><a href="">RateBeer (21)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">BeerAdvocate (107)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">WBA (104)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">歐洲啤酒之星 (68)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">AIBA  (45)</a></li>
+                <li><a href="" id="CapacityOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png"> 複選</a></li>
+            </ul>
+            <div id="CapacityOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png"></div>
+            <div class="CLEAR"></div>
+        </div><!--評價 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_bottom_layout">
+            <div class="Left_Menu_Advancedoption_layout">
+                <div class="Left_Menu_bottom Left_Menu_AdvancedSearch">
+                    <span class="Left_Menu_AdvancedSearch_icon"></span>
+                    <span class="Left_Menu_AdvancedSearch_text">進階搜尋</span>
+                </div>
+                <div class="Left_Menu_bottom Left_Menu_AdvancedRecent_layout">
+                    <span class="Left_Menu_AdvancedRecent_icon"></span>
+                    <span class="Left_Menu_AdvancedRecent_text">近期瀏覽</span>
+                </div>
+            </div>
+        </div>
+    </div><!--左邊欄 end-->
+    
+    <div class="Right_content"><!--右邊欄-->
+        <div class="Wine_Search_List_ALL beer_Wine_Search_List_ALL">
+    	    <div class="List_Title">
+                <div class="List_Title_advanced_search_line"></div> 
+                <div class="List_Title_advanced_search">進階搜尋</div>   
+            </div>
+            <div class="Result_advanced_search ">
+         	    <div class="Advanced_keyWords"><!-- Advanced_keyWords -->
+            	    <h1>▶ 關鍵字</h1>
+                    <span class="Advanced_keyWords_text">例：獺祭、大吟釀、雫酒...</span>
+                    <input name="" type="text"  />
+                </div><!-- Advanced_keyWords end-->
+                <div class="Advanced_Price"><!--Advanced_Price-->
+            	    <h1>▶ 單價</h1>
+                    <span class="Advanced_Price_text" >請輸入金額</span>
+                    <input name="" type="text" style="margin-right:3px;"/>元 ~ <input name="" type="text" style="margin-right:3px;" />元之間
+                </div><!--Advanced_Price end-->
+                <div class="CLEAR"></div>
+                <!--20170222 Roger 新增熱門搜尋選項-->
+                <div class="Advanced_Block"><!-- Advanced_Block-->
+                    <div class="BlockLL">
+                        <div class="Advanced_HotSearch sake_Advanced_HotSearch">
+                            <h1>▶ 熱門搜尋</h1>
+                            <ul>
+                                <li>
+                                    <input type="checkbox" name="1">快速到貨(三點前下單隔天到)
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="1">超值預訂
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Advanced_Type sake_Advanced_Type"><!-- Advanced_Type -->
+                            <h1>▶ SSI四大分類</h1>
+                            <ul class="Layer1" id="TypeLayer"> <!-- Layer1 -->
+                                <li><input type="checkbox" value="薰酒">薰酒</li>
+                                <li><input type="checkbox" value="爽酒">爽酒</li>
+                                <li><input type="checkbox" value="熟酒">熟酒</li>
+                                <li><input type="checkbox" value="醇酒">醇酒</li>
+                            </ul><!-- Layer1 end-->    
+                        </div><!-- Advanced_Type end-->
+
+                        <div class="sake_Advanced_type">
+                            <h1>▶ 類型</h1>
+                            <ul class="Layer1" id="TypeLayer"> <!-- Layer1 -->
+                                <li><input type="checkbox">純米大吟釀</li>
+                                <li><input type="checkbox">大吟釀酒</li>
+                                <li><input type="checkbox">吟釀酒</li>
+                                <li><input type="checkbox">特別純米酒</li>
+                                <li><input type="checkbox">純米酒</li>
+                                <li><input type="checkbox">特別本釀造</li>
+                                <li><input type="checkbox">本釀造</li>
+                                <li><input type="checkbox">普通酒</li>
+                                <li><input type="checkbox">梅酒</li>
+                                <li><input type="checkbox">燒酌</li>
+                                <li><input type="checkbox">水果酒/其它</li>
+                            </ul><!-- Layer1 end--> 
+                        </div>
+                    </div>
+                    <div class="BlockRR">
+                        <div class="sake_Advanced_Process"><!-- Advanced_Producing -->
+                            <h1>▶ 特殊製程</h1>
+                            <ul class="Layer1" id="ProducingLayer">
+                                <li><!--特殊酒母培養方式 RE01-->
+                                    <input type="checkbox">特殊酒母培養方式
+                                    <ul><!--Layer2 RE01 -->
+                                        <li>
+                                            <input type="checkbox">生酛
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">山廢
+                                        </li>
+
+                                    </ul><!--Layer2 RE01 end-->
+                                </li><!-- 特殊酒母培養方式 RE01 end-->
+                                <li><!--特殊除渣方式 RE01-->
+                                    <input type="checkbox">特殊除渣方式
+                                    <ul><!--Layer2 RE01 -->
+                                        <li>
+                                            <input type="checkbox">荒走
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">雫酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">中取
+                                        </li>
+
+                                    </ul><!--Layer2 RE01 end-->
+                                </li><!-- 特殊除渣方式 RE01 end-->
+                                <li><!--特殊加熱殺菌和過濾方式 RE01-->
+                                    <input type="checkbox">特殊加熱殺菌和過濾方式
+                                    <ul><!--Layer2 RE01 -->
+                                        <li>
+                                            <input type="checkbox">無濾過
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">生酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">生儲藏
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">生詰
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">新酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">古酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">原酒
+                                        </li>
+                                    </ul><!--Layer2 RE01 end-->
+                                </li><!-- 特殊加熱殺菌和過濾方式 RE01 end-->
+                                <li><!--其他特殊製程 RE01-->
+                                    <input type="checkbox">其他特殊製程
+                                    <ul><!--Layer2 RE01 -->
+                                        <li>
+                                            <input type="checkbox">氣泡清酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">赤米酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">灰持酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">貴釀酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">濁酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">秋卸酒
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">原酒
+                                        </li>
+                                    </ul><!--Layer2 RE01 end-->
+                                </li><!-- 其他特殊製程 RE01 end-->                              
+                            </ul>
+                        </div><!-- Advanced_Producing end-->
+                    </div>
+                    <div class="CLEAR"></div>
+                </div>
+                <div class="Advanced_Year"><!-- 精米比例  -->
+                    <h1>▶ 精米比例</h1>
+                    <span class="Advanced_Price_text">請輸入數值</span>
+                    <input name="" type="text"> 
+                    %~
+                    <input name="" type="text">
+                    %之間
+                </div>
+                <!-- 精米比例  end-->
+                <div class="Advanced_Block sake_Advanced_Block_rice"><!-- 米種-->
+                    <h1>▶ 米種</h1>
+                    <div style="position:relative; z-index:9998;margin-left:15px;">
+                        <select class="chosen" multiple="true" style="width:350px;">
+                            <!--<option selected="selected">Dojo Toolkit</option> 預設  -->
+                            <option>山田錦</option>
+                            <option>五百萬石</option>
+                            <option>雄町</option>
+                            <option>吟風</option>
+                            <option>初雫</option>
+                            <option>彗星</option>
+                            <option>古城錦</option>
+                            <option>豊盃</option>
+                            <option>華吹雪</option>
+                            <option>華想</option>
+                            <option>吟乙女</option>
+                            <option>吟銀河</option>
+                            <option>改良信交</option>
+                            <option>秋之精</option>
+                            <option>秋田酒小町</option>
+                            <option>美郷錦</option>
+                            <option>仙台坊主</option>
+                            <option>星明</option>
+                            <option>吟之精</option>
+                            <option>藏之華</option>
+                            <option>龜之尾</option>
+                            <option>羽州譽</option>
+                            <option>龜粹</option>
+                            <option>羽州華三部作</option>
+                            <option>豊國</option>
+                            <option>出羽燦燦</option>
+                            <option>出羽之里</option>
+                            <option>雪女神</option>
+                            <option>山酒4號</option>
+                            <option>酒未來</option>
+                            <option>龍之落子</option>
+                            <option>夢之香</option>
+                            <option>越淡麗</option>
+                            <option>一本〆</option>
+                            <option>白藤</option>
+                            <option>高嶺錦</option>
+                            <option>菊水</option>
+                            <option>八反錦2號</option>
+                            <option>北陸12號</option>
+                            <option>玉榮</option>
+                            <option>人心地</option>
+                            <option>夢山水</option>
+                            <option>金紋錦</option>
+                            <option>白樺錦</option>
+                            <option>雄山錦</option>
+                            <option>石川門</option>
+                            <option>九頭龍</option>
+                            <option>神力</option>
+                            <option>越之雫</option>
+                            <option>奧譽</option>
+                            <option>飛騨譽</option>
+                            <option>ひだみのり</option>
+                            <option>飛系酒61号</option>
+                            <option>譽富士</option>
+                            <option>若水</option>
+                            <option>夢山水</option>
+                            <option>夢吟香</option>
+                            <option>伊勢錦</option>
+                            <option>神之穗</option>
+                            <option>弓形穗</option>
+                            <option>日立錦</option>
+                            <option>渡船</option>
+                            <option>栃木酒14</option>
+                            <option>サケビカリ</option>
+                            <option>舞風</option>
+                            <option>酒武藏</option>
+                            <option>白目米</option>
+                            <option>總之舞</option>
+                            <option>滋賀渡舟6號</option>
+                            <option>吟吹雪</option>
+                            <option>祝</option>
+                            <option>愛山</option>
+                            <option>古之舞</option>
+                            <option>白菊</option>
+                            <option>山田穂</option>
+                            <option>新山田穂</option>
+                            <option>早大関</option>
+                            <option>辨慶</option>
+                            <option>播磨錦</option>
+                            <option>但馬強力</option>
+                            <option>野條穂</option>
+                            <option>兵庫雄町</option>
+                            <option>改良山田錦</option>
+                            <option>愛山</option>
+                            <option>なだひかり</option>
+                            <option>六甲錦</option>
+                            <option>灘錦</option>
+                            <option>兵庫夢錦</option>
+                            <option>兵庫北錦</option>
+                            <option>福之花</option>
+                            <option>兵系酒18号</option>
+                            <option>兵系酒65号</option>
+                            <option>兵系酒66号</option>
+                            <option>白鶴錦</option>
+                            <option>杜氏之夢</option>
+                            <option>露葉風</option>
+                            <option>秋津穂</option>
+                            <option>オオセト</option>
+                            <option>松山三井</option>
+                            <option>雫媛</option>
+                            <option>土佐錦</option>
+                            <option>風鳴子</option>
+                            <option>吟之夢</option>
+                            <option>幸玉</option>
+                            <option>改良雄町</option>
+                            <option>神之舞</option>
+                            <option>佐香錦</option>
+                            <option>改良八反流</option>
+                            <option>備前雄町</option>
+                            <option>八反35</option>
+                            <option>八反錦1号</option>
+                            <option>八反錦2号</option>
+                            <option>戀小町</option>
+                            <option>千本錦</option>
+                            <option>船本雄町</option>
+                            <option>比婆雄町</option>
+                            <option>廣島雄町</option>
+                            <option>強力</option>
+                            <option>穀良都</option>
+                            <option>西都之雫</option>
+                            <option>西海</option>
+                            <option>西海134號</option>
+                            <option>西海135號</option>
+                            <option>吟之里</option>
+                            <option>壽限無</option>
+                            <option>美山錦</option>
+                            <option>佐賀之華</option>
+                            <option>大分三井120号</option>
+                            <option>花神樂</option>
+                            <option>日和</option>
+                            <option>富之香</option>
+                            <option>八反草</option>
+                            <option>大瀨戶</option>
+                            <option>夢一獻</option>
+                        </select>
+                    </div>   
+                    <div class="CLEAR"></div>
+                </div>
+                <div class="CLEAR"></div>
+                <!--20170222 Roger 新增熱門搜尋選項 end-->
+                <div class="Advanced_Block" id="TypeLayer"><!-- Advanced_Block  產區、適飲溫度 -->
+                    <div class="BlockLL">
+                        <div class="Advanced_Type"><!-- Advanced_Type -->
+                            <h1>▶ 產區</h1>
+                            <ul class="Layer1"> <!-- Layer1 -->
+                                <li>
+                                    <input type="checkbox"/>日本
+                                    <ul><!--Layer2 RE01 -->
+                                        <li>
+                                            <input type="checkbox">北海道
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">東北地方
+                                            <ul class="Layer3"><!--Layer2 RE01 -->
+                                                <li>
+                                                    <input type="checkbox">秋田縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">青森縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">福島縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">岩手縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">宮城縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">山形縣
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">關東地方
+                                            <ul class="Layer3"><!--Layer2 RE01 -->
+                                                <li>
+                                                    <input type="checkbox">千葉縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">群馬縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">茨城縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">神奈川縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">埼玉縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">栃木縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">東京都
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">甲信越地方
+                                            <ul class="Layer3"><!--Layer2 RE01 -->
+                                                <li>
+                                                    <input type="checkbox">山梨縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">長野縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">新潟縣
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">北陸地方
+                                            <ul class="Layer3"><!--Layer2 RE01 -->
+                                                <li>
+                                                    <input type="checkbox">福井縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">石川縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">富山縣
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">東海地方
+                                            <ul class="Layer3"><!--Layer2 RE01 -->
+                                                <li>
+                                                    <input type="checkbox">愛知縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">岐阜縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">三重縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">靜岡縣
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">近畿地方
+                                            <ul class="Layer3"><!--Layer2 RE01 -->
+                                                <li>
+                                                    <input type="checkbox">兵庫縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">京都府
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">奈良縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">大阪府
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">滋賀縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">和歌山縣
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">中國地方
+                                            <ul class="Layer3"><!--Layer2 RE01 -->
+                                                <li>
+                                                    <input type="checkbox">廣島縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">岡山縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">島根縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">鳥取縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">山口縣
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">四國
+                                            <ul class="Layer3"><!--Layer2 RE01 -->
+                                                <li>
+                                                    <input type="checkbox">愛媛縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">香川縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">高知縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">德島縣
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">九州
+                                            <ul class="Layer3"><!--Layer2 RE01 -->
+                                                <li>
+                                                    <input type="checkbox">福岡縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">鹿兒島縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">熊本縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">宮崎縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">長崎縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">大分縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">沖繩縣
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox">佐賀縣
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul><!--Layer2 RE01 end-->
+                                </li>
+                                
+                            </ul><!-- Layer1 end-->    
+                        </div><!-- Advanced_Type end-->
+                    </div>
+                    <div class="BlockRR">
+                        <div class="Advanced_Producing"><!-- Advanced_Producing -->
+                            <h1>▶ 適飲溫度</h1>
+                            <ul class="Layer1" id="TypeLayer"> <!-- Layer1 -->
+                                <li><input type="checkbox">雪冷(5℃)</li>
+                                <li><input type="checkbox">花冷(10℃)</li>
+                                <li><input type="checkbox">涼冷(15℃)</li>
+                                <li><input type="checkbox">常溫(20-25℃)</li>
+                                <li><input type="checkbox">日向燗(30℃)</li>
+                                <li><input type="checkbox">人肌燗(35℃)</li>
+                                <li><input type="checkbox">溫燗(40℃)</li>
+                                <li><input type="checkbox">上燗(45℃)</li>
+                                <li><input type="checkbox">熱燗(50℃)</li>
+                                <li><input type="checkbox">飛切燗(55℃)</li>
+                            </ul><!-- Layer1 end-->
+                        </div><!-- Advanced_Producing end-->
+                    </div>
+                    <div class="CLEAR" ></div>
+                </div><!-- Advanced_Block  產區、適飲溫度 end-->
+                <div class="Advanced_Block" id="RegionLayer"><!-- Advanced_Block 酵母 杜氏 水 -->
+            	    <div class="BlockLL">
+                        <div class="Advanced_Type"><!-- Advanced_Type -->
+                            <h1>▶ 杜氏集團</h1>
+                            <ul class="Layer1"> <!-- Layer1 -->
+                                <li>
+                                    <input type="checkbox"/>南部杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>越後杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>丹波杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>山內杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>會津杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>下野杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>長野杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>福井杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>大野杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>能登杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>但馬杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>備中杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>出雲杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>廣島杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>大津杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>熊毛杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>土佐杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>越智杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>伊方杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>柳川杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>三潴杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>肥前杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>生月杜氏
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>小值賀杜氏
+                                </li>
+
+                            </ul><!-- Layer1 end-->    
+                        </div><!-- Advanced_Type end-->
+                    </div>
+                    <div class="BlockRR">
+                        <div class="Advanced_Producing"><!-- Advanced_Producing -->
+                            <h1>▶ 酵母</h1>
+                            <ul class="Layer1" id="TypeLayer"> <!-- Layer1 -->
+                                <li>
+                                    <input type="checkbox">協會酵母
+                                    <ul class="Layer2"><!--Layer2 RE01 -->
+                                        <li>
+                                            <input type="checkbox">協會1號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會2號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會3號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會4號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會5號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會6號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會7號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會8號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會9號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會10號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會11號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會12號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會13號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會14號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會15號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會601號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會701號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會901號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會1001號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會1401號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會1501號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會1601號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會1701號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">協會1801號
+                                        </li>
+                                    </ul><!--Layer2 RE01 end-->
+                                </li>
+                                <li>
+                                    <input type="checkbox">地區酵母
+                                    <ul class="Layer2"><!--Layer2 RE01 -->
+                                        <li>
+                                            <input type="checkbox">28號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">77號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">350號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">紅色清酒酵母
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">まほろば
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">イ号/ロ号
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">吟釀2號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">YK-45
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">YK-71
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">佑子之念
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">宮城
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">宮城MY
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">愛美
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">低發泡性宮城MY
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">秋田流華AK-1
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">AK－2F
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">AK－3F
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">AK－3
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">秋田流雅AK-4
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">こまち
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">秋田純米
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">山形KA
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">YK901-11
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">YK-0107
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">F710うつくしま夢
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">群馬KAZE
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">長野阿爾卑斯
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">靜岡HD-1
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">靜岡SY-103
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">靜岡NO-2
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">靜岡NEW-5
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">靜岡CA-50
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">靜岡5MT-1
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">靜岡HD-101
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">廣島せとうち21號
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">高知縣CEL19
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">高知縣CEL24
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">KW-77
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">T-1
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">M310
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">YS-44
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">G-1S-3
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">三重
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">梨
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">德島
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">EK-1
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">KKK-S
+                                        </li>
+                                        <li>
+                                            <input type="checkbox">KKK-9
+                                        </li>
+                                    </ul><!--Layer2 RE01 end-->
+                                </li>
+                                <li><input type="checkbox">自家酵母</li>
+                            </ul><!-- Layer1 end-->
+                        </div><!-- Advanced_Producing end-->
+                        <div class="sake_Advanced_Water"><!-- Advanced_Producing -->
+                            <h1>▶ 水質</h1>
+                            <ul class="Layer1" id="TypeLayer"> <!-- Layer1 -->
+                                <li><input type="checkbox">硬水</li>
+                                <li><input type="checkbox">軟水</li>
+                            </ul><!-- Layer1 end-->
+                        </div><!-- Advanced_Producing end-->
+                        <div class="sake_Advanced_Water"><!-- Advanced_Producing -->
+                            <h1>▶ 水源</h1>
+                            <ul class="Layer1" id="TypeLayer"> <!-- Layer1 -->
+                                <li><input type="checkbox">宮水</li>
+                                <li><input type="checkbox">御香水</li>
+                                <li><input type="checkbox">伏流水</li>
+                                <li><input type="checkbox">金澤清水</li>
+                                <li><input type="checkbox">龍泉洞地底湖</li>
+                                <li><input type="checkbox">馬淵川</li>
+                                <li><input type="checkbox">信濃川</li>
+                                <li><input type="checkbox">阿賀野川</li>
+                                <li><input type="checkbox">福島潟</li>
+                                <li><input type="checkbox">角田山靈水</li>
+                                <li><input type="checkbox">天龍川</li>
+                                <li><input type="checkbox">太田川</li>
+                                <li><input type="checkbox">大井川</li>
+                                <li><input type="checkbox">狩野川</li>
+                                <li><input type="checkbox">富士山伏流水</li>
+                            </ul><!-- Layer1 end-->
+                        </div><!-- Advanced_Producing end-->
+                    </div>
+                    <div class="CLEAR" ></div>
+                </div><!-- Advanced_Block 產區end-->
+                
+                <div class="Advanced_Order sake_Advanced_Block_SMV"><!-- 日本酒度 -->
+                    <h1>▶ 日本酒度</h1>
+                    <span class="Advanced_Price_text">請輸入數值</span>
+                    <input name="" type="text"> 
+                    ~
+                    <input name="" type="text">
+                    之間
+                </div>
+                <!-- 日本酒度 end-->
+                <div class="Advanced_Order"><!-- 酸度 -->
+                    <h1>▶ 酸度</h1>
+                    <span class="Advanced_Price_text">請輸入數值</span>
+                    <input name="" type="text"> 
+                    ~
+                    <input name="" type="text">
+                    之間
+                </div>
+                <!-- 酸度 end-->
+                <div class="CLEAR" ></div>
+                <div class="Advanced_Year" style="margin-top: 15px;"><!-- 酒精濃度  -->
+                    <h1>▶ 酒精濃度</h1>
+                    <span class="Advanced_Price_text">請輸入數值</span>
+                    <input name="" type="text"> 
+                    %~
+                    <input name="" type="text">
+                    %之間
+                </div>
+                <!-- 酒精濃度  end-->
+                <div class="Advanced_Order sake_Advanced_Block_AmineAcidity" style="margin-top: 15px;"><!-- 胺基酸度  -->
+                    <h1>▶ 胺基酸度</h1>
+                    <span class="Advanced_Price_text">請輸入數值</span>
+                    <input name="" type="text" /> 
+                    ~
+                    <input name="" type="text" />
+                    之間
+                </div><!-- 胺基酸度 end-->
+                <div class="CLEAR" ></div>
+                <div class="Advanced_Capacity beer_Advanced_Capacity"><!-- Advanced_Capacity -->
+                    <h1>▶ 容量</h1>
+                    <ul style="font-size:14px; font-weight:bold;">
+                  	   <li><input type="checkbox" value="375ml" />375ml</li>	
+                  	   <li><input type="checkbox" value="750ml" />750ml</li>
+                       <li><input type="checkbox" value="1.5L" />1.5L</li>
+                    </ul>    
+                    <div class="CLEAR"></div>
+                </div><!-- Advanced_Capacity end-->
+                
+                <div class="Advanced_Block"><!-- Advanced_Order -->
+            	    <h1>▶ 排序方式</h1>
+                    <select style="width:507px;margin-left:15px;">
+                        <option value="">--請選擇--</option>
+                        <option value="">價格</option>
+                        <option value="">產區</option>
+                        <option value="">酒莊</option>
+                        <option value="">年份</option>
+                        <option value="">類型</option>
+                        <option value="">評分</option>
+            		</select>
+                    <div class="InStockOnly">
+                        <input type="checkbox" name="">只顯示目前有貨的品項
+                    </div>
+                </div><!-- Advanced_Order end-->
+                <div class="CLEAR"></div>
+                <div class="Advanced_Sent">
+            	   <button class="Advanced_Sent_Icon"></button>
+                </div>            
+            </div>           
+        </div>
+    </div>
+    <div class="CLEAR" ></div>
+</div>
+<!-- CenterALL end -->
+
+
+
+<div class="FooterALL" >
+	<div class="Footer_position">
+        <ul class="FooterMenu">
+            <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+            <li><a href="" target="_parent">條款及細則</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a></li>
+        </ul>
+        <div class="FooterICON">
+           <button class="Quality"></button>
+           <button class="Join"></button>
+           <button class="Novice"></button>
+        </div>
+    </div>
+</div>
+<!-- FooterALL  頁腳 -->
+
+<div class="TC_And_UK_ALL">
+	<div class="TC_And_UK">
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul> 
+    
+    </div>
+</div> 
+<!-- TC_And_UK_ALL 中英翻譯 -->
+
+
+
+
+
+
+
+<div class="CLEAR"></div>
+
+<div class="CopyRight"> Copyright © 2012 iCheers.tw All Rrights Reserved </div>
+
+
+
+<div class="Warning"><p></p></div>
+
+
+<!-- Warning 警語 -->
+
+
+<!-- 發送確認信視窗 start -->
+     <div id="notice">
+    	 <div class="notice_close"><a>關閉</a></div>
+	     <div id="notice_body">
+    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，<br/>客服人員將會盡快與您e-mail聯繫！</p>
+       		<input name="Email" type="text" />
+	     	<div class="btn"><a  class="btn_submit">確定</a></div>
+    	 </div>
+     </div>
+<!-- 發送確認信視窗 end -->
+
+
+
+</body>
+
+
+
+
+</html>

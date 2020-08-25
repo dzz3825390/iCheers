@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iCheers 愛酒窩_我的清單</title>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" >
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<style>
+.bg_black{
+		background: rgba(0,0,0,0.8);
+		z-index: 9999999;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top:0;
+		left:0;
+		opacity: 1;
+		display:block;
+}
+
+	
+</style>
+<!--20161206 Roger 新增icon說明視窗用-->
+<script type="text/javascript"  language="javascript">  
+
+$(document).ready(function(){
+    //瀏覽器內容寬度
+    var intBrowserW = 0;
+    //瀏覽器內容高度
+    var intBrowserH = 0;
+    //取得瀏覽器內容寬度/高度
+    if (document.documentElement) {
+        intBrowserW = document.documentElement.clientWidth;
+        intBrowserH = document.documentElement.clientHeight;
+    } else {
+        intBrowserW = document.body.clientWidth;
+        intBrowserH = document.body.clientHeight;
+    }
+
+    var LegendInfoPositionX = (intBrowserW - 700)/2;
+    var LegendInfoPositionY = (intBrowserH - 500)/2;
+    $(".LegendInfo_iframe_layout").css({
+        top:LegendInfoPositionY,
+        left:LegendInfoPositionX
+    });
+
+    /*//點選任意icon圖示出現說明視窗
+    $(".legend_layout").click(function(){
+        $(".bg_black").css("display","block");
+        $(".bg_black").animate({
+            opacity:1
+        },500);
+    });
+
+    //點選關閉按鈕關閉視窗
+    $(".LegendInfo_iframe_closeBTN").click(function(){
+        $(".bg_black").animate({
+            opacity:0
+        },500,function(){
+            $(".bg_black").css("display","none");
+        });
+
+    });*/
+});
+
+</script>
+<!--20161206 Roger 新增icon說明視窗用 end-->
+
+<body>
+<!--20161206 roger 新增icon說明視窗-->
+<!-- 黑底 start-->
+<div class="bg_black" id="bg_black">
+    <!--icon說明視窗-->
+    <div class="LegendInfo_iframe_layout">
+        <div class="LegendInfo_iframe_title_layout">
+            <div class="LegendInfo_iframe_title">到貨時間說明</div>
+            <div class="LegendInfo_iframe_closeBTN"></div>
+            <div class="CLEAR"></div>
+            <div class="LegendInfo_iframe_body">
+                <div class="LegendInfo_iframe_body_title_layout">
+                    <div class="LegendInfo_iframe_body_title_icon">
+                        <img src="images/icon/BuyICONH22.png" />    
+                    </div>
+                    <div class="LegendInfo_iframe_body_title">一般配送</div>
+                    <div class="LegendInfo_iframe_body_title_line"></div>
+                    <div class="CLEAR"></div>
+                </div>
+                <div class="LegendInfo_iframe_body_text">
+                    完成訂單後3-5個工作天內可收到商品。
+                </div>
+                <div class="LegendInfo_iframe_body_Noticetext">
+                    <span>※需知：</span>
+                    <span>若選擇匯款／線下刷卡，則會在收到款項之後才出貨，通常出貨的隔天就會收到商品。</span>
+                    <!--20161208 Roger 新增clear div-->
+                    <div class="CLEAR"></div>
+                    <!--20161208 Roger 新增clear div end-->
+                </div>
+                <div class="LegendInfo_iframe_body_title_layout" style="margin-top:15px;">
+                    <div class="LegendInfo_iframe_body_title_icon">
+                        <img src="images/icon/Fast_Icon22H.png" />    
+                    </div>
+                    <div class="LegendInfo_iframe_body_title">快速到貨</div>
+                    <div class="LegendInfo_iframe_body_title_line"></div>
+                    <div class="CLEAR"></div>
+                </div>
+                <div class="LegendInfo_iframe_body_text">
+                    於每日截單時間<span>HH:MM</span>之前完成訂單，下一個工作天即可收到商品！
+                </div>
+                <div class="LegendInfo_iframe_body_Noticetext">
+                    ※如遇國定假日則會順延一天。
+                </div>
+                <div class="LegendInfo_iframe_body_text" style="font-weight:bold;color:#333333;">
+                    舉例說明：
+                </div>
+                <div class="LegendInfo_iframe_body_text">
+                    狀況A：星期五(上班日)<span>HH:MM</span>前完成訂單，星期六即可收到商品！
+                </div>
+                <div class="LegendInfo_iframe_body_text">
+                    狀況B：星期六(放假日)<span>HH:MM</span>前完成訂單，要下周二(上班日)才會收到商品喔！
+                </div>
+                <div class="LegendInfo_iframe_body_title_layout" style="margin-top:15px;">
+                    <div class="LegendInfo_iframe_body_title_icon">
+                        <img src="images/icon/PreOrder_ICONH22.png" />    
+                    </div>
+                    <div class="LegendInfo_iframe_body_title">預訂品項</div>
+                    <div class="LegendInfo_iframe_body_title_line"></div>
+                    <div class="CLEAR"></div>
+                </div>
+                <div class="LegendInfo_iframe_body_text">
+                    完成訂單後（限匯款／線下刷卡），依預計到貨月份安排出貨，出貨前會另行Email通知。
+                </div>
+                <div class="LegendInfo_iframe_body_Noticetext">
+                    <span>※需知：</span>
+                    <span>預訂商品通常數量有限，需完成付款才能為您保留數量；付款完成後會郵寄收款證明供留存，恕發票僅能於出貨的時候才開立。
+                    </span>
+                    <!--20161208 Roger 新增clear div-->
+                    <div class="CLEAR"></div>
+                    <!--20161208 Roger 新增clear div end-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--icon說明視窗 end-->
+</div>
+<!-- 黑底 end-->
+<!--20161206 roger 新增icon說明視窗 end-->
+</body>

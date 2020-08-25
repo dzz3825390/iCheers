@@ -1,0 +1,670 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iCheers 愛酒窩_客戶基本資料填寫</title>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" > 
+
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="stylesheet" type="text/css" href="css/cart_201505rogerfix.css"/>
+
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+<script type="text/javascript" src="Scripts/tabs.js"/></script>
+
+
+<!-- 勾選發票寄送方式顯示選項 -->
+<script type="text/javascript">
+    function ChangeValue(str1) {
+        if (str1 == "0") { //捐贈發票
+            $("#Invo1").show();
+            $("#div2").hide();
+            $("#div3").hide();
+
+        } else if (str1 == "1") { //二聯發票
+
+            $("#div2").show();
+            $("#Invo1").hide();
+            $("#div3").hide();
+            $("#divFKJS3").hide();
+        } else if (str1 == "2") { //三聯發票
+            $("#div2").hide();
+            $("#Invo1").hide();
+            $("#div3").show();
+            $("#recipient1").attr("checked", "checked");
+            $("#invoice_title").attr("disabled", false);
+
+            $("#invoice_title").val("");
+            $("#invoice_title").focus();
+            $("#invoice_Number").attr("disabled", false);
+            $("#invoice_Number").val("");
+        } else if (str1 == "3") { //三聯發票-隨商品寄出
+            $("#divFKJS3").hide();
+            $("#name1").attr("disabled", true);
+            $("#name1").val("");
+            $("#County1").attr("disabled", true);
+            $("#County1").val("");
+            $("#Area1").attr("disabled", true);
+            $("#Area1").val("");
+            $("#PostNumber1").val("");
+            $("#address1").attr("disabled", true);
+            $("#address1").val("");
+        } else if (str1 == "4") { //三聯發票-分開記送
+            $("#divFKJS3").show();
+
+            $("#name2").attr("disabled", false);
+            $("#name2").val("");
+            $("#name2").focus();
+            $("#County1").attr("disabled", false);
+            $("#County1").val("");
+            $("#Area1").attr("disabled", false);
+            $("#Area1").val("");
+            $("#PostNumber1").val("");
+            $("#address1").attr("disabled", false);
+            $("#address1").val("");
+        } else if (str1 == "5") { //同訂購人
+
+            $("#div1").hide();
+
+        } else if (str1 == "6") { //另行配送
+
+            $("#div1").show();
+            $("#txtname1").focus();
+
+
+        } else if (str1 == "7") { //二聯發票-隨商品寄出
+            $("#divFKJS2").hide();
+        } else if (str1 == "8") { //二聯發票-分開記送
+
+            $("#divFKJS2").show();
+            $("#name1").focus();
+
+        }
+        else if (str1 == "9")//二聯發票-同訂購人
+        {
+
+            if ($("#Tong").attr("checked") == "checked") { //選中
+
+                $("#name1").val($("#MemberName").val());
+                $("#name1").attr("disabled", true);
+                $("#County1").val($("#County3").val());
+                $("#Area1").append("<option value='" + $("#Area3").val() + "' selected>" + $("#Area3").find("option:selected").text() + "</option>");  //为Select追加一个Option(下拉项) 
+                $("#PostNumber1").append("<option value='" + $("#PostNumber3").val() + "' selected>" + $("#PostNumber3").find("option:selected").text() + "</option>");  //为Select追加一个Option(下拉项) 
+                $("#address1").val($("#winestyle3").val());
+                $("#County1").attr("disabled", true);
+                $("#Area1").attr("disabled", true);
+                $("#PostNumber1").attr("disabled", true);
+                $("#address1").attr("disabled", true);
+
+            } else {  //未選中
+                $("#name1").val("");
+                $("#name1").attr("disabled", false);
+                $("#name1").focus();
+                $("#County1").attr("disabled", false);
+                $("#County1").val("");
+                $("#Area1").attr("disabled", false);
+                $("#Area1 option:gt(0)").remove();
+                $("#PostNumber1").attr("disabled", false);
+                $("#PostNumber1 option:gt(0)").remove();
+                $("#address1").attr("disabled", false);
+                $("#address1").val("");
+            }
+        }
+    }
+
+</script>
+
+<!-- 點擊輸入框清除提示文字 -->
+<script language="JavaScript" type="text/javascript">
+function Click_S(form){
+	var obj=form; 
+    if (obj.id=="name"){ obj.value=""; }  
+	if (obj.id=="phone"){ obj.value=""; }
+	if (obj.id=="Telephone"){ obj.value=""; }
+	if (obj.id=="winestyle"){ obj.value=""; }
+    if (obj.id=="name2"){ obj.value=""; }  
+	if (obj.id=="phone2"){ obj.value=""; }
+	if (obj.id=="Telephone2"){ obj.value=""; }
+}
+</script>
+
+<!-- 詢問是否滿18歲 -->
+<script language="JavaScript" type="text/javascript">
+$(function(){
+		//瀏覽器內容寬度
+		var intBrowserW = 0;
+		//瀏覽器內容高度
+		var intBrowserH = 0;
+		//取得瀏覽器內容寬度/高度
+		if (document.documentElement) {
+		    intBrowserW = document.documentElement.clientWidth;
+		    intBrowserH = document.documentElement.clientHeight;
+		} else {
+		    intBrowserW = document.body.clientWidth;
+		    intBrowserH = document.body.clientHeight;
+		}
+		$("<div class='showDiv' />").css({
+			position: "absolute",
+			width: intBrowserW,
+			height: intBrowserH,
+			left: 0,
+			top: 0,
+			opacity: 0.6,
+			display: "none",
+			backgroundColor: "black"
+		}).appendTo("body").fadeIn(400);
+		
+		$("#notice8").fadeIn(400).css({
+			left: (intBrowserW - 450) / 2,
+			top: (intBrowserH - 320) / 2
+			});	
+			
+		$(".notice_body_18BTN, .notice_title_closeBTN").click(function(){
+			$("#notice8, .showDiv").fadeOut(200);
+			});	
+
+		//footermenu置中
+    var FooterMenuWidth = $('.FooterMenu').width();
+    var FooterWidth = $('.FooterMenu').parent().width();
+    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+    $('.FooterMenu').css('margin-left',FooterPositionX);
+});
+</script>
+</head>
+
+<!-- 詢問是否滿18歲視窗 start-->
+<div id="notice8" class="notice_BG" style="width:450px;min-height:220px;">  
+	<div class="notice_title_layout">
+    	<div class="notice_title">請問您滿18歲了嗎</div>
+     	<div class="notice_title_closeBTN" onclick="Wops('notice8')"></div>
+     	<div class="CLEAR"></div>
+    </div>       
+    <div id="notice8_body" class="notice_body">
+   	    <p style="text-align:center;">我同意購票人及參加活動者皆已年滿18歲，</p>
+   	    <p style="text-align:center;">並請在活動現場出示身分證件，若未攜帶身分證，</p>
+   	    <p style="text-align:center;">無法辨識是否年滿18歲，恕無法入場亦無法退費。</p>
+        <div class="notice_body_18BTN">        </div>
+    </div>
+</div>
+<!-- 詢問是否滿18歲視窗 end-->
+
+
+
+<!-- 資料已送出視窗 start --> 
+<div id="notice3" class="notice_BG" style="width:450px;min-height:220px;display:none;">
+     <div class="notice_title_layout">
+    	<div class="notice_title">資料已送出</div>
+     	<div class="notice_title_closeBTN" onclick="Wops('notice3')"></div>
+     	<div class="CLEAR"></div>
+    </div> 
+   	 <div id="notice3_body" class="notice_body">
+   		<p>資料已送出！</p>
+   		<p>客服人員會將訂單明細寄至您的e-mail信箱，並盡快為您辦理出貨。</p>
+     	<div class="notice_backhomeBTN"></div>
+   	 </div>
+</div>
+<!-- 資料已送出視窗 end --> 
+
+<!-- eCoupon優惠視窗 start -->
+    <div id="notice6" class="notice_BG" style="width:450px;height:260px;display:none;">
+    	<div class="notice_title_layout">
+     		<div class="notice_title">e-coupon優惠</div>
+     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
+     		<div class="CLEAR"></div>
+     	</div>
+	    <div id="notice6_body" class="notice_body">
+    		<p style="margin-left:8px;">請輸入e-Coupon號碼：</p>
+    		<div class="notice_body_input_layout">
+    			<input name="e-Coupon" type="text" style="width:calc(100% - 32px);margin-left:8px;" />
+    		</div>
+    		<p style="margin-top:-10px;margin-left:8px;"><span class="Whisky">威士忌商品恕無法使用e-Coupon，敬請見諒！</span></p>
+	     	<div class="notice_confirmBTN"></div>
+	    </div>
+    </div>
+	<!-- eCoupon優惠視窗 end -->
+
+<!-- 紅利折點視窗 start -->
+    <div id="notice7" class="notice_BG" style="width:450px;height:260px;display:none;">
+    	<div class="notice_title_layout">
+     		<div class="notice_title">紅利折抵</div>
+     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
+     		<div class="CLEAR"></div>
+     	</div>
+	    <div id="notice7_body" class="notice_body">
+    		<p style="margin-left:8px;">您目前的紅利累計有<span>1234567</span>點，可折抵<span>1234567</span>元。</p>
+            <p style="margin-left:8px;">本次折抵點數：</p>
+            <div class="notice_body_input_layout">
+    			<input name="e-Coupon" type="text" style="width:calc(100% - 32px);margin-left:8px;margin-top:-10px;" />
+    		</div>
+	     	<div class="notice_confirmBTN"></div>
+	    </div>
+    </div>
+	<!-- 紅利折點視窗 end -->
+
+<div id="notice10" class="notice_BG" style="width:450px;height:310px;display:none;">
+    	<div class="notice_title_layout">
+     		<div class="notice_title">會員登入</div>
+     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
+     		<div class="CLEAR"></div>
+     	</div>
+	    <div id="notice10_body" class="notice_body">
+	    	<div class="notice_body_input_layout">
+    	 		<span style="width:48px;text-align:right;">帳號</span>
+    	 		<input name="Email" type="text" style="width: calc(100% - 120px);" />
+    	 	</div>
+    	 	<div class="notice_body_input_layout">
+    	 		<span style="width:48px;text-align:right;">密碼</span>
+    	 		<input name="Email" type="text" style="width: calc(100% - 120px);" />
+    	 	</div>
+
+    	 	<div class="notice_body_input_layout">
+    	 		<span>驗證碼</span>
+    	 		<input name="Email" type="text" style="width: 80px;" />
+    	 		<div class="notice_code_layout">
+    	 			<div class="notice_code_img"></div>
+    	 			<div class="notice_code_reflash"></div>
+    	 		</div>
+    	 		<div class="CLEAR"></div>
+    	 	</div>
+    	 	<div class="notice_forgotpassword_row">
+    	 		<span style="margin-left:80px;">忘記密碼</span>
+    	 		<span>申請帳號</span>
+    	 	</div>
+    	 	<div class="CLEAR"></div>
+    	 	<div class="notice_confirmBTN"></div>
+	    </div>
+    </div>
+    <!-- notice10 登入會員  -->
+
+
+<body>
+<div class="HeadALL">
+    <div class="HeadMenu">
+    	<a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="MobileVer">手機版</a>
+    </div>
+    <div class="TagALL_Buy">
+    	<ul>
+        	<li class="TagLogo"><a href="index.html"></a></li>
+        	<!--20161206 Roger 修改img寬度-->
+            <li class="Process"> <img src="images/Step3.png" height="53" width="900" /></li>
+            <!--20161206 Roger 修改img寬度 end-->
+        </ul>
+    </div>
+    
+</div>
+<!-- CenterALL_BG start -->
+<div class="CenterALL_BG"> 
+	
+	<!-- CartALL start -->
+	<div class="CartALL"> 
+		
+		<!-- 訂購人基本 start -->
+		<div class="cart_data">
+			<h5>訂購人基本資料</h5>
+			<div class="clear"></div>
+			<ul>
+				<li>
+					<h1><span class="redword">*</span> 姓名：</h1>
+				</li>
+				<li>
+					<p>
+						<input name="name" type="text" class="textarea1" id="MemberName" value="請輸入姓名" size="30" maxlength="50" onfocus="Click_S(this)" />
+					</p>
+				</li>
+			</ul>
+            <!-- 姓名  -->
+			 <ul>
+				<li>
+					<h1> 性別：</h1>
+				</li>
+				<li>
+					<p>
+					  <label><input type="radio" name="RadioGroup1" value="Male" id="RadioGroup1_0" />男</label>&nbsp;
+					  <label><input type="radio" name="RadioGroup1" value="Female" id="RadioGroup1_1" />女</label>
+                    </p>
+				</li>
+			</ul>
+            <!-- 性別 -->
+			<ul>
+				<li style="border:none;padding-top:5px; height:20px;"><h1><span class="redword">*</span>連絡電話：</h1></li>
+				<li style="border:none;padding-top:5px; height:20px;"><p>(擇一填寫。)</p></li>
+		    </ul>
+            <ul>
+				<li style="border:none;padding-top:5px; height:20px;"><h1></h1></li>
+				<li style="border:none;padding-top:5px; height:20px;">
+					<p>手機 <input name="phone" type="text" class="textarea1" id="phone" value="請輸入手機號碼" size="30" maxlength="50" onfocus="Click_S(this)" /></p>
+				</li>
+			</ul>
+            <ul style="margin-top:20px;">
+            	<li style="*margin-top:8px;" ><h1></h1></li>
+				<li style="*margin-top:8px;">
+					<p>市內電話
+						<select name="AreaPhoneNumber" id="AreaPhoneNumber">
+							<option selected="selected">--請選擇--</option>
+							<option>02</option>
+							<option>03</option>
+							<option>037</option>
+							<option>04</option>
+							<option>049</option>
+							<option>05</option>
+							<option>06</option>
+							<option>07</option>
+							<option>08</option>
+							<option>089</option>
+							<option>082</option>
+							<option>0836</option>
+						</select>
+						<input name="Telephone" type="text" id="Telephone" value="請輸入市內電話" size="25" maxlength="20" onfocus="Click_S(this)" />
+						&nbsp;分機
+						<input name="Extension" type="text" id="Extension" size="10" maxlength="8"/>
+					</p>
+				</li>
+      		</ul>
+            <!-- 連絡電話  -->
+
+		</div>
+		<div class="clear"></div>
+		<!-- 訂購人基本 end --> 
+		
+		
+        
+        
+        
+		<!-- 付款方式 start -->
+		<div class="cart_data">
+			<h5>付款方式 </h5>
+			<h3>
+				<input name="address" type="radio"  id="ATM" value="ATM" class="textarea1" />
+			匯款（請於24小時內完成付款，逾期恕無法保留席次。）</h3>
+			<h3>
+				<input name="address" type="radio"  id="fax" value="fax" class="textarea1" />
+				線上刷卡</h3>
+
+			
+			<!-- 信用卡號 start -->
+			<div id="card2" style="display: none;">
+				<ul>
+					<li>
+						<h1><span class="redword">*</span> 信用卡卡號：</h1>
+					</li>
+					<li>
+						<p>
+							<input name="ccard_no1" type="text" id="ccard_no1" size="4" maxlength="4" />
+							&nbsp;-&nbsp;
+							<input name="ccard_no2" type="text" id="ccard_no2" size="6" maxlength="6" />
+							&nbsp;-&nbsp;
+							<input name="ccard_no3" type="text" id="ccard_no3" size="5" maxlength="5" />
+							&nbsp;&nbsp;(限台灣核發之信用卡)&nbsp;&nbsp;<span class="redword">請輸入卡號</span></p>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h1><span class="redword">*</span> 有效期限：</h1>
+					</li>
+					<li>
+						<p>
+							<select name="valid_m" id="valid_m">
+								<option selected="selected">請選擇</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+							</select>
+							&nbsp;月&nbsp;&nbsp;
+							<select name="valid_y" id="valid_y">
+								<option selected="selected">請選擇</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+							</select>
+							&nbsp;年&nbsp;&nbsp;<span class="redword">請輸入有效期限</span> </p>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h1><span class="redword">*</span> 信用卡檢核碼：</h1>
+					</li>
+					<li>
+						<p>
+							<input name="ccard_no" type="text" id="ccard_no" size="4" maxlength="4" class="textarea1" />
+							&nbsp;&nbsp;<span class="redword">請輸入檢核碼</span></p>
+					</li>
+				</ul>
+			</div>
+			<!-- 信用卡號end --> 
+		</div>
+		<!-- 付款方式 end --> 
+		
+		
+		<!-- 發票寄送 start -->
+		<div class="cart_data">
+        	
+			<h5>發票開立方式</h5>
+            
+			<div class="Invoice" id="Invoice1"  >
+				<input name="FPJS" type="radio" class="textarea1" id="one" onclick="ChangeValue('0');" value="2" />
+				捐贈發票 </div>
+				
+				
+				
+			<div class="Invoice3" id="Invo1" style="display: none">
+				<p>捐贈對象：</p>
+				<h3>
+					<input name="unit1" type="radio" class="textarea1" id="recipient" checked="checked" />
+					伊甸社會福利基金會</h3>
+				<h3>
+					<input name="unit1" type="radio" class="textarea1" id="recipient" />
+					創世基金會</h3>
+				<h3>
+					<input name="unit1" type="radio" class="textarea1" id="recipient" />
+					陽光基金會</h3>
+				<p>依據法令規定，已捐贈發票無法索回，若需要退換貨，該發票將予以作廢。</p>
+			</div>
+			<div class="Invoice" id="Invoice2" onclick="ChangeValue('1');" >
+				<input value="1" name="FPJS" type="radio" id="two" class="textarea1" onclick="ChangeValue('2');" />
+				<label for="checkbox"></label>
+				二聯式發票 </div>
+			
+			<div class="Invoice" id="Invoice3" onclick="ChangeValue('3');">
+				<input value="3" name="FPJS" type="radio" id="three" class="textarea1" onclick="ChangeValue('2');" />
+				<label for="checkbox"></label>
+				三聯式發票</div>
+			<div id="div3" style="display: none">
+			<div class="Invoice2">
+				<ul>
+					<li>
+						<h1>發票抬頭：</h1>
+					</li>
+					<li>
+						<p>
+							<input name="invoice_title" type="text" id="invoice_title" size="30" maxlength="50" />
+						</p>
+					</li>
+					<li>
+						<h1>統一編號：</h1>
+					</li>
+					<li>
+						<p>
+							<input name="invoice_Number" type="text" id="invoice_Number" size="30" maxlength="50" />
+						</p>
+					</li>
+				</ul>
+			</div>
+            
+			
+		</div>
+		</div>
+		<!-- 發票寄送 end --> 
+	 
+		 <div class="BTN_CONSULT" >
+         	<br />
+            <button value="確認送出" class="btn_send"  onclick="Pops('notice3')" />	
+			 
+		 </div>
+</div>
+<!-- CartALL end -->
+
+</div>
+<!-- CenterALL_BG end -->
+
+<div class="FooterALL">
+	<div class="Footer_position">
+		<ul class="FooterMenu">
+            <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+            <li><a href="" target="_parent">條款及細則</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
+        </ul>
+		<div class="FooterICON">
+			<button class="Quality"></button>
+			<button class="Join"></button>
+			<button class="Novice"></button>
+		</div>
+	</div>
+</div>
+<div class="CLEAR"></div>
+<!-- FooterALL  頁腳 -->
+<div class="TC_And_UK_ALL">
+	<div class="TC_And_UK">
+		<ul>
+			<li class="Title">熱門葡萄酒類型與品種</li>
+			<li><a href="">
+				<h1>銀橡樹</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>查爾斯海德西克</h1>
+				<h2>Charles Heidsieck</h2>
+				</a></li>
+			<li><a href="">
+				<h1>Cristal酒店</h1>
+				<h2>Cristal</h2>
+				</a></li>
+			<li><a href="">
+				<h1>巴黎之花</h1>
+				<h2>Perrier Jouet</h2>
+				</a></li>
+			<li><a href="">
+				<h1>唐培裡儂</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒觀察家</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>酩和香檳</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒愛好者</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+		</ul>
+		<img src="images/icon/TC_And_UK.gif" />
+		<ul>
+			<li class="Title">熱門葡萄酒類型與品種</li>
+			<li><a href="">
+				<h1>銀橡樹</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>查爾斯海德西克</h1>
+				<h2>Charles Heidsieck</h2>
+				</a></li>
+			<li><a href="">
+				<h1>Cristal酒店</h1>
+				<h2>Cristal</h2>
+				</a></li>
+			<li><a href="">
+				<h1>巴黎之花</h1>
+				<h2>Perrier Jouet</h2>
+				</a></li>
+			<li><a href="">
+				<h1>唐培裡儂</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒觀察家</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>酩和香檳</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒愛好者</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+		</ul>
+		<img src="images/icon/TC_And_UK.gif" />
+		<ul>
+			<li class="Title">熱門葡萄酒類型與品種</li>
+			<li><a href="">
+				<h1>銀橡樹</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>查爾斯海德西克</h1>
+				<h2>Charles Heidsieck</h2>
+				</a></li>
+			<li><a href="">
+				<h1>Cristal酒店</h1>
+				<h2>Cristal</h2>
+				</a></li>
+			<li><a href="">
+				<h1>巴黎之花</h1>
+				<h2>Perrier Jouet</h2>
+				</a></li>
+			<li><a href="">
+				<h1>唐培裡儂</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒觀察家</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>酩和香檳</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒愛好者</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+		</ul>
+	</div>
+</div>
+<!-- TC_And_UK_ALL 中英翻譯 -->
+<div class="CLEAR"></div>
+<div class="CopyRight"> Copyright © 2012 iCheers.tw All Rrights Reserved </div>
+<div class="Warning">
+	<p></p>
+</div>
+<!-- Warning 警語 -->
+</body>
+
+</html>

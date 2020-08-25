@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+/* 烈酒酒詳目頁 */
+
+.SpiritsAward{
+	display: block;
+	width: 100%;
+	border: 1px solid #CACACA;
+	background-position:center;
+	}
+	
+	
+.SpiritsTasting{
+	color:#717071;
+	display: block;
+	overflow: hidden;
+	line-height:30px;
+	padding-left:15px;
+	background-color: #F2F2F2;}
+	
+
+.SpiritsTasting strong{
+	font-size: 16px;
+	font-weight: bold;
+	color: #999;
+	font-family:"微軟正黑體","Arial Black", Gadget ;}
+	
+.SpiritsTasting span{
+	color: #A1A14F;
+	font-family: "微軟正黑體","Arial Black", Gadget, sans-serif;}
+
+
+.SpiritsTasting em{
+	line-height:12px;
+	padding:3px 5px ;
+	display:inline-block;
+	color:#FFF;
+	background-color:#717071;
+	border:1px solid #fff;
+	letter-spacing:2px;
+	margin-right:2px;}
+	
+
+.SpiritsAwardsName{
+	font-family:"微軟正黑體",Arial;
+	font-size:13px;
+	line-height:28px;
+	color:#333;}
+	
+.SpiritsAwardsName li{
+	border-bottom: 1px dotted #ccc;
+	margin-left:2.5%;
+	margin-right:2.5%;
+	padding: 15px 0;
+}
+
+	.SpiritsAwardsName li::before{
+		content: "";
+		width: 0;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.SpiritsAwardsName li span{
+		vertical-align: middle;
+	}
+
+.AwardsName{
+	display:inline-block;
+	margin:0px 15px ;
+	margin-right: 30px;
+	color:#333;
+	text-align:right;
+	width: 300px;
+	font-size: 14px;
+	line-height: 28px;
+}
+	
+.AwardsList{
+	width:420px;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 28px;
+}	
+	
+.FirstAward{
+	font-weight:bold;}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+

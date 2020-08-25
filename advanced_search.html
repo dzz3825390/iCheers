@@ -1,0 +1,1999 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> advanced_search  進階搜尋  </title>
+
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" >
+
+
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+
+
+<!-- 拆掉 LeftMenu.js -->
+<script type="text/javascript" src="Scripts/ChangeTag.js"></script> <!-- 換館別 -->
+<script type="text/javascript" src="Scripts/WineLeftMenu.js"></script> <!-- 紅酒館的分類找酒 -->
+<script type="text/javascript" src="Scripts/Head.js"/></script> <!-- 有沒有收到確認信彈出 -->
+<script type="text/javascript" src="Scripts/ddsmoothmenu.js"></script> <!-- 上選單 -->
+<script type="text/javascript" src="Scripts/ShoppingCart.js"/></script> <!-- 浮動購物車 -->
+<script type="text/javascript" src="Scripts/advanced_search.js"/></script> <!--  進階搜尋 -->
+
+
+
+<!-- 外掛搜尋  -->
+<link rel="stylesheet" href="css/chosen.css" />	
+<script type="text/javascript" src="Scripts/chosen.jquery.js"></script> 
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">  
+//外掛選單用 記得搬到外面去
+ddsmoothmenu.init({
+	mainmenuid: "smoothmenu1", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+$(document).ready(function(){
+    var FooterMenuWidth = $('.FooterMenu').width();
+    var FooterWidth = $('.FooterMenu').parent().width();
+    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+    $('.FooterMenu').css('margin-left',FooterPositionX);
+});
+
+
+//呼叫外掛搜尋
+$(function(){
+	$(".chosen").data("placeholder","點我選取...").chosen();
+});
+
+
+</script>
+
+
+	
+
+
+</head>
+<!-- class="advanced_search"-->
+
+<body>
+
+<div class="HeadALL">
+    <!--20180327 Roger 新增手機板-->
+    <div class="HeadMenu">
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="MobileVer">手機版</a>
+    </div>
+    <!--20180327 Roger 新增手機板-->
+    <div class="TagALL">
+        <ul>
+            <li class="TagLogo"><a href="index.html"></a></li>
+            <li class="Tag_FocusBG"><a href="#" class="TagWine"></a></li>
+            <li><a href="Whisky_index.html" class="TagWhisky"></a></li>
+            <li style="width:120px;"><a href="beer_index.html" class="TagBeer"></a></li>
+            <!--201805 roger add new tag-->
+            <li style="width:120px;"><a href="sake_index.html" class="TagSake"></a></li>
+            <!--201805 roger add new tag end-->
+        </ul>
+    </div>   
+</div>
+
+<!-- ================================= HeadALL 刊頭ALL =================================  -->
+<div class="TopMenu">
+    <div class="TopMenu_position">
+        <div id="smoothmenu1" class="ddsmoothmenu" >
+            <ul  class="sf-menu ">
+                <li class="diBAG"><span class="menuICON"></span>
+                  <a href="#" class="ddsmoothmenu_tittle">超快速找酒</a>
+                  <ul>
+                      <div  class="ALLThirdMenuLL2">
+                            <div class="ThirdMenuLL2" style="line-height:21px; color:#000" >
+                              <li class="MenuIE7"><a href="#">婚宴喜慶</a></li> 
+                              <li class="MenuIE7"><a href="#">Party萬歲</a></li>
+                              <li class="MenuIE7"><a href="#">搭餐美酒</a></li>
+                              <li class="MenuIE7"><a href="#">約會好心動</a></li>
+                              <li class="MenuIE7"><a href="#">體面送禮酒</a></li>
+                              <li class="MenuIE7"><a href="#">珍藏名酒</a></li>
+                            </div>
+                            <div class="ThirdMenuRR2" style="border-left:1px dotted #CCC;">
+                                  <li class="MenuIE7" ><a href="#">紅酒</a>
+                                    <ul>
+                                        <li><a href="#">低於$ 500</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">波爾多</a>
+                                                            <a href="#">布根地 </a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">卡本內蘇維濃</a>
+                                                            <a href="#">黑皮諾</a>
+                                                            <a href="#">梅洛</a>
+                                                            <a href="#">希哈</a>
+                                                            <a href="#">田帕尼歐</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                            
+                                        </li>
+                                        <li><a href="#">$ 500～1,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">波爾多</a>
+                                                            <a href="#">布根地 </a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">卡本內蘇維濃</a>
+                                                            <a href="#">黑皮諾</a>
+                                                            <a href="#">梅洛</a>
+                                                            <a href="#">希哈</a>
+                                                            <a href="#">田帕尼歐</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 1,001～2,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">波爾多</a>
+                                                            <a href="#">布根地 </a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">卡本內蘇維濃</a>
+                                                            <a href="#">黑皮諾</a>
+                                                            <a href="#">梅洛</a>
+                                                            <a href="#">希哈</a>
+                                                            <a href="#">田帕尼歐</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 2,001～3,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">波爾多</a>
+                                                            <a href="#">布根地 </a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">卡本內蘇維濃</a>
+                                                            <a href="#">黑皮諾</a>
+                                                            <a href="#">梅洛</a>
+                                                            <a href="#">希哈</a>
+                                                            <a href="#">田帕尼歐</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 3,001～4,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">波爾多</a>
+                                                            <a href="#">布根地 </a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">卡本內蘇維濃</a>
+                                                            <a href="#">黑皮諾</a>
+                                                            <a href="#">梅洛</a>
+                                                            <a href="#">希哈</a>
+                                                            <a href="#">田帕尼歐</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$4,001～5,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">波爾多</a>
+                                                            <a href="#">布根地 </a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">卡本內蘇維濃</a>
+                                                            <a href="#">黑皮諾</a>
+                                                            <a href="#">梅洛</a>
+                                                            <a href="#">希哈</a>
+                                                            <a href="#">田帕尼歐</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 5,000以上</a>
+                                           <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">波爾多</a>
+                                                            <a href="#">布根地 </a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">卡本內蘇維濃</a>
+                                                            <a href="#">黑皮諾</a>
+                                                            <a href="#">梅洛</a>
+                                                            <a href="#">希哈</a>
+                                                            <a href="#">田帕尼歐</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                  </li>
+                                  
+                                  <li class="MenuIE7"><a href="#">白酒</a>
+                                    <ul>
+                                        <li><a href="#">低於$ 500</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">阿爾薩斯</a>
+                                                            <a href="#">布根地</a>
+                                                            <a href="#">羅亞爾河</a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">夏多內</a>
+                                                            <a href="#">麗絲玲</a>
+                                                            <a href="#">白蘇維濃</a>
+                                                            <a href="#">蜜思嘉</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$500～1,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">阿爾薩斯</a>
+                                                            <a href="#">布根地</a>
+                                                            <a href="#">羅亞爾河</a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">夏多內</a>
+                                                            <a href="#">麗絲玲</a>
+                                                            <a href="#">白蘇維濃</a>
+                                                            <a href="#">蜜思嘉</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 1,001～2,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">阿爾薩斯</a>
+                                                            <a href="#">布根地</a>
+                                                            <a href="#">羅亞爾河</a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">夏多內</a>
+                                                            <a href="#">麗絲玲</a>
+                                                            <a href="#">白蘇維濃</a>
+                                                            <a href="#">蜜思嘉</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 2,001～3,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">阿爾薩斯</a>
+                                                            <a href="#">布根地</a>
+                                                            <a href="#">羅亞爾河</a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">夏多內</a>
+                                                            <a href="#">麗絲玲</a>
+                                                            <a href="#">白蘇維濃</a>
+                                                            <a href="#">蜜思嘉</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 3,001～4,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">阿爾薩斯</a>
+                                                            <a href="#">布根地</a>
+                                                            <a href="#">羅亞爾河</a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">夏多內</a>
+                                                            <a href="#">麗絲玲</a>
+                                                            <a href="#">白蘇維濃</a>
+                                                            <a href="#">蜜思嘉</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$4,001～5,000</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">阿爾薩斯</a>
+                                                            <a href="#">布根地</a>
+                                                            <a href="#">羅亞爾河</a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">夏多內</a>
+                                                            <a href="#">麗絲玲</a>
+                                                            <a href="#">白蘇維濃</a>
+                                                            <a href="#">蜜思嘉</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$5,000以上</a>
+                                            <ul style="line-height:12px;">
+                                                <div class="ALLThirdMenuLL">
+                                                   <div class="ThirdMenuLL">
+                                                            <div class="ThirdMenuTittle">地區 </div>
+                                                            <a href="#">法國</a>
+                                                            <a href="#">阿爾薩斯</a>
+                                                            <a href="#">布根地</a>
+                                                            <a href="#">羅亞爾河</a>
+                                                            <a href="#">西班牙</a>
+                                                            <a href="#">義大利</a>
+                                                            <a href="#">美國</a>
+                                                            <a href="#">澳洲</a>
+                                                            <a href="#">阿根廷</a>
+                                                            <a href="#">智利</a>
+                                                            <a href="#">南非</a>
+                                                    </div>
+                                                    <div class="ThirdMenuRR" >
+                                                            <div class="ThirdMenuTittle">品種 </div>
+                                                            <a href="#">夏多內</a>
+                                                            <a href="#">麗絲玲</a>
+                                                            <a href="#">白蘇維濃</a>
+                                                            <a href="#">蜜思嘉</a>
+                                                            <div class="ThirdMenuTittle">評價 </div> 
+                                                            <a href="#">Robert Parker</a>
+                                                            <a href="#">90分以上</a>
+                                                            <a href="#">Jancis Robinson</a>
+                                                            <a href="#">18分以上</a>
+                                                            <a href="#">得獎高分酒</a>
+                                                    </div>
+                                                </div> 
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                  </li>
+                                  
+                                  <li  class="MenuIE7"><a href="#">粉紅酒</a>
+                                    <ul>
+                                        <li><a href="#">低於$ 500</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 500～1,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 1,001～2,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 2,001～3,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 3,001～4,000</a>
+                                            <ul>
+                                                <li><a href="#">法國</a></li>
+                                                <li><a href="#">西班牙</a></li>
+                                                <li><a href="#">義大利</a></li>
+                                                <li><a href="#">美國</a></li>
+                                                <li><a href="#">澳洲</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$4,001～5,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$5,000以上</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                  </li>
+                                  <li  class="MenuIE7"><a href="#">氣泡酒</a>
+                                    <ul>
+                                        <li><a href="#">低於$ 500</a>
+                                            <ul>
+                                                <li><a href="#">香檳</a></li>
+                                                <li><a href="#">甜型</a></li>
+                                                <li><a href="#">干(不甜)型</a></li>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 500～1,000</a>
+                                            <ul>
+                                                 <li><a href="#">香檳</a></li>
+                                                <li><a href="#">甜型</a></li>
+                                                <li><a href="#">干(不甜)型</a></li>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 1,001～2,000</a>
+                                            <ul>
+                                                 <li><a href="#">香檳</a></li>
+                                                <li><a href="#">甜型</a></li>
+                                                <li><a href="#">干(不甜)型</a></li>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 2,001～3,000</a>
+                                            <ul>
+                                                 <li><a href="#">香檳</a></li>
+                                                <li><a href="#">甜型</a></li>
+                                                <li><a href="#">干(不甜)型</a></li>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 3,001～4,000</a>
+                                            <ul>
+                                                 <li><a href="#">香檳</a></li>
+                                                <li><a href="#">甜型</a></li>
+                                                <li><a href="#">干(不甜)型</a></li>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 4,001～5,000</a>
+                                            <ul>
+                                                 <li><a href="#">香檳</a></li>
+                                                <li><a href="#">甜型</a></li>
+                                                <li><a href="#">干(不甜)型</a></li>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$5,000以上</a>
+                                            <ul>
+                                                 <li><a href="#">香檳</a></li>
+                                                <li><a href="#">甜型</a></li>
+                                                <li><a href="#">干(不甜)型</a></li>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                  </li>
+                                  <li class="MenuIE7"><a href="#">甜酒</a>
+                                    <ul>
+                                        <li><a href="#">低於$ 500</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 500～1,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 1,001～2,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 2,001～3,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 3,001～4,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 4,001～5,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$5,000以上</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                  </li>
+                                  
+                                  <li class="MenuIE7"><a href="#">加烈酒</a>
+                                    <ul>
+                                        <li><a href="#">低於$ 500</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 500～1,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 1,001～2,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 2,001～3,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 3,001～4,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 4,001～5,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$5,000以上</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                  </li>
+                                  <li class="MenuIE7"><a href="#">烈酒</a>
+                                    <ul>
+                                        <li><a href="#">低於$ 500</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 500～1,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 1,001～2,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 2,001～3,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 3,001～4,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$ 4,001～5,000</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">$5,000以上</a>
+                                            <ul>
+                                                <li><a href="#">Robert Parker</a></li>
+                                                <li><a href="#">90分以上</a></li>
+                                                <li><a href="#">Jancis Robinson</a></li>
+                                                <li><a href="#">18分以上</a></li>
+                                                <li><a href="#">得獎高分酒</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                  </li>
+                              </div>  
+                      </div>
+                    
+                  </ul>
+                </li>
+                <li  class="diBAG"><span class="menuICON"></span>
+                  <a href="#" class="ddsmoothmenu_tittle">波爾多列級酒</a>
+                    <ul>
+                        <li><a href="#">暢銷紅酒</a>
+                            <ul>
+                                <li><a href="#">低於$ 500</a></li>
+                                <li><a href="#">$ 500～999</a></li>
+                                <li><a href="#">$ 1,000～2,000</a></li>
+                                <li><a href="#">$ 2,000～3,000</a></li>
+                                <li><a href="#">$ 3,000～4,000</a></li>
+                                <li><a href="#">$ 4,000以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">消暑白酒、氣泡酒</a>
+                            <ul>
+                                <li><a href="#">低於$ 500</a></li>
+                                <li><a href="#">$ 500～999</a></li>
+                                <li><a href="#">$ 1,000～2,000</a></li>
+                                <li><a href="#">$ 2,000～3,000</a></li>
+                                <li><a href="#">$ 3,000～4,000</a></li>
+                                <li><a href="#">$ 4,000以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">頂級香檳</a>
+                            <ul>
+                                <li><a href="#">低於$ 500</a></li>
+                                <li><a href="#">$ 500～999</a></li>
+                                <li><a href="#">$ 1,000～2,000</a></li>
+                                <li><a href="#">$ 2,000～3,000</a></li>
+                                <li><a href="#">$ 3,000～4,000</a></li>
+                                <li><a href="#">$ 4,000以上</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">波爾多專區</a>
+                            <ul>
+                                <li><a href="">左岸</a></li>
+                                <li><a href="">右岸</a></li>
+                                <li><a href="">兩海之間</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">布根地佳釀</a>
+                            <ul>
+                                <li><a href="">夏布利</a></li>
+                                <li><a href="">夜丘</a></li>
+                                <li><a href="">伯恩丘</a></li>
+                                <li><a href="">夏隆內丘 & 馬貢</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">佐餐酒專區</a>
+                            <ul>
+                                <li><a href="">中式 / 亞洲料理</a>
+                                    <ul>
+                                        <li><a href="">偏甜類型</a></li>
+                                        <li><a href="">辛辣類型</a></li>
+                                        <li><a href="">燒烤類型</a></li>
+                                        <li><a href="">生冷食材</a></li>
+                                        <li><a href="">湯湯水水</a></li>
+                                        <li><a href="">最搭甜食</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">西式料理</a>
+                                    <ul>
+                                        <li><a href="">開胃酒</a></li>
+                                        <li><a href="">各式沙拉</a></li>
+                                        <li><a href="">肉類料理</a></li>
+                                        <li><a href="">海鮮料理</a></li>
+                                        <li><a href="">野味、禽類料理</a></li>
+                                        <li><a href="">澱粉與蛋類料理</a></li>
+                                        <li><a href="">最搭甜食</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+               <li  class="diBAG"><span class="menuICON"></span>
+                  <a href="#" class="ddsmoothmenu_tittle2">主題選酒</a>
+                  <ul>
+                    <li><a href="#">范冰冰</a></li>
+                    <li><a href="#">侯佩岑</a></li>
+                    <li><a href="#">熊大與兔兔</a></li>
+                    <li><a href="#">寶傑,你怎麼看?</a></li>
+                  </ul>
+                </li>
+                
+                <li  class="diBAG"><span class="menuICON"></span>
+                  <a href="#" class="ddsmoothmenu_tittle2">達人私藏酒</a>
+                </li>
+                
+                
+                <li  class="diBAG"><span class="menuICON"></span>
+                  <a href="#" class="ddsmoothmenu_tittle2">高分超值酒</a>
+                </li>
+
+                <li  class="diBAG"><span class="menuICON"></span>
+                  <a href="#" class="ddsmoothmenu_tittle2">高分超值酒</a>
+                </li>
+                 
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+
+<!-- ================================= TopMenu 上選單 =================================  -->
+
+
+
+<div class="CenterALL_BG">
+    <div class="MyWineList" id="MyWineList">
+            <div class="WineList_Posation">
+                <div class="WineList_ALL" id="WineList_ALL">
+                    <div class="WineList_Info"> 
+                        <h1></h1>
+                        <h4>
+                            <div class="WineList_Info_text">清單內有(<span class="RED14">3</span>)款酒
+                            <span style="margin-left: 15px;"></span>
+                            總價$<span class="RED17">114,010</span></div>
+                            <div class="SeeDetailsICON"></div>
+                        </h4>
+                        <div class="Commodity">
+                            <div class="GoLeft2" id="GoLeft2"> <img src="images/icon/ICON_GoLeft2.png"></div>
+                            <div class="GoRight2" id="GoRight2"> <img src="images/icon/ICON_GoRight2.png"></div>
+                            <div class="GoLeft3" id="GoLeft3"> <img src="images/icon/ICON_GoLeft2.png"></div>
+                            <div class="GoRight3" id="GoRight3"> <img src="images/icon/ICON_GoRight2.png"></div>
+                            <a class="WineList_WineName">史坦因布赫麗絲玲白酒史坦史坦因布赫麗絲玲白酒史坦因史坦因史坦</a>
+                            <a class="WineList_WineName2">Brewery Hill Chardonnay Brewery Hill Chardonnay</a>
+                            <a class="WineList_WineName3">史坦因布赫麗絲玲白酒史坦史坦因布赫麗絲玲白酒史坦因史坦因史坦</a>
+                            <a class="WineList_WineName4">Brewery Hill Chardonnay Brewery Hill Chardonnay</a>
+                            <a href="" class="WineList_More">More &gt;&gt;</a>
+                            <div class="Added">
+                                <div class="Recent_IMG_GO">
+                                    <div style="height:90px; width:500px; position:absolute; top:50px; left:0px;">
+                                        <div class="Recent_IMG_GO ui-droppable" id="reRecent_IMG_GO"></div>
+                                    </div>
+                                    <ul id="Recent_IMG" class="ui-droppable" style="margin-top:205px;">
+                                        <li class="ui-draggable" style="border:2px solid #C08F1A">
+                                        <img src="images/pic/SW1.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW2.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW3.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW4.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW1.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                    </ul>
+                                </div>
+                                <!-- Recent_IMG_GO -->
+                            </div>
+                            <!-- Added -->
+                        </div>
+                        <!-- Commodity -->
+                    </div>
+                    <!-- WineList_Info 定寬度 -->
+                </div>
+                <!-- WineList_ALL 實質移動（+ width）位置 -->
+            </div>
+            <!-- WineList_Posation 全部定位  -->
+    </div>
+    <!-- MyWineList 我的清單 -->
+</div>
+
+<div class="CenterALL"><!-- CenterALL-->
+
+	<div class="Left_Menu_layout Left_Menu_bg"><!--左邊欄-->
+        <div class="Left_Menu_ClassifySearch_layout"><!--灰底分類搜尋-->
+            <div class="Left_Menu_ClassifySearch_searchICON"></div>
+            <div class="Left_Menu_ClassifySearch_title"></div>
+            <input type="text" value="請輸入關鍵字"  class="Left_Menu_ClassifySearch_input" />
+            <div class="Left_Menu_Advancedoption_layout">
+                <div class="Left_Menu_AdvancedSearch">
+                    <span class="Left_Menu_AdvancedSearch_icon"></span>
+                    <span class="Left_Menu_AdvancedSearch_text">進階搜尋</span>
+                </div>
+                <div class="Left_Menu_AdvancedOrignal_layout">
+                    <span class="Left_Menu_AdvancedOrignal_icon"></span>
+                    <span class="Left_Menu_AdvancedOrignal_text">轉為原文選單</span>
+                </div>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Left_Menu_ClassifySearch_separateline"></div>
+            <div class="Left_Menu_YearWinery_layout">
+                <div class="Left_Menu_Winery">
+                    <span class="Left_Meni_YearWinery_diamond_icon"></span>
+                    <span class="Left_Menu_YearWinery_text">找酒莊</span>
+                </div>
+                <div class="Left_Menu_Year">
+                    <span class="Left_Meni_YearWinery_diamond_icon"></span>
+                    <span class="Left_Menu_YearWinery_text">找年份</span>
+                </div>
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--灰底分類搜尋 end-->
+        <div class="Left_Menu_block"><!--類型-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">類型</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Type" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">紅酒(142)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">白酒(60)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">粉紅酒(3)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">氣泡酒(14)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">甜酒(20)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">加烈酒(13)</a></li>
+                <li><a href="" id="TypeOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+        </div><!--類型 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--產區-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">產區</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Place" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">法國(206)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">澳洲(71)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">美國(52)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">義大利(50)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">西班牙(38)</a></li>
+                <div class="Menu_More" id="Menu_Place_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">阿根廷(28)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">智利(15)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">德國(7)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">紐西蘭(6)</a></li>
+                </div>
+                <li><a id="PlaceOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+            <div id="PlaceOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+            <div class="GoToList" id="GoToList">
+                <a>全部列表<img src="images/icon/Menu_List.png" /></a>
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--產區 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--品種-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">品種</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Variety" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">卡本內蘇維濃(40)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">梅洛(36)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">黑皮諾(36)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">卡本內弗朗(69)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">夏多內(48)</a></li>
+                <div class="Menu_More" id="Menu_Variety_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">希哈(40)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">小維鐸(37)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">希哈(Shiraz)(36))</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">白蘇維濃(32)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">麗絲玲(30)</a></li>
+                </div>
+                <li><a id="VarietyOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+            <div id="VarietyOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+            <div class="GoToList" id="GoToList2">
+                <a>全部列表<img src="images/icon/Menu_List.png" /></a>
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--品種 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--單價-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">單價</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Price" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">低於 $500 (21)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$500-1000 (107)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$1001-2000 (104)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$2001-3000 (68)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$3001-4000 (45)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$4001-5000 (33)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$5000 以上 (113)</a></li>
+            </ul>
+            <div class="Left_Menu_price_layout">
+                <div class="Left_Menu_price_title">
+                    <span class="Left_Menu_price_title_line"></span>
+                    <span class="Left_Menu_price_title_text">輸入價格</span>
+                </div>
+                <div class="CLEAR"></div>
+                <div class="Left_Menu_price_second_title">例：0~5000</div>
+                <div class="Left_Menu_price_input_layout">
+                    <input type="text" />
+                    <span>~</span>
+                    <input type="text" />
+                    <span>元之間</span>
+                    <img src="images/icon/Sent.png"/>
+                </div>
+                <div class="CLEAR"></div>
+            </div>
+        </div><!--單價 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--評價-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">評價</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Evaluate" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">Robert Parker (216)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">Stephen Tanzer (170)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">Wine Spectator (130)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">Jancis Robinson (118)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">Decanter (83)</a></li>
+                <div class="Menu_More" id="Menu_Evaluate_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">Burghound (37)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">La Revue du Vin de France (37)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">James Halliday (30)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">International Wine Challenge (29)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Jeremy Oliver (18)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Le Guied Hachette des Vins (16)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Bettane & Desseauve (15)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">International Wine & Spirit Competition (7)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Guía Peñín (4)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Gambero Rosso (2)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">The Wine Doctor (2)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">San Francisco Chronicle Wine Competition (1)</a></li>
+                </div>
+                <li><a id="EvaluateOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li> 
+            </ul>
+            <div id="EvaluateOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--評價-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--等級-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">等級</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_grade" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">未知 (338)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">法定產區管制（AC） (939)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">特級園 (262)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">一級園 (188)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">村莊級 (126)</a></li>
+                <div class="Menu_More" id="Menu_Grade_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                </div>
+                <li><a id="GradeOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+            <div id="GradeOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--等級 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--年分-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">年份</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Year" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">NV(無年份) (21)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">2000年至今 (107)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">1980-1999年(104)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">1960-1979年(68)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">1940-1959年 (45)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">1920-1939年(33)</a></li>
+            </ul>
+            <div class="Left_Menu_year_layout">
+                <div class="Left_Menu_year_title">
+                    <span class="Left_Menu_year_title_line"></span>
+                    <span class="Left_Menu_year_title_text">輸入年份</span>
+                </div>
+                <div class="CLEAR"></div>
+                <div class="Left_Menu_year_second_title">例：1895~2000</div>
+                <div class="Left_Menu_year_input_layout">
+                    <input type="text" />
+                    <span>~</span>
+                    <input type="text" />
+                    <span>年之間</span>
+                    <img src="images/icon/Sent.png"/>
+                </div>
+                <div class="CLEAR"></div>
+            </div>
+        </div><!--年分 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--容量-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">容量</span>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Menu_More" id="Menu_Capacity_More">
+                <ul class="Left_Menu_options">
+                    <li><input name="" type="checkbox" value=""/><a href="">200ml (1)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">375ml (34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">700ml (3)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">750ml (682)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">1.5L (11)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                    <li><a href="" id="CapacityOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+                </ul>
+            </div>
+            <div id="CapacityOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--容量 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_bottom_layout">
+            <div class="Left_Menu_Advancedoption_layout">
+                <div class="Left_Menu_bottom Left_Menu_AdvancedSearch">
+                    <span class="Left_Menu_AdvancedSearch_icon"></span>
+                    <span class="Left_Menu_AdvancedSearch_text">進階搜尋</span>
+                </div>
+                <div class="Left_Menu_bottom Left_Menu_AdvancedRecent_layout">
+                    <span class="Left_Menu_AdvancedRecent_icon"></span>
+                    <span class="Left_Menu_AdvancedRecent_text">近期瀏覽</span>
+                </div>
+            </div>
+        </div>
+    </div><!--左邊欄 end-->
+    
+    <div class="Right_content"><!--右邊欄-->
+        <div class="Wine_Search_List_ALL">
+    	    <div class="List_Title">
+                <div class="List_Title_advanced_search_line"></div> 
+                <div class="List_Title_advanced_search">進階搜尋</div>   
+            </div>
+            <div class="Result_advanced_search ">
+         	    <div class="Advanced_keyWords"><!-- Advanced_keyWords -->
+            	    <h1>▶ 關鍵字</h1>
+                    <span class="Advanced_keyWords_text">例：大德園、貴腐甜酒、波爾多...</span>
+                    <input name="" type="text"  />
+                </div><!-- Advanced_keyWords end-->
+                <!--20180529 roger fix-->
+                <div class="Advanced_Price"><!--Advanced_Price-->
+            	    <h1>▶ 單價</h1>
+                    <span class="Advanced_Price_text">請輸入金額</span>
+                    <input name="" type="text"  style="margin-right:3px;" />元 ~ <input name="" type="text" style="margin-right:3px;" />元之間
+                </div><!--Advanced_Price end-->
+                <!--20180529 roger fix end-->
+                <div class="CLEAR"></div>
+                <div class="Advanced_Block"><!-- Advanced_Block-->
+            	    <div class="BlockLL">
+                        <div class="Advanced_Type"><!-- Advanced_Type -->
+                            <h1>▶ 類型</h1>
+                    	    <ul class="Layer1"  id="TypeLayer"> <!-- Layer1 -->
+                                <li><input type="checkbox" value="紅酒" />紅酒</li>
+                                <li><input type="checkbox" value="白酒" />白酒</li>
+                                <li><input type="checkbox" value="粉紅酒" />粉紅酒</li>
+                                <li><input type="checkbox" value="氣泡酒" />氣泡酒</li>
+                                <li><input type="checkbox" value="甜酒" />甜酒</li>
+                                <li><input type="checkbox" value="加烈酒" />加烈酒</li>
+                            </ul><!-- Layer1 end-->    
+                        </div><!-- Advanced_Type end-->
+                        <!--20170215 Roger 新增熱門搜尋選項-->
+                        <div class="Advanced_HotSearch">
+                        	<h1>▶ 熱門搜尋</h1>
+                        	<ul>
+                        		<li>
+                        			<input type="radio" name="1">頂級名酒
+                        		</li>
+                        		<li>
+                        			<input type="radio" name="1">快速到貨
+                        		</li>
+                        		<li>
+                        			<input type="radio" name="1">超值預訂
+                        		</li>
+                        	</ul>
+                        </div>
+                        <!--20170215 Roger 新增熱門搜尋選項 end-->
+                    </div>
+                    <div class="BlockRR">
+                        <div class="Advanced_Producing"><!-- Advanced_Producing -->
+                            <h1>▶ 產區</h1>
+                    	    <ul class="Layer1" id="ProducingLayer">
+                        	    <li><!--France法國 RE01-->
+                                    <input type="checkbox" value="France"  />France (法國)
+                            	    <ul class="Layer2"><!--Layer2 RE01 -->
+                                	    <li>
+                                            <input type="checkbox" value="Alsace"  />Alsace (阿爾薩斯)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Beaujolais" />Beaujolais(薄酒來)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Bordeaux" />Bordeaux(波爾多)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Burgundy" />Burgundy(布根地)
+                                    	    <ul class="Layer3"><!--Layer3 RE0104 -->
+                                        	    <li>
+                                                    <input type="checkbox" value="Chablis" />Chablis(夏布利)
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="Cote Chalonnaise" />Cote Chalonnaise(夏隆內丘)
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="Cote de Beaune" />Cote de Beaune(伯恩丘)
+                                            	    <ul class="Layer4"><!--  Layer4 RE010403 -->
+                                                	    <li>
+                                                            <input type="checkbox" value="Aloxe-Corton" />Aloxe-Corton(阿羅斯–高登)
+                                                    	    <ul class="Layer5"><!--  Layer5   RE01040301 -->
+                                                        	    <li>
+                                                                    <input type="checkbox" value="Corton-Charlemagne" />Corton-Charlemagne
+                                                                </li>
+                                                                <li>
+                                                                    <input type="checkbox" value="Le Corton" />Le Corton
+                                                                </li>
+                                                            </ul><!--  Layer5   RE01040301 end-->	
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Auxey-Duresses" />Auxey-Duresses(奧賽–都黑斯)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Beaune" />Beaune(伯恩)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Blagny" />Blagny(布拉尼)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Chassagne-Montrachet" />Chassagne-Montrachet(夏山–蒙哈榭)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Chorey-les-Beaune" />Chorey-les-Beaune(修黑–伯恩)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Ladoix" />Ladoix(拉都瓦)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Maranges" />Maranges(馬宏吉)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Meursault" />Meursault(梅索)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Monthelie" />Monthelie(蒙蝶利)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Pernand-Vergelesses" />Pernand-Vergelesses(佩南–維哲雷斯)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Pommard" />Pommard(玻瑪)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Puligny-Montrachet" />Puligny-Montrachet(普里尼–蒙哈榭)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Saint-Aubin" />Saint-Aubin(聖歐班)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Saint-Romain" />Saint-Romain(聖侯曼)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Santenay" />Santenay(松特內)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Savigny-les-Beaune" />Savigny-les-Beaune(薩維尼–伯恩)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Volnay" />Volnay(渥爾內)
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" value="Volnay Santenots" />Volnay Santenots(渥爾內–松德諾)
+                                                        </li>
+                                                    </ul><!--  Layer4 RE010403 end-->
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="Cote de Nuits" />Cote de Nuits(夜丘)
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="Hautes-Cotes de Beaune" />Hautes-Cotes de Beaune(上伯恩丘)
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="Hautes-Cotes de Nuits" />Hautes-Cotes de Nuits(上夜丘)
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="Maconnais" />Maconnais(馬貢)
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="Passe-Tout-Grains" />Passe-Tout-Grains(巴斯)
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" value="Sauvignon de Saint-Bris" />Sauvignon de Saint-Bris(聖比)
+                                                </li>
+                                            </ul><!--Layer3 RE0104 end-->
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Champagne" />Champagne(香檳)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Corsica" />Corsica(科西嘉島)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Jura" />Jura(侏羅)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Languedoc" />Languedoc(隆格多克)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Loire Valley" />Loire Valley(羅亞爾河谷)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Provence" />Provence(普羅旺斯)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Rhone Valley" />Rhone Valley(隆河谷)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Roussillon" />Roussillon(胡西雍)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Savoie" />Savoie(薩瓦)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="South-west" />South-west(西南產區)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Clos Saint-Jacques" />Clos Saint-Jacques(聖賈克園)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Saint-Pourcain" />Saint-Pourcain(聖普桑)
+                                        </li>
+                                    </ul><!--Layer2 RE01 end-->
+                                </li><!-- France 法國 RE01 end-->
+                                <li><!--Italy(義大利)-->
+                                    <input type="checkbox" value="Italy" />Italy(義大利)
+                            	    <ul class="Layer2">
+                                	    <li>
+                                            <input type="checkbox" value="Abruzzo" />Abruzzo(阿布魯佐)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Basilicata" />Basilicata(巴西利卡塔)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Calabria" />Calabria(卡拉布瑞亞)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Campania" />Campania(坎帕尼亞)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Emilia-Romagna" />Emilia-Romagna(艾米里亞–羅馬納)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Friuli-Venezia Giulia" />Friuli-Venezia Giulia(弗里尤利–維內奇亞–朱利亞)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Lazio" />Lazio(拉契優)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Liguria" />Liguria(利古里亞)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Lombardy" />Lombardy(倫巴底)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Marche" />Marche(馬徹)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Molise" />Molise(莫里賽)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Piedmont" />Piedmont(皮蒙)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Puglia" />Puglia(普利亞)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Sardinia" />Sardinia(薩丁尼亞)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Sicily" />Sicily(西西里)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Tuscany" />Tuscany(托斯卡尼)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Trentino-Alto Adige" />Trentino-Alto Adige(特蘭提諾–上阿迪杰)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Umbria" />Umbria(翁布里亞)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Aosta Valley" />Aosta Valley(阿歐斯塔谷地)
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" value="Veneto" />Veneto(維內多)
+                                        </li>
+                                    </ul>
+                                </li><!--Italy(義大利) end-->
+                                <li>
+                                    <input type="checkbox" value="Spain" />Spain(西班牙)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="USA" />USA(美國)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Australia" />Australia(澳洲)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Germany" />Germany(德國)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Argentina" />Argentina(阿根廷)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Chile" />Chile(智利)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="South Africa" />South Africa(南非)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="New Zealand" />New Zealand(紐西蘭)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Portugal" />Portugal(葡萄牙)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Hungary" />Hungary(匈牙利)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Canada" />Canada(加拿大)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Austria" />Austria(奧地利)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="England" />England(英國)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Greece" />Greece(希臘)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Romania" />Romania(羅馬尼亞)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Switzerland" />Switzerland(瑞士)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Bulgaria" />Bulgaria(保加利亞)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Cyprus" />Cyprus(賽普勒斯)
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="Georgia" />Georgia(喬治亞)
+                                </li>
+                            </ul>
+                        </div><!-- Advanced_Producing end-->
+                    </div>
+                    <div class="CLEAR" ></div>
+                </div><!-- Advanced_Block end-->
+                <div class="Advanced_Block"><!-- Advanced_Block  品種 -->
+                	<h1>▶ 品種</h1>
+                    <div style="position:relative; z-index:9998;margin-left:15px;">
+                        <select class="chosen" multiple="true" style="width:509px;">
+                            <!--<option selected="selected">Dojo Toolkit</option> 預設  -->
+                            <option>Abouriou(阿布麗由)</option>
+                            <option>Alicante Bouschet(阿里崗特)</option>
+                            <option>Aligoté(阿里哥蝶)</option>
+                            <option>Altesse(阿爾地斯)</option>
+                            <option>Barbarossa(巴巴羅莎)</option>
+                            <option>Baroque(巴洛克)</option>
+                            <option>Bourboulenc(布布蘭克)</option>
+                            <option>Cabernet Sauvignon(卡本內–蘇維濃)</option>
+                            <option>Chardonnay(夏多內)</option>
+                            <option>Trincadeira Prera</option>
+                            <option>Zala Gyöngye</option>
+                            <option>Zweigelt</option>
+                        </select>
+                    </div>
+                </div><!-- Advanced_Block  品種 end-->
+                <div class="Advanced_Block Advanced_Variety"><!-- Advanced_Block  品種 -->
+            	    <h1>▶ 等級</h1>
+                    <select class="chosen" multiple="true" style="width:509px; margin-left:15px;">
+                        <!--<option selected="selected">Dojo Toolkit</option> 預設  -->
+                        <option>Appellation d'Origine Contrôlée(法定產區管制)</option>
+                        <option>Vin Délimlté de Qualité Supérieure(優良地區餐酒)</option>
+                        <option>Vin de Pays(地區餐酒)</option>
+                        <option>Vin de Table(普級餐酒)</option>
+                        <option>Grand Cru (AC)(特級葡萄園)</option>
+                        <option>Premier Cru (AC)(一級葡萄園)</option>
+                        <option>Village (AC)(村莊級葡萄園)</option>
+                     </select>
+                </div><!-- Advanced_Block  品種 end-->
+                <div class="Advanced_Block"><!-- Advanced_Evaluate -->
+            	    <h1>▶ 評價</h1>
+                    <select  style="width:350px; margin-left:15px; margin-left:0px\9;" >
+                        <option selected="selected" value="">--請選擇--</option>
+                        <option >Robert Parker</option>
+                        <option >Jancis Robinson</option>
+                        <option >Gambero Rosso</option>
+                        <option >Stephen Tanzer</option>
+                        <option >Bettane &amp; Desseauve</option>
+                        <option >The Wine Doctor</option>
+                        <option >James Halliday</option>
+                        <option >Guía Peñín</option>
+                        <option >Jeremy Oliver</option>
+                        <option >Burghound</option>
+                        <option >Decanter</option>
+                        <option >Wine Spectator</option>
+                        <option >Le Guied Hachette des Vins</option>
+                        <option >International Wine Challenge</option>
+                        <option >International Wine &amp; Spirit Competition</option>
+                        <option >La Revue du Vin de France</option>
+                        <option >San Francisco Chronicle Wine Competition</option>
+                        <option >Royal Adelaide Wine Show</option>
+                        <option >Barossa Wine Show</option>
+                        <option >Sydney International Wine Competition</option>
+                        <option >The Shanghai International Wine Competition</option>
+                        <option >Concours des Vins Orange</option>
+                        <option >Concours General Agricole</option>
+                        <option >Concours des Vins D'Aquitaube</option>
+            		</select>
+                    <select style="margin-top:5px; width:100px;">
+                        <option value="">--請選擇--</option>
+                        <option value="100" disabled="true">100分（滿分）</option>
+                        <option value="95" disabled="true">95分以上</option>
+                        <option value="90" disabled="true">90分以上</option>
+                        <option value="85" disabled="true">85分以上</option>
+                        <option value="80" disabled="true">80分以上</option>
+                        <option value="75" disabled="true">75分以上</option>
+                        <option value="70" disabled="true">70分以上</option>
+                        <option value="20" disabled="true">20分（滿分）</option>
+                        <option value="18" disabled="true">18分以上</option>
+                        <option value="16" disabled="true">16分以上</option>
+                        <option value="14" disabled="true">14分以上</option>
+                        <option value="12" disabled="true">12分以上</option>
+                        <option value="10" disabled="true">10分以上</option>
+                        <option value="8" disabled="true">8分以上</option>
+                	</select>
+                    <input type="button" value="加入" style="cursor:pointer; width:50px;"/>
+                    <div class="CLEAR"></div>
+                    <div class="EvaluationForm">
+                        <table  cellspacing="0" cellpadding="0">
+                            <tr class="ProjectSingular">
+                                <td class="ProjectEvaluate">Robert Parker</td>
+                                <td class="ProjectFraction">100分（滿分）</td>
+                                <td class="ProjectButton">
+                                    <input type="button" value="刪除" class="ProjectDelete"/>
+                                </td>
+                            </tr>
+                            <tr class="ProjectEven">
+                      	        <td class="ProjectEvaluate">San Francisco Chronicle Wine Competition</td>
+                                <td class="ProjectFraction">IWC銅牌獎</td>
+                                <td class="ProjectButton">
+                                    <input type="button" value="刪除" class="ProjectDelete"/>
+                                </td>
+                            </tr>
+                            <tr class="ProjectSingular">
+                                <td class="ProjectEvaluate">Concours des Vins D'Aquitaube</td>
+                                <td class="ProjectFraction">16分以上</td>
+                                <td class="ProjectButton">
+                                    <input type="button" value="刪除" class="ProjectDelete"/>
+                                </td>
+                            </tr>
+                            <tr class="ProjectEven">
+                                <td class="ProjectEvaluate">Concours des Vins D'Aquitaube</td>
+                                <td class="ProjectFraction">8分以上</td>
+                                <td class="ProjectButton">
+                                    <input type="button" value="刪除" class="ProjectDelete"/>
+                                </td>
+                            </tr>
+                        </table>
+    			    </div>
+       	        </div><!-- Advanced_評價 end-->
+                <div class="Advanced_Capacity"><!-- Advanced_Capacity -->
+                    <h1>▶ 容量</h1>
+                    <ul style="font-size:14px; font-weight:bold;">
+                  	   <li><input type="checkbox" value="375ml" />375ml</li>	
+                  	   <li><input type="checkbox" value="750ml" />750ml</li>
+                       <li><input type="checkbox" value="1.5L" />1.5L</li>
+                    </ul>    
+                    <ul style="clear:both">     
+                       <li><input type="checkbox" value="100ml" />100ml</li>
+                       <li><input type="checkbox" value="125ml" />125ml</li>
+                       <li><input type="checkbox" value="187ml" />187ml</li>
+                       <li><input type="checkbox" value="200ml" />200ml</li>
+                       <li><input type="checkbox" value="250ml" />250ml</li>
+                       <li><input type="checkbox" value="350ml" />350ml</li>
+                       <li><input type="checkbox" value="500ml" />500ml</li>
+                       <li><input type="checkbox" value="550ml" />550ml</li>
+                       <li><input type="checkbox" value="620ml" />620ml</li>
+                       <li><input type="checkbox" value="630ml" />630ml</li>
+                       <li><input type="checkbox" value="650ml" />650ml</li>
+                       <li><input type="checkbox" value="720ml" />720ml</li>
+                       <li><input type="checkbox" value="730ml" />730ml</li>
+                       <li><input type="checkbox" value="800ml" />800ml</li>
+                       <li><input type="checkbox" value="1L" />1L</li>
+                       <li><input type="checkbox" value="2L" />2L</li>
+                       <li><input type="checkbox" value="3L" />3L</li>
+                       <li><input type="checkbox" value="3.7L" />3.7L</li>
+                       <li><input type="checkbox" value="4L" />4L</li>
+                       <li><input type="checkbox" value="4.5L" />4.5L</li>
+                       <li><input type="checkbox" value="5L" />5L</li>
+                       <li><input type="checkbox" value="6L" />6L</li>
+                       <li><input type="checkbox" value="8L" />8L</li>
+                       <li><input type="checkbox" value="9L" />9L</li>
+                       <li><input type="checkbox" value="10L" />10L</li>
+                       <li><input type="checkbox" value="12L" />12L</li>
+                       <li><input type="checkbox" value="15L" />15L</li>
+                       <li><input type="checkbox" value="18L" />18L</li>
+                       <li><input type="checkbox" value="27L" />27L</li>
+                    </ul>
+                    <div class="CLEAR"></div>
+                </div><!-- Advanced_Capacity end-->
+                <div class="Advanced_Year"><!-- Advanced_Year  -->
+            	    <h1>▶ 年份</h1>
+                    <span class="Advanced_Price_text">例：1985~2000</span>
+                    <input name="" type="text" /> 
+                    ~
+                    <input name="" type="text" />
+                    年之間
+                </div><!-- Advanced_Year end-->
+                <div class="Advanced_Order"><!-- Advanced_Order -->
+            	    <h1>▶ 排序方式</h1>
+                    <select >
+                        <option value="">--請選擇--</option>
+                        <option value="">價格</option>
+                        <option value="">產區</option>
+                        <option value="">酒莊</option>
+                        <option value="">年份</option>
+                        <option value="">類型</option>
+                        <option value="">評分</option>
+            		</select>
+                    <!--20180529 Roger add-->
+                    <div class="InStockOnly">
+                        <input type="checkbox" name="">只顯示目前有貨的品項
+                    </div>
+                    <!--20180529 Roger add end-->
+                </div><!-- Advanced_Order end-->
+                <div class="CLEAR"></div>
+                <div class="Advanced_Sent">
+            	   <button class="Advanced_Sent_Icon"></button>
+                </div>            
+            </div>           
+        </div>
+    </div>
+    <div class="CLEAR" ></div>
+</div>
+<!-- CenterALL end -->
+
+
+
+<div class="FooterALL" >
+    <div class="Footer_position">
+        <!--201803 Roger 新增手機板連結-->
+        <ul class="FooterMenu">
+            <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+            <li><a href="" target="_parent">條款及細則</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
+        </ul>
+        <!--201803 Roger 新增手機板連結 end-->
+        <div class="FooterICON">
+           <a href="qualityGarentee.html" target="_blank"><button class="Quality"></button></a>
+           <button class="Join"></button>
+           <button class="Novice"></button>
+        </div>
+    </div>
+</div>
+<!-- FooterALL  頁腳 -->
+
+<div class="TC_And_UK_ALL">
+	<div class="TC_And_UK">
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul> 
+    
+    </div>
+</div> 
+<!-- TC_And_UK_ALL 中英翻譯 -->
+
+
+
+
+
+
+
+<div class="CLEAR"></div>
+
+<div class="CopyRight"> Copyright © 2012 iCheers.tw All Rrights Reserved </div>
+
+
+
+<div class="Warning"><p></p></div>
+
+
+<!-- Warning 警語 -->
+
+
+<!-- 發送確認信視窗 start -->
+     <div id="notice">
+    	 <div class="notice_close"><a>關閉</a></div>
+	     <div id="notice_body">
+    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，<br/>客服人員將會盡快與您e-mail聯繫！</p>
+       		<input name="Email" type="text" />
+	     	<div class="btn"><a  class="btn_submit">確定</a></div>
+    	 </div>
+     </div>
+<!-- 發送確認信視窗 end -->
+
+
+
+</body>
+
+
+
+
+</html>

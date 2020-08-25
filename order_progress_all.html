@@ -1,0 +1,1106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>order_progress 出貨查詢  </title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico" />
+
+
+    <link rel="stylesheet" type="text/css" href="css/Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/cart.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/member.css" />
+
+
+
+    <script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="Scripts/member.js"></script>
+
+
+
+</head>
+
+
+<body class="index">
+
+    <div class="HeadALL">
+        <div class="HeadMenu">
+            <a href="" class="LogOut">會員登出</a>
+            <a href="" class="HeadMenuLogin">會員專區</a>
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <span class="AccountNumber">ich***, 您好</span>
+        </div>
+        <div class="TagALL_Buy Buy2_margin">
+            <ul>
+                <li class="TagLogo"><a href="index.html"></a></li>
+                <li class="TagMember"></li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+    <div class="member_CenterALL">
+        <div class="member_Menu"><!-- member_Menu -->
+            <div class="member_Name2"><em>普級會員</em> <span>ich******</span> 您好: </div>
+            <a href="#" class="ChangeData2"></a>
+            <h1>優惠提醒</h1>
+            <div class="member_Menu_BTN2"><span class="Icon_Money"></span><strong>e-Coupon查詢及辦法說明</strong></div>
+            <div class="member_Menu_BTN2"><span class="Icon_Pig"></span><strong>紅利查詢及辦法說明</strong></div>
+            <h1>出貨進度查詢</h1>
+            <div class="member_Menu_BTN2"><span class="Icon_Cloud"></span><strong>線上酒窖</strong></div>
+            <div class="member_Menu_BTN2"><span class="Icon_Car"></span><strong>訂單/預購查詢</strong></div>
+            <h1>追蹤記錄</h1>
+            <div class="member_Menu_BTN2"><span class="Icon_Wine"></span><strong>下次再喝查詢</strong></div>
+            <div class="member_Menu_BTN2"><span class="Icon_Letter"></span><strong>可訂通知查詢</strong></div>
+        </div><!-- member_Menu end-->
+        
+        <div class="member_Center_SS">
+            <div class="Center_Shadow"></div>
+            <div class="member_Center_Tittle"><em class="order_bonusBG"></em></div>
+            <div class="SearchCondition">
+                <h1>搜尋條件<em>(僅保留12個月以內的訂單記錄)</em></h1>
+                <h2>查詢條件：
+             	<input type="radio" class="InputRadio" />未出貨訂單 
+                <input type="radio" class="InputRadio" />已出貨訂單
+                <input type="radio" class="InputRadio" />已取消訂單
+                <input type="radio" class="InputRadio" />所有訂單
+                </h2>
+                <h2>訂單編號：<input type="text" /></h2>
+                <h2>購買日期：<input type="text" /><em></em>~<input type="text" /><em></em>日之間
+                    <input type="button" value="查詢" class="InputButton" /></h2>
+            </div>
+            <!-- SearchCondition -->
+            <div class="order_Tittle2">
+                <h1>所有訂單</h1>
+                <em>共<span>3</span>筆訂單</em>
+            </div>
+            <!-- order_Tittle2 -->
+            <!--未出貨1 -->
+            <div class="OrderStatus">
+                <h1 class="NotYet">未出貨</h1>
+                <h2>訂單編號 : <span>XXXXXXXXXXXX</span> </h2>
+                <ul class="OrdersTittle">
+                    <li class="OrderTime">完成訂購日</li>
+                    <li class="OrderMoney">訂單總金額</li>
+                    <li class="Situation">訂單狀態</li>
+                    <li class="OrderPaying">付款方式</li>
+                    <li class="OrderInvoice">發票</li>
+                </ul>
+                <ul class="OrdersData">
+                    <li class="OrderTime">YYYY/MM/DD</li>
+                    <li class="OrderMoney OrderRed">$X,XXX,XXX</li>
+                    <li class="Situation">訂單成立</li>
+                    <li class="OrderPaying">匯款</li>
+                    <li class="OrderInvoice">二聯式 (隨貨附)</li>
+                    <div class="CLEAR"></div>
+                </ul>
+
+                <div class="ShipTimeline">
+                    <h3>完成訂購</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="RouteICON"></span>
+                    <h3>備貨中</h3>
+                    <input name="" class="moreOrder" type="button" value="+看詳細" />
+                </div>
+                <div class="ShoppingDetails">
+                    <ul class="ReceivingData">
+                        <li class="ReceivingConsignee">收貨人：王**</li>
+                        <li class="ReceivingAdd">收貨地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">訂購商品品名</li>
+                        <li class="DetailsYears">容量/年份</li>
+                        <li class="DetailsPrice">單價</li>
+                        <li class="DetailsQuantity">數量</li>
+                        <li class="DetailsTotal">小計</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <!--組合商品-->
+                        <li class="GroupName">
+                            <h5>歡樂優惠套組1122131231</h5>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1組</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                        <div class="CLEAR"></div>
+                        <!--組合酒款-->
+                        <li class="GroupDetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <div class="CLEAR"></div>
+                        <!--組合酒款-->
+                        <li class="GroupDetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsQuantity">2瓶</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">贈品品名</li>
+                        <li class="DetailsYears">規格</li>
+                        <li class="DetailsPrice">定價</li>
+                        <li class="DetailsQuantity">贈送數量</li>
+                        <li class="DetailsTotal"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<strike>500,950</strike></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>特選優質橄欖油</h5>
+                            <h6>Olive oil</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="ThisYear2"></div>
+                        </li>
+                        <li class="DetailsPrice">$<strike>500,950</strike></li>
+                        <li class="DetailsQuantity">1件</li>
+                        <li class="DetailsTotal"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                </div>
+
+            </div>
+            <!--未出貨1 隔日到貨-->
+            <div class="OrderStatus">
+                <h1 class="NotYet">未出貨</h1>
+                <div class="OrderStatus_24HRexpress">隔日到貨</div>
+                <h2>訂單編號 : <span>XXXXXXXXXXXX</span> </h2>
+                <ul class="OrdersTittle">
+                    <li class="OrderTime">完成訂購日</li>
+                    <li class="OrderMoney">訂單總金額</li>
+                    <li class="Situation">訂單狀態</li>
+                    <li class="OrderPaying">付款方式</li>
+                    <li class="OrderInvoice">發票</li>
+                </ul>
+                <ul class="OrdersData">
+                    <li class="OrderTime">YYYY/MM/DD</li>
+                    <li class="OrderMoney OrderRed">$X,XXX,XXX</li>
+                    <li class="Situation">訂單成立</li>
+                    <li class="OrderPaying">匯款</li>
+                    <li class="OrderInvoice">二聯式 (隨貨附)</li>
+                    <div class="CLEAR"></div>
+                </ul>
+
+                <div class="ShipTimeline">
+                    <h3>完成訂購</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="RouteICON"></span>
+                    <h3>備貨中</h3>
+                    <input name="" class="moreOrder" type="button" value="+看詳細" />
+                </div>
+                <div class="ShoppingDetails">
+                    <ul class="ReceivingData">
+                        <li class="ReceivingConsignee">收貨人：王**</li>
+                        <li class="ReceivingAdd">收貨地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">訂購商品品名</li>
+                        <li class="DetailsYears">容量/年份</li>
+                        <li class="DetailsPrice">單價</li>
+                        <li class="DetailsQuantity">數量</li>
+                        <li class="DetailsTotal">小計</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <!--組合商品-->
+                        <li class="GroupName">
+                            <h5>歡樂優惠套組1122131231</h5>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1組</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                        <div class="CLEAR"></div>
+                        <!--組合酒款-->
+                        <li class="GroupDetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <div class="CLEAR"></div>
+                        <!--組合酒款-->
+                        <li class="GroupDetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsQuantity">2瓶</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">贈品品名</li>
+                        <li class="DetailsYears">規格</li>
+                        <li class="DetailsPrice">定價</li>
+                        <li class="DetailsQuantity">贈送數量</li>
+                        <li class="DetailsTotal"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<strike>500,950</strike></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>特選優質橄欖油</h5>
+                            <h6>Olive oil</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="ThisYear2"></div>
+                        </li>
+                        <li class="DetailsPrice">$<strike>500,950</strike></li>
+                        <li class="DetailsQuantity">1件</li>
+                        <li class="DetailsTotal"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                </div>
+
+            </div>
+            <!--未出貨1 預購-->
+            <div class="OrderStatus">
+                <h1 class="NotYet">未出貨</h1>
+                <div class="OrderStatus_preorder">預訂商品</div>
+                <h2>訂單編號 : <span>XXXXXXXXXXXX</span> </h2>
+                <ul class="OrdersTittle">
+                    <li class="OrderTime">完成訂購日</li>
+                    <li class="OrderMoney">訂單總金額</li>
+                    <li class="Situation">訂單狀態</li>
+                    <li class="OrderPaying">付款方式</li>
+                    <li class="OrderInvoice">發票</li>
+                </ul>
+                <ul class="OrdersData">
+                    <li class="OrderTime">YYYY/MM/DD</li>
+                    <li class="OrderMoney OrderRed">$X,XXX,XXX</li>
+                    <li class="Situation">訂單成立</li>
+                    <li class="OrderPaying">匯款</li>
+                    <li class="OrderInvoice">二聯式 (隨貨附)</li>
+                    <div class="CLEAR"></div>
+                </ul>
+
+                <div class="ShipTimeline">
+                    <h3>完成訂購</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="RouteICON"></span>
+                    <h3>備貨中</h3>
+                    <input name="" class="moreOrder" type="button" value="+看詳細" />
+                </div>
+                <div class="ShoppingDetails">
+                    <ul class="ReceivingData">
+                        <li class="ReceivingConsignee">收貨人：王**</li>
+                        <li class="ReceivingAdd">收貨地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">訂購商品品名</li>
+                        <li class="DetailsYears">容量/年份</li>
+                        <li class="DetailsPrice">單價</li>
+                        <li class="DetailsQuantity">數量</li>
+                        <li class="DetailsTotal">小計</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <!--組合商品-->
+                        <li class="GroupName">
+                            <h5>歡樂優惠套組1122131231</h5>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1組</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                        <div class="CLEAR"></div>
+                        <!--組合酒款-->
+                        <li class="GroupDetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <div class="CLEAR"></div>
+                        <!--組合酒款-->
+                        <li class="GroupDetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsQuantity">2瓶</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">贈品品名</li>
+                        <li class="DetailsYears">規格</li>
+                        <li class="DetailsPrice">定價</li>
+                        <li class="DetailsQuantity">贈送數量</li>
+                        <li class="DetailsTotal"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                            <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<strike>500,950</strike></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>特選優質橄欖油</h5>
+                            <h6>Olive oil</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="ThisYear2"></div>
+                        </li>
+                        <li class="DetailsPrice">$<strike>500,950</strike></li>
+                        <li class="DetailsQuantity">1件</li>
+                        <li class="DetailsTotal"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- 未出貨2 -->
+            <div class="OrderStatus">
+                <h1 class="NotYet">未出貨</h1>
+                <h2>訂單編號 : <span>XXXXXXXXXXXX</span> </h2>
+                <ul class="OrdersTittle">
+                    <li class="OrderTime">完成訂購日</li>
+                    <li class="OrderMoney">訂單總金額</li>
+                    <li class="Situation">訂單狀態</li>
+                    <li class="OrderPaying">付款方式</li>
+                    <li class="OrderInvoice">發票</li>
+                </ul>
+                <ul class="OrdersData">
+                    <li class="OrderTime">YYYY/MM/DD</li>
+                    <li class="OrderMoney OrderRed">$X,XXX,XXX</li>
+                    <li class="Situation">備貨中</li>
+                    <li class="OrderPaying">匯款</li>
+                    <li class="OrderInvoice">二聯式 (寄送)</li>
+                </ul>
+                <div class="ShipTimeline">
+                    <h3>完成訂購</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="RouteICON"></span>
+                    <h3>完成付款</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="RouteICON"></span>
+                    <h3>備貨中</h3>
+                    <input name="" class="moreOrder" type="button" value="+看詳細" />
+                </div>
+                <div class="ShoppingDetails">
+                    <ul class="ReceivingData">
+                        <li class="ReceivingConsignee">收貨人：王**</li>
+                        <li class="ReceivingAdd">收貨地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="InvReceivingData">
+                        <li class="InvoiceRec">發票收件人：王**</li>
+                        <li class="InvoiceAdd">發票寄送地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">訂購商品品名</li>
+                        <li class="DetailsYears">容量/年份</li>
+                        <li class="DetailsPrice">單價</li>
+                        <li class="DetailsQuantity">數量</li>
+                        <li class="DetailsTotal">小計</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- 未出貨3 -->
+            <div class="OrderStatus">
+                <h1 class="NotYet">未出貨</h1>
+                <h2>訂單編號 : <span>XXXXXXXXXXXX</span> </h2>
+                <ul class="OrdersTittle">
+                    <li class="OrderTime">完成訂購日</li>
+                    <li class="OrderMoney">訂單總金額</li>
+                    <li class="Situation">訂單狀態</li>
+                    <li class="OrderPaying">付款方式</li>
+                    <li class="OrderInvoice">發票</li>
+                </ul>
+                <ul class="OrdersData">
+                    <li class="OrderTime">YYYY/MM/DD</li>
+                    <li class="OrderMoney OrderRed">$X,XXX,XXX</li>
+                    <li class="Situation">備貨中</li>
+                    <li class="OrderPaying">貨到付款</li>
+                    <li class="OrderInvoice">捐贈 (伊甸)</li>
+                </ul>
+                <div class="ShipTimeline">
+                    <h3>完成訂購</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="RouteICON"></span>
+                    <h3>備貨中</h3>
+                    <input name="" class="moreOrder" type="button" value="+看詳細" />
+                </div>
+                <div class="ShoppingDetails">
+                    <ul class="ReceivingData">
+                        <li class="ReceivingConsignee">收貨人：王**</li>
+                        <li class="ReceivingAdd">收貨地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">訂購商品品名</li>
+                        <li class="DetailsYears">容量/年份</li>
+                        <li class="DetailsPrice">單價</li>
+                        <li class="DetailsQuantity">數量</li>
+                        <li class="DetailsTotal">小計</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- 已出貨1 -->
+            <div class="OrderStatus">
+                <h1 class="Get">已出貨</h1>
+                <h2>訂單編號 : <span>XXXXXXXXXXXX</span> </h2>
+                <ul class="OrdersTittle">
+                    <li class="OrderTime">完成訂購日</li>
+                    <li class="OrderMoney">訂單總金額</li>
+                    <li class="Situation">訂單狀態</li>
+                    <li class="OrderPaying">付款方式</li>
+                    <li class="OrderInvoice">發票</li>
+                </ul>
+                <ul class="OrdersData">
+                    <li class="OrderTime">YYYY/MM/DD</li>
+                    <li class="OrderMoney OrderRed">$X,XXX,XXX</li>
+                    <li class="Situation">已出貨</li>
+                    <li class="OrderPaying">匯款</li>
+                    <li class="OrderInvoice">捐贈 (創世)</li>
+                </ul>
+                <div class="ShipTimeline">
+                    <h3>完成訂購</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="RouteICON"></span>
+                    <h3>完成付款</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="TruckICON"></span>
+                    <h3>已出貨</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <input name="" class="moreOrder" type="button" value="+看詳細" />
+                </div>
+                <div class="ShoppingDetails">
+                    <ul class="ReceivingData">
+                        <li class="ReceivingConsignee">收貨人：王**</li>
+                        <li class="ReceivingAdd">收貨地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">訂購商品品名</li>
+                        <li class="DetailsYears">容量/年份</li>
+                        <li class="DetailsPrice">單價</li>
+                        <li class="DetailsQuantity">數量</li>
+                        <li class="DetailsTotal">小計</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- 已出貨2 -->
+            <div class="OrderStatus">
+                <h1 class="Get">已出貨</h1>
+                <h2>訂單編號 : <span>XXXXXXXXXXXX</span> </h2>
+                <ul class="OrdersTittle">
+                    <li class="OrderTime">完成訂購日</li>
+                    <li class="OrderMoney">訂單總金額</li>
+                    <li class="Situation">訂單狀態</li>
+                    <li class="OrderPaying">付款方式</li>
+                    <li class="OrderInvoice">發票</li>
+                </ul>
+                <ul class="OrdersData">
+                    <li class="OrderTime">YYYY/MM/DD</li>
+                    <li class="OrderMoney OrderRed">$X,XXX,XXX</li>
+                    <li class="Situation">已出貨</li>
+                    <li class="OrderPaying">貨到付款</li>
+                    <li class="OrderInvoice">三聯式 (隨貨附)</li>
+                </ul>
+                <div class="ShipTimeline">
+                    <h3>完成訂購</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="TruckICON"></span>
+                    <h3>已出貨</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <input name="" class="moreOrder" type="button" value="+看詳細" />
+                </div>
+                <div class="ShoppingDetails">
+                    <ul class="ReceivingData">
+                        <li class="ReceivingConsignee">收貨人：王**</li>
+                        <li class="ReceivingAdd">收貨地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="InvReceivingData">
+                        <li class="InvoiceVatNo">統一編號：70696235</li>
+                        <li class="InvoiceTitle">發票抬頭：華藝數位股份有限公司</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">訂購商品品名</li>
+                        <li class="DetailsYears">容量/年份</li>
+                        <li class="DetailsPrice">單價</li>
+                        <li class="DetailsQuantity">數量</li>
+                        <li class="DetailsTotal">小計</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="OrderStatus">
+                <h1 class="CancelOrder">取消訂單</h1>
+                <h2>訂單編號 : <span>XXXXXXXXXXXX</span> </h2>
+                <ul class="OrdersTittle">
+                    <li class="OrderTime">完成訂購日</li>
+                    <li class="OrderMoney">訂單總金額</li>
+                    <li class="Situation">訂單狀態</li>
+                    <li class="OrderPaying">付款方式</li>
+                    <li class="OrderInvoice">發票</li>
+                </ul>
+                <ul class="OrdersData">
+                    <li class="OrderTime">YYYY/MM/DD</li>
+                    <li class="OrderMoney OrderRed">$X,XXX,XXX</li>
+                    <li class="Situation">成立</li>
+                    <li class="OrderPaying">匯款</li>
+                    <li class="OrderInvoice">三聯式 (寄送)</li>
+                </ul>
+                <div class="ShipTimeline">
+                    <h3>完成訂購</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <span class="RouteICON"></span>
+                    <h3>取消訂單</h3>
+                    <h4>11/05</h4>
+                    <h4>15:20</h4>
+                    <input name="" class="moreOrder" type="button" value="+看詳細" />
+                </div>
+                <div class="ShoppingDetails">
+                    <ul class="ReceivingData">
+                        <li class="ReceivingConsignee">收貨人：王**</li>
+                        <li class="ReceivingAdd">收貨地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="InvReceivingData">
+                        <li class="InvoiceVatNo">統一編號：70696235</li>
+                        <li class="InvoiceTitle">發票抬頭：華藝數位股份有限公司</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="InvReceivingData">
+                        <li class="InvoiceRec">發票收件人：王**</li>
+                        <li class="InvoiceAdd">發票寄送地址：234新北市永和區成功路*************</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsTittle">
+                        <li class="DetailsName">訂購商品品名</li>
+                        <li class="DetailsYears">容量/年份</li>
+                        <li class="DetailsPrice">單價</li>
+                        <li class="DetailsQuantity">數量</li>
+                        <li class="DetailsTotal">小計</li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <ul class="DetailsData">
+                        <li class="DetailsName">
+                         <a href="#">
+                            <div class="WineIMG2">
+                                <img src="images/pic/SW1.jpg" alt="" />
+                            </div>
+                            <h5>迪伯多利酒莊-迪恩9號桶 卡本內紅酒</h5>
+                            <h6>De Bortoli-Deen Vat 9 Cabernet Sauvignon</h6>
+                            </a>
+                        </li>
+                        <li class="DetailsYears">
+                            <div class="WineCapacity">750ml</div>
+                            <div class="ThisYear2">2012</div>
+                        </li>
+                        <li class="DetailsPrice">$<span class="RED16">500,950</span></li>
+                        <li class="DetailsQuantity">1瓶</li>
+                        <li class="DetailsTotal">$<span class="RED16">500,950</span></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="CLEAR"></div>
+            <div class="OrdersInformation">
+                <p>若有任何訂單問題煩請以E-mail或來電詢問，謝謝！</p>
+                <p>客服信箱：<a href="mailto:service@icheers.tw">service@icheers.tw</a></p>
+                <p>服務專線：02-2926-3667</p>
+                <p>服務時間：星期一～五，9:00~12:00 13:00~18:00，國定假日除外</p>
+                <div class="imgFotter"></div>
+            </div>
+        </div>
+        
+        <!-- member_Center_SS 左邊資訊欄   -->
+        <div class="CLEAR"></div>
+    </div>
+    <!-- member_CenterALL  中段全部 -->
+
+
+
+
+    <div class="member_FooterALL">
+        <div class="Footer_position">
+            <ul class="FooterMenu">
+                <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+                <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+                <li><a href="" target="_parent">條款及細則</a>｜</li>
+                <li><a href="privacy_policy.html" target="_parent">隱私條款</a></li>
+            </ul>
+            <div class="FooterICON">
+                <a href="qualityGarentee.html" target="_blank">
+                    <button class="Quality"></button>
+                </a>
+                <button class="Join"></button>
+                <button class="Novice"></button>
+            </div>
+        </div>
+    </div>
+    <!-- FooterALL  頁腳 -->
+
+
+    <div class="Warning">
+        <p></p>
+    </div>
+    <!-- Warning 警語 -->
+
+
+
+
+
+
+
+    <div id="notice">
+        <div class="notice_close"><a>關閉</a></div>
+        <div id="notice_body">
+            <p>
+                依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，<br />
+                客服人員將會盡快與您e-mail聯繫！
+            </p>
+            <input name="Email" type="text" />
+            <div class="btn"><a href="" target="_self" class="btn_submit">確定</a></div>
+        </div>
+    </div>
+    <!-- 彈出 發送確認信視窗 -->
+
+
+
+
+
+</body>
+</html>
