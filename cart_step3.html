@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 <link rel="stylesheet" type="text/css" href="css/cart_201505rogerfix.css"/>
 
-<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 <script type="text/javascript" src="Scripts/tabs.js"/></script>
 <script type="text/javascript" src="Scripts/LightBox.js"></script>
@@ -163,13 +163,6 @@ $(function(){
 		$(".notice_body_18BTN, .notice_title_closeBTN").click(function(){
 			$("#notice8, .showDiv").fadeOut(200);
 			});	
-
-        //footermenu置中
-    var FooterMenuWidth = $('.FooterMenu').width();
-    var FooterWidth = $('.FooterMenu').parent().width();
-    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
-
-    $('.FooterMenu').css('margin-left',FooterPositionX);
 });
 </script>
 
@@ -313,12 +306,12 @@ $(function(){
 <body>
 <div class="HeadALL">
     <div class="HeadMenu">
-        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
-        <a href="" class="Reconfirmed">沒有收到確認信?</a>
-        
-        <a href="" class="MyList">我的清單</a>
-        <a href="" class="MobileVer">手機版</a>
-    </div>
+            <!--a href="" class="LogOut">會員登出</a-->
+            <a href="" class="HeadMenuLogin">會員登入</a>
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <!--span class="AccountNumber">ich***, 您好</span-->
+        </div>
     <div class="TagALL_Buy">
     	<ul>
         	<li class="TagLogo"><a href="index.html"></a></li>
@@ -574,38 +567,11 @@ $(function(){
 				</li>
 			</ul>
             </div>
-			<ul style="display:none;">
-				<li>
-					<h1><span class="redword">*</span> 希望送達日：</h1>
-				</li>
-				<li>
-					<p>
-						<select name="date2" class="textarea1" id="date2">
-							<option selected="selected">--請選擇--</option>
-							<option>10月17日</option>
-							<option>10月18日</option>
-							<option>10月19日</option>
-							<option>10月20日</option>
-							<option>10月21日</option>
-							<option>10月22日</option>
-							<option>10月23日</option>
-							<option>10月24日</option>
-							<option>10月25日</option>
-							<option>10月26日</option>
-							<option>10月27日</option>
-							<option>10月28日</option>
-							<option>10月29日</option>
-							<option>10月30日</option>
-						</select>
-						&nbsp;&nbsp;<span class="redword">請輸入送達日期</span> <span class="redword-two">*如遇不可抗力之因素影響時，出貨時間將順延，敬請見諒。</span></p>
-				</li>
-			</ul>
 			<ul>
-				<li class="DeliveryTime" style="border-bottom: none;">
+				<li class="DeliveryTime">
 					<h1>希望配送時段：</h1>
 				</li>
-				<li class="DeliveryTime" style="border-bottom: none;">
-					<!--20170808 Roger 修改-->
+				<li class="DeliveryTime">
 					<p>
 						<input type="radio" name="Newsletter" />
 						&nbsp;上午(08 ~ 13 時)&nbsp;&nbsp;
@@ -614,17 +580,11 @@ $(function(){
 						<input type="radio" name="Newsletter"/>
 						&nbsp;皆可&nbsp;&nbsp;&nbsp;
 					</p>
-					<!--20170808 Roger 修改 end-->
 				</li>
 			</ul>
-			<div class="CartStep3_DeliveryInfo_others">
-				<div class="row" style="padding-left: 161px;">
-					<input type="checkbox" name="package" class="checkbox">
-					<span class="text">&nbsp;&nbsp;我不介意用舊但堅固的紙箱出貨，大家一起環保護地球。</span>
-				</div>
-			</div>
 			<div class="clear"></div>
 			<div class="CartStep3_DeliveryInfo_others" style="border-bottom: none;">
+                <!--
 				<div class="paperbag_extend">
 					<div class="img Label">
 						<div></div>
@@ -641,9 +601,13 @@ $(function(){
 					<div class="number">
 						<input type="number" name="paperbag_number" style="margin-right: 5px;">個				
 					</div>
-				</div>
+				</div>-->
+                <div class="row">
+                    <input type="checkbox" name="package" class="checkbox">
+                    <span class="text">&nbsp;&nbsp;我願意愛地球，使用環保緩衝材出貨。(未勾選將使用氣泡袋出貨)</span>
+                </div>
 				<div class="clear"></div>
-				<div class="row" style="margin-top: 20px;">
+				<div class="row">
 					<div class="text" style="display: inline-block;vertical-align: top;">備註：</div><div class="text" style="display: inline-block;">國定假日及周日恕無法配送喔！提醒您，非快速到貨酒款(一般到貨)為完成付款後3-5個工作天到貨，<br/>可指定完成付款5個工作天後欲收貨日期。</div>
 				</div>
 				<textarea name="note" cols="72" rows="5" style="resize:none;"></textarea>
@@ -691,10 +655,43 @@ $(function(){
              </ul>
              <div class="ordercart_data_de"></div>
 			  <ul class="ordercart_data_all">
-				<li class="ordercart_data_title"><span>運費(<a href="javascript:void(0);" class="btn_bonus" id="FreightBTN">說明</a>)：</span></li>
+				<li class="ordercart_data_title"><span>運費(<a href="https://www.icheers.tw/iCheers/EDM/Delivery.html" class="btn_bonus" target="_blank">說明</a>)：</span></li>
 				<li class="ordercart_data_info"><span >$ 0</span> </li>
 				<li class="ordercart_data_info"><a href="#" class="btn_bonus">iCheers特惠免運費</a></li>		
-             </ul>
+              </ul>
+              <!--分批出貨出現運費明細表格-->
+              <table width="460" cellspacing="0" align="left" class="DeliveryCostTable">
+                    <tr bgcolor="#999">
+                        <th width="139" height="40"></th>
+                        <th width="134" height="40">金額小計</th>
+                        <th width="134" height="40">運費小計</th>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#f2f2f2" height="40">快速到貨</td>
+                        <td bgcolor="#ffffff" height="40">3500元</td>
+                        <td bgcolor="#ffffff" height="40">&#10003;&nbsp;達免運門檻</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#f2f2f2" height="40">一般配送</td>
+                        <td bgcolor="#ffffff" height="40">1,200元</td>
+                        <td bgcolor="#ffffff" height="40">200元</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#f2f2f2" height="40">預訂商品_2016年12月</td>
+                        <td bgcolor="#ffffff" height="40">800元</td>
+                        <td bgcolor="#ffffff" height="40">200元</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#f2f2f2" height="40">預訂商品_2017年5月</td>
+                        <td bgcolor="#ffffff" height="40">19,000元</td>
+                        <td bgcolor="#ffffff" height="40">&#10003;&nbsp;達免運門檻</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#f2f2f2" height="40">預訂商品_2017年11月</td>
+                        <td bgcolor="#ffffff" height="40">1,499元</td>
+                        <td bgcolor="#ffffff" height="40">200元</td>
+                    </tr>
+                </table>
              <div class="ordercart_data_de"></div>
              <!--沒有提袋就不顯示-->
              <ul class="ordercart_data_all">
@@ -1039,12 +1036,11 @@ $(function(){
 <div class="FooterALL">
 	<div class="Footer_position">
 		<ul class="FooterMenu">
-            <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
-            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
-            <li><a href="" target="_parent">條款及細則</a>｜</li>
-            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
-            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
-        </ul>
+			<li><a href="about_us.html">關於我們</a>｜</li>
+			<li><a href="contact_us.html">聯絡我們</a>｜</li>
+			<li><a href="terms_n_condition.html">條款及細則</a>｜</li>
+			<li><a href="privacy_policy.html">隱私條款</a></li>
+		</ul>
 		<div class="FooterICON">
 			<button class="Quality"></button>
 			<button class="Join"></button>

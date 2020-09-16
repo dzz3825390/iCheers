@@ -1243,6 +1243,8 @@ li.FreightNotches2 table tr th{
 .AboutAutoInfo p.CLOSE { display:block; width:13px; height:13px;	background:url(../images/icon/btn_del_1.png) left top no-repeat; position:absolute;	left: 240px;top: 10px; cursor:pointer; }
 
 
+/* 我的酒單免運費差額 */
+.Cart_Difference { font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 20px; color: #FF0; background-image: url(../images/bg_Difference.png); background-repeat: no-repeat; background-position: center center;	text-align: center; vertical-align: middle; height: 23px; width: 150px; margin-left:315px; display:none; }
 
 
 /* 我的酒整批按鈕 */
@@ -1534,13 +1536,13 @@ li.FreightNotches2 table tr th{
 	float: left;
 }
 
-/*.notice_code_reflash{
+.notice_code_reflash{
 	width: 20px;
 	height: 20px;
 	background-image: url(../images/icon/AgainIcon.png);
 	background-color: #666666;
 	float: left;
-}*/
+}
 
 .notice_forgotpassword_row{
 	margin-top: 10px;
@@ -1628,7 +1630,7 @@ li.FreightNotches2 table tr th{
 	background-color: #FFF; }
 		
 .cart_data p{
-	
+	color: #717171;
 	width:720px;}
 
 .DeliveryTime p{
@@ -1636,11 +1638,17 @@ li.FreightNotches2 table tr th{
 }
 
 
-.cart_data h1{ text-align:right; width:180px; }
-.DeliveryTime h1{ width: 215px; }
-/*20170808 Roger 修改*/
-.cart_data li{ display:block; float:left; font-size: 13px; line-height: 30px; min-height:30px; color: #000; padding:15px 0 5px 0; *padding:0; border-bottom: 1px dotted #dfdfdf; }
-/*20170808 Roger 修改 end*/
+.cart_data h1{ text-align:right; width:167px; }
+.DeliveryTime h1{ width: 167px; }
+
+.cart_data li{ display:block; float:left; font-size: 13px; line-height: 30px; min-height:30px; color: #333333; padding:15px 0 5px 0; *padding:0; border-bottom: 1px dotted #dfdfdf; }
+.cart_data li input[type="text"]{
+	color: #717171;
+}
+
+.cart_data li select{
+	color: #717171;
+}
 .cart_data2 li{padding:3px 0 3px 0;}
 
 .cart_data h1 span{ color:#F00;}
@@ -2795,9 +2803,9 @@ li.Last_NoBorder,
 }
 
 .CartStep3_DeliveryInfo_others .row{
-	width: 100%;
 	min-height: 24px;
 	box-sizing: border-box;
+	margin-top: 20px;
 }
 
 .CartStep3_DeliveryInfo_others .row .text{
@@ -2923,4 +2931,33 @@ li.Last_NoBorder,
 	margin-left: 36px;
 	width: 80%;
 	height: 150px;
+}
+
+.DeliveryCostTable{
+	border: 1px solid #cccccc;
+	margin-left: 200px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	color: #666;
+}
+
+
+.DeliveryCostTable th{
+	color :#fff;
+	text-align: center;
+}
+
+.DeliveryCostTable td{
+	padding: 0 8px;
+	text-align: center;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+.DeliveryCostTable td:last-child{
+	border-right: none;
+}
+
+.DeliveryCostTable tr:last-child td{	
+	border-bottom: none;
 }
