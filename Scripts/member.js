@@ -14,14 +14,14 @@ $(document).ready(function () {
 
     $(".ShoppingDetails").hide();
 
-    $(".moreOrder").live('click', function () {
+    $(".moreOrder").on('click', function () {
         $(this).addClass("collapseOrder");
         $(this).val("- 收合");
         $(this).parent().next().slideDown();
         $(this).parent().css("border-bottom", "none");
     });
 
-    $(".collapseOrder").live('click', function () {
+    $(".collapseOrder").on('click', function () {
         $(this).removeClass("collapseOrder");
         $(this).parent().next().slideUp();
         $(this).val("+看詳細");
