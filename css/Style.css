@@ -5283,6 +5283,10 @@ img.voice {
     border: 1px solid #E6E6E6;
 }
 
+.MoreBigIMG:first-child{
+    margin-top: 62px;
+}
+
     .MoreBigIMG img {
         max-width: 350px;
         height: auto;
@@ -13255,7 +13259,7 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
 /*20170222 roger 移除高度設定 end*/
 
 .wine_list_grape_text_height450{
-    height: 450px;
+    height: 365px;
 }
 
 .wine_list_grape_img{
