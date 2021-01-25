@@ -19,8 +19,6 @@
 <script type="text/javascript" src="Scripts/Head.js"/></script> <!-- 有沒有收到確認信彈出 -->
 <script type="text/javascript" src="Scripts/WineDetail.js"></script> <!-- 酒款詳目頁 -->
 
-
-<script type="text/javascript" src="Scripts/ddsmoothmenu.js"></script>
 <script type="text/javascript" src="Scripts/LightBox.js"></script>
 
 
@@ -40,8 +38,20 @@
 		document.getElementById("Price").style.border = "0px dotted #999";
 		}
 		else{
-		return;	
+		
 		};
+
+     //追蹤酒款按鈕
+        $('.IntroImg .Tracking').click(function(){
+            $(this).toggleClass('active');
+        });
+
+        //footermenu置中
+    var FooterMenuWidth = $('.FooterMenu').width();
+    var FooterWidth = $('.FooterMenu').parent().width();
+    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+    $('.FooterMenu').css('margin-left',FooterPositionX);
 });  
 </script>
 
@@ -66,11 +76,14 @@
 <div class="HeadALL">
     <!--20180327 Roger 新增手機板-->
     <div class="HeadMenu">
+        <!--a href="" class="LogOut">會員登出</a-->
         <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
         <a href="" class="Reconfirmed">沒有收到確認信?</a>
-        
+
         <a href="" class="MyList">我的清單</a>
+        <a href="" class="TrackingList">追蹤酒款</a>
         <a href="" class="MobileVer">手機版</a>
+        <!--span class="AccountNumber">ich***, 您好</span-->
     </div>
     <!--20180327 Roger 新增手機板-->
     <div class="TagALL">
@@ -526,9 +539,7 @@
                     <div class="Label">
                         <img src="images/pic/L01.jpg" />
                     </div> 
-                    <div class="WineCapacity">
-                        <span>375ml</span>
-                    </div>
+                    <div class="Tracking"></div>
                 </div><!-- IntroImg 酒瓶圖片 end-->
                 <div class="wine_detail_wineinfo_layout">
                 	<h2>
@@ -538,6 +549,9 @@
                 	<ul class="Detail sake_Detail"><!-- Detail 細項資料 --> 
                         <li class="MarketingINFO"> 適合週末的午後，與三五好友共享的輕鬆酒款。 </li>
                         <li class="wine_detail_wineinfo_status">
+                            <div class="WineCapacity">
+                                <span>375ml</span>
+                            </div>
                             <span class="wine_detail_wineinfo_status_number">#1234</span>
                             <img src="images/icon/NoBouns_26x26.png" width="26" height="26" class="wine_detail_wineinfo_status_nobouns" title="特殊商品不適用紅利累計"/>
 
@@ -1396,7 +1410,8 @@
             <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
             <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
             <li><a href="" target="_parent">條款及細則</a>｜</li>
-            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a></li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
         </ul>
         <div class="FooterICON">
            <button class="Quality"></button>

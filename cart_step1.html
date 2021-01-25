@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -106,12 +107,19 @@ $(document).ready(function(){
         });
 
     });
+
+    //footermenu置中
+    var FooterMenuWidth = $('.FooterMenu').width();
+    var FooterWidth = $('.FooterMenu').parent().width();
+    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+    $('.FooterMenu').css('margin-left',FooterPositionX);
 });
 
 </script>
 <!--20161206 Roger 新增icon說明視窗用 end-->
 
-<!--20161228 Roger新增 只有加價購時間距處理-->
+
 <script type="text/javascript">
 $(document).ready(function(){
     var isOnlyAddItemGo = $(".CartList_Item_location").children().eq(0).prop("tagName");
@@ -120,21 +128,121 @@ $(document).ready(function(){
     } else {
     	
     }
+
+    //左側按鈕文字置中
+    $(".CartOptionBox .OneOption").each(function(){
+    	var TextHeight = $(this).children().height();
+    	var TextMarginTop = (65 - TextHeight)/2;
+    	$(this).children().css('margin-top',TextMarginTop);
+    });
+
+    //checkbox點擊左側按鈕樣式調整
+    $('.CartList_ItemCheckbox_position[type="checkbox"]').click(function(){
+    	var IsChecked = false;
+    	var CheckboxCount = $('.CartList_ItemCheckbox_position[type="checkbox"]').length;
+    	var CheckedCount = $('.CartList_ItemCheckbox_position[type="checkbox"]:checked').length;
+    	//選取數等於全選
+    	if (CheckedCount == CheckboxCount){
+    		$('#Btn_Choseall').removeClass('active');
+	    	$('#Btn_Traceall, #Btn_Deleteall').addClass('active');
+    		$('#Btn_Choseall span').text('取消全選');
+    		$('#Btn_Choseall').addClass('Btn_Cancelall');
+    	}
+    	//沒有全部選取
+    	else {
+    		$('#Btn_Choseall span').text('選擇全部');
+    		$('#Btn_Choseall').removeClass ('Btn_Cancelall');
+    		for (i=0;i<CheckboxCount;i++) {
+	    		if($('.CartList_ItemCheckbox_position[type="checkbox"]').eq(i).prop('checked')) {
+	    			IsChecked = true;
+	    			break;
+	    		} else {
+	    			IsChecked = false;
+	    		}
+	    	}
+
+	    	if (IsChecked) {
+	    		$('#Btn_Choseall').removeClass('active');
+	    		$('#Btn_Traceall, #Btn_Deleteall').addClass('active');
+
+	    	} else {
+	    		$('#Btn_Choseall').addClass('active');
+	    		$('#Btn_Traceall, #Btn_Deleteall').removeClass('active');
+	    	}
+    	}
+
+
+
+
+
+
+    });
+
+    //全選/取消全選
+    $('#Btn_Choseall').click(function(){
+    	var CheckboxCount = $('.CartList_ItemCheckbox_position[type="checkbox"]').length;
+    	var CheckedCount = $('.CartList_ItemCheckbox_position[type="checkbox"]:checked').length;
+    	//取消全選
+    	if (CheckedCount == CheckboxCount){
+    		$('.CartList_ItemCheckbox_position[type="checkbox"]').each(function(){
+	    		$(this).prop("checked", false);
+	    	});
+    		$('#Btn_Choseall').addClass('active');
+	    	$('#Btn_Traceall, #Btn_Deleteall').removeClass('active');
+	    	$('#Btn_Choseall span').text('選擇全部');
+    	}
+    	//全選
+    	else {
+    		$('.CartList_ItemCheckbox_position[type="checkbox"]').each(function(){
+	    		$(this).prop("checked", true);
+	    	});
+	    	$('#Btn_Choseall').removeClass('active');
+	    	$('#Btn_Traceall, #Btn_Deleteall').addClass('active');
+	    	$('#Btn_Choseall span').text('取消全選');
+    	}
+
+    });
+
+    //刪除品項視窗觸發
+    $('#Btn_Deleteall').click(function(){
+    	if($(this).hasClass('active')){
+    		Pops('#notice_DeleteWine');
+    	}
+    });
+
+    //scroll event 超過小計時隱藏整批操作按鈕
+    var timer
+    var CartListHeight = 0;
+    CartListHeight = $('.CartALL').outerHeight(true) - $('.Sum_border').outerHeight(true) - $('.above18Proclaim').outerHeight(true) - $('.BTN_CONSULT').outerHeight(true) - $('.CartAddItem').outerHeight(true) - $('.CartGift').outerHeight(true) + 100;
+
+    $(window).scroll(function(){
+    	window.clearTimeout(timer)
+
+    	timer = window.setTimeout(function() {
+	        var NowScrollTop = $(window).scrollTop();
+	        if (NowScrollTop > CartListHeight) {
+	        	$('.CartOptionBox').fadeOut();
+	        } else {
+	        	$('.CartOptionBox').fadeIn();
+	        }
+	    }, 50)
+    })
 });
 </script>
-<!--20161228 Roger新增 只有加價購時間距處理 end-->
+
 
 
 </head>
 <body>
 <div class="HeadALL">
     <div class="HeadMenu">
-            <!--a href="" class="LogOut">會員登出</a-->
-            <a href="" class="HeadMenuLogin">會員登入</a>
-            <a href="" class="Reconfirmed">沒有收到確認信?</a>
-            <a href="" class="MyList">我的清單</a>
-            <!--span class="AccountNumber">ich***, 您好</span-->
-        </div>
+        <!--a href="" class="LogOut">會員登出</a-->
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+    </div>
     <div class="TagALL_Buy">
     	<ul>
         	<li class="TagLogo"><a href="index.html"></a></li>
@@ -155,6 +263,13 @@ $(document).ready(function(){
 
 	<!-- 版型控制 start --> 
 	<div class="CartALL">
+		<!--批次操作按鈕-->
+		<div class="CartOptionBox">
+			<div class="OneOption active" id="Btn_Choseall"><span>全選</span></div>
+			<div class="OneOption" id="Btn_Traceall"><span>加入<br/>追蹤酒款</span></div>
+			<div class="OneOption" id="Btn_Deleteall"><span>刪除</span></div>
+		</div>
+		<!--批次操作按鈕 end-->
 		<!--免運調漲文字 公告時間過後移除-->
 		<div style="float:left;font-size:16px;margin-bottom: 10px;margin-left:5px;color:#c20012;">
 			公告：2019年7月1日起，免運費門檻將調整為$2,000元。<a href="https://www.icheers.tw/iCheers/EDM/2019Delivery_epaper_upload.html" target="_blank" style="text-decoration: underline;color: $296993;">瞭解詳情</a>
@@ -195,10 +310,10 @@ $(document).ready(function(){
 					<li class="CartList_Checkbox"><a href=""></a></li>
 
 					<li class="CartList_Name"><a href=""></a></li>
+					<li class="CartList_Capacity"><a href=""></a></li>
 					<li class="CartList_Price"><a href=""></a></li>
 					<li class="CartList_Amount"><a href=""></a></li>
 					<li class="CartList_Sum"><a href=""></a></li>
-					<li class="CartList_Del"><a href=""></a></li>
 				</ul>
 				<div class="CLEAR"></div>	
 				
@@ -213,44 +328,34 @@ $(document).ready(function(){
 						<li class="CartList_ItemName">
 							<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 							<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-							<p class="CartList_ItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-							<p class="CartList_ItemSales"><a href="#">99.10.1~99.10.15 波爾多紅酒任選二款(含以上)79折優惠</a></p>
-							<p>不符合本次活動條件，將以酒窩價計算</p>
 							<!--20170814 Roger 新增-->
 							<div class="CartList_Item_iconRow">
 								<div class="CartList_Item_iconRow_noBouns" title="特殊商品不適用紅利累計"></div>
 								<div class="CartList_Item_iconRow_FreightNeedIcon" title="文字再問學涵"></div>
 								<div class="CartList_Item_iconRow_MoneyTransferIcon" title="文字再問學涵"></div>
+								<!--<div class="CartList_Item_iconRow_TrackingListIcon" title="追蹤中酒款"></div>-->
 							</div>
-							<!--20170814 Roger 新增 end-->
-						</li>                    
+						</li>      
+						<li class="CartList_ItemCapacity">
+	                     	<div class="WineCapacity_small">375ml</div>
+	                    </li>                    
 						<li class="CartList_ItemPrice">
 	                     $<strike>113,500</strike><br />
 						 $<span class="orange16">113,500</span><br />
-	                     <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
 	                    </li>					
 						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" onchange="Pops('#notice11')" />
-							<br/>
-							瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+							<input type="text" class="textarea2" value="1" size="2" maxlength="3" onchange="Pops('#notice11')" />瓶
+						</li>
 						<li class="CartList_ItemSum">$<span class="orange16">113,500</span></li>
-						<li class="CartList_ItemDel">
-	                    <!--20150520 Rogerfix start-->
-	                    <!--
-	                     <a href="">
-	                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-	                     </a>
-	                     <br />
-	                     -->
-	                     <!--20150520 Rogerfix end-->
-	                     <a href="">
-	                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-	                     </a>
-	                    </li>
 						
 						<div class="clear"></div>
+						<a href="">
+							<div class="CartList_EventNoticeBox">
+								<span>!&nbsp;未符合</span>
+								<span class="EventText">波爾多紅酒任選二款(含以上)79折優惠，按此加購商品，可享活動優惠！</span>
+								<div class="clear"></div>
+							</div>
+						</a>
 					</ul>
 					<div class="CartList_LineLine"></div>
 					<!--20160920 Roger 新增啤酒品項樣式-->
@@ -262,38 +367,18 @@ $(document).ready(function(){
 						<li class="CartList_ItemName">
 							<p class="CartList_ItemNameCN"><a href="#">黑巧克力司陶特啤酒</a></p>
 							<p class="CartList_ItemNameEN"><a href="#">Brooklyn Black</a></p>
-							<!--20160929 Roger 修改到期日位置-->
 							<p>到期日：2016/11</p>
-							<p class="CartList_ItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-							<!--20160929 Roger 修改到期日位置 end-->
-							<p class="CartList_ItemSales"><a href="#">99.10.1~99.10.15 波爾多紅酒任選二款(含以上)79折優惠</a></p>
-							<p>不符合本次活動條件，將以酒窩價計算</p>
-						</li>                    
+						</li>     
+						<li class="CartList_ItemCapacity">
+	                     	<div class="WineCapacity_small">375ml</div>
+	                    </li>                  
 						<li class="CartList_ItemPrice">
 	                     $<strike>113,500</strike><br />
 						 $<span class="orange16">113,500</span><br />
-	                     <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
 	                    </li>					
 						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-							<br/>
-							瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />瓶</li>
 						<li class="CartList_ItemSum">$<span class="orange16">113,500</span></li>
-						<li class="CartList_ItemDel">
-	                    <!--20150520 Rogerfix start-->
-	                    <!--
-	                     <a href="">
-	                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-	                     </a>
-	                     <br />
-	                     -->
-	                     <!--20150520 Rogerfix end-->
-	                     <a href="">
-	                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-	                     </a>
-	                    </li>
 						
 						<div class="clear"></div>
 					</ul>
@@ -307,35 +392,20 @@ $(document).ready(function(){
 						<li class="CartList_ItemName">
 							<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 							<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-							<p class="CartList_ItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-							<p class="CartList_ItemSales"><a href="#">99.10.1~99.10.15 波爾多紅酒任選二款(含以上)79折優惠</a></p>
-							<p>不符合本次活動條件，將以酒窩價計算</p>
-						</li>                    
+							 
+						</li>    
+						<li class="CartList_ItemCapacity">
+	                     	<div class="WineCapacity_small">750ml</div>
+	                    </li>                      
 						<li class="CartList_ItemPrice">
 	                     $<strike>113,500</strike><br />
 						 $<span class="orange16">113,500</span><br />
-	                     <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
+	                      
 	                    </li>					
 						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-							<br/>
-							瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />瓶</li>
 						<li class="CartList_ItemSum">$<span class="orange16">113,500</span></li>
-						<li class="CartList_ItemDel">
-	                    <!--20150520 Rogerfix start-->
-	                    <!--
-	                     <a href="">
-	                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-	                     </a>
-	                     <br />
-	                     -->
-	                     <!--20150520 Rogerfix end-->
-	                     <a href="">
-	                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-	                     </a>
-	                    </li>
+						 
 						
 						<div class="clear"></div>
 					</ul>
@@ -348,35 +418,21 @@ $(document).ready(function(){
 						<li class="CartList_ItemName">
 							<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 							<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-							<p class="CartList_ItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-							<p class="CartList_ItemSales"><a href="#">99.10.1~99.10.15 波爾多紅酒任選二款(含以上)79折優惠</a></p>
-							<p>不符合本次活動條件，將以酒窩價計算</p>
-						</li>                    
+							 
+						</li>
+						<li class="CartList_ItemCapacity">
+	                     	<div class="WineCapacity_small">750ml</div>
+	                    </li>                     
 						<li class="CartList_ItemPrice">
 	                     $<strike>113,500</strike><br />
 						 $<span class="RED16">113,500</span><br />
-	                     <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
-	                    </li>					
-						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" onchange="Pops('#notice12')" />
-							<br/>
-							瓶/<br /><div class="WineCapacity_small">375ml</div></li>
-						<li class="CartList_ItemSum">$<span class="RED16">113,500</span></li>
-						<li class="CartList_ItemDel">
-	                    <!--20150520 Rogerfix start-->
-	                    <!--
-	                     <a href="">
-	                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-	                     </a>
-	                     <br />
-	                     -->
-	                     <!--20150520 Rogerfix end-->
-	                     <a href="">
-	                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-	                     </a>
+	                      
 	                    </li>
+
+						<li class="CartList_ItemAmount">
+							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />瓶</li>
+						<li class="CartList_ItemSum">$<span class="RED16">113,500</span></li>
+						 
 						
 						<div class="clear"></div>
 					</ul>
@@ -389,35 +445,20 @@ $(document).ready(function(){
 						<li class="CartList_ItemName">
 							<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 							<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-							<p class="CartList_ItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-							<p class="CartList_ItemSales"><a href="#">99.10.1~99.10.15 波爾多紅酒任選二款(含以上)79折優惠</a></p>
-							<p>不符合本次活動條件，將以酒窩價計算</p>
-						</li>                    
+							 
+						</li>
+						<li class="CartList_ItemCapacity">
+	                     	<div class="WineCapacity_small">750ml</div>
+	                    </li>                     
 						<li class="CartList_ItemPrice">
 	                     $<strike>113,500</strike><br />
 						 $<span class="RED16">113,500</span><br />
-	                     <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
+	                      
 	                    </li>					
 						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-							<br/>
-							瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />瓶</li>
 						<li class="CartList_ItemSum">$<span class="RED16">113,500</span></li>
-						<li class="CartList_ItemDel">
-	                    <!--20150520 Rogerfix start-->
-	                    <!--
-	                     <a href="">
-	                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-	                     </a>
-	                     <br />
-	                     -->
-	                     <!--20150520 Rogerfix end-->
-	                     <a href="">
-	                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-	                     </a>
-	                    </li>
+						 
 						
 						<div class="clear"></div>
 					</ul>
@@ -432,28 +473,17 @@ $(document).ready(function(){
 						<li class="CartList_ItemName">
 							<p class="CartList_ItemNameCN"><a href="#"><span>歡樂春節套組</span></a></p>
 							<p class="CartList_ItemSales"><a href="#">波爾多超值組合優惠</a></p>
-							<p>不符合本次活動條件，將以酒窩價計算</p>
 						</li>
+						<li class="CartList_ItemCapacity">
+
+	                    </li>  
 						<li class="CartList_ItemPrice">$<strike>113,500</strike><br />
 							$<span class="RED16">113,500</span></li>
 						<li class="CartList_ItemAmount">
 							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-							<br/>
 							組</li>
 						<li class="CartList_ItemSum">$<span class="RED16">25,300</span></em></li>
-						<li class="CartList_ItemDel">
-	                    <!--20150520 Rogerfix start-->
-	                    <!--
-	                     <a href="">
-	                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-	                     </a>
-	                     <br />
-	                     -->
-	                     <!--20150520 Rogerfix end-->
-	                     <a href="">
-	                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-	                     </a>
-	                    </li>
+						 
 						
 						
 						<!-- 組合內容 -->
@@ -465,11 +495,14 @@ $(document).ready(function(){
 								<li class="CartList_GroupName">
 									<p class="CartList_GroupNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 									<p class="CartList_GroupNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-									<p class="CartList_GroupPlace"><a href="#"><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
+									
 								</li>
+								<li class="CartList_ItemCapacity">
+			                     	<div class="WineCapacity_small">750ml</div>
+			                    </li>  
 	                            <li class="CartList_GroupListPrice">$<strike>113,500</strike></li>
 						
-								<li class="CartList_GroupAmount">1 瓶<div class="WineCapacity_small">375ml</div></li>
+								<li class="CartList_GroupAmount">1&nbsp;瓶</li>
 							</ul>
 							
 							<!-- 組合細 項-->
@@ -478,10 +511,13 @@ $(document).ready(function(){
 								<li class="CartList_GroupName">
 									<p class="CartList_GroupNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 									<p class="CartList_GroupNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-									<p class="CartList_GroupPlace"><a href="#"><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
+									
 								</li>
+								<li class="CartList_ItemCapacity">
+			                     	<div class="WineCapacity_small">750ml</div>
+			                    </li>  
 	                            <li class="CartList_GroupListPrice">$<strike>113,500</strike></li>
-								<li class="CartList_GroupAmount">2 瓶<div class="WineCapacity_small">375ml</div></li>
+								<li class="CartList_GroupAmount">1&nbsp;瓶</li>
 							</ul>
 
 						</li>
@@ -495,35 +531,20 @@ $(document).ready(function(){
 						<li class="CartList_ItemName">
 							<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 							<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-							<p class="CartList_ItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-							<p class="CartList_ItemSales"><a href="#">99.10.1~99.10.15 波爾多紅酒任選二款(含以上)79折優惠</a></p>
-							<p>不符合本次活動條件，將以酒窩價計算</p>
-						</li>                    
+							 
+						</li>
+						<li class="CartList_ItemCapacity">
+			                <div class="WineCapacity_small">750ml</div>
+			            </li>                     
 						<li class="CartList_ItemPrice">
 	                     $<strike>113,500</strike><br />
 						 $<span class="RED16">113,500</span><br />
-	                     <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
+	                      
 	                    </li>					
 						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-							<br/>
-							瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />瓶</li>
 						<li class="CartList_ItemSum">$<span class="RED16">113,500</span></li>
-						<li class="CartList_ItemDel">
-	                    <!--20150520 Rogerfix start-->
-	                    <!--
-	                     <a href="">
-	                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-	                     </a>
-	                     <br />
-	                     -->
-	                     <!--20150520 Rogerfix end-->
-	                     <a href="">
-	                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-	                     </a>
-	                    </li>
+						 
 						
 						<div class="clear"></div>
 					</ul>
@@ -531,11 +552,11 @@ $(document).ready(function(){
                 <div class="CartList_Preorder_bg2"></div>	
                 
                 <!-- 任選優惠價 -->
-                <!--20150520 Rogerfix start-->
+
                 <div class="CartList_ItemAllchoice_location">
-                <!--20150520 Rogerfix end-->
+
 				<ul class="CartList_ItemAllchoice">
-                       	<!--20150518 Rogerfix start-->
+
                 	   	<div class="CartList_ItemAllchoice_bg">
 	                        <a href="#">
 	                         <span class="CartList_ItemAllchoice_title">
@@ -543,7 +564,7 @@ $(document).ready(function(){
 	                         </span>
 	                        </a>
                        	</div>             
-                       	<!--20150518 Rogerfix end-->
+
                        	<div style="margin: 5px 0;display:inline-block;width:100%;">
                        		<div class="CartList_ItemAllchoice_save">※此區商品總金額為$ <span>999</span>元</div>
                        		<div class="CartList_ItemAllchoice_status">此區優惠商品僅能統一出貨，目前時態：<span>一般出貨</span>，約<span>3-5</span>個工作日</div>
@@ -552,170 +573,119 @@ $(document).ready(function(){
 				<!-- 任選優惠商品項目 -->
                 <ul class="CartList_ChooseItem">
                     <li class="CartList_ChooseItemCheckbox">
-                    <!--20141124 Roger新增調整checkbox位置 start-->
+
                      <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    <!--20141124 Roger新增調整checkbox位置 end--></li>
+                    </li>
 					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_ChooseItemName">
 						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_ChooseItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-					    <p>不符合本次活動條件，將以酒窩價計算</p>
                     </li>
+                    <li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_ChooseItemPrice">
                      $<strike>1,800</strike><br />
 					 $<span class="orange16">1,500</span><br />
-                     <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
+                      
                     </li>
 					
 					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="2" size="2" maxlength="3" />
-						<br/>
-						瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />瓶
+					</li></li>
 					<li class="CartList_ChooseItemSum">$<span class="orange16">3,000</span></li>
-					<li class="CartList_ChooseItemDel">
-                    <!--20150520 Rogerfix start-->
-                    <!--
-                     <a href="">
-                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-                     </a>
-                     <br />
-                     -->
-                     <!--20150520 Rogerfix end-->
-                     <a href="">
-                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-                     </a>
-                    </li>
 					
 					<div class="clear"></div>
 				</ul>
                 <ul class="CartList_ChooseItem">
                     <li class="CartList_ChooseItemCheckbox">
-                    <!--20141124 Roger新增調整checkbox位置 start-->
+
                      <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    <!--20141124 Roger新增調整checkbox位置 end--></li>
+                    </li>
 					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_ChooseItemName">
 						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_ChooseItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-					    <p>不符合本次活動條件，將以酒窩價計算</p>
                     </li>
+                    <li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_ChooseItemPrice">$<strike>1,700</strike><br />
 						$<span class="orange16">1,400</span></li>
 					
 					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-						<br/>
-						瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />瓶
+					</li>
 					<li class="CartList_ChooseItemSum">$<span class="orange16">1,400</span></li>
-					<li class="CartList_ChooseItemDel">
-                    <!--20150520 Rogerfix start-->
-                    <!--
-                     <a href="">
-                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-                     </a>
-                     <br />
-                     -->
-                     <!--20150520 Rogerfix end-->
-                     <a href="">
-                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-                     </a>
-                    </li>
 					
 					<div class="clear"></div>
 				</ul>
                 <ul class="CartList_ChooseItem">
                     <li class="CartList_ChooseItemCheckbox">
-                    <!--20141124 Roger新增調整checkbox位置 start-->
                      <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    <!--20141124 Roger新增調整checkbox位置 end--></li>
+                    </li>
 					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_ChooseItemName">
 						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_ChooseItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-					    <p>不符合本次活動條件，將以酒窩價計算</p>
                     </li>
+                    <li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_ChooseItemPrice">$<strike>1,600</strike><br />
 						$<span class="orange16">1,300</span></li>
 					
 					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="2" size="2" maxlength="3" />
-						<br/>
-						瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />瓶</li>
 					<li class="CartList_ChooseItemSum">$<span class="orange16">2,600</span></li>
-					<li class="CartList_ChooseItemDel">
-                    <!--20150520 Rogerfix start-->
-                    <!--
-                     <a href="">
-                      <img src="images/icon/btn_BuyNextTime.png" width="74" height="24"/>
-                     </a>
-                     <br />
-                     -->
-                     <!--20150520 Rogerfix end-->
-                     <a href="">
-                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-                     </a>
-                    </li>
+
 					
 					<div class="clear"></div>
 				</ul>
                 <ul class="CartList_ChooseItem">
                     <li class="CartList_ChooseItemCheckbox">
-                    <!--20141124 Roger新增調整checkbox位置 start-->
+                    
                      <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    <!--20141124 Roger新增調整checkbox位置 end--></li>
+                    </li>
 					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_ChooseItemName">
 						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_ChooseItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-					    <p>不符合本次活動條件，將以酒窩價計算</p>
+
                     </li>
+                    <li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_ChooseItemPrice">$<strike>1,500</strike><br />
 						$<span class="RED16">1,200</span></li>
 					
 					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="2" size="2" maxlength="3" />
-						<br/>
-						瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />瓶</li>
 					<li class="CartList_ChooseItemSum">$<span class="RED16">2,400</span></li>
-					<li class="CartList_ChooseItemDel">
-                     <a href="">
-                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-                     </a>
-                    </li>
+
 					
 					<div class="clear"></div>
 				</ul>
                 <ul class="CartList_ChooseItem">
                     <li class="CartList_ChooseItemCheckbox">
-                    <!--20141124 Roger新增調整checkbox位置 start-->
+                    
                      <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    <!--20141124 Roger新增調整checkbox位置 end--></li>
+                    </li>
 					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_ChooseItemName">
 						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_ChooseItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-					    <p>不符合本次活動條件，將以酒窩價計算</p>
                     </li>
+                    <li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_ChooseItemPrice">$<strike>1,400</strike><br />
 						$<span class="RED16">1,100</span></li>
 					
 					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-						<br/>
-						瓶/<br /><div class="WineCapacity_small">375ml</div></li>
+						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />瓶
+					</li></li>
 					<li class="CartList_ChooseItemSum">$<span class="RED16">1,100</span></li>
-					<li class="CartList_ChooseItemDel">
-                     <a href="">
-                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-                     </a>
-                    </li>
 					
 					<div class="clear"></div>
 				</ul>
@@ -726,78 +696,61 @@ $(document).ready(function(){
                 <div class="CartList_ItemAllchoice_bg2"></div>	
                 </div>
                 
-                <!-- 隔日到貨區列表 -->
                 
                     
 				<!-- 預訂區列表 -->
-                <!--20150518 Rogerfix start-->
                 <div class="CartList_Preorder_bg"><span class="CartList_Preorder_title"><span class="CartList_Preorder_title_float">預訂商品</span><img src="images/icon/PreOrder_ICON_CartStep.png" width="17" height="15" class="CartList_Preorder_title_ExpressIcon" /></span></div>
                 <span class="Cart_Booking_title">預計到貨日：<span>2015</span> 年 <span>5</span>月</span>
                 <div class="CartList_Preorder_location">
 				<ul class="Cart_Preorder">
-                <!--20150518 Rogerfix end-->
 					<li class="CartList_ItemCheckbox">
-                    <!--20141124 Roger新增調整checkbox位置 start-->
+                    
                      <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    <!--20141124 Roger新增調整checkbox位置 end--></li>
+                    </li>
 					<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_ItemName">
 						<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_ItemPlace"><a href="#"><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-						<p class="CartList_ItemSales"><a href="#">99.10.1~99.10.15 波爾多紅酒任選二款(含以上)79折優惠</a></p>
-						<p>不符合本次活動條件，將以酒窩價計算</p>
 					</li>
+					<li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_ItemPrice">$<strike>113,500</strike><br />
 						$<span class="blue16">113,500</span><br /><br />
 							
 						</li>
 					
 					<li class="CartList_ItemAmount">
-						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />
-						<br/>
-						瓶/<div class="WineCapacity_small">375ml</div></li>
+						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />瓶</li>
 					<li class="CartList_ItemSum">
 						$<span class="blue16">113,500</span>				
 					</li>
-					<li class="CartList_ItemDel">
-                     <a href="">
-                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-                     </a>
-                    </li>
 					<div class="clear"></div>
 				</ul>
 				<div class="CartList_LineLine"></div>	
 				<ul class="Cart_Preorder">
 					<li class="CartList_ItemCheckbox">
-                    <!--20141124 Roger新增調整checkbox位置 start-->
+                    
                      <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    <!--20141124 Roger新增調整checkbox位置 end--></li>
+                    </li>
 					<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_ItemName">
 						<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_ItemPlace"><a href="#"><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-						<p class="CartList_ItemSales"><a href="#">99.10.1~99.10.15 波爾多紅酒任選二款(含以上)79折優惠</a></p>
-						<p>不符合本次活動條件，將以酒窩價計算</p>
 					</li>
+					<li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_ItemPrice">$<strike>113,500</strike><br />
 						$<span class="blue16">113,500</span><br /><br />
 						</li>
 					
 					<li class="CartList_ItemAmount">
-						<input type="text" class="textarea2" value="1" size="5" maxlength="3" />
-						<br/>
-						瓶/<div class="WineCapacity_small">375ml</div></li>
+						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />瓶</li>
 					<li class="CartList_ItemSum">
 						$<span class="blue16">113,500</span>				
 					</li>
-					<li class="CartList_ItemDel">
-                     <a href="">
-                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-                     </a>
-                    </li>
-					<li class="CartList_ItemAuto"></li>
+
 					<div class="clear"></div>
 				</ul>
                 </div>
@@ -813,28 +766,20 @@ $(document).ready(function(){
 					<li class="CartList_ItemName">
 						<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_ItemPlace"><a href="#"><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-						<p class="CartList_ItemSales"><a href="#">99.10.1~99.10.15 波爾多紅酒任選二款(含以上)79折優惠</a></p>
-						<p>不符合本次活動條件，將以酒窩價計算</p>
 					</li>
+					<li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_ItemPrice">$<strike>113,500</strike><br />
 						$<span class="blue16">113,500</span><br /><br />
 							
 						</li>
 					
 					<li class="CartList_ItemAmount">
-						<input type="text" class="textarea2" value="1" size="5" maxlength="3" />
-						<br/>
-						瓶/<div class="WineCapacity_small">375ml</div></li>
+						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />瓶</li>
 					<li class="CartList_ItemSum">
 						$<span class="blue16">113,500</span>				
 					</li>
-					<li class="CartList_ItemDel">
-                     <a href="">
-                      <img src="images/icon/btn_del.png" width="74" height="24"/>
-                     </a>
-                    </li>
-					<li class="CartList_ItemAuto"></li>
 					<div class="clear"></div>
                     
 				</ul>
@@ -843,17 +788,12 @@ $(document).ready(function(){
                 
                 <!-- 活動贈品區 任選 -->
                 <!-- 任選贈送 -->
-                <!--20150518 Rogerfix start-->
                <div class="CartList_GiftItem_bg"><div class="CartList_GiftItem_title">活動贈品</div></div>
                <a href="#"><div class="CartList_GiftItem_Second_title">iCheers 6月份限時贈送好禮(任選1項商品)</div></a>
                <div class="CartList_GiftItem_location">
-               <!--20150518 Rogerfix end-->
                <ul class="CartList_GiftItem">                     
                     <li class="CartList_GiftItemCheckbox">
-                     <!--input name="" type="checkbox" value="" /-->
-                     <!--20141124 Roger新增調整checkbox位置 start-->
-                     <input name="AddItem" type="radio" value="1" class="CartList_ItemCheckbox_position_show"/>
-                     <!--20141124 Roger新增調整checkbox位置 end-->
+                     <input name="AddItem" type="radio" value="1" class="CartList_ItemCheckbox_position"/>
                     </li>
 					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_GiftItemName">
@@ -861,6 +801,9 @@ $(document).ready(function(){
 						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
 
 					</li>
+					<li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_GiftItemPrice">
 						<div class="CartList_GiftItem_worthy">價值</div>
 						$113,500
@@ -868,7 +811,7 @@ $(document).ready(function(){
 					
 					<li class="CartList_GiftItemAmount">
 						<span class="orange16">2</span>
-						瓶<br /><div class="WineCapacity_small">375ml</div></li>
+						瓶</li>
 					<li class="CartList_GiftItemSum"></li>
 					
 					<div class="clear"></div>
@@ -877,19 +820,18 @@ $(document).ready(function(){
                 <!--專屬贈品贈送-->
                 <ul class="CartList_GiftItem">
                     <li class="CartList_GiftItemCheckbox">
-                     <!--input name="" type="checkbox" value="" /-->
-                     <!--20141124 Roger新增調整checkbox位置 start-->
-                     <input name="AddItem" type="radio" value="1" class="CartList_ItemCheckbox_position_show"/>
-                     <!--20141124 Roger新增調整checkbox位置 end-->
+                     <input name="AddItem" type="radio" value="1" class="CartList_ItemCheckbox_position"/>
                     </li>
 					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_GiftItemName">
 						<p class="CartList_GiftItemNameCN"><a href="#"><span>特選優質橄欖油</span></a></p>
 						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Olive oil</span></a></p>
 					</li>
-                    <!--20150518 Rogerfix start-->
+                    <li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
-                    <!--20150518 Rogerfix end-->
+                   
 					
 					<li class="CartList_GiftItemAmount">
 						<span class="orange16">2</span>
@@ -904,29 +846,27 @@ $(document).ready(function(){
 
 
                 <!-- 全部贈送 -->
-               <!--20150518 Rogerfix start-->
+              
                <a href="#"><div class="CartList_GiftItem_Second_title">iCheers 6月份限時贈送好禮(全部贈送)</div></a>
                <div class="CartList_GiftItem_location">
-               <!--20150518 Rogerfix end-->
+               
                <ul class="CartList_GiftItem">
                     <li class="CartList_GiftItemCheckbox"></li>
 					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_GiftItemName">
 						<p class="CartList_GiftItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-                        <!--20150518 Rogerfix start-->
-                        <!--
-						<p class="CartList_GiftItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-                        -->
-                        <!--20150518 Rogerfix end-->
+
 					</li>
-					<!--20150518 Rogerfix start-->
+					<li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
-                    <!--20150518 Rogerfix end-->
+                    
 					
 					<li class="CartList_GiftItemAmount">
 						<span class="RED16">2</span>
-						瓶<br /><div class="WineCapacity_small">375ml</div></li>
+						瓶</li>
 					<li class="CartList_GiftItemSum"></li>
 					
 					<div class="clear"></div>
@@ -940,7 +880,9 @@ $(document).ready(function(){
 						<p class="CartList_GiftItemNameCN"><a href="#"><span>特選優質橄欖油</span></a></p>
 						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Olive oil</span></a></p>
 					</li>
-
+					<li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
 
 					
@@ -956,26 +898,24 @@ $(document).ready(function(){
                 
             <a href="#"><div class="CartList_GiftItem_Second_title">iCheers 6月份限時贈送好禮(全部贈送)</div></a>
                <div class="CartList_GiftItem_location">
-               <!--20150518 Rogerfix end-->
+               
                <ul class="CartList_GiftItem">
                     <li class="CartList_GiftItemCheckbox"></li>
 					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
 					<li class="CartList_GiftItemName">
 						<p class="CartList_GiftItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
 						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-                        <!--20150518 Rogerfix start-->
-                        <!--
-						<p class="CartList_GiftItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-                        -->
-                        <!--20150518 Rogerfix end-->
+    
 					</li>
-					<!--20150518 Rogerfix start-->
+					<li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
-                    <!--20150518 Rogerfix end-->
+                    
 					
 					<li class="CartList_GiftItemAmount">
 						<span class="blue16">2</span>
-						瓶<br /><div class="WineCapacity_small">375ml</div></li>
+						瓶</li>
 					<li class="CartList_GiftItemSum"></li>
 					
 					<div class="clear"></div>
@@ -989,7 +929,9 @@ $(document).ready(function(){
 						<p class="CartList_GiftItemNameCN"><a href="#"><span>特選優質橄欖油</span></a></p>
 						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Olive oil</span></a></p>
 					</li>
-
+					<li class="CartList_ItemCapacity">
+			            <div class="WineCapacity_small">750ml</div>
+			        </li>
 					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
 
 					
@@ -1192,9 +1134,6 @@ $(document).ready(function(){
 	<!-- 清單外框 end --> 
     
 		
-	<!-- 免運費差額說明 start--> 
-	<div class="Cart_Difference">還差NT$5,975元免運費</div> 
-	<!-- 免運費差額說明 end --> 
 
   	<div class="CLEAR"></div>
 	<!-- 說明備註 start -->
@@ -1335,6 +1274,25 @@ $(document).ready(function(){
     	</div>
     </div>
    	<!-- 發送確認信視窗(皆為預購商品) end -->
+   	
+   	<!--刪除品項確認視窗-->
+   	<div id="notice_DeleteWine" class="notice_BG" style="width:450px;min-height:200px;">
+     	<div class="notice_title_layout">
+     		<div class="notice_title">刪除品項</div>
+     		<div class="notice_title_closeBTN" onclick="Wops('notice_DeleteWine')"></div>
+     		<div class="CLEAR"></div>
+     	</div>
+	    <div id="notice_body" class="notice_body">
+    	 	<p>品項刪除後將無法復原，如果希望日後方便查詢，<br/>
+建議可將刪除的品項加入追蹤酒款。</p>
+			<div class="notice_btn_row">
+				<div class="notice_btn notice_btn_movetotracklist"></div>
+				<div class="notice_btn notice_btn_deletefromcart"></div>
+			</div>
+
+    	</div>
+    </div>
+    <!--刪除品項確認視窗 end-->
     
     <!-- 加價商品 start -->
 	<div class="CartAddItem" id="CartAddItem">
@@ -1354,9 +1312,7 @@ $(document).ready(function(){
 					<li class="CartList_AddItemPrice">
                      $<strike>113,500</strike><br />
 					 $<span class="blue16">113,500</span><br />
-                      <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
+                       
                     </li>
 					<li class="CartList_AddItemAmount">
 						<div class="WineCapacity_small">375ml</div></li>
@@ -1399,9 +1355,7 @@ $(document).ready(function(){
 					<li class="CartList_AddItemPrice">
                      $<strike>113,500</strike><br />
 					 $<span class="RED16">113,500</span><br />
-                      <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
+                       
                     </li>
 					<li class="CartList_AddItemAmount">
 						<div class="WineCapacity_small">375ml</div></li>
@@ -1445,9 +1399,7 @@ $(document).ready(function(){
                      $<strike>113,500</strike><br />
 					 $<span class="orange16">113,500</span><br />
                      
-                      <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
+                       
                      
                     </li>
 					
@@ -1777,10 +1729,11 @@ $(document).ready(function(){
 <div class="FooterALL">
 	<div class="Footer_position">
 		<ul class="FooterMenu">
-			<li><a href="about_us.html">關於我們</a>｜</li>
-			<li><a href="contact_us.html">聯絡我們</a>｜</li>
-			<li><a href="terms_n_condition.html">條款及細則</a>｜</li>
-			<li><a href="privacy_policy.html">隱私條款</a></li>
+			<li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+            <li><a href="" target="_parent">條款及細則</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
 		</ul>
 		<div class="FooterICON">
 			<button class="Quality"></button>
@@ -1987,3 +1940,4 @@ $(document).ready(function(){
 <!--20161206 roger 新增icon說明視窗 end-->
 </body>
 </html>
+

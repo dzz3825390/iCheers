@@ -56,7 +56,6 @@ ddsmoothmenu.init({
 });  
 </script>
 
-<!--20161202 Roger 新增js-->
 <script type="text/javascript">
 
     $(document).ready(function(){
@@ -65,10 +64,16 @@ ddsmoothmenu.init({
         if (PriceWidth > 60){
             $(".wine_detail_wineinfo_price_preorder").css("margin-left",PriceWidth+40);
         }
+
+
+        //追蹤酒款按鈕
+        $('.IntroImg .Tracking').click(function(){
+            $(this).toggleClass('active');
+        });
     });
 
 </script>	
-<!--20161202 Roger 新增js end-->
+
 
 </head>
 
@@ -87,12 +92,13 @@ ddsmoothmenu.init({
 
 <div class="HeadALL">
     <div class="HeadMenu">
-        <a href="" class="HeadMenuLogin">會員登入</a>
+        <!--a href="" class="LogOut">會員登出</a-->
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
         <a href="" class="Reconfirmed">沒有收到確認信?</a>
-        <!--<a href="" class="BuyALot">諮詢服務</a>-->
-        <a href="" class="NextDrink">下次再喝</a>
         <a href="" class="MyList">我的清單</a>
-        <!--<a id="language_en" style="cursor:pointer;">English</a>-->
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+        <!--span class="AccountNumber">ich***, 您好</span-->
     </div>
     <div class="TagALL">
         <ul>
@@ -1391,9 +1397,7 @@ ddsmoothmenu.init({
                     <div class="Label">
                         <img src="images/pic/L01.jpg" />
                     </div> 
-                    <div class="WineCapacity">
-                        <span>375ml</span>
-                    </div>
+                    <div class="Tracking"></div>
                 </div><!-- IntroImg 酒瓶圖片 end-->
                 <div class="wine_detail_wineinfo_layout">
                 	<h2>
@@ -1404,9 +1408,13 @@ ddsmoothmenu.init({
                         <li class="MarketingINFO"> 適合週末的午後，與三五好友共享的輕鬆酒款。 </li>
                         <!--20170821 Roger 移除比價icon、新增需運費、限匯款-->
                         <li class="wine_detail_wineinfo_status">
+                            <div class="WineCapacity">
+                                <span>375ml</span>
+                            </div>
                             <span class="wine_detail_wineinfo_status_number">#1234</span>
                             <span class="wine_detail_wineinfo_status_number" style="margin-right:5px;" title="詳細文字問學涵">需運費</span>
                             <span class="wine_detail_wineinfo_status_number" style="margin-right:5px;" title="詳細文字問學涵">限匯款</span>
+                            <!--<span class="wine_detail_wineinfo_status_tracking" style="margin-right:5px;">追蹤中</span>-->
                             <img src="images/icon/NoBouns_26x26.png" width="26" height="26" class="wine_detail_wineinfo_status_nobouns" title="特殊商品不適用紅利累計"/>
                             
                         </li>

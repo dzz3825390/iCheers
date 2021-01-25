@@ -84,11 +84,12 @@ button {
 .MyList {
     background-image: url(../images/icon/MyList.png);
 }
-/*
-.NextDrink {
-    background-image: url(../images/icon/NextDrink.png);
+
+.TrackingList {
+    background-image: url(../images/icon/TrackingList.png);
 }
 
+/*
 .BuyALot {
     background-image: url(../images/icon/BuyALot.png);
 }*/
@@ -1045,7 +1046,8 @@ a.WineList_WineName4 {
 .Left_Menu_ClassifySearch_layout{
     background-color: #b9b9b9;
     width: 278px;
-    height: 160px;
+    padding-bottom: 16px;
+    box-sizing: border-box;
 }
 
 .Left_Menu_ClassifySearch_title{
@@ -3202,6 +3204,31 @@ img.HOT8_NO {
     background-image: url(../images/pic/wine_bottle_sample_horizonal.jpg);
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+
+.Result .Wine_Name .tracking{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url(../images/icon/icon_tracking_large.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: absolute;
+    left: 0;
+    bottom: 43px;
+    z-index: 1;
+}
+
+.Result .Wine_Name .tracking:hover{
+    cursor: pointer;
+    background-position: center bottom;
+}
+
+.Result .Wine_Name .tracking.active{
+    background-position: center bottom;
 }
 
 .Result .Wine_Name .WhiskyBigImg {
@@ -3283,6 +3310,7 @@ img.HOT8_NO {
     margin-right: 5px;
     margin-left: 5px;
     margin-top: 5px;
+    position: relative;
 }
 
 
@@ -3361,13 +3389,33 @@ img.HOT8_NO {
             text-decoration: underline;
         }
 
-/*20161130 Roger 調整選擇器與寬度、間距*/
 .WineInformation li.List_Year {
     width: 59px;
     text-align: center;
     margin:0 3px;
+    position: relative;
 }
-/*20161130 Roger 調整選擇器與寬度、間距 end*/
+
+.WineInformation li.List_Year .tracking_icon{
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon/TrackingList_red.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: absolute;
+    left: -7px;
+    top: 7px;
+    cursor: pointer;
+}
+
+.WineInformation li.List_Year .tracking_icon:hover{
+    background-position: center bottom;
+}
+
+.WineInformation li.List_Year .tracking_icon.active{
+    background-position: center bottom;
+}
+
 
     .List_Year a:hover span {
         text-decoration: underline;
@@ -3431,15 +3479,12 @@ img.HOT8_NO {
         margin-top: 8px;
     }
 
-/*20161130 Roger 修改選擇器、新增左間距*/
 .WineInformation li.List_Capacity {
     width: 44px;
     margin-left: 3px;
     text-align: center;
 }
-/*20161130 Roger 修改選擇器、新增左間距 end*/
 
-/*20161130 Roger 修改選擇器、新增左間距、文字對齊*/
 .WineInformation li.List_Discount {
     width: 50px;
     margin-left: 3px;
@@ -3447,7 +3492,14 @@ img.HOT8_NO {
     font-size: 14px;
     text-align: right;
 }
-/*20161130 Roger 修改選擇器、新增左間距 end*/
+
+.WineInformation li.List_Expired{
+    width: 99px;
+    margin-left: 3px;
+    text-align: center;
+    color: #717071;
+    font-size: 13px;
+}
 
 
 .List_Discount_save_icon{
@@ -3650,7 +3702,7 @@ margin-top: 5px;
 }
 
 .Project ul li {
-    font-size: 15px;
+    font-size: 14px;
     float: left;
     display: block;
     text-align: center;
@@ -4702,7 +4754,6 @@ ul.Detail {
         margin-right: 0;
     }
 
-/*20170821 Roger 修改背景顏色*/
 .wine_detail_wineinfo_status_number{
     display: inline-block;
     float: right;
@@ -4717,7 +4768,33 @@ ul.Detail {
     margin-top: -3px;
     line-height: 23px;
 }
-/*20170821 Roger 修改背景顏色 end*/
+
+.wine_detail_wineinfo_status_tracking{
+    display: inline-block;
+    float: right;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background-color: #696b6c;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 3px 5px;
+    margin-top: -3px;
+    line-height: 23px;
+}
+
+.wine_detail_wineinfo_status_tracking:before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon/TrackingList_white.png);
+    background-size: cover;
+    margin-right: 1px;
+    margin-top: 2px;
+    float: left;
+}
 
 .wine_detail_wineinfo_status_24HRexpress{
     margin-right: 10px;
@@ -4994,7 +5071,7 @@ ul.Detail {
         display: block;
         width: 45px;
         height: 40px;
-        top: 40px;
+        top: 5px;
         right: 0px;
         cursor: pointer;
         overflow: hidden;
@@ -5005,12 +5082,26 @@ ul.Detail {
             height: auto;
         }
 
-.IntroImg .WineCapacity {
-    position: absolute;
-    top: 10px;
-    right: 0px;
-}
+        .IntroImg .Tracking{
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                right: 2px;
+                top: 47px;
+                background-image: url(../images/icon/icon_tracking_large.png); 
+                background-repeat: no-repeat;
+                background-position: center top;
+                cursor: pointer;
+                display: block;
+            }
 
+            .IntroImg .Tracking:hover{
+                background-position: center bottom;
+            }
+
+            .IntroImg .Tracking.active{
+                background-position: center bottom;
+            }    
 
 
 /**************詳目頁 end*************************/
@@ -13580,3 +13671,37 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
     opacity: 0.5;
   }
 }
+
+/*追蹤清單下架商品*/
+
+.Result .NotSell .Wine_Name h1, .Result .NotSell .Wine_Name h2,.Result .NotSell .Wine_Name h3{
+    opacity: 0.4;
+}
+
+.NotSell .WineInformation_layout{
+    opacity: 0.4;
+}
+
+.Result .NotSell .Wine_Name .WinePage{
+    opacity: 0.4;
+}
+
+.NotSell .NotSellTextBox{
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    background-color: #f3f4f5;
+    border-left: 8px solid #fff;
+    border-right: 8px solid #fff;
+    font-size: 14px;
+    line-height: 35px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.NotSell .NotSellTextBox a{
+    color: #c20012;
+    font-weight: bold;
+    text-decoration: underline;
+} 
