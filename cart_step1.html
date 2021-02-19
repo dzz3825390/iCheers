@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 <link rel="stylesheet" type="text/css" href="css/cart_201505rogerfix.css"/>
 <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
-<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 <script type="text/javascript" src="Scripts/tabs.js"/></script>
 <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
@@ -1227,17 +1227,20 @@ $(document).ready(function(){
 	
 	<div class="CLEAR"></div>	
 	<!-- 發送確認信視窗(一般) start -->
-    <div id="notice" class="notice_BG" style="width:550px;min-height:320px;display:none;">
+    <div id="notice" class="notice_BG" style="width:550px;min-height:280px;display:none;">
      	<div class="notice_title_layout">
      		<div class="notice_title">發送確認信</div>
      		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
      		<div class="CLEAR"></div>
      	</div>
 	    <div id="notice_body" class="notice_body">
-    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，客服人員將會盡快與您e-mail聯繫！</p>
+    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的Email，客服夥伴將會盡快與您聯繫！</p>
     	 	<div class="notice_body_input_layout">
     	 		<span>Email</span>
     	 		<input name="Email" type="text" style="width: calc(100% - 100px);" />
+    	 		<br/>
+	    	 		<input type="checkbox" style="margin-left: 75px;margin-top: 5px;">
+	    	 		<span style="font-size: 14px;font-weight:normal;margin-top: 5px;">記住我</span>
     	 	</div>
 	     	<div class="notice_email_submitBTN"></div>
     	 </div>
@@ -1245,7 +1248,7 @@ $(document).ready(function(){
    	<!-- 發送確認信視窗(一般) end -->
 
    	<!-- 發送確認信視窗(皆為快速到貨商品) start -->
-    <div id="notice_1" class="notice_BG" style="width:650px;min-height:320px;">
+    <div id="notice_1" class="notice_BG" style="width:670px;min-height:320px;">
      	<div class="notice_title_layout">
      		<div class="notice_title">發送確認信</div>
      		<div class="notice_title_closeBTN" onclick="Wops('notice_1')"></div>
@@ -1253,26 +1256,27 @@ $(document).ready(function(){
      	</div>
      	<div>
 		    <div class="notice_body">
-	    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，客服人員將會盡快與您e-mail聯繫！</p>
+	    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的Email，客服夥伴將會盡快與您聯繫！</p>
 	    	 	<div class="notice_body_input_layout">
 	    	 		<span>Email</span>
 	    	 		<input name="Email" type="text" style="width: calc(100% - 100px);" />
+	    	 		<br/>
+	    	 		<input type="checkbox" style="margin-left: 75px;margin-top: 5px;">
+	    	 		<span style="font-size: 14px;font-weight:normal;margin-top: 5px;">記住我</span>
 	    	 	</div>
 	            <p>
-	            	您所選購的商品為快速到貨品項，請確認收到完成訂購通知信(Step 4)之後（距離今日結單時間還有<span>HH</span>時<span>MM</span>分<span>SS</span>秒），我們將立即為您安排出貨，為求出貨效率，建議使用宅配貨到付款；若您有其他付款方式需求，我們將於收到貨款後，才能為您安排出貨：
+	            	快速到貨截單時間倒數計時：<span>HH</span>時<span>MM</span>分<span>SS</span>秒
 	            </p>
-	            <div class="notice_body_radio_layout">
-	            	<input type="radio" name="1">
-	     			<span style="width:535px;">我需要快速到貨，並選擇以宅配貨到付款方式完成訂購。</span>
-	     			<div class="CLEAR"></div>
-	     			<input type="radio" name="1">
-	     			<span style="width:535px;">我需要快速到貨，我會在今日結單時間<em>HH:MM</em>之前，以刷卡/匯款等方式完成訂購及付款！（逾時恕無法快速出貨）</span>
-	     			<div class="CLEAR"></div>
-	     			<input type="radio" name="1">
-	     			<span style="width:535px;">我不急著用酒，我想以刷卡/匯款等方式支付貨款。</span>
-	            </div>
 	            <div class="CLEAR"></div>
 	            <p><span>*如遇例假日及國定假日則到貨時間順延</span></p>
+	            <div class="notice_body_radio_layout">
+	     			<input type="radio" name="1">
+	     			<span style="width:585px;">我需要快速到貨，我會在<em>HH:MM</em>前完成付款（Step4），逾時恕無法快速到貨</span>
+	     			<div class="CLEAR"></div>
+	     			<input type="radio" name="1">
+	     			<span style="width:585px;">我不急著用酒，以一般速度出貨即可</span>
+	            </div>
+	            
 	            <div class="CLEAR"></div>
 		     	<div class="notice_email_submitBTN"></div>
 	    	</div>
@@ -1281,7 +1285,7 @@ $(document).ready(function(){
    	<!-- 發送確認信視窗(皆為快速到貨商品) end -->
 
    	<!-- 發送確認信視窗(目前時間已超過當日結單時間) start -->
-    <div id="notice_2" class="notice_BG" style="width:650px;min-height:320px;">
+    <div id="notice_2" class="notice_BG" style="width:670px;min-height:320px;">
      	<div class="notice_title_layout">
      		<div class="notice_title">發送確認信</div>
      		<div class="notice_title_closeBTN" onclick="Wops('notice_2')"></div>
@@ -1289,26 +1293,27 @@ $(document).ready(function(){
      	</div>
      	<div>
 		    <div id="notice_body" class="notice_body">
-	    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，客服人員將會盡快與您e-mail聯繫！</p>
+	    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的Email，客服夥伴將會盡快與您聯繫！</p>
 	    	 	<div class="notice_body_input_layout">
 	    	 		<span>Email</span>
 	    	 		<input name="Email" type="text" style="width: calc(100% - 100px);" />
+	    	 		<br/>
+	    	 		<input type="checkbox" style="margin-left: 75px;margin-top: 5px;">
+	    	 		<span style="font-size: 14px;font-weight:normal;margin-top: 5px;">記住我</span>
 	    	 	</div>
 	            <p>
-	            	您所選購的品項已超過今日結單時間<span>HH:MM</span>，將於下個工作天盡快為您處理，為求出貨效率，建議使用宅配貨到付款；若您有其他付款方式需求，我們將於收到貨款後，才能為您安排出貨：
+	            	已經超過快速到貨截單時間：<span>HH:MM</span>，將於下個工作日安排出貨。
 	            </p>
-		            <div class="notice_body_radio_layout">
-		            	<input type="radio" name="1">
-		     			<span style="width:535px;">我需要快速到貨，並選擇以宅配貨到付款方式完成訂購。</span>
-		     			<div class="CLEAR"></div>
-		     			<input type="radio" name="1">
-		     			<span style="width:535px;">我需要快速到貨，我會在下個工作天當日的結單時間<em>HH:MM</em>之前，以刷卡/匯款等方式完成訂購及付款！（逾時恕無法快速出貨）</span>
-		     			<div class="CLEAR"></div>
-		     			<input type="radio" name="1">
-		     			<span style="width:535px;">我不急著用酒，我想以刷卡/匯款等方式支付貨款。</span>
-		            </div>
 	            <div class="CLEAR"></div>
 	            <p><span>*如遇例假日及國定假日則到貨時間順延</span></p>
+		        <div class="notice_body_radio_layout">
+		     			<input type="radio" name="1">
+		     			<span style="width:585px;">我需要快速到貨，我會在下個工作日<em>HH:MM</em>前，完成付款！（Step4），逾時恕無法快速到貨</span>
+		     			<div class="CLEAR"></div>
+		     			<input type="radio" name="1">
+		     			<span style="width:585px;">我不急著用酒，以一般速度出貨即可</span>
+		        </div>
+	            <div class="CLEAR"></div>
 		     	<div class="notice_email_submitBTN"></div>
 	    	</div>
 	    </div>
@@ -1518,17 +1523,14 @@ $(document).ready(function(){
 	
 	
 	<!-- 確認送出視窗 start -->
-    <div id="notice2" class="notice_BG" style="width:350px;height:250px;display:none;">
+    <div id="notice2" class="notice_BG" style="width:350px;height:180px;display:none;">
     	<div class="notice_title_layout">
-     		<div class="notice_title">稍後查看您的信箱</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
+     		<div class="notice_title">還差一步！</div>
+     		<div class="notice_title_closeBTN" onclick="Wops('notice2')"></div>
      		<div class="CLEAR"></div>
      	</div>
 	    <div id="notice2_body" class="notice_body">
-    		<p style="text-align:center;">謝謝您的支持，</p>
-    		<p style="text-align:center;">客服人員將以最快速度 e-mail 與您確認訂單！</p>
-    		<p style="color:#999999;text-align:center;">若未收到來信，請至垃圾信箱確認，</p>
-    		<p style="color:#999999;text-align:center;">或直接連繫客服人員，謝謝！</p>
+    		<p style="text-align:center;">請收Email完成付款。</p>
       		<div class="notice_backhomeBTN"></div>
 	    </div>
     </div>

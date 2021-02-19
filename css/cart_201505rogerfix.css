@@ -1394,7 +1394,7 @@ li.FreightNotches2 table tr th{
 
 .notice_body_input_layout{
 	width: 100%;
-	height: 32px;
+	/*height: 32px;*/
 	margin: 16px 0;
 }
 
@@ -1501,7 +1501,7 @@ li.FreightNotches2 table tr th{
 
 /*notice 輸入email視窗 end*/
 
-/*notice2 稍後查看您的信箱*/
+/*notice3 稍後查看您的信箱*/
 
 .notice_backhomeBTN{
 	width: 100px;
@@ -1515,7 +1515,23 @@ li.FreightNotches2 table tr th{
 	background-image: url(../images/icon/btn_home2.png);
 }
 
-/*notice2 稍後查看您的信箱 end*/
+/*notice3 稍後查看您的信箱 end*/
+
+/*notice3 台大實驗用 結束可刪*/
+
+.notice_ok{
+	width: 100px;
+	height: 41px;
+	background-image: url(../images/icon/btn_ok.png);
+	margin: 20px auto;
+}
+
+.notice_ok:hover{
+	cursor: pointer;
+	background-image: url(../images/icon/btn_ok2.png);
+}
+
+/*notice2 台大實驗用 結束可刪 end*/
 
 
 /*notice10 會員登入*/

@@ -7,9 +7,10 @@
 
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 <link rel="stylesheet" type="text/css" href="css/cart_201505rogerfix.css"/>
-
-<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+<script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
 <script type="text/javascript" src="Scripts/tabs.js"/></script>
 <script type="text/javascript" src="Scripts/LightBox.js"></script>
 
@@ -219,13 +220,12 @@ $(function(){
 <!-- 資料已送出視窗 start --> 
 <div id="notice3" class="notice_BG" style="width:450px;min-height:220px;display:none;">
      <div class="notice_title_layout">
-    	<div class="notice_title">資料已送出</div>
+    	<div class="notice_title">還差一步！</div>
      	<div class="notice_title_closeBTN" onclick="Wops('notice3')"></div>
      	<div class="CLEAR"></div>
     </div> 
    	 <div id="notice3_body" class="notice_body">
-   		<p>資料已送出！</p>
-   		<p>客服人員會將訂單明細寄至您的e-mail信箱，並盡快為您辦理出貨。</p>
+   		<p style="text-align:center;">請收Email完成付款。</p>
      	<div class="notice_backhomeBTN"></div>
    	 </div>
 </div>
@@ -235,7 +235,7 @@ $(function(){
     <div id="notice6" class="notice_BG" style="width:450px;height:260px;display:none;">
     	<div class="notice_title_layout">
      		<div class="notice_title">e-coupon優惠</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
+     		<div class="notice_title_closeBTN" onclick="Wops('notice6')"></div>
      		<div class="CLEAR"></div>
      	</div>
 	    <div id="notice6_body" class="notice_body">
@@ -253,7 +253,7 @@ $(function(){
     <div id="notice7" class="notice_BG" style="width:450px;height:260px;display:none;">
     	<div class="notice_title_layout">
      		<div class="notice_title">紅利折抵</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
+     		<div class="notice_title_closeBTN" onclick="Wops('notice7')"></div>
      		<div class="CLEAR"></div>
      	</div>
 	    <div id="notice7_body" class="notice_body">
@@ -270,7 +270,7 @@ $(function(){
 <div id="notice10" class="notice_BG" style="width:450px;height:310px;display:none;">
     	<div class="notice_title_layout">
      		<div class="notice_title">會員登入</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
+     		<div class="notice_title_closeBTN" onclick="Wops('notice10')"></div>
      		<div class="CLEAR"></div>
      	</div>
 	    <div id="notice10_body" class="notice_body">
@@ -733,13 +733,13 @@ $(function(){
 				您所訂購商品包含[快速到貨]品項，建議您選擇以宅配貨到付款方式完成訂購及貨到時付款(全部訂單金額)，若刷卡/匯款等方式完成訂購及付款(全部訂單金額)，則需於今日結單時間<span>HH:MM</span>之前完成訂購及付款(全部訂單金額) ，方可以快速到貨方式進行出貨（逾時恕無法快速出貨），謝謝。
 			</div>
 			<h3>
-				<input name="address" type="radio"  id="ATM" value="ATM" class="textarea1" />
-			匯款</h3>
+				<input name="payment" type="radio"  id="ATM" value="ATM" class="textarea1" />
+			匯款（請於24小時內完成付款，逾期將取消訂單。)</h3>
 			<h3>
-				<input name="address" type="radio"  id="fax" value="fax" class="textarea1" />
-				刷卡/行動支付</h3>
+				<input name="payment" type="radio"  id="fax" value="fax" class="textarea1" />
+				傳真刷卡單（請於24小時內完成付款，逾期將取消訂單。)</h3>
 			<h3>
-				<input name="address" type="radio" id="Deliver" value="Deliver" checked="checked" />
+				<input name="payment" type="radio" id="Deliver" value="Deliver" checked="checked" />
 				宅配貨到付款（現金）
 			</h3>
 			
@@ -1024,7 +1024,7 @@ $(function(){
 	 
 		 <div class="BTN_CONSULT" >
          	<br />
-            <button value="確認送出" class="btn_send"  onclick="Pops('notice3')" />	
+            <button value="確認送出" class="btn_send"  onclick="Pops('#notice3-2')" />	
 			 
 		 </div>
 </div>

@@ -72,7 +72,7 @@ function Wops(name){
 $(document).ready(function(){
 
 	$("#img2").click(function(){
-		Pops("#notice_14");
+		Pops("#notice2");
 	});
 
 	// e-Coupo彈出視窗
@@ -102,13 +102,7 @@ $(function(){
 				$(".Bracket").slideToggle(300);
 			});
 			
-			
-		// 查看運費級距
-		/*201708 Roger hotfix*/	
-		$(".FreightBTN").click(function(){
-			$(".FreightNotches").slideToggle(300);
-			});
-		/*201708 Roger hotfix end*/	
+		
 			
 			
 	});

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iCheers 愛酒窩_客戶基本資料填寫</title>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" > 
+
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="stylesheet" type="text/css" href="css/cart_201505rogerfix.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+<script type="text/javascript" src="Scripts/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
+<script type="text/javascript" src="Scripts/tabs.js"/></script>
+<script type="text/javascript" src="Scripts/LightBox.js"></script>
+
+
+
+<!-- 詢問是否滿18歲 -->
+<script language="JavaScript" type="text/javascript">
+$(function(){
+		//瀏覽器內容寬度
+		var intBrowserW = 0;
+		//瀏覽器內容高度
+		var intBrowserH = 0;
+		//取得瀏覽器內容寬度/高度
+		if (document.documentElement) {
+		    intBrowserW = document.documentElement.clientWidth;
+		    intBrowserH = document.documentElement.clientHeight;
+		} else {
+		    intBrowserW = document.body.clientWidth;
+		    intBrowserH = document.body.clientHeight;
+		}
+		$("<div class='showDiv' />").css({
+			position: "absolute",
+			width: intBrowserW,
+			height: intBrowserH,
+			left: 0,
+			top: 0,
+			opacity: 0.6,
+			display: "none",
+			backgroundColor: "black"
+		}).appendTo("body").fadeIn(400);
+		
+		/*$("#notice_Epayment2").fadeIn(400).css({
+			left: (intBrowserW - 350) / 2,
+			top: (intBrowserH - 220) / 2
+		});	*/
+		Pops("#notice_Epayment2");
+			
+		
+});
+</script>
+
+
+</head>
+
+
+
+
+
+
+
+
+<body>
+<!-- 付款完成視窗 start --> 
+<div id="notice_Epayment" class="notice_BG" style="width:400px;min-height:220px;display:none;">
+     <div class="notice_title_layout">
+    	<div class="notice_title">付款完成</div>
+     	<div class="notice_title_closeBTN"></div>
+     	<div class="CLEAR"></div>
+    </div> 
+   	 <div id="notice3_body" class="notice_body">
+   		<p style="text-align:center;">付款成功&nbsp;&#10004;</p>
+   		<p style="text-align:center;">將盡速安排商品配送，謝謝您！</p>
+     	<div class="notice_backhomeBTN"></div>
+   	 </div>
+</div>
+<!-- 付款完成視窗 end --> 
+
+<!-- 重複付款視窗 start --> 
+<div id="notice_Epayment2" class="notice_BG" style="width:400px;min-height:220px;display:none;">
+     <div class="notice_title_layout">
+    	<div class="notice_title">您已完成付款</div>
+     	<div class="notice_title_closeBTN"></div>
+     	<div class="CLEAR"></div>
+    </div> 
+   	 <div id="notice3_body" class="notice_body">
+   		<p style="text-align:center;">您已在YYYY/MM/DD HH:MM完成付款，</p>
+   		<p style="text-align:center;">我們將盡速安排商品配送！</p>
+   		<p style="text-align:center;">若有任何需要協助之處，請聯繫客服夥伴，謝謝！</p>
+   		<p style="text-align:center;margin-top:16px;">客服專線：02-2926-3667</p>
+   		<p style="text-align:center;">客服信箱：<a style="color:#666;text-decoration: underline;" href="mailto:service@icheers.tw">service@icheers.tw</a></p>
+     	<div class="notice_backhomeBTN"></div>
+   	 </div>
+</div>
+<!-- 重複付款視窗 end --> 
+
+
+
+
+</body>
+
+</html>
