@@ -1531,6 +1531,18 @@ li.FreightNotches2 table tr th{
 	background-image: url(../images/icon/btn_ok2.png);
 }
 
+.notice_keepit{
+	width: 100px;
+	height: 41px;
+	background-image: url(../images/icon/btn_keepit.png);
+	margin: 20px auto;
+}
+
+.notice_keepit:hover{
+	cursor: pointer;
+	background-image: url(../images/icon/btn_keepit2.png);
+}
+
 /*notice2 台大實驗用 結束可刪 end*/
 
 

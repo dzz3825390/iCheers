@@ -23,7 +23,8 @@ function PopLocate(name){
 
 	//scrollbar套件設定
 	$(name).children().eq(1).mCustomScrollbar({
-    	theme:"minimal-dark"
+    	theme:"minimal-dark",
+    	alwaysShowScrollbar:1
 	});
 
 	//20161223 Roger 修改js 讓寬度小於1280的載具顯示正常
