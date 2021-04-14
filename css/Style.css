@@ -84,11 +84,12 @@ button {
 .MyList {
     background-image: url(../images/icon/MyList.png);
 }
-/*
-.NextDrink {
-    background-image: url(../images/icon/NextDrink.png);
+
+.TrackingList {
+    background-image: url(../images/icon/TrackingList.png);
 }
 
+/*
 .BuyALot {
     background-image: url(../images/icon/BuyALot.png);
 }*/
@@ -1045,7 +1046,8 @@ a.WineList_WineName4 {
 .Left_Menu_ClassifySearch_layout{
     background-color: #b9b9b9;
     width: 278px;
-    height: 160px;
+    padding-bottom: 16px;
+    box-sizing: border-box;
 }
 
 .Left_Menu_ClassifySearch_title{
@@ -3202,6 +3204,32 @@ img.HOT8_NO {
     background-image: url(../images/pic/wine_bottle_sample_horizonal.jpg);
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+
+.Result .Wine_Name .tracking{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url(../images/icon/icon_tracking_large2_gray.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    bottom: 43px;
+    z-index: 1;
+}
+
+.Result .Wine_Name .tracking:hover{
+    cursor: pointer;
+}
+
+.Result .Wine_Name .tracking.active{
+    background-image: url(../images/icon/icon_tracking_large2_pink.png);
+    animation-name: TrackingBtn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 
 .Result .Wine_Name .WhiskyBigImg {
@@ -3283,6 +3311,7 @@ img.HOT8_NO {
     margin-right: 5px;
     margin-left: 5px;
     margin-top: 5px;
+    position: relative;
 }
 
 
@@ -3361,13 +3390,33 @@ img.HOT8_NO {
             text-decoration: underline;
         }
 
-/*20161130 Roger 調整選擇器與寬度、間距*/
+
 .WineInformation li.List_Year {
     width: 59px;
     text-align: center;
     margin:0 3px;
+    position: relative;
 }
-/*20161130 Roger 調整選擇器與寬度、間距 end*/
+
+.WineInformation li.List_Year .tracking_icon{
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon/TrackingList_red.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: absolute;
+    left: -7px;
+    top: 7px;
+    cursor: pointer;
+}
+
+.WineInformation li.List_Year .tracking_icon:hover{
+    background-position: center bottom;
+}
+
+.WineInformation li.List_Year .tracking_icon.active{
+    background-position: center bottom;
+}
 
     .List_Year a:hover span {
         text-decoration: underline;
@@ -3431,15 +3480,13 @@ img.HOT8_NO {
         margin-top: 8px;
     }
 
-/*20161130 Roger 修改選擇器、新增左間距*/
+
 .WineInformation li.List_Capacity {
     width: 44px;
     margin-left: 3px;
     text-align: center;
 }
-/*20161130 Roger 修改選擇器、新增左間距 end*/
 
-/*20161130 Roger 修改選擇器、新增左間距、文字對齊*/
 .WineInformation li.List_Discount {
     width: 50px;
     margin-left: 3px;
@@ -3447,7 +3494,15 @@ img.HOT8_NO {
     font-size: 14px;
     text-align: right;
 }
-/*20161130 Roger 修改選擇器、新增左間距 end*/
+
+.WineInformation li.List_Expired{
+    width: 99px;
+    margin-left: 3px;
+    text-align: center;
+    color: #717071;
+    font-size: 13px;
+}
+
 
 
 .List_Discount_save_icon{
@@ -3650,7 +3705,7 @@ margin-top: 5px;
 }
 
 .Project ul li {
-    font-size: 15px;
+    font-size: 14px;
     float: left;
     display: block;
     text-align: center;
@@ -4650,11 +4705,27 @@ h5.Focus {
 
     .wine_detail_wineinfo_layout h1 {
         width: 565px;
+        height: 23px;
+        line-height: 23px;
         font-size: 18px;
         font-family: Arial, Helvetica, sans-serif;
         color: #999;
         margin-top: 5px;
         font-weight: normal;
+    }
+
+    .wine_detail_wineinfo_layout .btn_trackinglist_singleyear{
+        width: 21px;
+        height: 17px;
+        display: inline-block;
+        background-image: url(../images/icon/icon_tracking_large3_gray.png);
+    }
+
+    .wine_detail_wineinfo_layout .btn_trackinglist_singleyear.active{
+        background-image: url(../images/icon/icon_tracking_large3_pink.png);
+        animation-name: TrackingBtn;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
     }
     /*20161202 Roger 調整寬度 end*/
 
@@ -4702,7 +4773,7 @@ ul.Detail {
         margin-right: 0;
     }
 
-/*20170821 Roger 修改背景顏色*/
+
 .wine_detail_wineinfo_status_number{
     display: inline-block;
     float: right;
@@ -4717,7 +4788,33 @@ ul.Detail {
     margin-top: -3px;
     line-height: 23px;
 }
-/*20170821 Roger 修改背景顏色 end*/
+
+.wine_detail_wineinfo_status_tracking{
+    display: inline-block;
+    float: right;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background-color: #696b6c;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 3px 5px;
+    margin-top: -3px;
+    line-height: 23px;
+}
+
+.wine_detail_wineinfo_status_tracking:before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon/TrackingList_white.png);
+    background-size: cover;
+    margin-right: 1px;
+    margin-top: 2px;
+    float: left;
+}
 
 .wine_detail_wineinfo_status_24HRexpress{
     margin-right: 10px;
@@ -4994,7 +5091,7 @@ ul.Detail {
         display: block;
         width: 45px;
         height: 40px;
-        top: 40px;
+        top: 5px;
         right: 0px;
         cursor: pointer;
         overflow: hidden;
@@ -5005,11 +5102,36 @@ ul.Detail {
             height: auto;
         }
 
-.IntroImg .WineCapacity {
-    position: absolute;
-    top: 10px;
-    right: 0px;
-}
+    .IntroImg .Tracking{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 2px;
+        top: 47px;
+        background-image: url(../images/icon/icon_tracking_large2_gray.png); 
+        background-repeat: no-repeat;
+        /*background-position: center top;*/
+        cursor: pointer;
+        display: block;
+    }
+
+    @keyframes TrackingBtn {
+        /*0%{transform: rotateY(0deg);}
+                100%{transform: rotateY(360deg);}*/
+                0%{transform: scale(1);}
+                20%{transform: scale(0.9);}
+                75%{transform: scale(1.1);}
+                100%{transform: scale(1);}
+    }
+
+
+    .IntroImg .Tracking.active{
+                /*background-position: center bottom;*/
+                background-image: url(../images/icon/icon_tracking_large2_pink.png); 
+                animation-name: TrackingBtn;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
+            }  
 
 
 
@@ -13584,3 +13706,253 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
     opacity: 0.5;
   }
 }
+
+/*追蹤清單下架商品*/
+.Result .Wine_Name h1.NotSell, .Result .Wine_Name h2.NotSell,.Result .Wine_Name h3.NotSell,.Result .Wine_Name .WinePage.NotSell{
+    opacity: 0.4;
+}
+
+.WineInformation_layout .WineInformation.NotSell{
+    opacity: 0.4;
+}
+
+
+.NotSellTextBox{
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    background-color: #f3f4f5;
+    border-left: 8px solid #fff;
+    border-right: 8px solid #fff;
+    font-size: 14px;
+    line-height: 35px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.NotSell .NotSellTextBox a{
+    color: #c20012;
+    font-weight: bold;
+    text-decoration: underline;
+} 
+
+.notice_BG{
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666666;
+    box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+    position: fixed;
+    z-index:999999;
+}
+
+.notice_BG div:focus{
+    outline: none;
+}
+
+/*20191112 Roger fix*/
+.notice_title_layout{
+    width: 100%;
+    height: 40px;
+    background-color: #666666;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+/*20191112 Roger fix end*/
+
+.notice_title{
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+}
+
+/*20191112 Roger fix*/
+.notice_title_closeBTN{
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon/btn_close.png);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+/*20191112 Roger fix end*/
+
+.notice_title_closeBTN:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_close2.png);
+}
+
+.notice_body{
+    width: 90%;
+    height: 90%;
+    margin: 20px auto;
+}
+
+    .notice_body p{
+        font-size: 14px;
+        color: #333333;
+        line-height: 28px;
+    }
+
+    .notice_body p span{
+        color: #c20012;
+        font-weight: bold;
+        margin: 0 3px;
+    }
+
+    .notice_body p em{
+        display: inline-block;
+        vertical-align: super;
+        margin-left: 5px;
+        width: 150px;
+        height: 1px;
+        background-color: #333;
+    }
+
+    .notice_body p b{
+        font-size: 15px;
+        text-shadow: 0 0 0 rgba(0,0,0,.8);
+    }
+
+.notice_body_input_layout{
+    width: 100%;
+    height: 32px;
+    margin: 16px 0;
+}
+
+.notice_body_input_layout:after{
+    content:"";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+    .notice_body_input_layout span{
+        display: inline-block;
+        height: 32px;
+        line-height: 32px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #666666;
+        float: left;
+        margin-left: 16px;
+    }
+
+    .notice_body_input_layout input{
+        display: inline-block;
+        height: 30px;
+        font-size: 16px;
+        background-color: #fff;
+        border:1px solid #cccccc;
+        line-height: 30px;
+        float: left;
+        margin-left: 16px;
+        padding: 0 5px;
+        color: #333333;
+        outline: none;
+    }
+
+.notice_body_radio_layout{
+    width: 100%;
+    height: 32px;
+    margin: 16px 0;
+}
+
+    .notice_body_radio_layout input{
+        display: inline-block;
+        float: left;
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+
+    .notice_body_radio_layout span{
+        display: inline-block;
+        min-height: 32px;
+        line-height: 32px;
+        font-size: 18px;
+        color: #666666;
+        float: left;
+    }
+
+        .notice_body_radio_layout span em{
+            color: #c20012;
+            font-weight: bold;
+            margin: 0 3px;
+        }
+
+.notice_btn_row{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.notice_btn_row:after{
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.notice_btn_row .notice_btn{
+    float: left;
+    margin-right: 5px;
+}
+
+.notice_btn_row .notice_btn:last-child{
+    margin-right: 0;
+}
+
+.notice_confirmBTN{
+    width: 100px;
+    height: 41px;
+    background-image: url(../images/icon/btn_confirm.png);
+    margin: 20px auto;
+}
+
+.notice_confirmBTN:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_confirm2.png);
+}
+
+
+.notice_IseeBTN{
+    width: 100px;
+    height: 41px;
+    background-image: url(../images/icon/btn_Isee.png);
+    margin: 20px auto;
+}
+
+.notice_IseeBTN:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_Isee2.png);
+}
+
+.notice_btn_trackall{
+    width: 139px;
+    height: 41px;
+    background-image: url(../images/icon/btn_trackall.png);
+}
+
+.notice_btn_trackall:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_trackall2.png);
+}
+
+.notice_btn_tracksingle{
+    width: 139px;
+    height: 41px;
+    background-image: url(../images/icon/btn_tracksingle.png);
+}
+
+.notice_btn_tracksingle:hover{
+    cursor: pointer;
+    background-image: url(../images/icon/btn_tracksingle2.png);
+} 

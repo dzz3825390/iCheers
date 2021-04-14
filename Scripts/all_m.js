@@ -449,7 +449,7 @@ $(document).ready(function(){
 		//回復之前瀏覽位置
 		$(window).scrollTop(BodyScrollTopY);
 		//window重新綁定HeaderShow事件
-		$(window).on('touchstart.HeaderShow',HeaderShow())
+		$(window).on('touchstart.HeaderShow',HeaderShow());
 	});
 
 	//20180626 add search input auto complete show/close

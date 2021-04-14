@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iCheers 愛酒窩_追蹤酒款</title>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" >
+
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link href="css/wine_list.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/member.css" />
+<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+
+
+<!-- 拆掉 LeftMenu.js -->
+<script type="text/javascript" src="Scripts/ChangeTag.js"></script> <!-- 換館別 -->
+<script type="text/javascript" src="Scripts/index.js"></script> <!-- 首頁輪撥 -->
+<script type="text/javascript" src="Scripts/WineLeftMenu.js"></script> <!-- 紅酒館的分類找酒 -->
+
+<script type="text/javascript" src="Scripts/ShoppingCart.js"/></script> <!-- 浮動購物車 -->
+<script type="text/javascript" src="Scripts/Head.js"/></script> <!-- 有沒有收到確認信彈出 -->
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        //footermenu置中
+        var FooterMenuWidth = $('.FooterMenu').width();
+        var FooterWidth = $('.FooterMenu').parent().width();
+        var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+        $('.FooterMenu').css('margin-left',FooterPositionX);
+
+        //active按鈕
+        $('.Result .Wine_Name .tracking').click(function(){
+            $(this).toggleClass('active');
+        });
+
+        //單一年份active按鈕
+        $('.WineInformation .List_Year .tracking_icon').click(function(){
+            $(this).toggleClass('active');
+        });
+    });
+</script>
+	
+
+
+
+</head>
+
+
+<body>
+<div class="HeadALL">
+    <div class="HeadMenu">
+        <!--a href="" class="LogOut">會員登出</a-->
+            <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
+            <!--span class="AccountNumber">ich***, 您好</span-->
+    </div>
+    <div class="TagALL_Buy Buy2_margin">
+            <ul>
+                <li class="TagLogo"><a href="index.html"></a></li>
+                <li class="TagMember"></li>
+            </ul>
+        </div>  
+</div>
+<!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+<div class="CenterALL_BG">
+  <div class="MyWineList" id="MyWineList" style="top: 0px;">
+            <div class="WineList_Posation">
+                <div class="WineList_ALL" id="WineList_ALL">
+                    <div class="WineList_Info"> 
+                        <h1></h1>
+                        <h4>
+                          <div class="WineList_Info_text">清單內有(<span class="RED14">3</span>)款酒
+                          <span style="margin-left: 15px;"></span>
+                            總價$<span class="RED17">114,010</span></div>
+                            <div class="SeeDetailsICON"></div>
+                        </h4>
+                        <div class="Commodity">
+                          <div class="GoLeft2" id="GoLeft2"> <img src="images/icon/ICON_GoLeft2.png"></div>
+                            <div class="GoRight2" id="GoRight2"> <img src="images/icon/ICON_GoRight2.png"></div>
+                            <div class="GoLeft3" id="GoLeft3"> <img src="images/icon/ICON_GoLeft2.png"></div>
+                            <div class="GoRight3" id="GoRight3"> <img src="images/icon/ICON_GoRight2.png"></div>
+                            <a class="WineList_WineName">史坦因布赫麗絲玲白酒史坦史坦因布赫麗絲玲白酒史坦因史坦因史坦</a>
+                            <a class="WineList_WineName2">Brewery Hill Chardonnay Brewery Hill Chardonnay</a>
+                            <a class="WineList_WineName3">史坦因布赫麗絲玲白酒史坦史坦因布赫麗絲玲白酒史坦因史坦因史坦</a>
+                            <a class="WineList_WineName4">Brewery Hill Chardonnay Brewery Hill Chardonnay</a>
+                            <a href="" class="WineList_More">More &gt;&gt;</a>
+                            <div class="Added">
+                              <div class="Recent_IMG_GO">
+                                  <div style="height:90px; width:500px; position:absolute; top:50px; left:0px;">
+                                        <div class="Recent_IMG_GO ui-droppable" id="reRecent_IMG_GO"></div>
+                                    </div>
+                                    <ul id="Recent_IMG" class="ui-droppable" style="margin-top:205px;">
+                                      <li class="ui-draggable" style="border:2px solid #C08F1A">
+                                        <img src="images/pic/SW1.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW2.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW3.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW4.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/pic/SW1.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                        <li class="ui-draggable"><img src="images/icon/WineList_NO.jpg" height="70" width="70"></li>
+                                    </ul>
+                                </div>
+                                <!-- Recent_IMG_GO -->
+                            </div>
+                            <!-- Added -->
+                        </div>
+                        <!-- Commodity -->
+                    </div>
+                    <!-- WineList_Info 定寬度 -->
+                </div>
+                <!-- WineList_ALL 實質移動（+ width）位置 -->
+            </div>
+            <!-- WineList_Posation 全部定位  -->
+  </div>
+    <!-- MyWineList 我的清單 -->
+</div>
+
+<div class="CenterALL" style="margin-top:0;">
+
+	<div class="Left_Menu_layout Left_Menu_bg"><!--左邊欄-->
+    <div class="Left_Menu_ClassifySearch_layout"><!--灰底分類搜尋-->
+      <div class="Left_Menu_ClassifySearch_searchICON"></div>
+      <div class="Left_Menu_ClassifySearch_title"></div>
+      <input type="text" value="請輸入關鍵字" class="Left_Menu_ClassifySearch_input">
+      <div class="CLEAR"></div>
+    </div><!--灰底分類搜尋 end-->
+    <div class="Left_Menu_ClassifySearch_condition_layout"><!--深灰底搜尋條件-->
+            <div class="Left_Menu_ClassifySearch_condition_title_row">
+                <div class="Left_Menu_ClassifySearch_condition_title_line"></div>
+                <div class="Left_Menu_ClassifySearch_condition_title">目前搜尋條件</div>
+                <div class="CLEAR"></div>
+            </div>
+            <!--20161130 Roger 修改html結構-->
+            <div class="Left_Menu_ClassifySearch_condition_text" style="margin-top:20px;">
+                <div style="margin-left: 0px;">追蹤酒款</div>
+            </div>
+            <!--20161130 Roger 修改html結構-->
+            <div class="Left_Menu_ClassifySearch_condition_deletAllBTN">全部刪除</div>
+        </div>
+    <div class="Left_Menu_block"><!--類型-->
+            <div class="Left_Menu_title">
+              <span class="Left_Menu_title_icon"></span>
+              <span class="Left_Menu_title_text">館別</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Type" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""><a href="">葡萄酒館(142)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">威士忌館(60)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">啤酒館(3)</a></li>
+                <li><input name="" type="checkbox" value=""><a href="">清酒館(14)</a></li>
+            </ul>
+    </div><!--類型 end-->
+    <div class="Left_Menu_separateline"></div>
+    <div style="height: 30px;"></div>
+  </div>
+  <div class="Right_content"><!--右邊欄-->
+
+    <div class="BANNER" title="近期瀏覽" id="Listtracking">
+    </div>
+    <div class="Wine_Search_List_ALL">
+        <div class="List_Title"> 
+          <div class="Title_WhiteLine"></div> 
+          <div class="Title_text">追蹤酒款</div>
+        </div>   
+          <div class="Condition">
+                
+                <h3>
+                    <label class="container">
+                      排除無庫存品項  
+                      <input type="checkbox" checked="checked">
+                      <span class="checkmark"></span>
+                    </label>
+                </h3>
+                <h1> ✜&nbsp;我想換看&nbsp; <a href="">酒莊</a>、<a href="">年份</a>排列</h1>
+                <div class="Wine_Search_List_Page">
+                    <h2>
+                        <a href="">&lt;&lt; 最前頁</a>
+                        <a href="">&lt; 上一頁</a>
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">3</a>
+                        <a href="">下一頁&gt;</a>
+                        <a href="">最末頁 &gt;&gt; </a>
+                    </h2>
+                </div>
+                <div class="CLEAR"></div>
+          
+          </div>
+          <!-- Condition -->
+          <div class="CLEAR"></div>
+          <div class="Project">
+            <ul>
+                <li class="Project_Name">酒款&nbsp;▼ </li>
+                <li class="Project_Year">年份&nbsp;▼</li>
+                <li class="Project_Evaluate">評價&nbsp;▼</li>
+                <li class="Project_Capacity">容量&nbsp;</li>
+                <li class="Project_Price">賞味期/出廠日</li>
+                <li class="Project_Sale">單價&nbsp;▼</li>
+                <li class="Project_PreorderSale" style="border:none">預購價&nbsp;▼</li>
+            </ul>
+          </div>
+          <!-- Project  -->
+          <div class="Result">
+            <div class="ALL">            
+                <div class="Wine_Name">
+                      <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
+                      <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
+                      <div class="WinePage">
+                        
+                      </div>
+                      <div class="tracking active"></div>
+                      <h3>
+                    <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
+                      </h3>
+                    </div>
+                    <div class="WineInformation_layout">
+                        <ul class="WineInformation">
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon active"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired"></li>  
+                        
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+                          <!-- 一個容量 --> 
+                          <li class="List_Year"></li>
+                          <li class="List_Award"></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">1.5ml</a></li>
+                          <li class="List_Expired"></li>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+                        </ul>
+                        <div class="CLEAR"></div>
+                        <!-- WineInformation 一個年份-->
+                        <ul class="WineInformation">
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired">2020/12/31</li>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+
+                        </ul>
+                        <!-- WineInformation 一個年份-->  
+                </div>  
+                <div class="CLEAR"></div>
+            </div>
+            <!--波爾多品項多年份-->
+            <div class="ALL">            
+                <div class="Wine_Name">
+                      <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
+                      <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
+                      <div class="WinePage">
+                        
+                      </div>
+                      <div class="tracking active"></div>
+                      <h3>
+                    <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
+                      </h3>
+                    </div>
+                    <div class="WineInformation_layout">
+                        <ul class="WineInformation">
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired"></li>  
+                        
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+                        </ul>
+                        <div class="CLEAR"></div>
+                        <!-- WineInformation 一個年份-->
+                        <ul class="WineInformation">
+                          <li class="List_Year">
+                            <a href="#" target="_blank">2012</a>
+                            <div class="tracking_icon"></div>
+                          </li>
+                          <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired"></li>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+
+                        </ul>
+                        <!-- WineInformation 一個年份-->  
+                        <ul class="WineInformation">
+                          <li class="List_Year"><a href="#" target="_blank">2013</a><div class="tracking_icon"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired"></li>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+
+                        </ul>
+                        <!-- WineInformation 一個年份-->  
+                        <ul class="WineInformation">
+                          <li class="List_Year"><a href="#" target="_blank">2014</a><div class="tracking_icon"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired"></li>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+
+                        </ul>
+                        <!-- WineInformation 一個年份-->  
+                        <ul class="WineInformation">
+                          <li class="List_Year"><a href="#" target="_blank">2015</a><div class="tracking_icon"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired"></li>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+
+                        </ul>
+                        <!-- WineInformation 一個年份-->  
+                </div>  
+                <div class="CLEAR"></div>
+            </div>
+            <!-- ALL 一組酒-->            
+            <div class="ALL">            
+                <div class="Wine_Name">
+                      <h1 class="NotSell">羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
+                      <h2 class="NotSell">Robert Mondavi, Woodbridge White Zinfandel</h2>
+                      <div class="WinePage NotSell"> 
+                      </div>
+                      <div class="tracking active"></div>
+                      <h3>
+                        <div class="ProducingArea_wine_lists NotSell"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
+                      </h3>
+                </div>
+                <div class="WineInformation_layout">
+                        <ul class="WineInformation NotSell">
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired"></li>  
+                          <li class="List_SellingPrice"></li>
+                          <div class="CLEAR"></div>
+                        </ul>
+                        <div class="CLEAR"></div>
+                        <!-- WineInformation 一個年份-->
+                        <ul class="WineInformation NotSell">
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired">2020/12/31</li>
+                          <li class="List_SellingPrice"></li>
+                          <div class="CLEAR"></div>
+                        </ul>
+                        <!-- WineInformation 一個年份-->  
+                
+                </div>  
+                <div class="CLEAR"></div>
+                <div class="NotSellTextBox">
+                  !&nbsp;品項已下架， 請<a href="#">點此</a>移出追蹤列表。
+                </div>
+            </div>
+            <!-- ALL 一組酒--> 
+            <!-- ALL 一組酒 部份年份下架-->            
+            <div class="ALL">            
+                <div class="Wine_Name">
+                      <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
+                      <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
+                      <div class="WinePage"> 
+                      </div>
+                      <div class="tracking active"></div>
+                      <h3>
+                        <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
+                      </h3>
+                </div>
+                <div class="WineInformation_layout">
+                        <ul class="WineInformation NotSell">
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired"></li>  
+                          <li class="List_SellingPrice"></li>
+                          <div class="CLEAR"></div>
+                        </ul>
+                        <div class="CLEAR"></div>
+                        <!-- WineInformation 一個年份-->
+                        <ul class="WineInformation">
+                          <li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
+                          <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Expired">2020/12/31</li>
+                          <li class="List_SellingPrice"></li>
+                          <div class="CLEAR"></div>
+                        </ul>
+                        <!-- WineInformation 一個年份-->  
+                
+                </div>  
+                <div class="CLEAR"></div>
+            </div>
+            <!-- ALL 一組酒--> 
+          </div>
+          <!-- Result  -->
+      </div>
+    <div class="Wine_Search_List_Page">
+    <h2> <a href=""><< 最前頁</a> <a href="">< 上一頁</a> <a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">下一頁></a> <a href="">最末頁 >> </a> </h2>
+    </div>
+<!-- ================================= Wine_Search_List 搜尋結果 ===================================-->
+</div>
+ <div class="CLEAR" ></div>
+</div>
+<!-- CenterALLBG  中段全部 -->
+
+<div class="FooterALL" >
+	<div class="Footer_position">
+        <ul class="FooterMenu">
+            <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+            <li><a href="" target="_parent">條款及細則</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
+        </ul>
+        <div class="FooterICON">
+           <a href="qualityGarentee.html" target="_blank"><button class="Quality"></button></a>
+           <button class="Join"></button>
+           <button class="Novice"></button>
+        </div>
+    </div>
+</div>
+<!-- FooterALL  頁腳 -->
+
+
+
+
+<div class="TC_And_UK_ALL">
+	<div class="TC_And_UK">
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+       	<li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul> 
+    
+    </div>
+</div> 
+<!-- TC_And_UK_ALL 中英翻譯 -->
+<div class="CLEAR"></div>
+
+<div class="CopyRight"> Copyright © 2012 iCheers.tw All Rrights Reserved </div>
+
+
+
+<div class="Warning"><p></p></div>
+
+
+<!-- Warning 警語 -->
+
+</body>
+</html>

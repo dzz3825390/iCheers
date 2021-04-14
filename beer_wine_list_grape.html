@@ -60,6 +60,37 @@ ddsmoothmenu.init({
 })
 
 $(document).ready(function(){
+     //簡目頁內容獎牌/評分欄位置中設定
+        $(".List_Award a").each(function(){
+            var AwardWidth = $(this).width();
+            var AwardPositionX = (71 - AwardWidth) / 2;
+            $(this).css("margin-left",AwardPositionX);
+        });
+
+        //簡目頁內容折扣/省最多置中設定
+        $(".List_Discount").each(function(){
+            var Discount = $(this)
+            var Save = $(this).next();
+            var HasDiscount = $(this)[0].hasChildNodes();
+            var HasSave = $(this).next()[0].hasChildNodes();
+            if (HasDiscount){
+                if (HasSave == false){
+                    Save.css("display","none");
+                    Discount.css({
+                        "width":99,
+                        "text-align":"center"
+                    });
+                }
+            } else{
+                if (HasSave){
+                    Discount.css("display","none");
+                    Save.css({
+                        "width":99,
+                    });
+                }
+            }
+        });
+
     //footermenu置中
     var FooterMenuWidth = $('.FooterMenu').width();
     var FooterWidth = $('.FooterMenu').parent().width();
@@ -76,6 +107,12 @@ $(document).ready(function(){
                 expandText: '展開▼',
                 userCollapseText: '收合▲'
             });
+
+            //分類找酒文字縮排設定
+        $(".Left_Menu_ClassifySearch_condition_text").children().each(function(){
+            var NthChild = $(this).index();
+            var OptionMarginLeft = 15*NthChild;
+            $(this).css("margin-left",OptionMarginLeft);
         });
 </script>
 
@@ -89,11 +126,13 @@ $(document).ready(function(){
 <body class="beer_index">
 <div class="HeadALL">
     <div class="HeadMenu">
-        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
-        <a href="" class="Reconfirmed">沒有收到確認信?</a>
-        
-        <a href="" class="MyList">我的清單</a>
-        <a href="" class="MobileVer">手機版</a>
+         <!--a href="" class="LogOut">會員登出</a-->
+            <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
+            <!--span class="AccountNumber">ich***, 您好</span-->
     </div>
     <div class="TagALL beer_TagALL">
         <ul>
@@ -1364,7 +1403,6 @@ $(document).ready(function(){
                             <div class="Sign_WineInfo_Award Award3">
                                 <span class="AwardName">RVF</span><span class="AwardNO">品種賞</span>
                             </div>
-                            <div class="Sign_WineInfo_24HRexpress_icon"></div>
                             <div class="CLEAR"></div>
                             <div class="Sign_WineInfo_capacity">355ml</div>
                             <div class="Sign_WineInfo_year">2012</div>
@@ -1400,7 +1438,7 @@ $(document).ready(function(){
                             <div class="Sign_WineInfo_Award Award1">
                                 <img src="images/Award/AW25.jpg" class="decanterStar">
                             </div>
-                            <div class="Sign_WineInfo_24HRexpress_icon"></div>
+                            
                             <div class="CLEAR"></div>
                             <div class="Sign_WineInfo_capacity">355ml</div>
                             <div class="Sign_WineInfo_year">2012</div>
@@ -1441,8 +1479,14 @@ $(document).ready(function(){
                 </div>
             </div>    
             <div class="Condition">
+                <h3>
+                    <label class="container">
+                      排除無庫存品項  
+                      <input type="checkbox" checked="checked">
+                      <span class="checkmark"></span>
+                    </label>
+                </h3>
                 <h1> ✜&nbsp;我想換看&nbsp; <a href="">酒廠</a>排列</h1>
-                <h3><input name="" type="checkbox" value="">我只想看有庫存的品項</h3>
                 <div class="Wine_Search_List_Page">
                     <h2>
                         <a href="">&lt;&lt; 最前頁</a>
@@ -1477,6 +1521,7 @@ $(document).ready(function(){
                         <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                         <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                         <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg)"></div>
+                        <div class="tracking"></div>
                         <h3>
                             <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
                         </h3>
@@ -1546,6 +1591,7 @@ $(document).ready(function(){
                         <h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
                         <h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
                         <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg)"></div>
+                        <div class="tracking"></div>
                         <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -1626,6 +1672,7 @@ $(document).ready(function(){
                         <h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
                         <h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
                         <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg)"></div>
+                        <div class="tracking"></div>
                         <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -1671,6 +1718,7 @@ $(document).ready(function(){
                         <h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
                         <h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
                         <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg)"></div>
+                        <div class="tracking"></div>
                         <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>

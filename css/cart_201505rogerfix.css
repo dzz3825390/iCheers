@@ -134,6 +134,7 @@
 .CartList_Amount a { display: block; width:80px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Amount.png) no-repeat right bottom; }
 .CartList_Sum a { display: block; width:120px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Sum.png) no-repeat right bottom; }
 .CartList_Del a { display: block; width:80px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Del.png) no-repeat right bottom; }
+.CartList_Capacity a { display: block; width:80px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Capacity.png) no-repeat right bottom; }
 .CartList_Auto a { display: block; width:80px; height: 31px; background-color: #7b7c7d; background: url(../images/icon/bg_CartTitle_Auto.png) no-repeat right bottom; }
 
 /*20150521 Rogerfix*/
@@ -187,12 +188,12 @@
 	background-repeat: no-repeat;
 	background-position: right bottom;
 }
-.Separate_CartList_Del a {
+.Separate_CartList_Capacity a {
 	display: block;
 	width: 80px;
 	height: 31px;
 	background-color: #f7cd7f;
-	background-image: url(../images/icon/bg_CartTitle_Del_Separate.png);
+	background-image: url(../images/icon/bg_CartTitle_Capacity_Separate.png);
 	background-repeat: no-repeat;
 	background-position: right bottom;
 }
@@ -253,12 +254,12 @@
 	background-repeat: no-repeat;
 	background-position: right bottom;
 }
-.Separate_Preorder_CartList_Del a {
+.Separate_Preorder_CartList_Capacity a {
 	display: block;
 	width: 80px;
 	height: 31px;
 	background-color: #c6b2c0;
-	background-image: url(../images/icon/bg_CartTitle_Del_Separate_Preorder.png);
+	background-image: url(../images/icon/bg_CartTitle_Capacity_Separate_Preorder.png);
 	background-repeat: no-repeat;
 	background-position: right bottom;
 }
@@ -310,6 +311,15 @@
 	margin-top: 1px;
 	background-image: url(../images/icon/MoneyTransferIcon.png);
 	float: left;
+	margin-right: 6px;
+}
+
+.CartList_Item_iconRow_TrackingListIcon{
+	width: 66px;
+	height: 25px;
+	margin-top: 1px;
+	background-image: url(../images/icon/TrackingListIcon.png);
+	float: left;
 }
 /*20170814 Roger 新增 end*/
 
@@ -337,11 +347,11 @@
 .CartList_ItemPrice dd { font-size: 11px; font-weight: normal; }
 .CartList_ItemPrice input { vertical-align: middle; }
 .CartList_ItemAmount { display:block; width:60px; margin-right:10px; color:#717071; text-align: center; }
-.CartList_ItemAmount input{ vertical-align: middle; width: 60px; text-align: center; height: 19px; }
+.CartList_ItemAmount input{ vertical-align: middle; width: 30px; text-align: center; height: 19px;	margin-right: 5px; }
 .CartList_ItemUnit { display:block; width:60px; margin-right:10px; padding-left:10px; color:#717071; text-align: center; }
 .CartList_ItemSum { display:block; width:120px; margin-right:20px; font-weight:bold; line-height:18px; color:#717071; text-align:right;}
 .CartList_ItemDel { display:block; width:80px;  margin-right:10px; margin-left:10px; }
-.CartList_ItemDel img { margin-bottom: 5px; }
+.CartList_ItemCapacity { display:block; width:70px;  margin-right:10px; margin-left:10px; }
 .CartList_ItemAuto { display:block; width:80px; text-align: center; }
 .CartList_ItemNameEN a span, .CartList_ItemNameCN a span, .CartList_ItemPlace a span { /*white-space:nowrap;*/  line-height:18px; }
 /*.CartList_ItemPrice span, .CartList_ItemSum span, .CartList_GiftPrice span{ color:#c20012; font-size: 16px; }
@@ -349,6 +359,32 @@
 /*.CartList_Preorder_location .CartList_ItemPrice span,.CartList_Preorder_location .CartList_ItemSum span{
 	color:#0071bc;
 }*/
+
+.CartList_EventNoticeBox{
+	width: 767px;
+	min-height: 35px;
+	background: #f3f4f5;
+	margin-left: 138px;
+	box-sizing: border-box;
+	padding: 12px;
+	margin-top: 12px;
+}
+
+.CartList_EventNoticeBox span{
+	color: #c20012;
+	font-size: 13px;
+	line-height: 16px;
+	font-weight: bold;
+	float: left;
+}
+
+.CartList_EventNoticeBox span:first-child{
+	margin-right: 14px;
+}
+
+.CartList_EventNoticeBox .EventText{
+	width: 682px;
+}
 
 /* 我的酒單組合細項 */
 .CartList_GroupWrap { padding:0; margin:0; clear:both;width:100%; }
@@ -406,7 +442,7 @@
 .CartList_ChooseItemPrice dd { font-size: 11px; font-weight: normal; }
 .CartList_ChooseItemPrice input { vertical-align: middle; }
 .CartList_ChooseItemAmount { display:block; width:60px; margin-right:10px; color:#717071; text-align: center; }
-.CartList_ChooseItemAmount input{ vertical-align: middle; width: 60px; text-align: center; height: 19px; }
+.CartList_ChooseItemAmount input{ vertical-align: middle; width: 30px; text-align: center; height: 19px; margin-right: 5px;}
 .CartList_ChooseItemUnit { display:block; width:60px; margin-right:10px; padding-left:10px; color:#717071; text-align: center; }
 .CartList_ChooseItemSum { display:block; width:120px; margin-right:20px; font-weight:bold; line-height:18px; color:#717071; text-align:right;}
 .CartList_ChooseItemDel { display:block; width:80px;  margin-right:10px; margin-left:10px; }
@@ -653,17 +689,13 @@
 .CartList_GiftItem em span{ font: bold 16px Arial, Helvetica, sans-serif; }
 .CartList_GiftItem em a { color:#333; text-decoration:none; }
 .CartList_GiftItemCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
-/*//20150520 Rogerfix start//*/
+
 .CartList_ItemCheckbox_position{
 	margin-top: 25px;
 	margin-left: 15px;
-	display:none;
+	
 }
-.CartList_ItemCheckbox_position_show{
-	margin-top: 25px;
-	margin-left: 15px;
-}
-/*//20150520 Rogerfix整 end//*/
+
 .CartList_GiftItemPic { display:block; width:80px; margin-right:10px; text-align: center; }
 .CartList_GiftItemPic img { background-color: #FFF; padding: 5px; border: 1px solid #bbb; }
 .CartList_GiftItemName { display:block; width:350px; margin-right:10px; padding-left:5px; }
@@ -680,7 +712,7 @@
 .CartList_GiftItemPrice input { vertical-align: middle; }
 .CartList_GiftItemAmount { display:block; width:60px; margin-right:10px; color:#717071; text-align: center; }
 .CartList_GiftItemAmount input{ vertical-align: middle; width: 60px; text-align: center; height: 19px; }
-.CartList_GiftItemAmount span{ display:block; width:60px; margin-right:10px; font-weight:bold; line-height:18px; text-align:center; }
+.CartList_GiftItemAmount span{ font-weight:bold; line-height:18px; text-align:center; }
 .CartList_GiftItemUnit { display:block; width:60px; margin-right:10px; padding-left:10px; color:#717071; text-align: center; }
 .CartList_GiftItemSum { display:block; width:120px; margin-right:20px; font-weight:bold; line-height:18px; color:#717071; text-align:right;}
 .CartList_GiftItemDel { display:block; width:80px;  margin-right:10px; margin-left:10px; }
@@ -757,10 +789,6 @@
 .CartList_Bouns li{ float:left; padding-top:10px; font-family: Arial, "微軟正黑體";}
 .CartList_BounsCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
 
-.CartList_ItemCheckbox_position{
-	margin-top: 25px;
-	margin-left: 15px;
-}
 
 .CartList_BounsPic { display:block; width:80px; margin-right:10px; text-align: center; }
 .CartList_BounsPic img { background-color: #fff; padding: 5px; border: 1px solid #bbb; }
@@ -847,10 +875,6 @@
 .CartList_Coupon li{ float:left; padding-top:10px; font-family: Arial, "微軟正黑體";}
 .CartList_CouponCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
 
-.CartList_ItemCheckbox_position{
-	margin-top: 25px;
-	margin-left: 15px;
-}
 
 .CartList_CouponPic { display:block; width:80px; margin-right:10px; text-align: center; }
 .CartList_CouponPic img { background-color: #fff; padding: 5px; border: 1px solid #bbb; }
@@ -1309,179 +1333,7 @@ li.FreightNotches2 table tr th{
 
 
 
-.notice_BG{
-	background-color: #fff;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	border: 1px solid #666666;
-	box-shadow: 0px 0px 3px rgba(0,0,0,.5);
-	position: fixed;
-	z-index:999999;
-}
 
-.notice_BG div:focus{
-	outline: none;
-}
-
-/*20191112 Roger fix*/
-.notice_title_layout{
-	width: 100%;
-	height: 40px;
-	background-color: #666666;
-	border-radius: 4px 4px 0 0;
-	position: relative;
-	padding: 0 40px;
-	box-sizing: border-box;
-}
-/*20191112 Roger fix end*/
-
-.notice_title{
-	font-size: 22px;
-	font-weight: bold;
-	color: #fff;
-	line-height: 40px;
-	text-align: center;
-}
-
-/*20191112 Roger fix*/
-.notice_title_closeBTN{
-	width: 20px;
-	height: 20px;
-	background-image: url(../images/icon/btn_close.png);
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
-/*20191112 Roger fix end*/
-
-.notice_title_closeBTN:hover{
-	cursor: pointer;
-	background-image: url(../images/icon/btn_close2.png);
-}
-
-.notice_body{
-	width: 90%;
-	height: 90%;
-	margin: 20px auto;
-}
-
-	.notice_body p{
-		font-size: 14px;
-		color: #333333;
-		line-height: 28px;
-	}
-
-	.notice_body p span{
-		color: #c20012;
-		font-weight: bold;
-		margin: 0 3px;
-	}
-
-	.notice_body p em{
-		display: inline-block;
-		vertical-align: super;
-		margin-left: 5px;
-		width: 150px;
-		height: 1px;
-		background-color: #333;
-	}
-
-	.notice_body p b{
-		font-size: 15px;
-		text-shadow: 0 0 0 rgba(0,0,0,.8);
-	}
-
-.notice_body_input_layout{
-	width: 100%;
-	/*height: 32px;*/
-	margin: 16px 0;
-}
-
-.notice_body_input_layout:after{
-	content:"";
-	display: block;
-	height: 0;
-	clear: both;
-}
-
-	.notice_body_input_layout span{
-		display: inline-block;
-		height: 32px;
-		line-height: 32px;
-		font-size: 16px;
-		font-weight: bold;
-		color: #666666;
-		float: left;
-		margin-left: 16px;
-	}
-
-	.notice_body_input_layout input{
-		display: inline-block;
-		height: 30px;
-		font-size: 16px;
-		background-color: #fff;
-		border:1px solid #cccccc;
-		line-height: 30px;
-		float: left;
-		margin-left: 16px;
-		padding: 0 5px;
-		color: #333333;
-		outline: none;
-	}
-
-.notice_body_radio_layout{
-	width: 100%;
-	height: 32px;
-	margin: 16px 0;
-}
-
-	.notice_body_radio_layout input{
-		display: inline-block;
-		float: left;
-		margin-top: 10px;
-		margin-right: 5px;
-	}
-
-	.notice_body_radio_layout span{
-		display: inline-block;
-		min-height: 32px;
-		line-height: 32px;
-		font-size: 18px;
-		color: #666666;
-		float: left;
-	}
-
-		.notice_body_radio_layout span em{
-			color: #c20012;
-		    font-weight: bold;
-		    margin: 0 3px;
-		}
-
-.notice_confirmBTN{
-	width: 100px;
-	height: 41px;
-	background-image: url(../images/icon/btn_confirm.png);
-	margin: 20px auto;
-}
-
-.notice_confirmBTN:hover{
-	cursor: pointer;
-	background-image: url(../images/icon/btn_confirm2.png);
-}
-
-
-.notice_IseeBTN{
-	width: 100px;
-	height: 41px;
-	background-image: url(../images/icon/btn_Isee.png);
-	margin: 20px auto;
-}
-
-.notice_IseeBTN:hover{
-	cursor: pointer;
-	background-image: url(../images/icon/btn_Isee2.png);
-}
 
 
 /*notice 輸入email視窗*/
@@ -1641,6 +1493,27 @@ li.FreightNotches2 table tr th{
 
 /*notice8 18歲詢問 end*/
 
+.notice_btn_movetotracklist{
+	width: 139px;
+	height: 41px;
+	background-image: url(../images/icon/btn_movetotrack.png);
+}
+
+.notice_btn_movetotracklist:hover{
+	cursor: pointer;
+	background-image: url(../images/icon/btn_movetotrack2.png);
+}
+
+.notice_btn_deletefromcart{
+	width: 139px;
+	height: 41px;
+	background-image: url(../images/icon/btn_deleteformcart.png);
+}
+
+.notice_btn_deletefromcart:hover{
+	cursor: pointer;
+	background-image: url(../images/icon/btn_deleteformcart2.png);
+}
 
 
 /*--------------------------------------------------------- 彈跳視窗 END ---------------------------------------------------------*/
@@ -2960,6 +2833,46 @@ li.Last_NoBorder,
 	width: 80%;
 	height: 150px;
 }
+
+.CartOptionBox{
+	position: fixed;
+	bottom: 87px;
+	margin-left: -90px;
+}
+
+.CartOptionBox .OneOption{
+	width: 65px;
+	height: 65px;
+	border: #b5b5b5 1px solid;
+	background-color: #fff;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.CartOptionBox .OneOption span{
+	width: 100%;
+	display: inline-block;
+	font-size: 12px;
+	text-align: center;
+	color: #b5b5b5;
+}
+
+.CartOptionBox .OneOption.active{
+	border: #3a3a3a 1px solid;
+	transition: background-color 0.3s;
+}
+
+.CartOptionBox .OneOption.active:hover{
+	background-color: #3a3a3a;
+}
+
+.CartOptionBox .OneOption.active span{
+	color :#3a3a3a;
+}
+
+.CartOptionBox .OneOption.active:hover span{
+	color: #fff;
+} 
 
 .DeliveryCostTable{
 	border: 1px solid #cccccc;

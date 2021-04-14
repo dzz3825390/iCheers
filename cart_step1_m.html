@@ -77,7 +77,7 @@
 
 		    	var BottleInfoPositionX = (BottleInfoOuterWidth - BottleInfoWidth)/2 + 40;
 		    	var BottleInfoPositionY = (BottleInfoOuterHeight - BottleInfoHeight)/2;
-		    	$('.BottleInfo').css_m({
+		    	$('.BottleInfo').css({
 		    		'top':BottleInfoPositionY,
 		    		'right':BottleInfoPositionX
 		    	});
@@ -141,6 +141,11 @@
 		   		}
 		    });
 
+		     //追蹤酒款active
+		    $('.BottleImg .Btn_track').click(function(){
+		    	$(this).toggleClass('active');
+		    });
+
 		    		   	
 		});
 
@@ -180,11 +185,22 @@
 
 <!--content-->
 <div class="content_layout">
+	<div class="GoToDesktop">
+		<div class="option" id="Tracking_list">
+			<div class="icon" style="background-image: url(images/mobile/icon_track.png);"></div>
+			<div class="text">追蹤酒款</div>
+		</div>
+		<div class="option" id="Order_progress">
+			<div class="icon" style="background-image: url(images/mobile/icon_orderprogress.png);"></div>
+			<div class="text">訂單查詢</div>
+		</div>
+	</div>
 	<div class="cart_large_title">我的清單</div>
 	<!--免運門檻公告 時間過後移除-->
+	<!--
 	<div class="Announcement">
 		公告：2019年7月1日起，免運費門檻將調整為$2,000元。<a href="https://www.icheers.tw/iCheers/Content/HTML/Delivery_m.html" target="_blank" style="color: #296993;text-decoration: underline;">瞭解詳情</a>
-	</div>
+	</div>-->
 	<!--免運門檻公告 時間過後移除 end-->
 	<div class="cart_step_row">
 		<div class="OneStep OneStep_active">
@@ -239,7 +255,9 @@
 		<!--20180521 Roger add end-->
 		<!--一瓶酒-->
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -265,12 +283,19 @@
 					</div>
 				</div>
 			</div>
+			<div class="EventNotice">
+				<div class="redtext">!&nbsp;未符合</div>
+				<div class="eventtext">波爾多紅酒任選二款(含以上)79折優惠，按此加購商品，可享活動優惠！</div>
+			</div>
 			<div class="btn_delete"></div>
+			<div class="icon_tracking"></div>
 		</div>
 		<!--一瓶酒 end-->
 		<!--一瓶酒-->
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -394,7 +419,9 @@
 			</div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -423,7 +450,9 @@
 			<div class="btn_delete"></div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -463,7 +492,9 @@
 			<div class="text">※此區優惠商品僅能統一出貨，目前時態：一般出貨，約<span>3-5</span>個工作日</div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -492,7 +523,9 @@
 			<div class="btn_delete"></div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -531,7 +564,9 @@
 			</div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -560,7 +595,9 @@
 			<div class="btn_delete"></div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -599,7 +636,9 @@
 			</div>
 		</div>
 		<div class="cart_list_OneBottle">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);">
+				<div class="Btn_track"></div>
+			</div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
@@ -1945,6 +1984,10 @@
 				<span class="icon"></span>
 				近期瀏覽
 			</div>
+			<div class="SideMenu_GotoDesktop">
+				<span class="icon"></span>
+				切換為電腦版
+			</div>
 		</div>
 		<!--第一層-->
 		<!--第二層-->
@@ -1986,6 +2029,10 @@
 			<div class="SideMenu_RecentView">
 				<span class="icon"></span>
 				近期瀏覽
+			</div>
+			<div class="SideMenu_GotoDesktop">
+				<span class="icon"></span>
+				切換為電腦版
 			</div>
 		</div>
 		<!--第二層-->
@@ -2064,6 +2111,10 @@
 			<div class="SideMenu_RecentView">
 				<span class="icon"></span>
 				近期瀏覽
+			</div>
+			<div class="SideMenu_GotoDesktop">
+				<span class="icon"></span>
+				切換為電腦版
 			</div>
 		</div>
 		<!--第3層-->

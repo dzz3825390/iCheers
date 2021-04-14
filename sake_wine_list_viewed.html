@@ -52,6 +52,32 @@ $(document).ready(function(){
                 }
             }
         });
+
+        //分類找酒文字縮排設定
+        $(".Left_Menu_ClassifySearch_condition_text").children().each(function(){
+            var NthChild = $(this).index();
+            var OptionMarginLeft = 15*NthChild;
+            $(this).css("margin-left",OptionMarginLeft);
+        });
+
+        //簡目頁內容獎牌/評分欄位置中設定
+        $(".List_Award a").each(function(){
+            var AwardWidth = $(this).width();
+            var AwardPositionX = (71 - AwardWidth) / 2;
+            $(this).css("margin-left",AwardPositionX);
+        });
+
+         //footermenu置中
+        var FooterMenuWidth = $('.FooterMenu').width();
+        var FooterWidth = $('.FooterMenu').parent().width();
+        var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+        $('.FooterMenu').css('margin-left',FooterPositionX);
+
+        //active按鈕
+        $('.Result .Wine_Name .tracking').click(function(){
+            $(this).toggleClass('active');
+        });
 });
 </script>
 
@@ -62,15 +88,15 @@ $(document).ready(function(){
 
 <body class="index sake_index">
 <div class="HeadALL">
-    <!--20180327 Roger 新增手機板-->
     <div class="HeadMenu">
-        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
-        <a href="" class="Reconfirmed">沒有收到確認信?</a>
-        
-        <a href="" class="MyList">我的清單</a>
-        <a href="" class="MobileVer">手機版</a>
+        <!--a href="" class="LogOut">會員登出</a-->
+            <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
+            <!--span class="AccountNumber">ich***, 您好</span-->
     </div>
-    <!--20180327 Roger 新增手機板-->
     <div class="TagALL">
         <ul>
             <li class="TagLogo"><a href="index.html"></a></li>
@@ -528,8 +554,14 @@ $(document).ready(function(){
               <div class="Title_text">近期瀏覽</div>
             </div>   
               <div class="Condition">
-                <h1> ✜&nbsp;我想換看&nbsp; <a href="">酒莊</a>、<a href="">年份</a>排列</h1>
-                    <h3><input name="" type="checkbox" value="">我只想看有庫存的品項</h3>
+                <h3>
+                    <label class="container">
+                      排除無庫存品項  
+                      <input type="checkbox" checked="checked">
+                      <span class="checkmark"></span>
+                    </label>
+                </h3>
+                <h1> ✜&nbsp;我想換看&nbsp; <a href="">酒造</a></h1>
                     <div class="Wine_Search_List_Page">
                         <h2>
                             <a href="">&lt;&lt; 最前頁</a>
@@ -569,6 +601,7 @@ $(document).ready(function(){
                           <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                           <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                           <div class="WinePage"></div>
+                          <div class="tracking"></div>
                           <h3>
                             <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
                           </h3>
@@ -654,6 +687,7 @@ $(document).ready(function(){
                           <h1>東岸印度淡色愛爾啤酒</h1>
                           <h2>Brooklyn East IPA</h2>
                           <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg);"></div>
+                          <div class="tracking"></div>
                           <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -682,6 +716,7 @@ $(document).ready(function(){
                           <h1>阿里昂酒莊 阿里昂精選紅酒</h1>
                           <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                           <div class="WinePage"></div>
+                          <div class="tracking"></div>
                           <h3>
                             <div class="ProducingArea_wine_lists">
                               <span class="LittleFlag">
@@ -723,6 +758,7 @@ $(document).ready(function(){
                           <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                           <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                           <div class="WinePage"></div>
+                          <div class="tracking"></div>
                           <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
