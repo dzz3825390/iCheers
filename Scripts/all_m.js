@@ -427,7 +427,7 @@ $(document).ready(function(){
 	//台大實驗用結束後可刪
 	$('#Step3_submit').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
-		PopWindow('#Pop_NTU_Control7',intBrowserH,intBrowserW);	
+		PopWindow('#Pop_NTU_Control2',intBrowserH,intBrowserW);	
 	});
 
 	//PopWindow關閉
