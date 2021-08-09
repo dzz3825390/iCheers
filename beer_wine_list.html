@@ -32,6 +32,7 @@ ddsmoothmenu.init({
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
 
+<<<<<<< HEAD
   $(document).ready(function(){
 
         //分類找酒文字縮排設定
@@ -87,6 +88,23 @@ ddsmoothmenu.init({
 
 
     });  
+=======
+$(document).ready(function(){
+
+   
+    //footermenu置中
+    var FooterMenuWidth = $('.FooterMenu').width();
+    var FooterWidth = $('.FooterMenu').parent().width();
+    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+    $('.FooterMenu').css('margin-left',FooterPositionX);
+
+    //active按鈕
+        $('.Result .Wine_Name .tracking').click(function(){
+            $(this).toggleClass('active');
+        });
+});
+>>>>>>> Tracking_list
 
 </script>
 
@@ -102,12 +120,20 @@ ddsmoothmenu.init({
 <div class="HeadALL">
     <div class="HeadMenu">
         <!--a href="" class="LogOut">會員登出</a-->
+<<<<<<< HEAD
             <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
             <a href="" class="Reconfirmed">沒有收到確認信?</a>
             <a href="" class="MyList">我的清單</a>
             <a href="" class="TrackingList">追蹤酒款</a>
             <a href="" class="MobileVer">手機版</a>
             <!--span class="AccountNumber">ich***, 您好</span-->
+=======
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+>>>>>>> Tracking_list
     </div>
     <div class="TagALL beer_TagALL">
         <ul>
@@ -1468,7 +1494,11 @@ ddsmoothmenu.init({
                     	<h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                     	<h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                     	<div class="WinePage" style="background-image:url(images/beer/IMG_2273.jpg)"></div>
+<<<<<<< HEAD
                         <div class="tracking"></div>
+=======
+                        <!--<div class="tracking"></div>-->
+>>>>>>> Tracking_list
                     	<h3>
                     		<div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
                     	</h3>

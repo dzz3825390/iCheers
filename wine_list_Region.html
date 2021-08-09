@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 <link href="css/wine_list.css" rel="stylesheet" type="text/css" />
 <link href="css/contents.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 
 
@@ -45,15 +45,14 @@ ddsmoothmenu.init({
 
 
 <script type="text/javascript">
-    $(document).ready(function(){
-
+	$(document).ready(function(){
         $('div.readmore').expander({
                 slicePoint: 200,
                 expandText: '展開▼',
                 userCollapseText: '收合▲'
-            });
 
-        //分類找酒文字縮排設定
+        });
+            
         $(".Left_Menu_ClassifySearch_condition_text").children().each(function(){
             var NthChild = $(this).index();
             var OptionMarginLeft = 15*NthChild;
@@ -102,11 +101,11 @@ ddsmoothmenu.init({
         $('.Result .Wine_Name .tracking').click(function(){
             $(this).toggleClass('active');
         });
-        
+    });
 
 
-    });  
-</script>	
+</script>
+
 
 
 
@@ -1545,9 +1544,10 @@ ddsmoothmenu.init({
                 <div class="Query">
                     依<em>粉紅酒</em>/ <em>低於 $500</em>/<em>Robert Parker</em> /<em>Robert Parker</em> /<em>卡本內弗朗</em>/<em>粉紅酒</em>/<em>低於 $500</em>/<em>Robert Parker</em> /<em>Robert Parker</em>/<em>卡本內弗朗酒</em>
                 </div>
-            </div>    
-            <div class="Condition">
-                <h3>
+
+            </div>   
+          <div class="Condition">
+            <h3>
                     <label class="container">
                       排除無庫存品項  
                       <input type="checkbox" checked="checked">
@@ -1555,7 +1555,6 @@ ddsmoothmenu.init({
                     </label>
                 </h3>
                 <h1> ✜&nbsp;我想換看&nbsp; <a href="">酒莊</a>、<a href="">年份</a>排列</h1>
-                
                 <div class="Wine_Search_List_Page">
                     <h2>
                         <a href="">&lt;&lt; 最前頁</a>
@@ -1568,17 +1567,13 @@ ddsmoothmenu.init({
                     </h2>
                 </div>
                 <div class="CLEAR"></div>
-                <!--<ul>
-                    <li>20</li>
-                    <li>40</li>
-                </ul>
-                <button class="PageRR"></button><button class="PageLL"></button> <div class="NextPage">Page<input name=""  value="1"  />of <span>40</span></div>-->
-                
-            </div>
-            <!-- Condition -->
-            <div class="CLEAR"></div>
-            <div class="Project">
-                <ul>
+
+          
+          </div>
+          <!-- Condition -->
+          <div class="CLEAR"></div>
+          <div class="Project">
+            <ul>
                     <li class="Project_Name">酒款&nbsp;▼ </li>
                     <li class="Project_Year">年份&nbsp;▼</li>
                     <li class="Project_Evaluate">評價&nbsp;▼</li>
@@ -1587,23 +1582,23 @@ ddsmoothmenu.init({
                     <li class="Project_Sale" >單價&nbsp;▼</li>
                     <li class="Project_PreorderSale" style="border:none" >預購價&nbsp;▼</li>
                 </ul>
-            </div>
-            <!-- Project  -->
-            <div class="Result">
-                <div class="ALL">
-                    <div class="MarketingTextDetailed">【適合週末的午後，與三五好友共享的】</div>             
-                    <div class="Wine_Name">
-                        <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
-                        <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
-                        <div class="WinePage"></div>
-                        <!--<div class="tracking"></div>-->
-                        <h3>
-                            <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
-                        </h3>
+          </div>
+          <!-- Project  -->
+          <div class="Result">
+            <div class="ALL">
+                  <div class="MarketingTextDetailed">【適合週末的午後，與三五好友共享的】</div>             
+                <div class="Wine_Name">
+                      <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
+                      <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
+                      <div class="WinePage"></div>
+                      <!--<div class="tracking"></div>-->
+                      <h3>
+                        <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
+                      </h3>
                     </div>
                     <div class="WineInformation_layout">
-                        <ul class="WineInformation">
-                            <li class="List_Year"><a href="#" target="_blank">2012</a ></li>
+                      <ul class="WineInformation">
+                          <li class="List_Year"><a href="#" target="_blank">2012</a ></li>
                             <!--20161130 Roger 斜線錢後新增空白-->
                             <li class="List_Award"><a href="#" target="_blank">RVF&nbsp;/&nbsp;100</a></li>
                             <!--20161130 Roger 斜線錢後新增空白 end-->
@@ -1612,7 +1607,7 @@ ddsmoothmenu.init({
                             <li class="List_Save">
                                 <img src="images/icon/wine_list_save_icon.png" width="17" height="17" class="List_Discount_save_icon">
                             </li>
-                            <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
                             <li class="List_Buy"></li>
                             <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
                             <li class="List_PreorderIcon"></li>
@@ -1622,251 +1617,238 @@ ddsmoothmenu.init({
                             <li class="List_Award"></li>
                             <li class="List_Capacity"><a href="#" target="_blank">1.5ml</a></li>
                             <li class="List_Discount">
-                              
+                                  
                             </li>
                             <li class="List_Save">
                                 <img src="images/icon/wine_list_save_icon.png" width="17" height="17" class="List_Discount_save_icon">
                             </li>
-                            <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_Buy"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                            <div class="CLEAR"></div>
-                            <!-- 一個容量 --> 
-                            <li class="List_Year"></li>
-                            <li class="List_Award"></li>
-                            <li class="List_Capacity"><a href="" target="">3ml</a></li>
-                            <li class="List_Discount"> </li>
-                            <li class="List_Save"><img src="images/icon/wine_list_save_icon.png" width="17" height="17" class="List_Discount_save_icon"></li>
-                            <li class="List_SellingPrice"><a href="" target="">170,455</a></li>
-                            <li class="List_Buy"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                        </ul>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+                          <!-- 一個容量 --> 
+                          <li class="List_Year"></li>
+                          <li class="List_Award"></li>
+                          <li class="List_Capacity"><a href="" target="">3ml</a></li>
+                          <li class="List_Discount"> </li>
+                          <li class="List_Save"></li>
+                          <li class="List_SellingPrice"><a href="" target="">170,455</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                      </ul>
+                      <div class="CLEAR"></div>
+                      <!-- WineInformation 一個年份-->
+                      <ul class="WineInformation">
+                          <li class="List_Year"><a href="#" target="_blank">2012</a></li>
+                          <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png" class="decanterStar"></a></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
+                          <li class="List_Discount">8.5折</li>
+                          <li class="List_Save" style="display: none;"></li>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+                          <!-- 一個容量 --> 
+                          <li class="List_Year"></li>
+                          <li class="List_Award"></li>
+                          <li class="List_Capacity"><a href="#" target="_blank">1.5ml</a></li>
+                          <li class="List_Discount"></li>
+                          <li class="List_Save"></li>
+                          <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+                          <!-- 一個容量 --> 
+                          <li class="List_Year"></li>
+                          <li class="List_Award"></li>
+                          <li class="List_Capacity"><a href="" target="">3ml</a></li>
+                          <li class="List_Discount"> </li>
+                          <li class="List_Save"></li>
+                          <li class="List_SellingPrice"><a href="" target="">170,455</a></li>
+                          <li class="List_Buy"></li>
+                          <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                          <li class="List_PreorderIcon"></li>
+                          <div class="CLEAR"></div>
+                      </ul>
+                      <!-- WineInformation 一個年份-->  
+                  </div>  
+                  <div class="CLEAR"></div>
+              </div>
+              <!-- ALL 一組酒-->            
+              <div class="ALL">
+                  <div class="MarketingTextDetailed">【再現地海系列的壯闊與美好，娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」】</div> 
+                <div class="Wine_Name">
+                      <h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
+                      <h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
+                      <div class="WinePage"></div>
+                      <!--<div class="tracking"></div>-->
+                      <h3>
+                        <div class="ProducingArea_wine_lists">
+                        <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
+                        <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
+                      </h3>
+                  </div>
+                  <div class="WineInformation_layout">
+                    <ul class="WineInformation">
+                        <li class="List_Year">2010</li>
+                        <li class="List_Award"><img src="images/Award/GR_3y.png" class="GR"></li>
+                        <li class="List_Capacity">750ml</li>
+                        <li class="List_Discount">8.5折</li>
+                        <li class="List_Save" style="display: none;"></li>
+                        <li class="List_SellingPrice">2,285</li>
+                        <li class="List_OutOfStock"></li>
+                        <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                        <li class="List_PreorderIcon"></li>
+                    </ul>
+                    <!-- WineInformation 一個年份-->
+                  </div>
+                  <div class="CLEAR"></div>
+              </div>
+              <!-- ALL 一組酒-->         
+              <div class="ALL">
+                  <div class="MarketingTextDetailed">【600張實例，各式「情境引導」方法，捕捉model最生動自然的那一刻】</div>         
+                <div class="Wine_Name">
+                      <h1>阿里昂酒莊 阿里昂精選紅酒</h1>
+                      <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
+                      <div class="WinePage"></div>
+                      <!--<div class="tracking"></div>-->
+                      <h3>
+                        <div class="ProducingArea_wine_lists">
+                          <span class="LittleFlag">
+                            <img src="images/Country/Argentina-Flag.png">
+                          </span>
+                          <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a>
+                        </div>
+                      </h3>
+                  </div>
+                  <div class="WineInformation_layout">
+                    <ul class="WineInformation">
+                        <li class="List_Year">2012</li>
+                        <li class="List_Award">RVF/100</li>
+                        <li class="List_Capacity">750ml</li>
+                        <li class="List_Discount">8.5折</li>
+                        <li class="List_Save"></li>
+                        <li class="List_SellingPrice"></li>
+                          <li class="List_Buy_noshow"></li>
+                        <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                        <li class="List_PreorderIcon"></li>
                         <div class="CLEAR"></div>
-                        <!-- WineInformation 一個年份-->
-                        <ul class="WineInformation">
-                            <li class="List_Year"><a href="#" target="_blank">2012</a ></li>
-                            <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png"  class="decanterStar" /></a></li>
-                            <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
-                            <li class="List_Discount">8.5折</li>
-                            <li class="List_Save"></li>
-                            <li class="List_FastPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_FastIcon"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                            <div class="CLEAR"></div>
-                            <!-- 一個容量 --> 
-                            <li class="List_Year"></li>
-                            <li class="List_Award"></li>
-                            <li class="List_Capacity"><a href="#" target="_blank">1.5ml</a></li>
-                            <li class="List_Discount"></li>
-                            <li class="List_Save"></li>
-                            <li class="List_FastPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_FastIcon"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                            <div class="CLEAR"></div>
-                            <!-- 一個容量 --> 
-                            <li class="List_Year"></li>
-                            <li class="List_Award"></li>
-                            <li class="List_Capacity"><a href="" target="">3ml</a></li>
-                            <li class="List_Discount"> </li>
-                            <li class="List_Save"></li>
-                            <li class="List_FastPrice"><a href="" target="">170,455</a></li>
-                            <li class="List_FastIcon"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                            <div class="CLEAR"></div>
-                        </ul>
-                        <!-- WineInformation 一個年份-->  
-                    </div>  
-                    <div class="CLEAR"></div>
-                </div>
-                <!-- ALL 一組酒-->            
-                <div class="ALL">
-                    <div class="MarketingTextDetailed">【再現地海系列的壯闊與美好，娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」】</div> 
-                    <div class="Wine_Name">
-                        <h1>安蒂諾里酒莊 索拉亞托斯卡尼紅酒</h1>
-                        <h2>Antinori,Tignanello, Solaia Toscana IGT 2009</h2>
-                        <div class="WinePage"></div>
-                        <!--<div class="tracking"></div>-->
-                        <h3>
-                            <div class="ProducingArea_wine_lists">
-                            <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
-                            <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
-                        </h3>
-                    </div>
-                    <div class="WineInformation_layout">
-                        <ul class="WineInformation">
-                            <li class="List_Year">2010</li>
-                            <li class="List_Award"><img src="images/Award/GR_3y.png"  class="GR" /></li>
-                            <li class="List_Capacity">750ml</li>
-                            <li class="List_Discount">8.5折</li>
-                            <li class="List_Save"></li>
-                            <li class="List_SellingPrice">2,285</li>
-                            <li class="List_OutOfStock"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                        </ul>
-                        <!-- WineInformation 一個年份-->
-                    </div>
-                    <div class="CLEAR"></div>
-                </div>
-                <!-- ALL 一組酒-->         
-                <div class="ALL">
-                    <div class="MarketingTextDetailed">【600張實例，各式「情境引導」方法，捕捉model最生動自然的那一刻】</div>         
-                    <div class="Wine_Name">
-                        <h1>阿里昂酒莊 阿里昂精選紅酒</h1>
-                        <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
-                        <div class="WinePage"></div>
-                        <!--<div class="tracking"></div>-->
-                        <h3>
-                            <div class="ProducingArea_wine_lists">
-                                <span class="LittleFlag">
-                                    <img src="images/Country/Argentina-Flag.png">
-                                </span>
-                                <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a>
-                            </div>
-                        </h3>
-                    </div>
-                    <div class="WineInformation_layout">
-                        <ul class="WineInformation">
-                            <li class="List_Year">2012</li>
-                            <li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
-                            <li class="List_Capacity">750ml</li>
-                            <li class="List_Discount">8.5折</li>
-                            <li class="List_Save"></li>
-                            <li class="List_SellingPrice"></li>
-                            <li class="List_Buy_noshow"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                            <div class="CLEAR"></div>
-                            <!-- 一個容量 --> 
-                            <li class="List_Year"></li>
-                            <li class="List_Award"></li>
-                            <li class="List_Capacity">3ml</li>
-                            <li class="List_Discount"> </li>
-                            <li class="List_Save"></li>
-                            <li class="List_SellingPrice"></li>
-                            <li class="List_Buy_noshow"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                        </ul>
-                        <!-- WineInformation 一個年份-->
-                    </div>
-                    <div class="CLEAR"></div>
-                </div>
-                <!-- ALL 一組酒-->     
-                <div class="ALL">
-                    <div class="MarketingTextDetailed">【適合週末的午後，與三五好友共享的輕鬆酒款】</div> 
-                    <div class="Wine_Name">
-                        <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
-                        <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
-                        <div class="WinePage"></div>
-                        <!--<div class="tracking"></div>-->
-                        <h3>
-                            <div class="ProducingArea_wine_lists">
-                            <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
-                            <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
-                        </h3>
-                    </div>
-                    <div class="WineInformation_layout">
-                        <ul class="WineInformation">
-                            <li class="List_Year">2010</li>
-                            <li class="List_Award">
-                                <!--20160921 Roger 修改獎牌樣式-->
-                                <a href="#" target="_blank" title="2016IWSC葡萄酒類金牌">
-                                    <img src="images/Award/wineDetail_award_02.jpg" class="Medals">
-                                    <span>2014</span>
-                                </a>
-                                <!--20160921 Roger 修改獎牌樣式 end-->
-                            </li>
-                            <li class="List_Capacity">750ml</li>
-                            <li class="List_Discount">8.5折</li>
-                            <li class="List_Save"></li>
-                            <!--20170904 Roger 新增無價錢樣式-->
-                            <li class="List_List_OutOfStockText">可訂通知</li>
-                            <li class="List_OutOfStock"></li>
-                            <!--20170904 Roger 新增無價錢樣式-->
-                            <li class="List_PreorderPrice"><a href="#" target="_blank"></a></li>
-                            <li class="List_PreorderIcon_noshow"></li>
-                            <div class="CLEAR"></div>
-                            <!-- 一個容量 --> 
-                            <li class="List_Year"></li>
-                            <li class="List_Award"></li>
-                            <li class="List_Capacity">1.5ml</li>
-                            <li class="List_Discount"> </li>
-                            <li class="List_Save"></li>
-                            <li class="List_SellingPrice">90,285</li>
-                            <li class="List_Buy"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                            <div class="CLEAR"></div>    
-                            <!-- 一個容量 --> 
-                            <li class="List_Year"></li>
-                            <li class="List_Award"></li>
-                            <li class="List_Capacity">3ml</li>
-                            <li class="List_Discount"> </li>
-                            <li class="List_Save"></li>
-                            <li class="List_SellingPrice">170,455</li>
-                            <li class="List_Buy"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                            <div class="CLEAR"></div>    
-                        </ul>
+                        <!-- 一個容量 --> 
+                        <li class="List_Year"></li>
+                        <li class="List_Award"></li>
+                        <li class="List_Capacity">3ml</li>
+                        <li class="List_Discount"> </li>
+                        <li class="List_Save"></li>
+                        <li class="List_SellingPrice"></li>
+                          <li class="List_Buy_noshow"></li>
+                        <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                        <li class="List_PreorderIcon"></li>
+                    </ul>
+                    <!-- WineInformation 一個年份-->
+                  </div>
+                  <div class="CLEAR"></div>
+              </div>
+              <!-- ALL 一組酒-->     
+              <div class="ALL" style="border-bottom-style: none;">
+                  <div class="MarketingTextDetailed">【適合週末的午後，與三五好友共享的輕鬆酒款】</div> 
+                <div class="Wine_Name">
+                      <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
+                      <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
+                      <div class="WinePage"></div>
+                      <!--<div class="tracking"></div>-->
+                      <h3>
+                        <div class="ProducingArea_wine_lists">
+                        <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
+                        <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
+                      </h3>
+                  </div>
+                  <div class="WineInformation_layout">
+                    <ul class="WineInformation">
+                        <li class="List_Year">2010</li>
+                        <li class="List_Award">
+                          <img src="images/Award/decanterAward.png" class="Medals">
+                        </li>
+                        <li class="List_Capacity">750ml</li>
+                        <li class="List_Discount">8.5折</li>
+                        <li class="List_Save"></li>
+                        <li class="List_SellingPrice">48,285</li>
+                        <li class="List_Buy"></li>
+                        <li class="List_PreorderPrice"><a href="#" target="_blank"></a></li>
+                        <li class="List_PreorderIcon_noshow"></li>
                         <div class="CLEAR"></div>
-                        <!-- WineInformation 一個年份-->
-                        <ul class="WineInformation">
-                            <li class="List_Year">2009</li>
-                            <li class="List_Award"><a href="#" target="_blank">RVF/100</a></li>
-                            <li class="List_Capacity">750ml</li>
-                            <li class="List_Discount">8.5折</li>
-                            <li class="List_Save"></li>
-                            <li class="List_SellingPrice">2,285</li>
-                            <li class="List_OutOfStock"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                            <div class="CLEAR"></div>
-                        </ul>
-                        <div class="CLEAR"></div>
-                        <!-- WineInformation 一個年份--> 
-                        <ul class="WineInformation">
-                            <li class="List_Year">2000</li>
-                            <li class="List_Award"><!--20160921 Roger 修改獎牌樣式-->
-                                <a href="#" target="_blank" title="2016IWSC葡萄酒類金牌">
-                                    <img src="images/Award/wineDetail_award_01.jpg" class="Medals">
-                                    <span>2014</span>
-                                </a>
-                                <!--20160921 Roger 修改獎牌樣式 end-->
-                            </li>
-                            <li class="List_Capacity">750ml</li>
-                            <li class="List_Discount">8折</li>
-                            <li class="List_Save"></li>
-                            <li class="List_SellingPrice">985</li>
-                            <li class="List_Buy"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                            <div class="CLEAR"></div>
-                            <!-- 一個容量 --> 
-                            <li class="List_Year"></li>
-                            <li class="List_Award"></li>
-                            <li class="List_Capacity">1.5ml</li>
-                            <li class="List_Discount"></li>
-                            <li class="List_Save"></li>
-                            <li class="List_SellingPrice">1,995</li>
-                            <li class="List_Buy"></li>
-                            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                            <li class="List_PreorderIcon"></li>
-                        </ul>
-                        <!-- WineInformation 一個年份-->
-                    </div>
+                        <!-- 一個容量 --> 
+                        <li class="List_Year"></li>
+                        <li class="List_Award"></li>
+                        <li class="List_Capacity">1.5ml</li>
+                        <li class="List_Discount"> </li>
+                        <li class="List_Save"></li>
+                        <li class="List_SellingPrice">90,285</li>
+                          <li class="List_Buy"></li>
+                        <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                        <li class="List_PreorderIcon"></li>
+                        <div class="CLEAR"></div>    
+                        <!-- 一個容量 --> 
+                        <li class="List_Year"></li>
+                        <li class="List_Award"></li>
+                        <li class="List_Capacity">3ml</li>
+                        <li class="List_Discount"> </li>
+                        <li class="List_Save"></li>
+                        <li class="List_SellingPrice">170,455</li>
+                        <li class="List_Buy"></li>
+                        <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                        <li class="List_PreorderIcon"></li>
+                        <div class="CLEAR"></div>    
+                    </ul>
                     <div class="CLEAR"></div>
-                </div>
-                <!-- ALL 一組酒-->
-            </div>
-            <!-- Result  -->
-        </div> 
+                    <!-- WineInformation 一個年份-->
+                    <ul class="WineInformation">
+                        <li class="List_Year">2009</li>
+                        <li class="List_Award">RVF/100</li>
+                        <li class="List_Capacity">750ml</li>
+                        <li class="List_Discount">8.5折</li>
+                        <li class="List_Save"></li>
+                        <li class="List_SellingPrice">2,285</li>
+                        <li class="List_OutOfStock"></li>
+                        <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                        <li class="List_PreorderIcon"></li>
+                        <div class="CLEAR"></div>
+                    </ul>
+                    <div class="CLEAR"></div>
+                    <!-- WineInformation 一個年份--> 
+                    <ul class="WineInformation">
+                        <li class="List_Year">2000</li>
+                        <li class="List_Award"><img src="images/Award/IWSC01.png" class="Medals"></li>
+                        <li class="List_Capacity">750ml</li>
+                        <li class="List_Discount">8折</li>
+                        <li class="List_Save"></li>
+                        <li class="List_SellingPrice">985</li>
+                        <li class="List_Buy"></li>
+                        <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                        <li class="List_PreorderIcon"></li>
+                        <div class="CLEAR"></div>
+                        <!-- 一個容量 --> 
+                        <li class="List_Year"></li>
+                        <li class="List_Award"></li>
+                        <li class="List_Capacity">1.5ml</li>
+                        <li class="List_Discount"></li>
+                        <li class="List_Save"></li>
+                        <li class="List_SellingPrice">1,995</li>
+                        <li class="List_Buy"></li>
+                        <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                        <li class="List_PreorderIcon"></li>
+                    </ul>
+                    <!-- WineInformation 一個年份-->
+                  </div>
+                  <div class="CLEAR"></div>
+              </div>
+              <!-- ALL 一組酒-->
+          </div>
+          <!-- Result  -->
+      </div>
     <div class="Wine_Search_List_Page">
         <h2> <a href=""><< 最前頁</a> <a href="">< 上一頁</a> <a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">下一頁></a> <a href="">最末頁 >> </a> </h2>
     </div>
@@ -1882,7 +1864,8 @@ ddsmoothmenu.init({
             <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
             <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
             <li><a href="" target="_parent">條款及細則</a>｜</li>
-            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a></li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
         </ul>
         <div class="FooterICON">
            <a href="qualityGarentee.html" target="_blank"><button class="Quality"></button></a>

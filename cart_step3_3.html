@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iCheers 愛酒窩_客戶基本資料填寫</title>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" > 
+<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="stylesheet" type="text/css" href="css/cart_202107.css"/>
+<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="Scripts/popcontrol.js"/></script>
+<script type="text/javascript" src="Scripts/popdata.js"/></script>
+<script type="text/javascript" src="Scripts/step3.js"/></script>
+<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        //修改收件人資訊
+        $('#BTN_DeliveryInfoEdit').click(function(){
+            
+        });
+
+        //自製radio選項
+        $('.custom_radio').click(function(){
+            CustomRadioBTN(this);
+
+            //check self click
+            var IsSelfClick = $(this).hasClass();
+
+            if (IsSelfClick) {
+                //donothing
+            } else {
+                //init底下選項
+                $('.invoice_radio_oneoption .extend').slideUp();
+
+                //切換不同發票內容選項
+                var InvoiceType = $(this).attr('invoice_type');
+                $('.delivery_info_select').css('display','none');
+                $('.invoice_content').css('display','none');
+                
+                switch (InvoiceType){
+                    case 'Duplicate':
+                        $('#BTN_InvoiceInfoEdit').css('display','none');
+                        $('[invoice_type=Duplicate].invoice_content').css('display','block');
+                    break;
+
+                    case 'Triplicate':
+                        $('[invoice_type=Triplicate].invoice_content').css('display','block');
+                        $('.delivery_info_select').css('display','block');
+                        //check 常用公司or新增
+                        var IsAddNew = $('.delivery_info_select').attr('formstatus');
+
+                        if (IsAddNew == 'AddNew' || IsAddNew == '') {
+                            $('#BTN_InvoiceInfoEdit').css('display','none');
+                        } else {
+                            $('#BTN_InvoiceInfoEdit').css('display','block');
+                        }
+                    break;
+
+                    case 'Donate':
+                        $('#BTN_InvoiceInfoEdit').css('display','none');
+                        $('[invoice_type=Donate].invoice_content').css('display','block');
+                    break;
+                }
+            }
+        });
+
+
+        //發票分開寄出 捐贈 載具展開
+        $('.invoice_radio_oneoption input[type=radio]').change(function(){
+            $('.invoice_radio_oneoption .extend').slideUp();
+            $('.invoice_radio_oneoption input[type=radio]:checked ~ .extend').slideDown();
+
+        });
+
+        
+        //測試資料
+        var TestData_Custom1 = [
+            {
+                Name:'劉學涵',
+                Sex:'女',
+                Phone:'0987654321',
+                Address:'234新北市永和區成功路一段80號',
+                CompanyName:'佳釀股份有限公司',
+                BAN:'29081831'
+            }
+        ]
+
+        var TestData_Custom2 = [
+            {
+                Name:'牛學行',
+                Sex:'女',
+                Phone:'0912345678',
+                Address:'234新北市永和區成功路一段82號',
+                CompanyName:'iCheers愛酒窩',
+                BAN:'12345678'
+            }
+        ]
+        
+
+        $('.delivery_info_select').change(function(){
+            var OptionSelected = $(this).find('option:selected').attr('id');
+
+            switch (OptionSelected) {
+                case 'Option_CustomInfo1':
+                    $('.delivery_info_select').attr('formstatus','CustomInfo');
+                    $('#BTN_InvoiceInfoEdit').css('display','block');
+                    ImportInvoiceInfo(TestData_Custom1);
+                break;
+
+                case 'Option_CustomInfo2':
+                    $('.delivery_info_select').attr('formstatus','CustomInfo');
+                    $('#BTN_InvoiceInfoEdit').css('display','block');
+                    ImportInvoiceInfo(TestData_Custom2);
+                break;
+
+                case 'Option_AddNew':
+                    $('.delivery_info_select').attr('formstatus','AddNew');
+                    InvoiceAddNew();
+                break;
+            }
+        });
+
+        $('#BTN_InvoiceInfoEdit').click(function(){
+            InvoiceInfoEdit();
+        });
+    });
+
+    function InvoiceInfoEdit(){
+        $('#BTN_InvoiceInfoEdit').css('display','none');
+        var InvoiceInfo_CompanyName = $('#InvoiceInfo_CompanyName').text();
+        var InvoiceInfo_BAN = $('#InvoiceInfo_BAN').text();
+        var InvoiceInfo_Name = $('#InvoiceInfo_Name').text();
+        var InvoiceInfo_Address_PostalCode = $('#InvoiceInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
+        var InvoiceInfo_Address_City = $('#InvoiceInfo_Address').text().substring(3,6);
+        var InvoiceInfo_Address_Other = $('#InvoiceInfo_Address').text().slice(9);
+
+        $('#InvoiceInfo_CompanyName').replaceWith('<input id="InvoiceInfo_CompanyName" type="text" name="" value="'+InvoiceInfo_CompanyName+'">');
+
+        $('#InvoiceInfo_BAN').replaceWith('<input id="InvoiceInfo_BAN" type="text" name="" value="'+InvoiceInfo_BAN+'">');
+
+        $('#InvoiceInfo_Name').replaceWith('<input id="InvoiceInfo_Name" type="text" name="" value="'+InvoiceInfo_Name+'">');
+
+        $('#InvoiceInfo_Address').replaceWith('<div id="InvoiceInfo_Address"><select id="Address_City"><option>台北市</option><option>新北市</option></select><select id="Address_District"><option value="235">中和區&nbsp;235</option><option value="234">永和區&nbsp;234</option></select><br/><input type="text" name="" value="'+InvoiceInfo_Address_Other+'"></div>');
+
+        $('#Address_City').val(InvoiceInfo_Address_City);
+        $('#Address_District').val(InvoiceInfo_Address_PostalCode);
+       
+    }
+
+    function ImportInvoiceInfo(data){
+        var InvoiceInfo_Name = data[0].Name;
+        var InvoiceInfo_CompanyName = data[0].CompanyName;
+        var InvoiceInfo_BAN = data[0].BAN;
+        var InvoiceInfo_Address = data[0].Address;
+
+        $('#InvoiceInfo_CompanyName').replaceWith('<div class="text" id="InvoiceInfo_CompanyName">'+InvoiceInfo_CompanyName+'</div>');
+        $('#InvoiceInfo_BAN').replaceWith('<div class="text" id="InvoiceInfo_BAN">'+InvoiceInfo_BAN+'</div>');
+        $('#InvoiceInfo_Name').replaceWith('<div class="text" id="InvoiceInfo_Name">'+InvoiceInfo_Name+'</div>');
+        $('#InvoiceInfo_Address').replaceWith('<div class="text" id="InvoiceInfo_Address">'+InvoiceInfo_Address+'</div>');
+    }
+
+    function InvoiceAddNew(){
+        $('#BTN_InvoiceInfoEdit').css('display','none');
+        $('#InvoiceInfo_CompanyName').replaceWith('<input id="InvoiceInfo_CompanyName" type="text" name="">');
+        $('#InvoiceInfo_BAN').replaceWith('<input id="InvoiceInfo_BAN" type="text" name="">');
+        $('#InvoiceInfo_Name').replaceWith('<input id="InvoiceInfo_Name" type="text" name="">');
+        $('#DeliveryInfo_Address').replaceWith('<div id="DeliveryInfo_Address"><select id="Address_City"><option>台北市</option><option>新北市</option></select><select id="Address_District"><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br/><input type="text" name=""></div>');
+    }
+</script>
+
+
+
+</head>
+
+
+
+<body>
+<div class="HeadALL">
+    <div class="HeadMenu_btn">
+        <a class="navicon-button uarr" id="menuBTN">
+            <div class="navicon"></div>
+        </a> 
+    </div>
+    <div class="HeadMenu">
+        <!--a href="" class="LogOut">會員登出</a-->
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+        <!--span class="AccountNumber">ich***, 您好</span-->
+    </div>
+
+
+
+    <div class="TagALL_cart">
+        <div class="TagLogo_layout">
+            <a href="index.html" class="TagLogo"></a>
+        </div>
+    </div>
+    
+</div>
+
+<div class="content_layout step3">
+    <section class="step_option">
+        <div class="cart_step_row">
+            <div class="one_step">Step&nbsp;1</div>
+            <div class="icon_nextstep"></div>
+            <div class="one_step">Step&nbsp;2</div>
+            <div class="icon_nextstep"></div>
+            <div class="one_step active">Step&nbsp;3</div>
+            <div class="icon_nextstep"></div>
+            <div class="one_step">Step&nbsp;4</div>
+        </div>
+    </section>
+
+</div>
+
+<div class="step3_processbar">
+    <div class="textbox">
+        <div class="text">
+            訂購人<br/>
+            基本資料
+        </div>
+        <div class="text">
+            收件人<br/>
+            基本資料
+        </div>
+        <div class="text active">
+            發票
+        </div>
+        <div class="text">
+            付款方式
+        </div>
+    </div>
+    <div class="gray_line">
+        <div class="gray_dot"></div>
+        <div class="gray_dot" style="margin-left: 18px;"></div>
+        <div class="gray_dot active"></div>
+        <div class="gray_dot"></div>
+    </div>
+</div>
+
+<div class="step3_content">
+    <button class="btn_edit" id="BTN_InvoiceInfoEdit" style="top: 55px;display: none;">修改</button>
+    <div class="row CLEARBOTH">
+        <div class="custom_radio invoice_type active" invoice_type="Duplicate">二聯式電子發票</div>
+        <div class="custom_radio invoice_type" invoice_type="Triplicate">三聯式電子發票</div>
+        <div class="custom_radio invoice_type" invoice_type="Donate">捐贈發票</div>
+        <select class="delivery_info_select company_info" formstatus="" style="display: none;">
+            <option value="" disabled selected>選擇常用公司資料</option>
+            <option id="Option_CustomInfo1">常用公司資料1</option>
+            <option id="Option_CustomInfo2">常用公司資料2</option>
+            <option id="Option_AddNew">新增常用公司資料</option>
+        </select>
+    </div>
+    <!--2聯-->
+    <div class="invoice_content" invoice_type="Duplicate">
+        <div class="row" style="margin-top: 20px;">
+            <div class="invoice_radio">
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_2">
+                    <span class="radio_text">隨商品寄出</span>
+                </div>
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_2">
+                    <span class="radio_text">分開寄出</span>
+                    <div class="CLEARBOTH"></div>
+                    <div class="extend">
+                        <div class="row">
+                            <div class="note CLEARBOTH">
+                                <input type="checkbox" name="">
+                                <span>同訂購人資訊</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="title">發票收件人姓名</div>
+                            <input type="text" name="">
+                        </div>
+                        <div class="row">
+                            <div class="title">發票收件人地址</div>
+                            <select>
+                                <option>台北市</option>
+                                <option>新北市</option>
+                            </select>
+                            <select>
+                                <option>松山區&nbsp;105</option>
+                                <option>大安區&nbsp;106</option>
+                            </select>
+                            <br/>
+                            <input type="text" name="">
+                        </div>
+                    </div>
+                </div>
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_2">
+                    <span class="radio_text">手機載具</span>
+                    <div class="CLEARBOTH"></div>
+                    <div class="extend">
+                        <input type="text" name="" class="carrier">
+                        <div class="notice_text">含斜線英數共8碼，例：/RZREDHQ</div>
+                    </div>
+                </div>
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_2">
+                    <span class="radio_text">自然人憑證載具</span>
+                    <div class="CLEARBOTH"></div>
+                    <div class="extend">
+                        <input type="text" name="" class="carrier">
+                        <div class="notice_text">含英數共16碼，例：GP00000012345678</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--3聯-->
+    <div class="invoice_content" invoice_type="Triplicate" style="display: none;">
+        <div class="row" style="margin-top: 20px;">
+            <div class="title">發票抬頭</div>
+            <input type="text" name="" id="InvoiceInfo_CompanyName">
+        </div>
+        <div class="row">
+            <div class="title">發票統編</div>
+            <input type="text" name="" id="InvoiceInfo_BAN">
+        </div>
+        <div class="row">
+            <div class="invoice_radio">
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_3">
+                    <span class="radio_text">隨商品寄出</span>
+                </div>
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_3">
+                    <span class="radio_text">分開寄出</span>
+                    <div class="CLEARBOTH"></div>
+                    <div class="extend">
+                        <div class="row">
+                            <div class="note CLEARBOTH">
+                                <input type="checkbox" name="">
+                                <span>同訂購人資訊</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="title">發票收件人姓名</div>
+                            <input type="text" name="">
+                        </div>
+                        <div class="row">
+                            <div class="title">發票收件人地址</div>
+                            <select>
+                                <option>台北市</option>
+                                <option>新北市</option>
+                            </select>
+                            <select>
+                                <option>松山區&nbsp;105</option>
+                                <option>大安區&nbsp;106</option>
+                            </select>
+                            <br/>
+                            <input type="text" name="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--捐贈-->
+    <div class="invoice_content" invoice_type="Donate" style="display: none;">
+        <div class="row" style="margin-top: 20px;">
+            <div class="invoice_radio">
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_d">
+                    <span class="radio_text">伊甸社會福利基金會</span>
+                </div>
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_d">
+                    <span class="radio_text">創世基金會</span>
+                </div>
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_d">
+                    <span class="radio_text">陽光社會福利基金會</span>
+                </div>
+                <div class="invoice_radio_oneoption CLEARBOTH">
+                    <input type="radio" name="invoice_d">
+                    <span class="radio_text">其他</span>
+                    <div class="CLEARBOTH"></div>
+                    <div class="extend">
+                        <input type="text" name="" class="carrier">
+                        <a href="#">機構代碼查詢</a>
+                    </div>
+                </div>
+            </div>
+            <div class="note" style="margin-left:22px;">
+                依據法令規定，已捐贈發票無法索回，若需要退換貨，該發票將予以作廢。
+            </div>
+        </div>
+    </div>
+    <div class="row btn_row">
+        <div class="btn_step prev">上一步</div>
+        <div class="btn_step next">下一步</div>
+    </div>
+</div>
+
+<div class="Warning_small_screen">
+    飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+</div>
+<div class="Warning"><p></p></div>
+<!-- Warning 警語 -->
+
+
+<!-- 黑底 start-->
+<div class="bg_black" id="bg_black">
+    <div class="notice_BG">
+        <div class="notice_title_layout">
+            <div class="notice_title"></div>
+            <div class="notice_title_closeBTN" onclick="ClosePop();"></div>
+            <div class="CLEAR"></div>
+        </div>
+        <div class="notice_body">
+            
+        </div>
+    </div>
+
+</div>
+<!-- 黑底 end-->
+</body>
+
+</html>

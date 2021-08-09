@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iCheers 愛酒窩_客戶基本資料填寫</title>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" > 
+<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="stylesheet" type="text/css" href="css/cart_202107.css"/>
+
+<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="Scripts/popcontrol.js"/></script>
+<script type="text/javascript" src="Scripts/popdata.js"/></script>
+<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#BTN_PurchaseInfoEdit').click(function(){
+            PurchaseInfoEdit();
+        });
+    });
+
+    function ConfirmEdit(){
+        ClosePop();
+        $('#BTN_PurchaseInfoEdit').css('display','none');
+        var PurchaseInfo_Name = $('#PurchaseInfo_Name').text();
+        var PurchaseInfo_Sex = $('#PurchaseInfo_Sex').text();
+        var PurchaseInfo_Phone = $('#PurchaseInfo_Phone').text();
+        var PurchaseInfo_Address_PostalCode = $('#PurchaseInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
+        var PurchaseInfo_Address_City = $('#PurchaseInfo_Address').text().substring(3,6);
+        //var PurchaseInfo_Address_District = $('#PurchaseInfo_Address').text().substring(6,9) + '&nbsp;' + PurchaseInfo_Address_PostalCode;
+        var PurchaseInfo_Address_Other = $('#PurchaseInfo_Address').text().slice(9);
+
+        $('#PurchaseInfo_Name').replaceWith('<input type="text" name="" value="'+PurchaseInfo_Name+'">');
+
+        if (PurchaseInfo_Sex == '男') {
+            $('#PurchaseInfo_Sex').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="sex" checked="checked"><span>男</span><input type="radio" name="sex"><span>女</span><input type="radio" name="sex"><span>中性</span></div>');
+        } else if (PurchaseInfo_Sex == '女') {
+            $('#PurchaseInfo_Sex').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="sex"><span>男</span><input type="radio" name="sex" checked="checked"><span>女</span><input type="radio" name="sex"><span>中性</span></div>');
+        } else {
+            $('#PurchaseInfo_Sex').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="sex"><span>男</span><input type="radio" name="sex"><span>女</span><input type="radio" name="sex" checked="checked"><span>中性</span></div>');
+        }
+
+        $('#PurchaseInfo_Phone').replaceWith('<input type="text" name="" value="'+PurchaseInfo_Phone+'">');
+
+        $('#PurchaseInfo_Address').replaceWith('<select id="Address_City"><option>台北市</option><option>新北市</option></select><select id="Address_District"><option value="235">中和區&nbsp;235</option><option value="234">永和區&nbsp;234</option></select><br/><input type="text" name="" value="'+PurchaseInfo_Address_Other+'">');
+
+        $('#Address_City').val(PurchaseInfo_Address_City);
+        $('#Address_District').val(PurchaseInfo_Address_PostalCode);
+    }
+</script>
+
+
+
+</head>
+
+
+
+<body>
+<div class="HeadALL">
+    <div class="HeadMenu_btn">
+        <a class="navicon-button uarr" id="menuBTN">
+            <div class="navicon"></div>
+        </a> 
+    </div>
+    <div class="HeadMenu">
+        <!--a href="" class="LogOut">會員登出</a-->
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+        <!--span class="AccountNumber">ich***, 您好</span-->
+    </div>
+
+
+
+    <div class="TagALL_cart">
+        <div class="TagLogo_layout">
+            <a href="index.html" class="TagLogo"></a>
+        </div>
+    </div>
+    
+</div>
+
+<div class="content_layout step3">
+    <section class="step_option">
+        <div class="cart_step_row">
+            <div class="one_step">Step&nbsp;1</div>
+            <div class="icon_nextstep"></div>
+            <div class="one_step">Step&nbsp;2</div>
+            <div class="icon_nextstep"></div>
+            <div class="one_step active">Step&nbsp;3</div>
+            <div class="icon_nextstep"></div>
+            <div class="one_step">Step&nbsp;4</div>
+        </div>
+    </section>
+
+</div>
+
+<div class="step3_processbar">
+    <div class="textbox">
+        <div class="text active">
+            訂購人<br/>
+            基本資料
+        </div>
+        <div class="text">
+            收件人<br/>
+            基本資料
+        </div>
+        <div class="text">
+            發票
+        </div>
+        <div class="text">
+            付款方式
+        </div>
+    </div>
+    <div class="gray_line">
+        <div class="gray_dot active"></div>
+        <div class="gray_dot" style="margin-left: 18px;"></div>
+        <div class="gray_dot"></div>
+        <div class="gray_dot"></div>
+    </div>
+</div>
+
+<div class="step3_content">
+    <button class="btn_edit" id="BTN_PurchaseInfoEdit">修改</button>
+    <div class="small_text">
+        客服夥伴會依下列資訊與您聯繫，謝謝！<br/>我們將妥善保管您的個資，僅供訂單聯繫之用，詳見<a href="https://www.icheers.tw/iCheers/Wine/Home/privacy_policy" target="_blank">隱私條款</a>。
+    </div>
+    <div class="row">
+        <div class="title">姓名</div>
+        <div class="text" id="PurchaseInfo_Name">劉學涵</div>
+    </div>
+    <div class="row">
+        <div class="title">性別</div>
+        <div class="text" id="PurchaseInfo_Sex">女</div>
+    </div>
+    <div class="row">
+        <div class="title">連絡電話</div>
+        <div class="text" id="PurchaseInfo_Phone">0987654321</div>
+    </div>
+    <div class="row">
+        <div class="title">地址</div>
+        <div class="text" id="PurchaseInfo_Address">234新北市永和區成功路一段80號15樓</div>
+    </div>
+    <div class="row btn_row">
+        <!--<div class="btn_step prev">上一步</div>-->
+        <div class="btn_step next">下一步</div>
+    </div>
+</div>
+<div class="Warning_small_screen">
+    飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+</div>
+<div class="Warning"><p></p></div>
+<!-- Warning 警語 -->
+
+
+<!-- 黑底 start-->
+<div class="bg_black" id="bg_black">
+    <div class="notice_BG">
+        <div class="notice_title_layout">
+            <div class="notice_title"></div>
+            <div class="notice_title_closeBTN" onclick="ClosePop();"></div>
+            <div class="CLEAR"></div>
+        </div>
+        <div class="notice_body">
+            
+        </div>
+    </div>
+
+</div>
+<!-- 黑底 end-->
+</body>
+
+</html>

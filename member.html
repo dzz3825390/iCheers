@@ -14,8 +14,22 @@
 
 
     <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 
 
+
+
+    <script type="text/javascript" language="javascript">
+        //外掛選單用 記得搬到外面去
+        ddsmoothmenu.init({
+            mainmenuid: "smoothmenu1", //menu DIV id
+            orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+            classname: 'ddsmoothmenu', //class added to menu's outer DIV
+            //customtheme: ["#1c5a80", "#18374a"],
+            contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+        })
+
+    </script>
 
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -172,12 +186,6 @@
                 <div class="MemberProject MemberSpacing">
                     <a class="member_Menu_BTN"><em></em><span class="Icon_Wine"></span>目前已追蹤<strong>50</strong>款酒</a>
                 </div>
-                <!--MemberProject -->
-                <div class="MemberProject MemberSpacing">
-                    <a class="member_Menu_BTN"><em></em><span class="Icon_Letter"></span>可訂通知有<strong>3</strong>款酒</a>
-                    (有庫存:<span>1</span>已搶購一空 :<span>1</span>可預定:<span>1</span>)
-                </div>
-                <!--MemberProject -->
             </div>
             <!--memberIndexLL 右欄-->
         </div>

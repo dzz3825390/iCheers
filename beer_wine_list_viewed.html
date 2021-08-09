@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/Style.css"/>
 <link href="css/wine_list.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/beer.css">
-<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="Scripts/jquery-1.8.2.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
 
 
@@ -38,8 +38,23 @@ ddsmoothmenu.init({
 
 
 <script type="text/javascript">
-$(document).ready(function(){
-    //簡目頁內容折扣/省最多置中設定
+    $(document).ready(function(){
+
+        //分類找酒文字縮排設定
+        $(".Left_Menu_ClassifySearch_condition_text").children().each(function(){
+            var NthChild = $(this).index();
+            var OptionMarginLeft = 15*NthChild;
+            $(this).css("margin-left",OptionMarginLeft);
+        });
+
+        //簡目頁內容獎牌/評分欄位置中設定
+        $(".List_Award a").each(function(){
+            var AwardWidth = $(this).width();
+            var AwardPositionX = (71 - AwardWidth) / 2;
+            $(this).css("margin-left",AwardPositionX);
+        });
+
+        //簡目頁內容折扣/省最多置中設定
         $(".List_Discount").each(function(){
             var Discount = $(this)
             var Save = $(this).next();
@@ -63,27 +78,21 @@ $(document).ready(function(){
             }
         });
 
-        //分類找酒文字縮排設定
-        $(".Left_Menu_ClassifySearch_condition_text").children().each(function(){
-            var NthChild = $(this).index();
-            var OptionMarginLeft = 15*NthChild;
-            $(this).css("margin-left",OptionMarginLeft);
-        });
-
-        //簡目頁內容獎牌/評分欄位置中設定
-        $(".List_Award a").each(function(){
-            var AwardWidth = $(this).width();
-            var AwardPositionX = (71 - AwardWidth) / 2;
-            $(this).css("margin-left",AwardPositionX);
-        });
-
         //footermenu置中
-    var FooterMenuWidth = $('.FooterMenu').width();
-    var FooterWidth = $('.FooterMenu').parent().width();
-    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+        var FooterMenuWidth = $('.FooterMenu').width();
+        var FooterWidth = $('.FooterMenu').parent().width();
+        var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
 
-    $('.FooterMenu').css('margin-left',FooterPositionX);
-});
+        $('.FooterMenu').css('margin-left',FooterPositionX);
+
+        //active按鈕
+        $('.Result .Wine_Name .tracking').click(function(){
+            $(this).toggleClass('active');
+        });
+        
+
+
+    });  
 </script>
 
 
@@ -1343,7 +1352,7 @@ $(document).ready(function(){
                       <span class="checkmark"></span>
                     </label>
                 </h3>
-                <h1> ✜&nbsp;我想換看&nbsp; <a href="">酒莊</a>、<a href="">年份</a>排列</h1>
+                <h1> ✜&nbsp;我想換看&nbsp; <a href="">酒廠</a>排列</h1>
                     
                     <div class="Wine_Search_List_Page">
                         <h2>
@@ -1384,7 +1393,7 @@ $(document).ready(function(){
                           <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                           <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                           <div class="WinePage"></div>
-                          <div class="tracking"></div>
+                          <!--<div class="tracking"></div>-->
                           <h3>
                             <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
                           </h3>
@@ -1470,7 +1479,7 @@ $(document).ready(function(){
                           <h1>東岸印度淡色愛爾啤酒</h1>
                           <h2>Brooklyn East IPA</h2>
                           <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg);"></div>
-                          <div class="tracking"></div>
+                          <!--<div class="tracking"></div>-->
                           <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -1499,7 +1508,7 @@ $(document).ready(function(){
                           <h1>阿里昂酒莊 阿里昂精選紅酒</h1>
                           <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                           <div class="WinePage"></div>
-                          <div class="tracking"></div>
+                          <!--<div class="tracking"></div>-->
                           <h3>
                             <div class="ProducingArea_wine_lists">
                               <span class="LittleFlag">
@@ -1541,7 +1550,7 @@ $(document).ready(function(){
                           <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                           <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                           <div class="WinePage"></div>
-                          <div class="tracking"></div>
+                          <!--<div class="tracking"></div>-->
                           <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>

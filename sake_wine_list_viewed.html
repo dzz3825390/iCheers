@@ -29,28 +29,16 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-    //簡目頁內容折扣/省最多置中設定
-        $(".List_Discount").each(function(){
-            var Discount = $(this)
-            var Save = $(this).next();
-            var HasDiscount = $(this)[0].hasChildNodes();
-            var HasSave = $(this).next()[0].hasChildNodes();
-            if (HasDiscount){
-                if (HasSave == false){
-                    Save.css("display","none");
-                    Discount.css({
-                        "width":99,
-                        "text-align":"center"
-                    });
-                }
-            } else{
-                if (HasSave){
-                    Discount.css("display","none");
-                    Save.css({
-                        "width":99,
-                    });
-                }
-            }
+     //footermenu置中
+        var FooterMenuWidth = $('.FooterMenu').width();
+        var FooterWidth = $('.FooterMenu').parent().width();
+        var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+        $('.FooterMenu').css('margin-left',FooterPositionX);
+
+        //active按鈕
+        $('.Result .Wine_Name .tracking').click(function(){
+            $(this).toggleClass('active');
         });
 
         //分類找酒文字縮排設定
@@ -88,6 +76,10 @@ $(document).ready(function(){
 
 <body class="index sake_index">
 <div class="HeadALL">
+<<<<<<< HEAD
+=======
+    
+>>>>>>> Tracking_list
     <div class="HeadMenu">
         <!--a href="" class="LogOut">會員登出</a-->
             <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
@@ -97,6 +89,10 @@ $(document).ready(function(){
             <a href="" class="MobileVer">手機版</a>
             <!--span class="AccountNumber">ich***, 您好</span-->
     </div>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> Tracking_list
     <div class="TagALL">
         <ul>
             <li class="TagLogo"><a href="index.html"></a></li>
@@ -601,7 +597,11 @@ $(document).ready(function(){
                           <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                           <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                           <div class="WinePage"></div>
+<<<<<<< HEAD
                           <div class="tracking"></div>
+=======
+                          <!--<div class="tracking"></div>-->
+>>>>>>> Tracking_list
                           <h3>
                             <div class="ProducingArea_wine_lists"> <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span> <a href="">義大利</a>＞<a href="">阿布魯佐</a>＞<a href="">Abruzzo</a></div>
                           </h3>
@@ -687,7 +687,11 @@ $(document).ready(function(){
                           <h1>東岸印度淡色愛爾啤酒</h1>
                           <h2>Brooklyn East IPA</h2>
                           <div class="WinePage" style="background-image:url(images/beer/beer05_horizonal.jpg);"></div>
+<<<<<<< HEAD
                           <div class="tracking"></div>
+=======
+                          <!--<div class="tracking"></div>-->
+>>>>>>> Tracking_list
                           <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -716,7 +720,11 @@ $(document).ready(function(){
                           <h1>阿里昂酒莊 阿里昂精選紅酒</h1>
                           <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                           <div class="WinePage"></div>
+<<<<<<< HEAD
                           <div class="tracking"></div>
+=======
+                          <!--<div class="tracking"></div>-->
+>>>>>>> Tracking_list
                           <h3>
                             <div class="ProducingArea_wine_lists">
                               <span class="LittleFlag">
@@ -758,7 +766,11 @@ $(document).ready(function(){
                           <h1>羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</h1>
                           <h2>Robert Mondavi, Woodbridge White Zinfandel</h2>
                           <div class="WinePage"></div>
+<<<<<<< HEAD
                           <div class="tracking"></div>
+=======
+                          <!--<div class="tracking"></div>-->
+>>>>>>> Tracking_list
                           <h3>
                             <div class="ProducingArea_wine_lists">
                             <span class="LittleFlag"><img src="images/Country/Argentina-Flag.png"></span>
@@ -855,7 +867,8 @@ $(document).ready(function(){
             <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
             <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
             <li><a href="" target="_parent">條款及細則</a>｜</li>
-            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a></li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
         </ul>
         <div class="FooterICON">
            <a href="qualityGarentee.html" target="_blank"><button class="Quality"></button></a>

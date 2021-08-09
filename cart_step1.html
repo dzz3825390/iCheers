@@ -4,68 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>iCheers 愛酒窩_我的清單</title>
 <link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" > 
-
-<link rel="stylesheet" type="text/css" href="css/Style.css"/>
-<link rel="stylesheet" type="text/css" href="css/cart_201505rogerfix.css"/>
 <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="stylesheet" type="text/css" href="css/cart_202107.css"/>
+
 <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
-<script type="text/javascript" src="Scripts/tabs.js"/></script>
+<script type="text/javascript" src="Scripts/popcontrol.js"/></script>
+<script type="text/javascript" src="Scripts/popdata.js"/></script>
 <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
 
-<!-- 點擊我已經18歲 -->
-<script type="text/javascript">
-    function Checkold() {
-        if ($("input[name='old']").is(":checked") == true) {
-            $("#img2").show();
-            $("#img1").hide();
-        }
-        else {
-            $("#img2").hide();
-            $("#img1").show();
-        }
- 
-    }
-</script>
 
 
 
-<!-- 頁籤切換 -->
-<script type="text/javascript">
-$(function(){
-	$(".btn_Batch").click(function(){
-		$(".btn_Batch2").removeClass('selected2');
-		 $(this).addClass('selected');
-	    $("#Cart_Labe11").show();
-	    $("#Cart_Labe12").hide();  
-		  return false;
-	}).find('a').focus(function(){
-			this.blur();
-	});
-	
-	$(".btn_Batch2").click(function(){
-		$(".btn_Batch").removeClass('selected');
-		 $(this).addClass('selected2');
-	    $("#Cart_Labe11").hide();
-	    $("#Cart_Labe12").show();  
-		  return false;
-	}).find('a').focus(function(){
-			this.blur();
-	});
-});
-</script>
-<!--總計(含加購商品)高度設定-->
-<script type="text/javascript">
-$(document).ready(function(){
-	var AddItemNoticeHeight = $(".Cart_Total_half").outerHeight(true);
-	$(".Cart_AddItemNotice_separateline").css("height",AddItemNoticeHeight);
-	$(".Cart_AddItemNotice_layout").css("height",AddItemNoticeHeight);
-});
-
-</script>
-<!--總計(含加購商品)高度設定 end-->
-
-<!--20161206 Roger 新增icon說明視窗用-->
 <script type="text/javascript"  language="javascript">  
 
 $(document).ready(function(){
@@ -82,1828 +32,1847 @@ $(document).ready(function(){
         intBrowserH = document.body.clientHeight;
     }
 
-    var LegendInfoPositionX = (intBrowserW - 700)/2;
-    var LegendInfoPositionY = (intBrowserH - 500)/2;
-    $(".LegendInfo_iframe_layout").css({
-        top:LegendInfoPositionY,
-        left:LegendInfoPositionX
+    //小視窗漢堡選單開啟/收合
+    $('.HeadMenu_btn').click(function(){
+    	$(this).toggleClass('active');
+    	$('.HeadMenu').slideToggle('fast');
     });
 
-    //點選任意icon圖示出現說明視窗
-    $(".legend_layout").click(function(){
-        $(".bg_black").css("display","block");
-        $(".bg_black").animate({
-            opacity:1
-        },500);
-    });
-
-    //點選關閉按鈕關閉視窗
-    $(".LegendInfo_iframe_closeBTN").click(function(){
-        $(".bg_black").animate({
-            opacity:0
-        },500,function(){
-            $(".bg_black").css("display","none");
-        });
-
-    });
-
-    //footermenu置中
-    var FooterMenuWidth = $('.FooterMenu').width();
-    var FooterWidth = $('.FooterMenu').parent().width();
-    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
-
-    $('.FooterMenu').css('margin-left',FooterPositionX);
-});
-
-</script>
-<!--20161206 Roger 新增icon說明視窗用 end-->
-
-
-<script type="text/javascript">
-$(document).ready(function(){
-    var isOnlyAddItemGo = $(".CartList_Item_location").children().eq(0).prop("tagName");
-    if (isOnlyAddItemGo == "A"){
-    	$(".CartList_Title").css("margin-bottom","20px");
+    //大視窗確認18歲位置
+    if (intBrowserW > 1199){
+    	var SumHeight = $('.sum_position').outerHeight(true);
+    	var SumTopPosition = 161;
+    	$('.confirm18').css('top',SumHeight + SumTopPosition);
     } else {
-    	
+    	$('.confirm18').css('top','unset');
     }
 
-    //左側按鈕文字置中
-    $(".CartOptionBox .OneOption").each(function(){
-    	var TextHeight = $(this).children().height();
-    	var TextMarginTop = (65 - TextHeight)/2;
-    	$(this).children().css('margin-top',TextMarginTop);
-    });
+    //大視窗scroll時小計&確認18歲位置調整
+    var Scrolltimer
 
-    //checkbox點擊左側按鈕樣式調整
-    $('.CartList_ItemCheckbox_position[type="checkbox"]').click(function(){
-    	var IsChecked = false;
-    	var CheckboxCount = $('.CartList_ItemCheckbox_position[type="checkbox"]').length;
-    	var CheckedCount = $('.CartList_ItemCheckbox_position[type="checkbox"]:checked').length;
-    	//選取數等於全選
-    	if (CheckedCount == CheckboxCount){
-    		$('#Btn_Choseall').removeClass('active');
-	    	$('#Btn_Traceall, #Btn_Deleteall').addClass('active');
-    		$('#Btn_Choseall span').text('取消全選');
-    		$('#Btn_Choseall').addClass('Btn_Cancelall');
-    	}
-    	//沒有全部選取
-    	else {
-    		$('#Btn_Choseall span').text('選擇全部');
-    		$('#Btn_Choseall').removeClass ('Btn_Cancelall');
-    		for (i=0;i<CheckboxCount;i++) {
-	    		if($('.CartList_ItemCheckbox_position[type="checkbox"]').eq(i).prop('checked')) {
-	    			IsChecked = true;
-	    			break;
+	$(window).scroll(function(){
+
+	    window.clearTimeout(Scrolltimer)
+
+	    Scrolltimer = window.setTimeout(function() {
+	    	if (intBrowserW > 1199){
+	    		
+	    		var ScrollTopPisition = $(window).scrollTop();
+
+	    		if (ScrollTopPisition > 100){
+	    			//原始top各-96px
+	    			$('.sum_position').css('top',65);
+	    			if ($('#storage').hasClass('active')){
+	    				var OrderSumStorageHeight = $('.order_sum_storage').outerHeight(true);
+	    				$('.confirm18').css('top',SumHeight + SumTopPosition - 96 +OrderSumStorageHeight);
+	    			} else {
+	    				$('.confirm18').css('top',SumHeight + SumTopPosition - 96);
+	    			}
+	    			
 	    		} else {
-	    			IsChecked = false;
+	    			$('.sum_position').css('top',161);
+	    			if ($('#storage').hasClass('active')){
+	    				var OrderSumStorageHeight = $('.order_sum_storage').outerHeight(true);
+	    				$('.confirm18').css('top',SumHeight + SumTopPosition + OrderSumStorageHeight);
+	    			} else {
+	    				$('.confirm18').css('top',SumHeight + SumTopPosition);
+	    			}
 	    		}
+
 	    	}
 
-	    	if (IsChecked) {
-	    		$('#Btn_Choseall').removeClass('active');
-	    		$('#Btn_Traceall, #Btn_Deleteall').addClass('active');
+	    }, 100)
+	});
 
-	    	} else {
-	    		$('#Btn_Choseall').addClass('active');
-	    		$('#Btn_Traceall, #Btn_Deleteall').removeClass('active');
-	    	}
-    	}
+	//客製checkbox
+	$('.icon_check').click(function(){
+		$(this).toggleClass('active');
+	});
+
+	//酒款全選
+	$('.check_all').click(function(){
+		$(this).children().toggleClass('active');
+		var IsActive = $(this).children().hasClass('active');
+		if (IsActive) {
+			$('.cart_list_layout .option_check').each(function(){
+				$(this).children().addClass('active');
+			});
+		} else {
+			$('.cart_list_layout .option_check').each(function(){
+				$(this).children().removeClass('active');
+			});
+		}
+	});
+
+	//合併出貨整個一起點
+	$('.btn_combine').click(function(){
+		$(this).children('.icon_check').toggleClass('active')
+	});
+
+	//確認18歲整個一起點
+	$('.confirm18').click(function(){
+		$(this).find('.icon_check').toggleClass('active');
+			setTimeout(function(){
+				if (intBrowserW < 740){
+					$('.animate_slideupbox').animate({top:'-60px'});
+		    		$('.confirm18').css('height','130px');
+				} else if (intBrowserW < 1200) {
+					$('.animate_slideupbox').animate({top:'-70px'});
+		   			$('.confirm18').css('height','150px');
+				} else {
+					$('.animate_slideupbox').animate({top:'-70px'});
+	    			$('.confirm18').css('height','150px');
+	  			}
+		    		
+		},100)
+	});
+
+	//宅配/儲酒切換
+	var IsStorage = false;
+	var Confirm18Move = false;
+	$('.delivery_type_chose .one_option').click(function(){
+		$(this).toggleClass('active');
+
+		//check 是否至少有一項被點選
+		var isChosen = 0;
+		$('.delivery_type_chose .one_option').each(function(){
+		    if ($(this).hasClass('active')) {
+		    	//do nothing
+		    } else {
+		    	isChosen = isChosen + 1;
+		    }
+		});
+
+		//沒選的話自動選宅配
+		if (isChosen > 1) {
+		 	$('#t-cat').click();
+		}
+
+		//下方顯示儲酒/宅配調整input
+		if ($('#t-cat').hasClass('active') && $('#storage').hasClass('active')){
+
+		    $('.count_price').each(function(){
+		    	$(this).find('.delivery').css('display','flex');
+		    });
+
+		    $('.count_price').each(function(){
+		    	$(this).find('.storage').css('display','flex');
+		    });
+
+		} else if ($('#storage').hasClass('active')){
+
+		    $('.count_price').each(function(){
+		    	$(this).find('.delivery').css('display','none');
+		    });
+
+		    $('.count_price').each(function(){
+		    	$(this).find('.storage').css('display','flex');
+		    });
+
+		} else if ($('#t-cat').hasClass('active')){
+
+		    $('.count_price').each(function(){
+		    	$(this).find('.delivery').css('display','flex');
+		    });
+
+		    $('.count_price').each(function(){
+		    	$(this).find('.storage').css('display','none');
+		    });
+
+		}
+
+		//小計區租金顯示
+		if ($('#storage').hasClass('active')) {
+		    $('.order_sum_storage').css('display','block');
+
+		    //大視窗時調整確認18歲位置
+		    if (intBrowserW > 1199){
+		    	var SumHeight = $('.sum_position').outerHeight(true);
+    			var SumTopPosition = 161;
+    			$('.confirm18').css('top',SumHeight + SumTopPosition);
+		    }
+		    
+		} else {
+		    $('.order_sum_storage').css('display','none');
+		    //大視窗時調整確認18歲位置
+		    if (intBrowserW > 1199){
+		    	var SumHeight = $('.sum_position').outerHeight(true);
+    			var SumTopPosition = 161;
+    			$('.confirm18').css('top',SumHeight + SumTopPosition);
+		    }
+		}
 
 
 
 
+	});
 
 
+	//送出確認信
+	$('#OrderSubmit').click(function(){
+    	//如果有儲酒但沒綁定，先call CheckLinkCard告訴客人要綁定
+    	//CheckLinkCard();
+    	
+    	//訂單狀態 一般：normal 含快速3點前:before3pm 含快速3點後:after3pm
+    	var OrderTimeStatus = 'before3pm'; 	
+    	PopWindow_Submit(OrderTimeStatus);
+    	$('.SubmitBTN').click(function(){
+    		ClosePop();
+    		//先設timeout 上線接loading畫面後移除
+    		setTimeout(function(){
+    			PopWindow_Submited();
+    		},1000);
+    	});
     });
 
-    //全選/取消全選
-    $('#Btn_Choseall').click(function(){
-    	var CheckboxCount = $('.CartList_ItemCheckbox_position[type="checkbox"]').length;
-    	var CheckedCount = $('.CartList_ItemCheckbox_position[type="checkbox"]:checked').length;
-    	//取消全選
-    	if (CheckedCount == CheckboxCount){
-    		$('.CartList_ItemCheckbox_position[type="checkbox"]').each(function(){
-	    		$(this).prop("checked", false);
-	    	});
-    		$('#Btn_Choseall').addClass('active');
-	    	$('#Btn_Traceall, #Btn_Deleteall').removeClass('active');
-	    	$('#Btn_Choseall span').text('選擇全部');
-    	}
-    	//全選
-    	else {
-    		$('.CartList_ItemCheckbox_position[type="checkbox"]').each(function(){
-	    		$(this).prop("checked", true);
-	    	});
-	    	$('#Btn_Choseall').removeClass('active');
-	    	$('#Btn_Traceall, #Btn_Deleteall').addClass('active');
-	    	$('#Btn_Choseall span').text('取消全選');
-    	}
-
+    //使用ecoupon
+    $('#UseCoupon').click(function(){
+    	UseEcoupon();
     });
 
-    //刪除品項視窗觸發
-    $('#Btn_Deleteall').click(function(){
-    	if($(this).hasClass('active')){
-    		Pops('#notice_DeleteWine');
-    	}
+    //使用紅利 (先開登入畫面)
+    //資料範例
+    var BonusData = 566
+    $('#UseBouns').click(function(){
+    	MemberLogin();
+    	$('.notice_confirmBTN').click(function(){
+    		ClosePop();
+    		//先設timeout 上線接loading畫面後移除
+    		setTimeout(function(){
+    			UseBonus(BonusData);
+    		},1000);
+    	});
     });
 
-    //scroll event 超過小計時隱藏整批操作按鈕
-    var timer
-    var CartListHeight = 0;
-    CartListHeight = $('.CartALL').outerHeight(true) - $('.Sum_border').outerHeight(true) - $('.above18Proclaim').outerHeight(true) - $('.BTN_CONSULT').outerHeight(true) - $('.CartAddItem').outerHeight(true) - $('.CartGift').outerHeight(true) + 100;
+    //活動折扣詳細資訊
+    //資料範例
+    var EventDiscountData = [
+    	{
+    		Name: '波爾多紅酒任選二款(含以上)79折優惠',
+    		Discount: '200'
+    	},
+    	{
+    		Name: 'Domaine Geantet Pansiot任選六瓶 加碼送老酒開瓶器',
+    		Discount: '356'
+    	},
+    	{
+    		Name: 'Zenato Ripassa Valpolicella Superiore 買二送一超值優惠',
+    		Discount: '1,500'
+    	}
+    ]
 
-    $(window).scroll(function(){
-    	window.clearTimeout(timer)
+    $('#EventDiscountInfo').click(function(){
+    	EventDiscountInfo(EventDiscountData);
+    });
 
-    	timer = window.setTimeout(function() {
-	        var NowScrollTop = $(window).scrollTop();
-	        if (NowScrollTop > CartListHeight) {
-	        	$('.CartOptionBox').fadeOut();
-	        } else {
-	        	$('.CartOptionBox').fadeIn();
-	        }
-	    }, 50)
-    })
+    //刪除品項
+    $('#Delete_All').click(function(){
+    	CartDeleteItem();
+    });
+
+    //已租箱數說明
+    $('#StorageInfo_BTN').click(function(){
+    	StroageInfo();
+    });
+
+    //綁定信用卡完成
+    $('.btn_linkedcard').click(function(){
+    	LinkedCard();
+    });
+
+    //組合商品展開/收合商品內容
+    $('.btn_group_wine_detail_extend').click(function(){
+    	$(this).find('.icon_extend').toggleClass('active');
+    	$(this).next().slideToggle('fast');
+    });
+
 });
+
+//resize要做的
+$(window).resize(function(){
+	//瀏覽器內容寬度
+    var intBrowserW = 0;
+    //瀏覽器內容高度
+    var intBrowserH = 0;
+    //取得瀏覽器內容寬度/高度
+    if (document.documentElement) {
+        intBrowserW = document.documentElement.clientWidth;
+        intBrowserH = document.documentElement.clientHeight;
+    } else {
+        intBrowserW = document.body.clientWidth;
+        intBrowserH = document.body.clientHeight;
+    }
+
+    //大視窗確認18歲位置
+    if (intBrowserW > 1199){
+    	var SumHeight = $('.sum_position').outerHeight(true);
+    	var SumTopPosition = 161;
+    	$('.confirm18').css('top',SumHeight + SumTopPosition);
+    } else {
+    	$('.confirm18').css('top','unset');
+    }
+});
+
 </script>
+
 
 
 
 </head>
 <body>
 <div class="HeadALL">
+	<div class="HeadMenu_btn">
+		<a class="navicon-button uarr" id="menuBTN">
+			<div class="navicon"></div>
+		</a> 
+	</div>
     <div class="HeadMenu">
-            <!--a href="" class="LogOut">會員登出</a-->
-            <a href="" class="HeadMenuLogin">會員登入</a>
-            <a href="" class="Reconfirmed">沒有收到確認信?</a>
-            <a href="" class="MyList">我的清單</a>
-            <a href="" class="TrackingList">追蹤酒款</a>
-            <a href="" class="MobileVer">手機版</a>
-            <!--span class="AccountNumber">ich***, 您好</span-->
-        </div>
-    <div class="TagALL_Buy">
-    	<ul>
-        	<li class="TagLogo"><a href="index.html"></a></li>
-        	<!--20161206 Roger 修改img寬度-->
-            <li class="Process"> <img src="images/Step1.png" height="53" width="900" /></li>
-            <!--20161206 Roger 修改img寬度 end-->
-        </ul>
+        <!--a href="" class="LogOut">會員登出</a-->
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+        <!--span class="AccountNumber">ich***, 您好</span-->
+    </div>
+
+
+
+    <div class="TagALL_cart">
+    	<div class="TagLogo_layout">
+    		<a href="index.html" class="TagLogo"></a>
+    	</div>
     </div>
     
 </div>
 <!-- ================================= HeadALL 刊頭ALL =================================  -->
 
-
-
-
-<!-- CenterALL_BG start -->
-<div class="CenterALL_BG">
-
-	<!-- 版型控制 start --> 
-	<div class="CartALL">
-		<!--批次操作按鈕-->
-		<div class="CartOptionBox">
-			<div class="OneOption active" id="Btn_Choseall"><span>全選</span></div>
-			<div class="OneOption" id="Btn_Traceall"><span>加入<br/>追蹤酒款</span></div>
-			<div class="OneOption" id="Btn_Deleteall"><span>刪除</span></div>
+<!--content-->
+<div class="content_layout">
+	<section class="step_option">
+		<div class="cart_step_row">
+			<div class="one_step active">Step&nbsp;1</div>
+			<div class="icon_nextstep"></div>
+			<div class="one_step">Step&nbsp;2</div>
+			<div class="icon_nextstep"></div>
+			<div class="one_step">Step&nbsp;3</div>
+			<div class="icon_nextstep"></div>
+			<div class="one_step">Step&nbsp;4</div>
 		</div>
-		<!--批次操作按鈕 end-->
-		<!--免運調漲文字 公告時間過後移除-->
-		<div style="float:left;font-size:16px;margin-bottom: 10px;margin-left:5px;color:#c20012;">
-			公告：2019年7月1日起，免運費門檻將調整為$2,000元。<a href="https://www.icheers.tw/iCheers/EDM/2019Delivery_epaper_upload.html" target="_blank" style="text-decoration: underline;color: $296993;">瞭解詳情</a>
-		</div>
-		<!--免運調漲文字 公告時間過後移除 end-->
-		<!--出貨時態說明-->
-		<div class="legend_layout">
-			<div class="orange16 legend">
-				<span class="legend_fastIcon"></span>
-				快速到貨
+		<div class="options">
+			<div class="one_option check_all">
+				<div class="icon_check"></div>
+				<div class="text">選擇全部</div>
 			</div>
-			<!--20161206 Roger 修改文字-->
-			<div class="RED16 legend">
-				<span class="legend_buyIcon"></span>
-				一般配送
-			</div>
-			<!--20161206 Roger 修改文字 end-->
-			<div class="blue16 legend">
-				<span class="legend_preorderIcon"></span>
-				預訂商品
+			<div class="one_option" id="Delete_All">
+				<div class="icon_delete"></div>
+				<div class="text">刪除</div>
 			</div>
 		</div>
-		<div class="CLEAR"></div>
-		<!--出貨時態說明 end-->
-		<!-- 清單外框 start -->
-		<div class="Cart_Border"> 
-			<!-- 清單內容 start -->
-			<div class="Cart_List">        
-            <!--20150520 Rogerfix start-->
-            <!--一般配送-->
-            <div class="Normal_CartList_Normal_bg">
+		<div class="delivery_type_chose">
+			<div class="one_option active" id="t-cat">
+				<span class="text">宅配</span>
+			</div>
+			<div class="one_option" id="storage">
+				<span class="text">儲酒</span>
+			</div>
+		</div>
+	</section>
 
-            </div>
-            <!--20150520 Rogerfix end-->
+	<!--cart內容區-->
+	<div class="cartcontent_position">
+		<!--快速-->
+		<div class="DeliveryType_title DeliveryType_Fast">
+			<div class="Large_title">快速到貨</div>
+			<div class="Small_title">3點下單隔天到</div>		
+		</div>
+		
+		<div class="cart_list_layout">
+			<div class="cart_list_OneBottle">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="bottle_img">
+					<img src="images/pic/cu01.jpg"/>
+				</div>
+				<div class="bottle_info">
+					<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+					<div class="name_en">Torres, Grans Coronas </div>
+					<div class="status">
+						<span>2016</span>
+						<span>750&nbsp;ml</span>
+						<span>$&nbsp;795</span>
+						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="price">
+						<div class="text">小計</div>
+						<div class="bottle_price fast">$&nbsp;3,060</div>
+					</div>
+				</div>
+				<!--活動連結設在這-->
+				<div class="event_notice" onclick="window.open('https://www.icheers.tw/iCheers/');">
+					<div class="icon_notice">!</div>
+					<div class="text">
+						<span>未符合</span>波爾多紅酒任選二款(含以上)79折優惠，<a href="#">按此</a>加購商品，可享活動優惠！
+					</div>
+				</div>
+				 
+			</div>
+			<!--售完需刪除-->
+			<div class="cart_list_OneBottle cart_list_BottleSoldOut">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="bottle_img">
+					<img src="images/pic/cu01.jpg"/>
+				</div>
+				<div class="bottle_info">
+					<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+					<div class="name_en">Torres, Grans Coronas </div>
+					<div class="status">
+						<span>2016</span>
+						<span>750&nbsp;ml</span>
+						<span>$&nbsp;795</span>
+						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" disabled="disabled" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" disabled="disabled" />
+						<div class="icon_plus"></div>
+					</div>
+
+					<div class="price">
+						<div class="delete_text">售完需刪除</div>
+						<div class="text">小計</div>
+						<div class="bottle_price">$&nbsp;3,060</div>
+					</div>
+
+				</div>
+				
+				 
+			</div>
+			<!--啤酒樣式-->
+			<div class="cart_list_OneBottle">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="bottle_img">
+					<img src="images/pic/cu01.jpg"/>
+				</div>
+				<div class="bottle_info">
+					<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+					<div class="name_en">Torres, Grans Coronas </div>
+					<div class="status">
+						<span>2016</span>
+						<span>750&nbsp;ml</span>
+						<span>$&nbsp;795</span>
+						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
+					<div class="expired_date">賞味期：2021/12/31</div>
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="price">
+						<div class="text">小計</div>
+						<div class="bottle_price fast">$&nbsp;3,060</div>
+					</div>
+				</div>				 
+			</div>
+
+			<!--清酒樣式-->
+			<div class="cart_list_OneBottle">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="bottle_img">
+					<img src="images/pic/cu01.jpg"/>
+				</div>
+				<div class="bottle_info">
+					<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+					<div class="name_en">Torres, Grans Coronas </div>
+					<div class="status">
+						<span>2016</span>
+						<span>750&nbsp;ml</span>
+						<span>$&nbsp;795</span>
+						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
+					<div class="expired_date">出廠日：2021/12</div>
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="price">
+						<div class="text">小計</div>
+						<div class="bottle_price fast">$&nbsp;3,060</div>
+					</div>
+				</div>				 
+			</div>
+
+			<!--組合-->
+			<div class="cart_list_OneGroup">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="gropu_name">
+					【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="price">
+						<div class="text">小計</div>
+						<div class="bottle_price fast">$&nbsp;3,060</div>
+					</div>
+				</div>
+				<div class="btn_group_wine_detail_extend">
+					組合內容
+					<span class="icon_extend active"></span>
+				</div>
+				<div class="group_wine_detail" style="display: block;">
+					<div class="group_wine">
+						<div class="bottle_img">
+							<img src="images/pic/cu01.jpg"/>
+						</div>
+						<div class="bottle_info">
+							<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+							<div class="name_en">Torres, Grans Coronas </div>
+							<div class="status">
+								<span>2016</span>
+								<span>750&nbsp;ml</span>
+								<span>$&nbsp;795</span>
+							</div>
+						</div>
+					</div>
+					<div class="group_wine">
+						<div class="bottle_img">
+							<img src="images/pic/cu01.jpg"/>
+							<div class="bottle_count">x3</div>
+						</div>
+						<div class="bottle_info">
+							<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+							<div class="name_en">Torres, Grans Coronas </div>
+							<div class="status">
+								<span>2016</span>
+								<span>750&nbsp;ml</span>
+								<span>$&nbsp;795</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--組合售完-->
+			<div class="cart_list_OneGroup cart_list_BottleSoldOut">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="gropu_name">
+					【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="price">
+						<div class="delete_text">售完需刪除</div>
+						<div class="text">小計</div>
+						<div class="bottle_price">$&nbsp;3,060</div>
+					</div>
+				</div>
+				<div class="btn_group_wine_detail_extend">
+					組合內容
+					<span class="icon_extend active"></span>
+				</div>
+				<div class="group_wine_detail" style="display: block;">
+					<div class="group_wine">
+						<div class="bottle_img">
+							<img src="images/pic/cu01.jpg"/>
+						</div>
+						<div class="bottle_info">
+							<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+							<div class="name_en">Torres, Grans Coronas </div>
+							<div class="status">
+								<span>2016</span>
+								<span>750&nbsp;ml</span>
+								<span>$&nbsp;795</span>
+							</div>
+						</div>
+					</div>
+					<div class="group_wine">
+						<div class="bottle_img">
+							<img src="images/pic/cu01.jpg"/>
+							<div class="bottle_count">x3</div>
+						</div>
+						<div class="bottle_info">
+							<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+							<div class="name_en">Torres, Grans Coronas </div>
+							<div class="status">
+								<span>2016</span>
+								<span>750&nbsp;ml</span>
+								<span>$&nbsp;795</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				 
+			</div>
+
+			<!--一般活動-->
+			<div class="cart_list_event">
+				<div class="event_name">
+				Raúl Peréz 到港優惠75折起，滿6瓶再送電動刮鬍刀
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>750&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">小計</div>
+							<div class="bottle_price fast">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>750&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">小計</div>
+							<div class="bottle_price fast">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--任選活動-->
+			<div class="cart_list_event_special">
+				<div class="event_name">
+					iCheers推薦任選3瓶限時優惠價3500元
+				</div>
+				<div class="event_info">
+					<div class="row">
+						<div class="text">*此區商品總金額為$<span class="fast">7,000</span>元</div>
+					</div>
+					<div class="row">
+						<div class="text">*還差<span class="number">2</span>瓶可享活動優惠</div>
+					</div>
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg">
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>330&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4">
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0">
+							<div class="icon_plus"></div>
+						</div>
+					</div>				 
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg">
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>330&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4">
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0">
+							<div class="icon_plus"></div>
+						</div>
+					</div>				 
+				</div>
+				<div class="event_sum">
+					<div class="count_price">
+						<div class="price">
+							<div class="text">此區商品小計</div>
+							<div class="bottle_price fast">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--贈品任選-->
+			<div class="cart_list_gift">
+				<div class="gift_name">
+					Tequila Ocho 'Blanco"買就送Bundaberg葡萄柚氣泡飲*1瓶+Ocho Highball杯*1個 (可選2項商品)
+				</div>
+				<div class="gift_wine">
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">價值</div>
+							<div class="bottle_price">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+				<div class="gift_wine">
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">價值</div>
+							<div class="bottle_price">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--一般-->
+		<div class="DeliveryType_title DeliveryType_Normal">
+			<div class="Large_title">一般配送</div>
+			<div class="Small_title">下單後3個工作日到</div>		
+		</div>
+
+		<div class="cart_list_layout">
+			<div class="cart_list_OneBottle">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="bottle_img">
+					<img src="images/pic/cu01.jpg"/>
+				</div>
+				<div class="bottle_info">
+					<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+					<div class="name_en">Torres, Grans Coronas </div>
+					<div class="status">
+						<span>2016</span>
+						<span>750&nbsp;ml</span>
+						<span>$&nbsp;795</span>
+						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="price">
+						<div class="text">小計</div>
+						<div class="bottle_price normal">$&nbsp;3,060</div>
+					</div>
+				</div>
+				<!--活動連結設在這-->
+				<div class="event_notice" onclick="window.open('https://www.icheers.tw/iCheers/');">
+					<div class="icon_notice">!</div>
+					<div class="text">
+						<span>未符合</span>波爾多紅酒任選二款(含以上)79折優惠，<a href="#">按此</a>加購商品，可享活動優惠！
+					</div>
+				</div>
+				 
+			</div>
+			<!--組合-->
+			<div class="cart_list_OneGroup">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="gropu_name">
+					【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="price">
+						<div class="text">小計</div>
+						<div class="bottle_price normal">$&nbsp;3,060</div>
+					</div>
+				</div>
+				<div class="btn_group_wine_detail_extend">
+					組合內容
+					<span class="icon_extend active"></span>
+				</div>
+				<div class="group_wine_detail" style="display: block;">
+					<div class="group_wine">
+						<div class="bottle_img">
+							<img src="images/pic/cu01.jpg"/>
+						</div>
+						<div class="bottle_info">
+							<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+							<div class="name_en">Torres, Grans Coronas </div>
+							<div class="status">
+								<span>2016</span>
+								<span>750&nbsp;ml</span>
+								<span>$&nbsp;795</span>
+							</div>
+						</div>
+					</div>
+					<div class="group_wine">
+						<div class="bottle_img">
+							<img src="images/pic/cu01.jpg"/>
+							<div class="bottle_count">x3</div>
+						</div>
+						<div class="bottle_info">
+							<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+							<div class="name_en">Torres, Grans Coronas </div>
+							<div class="status">
+								<span>2016</span>
+								<span>750&nbsp;ml</span>
+								<span>$&nbsp;795</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--一般活動-->
+			<div class="cart_list_event">
+				<div class="event_name">
+				Raúl Peréz 到港優惠75折起，滿6瓶再送電動刮鬍刀
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>750&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">小計</div>
+							<div class="bottle_price normal">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>750&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">小計</div>
+							<div class="bottle_price normal">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--任選活動-->
+			<div class="cart_list_event_special">
+				<div class="event_name">
+					iCheers推薦任選3瓶限時優惠價3500元
+				</div>
+				<div class="event_info">
+					<div class="row">
+						<div class="text">*此區商品總金額為$<span class="normal">7,000</span>元</div>
+					</div>
+					<div class="row">
+						<div class="text">*還差<span class="number">2</span>瓶可享活動優惠</div>
+					</div>
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg">
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>330&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4">
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0">
+							<div class="icon_plus"></div>
+						</div>
+					</div>				 
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg">
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>330&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4">
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0">
+							<div class="icon_plus"></div>
+						</div>
+					</div>				 
+				</div>
+				<div class="event_sum">
+					<div class="count_price">
+						<div class="price">
+							<div class="text">此區商品小計</div>
+							<div class="bottle_price normal">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--贈品任選-->
+			<div class="cart_list_gift">
+				<div class="gift_name">
+					Tequila Ocho 'Blanco"買就送Bundaberg葡萄柚氣泡飲*1瓶+Ocho Highball杯*1個 (可選2項商品)
+				</div>
+				<div class="gift_wine">
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">價值</div>
+							<div class="bottle_price">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+				<div class="gift_wine">
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">價值</div>
+							<div class="bottle_price">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--預訂-->
+		<div class="DeliveryType_title DeliveryType_Preorder">
+			<div class="Large_title">預訂商品</div>
+			<div class="Small_title">預計到貨日：2025年11月</div>		
+		</div>
+
+		<div class="cart_list_layout">
+			<div class="cart_list_OneBottle">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="bottle_img">
+					<img src="images/pic/cu01.jpg"/>
+				</div>
+				<div class="bottle_info">
+					<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+					<div class="name_en">Torres, Grans Coronas </div>
+					<div class="status">
+						<span>2016</span>
+						<span>750&nbsp;ml</span>
+						<span>$&nbsp;795</span>
+						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="price">
+						<div class="text">小計</div>
+						<div class="bottle_price preorder">$&nbsp;3,060</div>
+					</div>
+				</div>
+				<!--活動連結設在這-->
+				<div class="event_notice" onclick="window.open('https://www.icheers.tw/iCheers/');">
+					<div class="icon_notice">!</div>
+					<div class="text">
+						<span>未符合</span>波爾多紅酒任選二款(含以上)79折優惠，<a href="#">按此</a>加購商品，可享活動優惠！
+					</div>
+				</div>
+				 
+			</div>
+			<!--組合-->
+			<div class="cart_list_OneGroup">
+				<div class="option_check">
+					<div class="icon_check"></div>
+				</div>
+				<div class="gropu_name">
+					【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
+				</div>
+				<div class="count_price">
+					<div class="count delivery">
+						<div class="text">宅配</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="4" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="count storage" style="display: none;">
+						<div class="text">儲酒</div>
+						<div class="icon_minus"></div>
+						<input type="number" class="bottle_number" value="0" />
+						<div class="icon_plus"></div>
+					</div>
+					<div class="price">
+						<div class="text">小計</div>
+						<div class="bottle_price preorder">$&nbsp;3,060</div>
+					</div>
+				</div>
+				<div class="btn_group_wine_detail_extend">
+					組合內容
+					<span class="icon_extend active"></span>
+				</div>
+				<div class="group_wine_detail" style="display: block;">
+					<div class="group_wine">
+						<div class="bottle_img">
+							<img src="images/pic/cu01.jpg"/>
+						</div>
+						<div class="bottle_info">
+							<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+							<div class="name_en">Torres, Grans Coronas </div>
+							<div class="status">
+								<span>2016</span>
+								<span>750&nbsp;ml</span>
+								<span>$&nbsp;795</span>
+							</div>
+						</div>
+					</div>
+					<div class="group_wine">
+						<div class="bottle_img">
+							<img src="images/pic/cu01.jpg"/>
+							<div class="bottle_count">x3</div>
+						</div>
+						<div class="bottle_info">
+							<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+							<div class="name_en">Torres, Grans Coronas </div>
+							<div class="status">
+								<span>2016</span>
+								<span>750&nbsp;ml</span>
+								<span>$&nbsp;795</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--一般活動-->
+			<div class="cart_list_event">
+				<div class="event_name">
+				Raúl Peréz 到港優惠75折起，滿6瓶再送電動刮鬍刀
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>750&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">小計</div>
+							<div class="bottle_price preorder">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>750&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">小計</div>
+							<div class="bottle_price preorder">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--任選活動-->
+			<div class="cart_list_event_special">
+				<div class="event_name">
+					iCheers推薦任選3瓶限時優惠價3500元
+				</div>
+				<div class="event_info">
+					<div class="row">
+						<div class="text">*此區商品總金額為$<span class="preorder">7,000</span>元</div>
+					</div>
+					<div class="row">
+						<div class="text">*還差<span class="number">2</span>瓶可享活動優惠</div>
+					</div>
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg">
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>330&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4">
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0">
+							<div class="icon_plus"></div>
+						</div>
+					</div>				 
+				</div>
+				<div class="cart_list_OneBottle">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg">
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+						<div class="status">
+							<span>2016</span>
+							<span>330&nbsp;ml</span>
+							<span>$&nbsp;795</span>
+							<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+						</div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4">
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0">
+							<div class="icon_plus"></div>
+						</div>
+					</div>				 
+				</div>
+				<div class="event_sum">
+					<div class="count_price">
+						<div class="price">
+							<div class="text">此區商品小計</div>
+							<div class="bottle_price preorder">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--贈品任選-->
+			<div class="cart_list_gift">
+				<div class="gift_name">
+					Tequila Ocho 'Blanco"買就送Bundaberg葡萄柚氣泡飲*1瓶+Ocho Highball杯*1個 (可選2項商品)
+				</div>
+				<div class="gift_wine">
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="4" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">價值</div>
+							<div class="bottle_price">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+				<div class="gift_wine">
+					<div class="bottle_img">
+						<img src="images/pic/cu01.jpg"/>
+					</div>
+					<div class="bottle_info">
+						<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+						<div class="name_en">Torres, Grans Coronas </div>
+					</div>
+					<div class="count_price">
+						<div class="count delivery">
+							<div class="text">宅配</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="count storage" style="display: none;">
+							<div class="text">儲酒</div>
+							<div class="icon_minus"></div>
+							<input type="number" class="bottle_number" value="0" />
+							<div class="icon_plus"></div>
+						</div>
+						<div class="price">
+							<div class="text">價值</div>
+							<div class="bottle_price">$&nbsp;3,060</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--紅利coupon-->
+		<div class="DeliveryType_title TitleType_BonusCoupon">
+			<div class="Large_title">紅利與Coupon</div>	
+		</div>
+		<div class="cart_list_layout">
+			<div class="cart_list_BonusCoupon">
+				<div class="BonusCoupon_img">
+					<img src="images/pic/bonus_s.jpg"/>
+				</div>
+				<div class="BonusCoupon_info">
+					會員消費送紅利 (普級會員 消費滿50元，送1點)
+				</div>
+				<div class="BonusCoupon_count">
+					<div class="text">共</div>
+					<div class="number">600</div>
+					<div class="text">點</div>
+				</div>
+			</div>
+			<div class="cart_list_BonusCoupon">
+				<div class="BonusCoupon_img">
+					<img src="images/pic/coupon_s.jpg"/>
+				</div>
+				<div class="BonusCoupon_info">
+					全館消費滿2000折300 
+				</div>
+				<div class="BonusCoupon_count">
+					<div class="text">共</div>
+					<div class="number">1</div>
+					<div class="text">張</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--小計區-->
+	<div class="sum_position">
+		<section class="order_sum">
+			<div class="order_summary">
+				您的清單內有<span>5</span>個項目，數量合計<span>14</span><br/>
+				(宅配：10  儲酒：4)
+			</div>
+
+			<div class="order_sum_row">
+				<div class="title">商品小計</div>
+				<div class="number">$&nbsp;9,990</div>
+			</div>
+
+			<div class="order_sum_row">
+				<div class="title" id="EventDiscountInfo">活動折扣<span class="icon_info">i</span></div>
+				<div class="number">-&nbsp;$&nbsp;200</div>
+			</div>
+
+			<div class="order_sum_row">
+				<div class="title">紅利折抵<a href="#" id="UseBouns">使用</a><a href="#">清除</a></div>
+				<div class="number">-&nbsp;$&nbsp;0</div>
+			</div>
+
+			<div class="order_sum_row">
+				<div class="title">E-coupon優惠<a href="#" id="UseCoupon">使用</a><a href="#">清除</a></div>
+				<div class="number">-&nbsp;$&nbsp;0</div>
+			</div>
+		</section>
+		<section class="order_sum order_sum_dark">
+			<div class="order_sum_row">
+				<div class="title">商品總額</div>
+				<div class="number">$&nbsp;9,900</div>
+			</div>
+			<!--需運費時顯示-->
+			<div class="order_sum_row">
+				<div class="title">運費<span class="icon_info" onclick="window.open('https://www.icheers.tw/iCheers/Content/HTML/Delivery_m.html');">?</span></div>
+				<div class="number">$&nbsp;200</div>
+			</div>
+			<!--免運費時顯示-->
+			<!--
+			<div class="order_sum_row">
+				<div class="title">運費<span class="icon_info">?</span></div>
+				<div class="text">&#10004;&nbsp;免運費</div>
+			</div>
+			-->
+			<div class="order_sum_btnrow">
+				<div class="btn_combine">
+					<div class="icon_check"></div>
+					<div class="text">等商品到齊再一起出貨</div>
+				</div>
+				<div class="btn_freedelivery">
+					<a href="#">湊免運</a>，還差&nbsp;<span>$&nbsp;198</span>
+				</div>
+			</div>
+		</section>
+		<!--已綁定-->
+		<!--
+		<section class="order_sum order_sum_storage" style="display:none;">
+			<div class="order_sum_row">
+				<div class="title">儲酒租金(/箱/天)</div>
+				<div class="number">$&nbsp;1</div>
+			</div>
+			<div class="order_sum_row">
+				<div class="title">已租箱數<span class="icon_info">?</span></div>
+				<div class="number">0</div>
+			</div>
+			<div class="order_sum_row">
+				<div class="title">新租箱數</div>
+				<div class="number">1</div>
+			</div>
+			<div class="order_sum_btnrow">
+				<div class="only_text">&#10004;&nbsp;已綁定信用卡</div>
+			</div>
+		</section>
+		--> 
+		<!--未綁定-->
+		<section class="order_sum order_sum_storage" style="display: none;">
+			<div class="order_sum_row">
+				<div class="title">儲酒租金(/箱/天)</div>
+				<div class="number">$&nbsp;1</div>
+			</div>
+			<div class="order_sum_row">
+				<div class="title">新租箱數</div>
+				<div class="number">1</div>
+			</div>
+			<div class="order_sum_btnrow">
+				<div class="btn_linkedcard">綁定信用卡</div>
+			</div>
+		</section>
+	</div>
+
+	<!--加價購-->
+	<div class="AddonContent_position">
+		<div class="DeliveryType_title TitleType_Addon">
+			<div class="Large_title">加價優惠商品</div>	
+		</div>
+		<div class="cart_list_addon">
+			<div class="addon_event_name">
+				防疫在家不無聊，來喝波爾多白酒！名莊出品超值加價購
+			</div>
+			<div class="addon_wine">
+				<div class="bottle_img">
+					<img src="images/pic/cu01.jpg">
+				</div>
+				<div class="bottle_info">
+					<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+					<div class="name_en">Torres, Grans Coronas </div>
+					<div class="status">
+						<span>2016</span>
+						<span>750&nbsp;ml</span>
+						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+			</div>
 			
-				<!-- 表頭 -->
-				<ul class="CartList_Title">
-					<li class="CartList_Checkbox"><a href=""></a></li>
-					<li class="CartList_Name"><a href=""></a></li>
-					<li class="CartList_Capacity"><a href=""></a></li>
-					<li class="CartList_Price"><a href=""></a></li>
-					<li class="CartList_Amount"><a href=""></a></li>
-					<li class="CartList_Sum"><a href=""></a></li>
-				</ul>
-				<div class="CLEAR"></div>	
-				
-				
-				<!-- 列表 -->
-                <div class="CartList_Item_location">
-					<ul class="CartList_Item"> 
-						<li class="CartList_ItemCheckbox">
-	                        <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-	                    </li>
-						<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-						<li class="CartList_ItemName">
-							<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-							<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-							<div class="CartList_Item_iconRow">
-								<div class="CartList_Item_iconRow_noBouns" title="特殊商品不適用紅利累計"></div>
-								<div class="CartList_Item_iconRow_FreightNeedIcon" title="文字再問學涵"></div>
-								<div class="CartList_Item_iconRow_MoneyTransferIcon" title="文字再問學涵"></div>
-							</div>
-							<!--20170814 Roger 新增 end-->
-						</li>    
-						<li class="CartList_ItemCapacity">
-							<div class="WineCapacity_small">375ml</div>
-	                    </li>                 
-						<li class="CartList_ItemPrice">
-	                     $<strike>113,500</strike><br />
-						 $<span class="orange16">113,500</span><br />
-	                    </li>					
-						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" onchange="Pops('#notice11')" />瓶
-						</li>
-						<li class="CartList_ItemSum">$<span class="orange16">113,500</span></li>
-						
-						<div class="clear"></div>
-						<a href="">
-							<div class="CartList_EventNoticeBox">
-								<span>!&nbsp;未符合</span>
-								<span class="EventText">波爾多紅酒任選二款(含以上)79折優惠，按此加購商品，可享活動優惠！</span>
-								<div class="clear"></div>
-							</div>
-						</a>
-					</ul>
-					<div class="CartList_LineLine"></div>
-					<!--20160920 Roger 新增啤酒品項樣式-->
-					<ul class="CartList_Item"> 
-						<li class="CartList_ItemCheckbox">
-	                        <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-	                    </li>
-						<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic/beer_square01.jpg" width="53" height="53"/></a></li>
-						<li class="CartList_ItemName">
-							<p class="CartList_ItemNameCN"><a href="#">黑巧克力司陶特啤酒</a></p>
-							<p class="CartList_ItemNameEN"><a href="#">Brooklyn Black</a></p>
-							<p>到期日：2016/11</p>
-						</li>
-						<li class="CartList_ItemCapacity">
-	                     	<div class="WineCapacity_small">375ml</div>
-	                    </li>                                     
-						<li class="CartList_ItemPrice">
-	                     $<strike>113,500</strike><br />
-						 $<span class="orange16">113,500</span><br />
-	                    </li>					
-						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />瓶
-						</li>
-						<li class="CartList_ItemSum">$<span class="orange16">113,500</span></li>
-						
-						<div class="clear"></div>
-					</ul>
-					<!--20160920 Roger 新增啤酒品項樣式 end-->
-					<div class="CartList_LineLine"></div>
-					<ul class="CartList_Item"> 
-						<li class="CartList_ItemCheckbox">
-	                        <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-	                    </li>
-						<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-						<li class="CartList_ItemName">
-							<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-							<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						</li>
-						<li class="CartList_ItemCapacity">
-	                     	<div class="WineCapacity_small">750ml</div>
-	                    </li>                                    
-						<li class="CartList_ItemPrice">
-	                     $<strike>113,500</strike><br />
-						 $<span class="orange16">113,500</span><br />
-	                    </li>					
-						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />瓶
-						</li>
-						<li class="CartList_ItemSum">$<span class="orange16">113,500</span></li>
-						
-						<div class="clear"></div>
-					</ul>
-					<div class="CartList_LineLine"></div>
-					<ul class="CartList_Item"> 
-						<li class="CartList_ItemCheckbox">
-	                        <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-	                    </li>
-						<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-						<li class="CartList_ItemName">
-							<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-							<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						</li>
-						<li class="CartList_ItemCapacity">
-	                     	<div class="WineCapacity_small">750ml</div>
-	                    </li>                               
-						<li class="CartList_ItemPrice">
-	                     $<strike>113,500</strike><br />
-						 $<span class="RED16">113,500</span><br />
-	                    </li>					
-						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" onchange="Pops('#notice12')" />
-							
-							瓶</li>
-						<li class="CartList_ItemSum">$<span class="RED16">113,500</span></li>
-						
-						<div class="clear"></div>
-					</ul>
-					<div class="CartList_LineLine"></div>				
-					<!-- 組合 -->
-					<ul class="CartList_Item Cart_Booking_line">
-						<li class="CartList_ItemCheckbox">
-	                    <!--20141124 Roger新增調整checkbox位置 start-->
-	                     <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-	                    <!--20141124 Roger新增調整checkbox位置 end--></li>
-						<li class="CartList_ItemPic"><img src="images/pic/Groups_IMG.jpg" width="53" height="53"/></li>
-						<li class="CartList_ItemName">
-							<p class="CartList_ItemNameCN"><a href="#"><span>歡樂春節套組</span></a></p>
-							<p class="CartList_ItemSales"><a href="#">波爾多超值組合優惠</a></p>
-						</li>
-						<li class="CartList_ItemCapacity">
-
-	                    </li>  
-						<li class="CartList_ItemPrice">$<strike>113,500</strike><br />
-							$<span class="RED16">113,500</span></li>
-						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-							組</li>
-						<li class="CartList_ItemSum">$<span class="RED16">25,300</span></em></li>
-						
-						
-						<!-- 組合內容 -->
-						<li class="CartList_GroupWrap"> 
-						
-							<!-- 組合細 項-->
-							<ul class="CartList_Group">
-								<li class="CartList_GroupPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-								<li class="CartList_GroupName">
-									<p class="CartList_GroupNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-									<p class="CartList_GroupNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-								</li>
-								<li class="CartList_ItemCapacity">
-			                     	<div class="WineCapacity_small">750ml</div>
-			                    </li>  
-	                            <li class="CartList_GroupListPrice">$<strike>113,500</strike></li>
-						
-								<li class="CartList_GroupAmount">1&nbsp;瓶</li>
-							</ul>
-							
-							<!-- 組合細 項-->
-							<ul class="CartList_Group">
-								<li class="CartList_GroupPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-								<li class="CartList_GroupName">
-									<p class="CartList_GroupNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-									<p class="CartList_GroupNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-								</li>
-								<li class="CartList_ItemCapacity">
-					                <div class="WineCapacity_small">750ml</div>
-					            </li>           
-	                            <li class="CartList_GroupListPrice">$<strike>113,500</strike></li>
-								<li class="CartList_GroupAmount">2&nbsp;瓶</li>
-							</ul>
-
-						</li>
-					</ul>
-					<a href="#"><div class="CartList_GiftItem_Second_title">iCheers 6月份限時優惠活動加999元可獲得brabra</div></a>
-					<ul class="CartList_Item"> 
-						<li class="CartList_ItemCheckbox">
-	                        <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-	                    </li>
-						<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-						<li class="CartList_ItemName">
-							<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-							<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						</li>
-						<li class="CartList_ItemCapacity">
-			                <div class="WineCapacity_small">750ml</div>
-			            </li>                        
-						<li class="CartList_ItemPrice">
-	                     $<strike>113,500</strike><br />
-						 $<span class="RED16">113,500</span><br />
-	                    </li>					
-						<li class="CartList_ItemAmount">
-							<input type="text" class="textarea2" value="2" size="2" maxlength="3" />
-							瓶</li>
-						<li class="CartList_ItemSum">$<span class="RED16">113,500</span></li>
-						
-						<div class="clear"></div>
-					</ul>
-                </div>
-                <div class="CartList_Preorder_bg2"></div>	
-                
-                <!-- 任選優惠價 -->
-                <!--20150520 Rogerfix start-->
-                <div class="CartList_ItemAllchoice_location">
-                <!--20150520 Rogerfix end-->
-				<ul class="CartList_ItemAllchoice">
-                       	<!--20150518 Rogerfix start-->
-                	   	<div class="CartList_ItemAllchoice_bg">
-	                        <a href="#">
-	                         <span class="CartList_ItemAllchoice_title">
-	                          iCheers推薦任選3瓶限時優惠價3500元
-	                         </span>
-	                        </a>
-                       	</div>             
-                       	<!--20150518 Rogerfix end-->
-                       	<div style="margin: 5px 0;display:inline-block;width:100%;">
-                       		<div class="CartList_ItemAllchoice_save">※此區商品總金額為$ <span>999</span>元</div>
-                       		<div class="CartList_ItemAllchoice_status">此區優惠商品僅能統一出貨，目前時態：<span>一般出貨</span>，約<span>3-5</span>個工作日</div>
-                       	</div>
-                    <li class="CartList_ChooseGroupWrap"> 
-				<!-- 任選優惠商品項目 -->
-                <ul class="CartList_ChooseItem">
-                    <li class="CartList_ChooseItemCheckbox">
-                    <!--20141124 Roger新增調整checkbox位置 start-->
-                     <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    <!--20141124 Roger新增調整checkbox位置 end--></li>
-					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_ChooseItemName">
-						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-                    </li>
-                    <li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li> 
-					<li class="CartList_ChooseItemPrice">
-                     $<strike>1,800</strike><br />
-					 $<span class="orange16">1,500</span><br />
-                    </li>
-					
-					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="2" size="2" maxlength="3" />
-						瓶</li>
-					<li class="CartList_ChooseItemSum">$<span class="orange16">3,000</span></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <ul class="CartList_ChooseItem">
-                    <li class="CartList_ChooseItemCheckbox">
-                    <!--20141124 Roger新增調整checkbox位置 start-->
-                     <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    <!--20141124 Roger新增調整checkbox位置 end--></li>
-					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_ChooseItemName">
-						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-                    </li>
-                    <li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_ChooseItemPrice">$<strike>1,700</strike><br />
-						$<span class="orange16">1,400</span></li>
-					
-					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-						瓶</li>
-					<li class="CartList_ChooseItemSum">$<span class="orange16">1,400</span></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <ul class="CartList_ChooseItem">
-                    <li class="CartList_ChooseItemCheckbox">
-                     	<input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    </li>
-					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_ChooseItemName">
-						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-                    </li>
-                    <li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_ChooseItemPrice">$<strike>1,600</strike><br />
-						$<span class="orange16">1,300</span></li>
-					
-					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="2" size="2" maxlength="3" />
-						瓶</li>
-					<li class="CartList_ChooseItemSum">$<span class="orange16">2,600</span></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <ul class="CartList_ChooseItem">
-                    <li class="CartList_ChooseItemCheckbox">
-                     	<input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    </li>
-					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_ChooseItemName">
-						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-                    </li>
-                    <li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_ChooseItemPrice">$<strike>1,500</strike><br />
-						$<span class="RED16">1,200</span></li>
-					
-					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="2" size="2" maxlength="3" />
-
-						瓶</li>
-					<li class="CartList_ChooseItemSum">$<span class="RED16">2,400</span></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <ul class="CartList_ChooseItem">
-                    <li class="CartList_ChooseItemCheckbox">
-                    
-                     	<input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    </li>
-					<li class="CartList_ChooseItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_ChooseItemName">
-						<p class="CartList_ChooseItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_ChooseItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-
-                    </li>
-                    <li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_ChooseItemPrice">$<strike>1,400</strike><br />
-						$<span class="RED16">1,100</span></li>
-					
-					<li class="CartList_ChooseItemAmount">
-						<input type="text" class="textarea2" value="1" size="2" maxlength="3" />
-						瓶</li>
-					<li class="CartList_ChooseItemSum">$<span class="RED16">1,100</span></li>
-					<div class="clear"></div>
-				</ul>
-                   </li>                                  		
-                        <div class="clear"></div>
-                   
-                </ul>
-                <div class="CartList_ItemAllchoice_bg2"></div>	
-                </div>
-                
-                <!-- 隔日到貨區列表 -->
-                
-                    
-				<!-- 預訂區列表 -->
-                <!--20150518 Rogerfix start-->
-                <div class="CartList_Preorder_bg"><span class="CartList_Preorder_title"><span class="CartList_Preorder_title_float">預訂商品</span><img src="images/icon/PreOrder_ICON_CartStep.png" width="17" height="15" class="CartList_Preorder_title_ExpressIcon" /></span></div>
-                <span class="Cart_Booking_title">預計到貨日：<span>2015</span> 年 <span>5</span>月</span>
-                <div class="CartList_Preorder_location">
-				<ul class="Cart_Preorder">
-                <!--20150518 Rogerfix end-->
-					<li class="CartList_ItemCheckbox">
-                     	<input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    </li>
-					<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_ItemName">
-						<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-					</li>
-					<li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_ItemPrice">$<strike>113,500</strike><br />
-						$<span class="blue16">113,500</span><br /><br />
-							
-						</li>
-					
-					<li class="CartList_ItemAmount">
-						<input type="text" class="textarea2" value="1" size="5" maxlength="5" />
-						瓶</li>
-					<li class="CartList_ItemSum">
-						$<span class="blue16">113,500</span>				
-					</li>
-					<div class="clear"></div>
-				</ul>
-				<div class="CartList_LineLine"></div>	
-				<ul class="Cart_Preorder">
-					<li class="CartList_ItemCheckbox">
-                     	<input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    </li>
-					<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_ItemName">
-						<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-					</li>
-					<li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_ItemPrice">$<strike>113,500</strike><br />
-						$<span class="blue16">113,500</span><br /><br />
-						</li>
-					
-					<li class="CartList_ItemAmount">
-						<input type="text" class="textarea2" value="1" size="5" maxlength="3" />
-						瓶</li>
-					<li class="CartList_ItemSum">
-						$<span class="blue16">113,500</span>				
-					</li>
-					<li class="CartList_ItemAuto"></li>
-					<div class="clear"></div>
-				</ul>
-                </div>
-                
-				<!-- 列表 -->
-                <span class="Cart_Booking_title">預計到貨日：<span>2015</span> 年 <span>5</span>月</span>
-                <div class="CartList_Preorder_location">
-				<ul class="Cart_Preorder">				
-					<li class="CartList_ItemCheckbox">
-                     <input name="" type="checkbox" value=""  class="CartList_ItemCheckbox_position"/>
-                    </li>
-					<li class="CartList_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_ItemName">
-						<p class="CartList_ItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_ItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-					</li>
-					<li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_ItemPrice">$<strike>113,500</strike><br />
-						$<span class="blue16">113,500</span><br /><br />
-							
-						</li>
-					
-					<li class="CartList_ItemAmount">
-						<input type="text" class="textarea2" value="1" size="5" maxlength="3" />
-						瓶</li>
-					<li class="CartList_ItemSum">
-						$<span class="blue16">113,500</span>				
-					</li>
-					<li class="CartList_ItemAuto"></li>
-					<div class="clear"></div>
-                    
-				</ul>
-                </div>
-			    <div class="CartList_Preorder_bg2"></div>
-                
-                <!-- 活動贈品區 任選 -->
-                <!-- 任選贈送 -->
-               <div class="CartList_GiftItem_bg"><div class="CartList_GiftItem_title">活動贈品</div></div>
-               <a href="#"><div class="CartList_GiftItem_Second_title">iCheers 6月份限時贈送好禮(任選1項商品)</div></a>
-               <div class="CartList_GiftItem_location">
-               <ul class="CartList_GiftItem">                     
-                    <li class="CartList_GiftItemCheckbox">
-                     	<input name="AddItem" type="radio" value="1" class="CartList_ItemCheckbox_position"/>
-                    </li>
-					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_GiftItemName">
-						<p class="CartList_GiftItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-
-					</li>
-					<li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_GiftItemPrice">
-						<div class="CartList_GiftItem_worthy">價值</div>
-						$113,500
-					</li>
-					
-					<li class="CartList_GiftItemAmount">
-						<span class="orange16">2</span>
-						瓶</li>
-					<li class="CartList_GiftItemSum"></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <div class="CartList_LineLine"></div>	
-                <!--專屬贈品贈送-->
-                <ul class="CartList_GiftItem">
-                    <li class="CartList_GiftItemCheckbox">
-                     	<input name="AddItem" type="radio" value="1" class="CartList_ItemCheckbox_position"/>
-                    </li>
-					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_GiftItemName">
-						<p class="CartList_GiftItemNameCN"><a href="#"><span>特選優質橄欖油</span></a></p>
-						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Olive oil</span></a></p>
-					</li>
-					<li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
-					
-					<li class="CartList_GiftItemAmount">
-						<span class="orange16">2</span>
-						件</li>
-					<li class="CartList_GiftItemSum"></li>
-					
-					<div class="clear"></div>
-				</ul>
-                
-                
-                </div>
-
-
-                <!-- 全部贈送 -->
-               <!--20150518 Rogerfix start-->
-               <a href="#"><div class="CartList_GiftItem_Second_title">iCheers 6月份限時贈送好禮(全部贈送)</div></a>
-               <div class="CartList_GiftItem_location">
-               <!--20150518 Rogerfix end-->
-               <ul class="CartList_GiftItem">
-                    <li class="CartList_GiftItemCheckbox"></li>
-					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_GiftItemName">
-						<p class="CartList_GiftItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-					</li>
-					<li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
-					
-					<li class="CartList_GiftItemAmount">
-						<span class="RED16">2</span>
-						瓶</li>
-					<li class="CartList_GiftItemSum"></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <div class="CartList_LineLine"></div>	
-                <!--專屬贈品贈送-->
-                <ul class="CartList_GiftItem">
-                    <li class="CartList_GiftItemCheckbox"></li>
-					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_GiftItemName">
-						<p class="CartList_GiftItemNameCN"><a href="#"><span>特選優質橄欖油</span></a></p>
-						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Olive oil</span></a></p>
-					</li>
-					<li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
-
-					
-					<li class="CartList_GiftItemAmount">
-						<span class="RED16">2</span>
-						件</li>
-					<li class="CartList_GiftItemSum"></li>
-					
-					<div class="clear"></div>
-				</ul>
-               
-                </div>
-                
-            <a href="#"><div class="CartList_GiftItem_Second_title">iCheers 6月份限時贈送好禮(全部贈送)</div></a>
-               <div class="CartList_GiftItem_location">
-               <!--20150518 Rogerfix end-->
-               <ul class="CartList_GiftItem">
-                    <li class="CartList_GiftItemCheckbox"></li>
-					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_GiftItemName">
-						<p class="CartList_GiftItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-
-					</li>
-					<li class="CartList_ItemCapacity">
-			            <div class="WineCapacity_small">750ml</div>
-			        </li>
-					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
-					
-					<li class="CartList_GiftItemAmount">
-						<span class="blue16">2</span>
-						瓶</li>
-					<li class="CartList_GiftItemSum"></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <div class="CartList_LineLine"></div>	
-                <!--專屬贈品贈送-->
-                <ul class="CartList_GiftItem">
-                    <li class="CartList_GiftItemCheckbox"></li>
-					<li class="CartList_GiftItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_GiftItemName">
-						<p class="CartList_GiftItemNameCN"><a href="#"><span>特選優質橄欖油</span></a></p>
-						<p class="CartList_GiftItemNameEN"><a href="#" ><span>Olive oil</span></a></p>
-					</li>
-
-					<li class="CartList_GiftItemPrice"><div class="CartList_GiftItem_worthy">價值</div>$113,500</li>
-
-					
-					<li class="CartList_GiftItemAmount">
-						<span class="blue16">2</span>
-						件</li>
-					<li class="CartList_GiftItemSum"></li>
-					
-					<div class="clear"></div>
-				</ul>
-               
-                </div>
-                         
-               
-            <div class="clear"></div> 
-            </div>          
-			<!-- 清單內容 end --> 
-           
-           <div class="Sum_border">
-            <div style="background:#f7f7f7;">            
-            <!--紅利積點專區-->               
-               <div style="margin-bottom:20px;height:1px;"></div>
-
-               <div class="CartList_Bouns_Second_title">會員消費送紅利 (普級會員 消費滿20元，送1點)</div>
-               <div class="CartList_Bouns_location">
-                <!--一般紅利點數-->
-                <ul class="CartList_Bouns">                    
-                    <li class="CartList_BounsCheckbox"></li>
-					<li class="CartList_BounsPic">
-                     <img src="images/Icon_Pig_2.png" width="53" height="53"/>
-                    </li>
-					<li class="CartList_BounsName">
-						<p class="CartList_BounsNameBonus"><span>紅利點數贈送</span></p>
-                        <p>出貨後7日寄出紅利贈送通知信</p>
-					</li>
-					<li class="CartList_BounsPrice"></li>
-					
-					<li class="CartList_BounsAmount">
-						<span>600</span>
-						點</li>
-					<li class="CartList_BounsSum"></li>		
-				</ul>                             
-                <div class="CartList_LineLine"></div>	
-                <div class="CartList_Bouns_location">
-                <ul class="CartList_Bouns">
-                    <li class="CartList_BounsCheckbox"></li>
-					<li class="CartList_BounsPic">
-                     <img src="images/Icon_Pig_2.png" width="53" height="53"/>
-                    </li>
-					<li class="CartList_BounsName">
-						<p class="CartList_BounsNameBonus"><span>紅利點數加倍送</span></p>
-                        <p>全館紅利滿萬加倍送</p>                      
-                        <p>出貨後7日寄出紅利贈送通知信</p>
-					</li>
-					<li class="CartList_BounsPrice"></li>
-					
-					<li class="CartList_BounsAmount">
-						<span>1200</span>
-						點</li>
-					<li class="CartList_BounsSum"></li>
-					
-					<div class="clear"></div>
-				</ul>
-                </div>
-               </div> 
-                
-               <!--酷碰專區-->              
-               
-               
-               <div class="CartList_Coupon_Second_title">全館消費滿2000折<font color=red>300</font></div>
-               <div class="CartList_Coupon_location">
-                <ul class="CartList_Coupon">
-                    <li class="CartList_CouponCheckbox"></li>
-					<li class="CartList_CouponPic">
-                     <img src="images/Icon_Money_2.png" width="53" height="53"/>
-                    </li>
-					<li class="CartList_CouponName">
-						<p class="CartList_CouponNameCoupon"><span>e-Coupon贈送</span></p>
-                        <p>出貨後7日寄出e-Coupon贈送通知信</p>
-					</li>
-					<li class="CartList_CouponPrice"></li>
-					
-					<li class="CartList_CouponAmount">
-						<span>2</span>
-						張</li>
-					<li class="CartList_CouponSum"></li>
-					
-					<div class="clear"></div>
-				</ul>               
-               </div>              
-             <div class="CartList_GiftItem_bg2"></div>
-    </div>
-	<!-- 總計 start -->
-	<div class="Cart_Total">        
-		<ul>
-			<li><span>商品總額</span><strong>$ 1,600</strong></li>
-            <li><span><a href="#">iCheers夏日白酒節</a> 活動折扣</span><strong>- $ 50</strong></li>
-            <li><span><a href="#">iCheers推薦任選3瓶限時優惠價3500元</a> 活動折扣</span><strong>- $ 1,200</strong></li>                    
-            <li><span>e-Coupon優惠(<a class="btn_eCoupon" id="ECouponBTN" href="javascript:();" >使用</a>) (<a href="javascript:void(0);" class="btn_eCoupon">清除</a>)</span><strong>- $ 100</strong></li>
-			<li><span>紅利折抵(<a class="btn_bonus" id="BonusBTN" href="javascript:();" >使用</a>) (<a href="javascript:void(0);" class="btn_bonus">清除</a>)</span><strong>- $ 50</strong></li>
-			    
-            <li class="EM3 "><span class="b">小計</span><strong class="b2">$ 1,400</strong></li>
-            <li ><span>慶祝新版首頁上線免運費</span><strong>$ 0</strong></li>     
-            <li ><span>運費(<a class="btn_bonus FreightBTN" href="https://www.icheers.tw/iCheers/EDM/Delivery.html" target="_blank">說明</a>)</span><strong>$ 200</strong></li>
-            <!--20170814 Roger 修改-->
-            <li class="FreightNotches" id="FreightNotches2">
-            	<div style="display:inline-block;">
-                    <table width="300" border="0" cellspacing="1" align="right" >
-                      <tr>
-                        <th width="139">折扣後商品總額</th>
-                        <th width="134">手續費(含運費)</th>
-                      </tr>
-                      <tr>
-                        <td bgcolor="#f2f2f2">1,499元以下</td>
-                        <td bgcolor="#ffffff">200元</td>
-                      </tr>
-                      <tr>
-                        <td bgcolor="#f2f2f2">1,500元(含)以上</td>
-                        <td bgcolor="#ffffff">0元</td>
-                      </tr>
-                    </table>
-                </div>
-                <div style="margin-top:5px;">*若有選購任一需運費商品，則不適用滿額免運費之優惠。</div>   
-            </li>
-            <!--20170814 Roger 修改 end-->
-            <li class="Cart_Total_line" style="height:2px;"></li>
-            <li><span class="b">總金額</span><strong class="b">$ 8,825</strong></li>
-            
-		</ul>
-	</div>
-	<!-- 總計 end -->
-	<!-- 總計(有加購商品) start -->
-	<div>
-		<div class="Cart_Total Cart_Total_half">        
-			<ul>
-				<li><span>商品總額</span><strong>$ 1,600</strong></li>
-	            <li><span><a href="#">iCheers夏日白酒節</a> 活動折扣</span><strong>- $ 50</strong></li>
-	            <li><span><a href="#">iCheers推薦任選3瓶限時優惠價3500元</a> 活動折扣</span><strong>- $ 1,200</strong></li>                    
-	            <li><span>e-Coupon優惠(<a class="btn_eCoupon" id="ECouponBTN" href="javascript:();" >使用</a>) (<a href="javascript:void(0);" class="btn_eCoupon">清除</a>)</span><strong>- $ 100</strong></li>
-				<li><span>紅利折抵(<a class="btn_bonus" id="BonusBTN" href="javascript:();" >使用</a>) (<a href="javascript:void(0);" class="btn_bonus">清除</a>)</span><strong>- $ 50</strong></li>
-				    
-	            <li class="EM3 "><span class="b">小計</span><strong class="b2">$ 1,400</strong></li>
-	            <li ><span>慶祝新版首頁上線免運費</span><strong>$ 0</strong></li>     
-	            <li ><span>運費(<a class="btn_bonus FreightBTN" href="https://www.icheers.tw/iCheers/EDM/Delivery.html" target="_blank">說明</a>)</span><strong>$ 200</strong></li>
-	            <!--20170814 Roger 修改-->
-	            <li class="FreightNotches" id="FreightNotches">
-	            	<div style="display:inline-block;">
-	                    <table width="300" border="0" cellspacing="1" align="right" >
-	                      <tr>
-	                        <th width="139">折扣後商品總額</th>
-	                        <th width="134">手續費(含運費)</th>
-	                      </tr>
-	                      <tr>
-	                        <td bgcolor="#f2f2f2">1,499元以下</td>
-	                        <td bgcolor="#ffffff">200元</td>
-	                      </tr>
-	                      <tr>
-	                        <td bgcolor="#f2f2f2">1,500元(含)以上</td>
-	                        <td bgcolor="#ffffff">0元</td>
-	                      </tr>
-	                    </table>
-	                </div>
-	                <div style="margin-top:5px;">*若有選購任一需運費商品，則不適用滿額免運費之優惠。</div>   
-	            </li>
-	            <!--20170814 Roger 修改 end-->
-	            <li class="Cart_Total_line" style="height:2px;"></li>
-	            <li><span class="b">總金額</span><strong class="b">$ 8,825</strong></li>       
-			</ul>
-		</div>
-
-		<div class="Cart_AddItemNotice_layout">
-			<div class="Cart_AddItemNotice_text_layout">
-				<div class="Cart_AddItemNotice_text">提醒！您已符合加價優惠條件，</div>
-				<div class="Cart_AddItemNotice_text" style="margin-top:10px;">
-					詳細品項請見
-					<span>加價GO</span>
+			<div class="addon_addcart_row normal">
+				<div class="original_price">定價&nbsp;&nbsp;$&nbsp;5,000</div>
+				<div style="width: 100%;display: flex;justify-content: flex-end">
+					<div class="price">
+						<div class="text">酒窩價</div>
+						<div class="number">$&nbsp;3,000</div>
+					</div>	
+					<div class="btn_addcart">加入清單<span class="icon_plus"></span></div>
 				</div>
+				
 			</div>
 		</div>
-<!-- 		<div class="Cart_AddItemNotice_separateline"></div> -->
-	</div>
-	<div class="CLEAR"></div>
-	<!-- 總計(有加購商品) end -->
-    
-    <!--20150518 Rogerfix start-->
-    <!--分批出貨-->
-    <div class="Cart_Delivery_bg" id="Cart_Delivery_bg">
-     <div class="Cart_Delivery_Yes" onclick="Pops('#notice13')">
-      我要分批出貨！
-     </div>
-     <div class="Cart_Delivery_No" onclick="$('#Cart_Delivery_bg').slideUp();">
-      不用了，謝謝！
-     </div>
-     <span class="Cart_Delivery">
-      <span style="color:yellow">注意！</span>您的清單內含有快速到貨∕預訂商品，可能會影響到出貨時間；請問是否分批出貨？
-     </span>
-    </div>
-    <!--20150518 Rogerfix end-->
-    </div>
-	<!-- 清單外框 end -->  
-
-  	<div class="CLEAR"></div>
-	<!-- 說明備註 start -->
-	<div class="above18Proclaim">
-		<li>本網站不鼓勵、不提倡飲酒。未成年請勿飲酒，飲酒過量有害健康，酒後不開車。</li>
-        <li><span class="redword">本網站僅提供商品資訊，恕<strong>不提供線上交易服務</strong>，網站上不可接受訂單或完成訂單確認。</span>如果對本網站所陳列的商品有興趣，請詳閱本宣告文後，點選「送出確認信」洽詢，本公司收到您的訊息後將有客服人員Email與您聯繫。</li>
-        <li>本網站酒類商品不得售予未滿十八歲之青少年，因此欲發送詢問希望進一步訊息時，<span class="redword">請務必確認<strong>訂購人及收貨人</strong>均為年滿十八歲以上之成年人。</span>如本網站服務人員與送貨人員在難以辨識訂購人或收貨人之年齡時，必會請對方提供證明文件，屆時敬請務必配合。</li>
-        <li><span class="redword">本公司保有隨時更動價格、取消或拒絕交易之權力</span>，若造成不便，敬請見諒。</li>
-		<li>iCheers愛酒窩非常重視您的隱私權，瞭解更多<a href="privacy_policy.aspx" target="_blank">隱私權政策</a>。</li>
-		<!--20180706 add refund ifno-->
-		<li>iCheers愛酒窩非常重視酒品品質，請將收到的酒品妥善保存於低溫環境，詳見<a href="#" target="_blank">品質宣言</a>，若未保存得當，恕不接受退換貨。</li>
-		<!--20180706 add refund ifno end-->
-		<li><span class="redword">威士忌商品恕無法使用e-Coupon，敬請見諒。</span></li>
-	</div> 
-	<!-- 說明備註 end -->  
-	
-	
-	<!-- 我已年滿18歲 start -->
-	<div class="BTN_CONSULT">
-     	<input name="old" onclick="Checkold();" type="checkbox" value="" id="chk1" /><span> 我已年滿18歲</span><br />
-     	　　並詳細閱讀與同意上述條款<br /><br />
-		<input type="button" value="送出確認信" class="btn_SendConfirmEmail3" id="img1" />
-		<input type="button" value="送出確認信" class="btn_SendConfirmEmail" id="img2" style="display: none" />
-		<br /><br />
-		<span><a href="index.html" target="_blank" class="btn_ContinueShopping">繼續逛逛</a></span>
-		<p>請確認商品明細及數量，送出確認信後恕無法變更<br/>如果沒有收到e-mail，請於星期一~五，9:00~12:00 13:00~18:00 <br />撥02-2926-3667聯絡客服人員(國定假日除外)</p>
-	</div>
-	<!-- 我已年滿18歲 end -->
-
-	
-	<div class="CLEAR"></div>	
-	<!-- 發送確認信視窗(一般) start -->
-    <div id="notice" class="notice_BG" style="width:550px;min-height:280px;display:none;">
-     	<div class="notice_title_layout">
-     		<div class="notice_title">發送確認信</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-	    <div id="notice_body" class="notice_body">
-    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的Email，客服夥伴將會盡快與您聯繫！</p>
-    	 	<div class="notice_body_input_layout">
-    	 		<span>Email</span>
-    	 		<input name="Email" type="text" style="width: calc(100% - 100px);" />
-    	 		<br/>
-	    	 		<input type="checkbox" style="margin-left: 75px;margin-top: 5px;">
-	    	 		<span style="font-size: 14px;font-weight:normal;margin-top: 5px;">記住我</span>
-    	 	</div>
-	     	<div class="notice_email_submitBTN"></div>
-    	 </div>
-    </div>
-   	<!-- 發送確認信視窗(一般) end -->
-
-   	<!-- 發送確認信視窗(皆為快速到貨商品) start -->
-    <div id="notice_1" class="notice_BG" style="width:670px;min-height:320px;">
-     	<div class="notice_title_layout">
-     		<div class="notice_title">發送確認信</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice_1')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-     	<div>
-		    <div class="notice_body">
-	    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的Email，客服夥伴將會盡快與您聯繫！</p>
-	    	 	<div class="notice_body_input_layout">
-	    	 		<span>Email</span>
-	    	 		<input name="Email" type="text" style="width: calc(100% - 100px);" />
-	    	 		<br/>
-	    	 		<input type="checkbox" style="margin-left: 75px;margin-top: 5px;">
-	    	 		<span style="font-size: 14px;font-weight:normal;margin-top: 5px;">記住我</span>
-	    	 	</div>
-	            <p>
-	            	快速到貨截單時間倒數計時：<span>HH</span>時<span>MM</span>分<span>SS</span>秒
-	            </p>
-	            <div class="CLEAR"></div>
-	            <p><span>*如遇例假日及國定假日則到貨時間順延</span></p>
-	            <div class="notice_body_radio_layout">
-	     			<input type="radio" name="1">
-	     			<span style="width:585px;">我需要快速到貨，我會在<em>HH:MM</em>前完成付款（Step4），逾時恕無法快速到貨</span>
-	     			<div class="CLEAR"></div>
-	     			<input type="radio" name="1">
-	     			<span style="width:585px;">我不急著用酒，以一般速度出貨即可</span>
-	            </div>
-	            
-	            <div class="CLEAR"></div>
-		     	<div class="notice_email_submitBTN"></div>
-	    	</div>
-	    </div>
-    </div>
-   	<!-- 發送確認信視窗(皆為快速到貨商品) end -->
-
-   	<!-- 發送確認信視窗(目前時間已超過當日結單時間) start -->
-    <div id="notice_2" class="notice_BG" style="width:670px;min-height:320px;">
-     	<div class="notice_title_layout">
-     		<div class="notice_title">發送確認信</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice_2')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-     	<div>
-		    <div id="notice_body" class="notice_body">
-	    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的Email，客服夥伴將會盡快與您聯繫！</p>
-	    	 	<div class="notice_body_input_layout">
-	    	 		<span>Email</span>
-	    	 		<input name="Email" type="text" style="width: calc(100% - 100px);" />
-	    	 		<br/>
-	    	 		<input type="checkbox" style="margin-left: 75px;margin-top: 5px;">
-	    	 		<span style="font-size: 14px;font-weight:normal;margin-top: 5px;">記住我</span>
-	    	 	</div>
-	            <p>
-	            	已經超過快速到貨截單時間：<span>HH:MM</span>，將於下個工作日安排出貨。
-	            </p>
-	            <div class="CLEAR"></div>
-	            <p><span>*如遇例假日及國定假日則到貨時間順延</span></p>
-		        <div class="notice_body_radio_layout">
-		     			<input type="radio" name="1">
-		     			<span style="width:585px;">我需要快速到貨，我會在下個工作日<em>HH:MM</em>前，完成付款！（Step4），逾時恕無法快速到貨</span>
-		     			<div class="CLEAR"></div>
-		     			<input type="radio" name="1">
-		     			<span style="width:585px;">我不急著用酒，以一般速度出貨即可</span>
-		        </div>
-	            <div class="CLEAR"></div>
-		     	<div class="notice_email_submitBTN"></div>
-	    	</div>
-	    </div>
-    </div>
-   	<!-- 發送確認信視窗(目前時間已超過當日結單時間) end -->
-
-   	<!-- 發送確認信視窗(皆為預購商品) start -->
-    <div id="notice_3" class="notice_BG" style="width:550px;min-height:300px;">
-     	<div class="notice_title_layout">
-     		<div class="notice_title">發送確認信</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice_3')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-	    <div id="notice_body" class="notice_body">
-    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，客服人員將會盡快與您e-mail聯繫！</p>
-    	 	<div class="notice_body_input_layout">
-    	 		<span>Email</span>
-    	 		<input name="Email" type="text" style="width: calc(100% - 100px);" />
-    	 	</div>
-            <p>
-            	您所選購的商品為預購商品品項，待商品到貨後，我們將立即為您安排出貨。
-            </p>
-	     	<div class="notice_email_submitBTN"></div>
-    	</div>
-    </div>
-   	<!-- 發送確認信視窗(皆為預購商品) end -->
-   	
-   	<!--刪除品項確認視窗-->
-   	<div id="notice_DeleteWine" class="notice_BG" style="width:450px;min-height:200px;">
-     	<div class="notice_title_layout">
-     		<div class="notice_title">刪除品項</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice_DeleteWine')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-	    <div id="notice_body" class="notice_body">
-    	 	<p>品項刪除後將無法復原，如果希望日後方便查詢，<br/>
-建議可將刪除的品項加入追蹤酒款。</p>
-			<div class="notice_btn_row">
-				<div class="notice_btn notice_btn_movetotracklist"></div>
-				<div class="notice_btn notice_btn_deletefromcart"></div>
+		<div class="cart_list_addon">
+			<div class="addon_event_name">
+				防疫在家不無聊，來喝波爾多白酒！名莊出品超值加價購
 			</div>
-
-    	</div>
-    </div>
-    <!--刪除品項確認視窗 end-->
-    
-    <!-- 加價商品 start -->
-	<div class="CartAddItem" id="CartAddItem">
-    	<div class="CartAddItem_bg"><div class="CartAddItem_title">加價優惠商品</div></div>
-    	<a href="#"><div class="CartList_AddItem_Second_title">iCheers 6月份限時優惠活動加999元可獲得brabra(任選1項商品)</div></a>
-		<div class="CartList_AddItem_location">
-                <ul class="CartList_AddItem">                    
-                    <li class="CartList_AddItemCheckbox">                 
-                    </li>
-					<li class="CartList_AddItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_AddItemName">
-						<p class="CartList_AddItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_AddItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_AddItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-						<p>不符合本次活動條件，將以酒窩價計算</p>
-					</li>
-					<li class="CartList_AddItemPrice">
-                     $<strike>113,500</strike><br />
-					 $<span class="blue16">113,500</span><br />
-                      <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
-                    </li>
-					<li class="CartList_AddItemAmount">
-						<div class="WineCapacity_small">375ml</div></li>
-					<li class="CartAddItem_addCart"><button class="CartAddItem_PreorderaddCart_btn" title="預訂商品"></button></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <div class="CartList_LineLine"></div>
-                <ul class="CartList_AddItem">
-                    <li class="CartList_AddItemCheckbox">                    
-                    </li>
-					<li class="CartList_AddItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_AddItemName">
-						<p class="CartList_AddItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_AddItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_AddItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-					   <p>不符合本次活動條件，將以酒窩價計算</p>
-                    </li>
-					<li class="CartList_AddItemPrice">$<strike>113,500</strike><br />
-						$<span class="blue16">113,500</span></li>
-					<li class="CartList_AddItemAmount">
-						<div class="WineCapacity_small">375ml</div></li>
-					<li class="CartAddItem_addCart"><button class="CartAddItem_PreorderaddCart_btn" title="預訂商品"></button></li>
-					<div class="clear"></div>
-				</ul>   
-                
-        </div>
-		<a href="#"><div class="CartList_AddItem_Second_title">iCheers 6月份限時優惠活動加999元可獲得brabra(任選1項商品)</div></a>
-		<div class="CartList_AddItem_location">
-                <ul class="CartList_AddItem">                    
-                    <li class="CartList_AddItemCheckbox">                 
-                    </li>
-					<li class="CartList_AddItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_AddItemName">
-						<p class="CartList_AddItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_AddItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_AddItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-						<p>不符合本次活動條件，將以酒窩價計算</p>
-					</li>
-					<li class="CartList_AddItemPrice">
-                     $<strike>113,500</strike><br />
-					 $<span class="RED16">113,500</span><br />
-                      <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
-                    </li>
-					<li class="CartList_AddItemAmount">
-						<div class="WineCapacity_small">375ml</div></li>
-					<li class="CartAddItem_addCart"><button class="CartAddItem_addCart_btn" title="加入清單"></button></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <div class="CartList_LineLine"></div>
-                <ul class="CartList_AddItem">
-                    <li class="CartList_AddItemCheckbox">                    
-                    </li>
-					<li class="CartList_AddItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_AddItemName">
-						<p class="CartList_AddItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_AddItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_AddItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-					   <p>不符合本次活動條件，將以酒窩價計算</p>
-                    </li>
-					<li class="CartList_AddItemPrice">$<strike>113,500</strike><br />
-						$<span class="RED16">113,500</span></li>
-					<li class="CartList_AddItemAmount">
-						<div class="WineCapacity_small">375ml</div></li>
-					<li class="CartAddItem_addCart"><button class="CartAddItem_addCart_btn" title="加入清單"></button></li>
-					<div class="clear"></div>
-				</ul>   
-                
-        </div>
-                <a href="#"><div class="CartList_AddItem_Second_title">iCheers 6月份限時優惠活動加999元可獲得brabra(可選購多項商品)</div></a>
-                <div class="CartList_AddItem_location">
-                              
-                <ul class="CartList_AddItem">
-                    <li class="CartList_AddItemCheckbox"></li>
-					<li class="CartList_AddItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_AddItemName">
-						<p class="CartList_AddItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_AddItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_AddItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-						<p>不符合本次活動條件，將以酒窩價計算</p>
-					</li>
-					<li class="CartList_AddItemPrice">
-                     $<strike>113,500</strike><br />
-					 $<span class="orange16">113,500</span><br />
-                     
-                      <!--20170814 Roger移除icon start-->
-	                      <!-- <img src="images/NoBouns_2.png" width="43" height="43" title="特殊商品不適用紅利累計" class="CartList_ItemPrice_NoBouns"/> -->
-	                     <!--20170814 Roger移除icon end-->
-                     
-                    </li>
-					
-					<li class="CartList_AddItemAmount">
-						<div class="WineCapacity_small">375ml</div></li>
-					<li class="CartAddItem_addCart"><button class="CartAddItem_FastaddCart_btn" title="加入清單"></button></li>
-					
-					<div class="clear"></div>
-				</ul>
-                <div class="CartList_LineLine"></div>	
-                <ul class="CartList_AddItem">
-                    <li class="CartList_AddItemCheckbox"></li>
-					<li class="CartList_AddItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-					<li class="CartList_AddItemName">
-						<p class="CartList_AddItemNameCN"><a href="#"><span>愛米歐．賽薇拉酒莊</span> <span>香波．蜜思妮</span> <span>一級</span> <span>「愛侶園」紅酒</span></a></p>
-						<p class="CartList_AddItemNameEN"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></p>
-						<p class="CartList_AddItemPlace"><a href="#" ><span class="LittleFlag"><img src="images/Country/France-Flag.png" width="42" height="32" /></span>&nbsp<a href="">法國 </a> &nbsp＞ &nbsp<a href="">Pauillac</a> &nbsp＞ &nbsp<a href="">加泰隆尼亞</a></p>
-					    <p>不符合本次活動條件，將以酒窩價計算</p>
-                    </li>
-					<li class="CartList_AddItemPrice">$<strike>113,500</strike><br />
-						$<span class="orange16">113,500</span></li>
-					
-					<li class="CartList_AddItemAmount">
-						<div class="WineCapacity_small">375ml</div></li>
-					<li class="CartAddItem_addCart"><button class="CartAddItem_FastaddCart_btn" title="快速到貨"></button></li>
-					
-					<div class="clear"></div>
-				</ul>
-              
-                </div>
-     </div>  
-     <!-- 加價商品 end -->
-    
-    <!--20150520 Rogerfix start-->
-    <!-- 相關商品 start -->
-	<div class="CartGift">
-    	<div class="CartAddItem_bg"><div class="CartAddItem_title">購買以上商品的人也買了</div></div>
-		
-		<!-- 商品 -->
-        <div class="CartGift_Item_location">
-        <ul class="CartGift_Item">
-        	<li class="CartGift_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-			<li class="CartGift_ItemName"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></li>
-			<li class="CartGift_ItemPrice">NT$ <span class="RED16">113,500</span></li>
-            <p class="CartGift_ItemExchange"><button class="ShoppingCart" title="加入清單"></button></p>
-        </ul>
-		
-		<!-- 商品 -->
-        <ul class="CartGift_Item">
-        	<li class="CartGift_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-			<li class="CartGift_ItemName"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></li>
-			<li class="CartGift_ItemPrice">NT$ <span class="orange16">113,500</span></li>
-            <p class="CartGift_ItemExchange"><button class="CartAddItem_FastaddCart_btn" title="快速到貨"></button></p>
-        </ul>
-		
-		<!-- 商品 -->
-        <ul class="CartGift_Item">
-        	<li class="CartGift_ItemPic"><a href="wine_detail.html"><img src="images/pic01.jpg" width="53" height="53"/></a></li>
-			<li class="CartGift_ItemName"><a href="#" ><span>Domaine Amiot-Servelle</span>, <span>Les Amoureuses 1<sup>er</sup> Cru</span>, <span>Chambolle Musigny</span>, <span>France 2007</span></a></li>
-			<li class="CartGift_ItemPrice">NT$ <span class="blue16">113,500</span></li>
-            <p class="CartGift_ItemExchange"><button class="CartAddItem_PreorderaddCart_btn" title="預訂商品"></button></p>
-        </ul>
-        </div>
-     </div>  
-     <!-- 相關商品 end -->
-     <!--20150520 Rogerfix end-->
-    
-	
-	
-	<!-- 確認送出視窗 start -->
-    <div id="notice2" class="notice_BG" style="width:350px;height:180px;display:none;">
-    	<div class="notice_title_layout">
-     		<div class="notice_title">還差一步！</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice2')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-	    <div id="notice2_body" class="notice_body">
-    		<p style="text-align:center;">請收Email完成付款。</p>
-      		<div class="notice_backhomeBTN"></div>
-	    </div>
-    </div>
-    <!-- 確認送出視窗 end -->
-    
-    
-	<div id="notice10" class="notice_BG" style="width:450px;height:310px;display:none;">
-    	<div class="notice_title_layout">
-     		<div class="notice_title">會員登入</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-	    <div id="notice10_body" class="notice_body">
-	    	<div class="notice_body_input_layout">
-    	 		<span style="width:48px;text-align:right;">帳號</span>
-    	 		<input name="Email" type="text" style="width: calc(100% - 120px);" />
-    	 	</div>
-    	 	<div class="notice_body_input_layout">
-    	 		<span style="width:48px;text-align:right;">密碼</span>
-    	 		<input name="Email" type="text" style="width: calc(100% - 120px);" />
-    	 	</div>
-
-    	 	<div class="notice_body_input_layout">
-    	 		<span>驗證碼</span>
-    	 		<input name="Email" type="text" style="width: 80px;" />
-    	 		<div class="notice_code_layout">
-    	 			<div class="notice_code_img"></div>
-    	 			<div class="notice_code_reflash"></div>
-    	 		</div>
-    	 		<div class="CLEAR"></div>
-    	 	</div>
-    	 	<div class="notice_forgotpassword_row">
-    	 		<span style="margin-left:80px;">忘記密碼</span>
-    	 		<span>申請帳號</span>
-    	 	</div>
-    	 	<div class="CLEAR"></div>
-    	 	<div class="notice_confirmBTN"></div>
-	    </div>
-    </div>
-    <!-- notice10 登入會員  -->
-    
-    
-	<!-- eCoupon優惠視窗 start -->
-    <div id="notice6" class="notice_BG" style="width:450px;height:260px;display:none;">
-    	<div class="notice_title_layout">
-     		<div class="notice_title">e-coupon優惠</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-	    <div id="notice6_body" class="notice_body">
-    		<p style="margin-left:8px;">請輸入e-Coupon號碼：</p>
-    		<div class="notice_body_input_layout">
-    			<input name="e-Coupon" type="text" style="width:calc(100% - 32px);margin-left:8px;" />
-    		</div>
-    		<p style="margin-top:-10px;margin-left:8px;"><span class="Whisky">威士忌商品恕無法使用e-Coupon，敬請見諒！</span></p>
-	     	<div class="notice_confirmBTN"></div>
-	    </div>
-    </div>
-	<!-- eCoupon優惠視窗 end -->
-
-
-	<!-- 紅利折點視窗 start -->
-    <div id="notice7" class="notice_BG" style="width:450px;height:260px;display:none;">
-    	<div class="notice_title_layout">
-     		<div class="notice_title">紅利折抵</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-	    <div id="notice7_body" class="notice_body">
-    		<p style="margin-left:8px;">您目前的紅利累計有<span>1234567</span>點，可折抵<span>1234567</span>元。</p>
-            <p style="margin-left:8px;">本次折抵點數：</p>
-            <div class="notice_body_input_layout">
-    			<input name="e-Coupon" type="text" style="width:calc(100% - 32px);margin-left:8px;margin-top:-10px;" />
-    		</div>
-	     	<div class="notice_confirmBTN"></div>
-	    </div>
-    </div>
-	<!-- 紅利折點視窗 end -->	
-	
-	<!-- 快速到貨商品數量不足-->
-	<div id="notice11" class="notice_BG" style="width:450px;height:290px;display:none;">	
-		<div class="notice_title_layout">
-     		<div class="notice_title">快速到貨商品數量不足</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice11')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-     	<div class="notice_body">
-     		<p>可快速到貨商品數量不足！目前僅剩<span>99</span>瓶。若您仍需要較多數量，將以常態方式出貨？</p>
-     		<p><span>✱如遇例假日及國定假日則出貨時間順延。</span></p>
-     		<div class="notice_body_radio_layout">
-     			<input type="radio" name="1">
-     			<span>好，我願意多等幾天</span>
-     			<input type="radio" name="1" style="margin-left:30px;">
-     			<span>不好，我要快速到貨</span>
-     		</div>
-     		<div class="CLEAR"></div>
-     		<div class="notice_confirmBTN"></div>
-     	</div>
-	</div>
-	<!-- 快速到貨商品數量不足 end-->
-
-	<!-- 可快速到貨商品-->
-	<div id="notice12" class="notice_BG" style="width:410px;height:200px;display:none;">	
-		<div class="notice_title_layout">
-     		<div class="notice_title">可快速到貨商品</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice12')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-     	<div class="notice_body">
-     		<p>您所選購的商品數量可快速到貨，下單後可進行快速出貨。</p>
-     		<p><span>✱如遇例假日及國定假日則出貨時間順延。</span></p>
-     		<div class="CLEAR"></div>
-     		<div class="notice_confirmBTN"></div>
-     	</div>
-	</div>
-	<!-- 可快速到貨商品 end-->
-
-	<!-- 分單提醒-->
-	<div id="notice13" class="notice_BG" style="width:410px;height:210px;display:none;">	
-		<div class="notice_title_layout">
-     		<div class="notice_title">分批出貨提醒</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice13')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-     	<div class="notice_body">
-     		<p>1. 單次出貨商品金額若未滿$1500，酌收運費<span>$200</span>元。</p>
-     		<p>2. 分批出貨限同一地址，若需配送至不同地址請分開下單！</p>
-     		<p>3. 預訂商品區若為不同預計到貨月份，也將分開出貨。</p>
-     		<div class="CLEAR"></div>
-     		<div class="notice_body_choseBTN_layout"> 
-     			<div class="notice_body_choseBTN">好的，我要分批出貨</div>
-     			<div class="notice_body_choseBTN">噢不！回上一步</div>
-     		</div>
-     		<div class="CLEAR"></div>
-     	</div>
-	</div>
-	<!-- 分單提醒 end-->			
-	
-	<!--20170126 Roger 修改-->
-	<!-- 黑貓配送時間調整 start -->
-    <div id="notice_14" class="notice_BG" style="width:600px;min-height:320px;">
-     	<div class="notice_title_layout">
-     		<div class="notice_title">年節送貨公告</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice_14')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-     	<div>
-		    <div class="notice_body" id="notice_14_body">
-		    	<!--20170126 Roger 新增年節送貨-->
-				<div>
-					<img src="images/news.jpg" style="width:100%;height:auto;">
+			<div class="addon_wine">
+				<div class="bottle_img">
+					<img src="images/pic/cu01.jpg">
 				</div>
-				<div style="margin-top: 16px;">
-					<p style="font-size: 14px;color: #666;">
-						<sapn style="color:#8db14d;text-decoration: underline;font-size: 18px;margin-right: 3px;">即日起至1/31日止綠燈期間</sapn>所完成至Step 4且已付款訂單，將是舊曆年前能正常出貨並能配合指定2/3前到貨日期、時段與隔日到貨的<span style="color:#b91f1d;text-decoration: underline;">最後機會</span>，敬請把握！！
-					</p>
-					<p>
-						<sapn style="color:#fbb55f;text-decoration: underline;font-size: 18px;margin-right: 3px;">2/1日起至2/14日止黃燈期間</sapn>所完成至Step 4且已付款訂單，仍會出貨，但快速到貨酒款恕無法隔日到貨，期間所有訂單將無法配合指定到貨日期、時段，並有可能於除夕夜之後才會收到商品，請特別留意！！
-					</p>
-					<p style="color:#717071;margin-top: 20px;font-size: 12px;">※貼心提醒：</p>
-					<p style="color:#717071;font-size: 12px;">
-						1.部分商品由於年節調貨不便無法供貨，iCheers愛酒窩將保有取消訂單之權利。
-					</p>
-					<p style="color:#717071;font-size: 12px;">
-						2.適逢送禮旺季，實際送達時間將依宅配人員路線安排為主，敬請提早選購，並盡速完成付款，以利及早收到商品。
-					</p>
-					<p style="color:#717071;font-size: 12px;">
-						3.2/6 iCheers尾牙，該日隔日到貨截單時間調整為至中午12點，客服服務提早至下午3點截止。
-					</p>
-					<p style="margin-top: 20px;">
-						<span style="color:#b91f1d;text-decoration: underline;font-size: 18px;margin-right: 3px;">2/15日起至2/20日止紅燈期間</span>所完成至Step 4且已付款訂單，將全面暫停出貨，並統一於2/21開工日起火速處理、陸續安排出貨。
-					</p>
-					<p>
-						<sapn style="color:#fbb55f;text-decoration: underline;font-size: 18px;margin-right: 3px;">2/21日起至2/22日止黃燈期間</sapn>所完成至Step 4且已付款訂單，一樣將火速處理，但恕無法保證3日內到貨。
-					</p>
-					<p>
-						<sapn style="color:#8db14d;text-decoration: underline;font-size: 18px;margin-right: 3px;">2/23日起綠燈期間</sapn>所完成至Step 4且已付款訂單，將全面恢復正常出貨！
-					</p>
-					<div class="notice_IseeBTN"></div>
+				<div class="bottle_info">
+					<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+					<div class="name_en">Torres, Grans Coronas </div>
+					<div class="status">
+						<span>2016</span>
+						<span>750&nbsp;ml</span>
+						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
 				</div>
-		    	<!--20170126 Roger 新增年節送貨 end-->
-	    	 	<!-- <p>為配合宅配公司讓員工兼顧工作及家庭生活的平衡，將於8/25起調整服務內容：</p>
-	    	 	
-	    	 		            <p style="margin-top:15px;">
-	    	 		            	<b>關於指定到貨日</b>
-	    	 		            	<em></em>
-	    	 		            </p>
-	    	 		            <p>
-	    	 		            	可指定到貨的<span>日期</span>：星期一～六，國定假日除外。
-	    	 		            </p>
-	    	 		            <p>
-	    	 		            	可指定到貨的<span>時段</span>：上午（08~13時）或者 下午（14~18時）。
-	    	 		            </p>
-	    	 	
-	    	 		            <p style="margin-top:15px;">
-	    	 		            	<b>關於離島冷藏宅配</b>
-	    	 		            	<em></em>
-	    	 		            </p>
-	    	 		            <p>
-	    	 		            	離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。
-	    	 		            </p>
-	    	 		            
-	    	 		            <p style="margin-top:10px;">謝謝您的配合，讓不論晴雨、揮汗送貨的物流業前線大哥大姊能夠兼顧工作與家庭！</p>
-	    	 		            <div class="CLEAR"></div>
-	    	 			     	<div class="notice_IseeBTN"></div> -->
-	    	</div>
-	    </div>
-    </div>
-   	<!-- 黑貓配送時間調整 end -->
-	<!--20170126 Roger 修改 end-->
+			</div>
+			
+			<div class="addon_addcart_row fast">
+				<div class="original_price">定價&nbsp;&nbsp;$&nbsp;5,000</div>
+				<div class="price">
+					<div class="text">酒窩價</div>
+					<div class="number">$&nbsp;3,000</div>
+				</div>	
+				<div class="btn_addcart">加入清單<span class="icon_plus"></span></div>
+			</div>
+		</div>
 
-	<!--20170814 Roger 新增-->
-	<!-- 贈品數量不符 start -->
-    <div id="notice_15" class="notice_BG" style="width:300px;min-height:200px;">
-     	<div class="notice_title_layout">
-     		<div class="notice_title">贈品數量不符</div>
-     		<div class="notice_title_closeBTN" onclick="Wops('notice_15')"></div>
-     		<div class="CLEAR"></div>
-     	</div>
-     	<div>
-		    <div class="notice_body">
-	    	 	<p>您可以再選更多贈品！</p>
-	    	 	<div class="notice_body_choseBTN_layout"> 
-	     			<div class="notice_body_choseBTN" style="height:60px;text-align:left;">沒關係謝謝，這些夠用了。</div>
-	     			<div class="notice_body_choseBTN" style="height:60px;text-align:left;">哦這麼好！<br>修改訂單去！</div>
-	     		</div>
-	     		<div class="CLEAR"></div>
-	    	</div>
-	    </div>
-    </div>
-   	<!-- 贈品數量不符 end -->
-	<!--20170814 Roger 新增 end-->
-    
-	</div>  
-    <!-- 頁籤 end -->
-	 <div class="CLEAR"></div>
-	   
-</div>
-<!-- 版型控制 end -->
-	
-<div class="CLEAR"></div>
-
-</div>
-<!-- CenterALL_BG end -->
-
-<div class="FooterALL">
-	<div class="Footer_position">
-		<ul class="FooterMenu">
-			<li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
-            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
-            <li><a href="" target="_parent">條款及細則</a>｜</li>
-            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
-            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
-		</ul>
-		<div class="FooterICON">
-			<button class="Quality"></button>
-			<button class="Join"></button>
-			<button class="Novice"></button>
+		<div class="cart_list_addon">
+			<div class="addon_event_name">
+				防疫在家不無聊，來喝波爾多白酒！名莊出品超值加價購
+			</div>
+			<div class="addon_wine">
+				<div class="bottle_img">
+					<img src="images/pic/cu01.jpg">
+				</div>
+				<div class="bottle_info">
+					<div class="name_cn">多利士酒廠．精選柯羅那紅酒</div>
+					<div class="name_en">Torres, Grans Coronas </div>
+					<div class="status">
+						<span>2016</span>
+						<span>750&nbsp;ml</span>
+						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
+				</div>
+			</div>
+			<div class="addon_addcart_row preorder">
+				<div class="original_price">定價&nbsp;&nbsp;$&nbsp;5,000</div>
+				<div class="price">
+					<div class="text">酒窩價</div>
+					<div class="number">$&nbsp;3,000</div>
+				</div>	
+				<div class="btn_addcart">加入清單<span class="icon_plus"></span></div>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="CLEAR"></div>
-<!-- FooterALL  頁腳 -->
-<div class="TC_And_UK_ALL">
-	<div class="TC_And_UK">
-		<ul>
-			<li class="Title">熱門葡萄酒類型與品種</li>
-			<li><a href="">
-				<h1>銀橡樹</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>查爾斯海德西克</h1>
-				<h2>Charles Heidsieck</h2>
-				</a></li>
-			<li><a href="">
-				<h1>Cristal酒店</h1>
-				<h2>Cristal</h2>
-				</a></li>
-			<li><a href="">
-				<h1>巴黎之花</h1>
-				<h2>Perrier Jouet</h2>
-				</a></li>
-			<li><a href="">
-				<h1>唐培裡儂</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>葡萄酒觀察家</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>酩和香檳</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>葡萄酒愛好者</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-		</ul>
-		<img src="images/icon/TC_And_UK.gif" />
-		<ul>
-			<li class="Title">熱門葡萄酒類型與品種</li>
-			<li><a href="">
-				<h1>銀橡樹</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>查爾斯海德西克</h1>
-				<h2>Charles Heidsieck</h2>
-				</a></li>
-			<li><a href="">
-				<h1>Cristal酒店</h1>
-				<h2>Cristal</h2>
-				</a></li>
-			<li><a href="">
-				<h1>巴黎之花</h1>
-				<h2>Perrier Jouet</h2>
-				</a></li>
-			<li><a href="">
-				<h1>唐培裡儂</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>葡萄酒觀察家</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>酩和香檳</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>葡萄酒愛好者</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-		</ul>
-		<img src="images/icon/TC_And_UK.gif" />
-		<ul>
-			<li class="Title">熱門葡萄酒類型與品種</li>
-			<li><a href="">
-				<h1>銀橡樹</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>查爾斯海德西克</h1>
-				<h2>Charles Heidsieck</h2>
-				</a></li>
-			<li><a href="">
-				<h1>Cristal酒店</h1>
-				<h2>Cristal</h2>
-				</a></li>
-			<li><a href="">
-				<h1>巴黎之花</h1>
-				<h2>Perrier Jouet</h2>
-				</a></li>
-			<li><a href="">
-				<h1>唐培裡儂</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>葡萄酒觀察家</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>酩和香檳</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-			<li><a href="">
-				<h1>葡萄酒愛好者</h1>
-				<h2>Silver Oak</h2>
-				</a></li>
-		</ul>
+	<div class="proclaim">
+		<div class="proclaim_row">
+			本網站不鼓勵、不提倡飲酒。未成年請勿飲酒，飲酒過量有害健康，酒後不開車。
+		</div>
+		<div class="proclaim_row">
+			<span>本網站僅提供商品資訊，<strong>恕不提供線上交易服務</strong>，網站上不可接受訂單或完成訂單確認。</span>如果對本網站所陳列的商品有興趣，請詳閱本宣告文後，點選「送出確認信」洽詢，本公司收到您的訊息後將有客服人員Email與您聯繫。
+		</div>
+		<div class="proclaim_row">
+			本網站酒類商品不得售予未滿十八歲之青少年，因此欲發送詢問希望進一步訊息時，<span>請務必確認<strong>訂購人及收貨人</strong>均為年滿十八歲以上之成年人。</span>如本網站服務人員與送貨人員在難以辨識訂購人或收貨人之年齡時，必會請對方提供證明文件，屆時敬請務必配合。
+		</div>
+		<div class="proclaim_row">
+			本公司保有隨時更動價格、取消或拒絕交易之權力，若造成不便，敬請見諒。
+		</div>
+		<div class="proclaim_row">
+			iCheers愛酒窩非常重視您的隱私權，瞭解更多<a href="">隱私權政策</a>。
+		</div>
+		<div class="proclaim_row">
+			iCheers愛酒窩非常重視酒品品質，請將收到的酒品妥善保存於低溫環境，詳見品質宣言，若未保存得當，恕不接受退換貨。
+		</div>
+	</div>
+
+	<div class="confirm18">
+		<div class="animate_slideupbox">
+			<div class="before_confirm18">
+				<div class="icon_check"></div>
+				<div class="text">
+					<div class="large">我已年滿18歲</div>
+					<div class="small">並詳細閱讀與同意網站條款</div>
+				</div>
+			</div>
+			<div class="btn_ordersubmit" id="OrderSubmit">送出確認信</div>
+			<div class="additem">
+				您已符合加價優惠條件，<br>詳細品項請見<span>加價GO</span>
+			</div>
+		</div>	
 	</div>
 </div>
-<!-- TC_And_UK_ALL 中英翻譯 -->
-<div class="CLEAR"></div>
-<div class="CopyRight"> Copyright © 2012 iCheers.tw All Rrights Reserved </div>
+<!--content end-->
+
+<div class="Warning_small_screen">
+	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+</div>
 <div class="Warning"><p></p></div>
 <!-- Warning 警語 -->
 
-<!--20161206 roger 新增icon說明視窗-->
+
 <!-- 黑底 start-->
 <div class="bg_black" id="bg_black">
-    <!--icon說明視窗-->
-    <div class="LegendInfo_iframe_layout">
-        <div class="LegendInfo_iframe_title_layout">
-            <div class="LegendInfo_iframe_title">到貨時間說明</div>
-            <div class="LegendInfo_iframe_closeBTN"></div>
+    <div class="notice_BG">
+    	<div class="notice_title_layout">
+            <div class="notice_title"></div>
+            <div class="notice_title_closeBTN" onclick="ClosePop();"></div>
             <div class="CLEAR"></div>
-            <div class="LegendInfo_iframe_body">
-                <div class="LegendInfo_iframe_body_title_layout">
-                    <div class="LegendInfo_iframe_body_title_icon">
-                        <img src="images/icon/BuyICONH22.png" />    
-                    </div>
-                    <div class="LegendInfo_iframe_body_title">一般配送</div>
-                    <div class="LegendInfo_iframe_body_title_line"></div>
-                    <div class="CLEAR"></div>
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    完成訂單後3-5個工作天內可收到商品。
-                </div>
-                <div class="LegendInfo_iframe_body_Noticetext">
-                    <span>※需知：</span>
-                    <span>若選擇匯款／線下刷卡，則會在收到款項之後才出貨，通常出貨的隔天就會收到商品。</span>
-                    <!--20161208 Roger 新增clear div-->
-                    <div class="CLEAR"></div>
-                    <!--20161208 Roger 新增clear div end-->
-                </div>
-                <div class="LegendInfo_iframe_body_title_layout" style="margin-top:15px;">
-                    <div class="LegendInfo_iframe_body_title_icon">
-                        <img src="images/icon/Fast_Icon22H.png" />    
-                    </div>
-                    <div class="LegendInfo_iframe_body_title">快速到貨</div>
-                    <div class="LegendInfo_iframe_body_title_line"></div>
-                    <div class="CLEAR"></div>
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    於每日截單時間<span>HH:MM</span>之前完成訂單，下一個工作天即可收到商品！
-                </div>
-                <div class="LegendInfo_iframe_body_Noticetext">
-                    ※如遇國定假日則會順延一天。
-                </div>
-                <div class="LegendInfo_iframe_body_text" style="font-weight:bold;color:#333333;">
-                    舉例說明：
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    狀況A：星期五(上班日)<span>HH:MM</span>前完成訂單，星期六即可收到商品！
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    狀況B：星期六(放假日)<span>HH:MM</span>前完成訂單，要下周二(上班日)才會收到商品喔！
-                </div>
-                <div class="LegendInfo_iframe_body_title_layout" style="margin-top:15px;">
-                    <div class="LegendInfo_iframe_body_title_icon">
-                        <img src="images/icon/PreOrder_ICONH22.png" />    
-                    </div>
-                    <div class="LegendInfo_iframe_body_title">預訂品項</div>
-                    <div class="LegendInfo_iframe_body_title_line"></div>
-                    <div class="CLEAR"></div>
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    完成訂單後（限匯款／線下刷卡），依預計到貨月份安排出貨，出貨前會另行Email通知。
-                </div>
-                <div class="LegendInfo_iframe_body_Noticetext">
-                    <span>※需知：</span>
-                    <span>預訂商品通常數量有限，需完成付款才能為您保留數量；付款完成後會郵寄收款證明供留存，恕發票僅能於出貨的時候才開立。
-                    </span>
-                    <!--20161208 Roger 新增clear div-->
-                    <div class="CLEAR"></div>
-                    <!--20161208 Roger 新增clear div end-->
-                </div>
-            </div>
+        </div>
+        <div class="notice_body">
+        	
         </div>
     </div>
-    <!--icon說明視窗 end-->
+
 </div>
 <!-- 黑底 end-->
-<!--20161206 roger 新增icon說明視窗 end-->
+
 </body>
 </html>

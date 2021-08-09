@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iCheers 愛酒窩_客戶基本資料填寫</title>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" > 
+<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="stylesheet" type="text/css" href="css/cart_202107.css"/>
+
+<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="Scripts/popcontrol.js"/></script>
+<script type="text/javascript" src="Scripts/popdata.js"/></script>
+<script type="text/javascript" src="Scripts/step3.js"/></script>
+<script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+
+
+        //使用ecoupon
+        $('#UseEcoupon_BTN').click(function(){
+            UseEcoupon();
+        });
+
+
+        //使用紅利 (先開登入畫面)
+        //資料範例
+        var BonusData = 566
+        $('#UseBonus_BTN').click(function(){
+            MemberLogin();
+            $('.notice_confirmBTN').click(function(){
+                ClosePop();
+                //先設timeout 上線接loading畫面後移除
+                setTimeout(function(){
+                    UseBonus(BonusData);
+                },1000);
+            });
+        });
+
+        //活動折扣詳細資訊
+        //資料範例
+        var EventDiscountData = [
+            {
+                Name: '波爾多紅酒任選二款(含以上)79折優惠',
+                Discount: '200'
+            },
+            {
+                Name: 'Domaine Geantet Pansiot任選六瓶 加碼送老酒開瓶器',
+                Discount: '356'
+            },
+            {
+                Name: 'Zenato Ripassa Valpolicella Superiore 買二送一超值優惠',
+                Discount: '1,500'
+            }
+        ]
+
+        $('#EventDiscountInfo_BTN').click(function(){
+            EventDiscountInfo(EventDiscountData);
+        });
+
+        //運費說明
+        $('#DeliveryChargeInfo_BTN').click(function(){
+            window.open('https://www.icheers.tw/iCheers/EDM/Delivery.html');
+        });
+
+        //訂單明細展開
+        $('.btn_extend_detail').click(function(){
+            $('.order_detail').slideToggle();
+            $('.icon_extend').toggleClass('icon_close');
+        });
+
+
+
+    });
+
+
+
+</script>
+
+
+
+</head>
+
+
+
+<body>
+<div class="HeadALL">
+    <div class="HeadMenu_btn">
+        <a class="navicon-button uarr" id="menuBTN">
+            <div class="navicon"></div>
+        </a> 
+    </div>
+    <div class="HeadMenu">
+        <!--a href="" class="LogOut">會員登出</a-->
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+        <!--span class="AccountNumber">ich***, 您好</span-->
+    </div>
+
+
+
+    <div class="TagALL_cart">
+        <div class="TagLogo_layout">
+            <a href="index.html" class="TagLogo"></a>
+        </div>
+    </div>
+    
+</div>
+
+<div class="content_layout step3">
+    <section class="step_option">
+        <div class="cart_step_row">
+            <div class="one_step">Step&nbsp;1</div>
+            <div class="icon_nextstep"></div>
+            <div class="one_step">Step&nbsp;2</div>
+            <div class="icon_nextstep"></div>
+            <div class="one_step active">Step&nbsp;3</div>
+            <div class="icon_nextstep"></div>
+            <div class="one_step">Step&nbsp;4</div>
+        </div>
+    </section>
+
+</div>
+
+<div class="step3_processbar">
+    <div class="textbox">
+        <div class="text">
+            訂購人<br/>
+            基本資料
+        </div>
+        <div class="text">
+            收件人<br/>
+            基本資料
+        </div>
+        <div class="text">
+            發票
+        </div>
+        <div class="text active">
+            付款方式
+        </div>
+    </div>
+    <div class="gray_line">
+        <div class="gray_dot"></div>
+        <div class="gray_dot" style="margin-left: 18px;"></div>
+        <div class="gray_dot"></div>
+        <div class="gray_dot active"></div>
+    </div>
+</div>
+
+<div class="step3_content">
+    <div class="row CLEARBOTH">
+        <div class="btn_extend_detail">
+            訂單明細
+            <label class="icon_extend"></label>
+        </div>
+    </div>
+    <div class="order_detail" style="display: none;">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <th colspan="4">儲酒品項</th>
+            </tr>
+            <tr height="30">
+                <td align="center" width="64%">
+                    酒名
+                </td>
+                <td align="center" width="12%">
+                    容量
+                </td>
+                <td align="center" width="12%">
+                    單價
+                </td>
+                <td align="center" width="12%">
+                    數量
+                </td>
+            </tr>
+            <tr>
+                <td width="64%">
+                    <div class="wine_nameCN">
+                        夏夫酒莊．艾米達吉白酒
+                    </div>
+                    <div class="wine_nameEN">
+                        Domaine Jean-Louis Chave, Hermitage Blanc
+                    </div>
+                </td>
+                <td align="center" width="12%">
+                    750ml
+                </td>
+                <td align="center" width="12%">
+                    $&nbsp;6,280
+                </td>
+                <td align="center" width="12%">
+                    3
+                </td>
+            </tr>
+            <tr>
+                <td width="64%">
+                    <div class="wine_nameCN">
+                        夏夫酒莊．艾米達吉白酒
+                    </div>
+                    <div class="wine_nameEN">
+                        Domaine Jean-Louis Chave, Hermitage Blanc
+                    </div>
+                </td>
+                <td align="center" width="12%">
+                    750ml
+                </td>
+                <td align="center" width="12%">
+                    $&nbsp;6,280
+                </td>
+                <td align="center" width="12%">
+                    3
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <th colspan="4">快速到貨品項</th>
+            </tr>
+            <tr height="30">
+                <td align="center" width="64%">
+                    酒名
+                </td>
+                <td align="center" width="12%">
+                    容量
+                </td>
+                <td align="center" width="12%">
+                    單價
+                </td>
+                <td align="center" width="12%">
+                    數量
+                </td>
+            </tr>
+            <tr>
+                <td width="64%">
+                    <div class="wine_nameCN">
+                        夏夫酒莊．艾米達吉白酒
+                    </div>
+                    <div class="wine_nameEN">
+                        Domaine Jean-Louis Chave, Hermitage Blanc
+                    </div>
+                </td>
+                <td align="center" width="12%">
+                    1.5L
+                </td>
+                <td align="center" width="12%">
+                    $&nbsp;6,280
+                </td>
+                <td align="center" width="12%">
+                    3
+                </td>
+            </tr>
+            <tr>
+                <td width="64%">
+                    <div class="wine_nameCN">
+                        夏夫酒莊．艾米達吉白酒
+                    </div>
+                    <div class="wine_nameEN">
+                        Domaine Jean-Louis Chave, Hermitage Blanc
+                    </div>
+                </td>
+                <td align="center" width="12%">
+                    330ml
+                </td>
+                <td align="center" width="12%">
+                    $&nbsp;999
+                </td>
+                <td align="center" width="12%">
+                    50
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <th colspan="4">一般配送品項</th>
+            </tr>
+            <tr height="30">
+                <td align="center" width="64%">
+                    酒名
+                </td>
+                <td align="center" width="12%">
+                    容量
+                </td>
+                <td align="center" width="12%">
+                    單價
+                </td>
+                <td align="center" width="12%">
+                    數量
+                </td>
+            </tr>
+            <tr>
+                <td width="64%">
+                    <div class="wine_nameCN">
+                        夏夫酒莊．艾米達吉白酒
+                    </div>
+                    <div class="wine_nameEN">
+                        Domaine Jean-Louis Chave, Hermitage Blanc
+                    </div>
+                </td>
+                <td align="center" width="12%">
+                    1.5L
+                </td>
+                <td align="center" width="12%">
+                    $&nbsp;6,280
+                </td>
+                <td align="center" width="12%">
+                    3
+                </td>
+            </tr>
+            <tr>
+                <td width="64%">
+                    <div class="wine_nameCN">
+                        夏夫酒莊．艾米達吉白酒
+                    </div>
+                    <div class="wine_nameEN">
+                        Domaine Jean-Louis Chave, Hermitage Blanc
+                    </div>
+                </td>
+                <td align="center" width="12%">
+                    330ml
+                </td>
+                <td align="center" width="12%">
+                    $&nbsp;999
+                </td>
+                <td align="center" width="12%">
+                    50
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <th colspan="4">預購品項</th>
+            </tr>
+            <tr height="30">
+                <td align="center" width="64%">
+                    酒名
+                </td>
+                <td align="center" width="12%">
+                    容量
+                </td>
+                <td align="center" width="12%">
+                    單價
+                </td>
+                <td align="center" width="12%">
+                    數量
+                </td>
+            </tr>
+            <tr>
+                <td width="64%">
+                    <div class="wine_nameCN">
+                        夏夫酒莊．艾米達吉白酒
+                    </div>
+                    <div class="wine_nameEN">
+                        Domaine Jean-Louis Chave, Hermitage Blanc
+                    </div>
+                </td>
+                <td align="center" width="12%">
+                    1.5L
+                </td>
+                <td align="center" width="12%">
+                    $&nbsp;6,280
+                </td>
+                <td align="center" width="12%">
+                    3
+                </td>
+            </tr>
+            <tr>
+                <td width="64%">
+                    <div class="wine_nameCN">
+                        夏夫酒莊．艾米達吉白酒
+                    </div>
+                    <div class="wine_nameEN">
+                        Domaine Jean-Louis Chave, Hermitage Blanc
+                    </div>
+                </td>
+                <td align="center" width="12%">
+                    330ml
+                </td>
+                <td align="center" width="12%">
+                    $&nbsp;999
+                </td>
+                <td align="center" width="12%">
+                    50
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="order_sum">
+        <div class="order_sum_row">
+            <div class="title">商品小計</div>
+            <div class="number">$&nbsp;1,600</div>
+        </div>
+        <div class="order_sum_row">
+            <div class="title">活動折扣<label class="event" id="EventDiscountInfo_BTN"></label></div>
+            <div class="number">-&nbsp;$&nbsp;200</div>
+        </div>
+        <div class="order_sum_row">
+            <div class="title">e-coupon優惠<span id="UseEcoupon_BTN">使用</span><span>清除</span></div>
+            <div class="number">-&nbsp;$&nbsp;200</div>
+        </div>
+        <div class="order_sum_row">
+            <div class="title">紅利折抵<span id="UseBonus_BTN">使用</span><span>清除</span></div>
+            <div class="number">-&nbsp;$&nbsp;0</div>
+        </div>
+        <div class="order_sum_row">
+            <div class="title">運費<label class="delivery" id="DeliveryChargeInfo_BTN"></label></div>
+            <div class="number">$&nbsp;600</div>
+        </div>
+    </div>
+    <div style="width: 100%;height: 1px;background-color: #d5d5d5;"></div>
+    <div class="order_sum">
+        <div class="order_sum_row">
+            <div class="title" style="font-size:20px;font-weight: bold;">總金額</div>
+            <div class="number notice" style="font-size:24px;font-weight: bold;">$&nbsp;1,500</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="title">付款方式</div>
+        <div class="invoice_radio">
+            <div class="invoice_radio_oneoption CLEARBOTH">
+                <input type="radio" name="payment">
+                <span class="radio_text">匯款</span>
+            </div>
+            <div class="invoice_radio_oneoption CLEARBOTH">
+                <input type="radio" name="payment">
+                <span class="radio_text">刷卡/行動支付</span>
+            </div>
+            <div class="invoice_radio_oneoption CLEARBOTH">
+                <input type="radio" name="payment">
+                <span class="radio_text">宅配貨到付款(現金)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row btn_row">
+        <div class="btn_step prev">上一步</div>
+        <div class="btn_step next" style="padding-left: 30px;">送出</div>
+    </div>
+</div>
+
+<div class="Warning"><p></p></div>
+<!-- Warning 警語 -->
+
+
+<!-- 黑底 start-->
+<div class="bg_black" id="bg_black">
+    <div class="notice_BG">
+        <div class="notice_title_layout">
+            <div class="notice_title"></div>
+            <div class="notice_title_closeBTN" onclick="ClosePop();"></div>
+            <div class="CLEAR"></div>
+        </div>
+        <div class="notice_body">
+            
+        </div>
+    </div>
+
+</div>
+<!-- 黑底 end-->
+</body>
+
+</html>

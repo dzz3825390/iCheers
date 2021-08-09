@@ -386,6 +386,7 @@
 	width: 682px;
 }
 
+
 /* 我的酒單組合細項 */
 .CartList_GroupWrap { padding:0; margin:0; clear:both;width:100%; }
 .CartList_Group { display:block; overflow:auto; padding: 5px 0 5px 130px; *width:750px; }
@@ -693,7 +694,7 @@
 .CartList_ItemCheckbox_position{
 	margin-top: 25px;
 	margin-left: 15px;
-	
+
 }
 
 .CartList_GiftItemPic { display:block; width:80px; margin-right:10px; text-align: center; }
@@ -874,6 +875,7 @@
 }
 .CartList_Coupon li{ float:left; padding-top:10px; font-family: Arial, "微軟正黑體";}
 .CartList_CouponCheckbox { display:block; width:30px; margin-right:10px; text-align: center; }
+
 
 
 .CartList_CouponPic { display:block; width:80px; margin-right:10px; text-align: center; }
@@ -1335,7 +1337,6 @@ li.FreightNotches2 table tr th{
 
 
 
-
 /*notice 輸入email視窗*/
 
 .notice_email_submitBTN{
@@ -1353,7 +1354,7 @@ li.FreightNotches2 table tr th{
 
 /*notice 輸入email視窗 end*/
 
-/*notice3 稍後查看您的信箱*/
+/*notice2 稍後查看您的信箱*/
 
 .notice_backhomeBTN{
 	width: 100px;
@@ -1367,35 +1368,7 @@ li.FreightNotches2 table tr th{
 	background-image: url(../images/icon/btn_home2.png);
 }
 
-/*notice3 稍後查看您的信箱 end*/
-
-/*notice3 台大實驗用 結束可刪*/
-
-.notice_ok{
-	width: 100px;
-	height: 41px;
-	background-image: url(../images/icon/btn_ok.png);
-	margin: 20px auto;
-}
-
-.notice_ok:hover{
-	cursor: pointer;
-	background-image: url(../images/icon/btn_ok2.png);
-}
-
-.notice_keepit{
-	width: 100px;
-	height: 41px;
-	background-image: url(../images/icon/btn_keepit.png);
-	margin: 20px auto;
-}
-
-.notice_keepit:hover{
-	cursor: pointer;
-	background-image: url(../images/icon/btn_keepit2.png);
-}
-
-/*notice2 台大實驗用 結束可刪 end*/
+/*notice2 稍後查看您的信箱 end*/
 
 
 /*notice10 會員登入*/
@@ -1493,6 +1466,7 @@ li.FreightNotches2 table tr th{
 
 /*notice8 18歲詢問 end*/
 
+
 .notice_btn_movetotracklist{
 	width: 139px;
 	height: 41px;
@@ -1531,7 +1505,7 @@ li.FreightNotches2 table tr th{
 	background-color: #FFF; }
 		
 .cart_data p{
-	color: #717171;
+	
 	width:720px;}
 
 .DeliveryTime p{
@@ -1539,17 +1513,11 @@ li.FreightNotches2 table tr th{
 }
 
 
-.cart_data h1{ text-align:right; width:167px; }
-.DeliveryTime h1{ width: 167px; }
-
-.cart_data li{ display:block; float:left; font-size: 13px; line-height: 30px; min-height:30px; color: #333333; padding:15px 0 5px 0; *padding:0; border-bottom: 1px dotted #dfdfdf; }
-.cart_data li input[type="text"]{
-	color: #717171;
-}
-
-.cart_data li select{
-	color: #717171;
-}
+.cart_data h1{ text-align:right; width:180px; }
+.DeliveryTime h1{ width: 215px; }
+/*20170808 Roger 修改*/
+.cart_data li{ display:block; float:left; font-size: 13px; line-height: 30px; min-height:30px; color: #000; padding:15px 0 5px 0; *padding:0; border-bottom: 1px dotted #dfdfdf; }
+/*20170808 Roger 修改 end*/
 .cart_data2 li{padding:3px 0 3px 0;}
 
 .cart_data h1 span{ color:#F00;}
@@ -2686,7 +2654,7 @@ li.Last_NoBorder,
 		z-index: 9999999;
 		width: 100%;
 		height: 100%;
-		position: fixed;
+		position: absolute;
 		top:0;
 		left:0;
 		opacity: 0;
@@ -2704,9 +2672,9 @@ li.Last_NoBorder,
 }
 
 .CartStep3_DeliveryInfo_others .row{
+	width: 100%;
 	min-height: 24px;
 	box-sizing: border-box;
-	margin-top: 20px;
 }
 
 .CartStep3_DeliveryInfo_others .row .text{
@@ -2872,33 +2840,4 @@ li.Last_NoBorder,
 
 .CartOptionBox .OneOption.active:hover span{
 	color: #fff;
-} 
-
-.DeliveryCostTable{
-	border: 1px solid #cccccc;
-	margin-left: 200px;
-	margin-top: 16px;
-	margin-bottom: 16px;
-	color: #666;
-}
-
-
-.DeliveryCostTable th{
-	color :#fff;
-	text-align: center;
-}
-
-.DeliveryCostTable td{
-	padding: 0 8px;
-	text-align: center;
-	border-right: 1px solid #cccccc;
-	border-bottom: 1px solid #cccccc;
-}
-
-.DeliveryCostTable td:last-child{
-	border-right: none;
-}
-
-.DeliveryCostTable tr:last-child td{	
-	border-bottom: none;
 }

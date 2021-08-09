@@ -3212,9 +3212,10 @@ img.HOT8_NO {
     height: 40px;
     border-radius: 50%;
     background-color: #fff;
-    background-image: url(../images/icon/icon_tracking_large2_gray.png);
+    background-image: url(../images/icon/icon_tracking_large.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center top;
     position: absolute;
     left: 0;
     bottom: 43px;
@@ -3223,13 +3224,11 @@ img.HOT8_NO {
 
 .Result .Wine_Name .tracking:hover{
     cursor: pointer;
+    background-position: center bottom;
 }
 
 .Result .Wine_Name .tracking.active{
-    background-image: url(../images/icon/icon_tracking_large2_pink.png);
-    animation-name: TrackingBtn;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
+    background-position: center bottom;
 }
 
 .Result .Wine_Name .WhiskyBigImg {
@@ -3418,6 +3417,7 @@ img.HOT8_NO {
     background-position: center bottom;
 }
 
+
     .List_Year a:hover span {
         text-decoration: underline;
     }
@@ -3480,7 +3480,6 @@ img.HOT8_NO {
         margin-top: 8px;
     }
 
-
 .WineInformation li.List_Capacity {
     width: 44px;
     margin-left: 3px;
@@ -3502,7 +3501,6 @@ img.HOT8_NO {
     color: #717071;
     font-size: 13px;
 }
-
 
 
 .List_Discount_save_icon{
@@ -4773,7 +4771,6 @@ ul.Detail {
         margin-right: 0;
     }
 
-
 .wine_detail_wineinfo_status_number{
     display: inline-block;
     float: right;
@@ -5102,37 +5099,26 @@ ul.Detail {
             height: auto;
         }
 
-    .IntroImg .Tracking{
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        right: 2px;
-        top: 47px;
-        background-image: url(../images/icon/icon_tracking_large2_gray.png); 
-        background-repeat: no-repeat;
-        /*background-position: center top;*/
-        cursor: pointer;
-        display: block;
-    }
+        .IntroImg .Tracking{
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                right: 2px;
+                top: 47px;
+                background-image: url(../images/icon/icon_tracking_large.png); 
+                background-repeat: no-repeat;
+                background-position: center top;
+                cursor: pointer;
+                display: block;
+            }
 
-    @keyframes TrackingBtn {
-        /*0%{transform: rotateY(0deg);}
-                100%{transform: rotateY(360deg);}*/
-                0%{transform: scale(1);}
-                20%{transform: scale(0.9);}
-                75%{transform: scale(1.1);}
-                100%{transform: scale(1);}
-    }
+            .IntroImg .Tracking:hover{
+                background-position: center bottom;
+            }
 
-
-    .IntroImg .Tracking.active{
-                /*background-position: center bottom;*/
-                background-image: url(../images/icon/icon_tracking_large2_pink.png); 
-                animation-name: TrackingBtn;
-                animation-duration: 0.5s;
-                animation-iteration-count: 1;
-            }  
-
+            .IntroImg .Tracking.active{
+                background-position: center bottom;
+            }    
 
 
 /**************詳目頁 end*************************/
@@ -13708,16 +13694,20 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
 }
 
 /*追蹤清單下架商品*/
-.Result .Wine_Name h1.NotSell, .Result .Wine_Name h2.NotSell,.Result .Wine_Name h3.NotSell,.Result .Wine_Name .WinePage.NotSell{
+
+.Result .NotSell .Wine_Name h1, .Result .NotSell .Wine_Name h2,.Result .NotSell .Wine_Name h3{
     opacity: 0.4;
 }
 
-.WineInformation_layout .WineInformation.NotSell{
+.NotSell .WineInformation_layout{
     opacity: 0.4;
 }
 
+.Result .NotSell .Wine_Name .WinePage{
+    opacity: 0.4;
+}
 
-.NotSellTextBox{
+.NotSell .NotSellTextBox{
     width: 100%;
     height: 35px;
     box-sizing: border-box;
@@ -13735,224 +13725,5 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
     color: #c20012;
     font-weight: bold;
     text-decoration: underline;
-} 
 
-.notice_BG{
-    background-color: #fff;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    border: 1px solid #666666;
-    box-shadow: 0px 0px 3px rgba(0,0,0,.5);
-    position: fixed;
-    z-index:999999;
-}
-
-.notice_BG div:focus{
-    outline: none;
-}
-
-/*20191112 Roger fix*/
-.notice_title_layout{
-    width: 100%;
-    height: 40px;
-    background-color: #666666;
-    border-radius: 4px 4px 0 0;
-    position: relative;
-    padding: 0 40px;
-    box-sizing: border-box;
-}
-/*20191112 Roger fix end*/
-
-.notice_title{
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    line-height: 40px;
-    text-align: center;
-}
-
-/*20191112 Roger fix*/
-.notice_title_closeBTN{
-    width: 20px;
-    height: 20px;
-    background-image: url(../images/icon/btn_close.png);
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-/*20191112 Roger fix end*/
-
-.notice_title_closeBTN:hover{
-    cursor: pointer;
-    background-image: url(../images/icon/btn_close2.png);
-}
-
-.notice_body{
-    width: 90%;
-    height: 90%;
-    margin: 20px auto;
-}
-
-    .notice_body p{
-        font-size: 14px;
-        color: #333333;
-        line-height: 28px;
-    }
-
-    .notice_body p span{
-        color: #c20012;
-        font-weight: bold;
-        margin: 0 3px;
-    }
-
-    .notice_body p em{
-        display: inline-block;
-        vertical-align: super;
-        margin-left: 5px;
-        width: 150px;
-        height: 1px;
-        background-color: #333;
-    }
-
-    .notice_body p b{
-        font-size: 15px;
-        text-shadow: 0 0 0 rgba(0,0,0,.8);
-    }
-
-.notice_body_input_layout{
-    width: 100%;
-    height: 32px;
-    margin: 16px 0;
-}
-
-.notice_body_input_layout:after{
-    content:"";
-    display: block;
-    height: 0;
-    clear: both;
-}
-
-    .notice_body_input_layout span{
-        display: inline-block;
-        height: 32px;
-        line-height: 32px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #666666;
-        float: left;
-        margin-left: 16px;
-    }
-
-    .notice_body_input_layout input{
-        display: inline-block;
-        height: 30px;
-        font-size: 16px;
-        background-color: #fff;
-        border:1px solid #cccccc;
-        line-height: 30px;
-        float: left;
-        margin-left: 16px;
-        padding: 0 5px;
-        color: #333333;
-        outline: none;
-    }
-
-.notice_body_radio_layout{
-    width: 100%;
-    height: 32px;
-    margin: 16px 0;
-}
-
-    .notice_body_radio_layout input{
-        display: inline-block;
-        float: left;
-        margin-top: 10px;
-        margin-right: 5px;
-    }
-
-    .notice_body_radio_layout span{
-        display: inline-block;
-        min-height: 32px;
-        line-height: 32px;
-        font-size: 18px;
-        color: #666666;
-        float: left;
-    }
-
-        .notice_body_radio_layout span em{
-            color: #c20012;
-            font-weight: bold;
-            margin: 0 3px;
-        }
-
-.notice_btn_row{
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-
-.notice_btn_row:after{
-    content: '';
-    width: 0;
-    height: 0;
-    display: block;
-    clear: both;
-}
-
-.notice_btn_row .notice_btn{
-    float: left;
-    margin-right: 5px;
-}
-
-.notice_btn_row .notice_btn:last-child{
-    margin-right: 0;
-}
-
-.notice_confirmBTN{
-    width: 100px;
-    height: 41px;
-    background-image: url(../images/icon/btn_confirm.png);
-    margin: 20px auto;
-}
-
-.notice_confirmBTN:hover{
-    cursor: pointer;
-    background-image: url(../images/icon/btn_confirm2.png);
-}
-
-
-.notice_IseeBTN{
-    width: 100px;
-    height: 41px;
-    background-image: url(../images/icon/btn_Isee.png);
-    margin: 20px auto;
-}
-
-.notice_IseeBTN:hover{
-    cursor: pointer;
-    background-image: url(../images/icon/btn_Isee2.png);
-}
-
-.notice_btn_trackall{
-    width: 139px;
-    height: 41px;
-    background-image: url(../images/icon/btn_trackall.png);
-}
-
-.notice_btn_trackall:hover{
-    cursor: pointer;
-    background-image: url(../images/icon/btn_trackall2.png);
-}
-
-.notice_btn_tracksingle{
-    width: 139px;
-    height: 41px;
-    background-image: url(../images/icon/btn_tracksingle.png);
-}
-
-.notice_btn_tracksingle:hover{
-    cursor: pointer;
-    background-image: url(../images/icon/btn_tracksingle2.png);
 } 
