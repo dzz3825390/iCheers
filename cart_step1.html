@@ -91,17 +91,9 @@ $(document).ready(function(){
 
 	//酒款全選
 	$('.check_all').click(function(){
-		$(this).children().toggleClass('active');
-		var IsActive = $(this).children().hasClass('active');
-		if (IsActive) {
-			$('.cart_list_layout .option_check').each(function(){
-				$(this).children().addClass('active');
+		$('.cart_list_layout .option_check').each(function(){
+				$(this).children().toggleClass('active');
 			});
-		} else {
-			$('.cart_list_layout .option_check').each(function(){
-				$(this).children().removeClass('active');
-			});
-		}
 	});
 
 	//合併出貨整個一起點
