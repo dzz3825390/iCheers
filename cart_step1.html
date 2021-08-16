@@ -308,6 +308,13 @@ $(window).resize(function(){
     } else {
     	$('.confirm18').css('top','unset');
     }
+
+    //大視窗時高度不夠800時調整小計區與確認18歲
+	if (intBrowserW > 1199 && intBrowserH < 800){
+		$('.sum_position, .confirm18').css('position','absolute');
+	} else if (intBrowserW > 1199 && intBrowserH > 799){
+		$('.sum_position, .confirm18').css('position','fixed');
+	}
 });
 
 </script>
