@@ -778,6 +778,15 @@ input{
     margin-left: 8px;
 }
 
+.cart_list_OneBottle .bottle_info .status .icon_text{
+	font-size: 14px;
+	color: #fff;
+	padding: 6px 8px;
+	background-color: #999;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+
 .cart_list_OneBottle .bottle_info .expired_date {
     font-size: 1rem;
     line-height: 1.3rem;
@@ -1771,6 +1780,7 @@ input{
 	.cart_list_OneBottle .bottle_info .status {
 	    font-size: 1.125rem;
 	    line-height: 1.5rem;
+	    margin-top: 7px;
 	}
 
 	.cart_list_OneBottle .bottle_info .status span:after {
@@ -1783,6 +1793,10 @@ input{
 	    height: 21px;
 	    margin-left: 12px;
 	    margin-top: 0;
+	}
+
+	.cart_list_OneBottle .bottle_info .status .icon_text{
+		padding: 4px 8px;
 	}
 
 	.cart_list_OneBottle .bottle_info .expired_date{

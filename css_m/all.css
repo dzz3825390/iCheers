@@ -4685,6 +4685,14 @@ h2.detail_Name_cn {
   height: 18px;
   margin-left: 8px;
 }
+.cart_list_OneBottle .bottle_info .status .icon_text {
+  font-size: 14px;
+  color: #fff;
+  padding: 4px 8px;
+  background-color: #999;
+  border-radius: 5px;
+  margin-right: 5px;
+}
 .cart_list_OneBottle .bottle_info .expired_date {
   font-size: 1rem;
   line-height: 1.3rem;
@@ -5139,6 +5147,14 @@ h2.detail_Name_cn {
   height: 18px;
   margin-left: 8px;
 }
+.cart_list_OneGroup .group_wine .bottle_info .status .icon_text {
+  font-size: 14px;
+  color: #fff;
+  padding: 4px 8px;
+  background-color: #999;
+  border-radius: 5px;
+  margin-right: 5px;
+}
 .cart_list_OneGroup .group_wine .bottle_info .expired_date {
   font-size: 1rem;
   line-height: 1.3rem;
@@ -5473,6 +5489,14 @@ h2.detail_Name_cn {
     width: 18px;
     height: 18px;
     margin-left: 8px;
+  }
+  .cart_list_OneGroup .group_wine .bottle_info .status .icon_text {
+    font-size: 14px;
+    color: #fff;
+    padding: 4px 8px;
+    background-color: #999;
+    border-radius: 5px;
+    margin-right: 5px;
   }
   .cart_list_OneGroup .group_wine .bottle_info .expired_date {
     font-size: 1rem;
@@ -6012,6 +6036,14 @@ h2.detail_Name_cn {
   width: 18px;
   height: 18px;
   margin-left: 8px;
+}
+.cart_list_gift .gift_wine .bottle_info .status .icon_text {
+  font-size: 14px;
+  color: #fff;
+  padding: 4px 8px;
+  background-color: #999;
+  border-radius: 5px;
+  margin-right: 5px;
 }
 .cart_list_gift .gift_wine .bottle_info .expired_date {
   font-size: 1rem;
@@ -6625,6 +6657,14 @@ h2.detail_Name_cn {
   width: 18px;
   height: 18px;
   margin-left: 8px;
+}
+.cart_list_addon .addon_wine .bottle_info .status .icon_text {
+  font-size: 14px;
+  color: #fff;
+  padding: 4px 8px;
+  background-color: #999;
+  border-radius: 5px;
+  margin-right: 5px;
 }
 .cart_list_addon .addon_wine .bottle_info .expired_date {
   font-size: 1rem;

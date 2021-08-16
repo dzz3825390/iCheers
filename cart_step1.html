@@ -84,6 +84,11 @@ $(document).ready(function(){
 	    }, 100)
 	});
 
+	//大視窗時高度不夠800時調整小計區與確認18歲
+	if (intBrowserW > 1199 && intBrowserH < 800){
+		$('.sum_position, .confirm18').css('position','absolute');
+	}
+
 	//客製checkbox
 	$('.icon_check').click(function(){
 		$(this).toggleClass('active');
@@ -395,6 +400,10 @@ $(window).resize(function(){
 						<span>750&nbsp;ml</span>
 						<span>$&nbsp;795</span>
 						<img src="images/icon/NoBouns_26x26.png" class="icon_nobonus">
+					</div>
+					<div class="status">
+						<div class="icon_text">需運費</div>
+						<div class="icon_text">限匯款</div>
 					</div>
 				</div>
 				<div class="count_price">
@@ -833,7 +842,7 @@ $(window).resize(function(){
 				<div class="event_sum">
 					<div class="count_price">
 						<div class="price">
-							<div class="text">此區商品小計</div>
+							<div class="text">此區小計</div>
 							<div class="bottle_price fast">$&nbsp;3,060</div>
 						</div>
 					</div>
