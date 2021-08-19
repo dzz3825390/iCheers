@@ -260,7 +260,7 @@ function CartDeleteItem() {
     var WindowContent = [
         '<p style="text-align:center;">請問是否將刪除商品加入追蹤清單?</p>',
         '<p style="text-align:center;"><input type="checkbox" name="" style="margin-right:5px;">在我重新造訪網頁前皆使用此設定</p>',
-        '<div class="notice_btn_row"><button class="notice_cancelBTN">取消</button><button class="notice_confirmBTN">確認</button></div>'
+        '<div class="notice_btn_row"><button class="notice_cancelBTN">直接刪除</button><button class="notice_confirmBTN">確認</button></div>'
     ]
 
     //視窗標題
