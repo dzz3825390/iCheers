@@ -72,6 +72,11 @@
 		   	var DeliveryInfo_Address_Other = $('#DeliveryInfo_Address').text().slice(9);
 		   	var DeliveryInfo_Time = $('#DeliveryInfo_Time').text();
         	var DeliverInfo_Date = $('#DeliverInfo_Date').text();
+        	var DeliverInfo_BuildingGuardCollect = $('#BuildingGuardCollect').find('.icon_check').hasClass('active');
+        	var DeliverInfo_ReuseBox = $('#ReuseBox').text();
+        	var DeliverInfo_ReusePaperMaterial = $('#ReusePaperMaterial').text();
+        	var DeliveryInfo_CustomAddress = $('#CustomAddress').find('.icon_check').hasClass('active');
+
 
         	$('#DeliveryInfo_Name').replaceWith('<input id="DeliveryInfo_Name" type="text" name="" value="'+DeliveryInfo_Name+'">');
 
@@ -88,20 +93,54 @@
 	        $('#DeliveryInfo_Address').replaceWith('<div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_City+'</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>'+DeliveryInfo_Address_PostalCode+'&nbsp;'+DeliveryInfo_Address_District+'</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="'+DeliveryInfo_Address_Other+'"></div>');
 
 	        if (DeliveryInfo_Time == '上午(08~13時)') {
-	            $('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div>');
+	            $('#DeliveryInfo_Time').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div>');
 	        } else if (DeliveryInfo_Time == '下午(14~18時)') {
-	        	$('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime RadioBox_active">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div>');
+	        	$('#DeliveryInfo_Time').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime RadioBox_active">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div>');
 	        } else {
-	        	$('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">皆可</div>');
+	        	$('#DeliveryInfo_Time').replaceWith('<div class="Radio_Sexual_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">皆可</div></div>');
 	        }
 
 	        if (DeliverInfo_Date == '上班日') {
-	            $('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div>');
+	            $('#DeliveryInfo_Date').replaceWith('<div class="Radio_Sexual_row" id="DeliverInfo_Date"><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div>');
 	        } else if (DeliverInfo_Date == '假日') {
-	            $('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div>');
+	            $('#DeliveryInfo_Date').replaceWith('<div class="Radio_Sexual_row" id="DeliverInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div>');
 	        } else {
-	            $('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">皆可</div>');
+	            $('#DeliveryInfo_Date').replaceWith('<div class="Radio_Sexual_row" id="DeliverInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">皆可</div></div>');
 	        }
+
+	        //管理員代收
+	        if (DeliverInfo_BuildingGuardCollect) {
+	        	$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">管理員可代收</div></div>');
+	        } else {
+	        	if ($('#BuildingGuardCollect').text()) {
+	        		$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">管理員可代收</div></div>');
+	        	} else {
+	        		$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div>');
+	        	}
+	        	
+	        }
+
+	        //常用地址儲存
+	        if (DeliveryInfo_CustomAddress) {
+	        	$('#CustomAddress').replaceWith('<div class="checkbox_layout" id="CustomAddress" style="margin-top: 0;"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">儲存為常用地址</div></div>');
+	        } else {
+	        	$('#CustomAddress').replaceWith('<div class="checkbox_layout" id="CustomAddress" style="margin-top: 0;"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">儲存為常用地址</div></div>');
+	        }
+
+	        //使用回收紙箱
+	        if (DeliverInfo_ReuseBox){
+	        	$('#ReuseBox').replaceWith('<div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我不介意用乾淨堅固的二手紙箱。</div></div>');
+	        } else {
+	        	$('#ReuseBox').replaceWith('<div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我不介意用乾淨堅固的二手紙箱。</div></div>');
+	        }
+
+	        //使用環保包材
+	        if (DeliverInfo_ReusePaperMaterial) {
+	        	$('#ReusePaperMaterial').replaceWith('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">我不介意用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div>');
+	        } else {
+	        	$('#ReusePaperMaterial').replaceWith('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我不介意用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div>');
+	        }
+
 
 		}
 
@@ -114,9 +153,12 @@
         	var DeliveryInfo_Address = data[0].Address;
         	var DeliveryInfo_Time = data[0].Time;
         	var DeliveryInfo_Date = data[0].Date;
-        	var DeliveryInfo_CustomAddress_Name = data[0].CustomName;
-
-        	$('#DeliveryInfo_CustomAddress_Name').replaceWith('<div class="text" id="DeliveryInfo_CustomAddress_Name">'+DeliveryInfo_CustomAddress_Name+'</div>');
+        	var DeliveryInfo_CustomAddress = data[0].CustomAddress;
+        	var DeliverInfo_BuildingGuardCollect = data[0].BuildingGuardCollect;
+        	var DeliverInfo_ReuseBox = data[0].ReuseBox;
+        	var DeliverInfo_ReusePaperMaterial = data[0].ReusePaperMaterial;
+        	/*
+        	$('#DeliveryInfo_CustomAddress_Name').replaceWith('<div class="text" id="DeliveryInfo_CustomAddress_Name">'+DeliveryInfo_CustomAddress_Name+'</div>');*/
         	$('#DeliveryInfo_Name').replaceWith('<div class="text" id="DeliveryInfo_Name">'+DeliveryInfo_Name+'</div>');
         	$('#DeliveryInfo_Sex').replaceWith('<div class="text" id="DeliveryInfo_Sex">'+DeliveryInfo_Sex+'</div>');
         	$('#DeliveryInfo_Phone').replaceWith('<div class="text" id="DeliveryInfo_Phone">'+DeliveryInfo_Phone+'</div>');
@@ -134,12 +176,41 @@
         	} else {
         		$('#DeliveryInfo_Date').replaceWith('<div class="text" id="DeliveryInfo_Date">'+DeliveryInfo_Date+'</div>');
         	}
+
+        	//管理員代收
+	        if (DeliverInfo_BuildingGuardCollect) {
+	        	$('#BuildingGuardCollect').replaceWith('<div class="text" id="BuildingGuardCollect">✓&nbsp;管理員可代收</div>');
+	        } else {
+	        	$('#BuildingGuardCollect').replaceWith('<div class="text" id="BuildingGuardCollect"></div>');
+	        }
+
+	        //常用地址儲存
+	        if (DeliveryInfo_CustomAddress) {
+	        	$('#CustomAddress').replaceWith('<div class="text" id="CustomAddress"></div>');
+	        } else {
+	        	$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="CustomAddress" style="margin-top: 0;"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">儲存為常用地址</div></div>');
+	        }
+
+	        //使用回收紙箱
+	        if (DeliverInfo_ReuseBox){
+	        	$('#ReuseBox').replaceWith('<div class="text" id="ReuseBox">✓&nbsp;我不介意用乾淨堅固的二手紙箱。</div>');
+	        } else {
+	        	$('#ReuseBox').replaceWith('<div class="text" id="ReuseBox"></div>');
+	        }
+
+	        //使用環保包材
+	        if (DeliverInfo_ReusePaperMaterial) {
+	        	$('#ReusePaperMaterial').replaceWith('<div class="text" id="ReusePaperMaterial">✓&nbsp;我不介意用回收紙緩衝材(取代塑膠氣泡袋)。</div>');
+	        } else {
+	        	$('#ReusePaperMaterial').replaceWith('<div class="text" id="ReusePaperMaterial"></div>');
+	        }
         	
         	
 
 		}
 
-		//新增常用地址
+		//新增常用地址**廢棄
+		/*
 		function DeliveryAddNew(){
 			$('#DeliveryInfo_BTNEdit').css('display','none');
 			$('#DeliveryInfo_CustomAddress_Name').parent().css('display','block');
@@ -154,7 +225,7 @@
         	$('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div>');
 
         	$('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div>');
-		}
+		}*/
 
 
 		//帶入常用公司
@@ -412,7 +483,10 @@
 	                Address:'234新北市永和區成功路一段82號',
 	                Time:'下午(14~18時)',
 	                Date:'假日',
-	                CustomName:'常用地址1'
+	                CustomAddress:true,
+	                BuildingGuardCollect:true,
+	                ReuseBox:false,
+	                ReusePaperMaterial:false
 	            }
 	        ]
 	        var TestData_Custom2 = [
@@ -423,7 +497,10 @@
 	                Address:'234新北市永和區成功路一段84號',
 	                Time:'皆可',
 	                Date:'皆可',
-	                CustomName:'常用地址2'
+	                CustomAddress:true,
+	                BuildingGuardCollect:false,
+	                ReuseBox:true,
+	                ReusePaperMaterial:true
 	            }
 	        ]
 
@@ -485,10 +562,10 @@
 	        			$('#DeliveryInfo_CustomAddress_Name').parent().css('display','block');
 	        			ImportDeliveryInfo(TestData_Custom2);
 	        		break;
-
+	        		/*
 	        		case 'Option_AddNew' :
 	        			DeliveryAddNew();
-	        		break;
+	        		break;*/
 
 
 	        	}
@@ -675,23 +752,20 @@
 						同訂購人
 					</div>
 					<div class="dropdown_option" id="Option_CustomInfo1">
-						常用地址1
+						成功路一段80...
 					</div>
 					<div class="dropdown_option" id="Option_CustomInfo2">
-						常用地址2
-					</div>
-					<div class="dropdown_option" id="Option_AddNew">
-						新增常用地址
+						中正路347號...
 					</div>
 				</div>
 			</div>
 		</div>
 		<div id="Form_RecordedAddress">
 			<div class="btn_edit" id="DeliveryInfo_BTNEdit" onclick="DeliveryInfoEdit();">修改</div>
-			<div class="cart_form_row" style="display: none;">
+			<!--<div class="cart_form_row" style="display: none;">
 				<div class="formTitle">常用地址名稱</div>
 				<div class="text" id="DeliveryInfo_CustomAddress_Name">常用地址1</div>
-			</div>
+			</div>-->
 			<div class="cart_form_row">
 				<div class="formTitle">收件人姓名</div>
 				<div class="text" id="DeliveryInfo_Name">劉學涵</div>
@@ -715,6 +789,12 @@
 						<div class="icon_check"></div>
 					</div>
 					<div class="checkbox_text">管理員可代收</div>
+				</div>
+				<div class="checkbox_layout" id="CustomAddress" style="margin-top: 0;">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="checkbox_text">儲存為常用地址</div>
 				</div>
 			</div>
 			<div class="cart_form_row">
