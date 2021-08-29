@@ -72,10 +72,9 @@
 		   	var DeliveryInfo_Address_Other = $('#DeliveryInfo_Address').text().slice(9);
 		   	var DeliveryInfo_Time = $('#DeliveryInfo_Time').text();
         	var DeliverInfo_Date = $('#DeliverInfo_Date').text();
-        	var DeliverInfo_BuildingGuardCollect = $('#BuildingGuardCollect').find('.icon_check').hasClass('active');
+        	var DeliverInfo_BuildingGuardCollect = $('#BuildingGuardCollect').text();
         	var DeliverInfo_ReuseBox = $('#ReuseBox').text();
         	var DeliverInfo_ReusePaperMaterial = $('#ReusePaperMaterial').text();
-        	var DeliveryInfo_CustomAddress = $('#CustomAddress').find('.icon_check').hasClass('active');
 
 
         	$('#DeliveryInfo_Name').replaceWith('<input id="DeliveryInfo_Name" type="text" name="" value="'+DeliveryInfo_Name+'">');
@@ -112,19 +111,7 @@
 	        if (DeliverInfo_BuildingGuardCollect) {
 	        	$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">管理員可代收</div></div>');
 	        } else {
-	        	if ($('#BuildingGuardCollect').text()) {
-	        		$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">管理員可代收</div></div>');
-	        	} else {
-	        		$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div>');
-	        	}
-	        	
-	        }
-
-	        //常用地址儲存
-	        if (DeliveryInfo_CustomAddress) {
-	        	$('#CustomAddress').replaceWith('<div class="checkbox_layout" id="CustomAddress" style="margin-top: 0;"><div class="option_check"><div class="icon_check active"></div></div><div class="checkbox_text">儲存為常用地址</div></div>');
-	        } else {
-	        	$('#CustomAddress').replaceWith('<div class="checkbox_layout" id="CustomAddress" style="margin-top: 0;"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">儲存為常用地址</div></div>');
+	        	$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div>');
 	        }
 
 	        //使用回收紙箱
@@ -153,12 +140,12 @@
         	var DeliveryInfo_Address = data[0].Address;
         	var DeliveryInfo_Time = data[0].Time;
         	var DeliveryInfo_Date = data[0].Date;
-        	var DeliveryInfo_CustomAddress = data[0].CustomAddress;
+        	var DeliveryInfo_CustomAddress_Name = data[0].CustomName;
         	var DeliverInfo_BuildingGuardCollect = data[0].BuildingGuardCollect;
         	var DeliverInfo_ReuseBox = data[0].ReuseBox;
         	var DeliverInfo_ReusePaperMaterial = data[0].ReusePaperMaterial;
-        	/*
-        	$('#DeliveryInfo_CustomAddress_Name').replaceWith('<div class="text" id="DeliveryInfo_CustomAddress_Name">'+DeliveryInfo_CustomAddress_Name+'</div>');*/
+
+        	$('#DeliveryInfo_CustomAddress_Name').replaceWith('<div class="text" id="DeliveryInfo_CustomAddress_Name">'+DeliveryInfo_CustomAddress_Name+'</div>');
         	$('#DeliveryInfo_Name').replaceWith('<div class="text" id="DeliveryInfo_Name">'+DeliveryInfo_Name+'</div>');
         	$('#DeliveryInfo_Sex').replaceWith('<div class="text" id="DeliveryInfo_Sex">'+DeliveryInfo_Sex+'</div>');
         	$('#DeliveryInfo_Phone').replaceWith('<div class="text" id="DeliveryInfo_Phone">'+DeliveryInfo_Phone+'</div>');
@@ -184,13 +171,6 @@
 	        	$('#BuildingGuardCollect').replaceWith('<div class="text" id="BuildingGuardCollect"></div>');
 	        }
 
-	        //常用地址儲存
-	        if (DeliveryInfo_CustomAddress) {
-	        	$('#CustomAddress').replaceWith('<div class="text" id="CustomAddress"></div>');
-	        } else {
-	        	$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="CustomAddress" style="margin-top: 0;"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">儲存為常用地址</div></div>');
-	        }
-
 	        //使用回收紙箱
 	        if (DeliverInfo_ReuseBox){
 	        	$('#ReuseBox').replaceWith('<div class="text" id="ReuseBox">✓&nbsp;我不介意用乾淨堅固的二手紙箱。</div>');
@@ -209,8 +189,7 @@
 
 		}
 
-		//新增常用地址**廢棄
-		/*
+		//新增常用地址
 		function DeliveryAddNew(){
 			$('#DeliveryInfo_BTNEdit').css('display','none');
 			$('#DeliveryInfo_CustomAddress_Name').parent().css('display','block');
@@ -225,7 +204,13 @@
         	$('#DeliveryInfo_Time').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div>');
 
         	$('#DeliveryInfo_Date').replaceWith('<div class="RadioBox Radio_DeliveryTime" name="deliverydate">上班日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div>');
-		}*/
+
+        	$('#BuildingGuardCollect').replaceWith('<div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div>');
+
+        	$('#ReuseBox').replaceWith('<div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我不介意用乾淨堅固的二手紙箱。</div></div>');
+
+        	$('#ReusePaperMaterial').replaceWith('<div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我不介意用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div>');
+		}
 
 
 		//帶入常用公司
@@ -264,7 +249,7 @@
 
 			$('#CompanyInfo_Name').replaceWith('<input type="text" value="" id="CompanyInfo_Name">');
 
-			$('#CompanyInfo_Address').replaceWith('<div id="CompanyInfo_Address">						<div class="dropdown"><div class="dropdown_text"><span>縣市</span></div>	<div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市	</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown"><div class="dropdown_text"><span>鄉鎮區</span></div>	<div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bb</div><div class="dropdown_option">ccc</div></div></div><input type="text" placeholder="請輸入地址"></div>');
+			$('#CompanyInfo_Address').replaceWith('<div id="CompanyInfo_Address">						<div class="dropdown district"><div class="dropdown_text"><span>縣市</span></div>	<div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市	</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>鄉鎮區</span></div>	<div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bb</div><div class="dropdown_option">ccc</div></div></div><input type="text" placeholder="請輸入地址"></div>');
 		}
 
 		function EditCompanyInfo () {
@@ -483,7 +468,7 @@
 	                Address:'234新北市永和區成功路一段82號',
 	                Time:'下午(14~18時)',
 	                Date:'假日',
-	                CustomAddress:true,
+	                CustomName:'常用地址1',
 	                BuildingGuardCollect:true,
 	                ReuseBox:false,
 	                ReusePaperMaterial:false
@@ -497,7 +482,7 @@
 	                Address:'234新北市永和區成功路一段84號',
 	                Time:'皆可',
 	                Date:'皆可',
-	                CustomAddress:true,
+	                CustomName:'常用地址2',
 	                BuildingGuardCollect:false,
 	                ReuseBox:true,
 	                ReusePaperMaterial:true
@@ -520,7 +505,10 @@
 					                Address: $('#PurchaseInfo_Address').text(),
 					                //時間與日期不在訂購人資料，但若訂購人是已紀錄狀態則為非第一次下單，原則上會有上次的配送時間與日期的紀錄
 					                Time:'上午(08~13時)',
-					                Date:'上班日'
+					                Date:'上班日',
+					                BuildingGuardCollect: false,
+					                ReuseBox: false,
+					                ReusePaperMaterial: true
 					            }
 					        ]
 
@@ -544,7 +532,10 @@
 					                Phone: $('#PurchaseInfo_Phone').val(),
 					                Address: PurchaseAddress,
 					                Time:'',
-					                Date:''
+					                Date:'',
+					                BuildingGuardCollect: false,
+					                ReuseBox: false,
+					                ReusePaperMaterial: false
 					            }
 					        ]
 
@@ -562,10 +553,10 @@
 	        			$('#DeliveryInfo_CustomAddress_Name').parent().css('display','block');
 	        			ImportDeliveryInfo(TestData_Custom2);
 	        		break;
-	        		/*
+
 	        		case 'Option_AddNew' :
 	        			DeliveryAddNew();
-	        		break;*/
+	        		break;
 
 
 	        	}
@@ -724,10 +715,13 @@
 						同訂購人
 					</div>
 					<div class="dropdown_option" id="Option_CustomInfo1">
-						成功路一段80...
+						常用地址1
 					</div>
 					<div class="dropdown_option" id="Option_CustomInfo2">
-						中正路347號...
+						常用地址2
+					</div>
+					<div class="dropdown_option" id="Option_AddNew">
+						新增常用地址
 					</div>
 				</div>
 			</div>
@@ -764,12 +758,6 @@
 					</div>
 					<div class="checkbox_text">管理員可代收</div>
 				</div>-->
-				<div class="checkbox_layout" id="CustomAddress" style="margin-top: 0;">
-					<div class="option_check">
-						<div class="icon_check"></div>
-					</div>
-					<div class="checkbox_text">儲存為常用地址</div>
-				</div>
 			</div>
 			<div class="cart_form_row">
 				<div class="formTitle">希望配送時段</div>
@@ -1019,68 +1007,13 @@
 				<div class="text">$&nbsp;200</div>
 			</div>
 			<div class="row">
-				<div class="text">商品總額</div>
+				<div class="text">總金額</div>
 				<div class="total">$&nbsp;200</div>
 			</div>
 		</div>
 		<div class="BTN_Order_Detail_extend">展開商品明細<i></i></div>
 		<div class="order_detail" style="display: none;">
-	        <div class="one_delivery_type">
-	        	<div class="row_title">
-	        		<div class="wine_info">
-	        			<span>儲酒品項</span>
-	        		</div>
-	        		<div class="wine_number">數量</div>
-	        	</div>
-	        	<div class="row">
-	        		<div class="wine_info">
-	        			<div class="wine_nameCN">
-	        				夏夫酒莊．艾米達吉白酒
-	        			</div>
-	        			<div class="wine_nameEN">
-	        				Domaine Jean-Louis Chave, Hermitage Blanc
-	        			</div>
-	        			<div class="wine_detail">
-	        				<span>2016</span>
-	        				<span>750ml</span>
-	        				<span>$&nbsp;2,500</span>
-	        			</div>
-	        		</div>
-	        		<div class="wine_number">3</div>
-	        	</div>
-	        	<div class="row">
-	        		<div class="wine_info">
-	        			<div class="wine_nameCN">
-	        				夏夫酒莊．艾米達吉白酒
-	        			</div>
-	        			<div class="wine_nameEN">
-	        				Domaine Jean-Louis Chave, Hermitage Blanc
-	        			</div>
-	        			<div class="wine_detail">
-	        				<span>2016</span>
-	        				<span>750ml</span>
-	        				<span>$&nbsp;799</span>
-	        			</div>
-	        		</div>
-	        		<div class="wine_number">3</div>
-	        	</div>
-	        	<div class="row">
-	        		<div class="wine_info">
-	        			<div class="wine_nameCN">
-	        				夏夫酒莊．艾米達吉白酒
-	        			</div>
-	        			<div class="wine_nameEN">
-	        				Domaine Jean-Louis Chave, Hermitage Blanc
-	        			</div>
-	        			<div class="wine_detail">
-	        				<span>2016</span>
-	        				<span>750ml</span>
-	        				<span>$&nbsp;1,500</span>
-	        			</div>
-	        		</div>
-	        		<div class="wine_number">3</div>
-	        	</div>
-	        </div>
+	        
 	        <div class="one_delivery_type">
 	        	<div class="row_title">
 	        		<div class="wine_info">
@@ -1199,6 +1132,66 @@
 	        	<div class="row_title">
 	        		<div class="wine_info">
 	        			<span>預購品項</span>
+	        		</div>
+	        		<div class="wine_number">數量</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;2,500</span>
+	        			</div>
+	        			<div class="wine_detail">預計到貨日&nbsp;&nbsp;2021/12</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;799</span>
+	        			</div>
+	        			<div class="wine_detail">預計到貨日&nbsp;&nbsp;2023/04</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        	<div class="row">
+	        		<div class="wine_info">
+	        			<div class="wine_nameCN">
+	        				夏夫酒莊．艾米達吉白酒
+	        			</div>
+	        			<div class="wine_nameEN">
+	        				Domaine Jean-Louis Chave, Hermitage Blanc
+	        			</div>
+	        			<div class="wine_detail">
+	        				<span>2016</span>
+	        				<span>750ml</span>
+	        				<span>$&nbsp;1,500</span>
+	        			</div>
+	        			<div class="wine_detail">預計到貨日&nbsp;&nbsp;2023/04</div>
+	        		</div>
+	        		<div class="wine_number">3</div>
+	        	</div>
+	        </div>
+
+	        <div class="one_delivery_type">
+	        	<div class="row_title">
+	        		<div class="wine_info">
+	        			<span>儲酒品項</span>
 	        		</div>
 	        		<div class="wine_number">數量</div>
 	        	</div>

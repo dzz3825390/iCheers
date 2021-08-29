@@ -3620,8 +3620,15 @@ input{
 	line-height: 18px;
 	font-size: 14px;
 	color: #999;
-	padding: 10px;
-	padding-top: 0;
+	padding:0 10px;
+}
+
+.step3_content .order_detail td .deliveryDate{
+	line-height: 18px;
+	font-size: 14px;
+	color: #999;
+	padding:10px;
+	padding-top: 5px;
 }
 
 @media screen and (min-width: 760px){
