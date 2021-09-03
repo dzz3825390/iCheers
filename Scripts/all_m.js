@@ -432,10 +432,17 @@ $(document).ready(function(){
 		PopWindow('#WineTagWindow',intBrowserH,intBrowserW);	
 	});
 
+
 	//會員送出註冊資料
 	$('#MemberRegister').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
 		PopWindow('#RegisterFinishedWindow',intBrowserH,intBrowserW);
+	});
+
+	//step3修改訂購人資訊
+	$('#PurchaseInfo_BTNEdit').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#EditPurchaseInfoNotice',intBrowserH,intBrowserW);
 	});
 
 	//PopWindow關閉

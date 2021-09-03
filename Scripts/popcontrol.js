@@ -149,6 +149,30 @@ function PopWindow_Submited(){
     LocatePop(PopWindowWidth);
 }
 
+//step1 訂單送出後(老客戶通一方通行)
+function PopWindow_Submited_VIPPass(){
+
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:left;">Cheers!!<br/>系統已偵測確認您為經常消費的老客戶，<br/>日後將直接提供老客戶專屬的「快速通關」功能，下單更加方便！</p>',
+        '<a href="https://www.icheers.tw/iCheers/" target="_self" class="BackhomeBTN">啟動快速通關</a>',
+        '<div class="row flex_center"><input type="checkbox"><span class="text">以後不要再出現此提醒</span></div>',
+
+    ];
+
+    //視窗標題
+    $('.notice_title').text('老客戶快速通關功能啟用！');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 550;
+
+    LocatePop(PopWindowWidth);
+}
+
 //會員登入
 function MemberLogin(){
 
@@ -292,7 +316,7 @@ function PurchaseInfoEdit(){
     $('.notice_body').html(WindowContent);
 
     //指定大視窗時pop寬度
-    var PopWindowWidth = 350;
+    var PopWindowWidth = 450;
 
     LocatePop(PopWindowWidth);
 }

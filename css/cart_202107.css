@@ -3112,14 +3112,43 @@ input{
 	line-height: 35px;
 	text-align: center;
 	outline: none;
-	position: absolute;
-	right: 20px;
-	top: 70px;
+	float: right;
+	margin-top: 10px;
+	margin-right: 5px;
 }
 
 .step3_content .btn_edit:hover{
 	color: #666;
 	border-color: #666;
+}
+
+.step3_content .btn_save{
+	height: 35px;
+	box-sizing: border-box;
+	padding: 0 10px;
+	border-radius: 3px;
+	border: 1px solid #b4b4b4;
+	color: #b4b4b4;
+	font-size: 14px;
+	line-height: 35px;
+	text-align: center;
+	outline: none;
+	float: right;
+	margin-top: 10px;
+	margin-right: 5px;
+	display: none;
+	align-items: center;
+}
+
+.step3_content .btn_save:hover{
+	color: #666;
+	border-color: #666;
+}
+
+.step3_content .btn_save input[type=checkbox]{
+	margin-right: 5px;
+	border: 1px solid #b4b4b4;
+	border-radius: 3px;
 }
 
 @media screen and (min-width: 760px){
@@ -3131,6 +3160,18 @@ input{
         right: 20px;
         font-size: 16px;
     }
+
+    .step3_content .btn_save{
+        height: 40px;
+        line-height: 40px;
+        top: 80px;
+        right: 20px;
+        font-size: 16px;
+    }
+
+    .step3_content #InvoiceInfoRow .btn_save,.step3_content #InvoiceInfoRow .btn_edit{
+		margin-top: 20px;
+	}
 
 }
 
@@ -3166,9 +3207,6 @@ input{
         margin-top: 32px;
     }
 
-    .step3_content .row:nth-child(2){
-        margin-top: 0;
-    }
 }
 
 .step3_content .row .title{
@@ -3262,7 +3300,7 @@ input{
 	box-sizing: border-box;
 	border-radius: 3px;
 	outline: none;
-	float: right;
+	float: left;
 }
 
 .step3_content select.company_info{

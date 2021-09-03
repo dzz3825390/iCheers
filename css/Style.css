@@ -5,9 +5,6 @@
 @import url("reset.css");
 
 
-
-
-
 /*  body  ALL 雜七雜八 */
 /*20180327 Roger 修正字體造成的破版問題*/
 body {
@@ -54,6 +51,12 @@ button {
     outline: none;.WineList_Info h1
 }
 
+
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* Head 刊頭  */
@@ -14214,4 +14217,18 @@ a.BackhomeBTN{
     border-top: 1px dotted #cccccc;
     margin: 0 auto;
     margin-top: 10px;
+}
+
+.notice_body .row{
+    width: 100%;
+    margin-top: 16px;
+}
+
+.notice_body .row input[type=checkbox]{
+    margin-right: 5px;
+}
+
+.notice_body .row .text{
+    font-size: 14px;
+    color: #666;
 }
