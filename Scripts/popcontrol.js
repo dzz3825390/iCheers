@@ -149,29 +149,76 @@ function PopWindow_Submited(){
     LocatePop(PopWindowWidth);
 }
 
-//step1 訂單送出後(老客戶通一方通行)
+//step1 訂單送出後(老客戶通一方通行_已登入)
 function PopWindow_Submited_VIPPass(){
 
     InitPop();
 
     var WindowContent = [
-        '<p style="text-align:left;">Cheers!!<br/>系統已偵測確認您為經常消費的老客戶，<br/>日後將直接提供老客戶專屬的「快速通關」功能，下單更加方便！</p>',
-        '<a href="https://www.icheers.tw/iCheers/" target="_self" class="BackhomeBTN">啟動快速通關</a>',
+        '<img src="images/icon/icon_vippass.svg" style="width:120px;height:auto;margin:0 auto;display:block;margin-bottom:16px;">',
+        '<p style="text-align:center;">系統已偵測確認您為經常消費的老客戶，<br/>適用專屬的「快速通關」功能，下單更加方便！</p>',
+        '<div style="display:flex;justify-content:center;"><button class="BackhomeBTN" style="width:38%;">啟動快速通關</button></div>',
         '<div class="row flex_center"><input type="checkbox"><span class="text">以後不要再出現此提醒</span></div>',
-
     ];
 
     //視窗標題
-    $('.notice_title').text('老客戶快速通關功能啟用！');
+    $('.notice_title').text('啟用快速通關功能');
 
     //視窗內容
     $('.notice_body').html(WindowContent);
 
     //指定大視窗時pop寬度
-    var PopWindowWidth = 550;
+    var PopWindowWidth = 450;
 
     LocatePop(PopWindowWidth);
 }
+
+//step1 訂單送出後(老客戶通一方通行_未登入)
+function PopWindow_Submited_VIPPass_NotLogin(){
+
+    InitPop();
+
+    var WindowContent = [
+        '<img src="images/icon/icon_vippass.svg" style="width:120px;height:auto;margin:0 auto;display:block;margin-bottom:16px;">',
+        '<p style="text-align:center;">系統已偵測確認您為經常消費的老客戶，<br/>適用專屬的「快速通關」功能，下單更加方便！</p>',
+        '<div style="display:flex;justify-content:center;margin-top:20px;"><button class="GrayBTN" style="width:38%;margin:0;margin-right:10px;">沒關係謝謝</button><button class="BackhomeBTN" style="margin:0;margin-right:10px;width:38%;">登入並啟動快速通關</button></div>',
+        
+    ];
+
+    //視窗標題
+    $('.notice_title').text('啟用快速通關功能');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 450;
+
+    LocatePop(PopWindowWidth);
+}
+
+//老客戶刷卡
+function VIPPass_Creditcard(){
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:center;">請選擇付款方式</p>',
+        '<div class="onlinepay_box"><div class="one_option"><a href="#"><img class="qrcode" src="https://www.icheers.tw/iCheers/Content/images/letter_qrcode_sample.jpg"></a><a href="#"><img class="icon" src="https://www.icheers.tw/iCheers/Content/images/letter_creditcard.jpg"></a></div><div class="one_option"><a href="#"><img class="qrcode" src="https://www.icheers.tw/iCheers/Content/images/letter_qrcode_sample.jpg"></a><a href="#"><img class="icon" src="https://www.icheers.tw/iCheers/Content/images/letter_applepay.jpg"></a></div><div class="one_option"><a href="#"><img class="qrcode" src="https://www.icheers.tw/iCheers/Content/images/letter_qrcode_sample.jpg"></a><a href="#"><img class="icon" src="https://www.icheers.tw/iCheers/Content/images/letter_googlepay.jpg"></a></div></div>',
+        
+    ];
+
+    //視窗標題
+    $('.notice_title').text('刷卡/行動支付');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 450;
+
+    LocatePop(PopWindowWidth);
+}
+
 
 //會員登入
 function MemberLogin(){
@@ -387,6 +434,29 @@ function PopOriginalThem(title,content){
 
     //視窗標題
     $('.notice_title').text(title);
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 450;
+
+    LocatePop(PopWindowWidth);
+}
+
+//step3 18歲確認
+function Step3_Confirm18(){
+
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:center;">我同意訂購人及收貨人皆已年滿18歲，<br/>並請在收貨時出示身分證件。若未攜帶身分證，<br/>無法辨識是否年滿18歲，恕不交貨。</p>',
+        
+        '<div class="notice_btn_row"><button class="notice_confirmBTN" style="width:40%;" onclick="ClosePop();">我已年滿18歲</button></div>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('請問您滿18歲了嗎');
 
     //視窗內容
     $('.notice_body').html(WindowContent);

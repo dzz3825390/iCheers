@@ -2978,6 +2978,36 @@ input{
     font-size: 14px;
 }
 
+.notice_body .onlinepay_box{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.notice_body .onlinepay_box .one_option{
+	width: 33%;
+}
+
+.notice_body .onlinepay_box .one_option a{
+	display: block;
+	width: 130px;
+	margin: 0 auto;
+}
+
+.notice_body .onlinepay_box .one_option a img.qrcode{
+	width: 106px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+.notice_body .onlinepay_box .one_option a img.icon{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+}
 
 /*********step 3************/
 .step3 .step_option{
@@ -3688,3 +3718,4 @@ input{
 	text-align: center;
 	background-color: #f3f4f5;
 }
+

@@ -473,6 +473,7 @@ ul.beer_Detail li em.Info{
 
 .WineryInformation li.beer_List_SellingPrice{
 	width: 80px;
+	margin-left: 3px;
 }
 
 .WineryInformation li.beer_List_Buy{

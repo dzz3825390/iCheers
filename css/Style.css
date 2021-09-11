@@ -14030,6 +14030,21 @@ button.notice_cancelBTN{
     margin-top: 10px;
 }
 
+.GrayBTN{
+    width: 30%;
+    height: 50px;
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 7px;
+    background-color: #666;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
 .BackhomeBTN{
     width: 30%;
     height: 50px;
