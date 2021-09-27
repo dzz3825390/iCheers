@@ -181,7 +181,7 @@ function PopWindow_Submited_VIPPass_NotLogin(){
     var WindowContent = [
         '<img src="images/icon/icon_vippass.svg" style="width:120px;height:auto;margin:0 auto;display:block;margin-bottom:16px;">',
         '<p style="text-align:center;">系統已偵測確認您為經常消費的老客戶，<br/>適用專屬的「快速通關」功能，下單更加方便！</p>',
-        '<div style="display:flex;justify-content:center;margin-top:20px;"><button class="GrayBTN" style="width:38%;margin:0;margin-right:10px;">沒關係謝謝</button><button class="BackhomeBTN" style="margin:0;margin-right:10px;width:38%;">登入並啟動快速通關</button></div>',
+        '<div style="display:flex;justify-content:center;margin-top:20px;"><button class="GrayBTN" style="width:43%;margin:0;margin-right:10px;">沒關係謝謝</button><button class="BackhomeBTN" style="margin:0;margin-right:10px;width:43%;">登入並啟動快速通關</button></div>',
         
     ];
 
@@ -192,7 +192,7 @@ function PopWindow_Submited_VIPPass_NotLogin(){
     $('.notice_body').html(WindowContent);
 
     //指定大視窗時pop寬度
-    var PopWindowWidth = 450;
+    var PopWindowWidth = 500;
 
     LocatePop(PopWindowWidth);
 }
