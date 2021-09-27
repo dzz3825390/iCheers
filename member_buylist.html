@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iCheers愛酒窩 ─ 會員專區</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico">
+
+
+    <link rel="stylesheet" type="text/css" href="css/Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/member2.css" />
+
+
+
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//footermenu置中
+		    var FooterMenuWidth = $('.FooterMenu').width();
+		    var FooterWidth = $('.FooterMenu').parent().width();
+		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+		    $('.FooterMenu').css('margin-left',FooterPositionX);
+		})
+	</script>
+
+</head>
+
+
+<body class="member">
+<div class="HeadALL">
+    <div class="HeadMenu">
+        <a href="" class="LogOut">會員登出</a>
+            <!--<a href="" class="HeadMenuLogin">登入 / 加入會員</a>-->
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
+            <span class="AccountNumber">普級會員<em>ich***</em>您好</span>
+    </div>
+    <div class="TagALL_Buy Buy2_margin">
+            <ul>
+                <li class="TagLogo"><a href="index.html"></a></li>
+                <li class="TagMember"></li>
+            </ul>
+        </div>  
+</div>
+    <!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+<div class="content memberbuylist">
+    <div class="label_box">
+        <div class="one_label">會員資料</div>
+        <div class="one_label">訂單查詢</div>
+        <div class="one_label active">買過的酒</div>
+        <div class="one_label">追蹤酒款</div>
+        <div class="one_label">線上酒窖</div>
+        <div class="one_label">配送窖藏</div>
+    </div>
+    <div class="Left_Menu_layout Left_Menu_bg"><!--左邊欄-->
+        <div class="Left_Menu_ClassifySearch_layout"><!--灰底分類搜尋-->
+            <input type="text" value="請輸入關鍵字"  class="Left_Menu_ClassifySearch_input" style="margin-top:16px;" />
+        </div><!--灰底分類搜尋 end-->
+        <div class="Left_Menu_ClassifySearch_condition_layout"><!--深灰底搜尋條件-->
+            <div class="Left_Menu_ClassifySearch_condition_title_row">
+                <div class="Left_Menu_ClassifySearch_condition_title_line"></div>
+                <div class="Left_Menu_ClassifySearch_condition_title">目前搜尋條件</div>
+                <div class="CLEAR"></div>
+            </div>
+            <!--20161130 Roger 修改html結構-->
+            <div class="Left_Menu_ClassifySearch_condition_text" style="margin-top:20px;">
+                <div>法國</div>
+                <div>薄酒萊</div>
+            </div>
+            <div class="Left_Menu_ClassifySearch_condition_text">
+                <div>紅酒</div>
+            </div>
+            <!--20161130 Roger 修改html結構-->
+            <div class="Left_Menu_ClassifySearch_condition_deletAllBTN">全部刪除</div>
+        </div><!--深灰底搜尋條件 end-->
+        <div class="Left_Menu_block"><!--類型-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">類型</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Type" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">紅酒(142)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">白酒(60)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">粉紅酒(3)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">氣泡酒(14)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">甜酒(20)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">加烈酒(13)</a></li>
+                <li><a href="" id="TypeOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+        </div><!--類型 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--產區-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">產區</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Place" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">法國(206)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">澳洲(71)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">美國(52)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">義大利(50)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">西班牙(38)</a></li>
+                <div class="Menu_More" id="Menu_Place_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">阿根廷(28)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">智利(15)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">德國(7)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">紐西蘭(6)</a></li>
+                </div>
+                <li><a id="PlaceOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+            <div id="PlaceOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+            <div class="GoToList" id="GoToList">
+                <a>全部列表<img src="images/icon/Menu_List.png" /></a>
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--產區 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--品種-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">品種</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Variety" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">卡本內蘇維濃(40)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">梅洛(36)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">黑皮諾(36)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">卡本內弗朗(69)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">夏多內(48)</a></li>
+                <div class="Menu_More" id="Menu_Variety_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">希哈(40)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">小維鐸(37)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">希哈(Shiraz)(36))</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">白蘇維濃(32)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">麗絲玲(30)</a></li>
+                </div>
+                <li><a id="VarietyOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+            <div id="VarietyOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+            <div class="GoToList" id="GoToList2">
+                <a>全部列表<img src="images/icon/Menu_List.png" /></a>
+            </div>
+            <div class="CLEAR"></div>
+        </div><!--品種 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--單價-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">單價</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Price" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">低於 $500 (21)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$500-1000 (107)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$1001-2000 (104)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$2001-3000 (68)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$3001-4000 (45)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$4001-5000 (33)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">$5000 以上 (113)</a></li>
+            </ul>
+            <div class="Left_Menu_price_layout">
+                <div class="Left_Menu_price_title">
+                    <span class="Left_Menu_price_title_line"></span>
+                    <span class="Left_Menu_price_title_text">輸入價格</span>
+                </div>
+                <div class="CLEAR"></div>
+                <div class="Left_Menu_price_second_title">例：0~5000</div>
+                <div class="Left_Menu_price_input_layout">
+                    <input type="text" />
+                    <span>~</span>
+                    <input type="text" />
+                    <span>元之間</span>
+                    <img src="images/icon/Sent.png"/>
+                </div>
+                <div class="CLEAR"></div>
+            </div>
+        </div><!--單價 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--評價-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">評價</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Evaluate" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">Robert Parker (216)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">Stephen Tanzer (170)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">Wine Spectator (130)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">Jancis Robinson (118)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">Decanter (83)</a></li>
+                <div class="Menu_More" id="Menu_Evaluate_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">Burghound (37)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">La Revue du Vin de France (37)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">James Halliday (30)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">International Wine Challenge (29)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Jeremy Oliver (18)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Le Guied Hachette des Vins (16)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Bettane & Desseauve (15)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">International Wine & Spirit Competition (7)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Guía Peñín (4)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">Gambero Rosso (2)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">The Wine Doctor (2)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">San Francisco Chronicle Wine Competition (1)</a></li>
+                </div>
+                <li><a id="EvaluateOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li> 
+            </ul>
+            <div id="EvaluateOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--評價-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--等級-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">等級</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_grade" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">未知 (338)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">法定產區管制（AC） (939)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">特級園 (262)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">一級園 (188)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">村莊級 (126)</a></li>
+                <div class="Menu_More" id="Menu_Grade_More">
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                </div>
+                <li><a id="GradeOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+            </ul>
+            <div id="GradeOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--等級 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--年分-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">年份</span>
+            </div>
+            <div class="CLEAR"></div>
+            <ul id="Menu_Year" class="Left_Menu_options">
+                <li><input name="" type="checkbox" value=""/><a href="">NV(無年份) (21)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">2000年至今 (107)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">1980-1999年(104)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">1960-1979年(68)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">1940-1959年 (45)</a></li>
+                <li><input name="" type="checkbox" value=""/><a href="">1920-1939年(33)</a></li>
+            </ul>
+            <div class="Left_Menu_year_layout">
+                <div class="Left_Menu_year_title">
+                    <span class="Left_Menu_year_title_line"></span>
+                    <span class="Left_Menu_year_title_text">輸入年份</span>
+                </div>
+                <div class="CLEAR"></div>
+                <div class="Left_Menu_year_second_title">例：1895~2000</div>
+                <div class="Left_Menu_year_input_layout">
+                    <input type="text" />
+                    <span>~</span>
+                    <input type="text" />
+                    <span>年之間</span>
+                    <img src="images/icon/Sent.png"/>
+                </div>
+                <div class="CLEAR"></div>
+            </div>
+        </div><!--年分 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_block"><!--容量-->
+            <div class="Left_Menu_title">
+                <span class="Left_Menu_title_icon"></span>
+                <span class="Left_Menu_title_text">容量</span>
+            </div>
+            <div class="CLEAR"></div>
+            <div class="Menu_More" id="Menu_Capacity_More">
+                <ul class="Left_Menu_options">
+                    <li><input name="" type="checkbox" value=""/><a href="">200ml (1)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">375ml (34)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">700ml (3)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">750ml (682)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">1.5L (11)</a></li>
+                    <li><input name="" type="checkbox" value=""/><a href="">3L (8)</a></li>
+                    <li><a href="" id="CapacityOpen" class="TypeOpen"><img src="images/icon/Menu_Check.png" /> 複選</a></li>
+                </ul>
+            </div>
+            <div id="CapacityOpen2" class="Left_Menu_moreBTN">展開更多<img src="images/icon/Menu_Open.png" /></div>
+            <div class="CLEAR"></div>
+        </div><!--容量 end-->
+        <div class="Left_Menu_separateline"></div>
+        <div class="Left_Menu_bottom_layout">
+            <div class="Left_Menu_Advancedoption_layout">
+                <div class="Left_Menu_bottom Left_Menu_AdvancedSearch">
+                    <span class="Left_Menu_AdvancedSearch_icon"></span>
+                    <span class="Left_Menu_AdvancedSearch_text">進階搜尋</span>
+                </div>
+                <div class="Left_Menu_bottom Left_Menu_AdvancedRecent_layout">
+                    <span class="Left_Menu_AdvancedRecent_icon"></span>
+                    <span class="Left_Menu_AdvancedRecent_text">近期瀏覽</span>
+                </div>
+            </div>
+        </div>
+    </div><!--左邊欄 end-->
+    <!--右邊欄-->
+    <div class="Right_content">
+        <div class="pagemark_row CLEARBOTH">
+            <label class="container">
+                排除無庫存品項  
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <div class="Wine_Search_List_Page">
+                <h2>
+                    <a href="">&lt;&lt; 最前頁</a>
+                    <a href="">&lt; 上一頁</a>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">下一頁&gt;</a>
+                    <a href="">最末頁 &gt;&gt; </a>
+                </h2>
+            </div>
+        </div>
+        <div class="list title_row CLEARBOTH">
+            <div class="one_title wine_name">酒款<span class="icon_sort"></span></div>
+            <div class="one_title wine_ordernumber">訂單編號</div>
+            <div class="one_title wine_year">年份</div>
+            <div class="one_title wine_capacity">容量</div>
+            <div class="one_title wine_rank">評價</div>
+            <div class="one_title wine_price">酒窩價<span class="icon_sort"></span></div>
+        </div>
+        <div class="list wine_list_box">
+            <div class="one_bottle CLEARBOTH">
+                <div class="wine_name">
+                    <div class="name_cn">羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</div>
+                    <div class="name_en">Robert Mondavi, Woodbridge White Zinfandel</div>
+                    <div class="bottle_img" style="background-image: url(images/pic/wine_bottle_sample_horizonal.jpg);">
+                        <div class="tracking"></div>
+                    </div>
+                </div>
+                <div class="wine_detailinfo_box">
+                    <div class="wine_detailinfo_row CLEARBOTH">
+                        <div class="wine_ordernumber">
+                            <a href="#">W21052500033</a>
+                        </div>
+                        <div class="wine_year">2008</div>
+                        
+                        <div class="wine_capacity">750ml</div>
+                        <div class="wine_rank">RP&nbsp;95/100</div>
+                        <div class="wine_price">
+                            $123,456,789
+                            <span class="icon_addcart normal"></span>
+                        </div>
+                    </div>
+                    <!--多訂單同一品項-->
+                    <div class="wine_detailinfo_row CLEARBOTH">
+                        <div class="wine_ordernumber">
+                            <a href="#">W21052500032</a>
+                        </div>
+                        <div class="wine_year"></div>
+                        
+                        <div class="wine_capacity"></div>
+                        <div class="wine_rank"></div>
+                        <div class="wine_price">
+                            
+                        </div>
+                    </div>
+                    <!--多訂單同一品項-->
+                    <div class="wine_detailinfo_row CLEARBOTH">
+                        <div class="wine_ordernumber">
+                            <a href="#">W21052500031</a>
+                        </div>
+                        <div class="wine_year"></div>
+                        
+                        <div class="wine_capacity"></div>
+                        <div class="wine_rank"></div>
+                        <div class="wine_price">
+                            
+                        </div>
+                    </div>
+                    <!--不同年份容量-->
+                    <div class="wine_detailinfo_row CLEARBOTH">
+                        <div class="wine_ordernumber">
+                            <a href="#">W21061500045</a>
+                        </div>
+                        <div class="wine_year">2011</div>
+                        <div class="wine_capacity">750ml</div>
+                        <div class="wine_rank">
+                            <img src="images/Award/decanterStar.png">
+                        </div>
+                        <div class="wine_price">
+                            $56,789
+                            <span class="icon_addcart fast"></span>
+                        </div>
+                    </div>
+                    <!--同一訂單多年份/容量-->
+                    <div class="wine_detailinfo_row CLEARBOTH">
+                        <div class="wine_ordernumber">
+                            <a href=""></a>
+                        </div>
+                        <div class="wine_year">2013</div>
+                        <div class="wine_capacity">375ml</div>
+                        <div class="wine_rank">
+                            <img src="images/Award/GR_3y.png">
+                        </div>
+                        <div class="wine_price">
+                            $56,789
+                            <span class="icon_addcart preorder"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="one_bottle CLEARBOTH">
+                <div class="wine_name">
+                    <div class="name_cn">羅伯‧蒙岱維酒莊 木橋金粉黛微甜粉紅酒</div>
+                    <div class="name_en">Robert Mondavi, Woodbridge White Zinfandel</div>
+                    <div class="bottle_img" style="background-image: url(images/pic/wine_bottle_sample_horizonal.jpg);">
+                        <div class="tracking"></div>
+                    </div>
+                </div>
+                <div class="wine_detailinfo_box">
+                    <div class="wine_detailinfo_row CLEARBOTH">
+                        <div class="wine_ordernumber">
+                            <a href="#">W21052500033</a>
+                        </div>
+                        <div class="wine_year">2008</div>
+                        
+                        <div class="wine_capacity">750ml</div>
+                        <div class="wine_rank CLEARBOTH">
+                            <div class="one_medal">
+                                <img src="images/Award/wineDetail_award_02.jpg" class="medals">
+                                <div class="medals_year">2010</div>
+                            </div> 
+                            <div class="one_medal">
+                                <img src="images/Award/wineDetail_award_02.jpg" class="medals">
+                                <div class="medals_year">2010</div>
+                            </div>   
+                        </div>
+                        <div class="wine_price">
+                            $123,456,789
+                            <span class="icon_addcart soldout"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagemark_row CLEARBOTH">
+            <div class="Wine_Search_List_Page">
+                <h2>
+                    <a href="">&lt;&lt; 最前頁</a>
+                    <a href="">&lt; 上一頁</a>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">下一頁&gt;</a>
+                    <a href="">最末頁 &gt;&gt; </a>
+                </h2>
+            </div>
+        </div>
+    </div>
+    
+    <!--右邊欄 end-->
+    <div class="CLEARBOTH"></div>
+</div>
+
+
+
+    <!-- FooterALL  頁腳 -->
+    <div class="member_FooterALL">
+        <div class="Footer_position">
+            <ul class="FooterMenu">
+                <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+                <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+                <li><a href="" target="_parent">條款及細則</a>｜</li>
+                <li><a href="privacy_policy.html" target="_parent">隱私條款</a></li>
+            </ul>
+            <div class="FooterICON">
+                <a href="qualityGarentee.html" target="_blank">
+                    <button class="Quality"></button>
+                </a>
+                <button class="Join"></button>
+                <button class="Novice"></button>
+            </div>
+        </div>
+    </div>
+    <!-- FooterALL  頁腳 -->
+
+
+    <div class="Warning">
+        <p></p>
+    </div>
+    <!-- Warning 警語 -->
+
+
+
+
+
+</body>
+</html>

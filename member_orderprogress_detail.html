@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iCheers愛酒窩 ─ 會員專區</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico">
+
+
+    <link rel="stylesheet" type="text/css" href="css/Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/member2.css" />
+
+
+
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//footermenu置中
+		    var FooterMenuWidth = $('.FooterMenu').width();
+		    var FooterWidth = $('.FooterMenu').parent().width();
+		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+		    $('.FooterMenu').css('margin-left',FooterPositionX);
+		})
+	</script>
+
+</head>
+
+
+<body class="member">
+<div class="HeadALL">
+    <div class="HeadMenu">
+        <a href="" class="LogOut">會員登出</a>
+            <!--<a href="" class="HeadMenuLogin">登入 / 加入會員</a>-->
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
+            <span class="AccountNumber">普級會員<em>ich***</em>您好</span>
+    </div>
+    <div class="TagALL_Buy Buy2_margin">
+            <ul>
+                <li class="TagLogo"><a href="index.html"></a></li>
+                <li class="TagMember"></li>
+            </ul>
+        </div>  
+</div>
+    <!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+<div class="content member_orderprogress">
+    <div class="label_box">
+        <div class="one_label">會員資料</div>
+        <div class="one_label active">訂單查詢</div>
+        <div class="one_label">買過的酒</div>
+        <div class="one_label">追蹤酒款</div>
+        <div class="one_label">線上酒窖</div>
+        <div class="one_label">配送窖藏</div>
+    </div>
+    <!--匯款 待匯款-->
+    <!--
+    <div class="orderprogress_detail_status">
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishorder.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">完成訂單</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts active">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishtransfer.png);width: 60%;height: 60%;"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">待匯款</div>
+                <div class="small_text">$12,354,823</div>
+            </div>
+        </div>
+    </div>-->
+    <!--匯款 集貨中-->
+    <!--<div class="orderprogress_detail_status">
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishorder.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">完成訂單</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishtransfer.png);width: 60%;height: 60%;"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">確認匯款</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts active">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_collecting.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">集貨中</div>
+                <div class="small_text"></div>
+            </div>
+        </div>
+    </div>-->
+    <!--匯款 已出貨-->
+    <!--<div class="orderprogress_detail_status">
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishorder.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">完成訂單</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishtransfer.png);width: 60%;height: 60%;"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">確認匯款</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts active">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_delivery.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">已出貨</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+    </div>-->
+    <!--刷卡 待刷卡-->
+    <!--
+    <div class="orderprogress_detail_status">
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishorder.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">完成訂單</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts active">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishcreditcard.png);width: 65%;height: 65%;"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">待付款</div>
+                <div class="small_text">$12,354,823</div>
+            </div>
+        </div>
+    </div>-->
+    <!--刷卡 集貨中-->
+    <!--
+    <div class="orderprogress_detail_status">
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishorder.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">完成訂單</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishcreditcard.png);width: 65%;height: 65%;"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">確認付款</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts active">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_collecting.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">集貨中</div>
+                <div class="small_text"></div>
+            </div>
+        </div>
+    </div>-->
+    <!--刷卡 已出貨-->
+    <!--
+    <div class="orderprogress_detail_status">
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishorder.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">完成訂單</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishcreditcard.png);width: 65%;height: 65%;"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">確認付款</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts active">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_delivery.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">已出貨</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+    </div>-->
+    <!--貨到付款 已出貨-->
+    <!--
+    <div class="orderprogress_detail_status">
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishorder.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">完成訂單</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_delivery.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">已出貨</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts active">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishcash.png);width: 68%;height: 68%;"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">貨到付款</div>
+                <div class="small_text">$2,000</div>
+            </div>
+        </div>
+    </div>-->
+    <!--貨到付款 集貨中-->
+    <div class="orderprogress_detail_status">
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishorder.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">完成訂單</div>
+                <div class="small_text">2021/05/21 17:44</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts active">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_collecting.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">集貨中</div>
+                <div class="small_text"></div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_finishcash.png);width: 68%;height: 68%;"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">貨到付款</div>
+                <div class="small_text">$2,000</div>
+            </div>
+        </div>
+    </div>
+    <div class="orderprogress_detail_winelist">
+        <div class="one_type">
+            <table cellpadding="0" cellspacing="0" border="0" class="list_detail">
+                <tr>
+                    <th colspan="4">快速到貨品項</th>
+                </tr>
+                <tr height="40">
+                    <td align="center" width="64%">
+                        酒名
+                    </td>
+                    <td align="center" width="12%">
+                        容量
+                    </td>
+                    <td align="center" width="12%">
+                        單價
+                    </td>
+                    <td align="center" width="12%">
+                        數量
+                    </td>
+                </tr>
+                <tr>
+                    <td width="64%">
+                        <div class="wine_nameCN">
+                            夏夫酒莊．艾米達吉白酒
+                        </div>
+                        <div class="wine_nameEN">
+                            Domaine Jean-Louis Chave, Hermitage Blanc
+                        </div>
+                    </td>
+                    <td align="center" width="12%">
+                        1.5L
+                    </td>
+                    <td align="center" width="12%">
+                        $&nbsp;6,280
+                    </td>
+                    <td align="center" width="12%">
+                        3
+                    </td>
+                </tr>
+                <tr>
+                    <td width="64%">
+                        <div class="wine_nameCN">
+                            夏夫酒莊．艾米達吉白酒
+                        </div>
+                        <div class="wine_nameEN">
+                            Domaine Jean-Louis Chave, Hermitage Blanc
+                        </div>
+                    </td>
+                    <td align="center" width="12%">
+                        330ml
+                    </td>
+                    <td align="center" width="12%">
+                        $&nbsp;999
+                    </td>
+                    <td align="center" width="12%">
+                        50
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="one_type">
+            <table cellpadding="0" cellspacing="0" border="0" class="list_detail">
+                <tr>
+                    <th colspan="4">一般配送品項</th>
+                </tr>
+                <tr height="40">
+                    <td align="center" width="64%">
+                        酒名
+                    </td>
+                    <td align="center" width="12%">
+                        容量
+                    </td>
+                    <td align="center" width="12%">
+                        單價
+                    </td>
+                    <td align="center" width="12%">
+                        數量
+                    </td>
+                </tr>
+                <tr>
+                    <td width="64%">
+                        <div class="wine_nameCN">
+                            夏夫酒莊．艾米達吉白酒
+                        </div>
+                        <div class="wine_nameEN">
+                            Domaine Jean-Louis Chave, Hermitage Blanc
+                        </div>
+                    </td>
+                    <td align="center" width="12%">
+                        1.5L
+                    </td>
+                    <td align="center" width="12%">
+                        $&nbsp;6,280
+                    </td>
+                    <td align="center" width="12%">
+                        3
+                    </td>
+                </tr>
+                <tr>
+                    <td width="64%">
+                        <div class="wine_nameCN">
+                            夏夫酒莊．艾米達吉白酒
+                        </div>
+                        <div class="wine_nameEN">
+                            Domaine Jean-Louis Chave, Hermitage Blanc
+                        </div>
+                    </td>
+                    <td align="center" width="12%">
+                        330ml
+                    </td>
+                    <td align="center" width="12%">
+                        $&nbsp;999
+                    </td>
+                    <td align="center" width="12%">
+                        50
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="orderprogress_detail_info">
+        <div class="order_number CLEARBOTH">
+            <div class="number">W19112500016</div>
+            <div class="sum">$12,345,687</div>
+        </div>
+        <div class="delivery_info">
+            <div class="title">收貨資訊</div>
+            <div class="row">劉學涵</div>
+            <div class="row">0987654321</div>
+            <div class="row">新北市永和區成功路一段80號15樓</div>
+        </div>
+
+        <div class="invoice_info">
+            <div class="title">發票資訊</div>
+            <div class="row">二聯式電子發票-隨貨寄出</div>
+        </div>
+        <button class="btn_editorder">
+            修改配送 / 付款資訊
+        </button>
+    </div>
+    <div class="CLEARBOTH"></div>
+</div>
+
+
+
+    <!-- FooterALL  頁腳 -->
+    <div class="member_FooterALL">
+        <div class="Footer_position">
+            <ul class="FooterMenu">
+                <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+                <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+                <li><a href="" target="_parent">條款及細則</a>｜</li>
+                <li><a href="privacy_policy.html" target="_parent">隱私條款</a></li>
+            </ul>
+            <div class="FooterICON">
+                <a href="qualityGarentee.html" target="_blank">
+                    <button class="Quality"></button>
+                </a>
+                <button class="Join"></button>
+                <button class="Novice"></button>
+            </div>
+        </div>
+    </div>
+    <!-- FooterALL  頁腳 -->
+
+
+    <div class="Warning">
+        <p></p>
+    </div>
+    <!-- Warning 警語 -->
+
+
+
+
+
+</body>
+</html>

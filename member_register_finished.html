@@ -28,10 +28,9 @@
 
 		    //送出資料後
 		    var PopTitle = '會員註冊';
-		    var PopContent = '<p>就差一步!</p><p>請您至E-mail信箱收取密碼認證信，點選信中的連結網址，完成密碼認證。</p>';
-		    $('.btn_login').click(function(){
-		    	PopOriginalThem(PopTitle,PopContent);
-		    });
+		    var HomePage = "'https://www.icheers.tw/iCheers/Wine'";
+		    var PopContent = '<p style="text-align:center;">已完成會員註冊，感謝您對愛酒窩的支持!</p><div class="notice_btn_row"><button class="notice_confirmBTN" onclick="window.location.href='+HomePage+'">挑酒去</button></div>';
+		    PopOriginalThem(PopTitle,PopContent);
     	});
     </script>
 

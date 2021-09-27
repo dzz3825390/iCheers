@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iCheers愛酒窩 ─ 會員專區</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico">
+
+
+    <link rel="stylesheet" type="text/css" href="css/Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/member2.css" />
+
+
+
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//footermenu置中
+		    var FooterMenuWidth = $('.FooterMenu').width();
+		    var FooterWidth = $('.FooterMenu').parent().width();
+		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+		    $('.FooterMenu').css('margin-left',FooterPositionX);
+		})
+	</script>
+
+</head>
+
+
+<body class="member">
+<div class="HeadALL">
+    <div class="HeadMenu">
+        <a href="" class="LogOut">會員登出</a>
+            <!--<a href="" class="HeadMenuLogin">登入 / 加入會員</a>-->
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
+            <span class="AccountNumber">普級會員<em>ich***</em>您好</span>
+    </div>
+    <div class="TagALL_Buy Buy2_margin">
+            <ul>
+                <li class="TagLogo"><a href="index.html"></a></li>
+                <li class="TagMember"></li>
+            </ul>
+        </div>  
+</div>
+    <!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+<div class="content member_orderprogress">
+    <div class="label_box">
+        <div class="one_label">會員資料</div>
+        <div class="one_label active">訂單查詢</div>
+        <div class="one_label">買過的酒</div>
+        <div class="one_label">追蹤酒款</div>
+        <div class="one_label">線上酒窖</div>
+        <div class="one_label">配送窖藏</div>
+    </div>
+    <div class="content_LL">
+        <div class="order_condition_row">
+            <div class="title">配送狀態</div>
+            <div class="dropdown">
+                <select>
+                    <option selected="selected">未出貨訂單</option>
+                    <option>已出貨訂單</option>
+                    <option>出貨中訂單</option>
+                    <option>已取消</option>
+                    <option>全部訂單</option>
+                </select>
+            </div>
+        </div>
+        <div class="order_condition_row">
+            <div class="title">訂單類型</div>
+            <div class="dropdown">
+                <select>
+                    <option selected="selected">全部訂單</option>
+                    <option>快速到貨</option>
+                    <option>一般配送</option>
+                    <option>預訂商品</option>
+                    <option>窖藏配送</option>
+                </select>
+            </div>
+        </div>
+        <div class="order_condition_row">
+            <div class="title">單號 (訂單編號或出貨單號)</div>
+            <input type="text">
+        </div>
+        <div class="order_condition_row">
+            <div class="title">購買日期</div>
+            <input type="date">
+            <div class="text">至</div>
+            <input type="date">
+        </div>
+        <div class="order_condition_row">
+            <button class="submitbtn">查詢</button>
+        </div>
+    </div>
+    <div class="content_RR">
+        <table cellpadding="0" cellspacing="0" border="0" class="order_progress_list">
+            <tr>
+                <th width="20%">訂單編號</th>
+                <th width="20%">購買日期</th>
+                <th width="15%">訂單類型</th>
+                <th width="15%">配送狀態</th>
+                <th width="20%">訂單金額</th>
+            </tr>
+            <tr>
+                <td class="order_number">W19112500016</td>
+                <td>2021/6/10</td>
+                <td class="order_type normal">一般</td>
+                <td class="order_status done">已出貨</td>
+                <td class="order_sum">$12,456,789</td>
+            </tr>
+            <tr>
+                <td class="order_number">W19112500016</td>
+                <td>2021/6/10</td>
+                <td class="order_type fast">快速</td>
+                <td class="order_status collecting">未出貨</td>
+                <td class="order_sum">$12,456,789</td>
+            </tr>
+            <tr>
+                <td class="order_number">W19112500016</td>
+                <td>2021/6/10</td>
+                <td class="order_type preorder">預訂</td>
+                <td class="order_status collecting">未出貨</td>
+                <td class="order_sum">$12,456,789</td>
+            </tr>
+            <tr>
+                <td class="order_number">W19112500016</td>
+                <td>2021/6/10</td>
+                <td class="order_type normal">分批</td>
+                <td class="order_status deliverying">出貨中</td>
+                <td class="order_sum">$789</td>
+            </tr>
+            <tr>
+                <td class="order_number">W19112500016</td>
+                <td>2021/6/10</td>
+                <td class="order_type"></td>
+                <td class="order_status cancel">已取消</td>
+                <td class="order_sum">$6,789</td>
+            </tr>
+            <tr>
+                <td class="order_number">C19112500016</td>
+                <td>2021/6/10</td>
+                <td class="order_type fast">快速</td>
+                <td class="order_status done">已出貨</td>
+                <td class="order_sum">$456,789</td>
+            </tr>
+        </table>
+    </div>
+    <div class="CLEARBOTH"></div>
+</div>
+
+
+
+    <!-- FooterALL  頁腳 -->
+    <div class="member_FooterALL">
+        <div class="Footer_position">
+            <ul class="FooterMenu">
+                <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+                <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+                <li><a href="" target="_parent">條款及細則</a>｜</li>
+                <li><a href="privacy_policy.html" target="_parent">隱私條款</a></li>
+            </ul>
+            <div class="FooterICON">
+                <a href="qualityGarentee.html" target="_blank">
+                    <button class="Quality"></button>
+                </a>
+                <button class="Join"></button>
+                <button class="Novice"></button>
+            </div>
+        </div>
+    </div>
+    <!-- FooterALL  頁腳 -->
+
+
+    <div class="Warning">
+        <p></p>
+    </div>
+    <!-- Warning 警語 -->
+
+
+
+
+
+</body>
+</html>
