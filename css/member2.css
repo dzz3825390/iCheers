@@ -1,6 +1,30 @@
 ﻿@charset "utf-8";
 /* CSS Document */
+/*給Popwindow的部分*/
+.bg_black{
+    justify-content: center;
+    align-items: center;
+}
 
+.notice_BG{
+    max-width: 100vw;
+    max-height: 100vh;
+    height: 100vh;
+}
+
+.notice_body p{
+    font-size: 16px;
+}
+
+.notice_body_input_layout input[type=text]{
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.notice_body p.hint{
+    font-size: 14px;
+}
 
 
 /*=============會員專區==============*/
@@ -566,6 +590,26 @@
     height: 40px;
 }
 
+.orderprogress_detail_winelist .one_type table.list_detail .delivery_status{
+    min-height: 40px;
+    padding: 10px 16px;
+    background-color: #e0e0e0;
+    color: #666;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail .delivery_status span{
+    width: calc(50% - 16px);
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail .delivery_status a{
+    color: #296993;
+    display: inline-block;
+    text-decoration: underline;
+}
+
 .orderprogress_detail_winelist .one_type table.list_detail td{
     min-height: 40px;
     font-size: 18px;
@@ -584,6 +628,14 @@
 }
 
 .orderprogress_detail_winelist .one_type table.list_detail td .wine_nameEN {
+    line-height: 20px;
+    font-size: 16px;
+    color: #999;
+    padding: 0 10px;
+    padding-bottom: 10px;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail td .preorder_date {
     line-height: 20px;
     font-size: 16px;
     color: #999;
@@ -893,3 +945,90 @@
     width: calc(100% - 280px - 16px);
     margin-left: 16px;
 }
+
+.member .Center_content{
+    width: 100%;
+    position: relative;
+}
+
+.cwc_option_row{
+    position: absolute;
+    right: 16px;
+    top: 0;
+}
+
+.cwc_option_row .one_option{
+    height: 45px;
+    padding: 0 16px;
+    border: 1px solid #acacac;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #acacac;
+    font-size: 18px;
+    line-height: 45px;
+    float: left;
+    position: relative;
+    margin-left: 10px;
+}
+
+.cwc_option_row .one_option:hover{
+    color: #666;
+    border-color: #666;
+}
+
+.cwc_option_row .one_option .icon_filter{
+    display: inline-block;
+    width: 24px;
+    height: 17px;
+    background-image: url(../images/icon/icon_cwc_filter.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    top: 2px;
+}
+
+.cwc_option_row .one_option:hover .icon_filter{
+    background-position: center bottom;
+}
+
+.cwc_option_row .one_option .icon_export{
+    width: 23px;
+    height: 21px;
+    background-image: url(../images/icon/icon_cwc_export.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    top: 1px;
+}
+
+.cwc_option_row .one_option:hover .icon_export{
+    background-position: center bottom;
+}
+
+.membercwc .slide_box{
+    position: relative;
+    width: 100%;
+    height: 580px;
+    overflow: hidden;
+}
+
+.membercwc .slide_box .animate_slide{
+    min-width: 100%;
+    position: absolute;
+    height: 580px;
+    left: 0;
+    top: 0;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img{
+    width: calc((100% - 180px)/7);
+    height: 580px;
+    background-size: 200%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+
+
+

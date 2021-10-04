@@ -1707,11 +1707,36 @@ a.WineList_WineName4 {
     float: left;
 }
 
+.member .Right_content .list .one_title.wine_expiredate{
+    width: 15%;
+    float: left;
+}
+
 
 .member .Right_content .list .one_title.wine_price{
     width: 15%;
     float: left;
 }
+
+/*追蹤酒款表格寬度*/
+
+.member .membertrackinglist .Right_content .list .one_title.wine_year{
+    width: 7%;
+}
+
+.member .membertrackinglist .Right_content .list .one_title.wine_capacity{
+    width: 6%;
+}
+
+.member .membertrackinglist .Right_content .list .one_title.wine_name{
+    width: 34%;
+}
+
+.member .membertrackinglist .Right_content .list .one_title.wine_price{
+    width: 14%;
+}
+
+/*追蹤酒款表格寬度 end*/
 
 .member .Right_content .wine_list_box{
     width: 100%;
@@ -1760,13 +1785,34 @@ a.WineList_WineName4 {
     cursor: pointer;
 }
 
+@keyframes TrackingBtn {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .member .Right_content .wine_list_box .one_bottle .bottle_img .tracking.active {
     background-position: center bottom;
+    animation-name: TrackingBtn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
+
 .member .Right_content .wine_list_box .one_bottle .bottle_img .tracking:hover {
     cursor: pointer;
     background-position: center bottom;
 }
+
+
 
 .member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box{
     float: right;
@@ -1808,13 +1854,62 @@ a.WineList_WineName4 {
     float: left;
 }
 
+.member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_expiredate{
+    width: calc(964px*0.15);
+    float: left;
+}
+
+/*追蹤酒款表格寬度*/
+
+.member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_name{
+    width: 34%;
+}
+
+.member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box{
+    width: 66%;
+}
+
+.member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_price{
+    width: calc(964px*0.14);
+}
+
+.member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_capacity{
+    width: calc(964px*0.06);
+}
+
+.member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_year{
+    width: calc(964px*0.07);
+}
+
+/*追蹤酒款表格寬度 end*/
+
+
 .member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row:first-child{
     margin-top: 0;
 }
 
-.member .Right_content .wine_list_box .one_bottle .wine_year,.member .Right_content .wine_list_box .one_bottle .wine_rank, .member .Right_content .wine_list_box .one_bottle .wine_capacity, .member .Right_content .wine_list_box .one_bottle .wine_ordernumber{
+.member .Right_content .wine_list_box .one_bottle .wine_year,.member .Right_content .wine_list_box .one_bottle .wine_rank, .member .Right_content .wine_list_box .one_bottle .wine_capacity, .member .Right_content .wine_list_box .one_bottle .wine_ordernumber, .member .Right_content .wine_list_box .one_bottle .wine_expiredate{
     text-align: center;
     min-height: 27px;
+    position: relative;
+}
+
+.member .Right_content .wine_list_box .one_bottle .wine_year .tracking_icon{
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon/TrackingList_red.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+    /*位置修正 原因不明*/
+    margin-top: -1px;
+}
+
+.member .Right_content .wine_list_box .one_bottle .wine_year .tracking_icon.active{
+    background-position: center bottom;
 }
 
 .member .Right_content .wine_list_box .one_bottle .wine_ordernumber a{
