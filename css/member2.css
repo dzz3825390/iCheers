@@ -931,6 +931,15 @@
     margin-top: 24px;
 }
 
+.memberinfo .btn_member_rating{
+    width: 130px;
+    height: 132px;
+    background-image: url(../images/MemberInformationIcon.png);
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
 .form_editmemberinfo{
     width: 450px;
     margin: 0 auto;
