@@ -372,3 +372,25 @@ function PopOriginalThem(title,content){
 
     LocatePop(PopWindowWidth);
 }
+
+function CWC_BottleDetail(winedata){
+    InitPop();
+
+    var WindowContent = [
+        '<div class="CWC_bottledetail_bottleimg" style="background-image:url(images/pic/wine_bottle_sample.jpg)"></div>',
+        '<div class="CWC_bottledetail_infobox"><div class="winenameCN">作品一號．第一樂章紅酒</div><div class="winenameEN">Opus One, Opus One</div><div class="label_box year CLEARBOTH"><div class="one_label">2015</div><div class="one_label active">2016</div><div class="one_label">2018</div><div class="one_label">2019</div><div class="one_label">2020</div><div class="one_label">2021</div><div class="one_label">2022</div></div><div class="label_box capacity CLEARBOTH"><div class="one_label">375ml</div><div class="one_label active">750ml</div><div class="one_label">1.5L</div></div><div class="title">2016<span></span>750ml&nbsp;數量(各年份容量總數量)</div><div class="bottle_count CLEARBOTH"><img class="icon_bottle" src="images/icon/icon_CWC_bottle_number.svg"><div class="numbertext">x26&nbsp;(102)</div><button class="btn_addcart">取酒</button></div><table cellpadding="0" cellspacing="0" border="0" class="info_table"><tr><td>購入價格</td><td>$11,000</td></tr><tr><td>目前市價</td><td>$13,000<span class="red">+2000(8.7%<em class="icon_arrow"></em>)</span></td></tr><tr><td>評價</td><td>RP&nbsp;92&nbsp;/&nbsp;100</td></tr><tr><td>試飲期</td><td>還要再等等(2030-2035)</td></tr><tr><td>類型</td><td>白氣泡葡萄酒／干型（不甜）</td></tr><tr><td>產區</td><td>Napa Valley</td></tr></table></div>'
+    ]
+
+    //視窗標題
+    //$('.notice_title').text(title);
+    //修正Css
+    $('.notice_title_layout').css('background-color','#ffffff');
+    $('.notice_body').css('padding-top','0px')
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 870;
+
+    LocatePop(PopWindowWidth);
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iCheers愛酒窩 ─ 會員專區</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/cart_202107.css">
+    <link rel="stylesheet" type="text/css" href="css/member2.css" />
+
+
+
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
+    <script type="text/javascript" src="Scripts/popcontrol.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//footermenu置中
+		    var FooterMenuWidth = $('.FooterMenu').width();
+		    var FooterWidth = $('.FooterMenu').parent().width();
+		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+		    $('.FooterMenu').css('margin-left',FooterPositionX);
+
+            //小視窗漢堡選單開啟/收合
+            $('.HeadMenu_btn').click(function(){
+                $(this).toggleClass('active');
+                $('.HeadMenu').slideToggle('fast');
+            });
+
+
+		})
+	</script>
+
+</head>
+
+
+<body class="member">
+<div class="HeadALL">
+    <div class="HeadMenu_btn">
+        <a class="navicon-button uarr" id="menuBTN">
+            <div class="navicon"></div>
+        </a> 
+    </div>
+    <div class="HeadMenu">
+        <!--a href="" class="LogOut">會員登出</a-->
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+        <!--span class="AccountNumber">ich***, 您好</span-->
+    </div>
+
+
+
+    <div class="TagALL_cart">
+        <div class="TagLogo_layout">
+            <a href="index.html" class="TagLogo"></a>
+        </div>
+    </div>
+    
+</div>
+
+    <!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+<div class="content membercwc membercwc_cart">
+    <div class="label_box">
+        <div class="one_label">會員資料</div>
+        <div class="one_label">訂單查詢</div>
+        <div class="one_label">買過的酒</div>
+        <div class="one_label">追蹤酒款</div>
+        <div class="one_label">線上酒窖</div>
+        <div class="one_label active">配送窖藏</div>
+    </div>
+    <div class="step3_processbar">
+        <div class="textbox">
+            <div class="text active">
+                取酒
+            </div>
+            <div class="text">
+                配送資訊
+            </div>
+            <div class="text">
+                發票
+            </div>
+            <div class="text">
+                付款方式
+            </div>
+        </div>
+        <div class="gray_line">
+            <div class="gray_dot active"></div>
+            <div class="gray_dot"></div>
+            <div class="gray_dot"></div>
+            <div class="gray_dot"></div>
+        </div>
+    </div>
+    <section class="step_option">
+        <div class="options">
+            <div class="one_option check_all">
+                <div class="icon_check"></div>
+                <div class="text">選擇全部</div>
+            </div>
+            <div class="one_option" id="Delete_All">
+                <div class="icon_delete"></div>
+                <div class="text">刪除</div>
+            </div>
+        </div>
+        <div class="bottlecount_note">
+            配送總瓶數<span class="number">96</span>瓶
+        </div>
+    </section>
+    <div class="cart_list_layout">
+        <div class="cart_list_OneBottle">
+            <div class="option_check">
+                <div class="icon_check"></div>
+            </div>
+            <div class="wine_info">
+                <div class="nameCN">夏夫酒莊．艾米達吉白酒</div>
+                <div class="nameEN">Domaine Jean-Louis Chave, Hermitage Blanc</div>
+                <div class="otherinfo">
+                    2011<span></span>750ml
+                </div>
+                <div class="priceavg">窖藏均價&nbsp;$43,235<span class="icon_info">i</span></div>
+            </div>
+            <div class="count_price">
+                <div class="count delivery">
+                    <div class="icon_minus"></div>
+                    <input type="number" class="bottle_number" value="4">
+                    <div class="icon_plus"></div>
+                </div>
+                <div class="price">
+                    <div class="text">還剩<span>32</span>瓶</div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_list_OneBottle">
+            <div class="option_check">
+                <div class="icon_check"></div>
+            </div>
+            <div class="wine_info">
+                <div class="nameCN">夏夫酒莊．艾米達吉白酒</div>
+                <div class="nameEN">Domaine Jean-Louis Chave, Hermitage Blanc</div>
+                <div class="otherinfo">
+                    2011<span></span>750ml
+                </div>
+                <div class="priceavg">窖藏均價&nbsp;$43,235<span class="icon_info">i</span></div>
+            </div>
+            <div class="count_price">
+                <div class="count delivery">
+                    <div class="icon_minus"></div>
+                    <input type="number" class="bottle_number" value="4">
+                    <div class="icon_plus"></div>
+                </div>
+                <div class="price">
+                    <div class="text">還剩<span>32</span>瓶</div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_list_OneBottle">
+            <div class="option_check">
+                <div class="icon_check"></div>
+            </div>
+            <div class="wine_info">
+                <div class="nameCN">夏夫酒莊．艾米達吉白酒</div>
+                <div class="nameEN">Domaine Jean-Louis Chave, Hermitage Blanc</div>
+                <div class="otherinfo">
+                    2011<span></span>750ml
+                </div>
+                <div class="priceavg">窖藏均價&nbsp;$43,235<span class="icon_info">i</span></div>
+            </div>
+            <div class="count_price">
+                <div class="count delivery">
+                    <div class="icon_minus"></div>
+                    <input type="number" class="bottle_number" value="4">
+                    <div class="icon_plus"></div>
+                </div>
+                <div class="price">
+                    <div class="text">還剩<span>32</span>瓶</div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_list_OneBottle">
+            <div class="option_check">
+                <div class="icon_check"></div>
+            </div>
+            <div class="wine_info">
+                <div class="nameCN">夏夫酒莊．艾米達吉白酒</div>
+                <div class="nameEN">Domaine Jean-Louis Chave, Hermitage Blanc</div>
+                <div class="otherinfo">
+                    2011<span></span>750ml
+                </div>
+                <div class="priceavg">窖藏均價&nbsp;$43,235<span class="icon_info">i</span></div>
+            </div>
+            <div class="count_price">
+                <div class="count delivery">
+                    <div class="icon_minus"></div>
+                    <input type="number" class="bottle_number" value="4">
+                    <div class="icon_plus"></div>
+                </div>
+                <div class="price">
+                    <div class="text">還剩<span>32</span>瓶</div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_list_OneBottle">
+            <div class="option_check">
+                <div class="icon_check"></div>
+            </div>
+            <div class="wine_info">
+                <div class="nameCN">夏夫酒莊．艾米達吉白酒</div>
+                <div class="nameEN">Domaine Jean-Louis Chave, Hermitage Blanc</div>
+                <div class="otherinfo">
+                    2011<span></span>750ml
+                </div>
+                <div class="priceavg">窖藏均價&nbsp;$43,235<span class="icon_info">i</span></div>
+            </div>
+            <div class="count_price">
+                <div class="count delivery">
+                    <div class="icon_minus"></div>
+                    <input type="number" class="bottle_number" value="4">
+                    <div class="icon_plus"></div>
+                </div>
+                <div class="price">
+                    <div class="text">還剩<span>32</span>瓶</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="CLEARBOTH"></div>
+</div>
+
+
+
+    <!-- FooterALL  頁腳 -->
+    <div class="member_FooterALL">
+        <div class="Footer_position">
+            <ul class="FooterMenu">
+                <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+                <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+                <li><a href="" target="_parent">條款及細則</a>｜</li>
+                <li><a href="privacy_policy.html" target="_parent">隱私條款</a></li>
+            </ul>
+            <div class="FooterICON">
+                <a href="qualityGarentee.html" target="_blank">
+                    <button class="Quality"></button>
+                </a>
+                <button class="Join"></button>
+                <button class="Novice"></button>
+            </div>
+        </div>
+    </div>
+    <!-- FooterALL  頁腳 -->
+
+
+    <div class="Warning_small_screen">
+    飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+    </div>
+    <div class="Warning"><p></p></div>
+    <!-- Warning 警語 -->
+
+
+<!-- 黑底 start-->
+<div class="bg_black" id="bg_black">
+    <div class="notice_BG">
+        <div class="notice_title_layout">
+            <div class="notice_title"></div>
+            <div class="notice_title_closeBTN" onclick="ClosePop();"></div>
+            <div class="CLEAR"></div>
+        </div>
+        <div class="notice_body CLEARBOTH">
+            
+        </div>
+    </div>
+
+</div>
+<!-- 黑底 end-->
+
+
+</body>
+</html>

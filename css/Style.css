@@ -1712,9 +1712,18 @@ a.WineList_WineName4 {
     float: left;
 }
 
-
 .member .Right_content .list .one_title.wine_price{
     width: 15%;
+    float: left;
+}
+
+.member .Right_content .list .one_title.wine_bottlecount{
+    width: 8%;
+    float: left;
+}
+
+.member .Right_content .list .one_title.wine_readytodrink{
+    width: 10%;
     float: left;
 }
 
@@ -1737,6 +1746,14 @@ a.WineList_WineName4 {
 }
 
 /*追蹤酒款表格寬度 end*/
+
+/*CWC酒款表格寬度*/
+
+.member .membercwc .Right_content .list .one_title.wine_name{
+    width: 37%;
+}
+
+/*CWC酒款表格寬度 end*/
 
 .member .Right_content .wine_list_box{
     width: 100%;
@@ -1859,6 +1876,18 @@ a.WineList_WineName4 {
     float: left;
 }
 
+.member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_bottlecount{
+    width: calc(964px*0.08);
+    float: left;
+    text-align: center;
+}
+
+.member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_readytodrink{
+    width: calc(964px*0.1);
+    float: left;
+    text-align: center;
+}
+
 /*追蹤酒款表格寬度*/
 
 .member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_name{
@@ -1882,6 +1911,18 @@ a.WineList_WineName4 {
 }
 
 /*追蹤酒款表格寬度 end*/
+
+/*cwc表格寬度*/
+
+.member .membercwc .Right_content .wine_list_box .one_bottle .wine_name{
+    width: 37%;
+}
+
+.member .membercwc .Right_content .wine_list_box .one_bottle .wine_detailinfo_box{
+    width: 63%;
+}
+
+/*cwc表格寬度 end*/
 
 
 .member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row:first-child{
@@ -1947,6 +1988,20 @@ a.WineList_WineName4 {
     text-align: right;
 }
 
+.member .Right_content .wine_list_box .one_bottle .wine_price .red{
+    font-size: 14px;
+    color: #d30a0a;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.member .Right_content .wine_list_box .one_bottle .wine_price .green{
+    font-size: 14px;
+    color: #0b7b62;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
 .member .Right_content .wine_list_box .one_bottle .wine_price .icon_addcart{
     width: 15px;
     height: 15px;
@@ -1983,6 +2038,20 @@ a.WineList_WineName4 {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.member .Right_content .wine_list_box .one_bottle .wine_price .icon_addcart.cwc{
+    background-image: url(../images/icon/icon_cwc_delivery.png);
+    width: 20px;
+    height: 20px;
+    background-color: #904d06;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    position: relative;
+    top: 2px;
+}
+
 
 /********小Banner區******/
 .Right_content_AllSmallBanner_layout{

@@ -256,9 +256,10 @@
     margin: 0 auto;
     padding-top: 0;
     padding-bottom: 137px;
+    position: relative;
 }
 
-.label_box{
+.content .label_box{
     width: 100%;
     height: 45px;
     margin-bottom: 32px;
@@ -268,7 +269,7 @@
     position: relative;
 }
 
-.label_box:before{
+.content .label_box:before{
     content: '';
     width: 5px;
     height: 45px;
@@ -278,7 +279,7 @@
     left: -5px;
 }
 
-.label_box:after{
+.content .label_box:after{
     content: '';
     width: 5px;
     height: 45px;
@@ -288,7 +289,7 @@
     right: -5px;
 }
 
-.label_box .one_label{
+.content .label_box .one_label{
     height: 45px;
     padding: 0 32px;
     background-color: #fff;
@@ -299,11 +300,11 @@
     transition: background-color 0.3s,color 0.3s;
 }
 
-.label_box .one_label:hover{
+.content .label_box .one_label:hover{
     color: #333;
 }
 
-.label_box .one_label.active{
+.content .label_box .one_label.active{
     background-color: #9f999d;
     color: #fff;
 }
@@ -955,15 +956,88 @@
     margin-left: 16px;
 }
 
+.membercwc_list .Right_content,.membercwc_list .Left_Menu_layout {
+    margin-top: 60px;
+}
+
 .member .Center_content{
     width: 100%;
     position: relative;
 }
 
+.member .fliter_box_position{
+    width: 280px;
+    right: 310px;
+    position: absolute;
+    /*padding-top: 40px;*/
+    background-color: #fff;
+    display: none;
+}
+
+.member .fliter_box_position.active{
+    display: block;
+}
+
+.member .fliter_box{
+    width: 280px;
+    height: 580px;
+    /*height: 540px;*/
+    position: relative;
+    background-color: #f7f7f7;
+    border: 1px solid #b9b9b9;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+/*.member .fliter_box_position .btn_close{
+    width: 30px;
+    height: 30px;
+    background-color: #666;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 6;
+}
+
+.member .fliter_box_position .btn_close:before{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #f2f2f2;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: 9;
+    top: 14px;
+    left: 5px;
+}
+
+.member .fliter_box_position .btn_close:after{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #f2f2f2;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    position: absolute;
+    z-index: 9;
+    top: 14px;
+    left: 5px;
+}*/
+
 .cwc_option_row{
     position: absolute;
     right: 16px;
     top: 0;
+    z-index: 5;
+}
+
+.membercwc_list .cwc_option_row{
+    top: 80px;
 }
 
 .cwc_option_row .one_option{
@@ -983,6 +1057,15 @@
 .cwc_option_row .one_option:hover{
     color: #666;
     border-color: #666;
+}
+
+.cwc_option_row .one_option#Btn_Filter.active{
+    color: #666;
+    border-color: #666;
+}
+
+.cwc_option_row .one_option#Btn_Filter.active .icon_filter{
+    background-position: center bottom;
 }
 
 .cwc_option_row .one_option .icon_filter{
@@ -1014,11 +1097,84 @@
     background-position: center bottom;
 }
 
-.membercwc .slide_box{
-    position: relative;
+.membercwc .slide_show{
     width: 100%;
     height: 580px;
+    position: relative;
+}
+
+.membercwc .slide_show .btn_prev{
+    width: 24px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 240px;
+    cursor: pointer;
+}
+
+.membercwc .slide_show .btn_prev:before{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(-60deg);
+    position: absolute;
+    top: 24px;
+    left: -12px;
+}
+
+.membercwc .slide_show .btn_prev:after{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(60deg);
+    position: absolute;
+    top: 66px;
+    left: -12px;
+}
+
+.membercwc .slide_show .btn_next{
+    width: 24px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 240px;
+    cursor: pointer;
+}
+
+.membercwc .slide_show .btn_next:before{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(60deg);
+    position: absolute;
+    top: 24px;
+    left: -12px;
+}
+
+.membercwc .slide_show .btn_next:after{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(-60deg);
+    position: absolute;
+    top: 66px;
+    left: -12px;
+}
+
+.membercwc .slide_box{
+    position: relative;
+    width: 90%;
+    height: 580px;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .membercwc .slide_box .animate_slide{
@@ -1027,17 +1183,460 @@
     height: 580px;
     left: 0;
     top: 0;
+    transition: left 0.5s,right 0.5s;
 }
 
 .membercwc .slide_box .animate_slide .one_bottle_img{
-    width: calc((100% - 180px)/7);
+    width: calc(1152px/7);
     height: 580px;
-    background-size: 200%;
+    background-size: 180%;
     background-position: center bottom;
     background-repeat: no-repeat;
     float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img img{
+    width: 180%;
+    height: auto;
+    margin-left: -40%;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img.large img{
+    width: 220%;
+    margin-left: -60%;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img.small img{
+    width: 150%;
+    margin-left: -25%;
 }
 
 
+.membercwc .slide_box .animate_slide .one_bottle_img:nth-child(7n){
+    margin-right: 0;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box{
+    width: 114px;
+    padding: 16px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: bottom 0.5s,opacity 0.3s;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img:hover .more_years_box{
+    bottom: 0;
+    opacity: 1;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box .one_year{
+    font-size: 20px;
+    font-weight: bold;
+    color: #666;
+    position: relative;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box .one_year:first-child{
+    margin-top: 0;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box .one_year a{
+    color: #666;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: normal;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box .one_year .icon_delivery{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #904d06;
+    border-radius: 50%;
+    position: relative;
+    top: 4px;
+    margin-left: 4px;
+    background-image: url(../images/icon/icon_cwc_delivery.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.CWC_bottledetail_bottleimg{
+    float: left;
+    width: 280px;
+    height: 645px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.CWC_bottledetail_infobox{
+    float: right;
+    width: calc(100% - 280px - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.CWC_bottledetail_infobox .winenameCN{
+    font-size: 24px;
+    line-height: 36px;
+    color: #100a04;
+}
+
+.CWC_bottledetail_infobox .winenameEN{
+    font-size: 24px;
+    line-height: 36px;
+    color: #100a04;
+}
+
+.CWC_bottledetail_infobox .label_box{
+    width: 100%;
+    margin-top: 16px;
+}
+
+.CWC_bottledetail_infobox .label_box .one_label{
+    width: calc((100% - 30px)/7);
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: #666;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.CWC_bottledetail_infobox .label_box .one_label:last-child{
+    margin-right: 0;
+}
+
+.CWC_bottledetail_infobox .label_box .one_label:nth-child(7n){
+    margin-right: 0;
+}
+
+.CWC_bottledetail_infobox .label_box .one_label.active{
+    background-color: #8e6681;
+    border-color: #8e6681;
+    color: #fff;
+}
+
+.CWC_bottledetail_infobox .title{
+    font-size: 18px;
+    color: #666;
+    font-weight: bold;
+    margin-top: 32px;
+}
+
+.CWC_bottledetail_infobox .title span{
+    width: 1px;
+    height: 14px;
+    display: inline-block;
+    background-color: #999;
+    margin: 0 10px;
+    position: relative;
+    top: 0px;
+}
+
+.CWC_bottledetail_infobox .bottle_count{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.CWC_bottledetail_infobox .bottle_count .icon_bottle{
+    float: left;
+    width: 10px;
+    height: auto;
+}
+
+.CWC_bottledetail_infobox .bottle_count .numbertext{
+    font-size: 28px;
+    color: #666666;
+    float: left;
+    margin-left: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.CWC_bottledetail_infobox .bottle_count .btn_addcart{
+    width: 65px;
+    height: 40px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #904d06;
+    float: left;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.CWC_bottledetail_infobox .info_table{
+    width: 100%;
+    margin-top: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.CWC_bottledetail_infobox .info_table tr:nth-child(odd){
+    background-color: #fff;
+}
+
+.CWC_bottledetail_infobox .info_table tr:nth-child(even){
+    background-color: #fafafa;
+}
+
+.CWC_bottledetail_infobox .info_table td{
+    padding: 12px 16px;
+    font-size: 18px;
+    color: #666;
+}
+
+.CWC_bottledetail_infobox .info_table td:first-child{
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.CWC_bottledetail_infobox .info_table td .red{
+    color: #d30a0a;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.CWC_bottledetail_infobox .info_table td .green{
+    color: #0b7b62;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.CWC_bottledetail_infobox .info_table td .icon_arrow{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 1px;
+    margin: 0 2px;
+}
+
+.CWC_bottledetail_infobox .info_table td .red .icon_arrow{
+    background-image: url(../images/icon/icon_cwcbottleprice_arrow_red.png);
+}
+
+.CWC_bottledetail_infobox .info_table td .green .icon_arrow{
+    background-image: url(../images/icon/icon_cwcbottleprice_arrow_green.png);
+}
+
+.member_FooterALL{
+    display: none;
+}
+
+.member .membercwc_cart{
+    width: 100%;
+}
+
+.member .membercwc_cart .label_box:before,.member .membercwc_cart .label_box:after{
+    display: none;
+}
+
+.member .membercwc_cart .label_box .one_label{
+    padding: 0 8px;
+    font-size: 16px;
+}
+
+.member .membercwc_cart .step3_processbar .textbox .text{
+    width: 64px;
+}
+
+.member .membercwc_cart .step3_processbar .textbox .text:first-child{
+    margin-left: -4px;
+}
+
+.member .membercwc_cart .step3_processbar .gray_line .gray_dot.active{
+    border-color: #904d06;
+}
+
+.member .membercwc_cart .step_option{
+    margin-top: 10px;
+}
+
+.member .membercwc_cart .step_option .bottlecount_note{
+    font-size: 16px;
+    color: #666;
+    margin-top: 28px;
+}
+
+.member .membercwc_cart .step_option .bottlecount_note .number{
+    display: inline-block;
+    margin: 0 8px;
+    font-weight: bold;
+    color: #c29c20;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info{
+    margin-left: 40px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .nameCN{
+    font-size: 16px;
+    color: #000;
+    line-height: 21px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .nameEN{
+    font-size: 16px;
+    color: #666;
+    line-height: 21px;
+    margin-top: 4px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .otherinfo{
+    font-size: 16px;
+    color: #666;
+    line-height: 21px;
+    margin-top: 4px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .otherinfo span{
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #999;
+    position: relative;
+    top: 2px;
+    margin:0 8px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .priceavg{
+    width: 100%;
+    color: #666;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .priceavg .icon_info{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+    color: #999;
+    border: 1px solid #999;
+    border-radius: 50%;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 6px;
+    position: relative;
+    top: -2px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .count_price .price .text{
+    color: #666;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .count_price .price .text span{
+    margin: 0 6px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px){
+    .member_FooterALL{
+        display: block;
+    }
+
+    .member .membercwc_cart{
+        margin-top: 40px;
+        max-width: 1280px;
+    }
+
+    .member .membercwc_cart .label_box:before,.member .membercwc_cart .label_box:after{
+        display: block;
+    }
+
+    .member .membercwc_cart .label_box .one_label {
+        padding: 0 32px;
+        font-size: 20px;
+    }
+
+    .member .membercwc_cart .step3_processbar .textbox .text:first-child{
+        margin-left: 0px;
+    }
+
+    .member .membercwc_cart .step_option{
+        width: 650px;
+        margin: 0 auto;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    .member .membercwc_cart .step_option .options{
+        border: none;
+        margin-left: 0;
+    }
+
+    .member .membercwc_cart .cart_list_layout{
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info{
+        margin-left: 0;
+        width: 60%;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info .nameCN{
+        font-size: 18px;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info .nameEN{
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info .otherinfo{
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info .otherinfo span{
+        height: 12px;
+        top: 0;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .count_price{
+        width: calc(40% - 40px - 16px);
+        margin-left: 16px;
+    }
+
+}
 
 
