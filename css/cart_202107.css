@@ -3104,20 +3104,51 @@ input{
 
 .step3_content .btn_edit{
 	width: 60px;
-	height: 35px;
-	border-radius: 3px;
-	border: 1px solid #b4b4b4;
-	color: #b4b4b4;
-	font-size: 14px;
-	line-height: 35px;
-	text-align: center;
-	outline: none;
-	position: absolute;
-	right: 20px;
-	top: 70px;
+    height: 35px;
+    color: rgb(180, 180, 180);
+    font-size: 14px;
+    line-height: 35px;
+    text-align: center;
+    float: right;
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(180, 180, 180);
+    border-image: initial;
+    outline: none;
+    cursor: pointer;
 }
 
 .step3_content .btn_edit:hover{
+	color: #666;
+	border-color: #666;
+}
+
+.step3_content .btn_save {
+    height: 35px;
+    box-sizing: border-box;
+    color: rgb(180, 180, 180);
+    font-size: 14px;
+    line-height: 35px;
+    text-align: center;
+    float: right;
+    margin-top: 10px;
+    margin-right: 5px;
+    display: none;
+    align-items: center;
+    padding: 0px 10px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(180, 180, 180);
+    border-image: initial;
+    outline: none;
+    cursor: pointer;
+}
+
+.step3_content .btn_save:hover {
 	color: #666;
 	border-color: #666;
 }
@@ -3126,11 +3157,27 @@ input{
     
     .step3_content .btn_edit{
         height: 40px;
-        line-height: 40px;
-        top: 80px;
-        right: 20px;
-        font-size: 16px;
+	    line-height: 40px;
+	    top: 80px;
+	    right: 20px;
+	    font-size: 16px;
     }
+
+    .step3_content .btn_save {
+	    height: 40px;
+	    line-height: 40px;
+	    top: 80px;
+	    right: 20px;
+	    font-size: 16px;
+	}
+
+	.step3_content .btn_save input{
+		margin-right: 5px;
+	}
+
+	.step3_content #InvoiceInfoRow .btn_save, .step3_content #InvoiceInfoRow .btn_edit{
+		margin-top: 20px;
+	}
 
 }
 
@@ -3166,9 +3213,6 @@ input{
         margin-top: 32px;
     }
 
-    .step3_content .row:nth-child(2){
-        margin-top: 0;
-    }
 }
 
 .step3_content .row .title{
@@ -3270,15 +3314,18 @@ input{
 
 .step3_content select.delivery_info_select{
 	height: 35px;
-	line-height: 35px;
-	font-size: 14px;
-	border: 1px solid #cccccc;
-	color: #666;
-	padding: 0 8px;
-	box-sizing: border-box;
-	border-radius: 3px;
-	outline: none;
-	float: right;
+    line-height: 35px;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+    box-sizing: border-box;
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    padding: 0px 8px;
+    border-radius: 3px;
+    outline: none;
 }
 
 .step3_content select.company_info{
@@ -3289,8 +3336,8 @@ input{
 @media screen and (min-width: 760px){
     .step3_content select.delivery_info_select{
         height: 40px;
-        line-height: 40px;
-        font-size: 16px;
+	    line-height: 40px;
+	    font-size: 16px;
     }
 
     .step3_content select.company_info{
