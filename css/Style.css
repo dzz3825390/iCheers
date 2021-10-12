@@ -1553,6 +1553,10 @@ a.WineList_WineName4 {
 .Left_Menu_bottom{
     margin-top: 20px;
 }
+
+.member .Left_Menu_ClassifySearch_searchICON{
+    margin-top: 21px;
+}
 /********************** Left_MENU  左選單 end ************************/
 
 /********************* 右邊欄 ***************************/

@@ -375,10 +375,38 @@ function PopOriginalThem(title,content){
 
 function CWC_BottleDetail(winedata){
     InitPop();
+    
+    //年份label組合
+    var YearsLabel = '';
+    winedata[0].AllYears.forEach(function(year,index){
+        if (year == winedata[0].Year){
+            YearsLabel = YearsLabel + '<div class="one_label active">'+year+'</div>';
+        } else {
+            YearsLabel = YearsLabel + '<div class="one_label">'+year+'</div>';
+        }
+    });
+
+    //容量label組合
+    var CapacityLabel = '';
+    winedata[0].AllCapacity.forEach(function(capacity,index){
+        if (capacity == winedata[0].Capacity){
+            CapacityLabel = CapacityLabel + '<div class="one_label active">'+capacity+'</div>';
+        } else {
+            CapacityLabel = CapacityLabel + '<div class="one_label">'+capacity+'</div>';
+        }
+    });
+
+    //漲跌組合
+    var PriceUpDown = '';
+    if (winedata[0].PriceUpDown == 'up') {
+        PriceUpDown = '<span class="red">+'+winedata[0].PriceUpDownRange+'('+winedata[0].PriceUpDownRangePercentage+'%<em class="icon_arrow"></em>)</span>'
+    } else {
+        PriceUpDown = '<span class="green">-'+winedata[0].PriceUpDownRange+'(-'+winedata[0].PriceUpDownRangePercentage+'%<em class="icon_arrow"></em>)</span>'
+    }
 
     var WindowContent = [
         '<div class="CWC_bottledetail_bottleimg" style="background-image:url(images/pic/wine_bottle_sample.jpg)"></div>',
-        '<div class="CWC_bottledetail_infobox"><div class="winenameCN">作品一號．第一樂章紅酒</div><div class="winenameEN">Opus One, Opus One</div><div class="label_box year CLEARBOTH"><div class="one_label">2015</div><div class="one_label active">2016</div><div class="one_label">2018</div><div class="one_label">2019</div><div class="one_label">2020</div><div class="one_label">2021</div><div class="one_label">2022</div></div><div class="label_box capacity CLEARBOTH"><div class="one_label">375ml</div><div class="one_label active">750ml</div><div class="one_label">1.5L</div></div><div class="title">2016<span></span>750ml&nbsp;數量(各年份容量總數量)</div><div class="bottle_count CLEARBOTH"><img class="icon_bottle" src="images/icon/icon_CWC_bottle_number.svg"><div class="numbertext">x26&nbsp;(102)</div><button class="btn_addcart">取酒</button></div><table cellpadding="0" cellspacing="0" border="0" class="info_table"><tr><td>購入價格</td><td>$11,000</td></tr><tr><td>目前市價</td><td>$13,000<span class="red">+2000(8.7%<em class="icon_arrow"></em>)</span></td></tr><tr><td>評價</td><td>RP&nbsp;92&nbsp;/&nbsp;100</td></tr><tr><td>試飲期</td><td>還要再等等(2030-2035)</td></tr><tr><td>類型</td><td>白氣泡葡萄酒／干型（不甜）</td></tr><tr><td>產區</td><td>Napa Valley</td></tr></table></div>'
+        '<div class="CWC_bottledetail_infobox"><div class="winenameCN">'+winedata[0].WineNameCN+'</div><div class="winenameEN">'+winedata[0].WineNameEN+'</div><div class="label_box year CLEARBOTH">'+YearsLabel+'</div><div class="label_box capacity CLEARBOTH">'+CapacityLabel+'</div><div class="title">'+winedata[0].Year+'<span></span>'+winedata[0].Capacity+'&nbsp;數量(各年份容量總數量)</div><div class="bottle_count CLEARBOTH"><img class="icon_bottle" src="images/icon/icon_CWC_bottle_number.svg"><div class="numbertext">x'+winedata[0].BottleCount+'&nbsp;('+winedata[0].BottleAmount+')</div><button class="btn_addcart">取酒</button></div><table cellpadding="0" cellspacing="0" border="0" class="info_table"><tr><td>購入價格</td><td>'+winedata[0].PriceBuy+'</td></tr><tr><td>目前市價</td><td>'+winedata[0].PriceNow+PriceUpDown+'</td></tr><tr><td>評價</td><td>'+winedata[0].Rate+'</td></tr><tr><td>試飲期</td><td>'+winedata[0].ReadytoDrink+'</td></tr><tr><td>類型</td><td>'+winedata[0].Type+'</td></tr><tr><td>產區</td><td>'+winedata[0].Region+'</td></tr></table></div>'
     ]
 
     //視窗標題
@@ -391,6 +419,44 @@ function CWC_BottleDetail(winedata){
 
     //指定大視窗時pop寬度
     var PopWindowWidth = 870;
+
+    LocatePop(PopWindowWidth);
+}
+
+function CWC_SuperExpressInfo() {
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:center;">內容未定</p>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('特急件說明');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 350;
+
+    LocatePop(PopWindowWidth);
+}
+
+function CWC_SelfCollectInfo(){
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:center;">內容未定</p>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('自取說明');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 350;
 
     LocatePop(PopWindowWidth);
 }

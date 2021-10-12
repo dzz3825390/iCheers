@@ -19,6 +19,20 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
+
+            //瀏覽器內容寬度
+            var intBrowserW = 0;
+            //瀏覽器內容高度
+            var intBrowserH = 0;
+            //取得瀏覽器內容寬度/高度
+            if (document.documentElement) {
+                intBrowserW = document.documentElement.clientWidth;
+                intBrowserH = document.documentElement.clientHeight;
+            } else {
+                intBrowserW = document.body.clientWidth;
+                intBrowserH = document.body.clientHeight;
+            }
+            
 			//footermenu置中
 		    var FooterMenuWidth = $('.FooterMenu').width();
 		    var FooterWidth = $('.FooterMenu').parent().width();
@@ -32,6 +46,35 @@
                 $('.HeadMenu').slideToggle('fast');
             });
 
+            //客製checkbox
+            $('.icon_check').click(function(){
+                $(this).toggleClass('active');
+            });
+
+            //酒款全選
+            $('.check_all').click(function(){
+                $('.cart_list_layout .option_check').each(function(){
+                        $(this).children().toggleClass('active');
+                    });
+            });
+
+            //確認18歲整個一起點
+            $('.confirm18').click(function(){
+                $(this).find('.icon_check').toggleClass('active');
+                    setTimeout(function(){
+                        if (intBrowserW < 740){
+                            $('.animate_slideupbox').animate({top:'-60px'});
+                            $('.confirm18').css('height','130px');
+                        } else if (intBrowserW < 1200) {
+                            $('.animate_slideupbox').animate({top:'-70px'});
+                            $('.confirm18').css('height','150px');
+                        } else {
+                            $('.animate_slideupbox').animate({top:'-70px'});
+                            $('.confirm18').css('height','150px');
+                        }
+                            
+                },100)
+            });
 
 		})
 	</script>
@@ -230,6 +273,43 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="proclaim">
+        <div class="proclaim_row">
+            本網站不鼓勵、不提倡飲酒。未成年請勿飲酒，飲酒過量有害健康，酒後不開車。
+        </div>
+        <div class="proclaim_row">
+            <span>本網站僅提供商品資訊，<strong>恕不提供線上交易服務</strong>，網站上不可接受訂單或完成訂單確認。</span>如果對本網站所陳列的商品有興趣，請詳閱本宣告文後，點選「送出確認信」洽詢，本公司收到您的訊息後將有客服人員Email與您聯繫。
+        </div>
+        <div class="proclaim_row">
+            本網站酒類商品不得售予未滿十八歲之青少年，因此欲發送詢問希望進一步訊息時，<span>請務必確認<strong>訂購人及收貨人</strong>均為年滿十八歲以上之成年人。</span>如本網站服務人員與送貨人員在難以辨識訂購人或收貨人之年齡時，必會請對方提供證明文件，屆時敬請務必配合。
+        </div>
+        <div class="proclaim_row">
+            本公司保有隨時更動價格、取消或拒絕交易之權力，若造成不便，敬請見諒。
+        </div>
+        <div class="proclaim_row">
+            iCheers愛酒窩非常重視您的隱私權，瞭解更多<a href="">隱私權政策</a>。
+        </div>
+        <div class="proclaim_row">
+            iCheers愛酒窩非常重視酒品品質，請將收到的酒品妥善保存於低溫環境，詳見品質宣言，若未保存得當，恕不接受退換貨。
+        </div>
+    </div>
+
+    <div class="confirm18">
+        <div class="animate_slideupbox">
+            <div class="before_confirm18">
+                <div class="icon_check"></div>
+                <div class="text">
+                    <div class="large">我已年滿18歲</div>
+                    <div class="small">並詳細閱讀與同意網站條款</div>
+                </div>
+            </div>
+            <div class="btn_ordersubmit" id="OrderSubmit">送出確認信</div>
+            <div class="additem">
+                您已符合加價優惠條件，<br>詳細品項請見<span>加價GO</span>
+            </div>
+        </div>  
     </div>
     <div class="CLEARBOTH"></div>
 </div>

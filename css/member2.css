@@ -259,6 +259,15 @@
     position: relative;
 }
 
+.member .content.membercwc_cart{
+    padding-bottom: 0;
+}
+
+@media screen and (min-width: 768px){
+    .member .content.membercwc_cart{
+        padding-bottom: 137px;
+    }
+}
 .content .label_box{
     width: 100%;
     height: 45px;
@@ -492,6 +501,32 @@
 .order_progress_list td.order_sum{
     text-align: right;
     padding-right: 57px;
+}
+
+.nodata_text{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 35px;
+    color: #999;
+    margin-top: 16px;
+}
+
+.nodata_text strong{
+    font-weight: bold;
+}
+
+.nodata_img{
+    width: 100%;
+    display: block;
+    margin-top: 24px;
+}
+
+.nodata_img img{
+    display: block;
+    width: 450px;
+    height: auto;
+    margin: 0 auto;
 }
 
 .orderprogress_detail_status{
@@ -1454,6 +1489,7 @@
 
 .CWC_bottledetail_infobox .info_table td .green .icon_arrow{
     background-image: url(../images/icon/icon_cwcbottleprice_arrow_green.png);
+    transform: rotate(45deg);
 }
 
 .member_FooterALL{
@@ -1635,6 +1671,25 @@
     .member .membercwc_cart .cart_list_OneBottle .count_price{
         width: calc(40% - 40px - 16px);
         margin-left: 16px;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .option_check{
+        margin-top: 7px;
+    }
+
+    .member .membercwc_cart .proclaim{
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+    }
+
+    .member .membercwc_cart .confirm18{
+        position: relative;
+        right: unset;
+        top: unset;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }

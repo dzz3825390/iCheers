@@ -3233,6 +3233,22 @@ input{
 	margin-left: 10px;
 }
 
+.step3_content .row .sex_radio span label.icon_question{
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 11px;
+	color: #666;
+	border: 1px solid #666;
+	border-radius: 50%;
+	position: relative;
+	margin: 0 6px;
+	display: inline-block;
+	top: -2px;
+	cursor: pointer;
+}
+
 .step3_content .row select{
 	height: 45px;
 	border: 1px solid #ccc;

@@ -75,8 +75,32 @@
                 $('.fliter_box_position').toggleClass('active');
             });
 
+            //test data
+            var winedata = [
+                {
+                    WineNameCN:'作品一號．第一樂章紅酒',
+                    WineNameEN:'Opus One, Opus One',
+                    Year:'2016',
+                    AllYears:['2015','2016','2018','2019','2020','2021','2022'],
+                    Capacity:'750ml',
+                    AllCapacity:['375ml','750ml','1.5L'],
+                    BottleCount:'26',
+                    BottleAmount:'102',
+                    PriceBuy:'$11,000',
+                    PriceNow:'$13,000',
+                    PriceUpDown:'up',
+                    PriceUpDownRange:'2000',
+                    PriceUpDownRangePercentage:'8.7',
+                    Rate:'RP 92 / 100',
+                    ReadytoDrink:'還要再等等(2030-2035)',
+                    Type:'白氣泡葡萄酒／干型（不甜）',
+                    Region:'Napa Valley'
+                }
+            ];
+
             //酒款詳目視窗
-            CWC_BottleDetail();
+            CWC_BottleDetail(winedata);
+            
 
 
 
