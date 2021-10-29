@@ -42,14 +42,14 @@ $(document).ready(function(){
 			intBrowserH = window.innerHeight;
 		},500);
 	});
-	//content最小高度設定
 
+	//content最小高度設定
 	if (intBrowserW < 768) {
-		$('.content_layout').css('min-height',intBrowserH - 56);
+		$('.content_layout').css('min-height',intBrowserH - 56 - 40);
 	} else if (intBrowserW < 1366) {
-		$('.content_layout').css('min-height',intBrowserH - 76);
+		$('.content_layout').css('min-height',intBrowserH - 76 - 80);
 	} else {
-		$('.content_layout').css('min-height',intBrowserH - 90);
+		$('.content_layout').css('min-height',intBrowserH - 90 - 100);
 	}
 
 
@@ -432,10 +432,18 @@ $(document).ready(function(){
 		PopWindow('#WineTagWindow',intBrowserH,intBrowserW);	
 	});
 
+
 	//會員送出註冊資料
 	$('#MemberRegister').click(function(){
 		BodyScrollTopY = $(window).scrollTop();
 		PopWindow('#RegisterFinishedWindow',intBrowserH,intBrowserW);
+	});
+
+
+	//CWC_detail取酒視窗
+	$('#CWCGetWine').click(function(){
+		BodyScrollTopY = $(window).scrollTop();
+		PopWindow('#CWCGetWineWindow',intBrowserH,intBrowserW);
 	});
 
 	//PopWindow關閉

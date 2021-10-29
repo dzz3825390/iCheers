@@ -5,7 +5,7 @@
     <title>iCheers愛酒窩 ─ 會員專區</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico">
 
-
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/Style.css" />
     <link rel="stylesheet" type="text/css" href="css/member2.css" />
 
@@ -13,15 +13,49 @@
 
     <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
+    <script type="text/javascript" src="Scripts/popcontrol.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function(){
+            //cwc選項置中
+            var ContentWidth = $('.membercwc_list').width();
+            var CWCOptionsWidth = $('.cwc_option_row').width();
+            var CWCOptionsPositionX = (ContentWidth - CWCOptionsWidth)/2;
+            $('.cwc_option_row').css('left',CWCOptionsPositionX);
+
 			//footermenu置中
 		    var FooterMenuWidth = $('.FooterMenu').width();
 		    var FooterWidth = $('.FooterMenu').parent().width();
 		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
 
 		    $('.FooterMenu').css('margin-left',FooterPositionX);
+
+            //test data
+            var winedata = [
+                {
+                    WineNameCN:'作品一號．第一樂章紅酒',
+                    WineNameEN:'Opus One, Opus One',
+                    Year:'2016',
+                    AllYears:['2015','2016','2018','2019','2020','2021','2022'],
+                    Capacity:'750ml',
+                    AllCapacity:['375ml','750ml','1.5L'],
+                    BottleCount:'26',
+                    BottleAmount:'102',
+                    PriceBuy:'$11,000',
+                    PriceNow:'$13,000',
+                    PriceUpDown:'up',
+                    PriceUpDownRange:'2000',
+                    PriceUpDownRangePercentage:'8.7',
+                    Rate:'RP 92 / 100',
+                    ReadytoDrink:'還要再等等(2030-2035)',
+                    Type:'白氣泡葡萄酒／干型（不甜）',
+                    Region:'Napa Valley'
+                }
+            ];
+
+            //酒款詳目視窗
+            CWC_BottleDetail(winedata);
             
 		})
 	</script>
@@ -63,7 +97,16 @@
                 酒瓶模式
             </button>
             <button class="one_option">
-                <div class="icon_export"></div>
+                租賃合約
+            </button>
+            <button class="one_option">
+                收費明細
+            </button>
+            <button class="one_option">
+                異動紀錄
+            </button>
+            <button class="one_option">
+                匯出清單
             </button>
         </div>
     <div class="Left_Menu_layout Left_Menu_bg"><!--左邊欄-->
@@ -442,7 +485,21 @@
     <!-- Warning 警語 -->
 
 
+<!-- 黑底 start-->
+<div class="bg_black" id="bg_black">
+    <div class="notice_BG">
+        <div class="notice_title_layout">
+            <div class="notice_title"></div>
+            <div class="notice_title_closeBTN" onclick="ClosePop();"></div>
+            <div class="CLEAR"></div>
+        </div>
+        <div class="notice_body CLEARBOTH">
+            
+        </div>
+    </div>
 
+</div>
+<!-- 黑底 end-->
 
 
 </body>

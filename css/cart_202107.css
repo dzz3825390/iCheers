@@ -3210,7 +3210,7 @@ input{
 
 @media screen and (min-width: 760px){
     .step3_content .row{
-        margin-top: 32px;
+        margin-top: 20px;
     }
 
 }
@@ -3557,6 +3557,21 @@ input{
 	top: 6px;
 	left: -14px;
 	z-index: -1;
+}
+
+.step3_content .btn_row .btn_submit{
+	width: 176px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #939334;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 12px;
 }
 
 .step3_content .order_sum{

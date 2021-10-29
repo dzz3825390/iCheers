@@ -159,51 +159,11 @@
                 },
             ];
 
-            var StorageRecordData = [
-                {
-                    date:'2021/05/03',
-                    nameCN:'米斗羅酒莊 名丑山吉歐維榭粉',
-                    nameEN:'Robert Mondavi, Woodbridge White Zinfandel',
-                    year:'2016',
-                    capacity:'750ml',
-                    storage:true,
-                    moverecord:'+6',
-                    allbottlecount:'108',
-                    order:'W21102400099'
-                },
-
-                {
-                    date:'2021/05/03',
-                    nameCN:'米斗羅酒莊 名丑山吉歐維榭粉',
-                    nameEN:'Robert Mondavi, Woodbridge White Zinfandel',
-                    year:'2016',
-                    capacity:'750ml',
-                    storage:false,
-                    moverecord:'-8',
-                    allbottlecount:'108',
-                    order:'W21102400099'
-                },
-            ];
-
             //酒款詳目視窗
-            CWC_BottleDetail(winedata);
+            //CWC_BottleDetail(winedata);
+
+            CWC_RentRecipeDetail(RecipeData);
             
-            //租賃合約
-            $('#RentContract').click(function(){
-                CWC_RentContract();
-            });
-
-            //收費明細
-            $('#RentRecipeDetail').click(function(){
-                CWC_RentRecipeDetail(RecipeData);
-            });
-
-            //異動明細
-            $('#StorageRecord').click(function(){
-                CWC_StorageRecord(StorageRecordData);
-            });
-            
-
 
 		})
 	</script>
@@ -288,79 +248,17 @@
             <button class="one_option" id="RentContract">
                 租賃合約
             </button>
-            <button class="one_option" id="RentRecipeDetail">
+            <button class="one_option">
                 收費明細
             </button>
-            <button class="one_option" id="StorageRecord">
+            <button class="one_option">
                 異動紀錄
             </button>
             <button class="one_option">
                 匯出清單
             </button>
         </div>
-        <div class="slide_show">
-            <div class="btn_prev"></div>
-            <div class="slide_box">  
-                <div class="animate_slide CLEARBOTH">
-                    <div class="one_bottle_img">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                    </div>
-                    <div class="one_bottle_img large">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                        <div class="more_years_box">
-                            <div class="one_year">
-                                2016
-                                <span class="icon_delivery"></span>
-                            </div>
-                            <div class="one_year">
-                                2017
-                                <span class="icon_delivery"></span>
-                            </div>
-                            <div class="one_year">
-                                2018
-                                <span class="icon_delivery"></span>
-                            </div>
-                            <div class="one_year">
-                                2019
-                                <span class="icon_delivery"></span>
-                            </div>
-                            <div class="one_year">
-                                2020
-                                <span class="icon_delivery"></span>
-                            </div>
-                            <div class="one_year">
-                                <a href="#">更多年份</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="one_bottle_img">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                    </div>
-                    <div class="one_bottle_img">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                    </div>
-                    <div class="one_bottle_img">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                    </div>
-                    <div class="one_bottle_img small">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                    </div>
-                    <div class="one_bottle_img">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                    </div>
-                    <div class="one_bottle_img">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                    </div>
-                    <div class="one_bottle_img">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                    </div>
-                    <div class="one_bottle_img">
-                        <img src="images/pic/wine_bottle_sample.jpg">
-                    </div>
-                </div>  
-            </div>
-            <div class="btn_next"></div>
-        </div>
+        
     </div>
     <div class="CLEARBOTH"></div>
 </div>

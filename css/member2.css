@@ -1002,7 +1002,6 @@
 
 .member .fliter_box_position{
     width: 280px;
-    right: 310px;
     position: absolute;
     /*padding-top: 40px;*/
     background-color: #fff;
@@ -1066,8 +1065,6 @@
 
 .cwc_option_row{
     position: absolute;
-    right: 16px;
-    top: 0;
     z-index: 5;
 }
 
