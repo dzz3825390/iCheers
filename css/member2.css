@@ -29,6 +29,12 @@
 
 /*=============會員專區==============*/
 
+/*新簡目頁樣式修正完後可移除*/
+.Right_content {
+    float: right;
+}
+/*新簡目頁樣式修正完後可移除*/
+
 .member .TagALL_Buy {
     background-image: none;
     border: none;

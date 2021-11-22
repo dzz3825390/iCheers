@@ -1564,7 +1564,7 @@ a.WineList_WineName4 {
 .Right_content{
     width: 866px;
 /*    min-height: 2340px;*/
-    float: right;
+    float: left;
     margin-left: 15px;
 }
 

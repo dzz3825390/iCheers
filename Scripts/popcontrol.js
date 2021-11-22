@@ -413,12 +413,24 @@ function CWC_BottleDetail(winedata){
     //$('.notice_title').text(title);
     //修正Css
     $('.notice_title_layout').css('background-color','#ffffff');
-    $('.notice_body').css('padding-top','0px')
+    $('.notice_body').css(
+        {
+            'max-height':'80vh',
+            'padding-top':'0'
+        }
+    );
+
     //視窗內容
     $('.notice_body').html(WindowContent);
 
+
     //指定大視窗時pop寬度
     var PopWindowWidth = 870;
+
+    //安裝scroll bar
+    $(".notice_body").mCustomScrollbar({
+        theme:"minimal-dark"
+    });
 
     LocatePop(PopWindowWidth);
 }
