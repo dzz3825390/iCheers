@@ -81,7 +81,7 @@ $(document).ready(function(){
 
 	    	}
 
-	    }, 100)
+	    }, 50)
 	});
 
 	//大視窗時高度不夠800時調整小計區與確認18歲
@@ -182,6 +182,15 @@ $(document).ready(function(){
 		if ($('#storage').hasClass('active')) {
 		    $('.order_sum_storage').css('display','block');
 
+		    //只有儲酒的話不顯示運費
+		    if ($('#t-cat').hasClass('active')){
+		    	$('#DeliveryFeeRow').css('display','flex');
+		    	$('#DeliveryFeeRow2').css('display','flex');
+		    } else {
+		    	$('#DeliveryFeeRow').css('display','none');
+		    	$('#DeliveryFeeRow2').css('display','none');
+		    }
+
 		    //大視窗時調整確認18歲位置
 		    if (intBrowserW > 1199){
 		    	var SumHeight = $('.sum_position').outerHeight(true);
@@ -191,6 +200,8 @@ $(document).ready(function(){
 		    
 		} else {
 		    $('.order_sum_storage').css('display','none');
+		    $('#DeliveryFeeRow').css('display','flex');
+		    $('#DeliveryFeeRow2').css('display','flex');
 		    //大視窗時調整確認18歲位置
 		    if (intBrowserW > 1199){
 		    	var SumHeight = $('.sum_position').outerHeight(true);
@@ -1670,18 +1681,11 @@ $(window).resize(function(){
 				<div class="number">$&nbsp;9,900</div>
 			</div>
 			<!--需運費時顯示-->
-			<div class="order_sum_row">
+			<div class="order_sum_row" id="DeliveryFeeRow">
 				<div class="title">運費<span class="icon_info" onclick="window.open('https://www.icheers.tw/iCheers/Content/HTML/Delivery_m.html');">?</span></div>
 				<div class="number">$&nbsp;200</div>
 			</div>
-			<!--免運費時顯示-->
-			<!--
-			<div class="order_sum_row">
-				<div class="title">運費<span class="icon_info">?</span></div>
-				<div class="text">&#10004;&nbsp;免運費</div>
-			</div>
-			-->
-			<div class="order_sum_btnrow">
+			<div class="order_sum_btnrow" id="DeliveryFeeRow2">
 				<div class="btn_combine">
 					<div class="icon_check"></div>
 					<div class="text">等商品到齊再一起出貨</div>
@@ -1690,6 +1694,14 @@ $(window).resize(function(){
 					<a href="#">湊免運</a>，還差&nbsp;<span>$&nbsp;198</span>
 				</div>
 			</div>
+			<!--免運費時顯示-->
+			<!--
+			<div class="order_sum_row">
+				<div class="title">運費<span class="icon_info">?</span></div>
+				<div class="text">&#10004;&nbsp;免運費</div>
+			</div>
+			-->
+			
 		</section>
 		<!--已綁定-->
 		<!--

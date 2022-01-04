@@ -200,7 +200,7 @@ button {
 }
 
 .Buy2_margin ul li.TagLogo {
-    background-image: url(../images/Logo2.png);
+    background-image: url(../images/Logo.gif);
     background-color: transparent;
 }
 
@@ -1575,6 +1575,22 @@ a.WineList_WineName4 {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 0;
+}
+
+.Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_price{
+    font-weight: bold;
+}
+
+.Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_price.normal{
+    color: #CF3448;
+}
+
+.Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_price.fast{
+    color: #ef9c00;
+}
+
+.Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_price.preorder{
+    color: #0071bc;
 }
 
 .member .Right_content .pagemark_row .container{

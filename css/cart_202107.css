@@ -1682,8 +1682,8 @@ input{
 
 .cart_list_gift .gift_wine .count_price .price .bottle_price {
     margin-left: 10px;
-    font-size: 1.5rem;
-    color: #000;
+    font-size: 1.125rem;
+    color: #666;
     font-weight: bold;
 }
 
@@ -1946,6 +1946,8 @@ input{
 		margin-top: 12px;
 	}
 
+
+
 	.cart_list_event_special .event_info .row .text{
 		font-size: 1.125rem;
 	}
@@ -1954,10 +1956,9 @@ input{
 		font-size: 1.125rem;
 	}
 
-	.cart_list_event_special .event_sum .count_price .price .bottle_price{
-		font-size: 2rem;
+	.cart_list_event_special .event_sum .count_price .price .bottle_price {
+	    font-size: 1.8rem;
 	}
-
 
 	.cart_list_gift .gift_name {
 	    font-size: 1.125rem;
@@ -2009,7 +2010,7 @@ input{
 	}
 
 	.cart_list_gift .gift_wine .count_price .price .bottle_price {
-	    font-size: 1.8rem;
+	    font-size: 1.25rem;
 	}
 
 	.cart_list_BonusCoupon .BonusCoupon_img {
@@ -2147,6 +2148,10 @@ input{
 		margin-top: 40px;
 	}
 
+	.cart_list_event_special .event_sum .count_price .price .bottle_price {
+	    font-size: 1.5rem;
+	}
+
     .cart_list_gift .gift_name{
         color: #000;
     }
@@ -2179,7 +2184,7 @@ input{
 	}
 
 	.cart_list_gift .gift_wine .count_price .price .bottle_price {
-	    font-size: 1.5rem;
+	    font-size: 1.25rem;
 	}
 
 	.cart_list_BonusCoupon{

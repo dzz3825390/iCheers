@@ -1,10 +1,47 @@
 ﻿@charset "utf-8";
 /* CSS Document */
+/*給Popwindow的部分*/
+.bg_black{
+    justify-content: center;
+    align-items: center;
+}
+
+.notice_BG{
+    max-width: 100vw;
+    max-height: 100vh;
+    height: 100vh;
+}
+
+.notice_body p{
+    font-size: 16px;
+}
+
+.notice_body_input_layout input[type=text]{
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.notice_body p.hint{
+    font-size: 14px;
+}
+
 
 
 
 /*=============會員專區==============*/
 
+/*新簡目頁樣式修正完後可移除*/
+.Right_content {
+    float: right;
+}
+/*新簡目頁樣式修正完後可移除*/
+
+.member .TagALL_Buy {
+    background-image: none;
+    border: none;
+    background-color: #F0F0F0;
+}
 
 .member_FooterALL {
     clear: both;
@@ -24,2219 +61,1640 @@
     width:1160px;
 }
 
-
-
-/*============= Center 中段 ==============*/
-
-
-
-.member_CenterALL {
-    clear: both;
-    display: block;
-    width: 1280px;
-    margin: 0 auto;
-    padding-bottom: 50px;
-    margin-bottom: 150px;
-}
-
-
-.member_Center {
-    display: block;
-    min-height: 650px;
-    margin: 0 53px;
-    background-repeat: repeat-y;
-    border: 1px solid #ECECEC;
-    position: relative;
-    padding-bottom: 30px;
-}
-
-.member_Center2 {
-    display: block;
-    margin: 0 auto;
-    width: 830px;
-    height: 70px;
-    background-image: url(../images/member_Center2.png);
-    background-position: bottom;
-}
-
-
-
-
-
-.Center_Shadow {
-    position: absolute;
-    left: -18px;
-    top: -3px;
-    display: inline-block;
-    width: 18px;
-    height: 58px;
-    background-image: url(../images/Shadow.png);
-}
-
-
-.member_Info {
-    width: 80%;
-    margin: 0 10%;
-    margin-top: 20px;
-    min-height: 556px;
-    display: inline-block;
-    background-image: url(../images/member_InfoBG.gif);
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-
-ul.member_Form {
-    font-family: 微軟正黑體, Arial, serif;
-    display: block;
-    line-height: 22px;
-    color: #231815;
-    font-size: 13px;
-    padding: 0px 4% 0px 4%;
-    margin-top: 35px;
-}
-
-
-    ul.member_Form a {
-        text-decoration: underline;
-        color: #333;
-        padding: 0px 5px;
-        line-height: 22px;
-        cursor: pointer;
-        font-size: 14px;
-    }
-
-        ul.member_Form a:hover {
-            text-decoration: none;
-        }
-
-    ul.member_Form li {
-        margin-bottom: 25px;
-        padding-left: 12px;
-        min-height: 30px;
-        font-size: 16px;
-    }
-
-        ul.member_Form li input {
-            width: 40%;
-            padding:0 5px; 
-            height: 28px;
-            font-size: 14px;
-            line-height: 28px;
-            outline: none;
-        }
-
-        ul.member_Form li h1{
-            line-height: 30px;
-            height: 30px;
-            font-size: 16px;
-        }
-
-        ul.member_Form li select{
-            height: 30px;
-            line-height: 30px;
-            font-size: 16px;
-            margin-right: 5px;
-            margin-left: 5px;
-        }
-
-        ul.member_Form li select:first-child{
-            margin-left: 0;
-        }
-
-
-.Captcha {
-    display: inline-block;
-    height: 24px;
-    width: 81px;
-    float: left;
-}
-
-.CaptchaAA {
-    display: inline-block;
-    float: left;
-}
-
-.LoginTitle {
-    display: block;
-    width: 30%;
-    line-height: 24px;
-    text-align: right;
-    float: left;
-}
-
-
-ul.member_Form li input.CheckBoxA {
-    width: 16px;
-    height: 16px;
-    padding: 3px;
-    margin: 4px 4px 0px 0px;
-    display: inline;
-    float: left;
-}
-
-
-a.JoinUs {
-    width: 100px;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    color: #785472;
-    margin-bottom: 10px;
-}
-
-.FormTittle{
-    width: 96px;
-    height: 24px;
-    margin: 0 auto;
-    background-image: url(../images/LoginTitleBG.png);
-}
-
-.FormTittle2 {
-    width: 96px;
-    height: 24px;
-    margin: 0 auto;
-    background-image: url(../images/LoginTitleBG2.png);
-}
-
-.FormTittle3 {
-    width: 151px;
-    height: 24px;
-    margin: 0 auto;
-    background-image: url(../images/LoginTitleBG3.png);
-}
-
-ul.member_Form a.SubmitBTN {
-    width: 80px;
-    display: block;
-    line-height: 1;
-    color: #FFF;
-    padding: 10px;
-    margin: 0 auto;
-    font-size: 16px;
-    text-align: center;
-    background-color: #8B8B8B;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-    ul.member_Form a.SubmitBTN:hover {
-        background-color: #333;
-    }
-
-.Information{
-    width: 383px;
-    font-family: "微軟正黑體", Arial, serif;
-    position: absolute;
-    bottom: 30px;
-    left: 395px;
-    font-size: 14px;
-    color: #231815;
-    line-height: 28px;
-}
-
-    .Information a {
-        font-family: "微軟正黑體", Arial, serif;
-        font-size: 14px;
-        color: #231815;
-        line-height: 28px;
-        text-decoration: none;
-    }
-
-    .Information a:hover {
-        text-decoration: underline;
-    }
-
-    .Information span {
-        display: inline-block;
-        margin-left: 15px;
-    }
-
-    .Information span:first-child {
-        margin-left: 0;
-    }
-
-.member_Message {
-    display: inline-block;
-    font-family: "微軟正黑體", Arial, serif;
-    font-size: 16px;
-    line-height: 30px;
-    color: #231815;
-    margin-left: 261px;
-    margin-top: 150px;
-}
-
-.LeftMore {
-    margin-left: 314px;
-}
-
-
-
-ul.member_Form li input.InputRadio {
-    width: 16px;
-    height: 16px;
-    padding: 3px;
-    display: inline;
-    float: left;
-    margin: 4px 0px 0px 3px;
-}
-
-.InputRadio2 {
-    float: left;
-    margin-left: 3px;
-}
-
-ul.member_Form li input.ShortInput {
-    width: 100px;
-}
-
-ul.member_Form li input.ShortInput2 {
-    width: 50px;
-}
-
-ul.MarginMore {
-    margin-top: 65px;
-}
-
-
-.slogan_member {
-    display: inline-block;
-    width: 480px;
-    height: 47px;
-    background-image: url(../images/slogan_member.png);
-    position: absolute;
-    top: 300px;
-    left: 347px;
-}
-
-
-.ChangePlace {
-    top: 420px;
-}
-
-
-
-/* 彈出條款 */
-
-
-.MemberClause {
-    display: none;
-    width: 538px;
-    height: 486px;
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    z-index: 999999;
-}
-
-.Clause_TOP {
+.content_layout{
     width: 100%;
-    height: 41px;
-    background-image: url(../images/MemberClause.png);
-    position: relative;
+    background-color: #fff;
 }
 
-.Close_Clause {
-    display: block;
-    background: url(../images/icon/btn_close.png) left top;
-    width: 20px;
+.member_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member_form{
+    width: 100%;
+    box-sizing: border-box;
+    padding:0 32px; 
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.member_form .large_title{
+    font-size: 24px;
+    color: #555;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 32px;
+}
+
+.member_form .large_title:before{
+    content: '';
+    display: inline-block;
+    width: 6px;
     height: 20px;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 13px;
+    background-color: #555;
+    margin-right: 10px;
 }
 
-    .Close_Clause:hover {
-        background: url(../images/icon/btn_close2.png) left top;
-    }
-
-.Clause_Center {
-    width: 100%;
-    height: 445px;
-    background-image: url(../images/MemberClause2.png);
-    position: relative;
+.member_form .row{
+    margin-top: 20px;
 }
 
-.Info_Clause {
-    width: 480px;
-    height: 350px;
-    position: absolute;
-    top: 21px;
-    left: 32px;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-.Clause_BTN1 {
-    display: block;
-    background: url(../images/Clause_BTN1.png);
-    width: 221px;
-    height: 22px;
-    cursor: pointer;
-    position: absolute;
-    left: 85px;
-    bottom: 30px;
-}
-
-    .Clause_BTN1:hover {
-        background: url(../images/Clause_BTN1-2.png);
-    }
-
-.Clause_BTN2 {
-    display: block;
-    background: url(../images/Clause_BTN2.png);
-    width: 121px;
-    height: 22px;
-    cursor: pointer;
-    position: absolute;
-    left: 330px;
-    bottom: 30px;
-}
-
-    .Clause_BTN2:hover {
-        background: url(../images/Clause_BTN2-2.png);
-    }
-
-
-.memberIndexRR {
-    display: inline-block;
-    width: 340px;
-    height: 700px;
-    position: absolute;
-    right: 20px;
-    top: 35px;
-}
-
-
-.ChangeData{
-    display: inline-block;
-    width: 337px;
-    height: 50px;
-    background-position: top left;
-    background-image: url(../images/ChangeData.png);
-    margin-bottom: 10px;
-}
-
-
-    .ChangeData:hover {
-        background-position: bottom left;
-    }
-
-.ChangeData2 {
-    display: inline-block;
-    margin: 10px 0;
-    width: 280px;
-    height: 46px;
-    background-position: top left;
-    background-image: url(../images/ChangeDataAll.png);
-}
-
-
-    .ChangeData2:hover {
-        background-position: bottom left;
-    }
-
-
-
-/* 首頁左邊欄 */
-
-.MemberInformation {
-    font-family: "微軟正黑體";
-    position: relative;
-    color: #231815;
-    font-size: 13px;
-    display: inline-block;
-    width: 339px;
-    height: 400px;
-    background-image: url(../images/MemberInformationBG.jpg);
-}
-
-    .MemberInformation h1 {
-        position: relative;
-        font-size: 16px;
-        line-height: 24px;
-        display: inline-block;
-        width: 276px;
-        height: 50px;
-        background-color: #fff;
-        border-radius: 50px;
-        padding: 12px 0px 10px 27px;
-        margin: 20px 0px 0px 17px;
-        box-shadow: -2px 5px 0 rgba(200,200,200,1);
-    }
-
-    .MemberInformation h1.glass_icon:after{
-        content:'';
-        width: 45px;
-        height: 45px;
-        background: url(../images/Dialog.svg);
-        background-size: cover;
-        display: block;
-        position: absolute;
-        top: 9px;
-        right: 15px;
-    }
-
-    .MemberInformation h1 span{
-        font-weight: bold;
-        color: #C29C20;
-    }
-
-    .MemberInformation h1 strong{
-        font-weight: bold;
-        color: #333;
-    }
-
-
-    .MemberInformation h2 {
-        position: relative;
-        width: 82%;
-        font-size: 16px;
-        display: inline-block;
-        padding-left: 15px;
-        line-height: 24px;
-        margin: 15px 0px 10px 20px;
-    }
-
-    .MemberInformation h2 span{
-        font-weight: bold;
-        color: #C29C20;
-    }
-
-    .MemberInformation h2 div{
-        font-size: 14px;
-        line-height: 22px;
-        color: #666;
-        font-weight: normal;
-        margin-top: 5px;
-    }
-
-    .MemberInformation h2:before,.MemberInformation h3:before{
-        position: absolute;
-        content: '';
-        width: 5px;
-        height: 5px;
-        display: block;
-        border-radius: 50%;
-        background-color: #666;
-        left: 1px;
-        top: 9px;
-    }
-
-    .MemberInformation h3 {
-        position: relative;
-        width: 82%;
-        font-size: 16px;
-        display: inline-block;
-        padding-left: 15px;
-        line-height: 24px;
-        color: #333;
-        font-weight: bold;
-        margin: 15px 0px 10px 20px;
-    }
-
-    .MemberInformation h3 div{
-        font-size: 14px;
-        line-height: 22px;
-        color: #666;
-        font-weight: normal;
-        margin-top: 5px;
-    }
-
-    .MemberInformation h3 div span{
-        font-weight: bold;
-        color: #C29C20;
-    }
-
-    .MemberInformation h3 div strong{
-        font-weight: bold;
-        color: #75526F;
-    }
-
-    .MemberInformation h4 {
-        position: relative;
-        font-size: 16px;
-        line-height: 24px;
-        display: inline-block;
-        width: 296px;
-        background-color: #fff;
-        border-radius: 7px;
-        padding: 12px 10px 10px 20px;
-        margin: 5px 0px 15px 17px;
-        box-shadow: -2px 5px 0 rgba(200,200,200,1);
-        box-sizing: border-box;
-    }
-
-    .MemberInformation h4 span{
-        font-weight: bold;
-        color: #C29C20;
-    }
-
-    .MemberInformation h4 strong{
-        font-weight: bold;
-        color: #75526F;
-    }
-
-    .MemberInformation h4 div{
-        font-size: 14px;
-        line-height: 22px;
-        color: #666;
-        font-weight: normal;
-        margin-top: 3px;
-    }
-
-        .MemberInformation h2 em {
-            color: #75526F;
-            font-weight: bold;
-        }
-
-
-.Sommelier {
-    position: relative;
-    display: inline-block;
-    width: 263px;
-    height: 263px;
-    background-image: url(../images/Sommelier.png);
-    margin-top: 26px;
-    margin-left: 107px;
-}
-
-.MemberInformationIcon {
-    position: absolute;
-    display: inline-block;
-    width: 130px;
-    height: 132px;
-    background-image: url(../images/MemberInformationIcon.png);
-    top: 122px;
-}
-
-.MemberInformationNotice{
-    margin: 3px 0px 10px 25px;
+.member_form .row .title{
+    font-size: 18px;
+    line-height: 27px;
     color: #666;
 }
 
-.MemberInformationNotice:before{
-    content: '*';
-    display: block;
-    float: left;
-    margin-top: 3px;
-    margin-right: 2px;
+.member_form .row .title span{
+    color: #c20012;
 }
 
-.LINE2 {
-    display: block;
-    width: 80%;
-    margin: 0 10% 0 10%;
-    height: 1px;
-    border-top: 1px solid #FFF;
-    border-bottom: 1px solid #999;
+.member_form .row .text{
+    margin-top: 16px;
+    font-size: 18px;
 }
 
-.member_Name {
-    display: inline-block;
-    width: 95%;
-    font-size: 16px;
-    color: #808087;
-    font-family: "微軟正黑體";
-    position: absolute;
-    top: 10px;
-    left: 18px;
-    font-weight: bolder;
-}
-/*////20141124 Roger 新增勳章icon與調整member_Name位置 start////*/
-.member_Name_Medal{
-	float: left;
-}
-.member_Name_position{
-	float: left;
-	margin-top: 5px;
-	margin-left: 5px;
-}
-/*////20141124 Roger 新增勳章icon與調整member_Name位置 end////*/
-    .member_Name em {
-        color: #75526F;
-        font-weight: bolder;
-    }
-
-    .member_Name span {
-        color: #C29C20;
-    }
-
-
-/* 首頁左邊欄 */
-
-.memberIndexLL {
-    display: inline-block;
-    width: 770px;
-    height: 700px;
-    position: absolute;
-    left: 20px;
-    top: 35px;
-}
-
-    .memberIndexLL h1,
-    .member_Menu h1 {
-        font-family: "微軟正黑體";
-        display: block;
-        font-size: 18px;
-        padding: 5px;
-        padding-left: 15px;
-        color: #333;
-        font-weight: 900;
-        background-color: #E2E2E2;
-        border-left: 3px #666 solid;
-        margin: 5px 0 5px 0;
-    }
-
-    .memberIndexLL h1{
-        margin-top: 40px;
-        margin-bottom: 10px;
-    }
-
-    .memberIndexLL h1:first-child{
-        margin-top: 5px;
-    }
-
-
-
-/* 項目 */
-
-.MemberProject {
-    font-family: "微軟正黑體";
-    font-size: 16px;
-    line-height: 32px;
-    height: 32px;
-    width: 97%;
-    padding-left: 3%;
-    margin: 5px 0px;
-}
-
-    .MemberProject a {
-        display: inline-block;
-        height: 32px;
-        color: #231815;
-        margin-right: 10px;
-    }
-
-    .MemberProject span {
-        margin: 0 2px;
-        display: inline-block;
-        width: 20px;
-    }
-
-
-.MemberSpacing span {
-    display: inline-block;
-    width: 20px;
-}
-
-.MemberSpacing a.member_Menu_BTN {
-}
-
-
-/*  會員內頁 查詢頁 */
-
-.member_Center_SS {
-    display: inline-block;
-    width: 866px;
-    min-height: 600px;
-    background-repeat: repeat-y;
-    border: 1px solid #CCC;
-    position: relative;
-    float: left;
-    margin-left: 15px;
-}
-
-.member_Center2_SS {
-    display: inline-block;
-    width: 666px;
-    height: 70px;
-    background-image: url(../images/member_Center2_SS.png);
-    background-position: bottom;
-    float: right;
-    margin-right: 40px;
-}
-
-.member_Menu {
-    display: inline-block;
-    width: 280px;
-    min-height: 600px;
-    margin-left: 57px;
-    float: left;
-}
-
-
-    .member_Menu a:hover {
-        color: #000;
-    }
-
-.member_Name2 {
-    display: inline-block;
+.member_form .row input[type=text], .member_form .row input[type=password], .member_form .row input[type=date]{
     width: 100%;
-    font-size: 16px;
-    color: #808087;
-    font-family: "微軟正黑體";
-    font-weight: bolder;
-    line-height: 24px;
+    height: 45px;
+    font-size: 18px;
+    line-height: 45px;
+    box-sizing: border-box;
+    padding: 0 8px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    color: #666;
+    margin-top: 4px;
 }
-    /*20170303 Roger 移除display設定*/
-    .member_Name2 em {
-       /*  display: block; */
-        font-weight: bolder;
-    }
-    
-    .member_Name2 span {
-        /* display: block; */
-        color: #C29C20;
-    }
-    /*20170303 Roger 移除display設定 end*/
 
-.member_Center_Tittle {
+.member_form .row .forgot_password{
     display: block;
+    color: #999;
+    font-size: 18px;
+    text-decoration: underline;
+    margin-top: 8px;
+    text-align: right;
+}
+
+.member_form .row .small_text{
+    color: #999;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 8px;
+}
+
+.member_form .btn_row{
     width: 100%;
-    height: 36px;
-    background-image: url(../images/TittleBG.png);
-    border-bottom: 1px solid #CCC;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 
-.member_Center_Info {
-    width: 91%;
-    height: 100%;
-    padding: 0 3% 0 5%;
-    color: #666666;
-    margin: 25px auto 0 auto;
-    font-family: "微軟正黑體";
-    font-size: 16px;
-    line-height: 30px;
-}
-
-    .member_Center_Info h1,
-    .member_Center_Info h2 {
-        font-size: 16px;
-    }
-
-    .member_Center_Info h1 {
-        font-weight: bold;
-        margin-top: 10px;
-    }
-
-        .member_Center_Info h1 span,
-        .member_Center_Info h2 span,
-        .MemberProject a.member_Menu_BTN strong {
-            font-weight: bold;
-            font-family: Arial,"微軟正黑體";
-            color: #C29C20;
-        }
-
-.MemberProject a.member_Menu_BTN strong {
-    padding: 0px 3px;
-}
-
-table.Coupon {
-    background-color: #F0F0F0;
+.member_form .btn_login{ 
+    width: 175px;
+    height: 45px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
     text-align: center;
-    margin: 10px 0;
-    font-family: "微軟正黑體";
-    line-height: 28px;
-    font-size: 14px;
+    line-height: 45px;
+    background-color: #939334;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
-    table.Coupon tr.TableTittle {
-        background-color: #D2D2D2;
-        color: #565656;
-    }
-
-tr.TableTittle td,
-.Coupon tr td {
-    border-bottom: 2px solid #FFF;
-    border-right: 2px solid #FFF;
+.member_form .btn_cancel{ 
+    width: 175px;
+    height: 45px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 45px;
+    background-color: #999999;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
-td.TD_Project {
-    width: 8%;
+.member_form .member_signup{
+    margin-top: 10px;
+    font-size: 18px;
+    color: #999;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-td.TD_Name,
-td.TD_Money,
-td.TD_Number,
-td.TD_Day {
-    width: 23%;
+.member_form .row .checkbox_layout{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
 }
 
-
-tr.TableTittle td {
-    border-right: none;
+.member_form .row .checkbox_layout .option_check{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+    cursor: pointer;
 }
 
-    tr.TableTittle td.TD_Day {
-        border-right: 2px solid #FFF;
-    }
-
-
-
-
-
-
-ul.member_Center_Info {
-    width: 88%;
-    margin-top: 15px;
-    padding: 0 2% 0 8%;
+.member_form .row .checkbox_layout .option_check .icon_check{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-    ul.member_Center_Info li {
-        text-indent: -21px;
-        line-height: 30px;
-        margin-bottom: 5px;
-    }
-
-/*////////20141124 Roger調整樣式 start/////////*/
-        ul.member_Center_Info li span {
-            padding: 1px 2px;
-            margin-right: 3px;
-            background-color: #666666;
-            font-family: Arial, "微軟正黑體";
-            /*font-weight: 900;*/
-            border: 1px solid #666666;
-            color: #FFF;
-            margin-right: 10px;
-        }
-/*////////20141124 Roger調整樣式 end/////////*/
-
-.Hierarchy {
-    width: 600px;
-    font-family: "微軟正黑體";
-    line-height: 24px;
-    font-size: 13px;
-    background-color: #F0F0F0;
-    background-repeat: no-repeat;
-    background-position: top left;
-    margin-top: 15px;
-    margin-left: 55px;
-    margin-bottom: 30px;
-    padding: 15px;
-    padding-left: 30px;
+.member_form .row .checkbox_layout .option_check .icon_check.active:after{
+    content: '✓';
+    display: block;
+    color: #939334;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
-    .Hierarchy h3 {
-        margin-bottom: 10px;
-        font-size: 16px;
-    }
-
-.Hierarchy_text{
-    width: 290px;
-    height: 55px;
-    background-image: url(../images/HierarchyBG.png);
-}
-
-.Hierarchy_row{
-    width: 505px;
-    height: 35px;
-    font-size: 16px;
+.member_form .row .checkbox_layout .checkbox_text{
+    width: calc(100% - 40px);
+    font-size: 18px;
+    line-height: 27px;
     color: #666666;
+    margin-top: 8px;
+}
+
+.member_form .row .checkbox_layout .checkbox_text a{
+    color: #666;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 740px){
+    .member_login{
+        min-height: 400px;
+        height: calc(100vh - 60px - 40px);
+        margin-top: -150px;
+    }
+
+    .member_form{
+        width: 500px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .member_form{
+        margin-bottom: 97px;
+    }
+}
+
+
+.member .content{
+    width: 1280px;
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 137px;
+    position: relative;
+}
+
+.member .content.membercwc_cart{
+    padding-bottom: 0;
+}
+
+@media screen and (min-width: 768px){
+    .member .content.membercwc_cart{
+        padding-bottom: 137px;
+    }
+}
+.content .label_box{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.content .label_box:before{
+    content: '';
+    width: 5px;
+    height: 45px;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    left: -5px;
+}
+
+.content .label_box:after{
+    content: '';
+    width: 5px;
+    height: 45px;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    right: -5px;
+}
+
+.content .label_box .one_label{
+    height: 45px;
+    padding: 0 32px;
+    background-color: #fff;
+    color: #999999;
+    font-size: 20px;
+    line-height: 45px;
+    cursor: pointer;
+    transition: background-color 0.3s,color 0.3s;
+}
+
+.content .label_box .one_label:hover{
+    color: #333;
+}
+
+.content .label_box .one_label.active{
+    background-color: #9f999d;
+    color: #fff;
+}
+
+.member_orderprogress .content_LL{
+    width: 278px;
+    float: left;
+}
+
+.member_orderprogress .content_RR{
+    width: 970px;
+    float: right;
+}
+
+.memberinfo .content_LL{
+    width: 970px;
+    float: left;
+}
+
+.memberinfo .content_RR{
+    width: 278px;
+    float: right;
+}
+
+.order_condition_row{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.order_condition_row:first-child{
+    margin-top: 0;
+}
+
+.order_condition_row .title{
+    font-size: 16px;
+    color: #9c9c9c;
+}
+
+.order_condition_row .dropdown select{
+    width: 100%;
+    height: 45px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #cccccc; 
+    color: #666;
+    font-size: 18px;
+    line-height: 45px;
+    background-color: #fff;
+    outline: none;
+    margin-top: 8px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+}
+
+.order_condition_row .dropdown{
+    position: relative;
+}
+
+.order_condition_row .dropdown:after{
+    content:'';
+    width: 5px;
+    height: 5px;
+    border-bottom: 3px solid #666;
+    border-right: 3px solid #666;
+    position: absolute;
+    right: 15px;
+    top: 24px;
+    background-color: transparent;
+    transform: rotate(45deg);
+    display: block;
+}
+
+.order_condition_row select.dropdown option{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    color: #666;
+}
+
+.order_condition_row input{
+    width: 100%;
+    height: 45px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid #cccccc; 
+    color: #666;
+    font-size: 18px;
+    line-height: 45px;
+    background-color: #fff;
+    outline: none;
+    margin-top: 8px;
+}
+
+.order_condition_row .text{
+    width: 100%;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin: 5px 0;
+    margin-bottom: 3px;
+}
+
+.order_condition_row  .submitbtn{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #939334;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 45px;
+    margin-top: 32px;
+    font-weight: bold;
+}
+
+.order_progress_list{
+    width: 100%;
+    margin-top: 26px;
+}
+
+.order_progress_list tr:hover{
+    cursor: pointer;
+}
+
+.order_progress_list tr:hover td{
+    background-color: #f7f7f7;
+}
+
+.order_progress_list th{
+    height: 45px;
+    font-size: 18px;
+    color: #999999;
+    text-align: center;
+    background-color: #f3f4f5;
+}
+
+.order_progress_list td{
+    height: 60px;
+    padding: 0 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 18px;
+    color: #666666;
+    text-align: center;
+}
+
+.order_progress_list tr:last-child td{
+    border-bottom: none;
+}
+
+.order_progress_list td.order_number{
+    
+}
+
+.order_progress_list td.order_type.normal{
+    color: #4d4d4d;
+    font-weight: bold;
+}
+
+.order_progress_list td.order_type.fast{
+    color: #ef9c00;
+    font-weight: bold;
+}
+
+.order_progress_list td.order_type.preorder{
+    color: #0071bc;
+    font-weight: bold;
+}
+
+.order_progress_list td.order_status.done,.order_progress_list td.order_status.cancel{
+    color: #b3b3b3;
+}
+
+.order_progress_list td.order_status.collecting,.order_progress_list td.order_status.deliverying{
+    font-weight: bold;
+}
+
+.order_progress_list td.order_sum{
+    text-align: right;
+    padding-right: 57px;
+}
+
+.nodata_text{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 35px;
+    color: #999;
+    margin-top: 16px;
+}
+
+.nodata_text strong{
+    font-weight: bold;
+}
+
+.nodata_img{
+    width: 100%;
+    display: block;
+    margin-top: 24px;
+}
+
+.nodata_img img{
+    display: block;
+    width: 450px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.orderprogress_detail_status{
+    width: 120px;
+    float: left;
+    margin-left: 16px;
+    position: relative;
+}
+
+.orderprogress_detail_status .one_stauts{
+    width: 100%;
+}
+
+.orderprogress_detail_status .one_stauts .icon_bg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    margin-left: 10px;
+    position: relative;
+}
+
+.orderprogress_detail_status .one_stauts.active .icon_bg{
+    background-color: #8e6681;
+} 
+
+.orderprogress_detail_status .one_stauts .icon_bg .icon{
+    width: 55%;
+    height: 55%;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.orderprogress_detail_status .one_stauts.active .icon_bg .icon{
+    background-position: center bottom;
+} 
+
+.orderprogress_detail_status .one_stauts .text_box{
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.orderprogress_detail_status .one_stauts .text_box .large_text{
+    font-size: 20px;
+    color: #666;
+}
+
+.orderprogress_detail_status .one_stauts .text_box .small_text{
+    font-size: 16px;
+    color: #999;
     margin-top: 5px;
 }
 
-.Hierarchy_memberstatus{
-    width: 250px;
-    height: 35px;
-    background-color: #fff;
+.orderprogress_detail_status .dottedline{
+    width: 3px;
+    height: 30px;
+    box-sizing: border-box;
+    border-right: 3px dotted #cccccc;
+    margin: 8px auto;
+}
+
+.orderprogress_detail_winelist{
+    width: 650px;
     float: left;
-    text-align: center;
-    line-height: 35px;
+    margin-left: 64px;
 }
 
-.Hierarchy_memberdiscount{
-    width: 250px;
-    height: 35px;
-    background-color: #fff;
-    float: left;
-    text-align: center;
-    line-height: 35px;
-    margin-left: 5px;
-}
-
-/*  選單按鈕 */
-
-
-.member_Menu_BTN2 {
-    height: 45px;
-    line-height: 20px;
-}
-
-    .member_Menu_BTN:hover, .member_Menu_BTN2:hover {
-        background-color: #efefef;
-    }
-
-    .member_Menu_BTN2 strong {
-        height: 45px;
-        line-height: 45px;
-        font-weight: bold;
-        display: inline-block;
-        font-size: 16px;
-        font-weight: bold;
-        font-family: "微軟正黑體";
-        color: #808087;
-        cursor: pointer;
-        margin-left: 10px;
-    }
-
-
-    .member_Menu_BTN2 span {
-        display: inline-block;
-        width: 32px;
-        height: 35px;
-        float: left;
-        margin: 0 5px;
-    }
-
-
-
-        .member_Menu_BTN2 span.Icon_Cloud {
-            background-image: url(../images/Icon_Cloud.png);
-        }
-
-        .member_Menu_BTN2 span.Icon_Car {
-            background-image: url(../images/Icon_Car.png);
-        }
-
-        .member_Menu_BTN2 span.Icon_Wine {
-            background-image: url(../images/Icon_Wine.png);
-        }
-
-        .member_Menu_BTN2 span.Icon_Letter {
-            background-image: url(../images/Icon_Letter.png);
-        }
-
-        .member_Menu_BTN2 span.Icon_Money {
-            background-image: url(../images/Icon_Money.png);
-        }
-
-        .member_Menu_BTN2 span.Icon_Pig {
-            background-image: url(../images/Icon_Pig.png);
-        }
-
-
-        .member_Menu_BTN2 span.Icon_Money,
-        .member_Menu_BTN2 span.Icon_Pig {
-            margin-top: 6px;
-        }
-
-
-.MemberProject a.member_Menu_BTN {
-    margin: 0px;
-    margin-right: 10px;
-    color: #999;
-}
-
-    .MemberProject a.member_Menu_BTN:hover {
-        color: #000;
-    }
-
-
-/*  註冊完的會員頁 */
-
-
-.member_Project {
-    display: block;
-    position: absolute;
-    top: 240px;
-    left: 475px;
-}
-
-    .member_Project a {
-        display: inline-block;
-        width: 110px;
-        height: 85px;
-    }
-	
-/*//////201411Roger修改 調整位置start//////*/
-.member_Bonus {
-    background-image: url(../images/member_Bonus.png);
-}
-
-    .member_Bonus:hover {
-        background-image: url(../images/member_Bonus_H.png);
-    }
-
-.member_Birthday {
-    background-image: url(../images/member_Birthday.png);
-}
-
-    .member_Birthday:hover {
-        background-image: url(../images/member_Birthday_H.png);
-    }
-/*//////201411Roger修改 調整位置end//////*/
-
-/*/////20141227Roger新增"挑酒去"按鈕 start/////*/
-
-.go_shopping{
-	display: block;
-	position: absolute;
-	left: 537px;
-	top: 360px;
-	cursor:pointer;
-}
-.go_shopping a{
-	display: inline-block;
-    height: 41px;
-	width: 100px;
-	}
-
-.go_shopping_passwordvalidate{
-    display: block;
-    position: absolute;
-    left: 537px;
-    top: 240px;
-    cursor:pointer;
-}
-
-.btn_go_shopping{
-	background-image: url(../images/icon/btn_goshopping.png);
-}
-.btn_go_shopping:hover{
-	background-image: url(../images/icon/btn_goshopping2.png);
-}
-/*/////20141227Roger新增"挑酒去"按鈕 end/////*/
-
-.member_WineCellar {
-    background-image: url(../images/member_WineCellar.png);
-}
-
-    .member_WineCellar:hover {
-        background-image: url(../images/member_WineCellar_H.png);
-    }
-
-.member_Comment {
-    background-image: url(../images/member_Comment.png);
-}
-
-    .member_Comment:hover {
-        background-image: url(../images/member_Comment_H.png);
-    }
-
-.member_Freight {
-    background-image: url(../images/member_Freight.png);
-}
-
-    .member_Freight:hover {
-        background-image: url(../images/member_Freight_H.png);
-    }
-
-
-a.member_Comment {
-    margin-left: 60px;
-}
-
-
-.slogan2 {
-    display: block;
-    width: 113px;
-    height: 29px;
-    background-image: url(../images/slogan2.png);
-    position: absolute;
-    left: 530px;
-    top: 180px;
-}
-
-
-.slogan3 {
-    display: inline-block;
-    position: absolute;
-    font-size: 22px;
-    color: #333;
-    left: 329px;
-    top: 120px;
-}
-
-
-/*  各頁的大標題 */
-.member_Center_Tittle em {
-    display: inline-block;
-    position: absolute;
-    left: 20px;
-    top: 7px;
-}
-
-em.coupon_TittleBG {
-    width: 279px;
-    height: 42px;
-    background-image: url(../images/coupon_TittleBG.png);
-}
-
-
-em.bonus_TittleBG {
-    width: 230px;
-    top: 4px;
-    height: 46px;
-    background-image: url(../images/bonus_TittleBG.png);
-}
-
-
-
-
-/* 第二段標 */
-.member_Center_Tittle2 {
-    height: 35px;
-    font-weight: bold;
-    font-size: 20px;
-    color: #666;
-    display: block;
-    width: 95%;
-    padding-left: 5%;
-    line-height: 35px;
-    background-color: #F0F0F0;
-    margin: 10px 0;
-}
-
-    .member_Center_Tittle2 em,
-    .member_revise_TittleBG2 em {
-        display: inherit;
-        padding-left: 20px;
-        border-left: 10px solid #FFF;
-    }
-
-.member_Center_Tittle2_fitstline {
-    margin-top: 30px;
-}
-
-.Tittle2_couponBG {
-    font-weight: bold;
-}
-
-
-.Tittle2_bonusBG {
-    font-weight: bold;
-}
-
-
-/*  ======= 修改個人資料 ======  */
-
-
-.revise_TittleBG {
-    width: 170px;
-    top: 4px;
-    height: 43px;
-    background-image: url(../images/revise_TittleBG.png);
-}
-
-.member_revise_TittleBG2 {
-    display: block;
-    width: 95%;
-    padding-left: 5%;
-    height: 24px;
-    background-color: #F0F0F0;
-    margin: 20px 0 10px 0;
-}
-
-
-    .member_revise_TittleBG2 .Tittle2_bonusBG {
-        background-image: url(../images/revise_TittleBG2.png);
-    }
-
-
-.Modification_Info {
-    width: 76%;
-    min-height: 15px;
-    margin-left: 80px;
-    font-family: "微軟正黑體";
-    line-height: 24px;
-    font-size: 14px;
-}
-
-    .Modification_Info li {
-        line-height: 50px;
-    }
-
-    .Modification_Info li:last-child {
-        padding-bottom: 10px;
-    }
-
-        .Modification_Info li em {
-            display: inline-block;
-            width: 130px;
-        }
-
-        .Modification_Info li input{
-            display: inline-block;
-            height: 22px;
-            padding: 0 5px;
-            line-height: 22px;
-        }
-
-.InputButton {
-    cursor: pointer;
-    padding: 0px 18px;
-    margin-left: 10px;
-}
-
-li.revise_PasswordBTN {
-    display: block;
-    height: 22px;
-    padding: 5px 0px;
-    margin-left: 5%;
-    background-color: #D2D2D2;
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-image: url(../images/revise_PasswordBTN.png);
-}
-
-.LeftMore2 {
-    margin-left: 100px;
-}
-
-input.Password {
-    width: 175px;
-}
-
-.Modification_Info li.Line {
+.orderprogress_detail_winelist .one_type{
     width: 100%;
-    height: 5px;
-    background-color: #FFF;
-    padding: 0%;
+    margin-top: 32px;
 }
 
-
-
-/*  ======= 訂單查詢 ======  */
-
-.order_bonusBG {
-    width: 119px;
-    top: 4px;
-    height: 35px;
-    background-image: url(../images/Orders_TittleBG.png);
+.orderprogress_detail_winelist .one_type:first-child{
+    margin-top: 16px;
 }
 
+.orderprogress_detail_winelist .one_type table.list_detail{
+    width: 100%;
+}
 
-.SearchCondition {
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 15px;
-    background-color: #F0F0F0;
-    font-family: "微軟正黑體";
-    line-height: 28px;
-    font-size: 13px;
+.orderprogress_detail_winelist .one_type table.list_detail th{
+    background-color: #ebebeb;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 25px;
+    padding-left: 25px;
+    color: #666666;
+    text-align: center;
+    height: 40px;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail .delivery_status{
+    min-height: 40px;
+    padding: 10px 16px;
+    background-color: #e0e0e0;
+    color: #666;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail .delivery_status span{
+    width: calc(50% - 16px);
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail .delivery_status a{
+    color: #296993;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail td{
+    min-height: 40px;
+    font-size: 18px;
+    color: #666;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail tr:last-child td{
+    border-bottom: none;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail td .wine_nameCN {
+    line-height: 21px;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail td .wine_nameEN {
+    line-height: 20px;
+    font-size: 16px;
+    color: #999;
+    padding: 0 10px;
     padding-bottom: 10px;
 }
 
-    .SearchCondition h1 {
-        background-color: #D2D2D2;
-        padding: 5px;
-        padding-left: 15px;
-        border-left: 5px solid #75526F;
-        font-size: 18px;
-        color: #75526F;
-        font-weight: 900;
-    }
-
-        .SearchCondition h1 em {
-            font-family: "微軟正黑體";
-            font-size: 14px;
-            display: inline-block;
-            float: right;
-            margin-right: 10px;
-            color: #808087;
-        }
-
-    .SearchCondition h2 {
-        margin-left: 20px;
-        font-size: 16px;
-        line-height: 36px;
-        color: #333333;
-    }
-
-        .SearchCondition h2 em {
-            display: inline-block;
-            width: 16px;
-            height: 15px;
-            margin: 3px 2px 0 3px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-image: url(../images/CalendarICON.png);
-            cursor: pointer;
-        }
-
-        .SearchCondition h2 .InputRadio {
-            margin: 0px 3px 0px 3px;
-        }
-
-.order_Tittle2 {
-    display: inline-block;
-    width: 100%;
-    line-height: 24px;
-    font-family: "微軟正黑體";
-    font-size: 13px;
-    margin-top: 35px;
-}
-
-    .order_Tittle2 h1 {
-        float: left;
-        display: inline-block;
-        width: 16.3%;
-        font-size: 18px;
-        color: #75526F;
-        font-weight: 900;
-        text-align: center;
-        padding: 0px 10px;
-        border-bottom: 3px solid #75526F;
-    }
-
-    .order_Tittle2 em {
-        float: left;
-        display: inline-block;
-        width: 80%;
-        border-bottom: 3px solid #E2E2E2;
-        font-size: 14px;
-    }
-
-        .order_Tittle2 em span {
-            font-weight: bold;
-            font-family: Arial,"微軟正黑體";
-            color: #C29C20;
-        }
-
-/* 訂單項目 */
-
-.OrderStatus {
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 10px;
-}
-
-
-
-    .OrderStatus h2 {
-        font-family: "微軟正黑體";
-        line-height: 22px;
-        font-size: 14px;
-        display: inline-block;
-        margin: 10px 0px;
-        margin-left: 5px;
-    }
-
-
-    .OrderStatus h1 {
-        font-family: "微軟正黑體";
-        line-height: 22px;
-        font-size: 14px;
-        display: inline-block;
-        margin: 10px 0px;
-        padding: 0px 8px;
-        color: #FFF;
-    }
-
-        /*未到貨*/
-        .OrderStatus h1.NotYet {
-            background-color: #B5404B;
-        }
-        /*已到貨*/
-        .OrderStatus h1.Get {
-            background-color: #A0A04F;
-            width: auto;
-        }
-        /*取消訂單*/
-        .OrderStatus h1.CancelOrder {
-            background-color: #E8B115;
-        }
-
-        /*隔日到貨*/
-        .OrderStatus_24HRexpress{
-            display: inline-block;
-            line-height: 1;
-            padding: 5px;
-            background-color: #ef9c00;
-            color: #fff; 
-        }
-
-
-        /*一般到貨*/
-        .OrderStatus_normal{
-            display: inline-block;
-            line-height: 1;
-            padding: 5px;
-            background-color: #4d4d4d;
-            color: #fff; 
-        }
-
-        /*預訂商品*/
-        .OrderStatus_preorder{
-            display: inline-block;
-            line-height: 1;
-            padding: 5px;
-            background-color: #0065a9;
-            color: #fff; 
-        }
-
-.OrderStatus_separate {
-    width: 96.6%;
-    background-color: #f2f2f2;
+.orderprogress_detail_winelist .one_type table.list_detail td .preorder_date {
+    line-height: 20px;
+    font-size: 16px;
+    color: #999;
     padding: 0 10px;
-    border: 1px solid #d2d2d2;
-    border-top: none;
+    padding-bottom: 10px;
 }
 
-    .OrderStatus_separate .ShipTimeline{
-        border-top: 1px solid #d2d2d2;
-    }
+.orderprogress_detail_info{
+    width: calc(100% - 120px - 650px - 64px - 64px - 32px);
+    margin-left: 64px;
+    margin-right: 16px;
+    float: right;
+}
 
-.OrdersTittle{
+.orderprogress_detail_info .order_number{
     width: 100%;
+    margin-top: 16px;
+    font-size: 22px;
 }
 
-ul.OrdersTittle li,
-ul.OrdersData li {
-    font-family: "微軟正黑體";
-    line-height: 30px;
-    font-size: 16px;
-    float: left;
-    display: inline-block;
-    text-align: center;
-}
-
-ul.OrdersTittle li {
-    background-color: #D2D2D2;
-    border-right: 2px solid #D2D2D2;
-}
-
-ul.OrdersData li {
-    background-color: #F0F0F0;
-    border-right: 2px solid #FFF;
-}
-
-    ul.OrdersData li.OrderInvoice {
-        border-right: 2px solid #F0F0F0;
-    }
-
-ul.OrdersData {
-    clear: both;
-    height: 30px;
-}
-
-
-.OrderTime {
-    width: 26.8%;
-}
-
-.OrderMoney {
-    width: 20.3%;
-}
-
-.OrderRed {
-    color: #CF3448;
-}
-
-.Situation {
-    width: 15%;
-}
-
-.OrderPaying {
-    width: 18%;
-}
-
-.OrderInvoice {
-    width: 18%;
-}
-
-.OrderNo {
-    width: 100%;
-    color: #B5404B;
-}
-
-
-/*訂單聯絡資訊*/
-
-.OrdersInformation {
-    color: #808087;
-    text-align: center;
-    margin-top: 150px;
-}
-
-    .OrdersInformation p {
-        margin-bottom: 8px;
-    }
-
-        .OrdersInformation p a {
-            color: #808087;
-            text-decoration: underline;
-        }
-
-            .OrdersInformation p a:hover {
-                color: #808087;
-                text-decoration: none;
-            }
-
-
-
-
-
-/*出貨狀態時間軸*/
-
-.ShipTimeline {
-    display: block;
-    width: 96.6%;
-    padding: 0px 10px;
-    height: 36px;
-    border: 1px solid #D2D2D2;
-    border-top: none;
-}
-    
-    /*20170710 Rogerfix*/
-    .ShipTimeline h3,
-    .ShipTimeline h4 {
-        float: left;
-        display: inline-block;
-        font-family: "微軟正黑體";
-        line-height: 36px;
-        font-size: 14px;
-        padding: 0px 3px;
-    }
-    /*20170710 Rogerfix*/
-
-    /*20170824 Roger 新增*/
-    .ShipTimeline h3 a{
-        text-decoration: underline;
-        color: #0eacd3;
-    }
-    
-    .OrderStatus_separate h3{
-        display: inline-block;
-        font-family: "微軟正黑體";
-        line-height: 36px;
-        font-size: 14px;
-        padding: 0px 3px;
-        margin: 10px 0;
-    }
-
-    .OrderStatus_separate h3 a{
-        text-decoration: underline;
-        color: #0eacd3;
-    }
-    /*20170824 Roger 新增 end*/
-
-    .ShipTimeline h4 {
-        padding: 0px 2px;
-    }
-
-    .ShipTimeline span {
-        float: left;
-        display: inline-block;
-        width: 60px;
-        height: 28px;
-    }
-
-    .ShipTimeline span.RouteICON {
-        width: 27px;
-    }
-
-/*20170710 Rogerfix*/
-.RouteICON {
-    background-image: url(../images/RouteICON.png);
-    margin-top: 3px;
-}
-
-.TruckICON {
-    background-image: url(../images/TruckICON.png);
-    margin-top: 3px;
-}
-/*20170710 Rogerfix end*/
-
-.ShipTimeline input {
-    padding: 0px 5px;
-    display: inline-block;
-    float: right;
-    margin-top: 8px;
-    line-height: 18px;
-    cursor: pointer;
-    * padding: 0px;
-}
-
-
-/*展開詳細酒單*/
-
-
-/*收件資訊*/
-ul.ReceivingData {
-    border: 1px dotted #D2D2D2;
-    border-left: 1px solid #D2D2D2;
-    border-right: 1px solid #D2D2D2;
-    border-bottom: 0px dotted #D2D2D2;
-  
-}
-ul.ReceivingData li{
-    font-family: "微軟正黑體";
-    line-height: 30px;
-    font-size: 16px;
-    float: left;
-    display: inline-block;
-    padding:0px 15px;
-}
-.ReceivingConsignee {
-    width: 25%;
-}
-.ReceivingAdd {
-    width: 60%;
-}
-
-/*發票收件資訊*/
-ul.InvReceivingData {
-    border: 1px dotted #D2D2D2;
-    border-left: 1px solid #D2D2D2;
-    border-right: 1px solid #D2D2D2;
-    border-bottom: 0px dotted #D2D2D2;
-    border-top: 0px dotted #D2D2D2;
-}
-ul.InvReceivingData li{
-    font-family: "微軟正黑體";
-    line-height: 30px;
-    font-size: 16px;
-    float: left;
-    display: inline-block;
-      padding:0px 15px;
-}
-.InvoiceRec {
-    width: 25%;
-}
-.InvoiceAdd {
-    width: 60%;
-}
-.InvoiceVatNo {
-    width: 25%;
-}
-.InvoiceTitle {
-    width: 60%;
-}
-
-/*訂單商品資訊*/
-.ShoppingDetails {
-    display: block;
-    width: 99.4%;
-}
-
-ul.DetailsTittle li,
-ul.DetailsData li{
-    font-family: "微軟正黑體";
-    line-height: 28px;
-    font-size: 14px;
-    font-weight:bold;
-    float: left;
-    display: inline-block;
-    text-align: center;
-}
-
-ul.DetailsTittle {
-    border: 1px dotted #D2D2D2;
-    border-left: 1px solid #D2D2D2;
-    border-right: 1px solid #D2D2D2;
-}
-
-ul.DetailsData {
-    clear: both;
-    padding: 10px 0px;
-    border-bottom: 1px dotted #D2D2D2;
-    border-left: 1px solid #D2D2D2;
-    border-right: 1px solid #D2D2D2;
-    width: 99.7%;
-    float: left;
-}
-
-ul.DetailsData1 {
-    clear: both;
-    padding: 10px 0px;
-    border-top: 1px dotted #D2D2D2;
-    float: left;
-    width: 99.7%;
-}
-
-    ul.DetailsData1 .wineSet {
-        margin-top: 10px;
-        margin-left: 20px;
-    }
-
-        ul.DetailsData1 .wineSet h5, ul.DetailsData1 .wineSet h6 {
-            width: 336px;
-        }
-
-.DetailsName {
-    width: 40.9%;
-}
-
-.GroupName {
-    width: 56.9%;
-   color: #75526F;
-}
-.GroupName h5 {
-    display: inline-block;
-    font-family: "微軟正黑體";
-    line-height: 30px;
-    font-size: 16px;
-    text-align: left;
-    margin-left: 20px;
-    float: left;
-}
-
-.GroupDetailsName {
-    width: 49%;
-    padding: 0px 30px;
-    margin: 10px 0;
-}
-.GroupDetailsName h5,
-.GroupDetailsName h6 {
-    display: inline-block;
-    width: 300px;
-    font-family: "微軟正黑體";
-    line-height: 22px;
-    font-size: 14px;
-    text-align: left;
-    float: right;
-}
-.GroupDetailsName h5 {
-    color: #75526F;
-}
-
-.GroupDetailsName h6 {
-    color: #969551;
-}
-
-.DetailsName2 {
-    width: 70.8%;
-    margin-right: 7px;
-}
-
-.DetailsName h5,
-.DetailsName h6 {
-    display: inline-block;
-    width: 240px;
-    font-family: "微軟正黑體";
-    line-height: 22px;
-    font-size: 14px;
-    text-align: left;
-    float: right;
-}
-
-.DetailsName h5 {
-    color: #75526F;
-}
-
-.DetailsName h6 {
-    color: #969551;
-}
-
-ul.DetailsData .wineSet .wineSetList {
-    text-align: left;
-}
-
-
-.WineIMG2 {
-    display: inline-block;
-    width: 55px;
-    height: 55px;
-    padding: 3px;
-    background-color: #FFF;
-    border: 1px solid #D2D2D2;
-    overflow: hidden;
-    float: left;
-    margin-left: 5px;
-}
-
-    .WineIMG2 img {
-        width: 55px;
-        height: auto;
-    }
-
-.DetailsYears {
-    width: 16%;
-}
-
-.DetailsPrice {
-    width: 16%;
-}
-
-.DetailsQuantity {
-    width: 11%;
-}
-
-.DetailsTotal {
-    width: 16%;
-}
-
-.DetailsList {
-    width: 99.8%;
-}
-
-.ThisYear2 {
-    display: inline-block;
-    padding: 0px 17px;
-    line-height: 17px;
-    color: #FFF;
-    margin-top: 5px;
-    background-color: #929091;
-    font-family: Arial, Helvetica, sans-serif;
+.orderprogress_detail_info .order_number .number{
+    color: #8e6681;
     font-weight: bold;
+    float: left;
 }
 
-.ThisYear2ML {
-    margin-left: 5px;
+.orderprogress_detail_info .order_number .sum{
+    color: #666666;
+    float: right;
 }
 
-
-
-
-
-/*金黃色的數字*/
-.OrderStatus h2 span,
-.ShipTimeline h4 {
-    font-weight: bold;
-    font-family: Arial,"微軟正黑體";
-    color: #C29C20;
-}
-
-
-
-.TagALL_Buy {
-    background-image: none;
-    border: none;
-    background-color: #F0F0F0;
-}
-
-
-/**********member_register*****************/
-
-.member_register_information_noticeText{
-    display: inline-block;
-    font-size: 14px;
-    color: #999;
-    margin-top: 5px;
-    margin-left: 225px;
-}
-
-/**********member_register end*****************/
-
-/***********password*****************/
-
-.password_noticeText{
-    font-size: 14px;
-    color: #999;
-    margin-bottom: 5px;
-    margin-left: 253px;
-}
-
-/***********password end*****************/
-
-
-/**************revise_personal_data******************/
-
-ul.personal_data_info_layout{
-    display: inline-block;
-    margin-top: 0;
-    margin-left: 80px;
-    padding: 0;
-    width: auto;
-}
-
-    ul.personal_data_info_layout li{
-        text-indent: 0;
-        line-height: 50px;
-    }
-
-        ul.personal_data_info_layout li input{
-            display: inline-block;
-            height: 22px;
-            line-height: 22px;
-        }
-
-.personal_data_btns_layout{
-    width: 210px;
-    height: 41px;
-    margin: 20px auto;
-}
-
-    .personal_data_btns_layout div{
-        width: 80px;
-        float: left;
-        padding:10px;
-        font-size: 16px;
-        text-align: center;
-        background-color: #8B8B8B;
-        color: #fff;
-        margin-left: 10px;
-        cursor: pointer;
-    }
-
-    .personal_data_btns_layout div:first-child{
-        margin-left: 0;
-    }
-
-    .personal_data_btns_layout div:hover{
-        background-color: #333333;
-    }
-
-/**************revise_personal_data end******************/
-
-/*20170710 Rogerfix*/
-/**********order_progress_wishlist*******************/
-
-
-.wishlist_bonusBG {
-    width: 155px;
-    top: 4px;
-    height: 35px;
-    background-image: url(../images/wishlist_TittleBG.png);
-}
-
-.WishListStatus{
-    width: 780px;
-    margin: 0 auto;
-    margin-top: 15px;
-}
-
-.WishListTittle{
+.orderprogress_detail_info .delivery_info{
     width: 100%;
-    border: 1px solid #999999;
+    margin-top: 16px;
 }
 
-    .WishListTittle li{
-        font-family: "微軟正黑體";
-        line-height: 30px;
-        font-size: 16px;
-        float: left;
-        display: table-cell;
-        text-align: center;
-        background-color: #d2d2d2;
-        border-right: 1px solid #b2b2b2;
-    }
-
-    .WishListTittle li:last-child{
-        border-right: none;
-    }
-
-.WishListTittle:after{
-    content: "";
-    display: block;
-    clear: both;
+.orderprogress_detail_info .delivery_info .title, .orderprogress_detail_info .invoice_info .title{
+    font-size: 18px;
+    color: #999;
 }
 
-.WishListStatus_Date{
-    width:94px;
-}
-
-.WishListStatus_Name{
-    width:330px;
-}
-
-.WishListStatus_Year{
-    width:100px;
-}
-
-/* .WishListStatus_CL{
-    width:77px;
-} */
-
-.WishListStatus_Stock{
-    width:120px;
-}
-
-.WishListStatus_Others{
-    width:132px;
-}
-
-.WishListData{
-    width: 780px;
-    border: 1px solid #999999;
-    margin: 0 auto;
-    border-top:none;
-    display: table;
-}
-
-    .WishListData td{
-        min-height: 30px;
-        line-height: 30px;;
-        text-align: center;
-        color: #666;
-        /* border-right: 1px solid #b2b2b2; */
-        border-bottom: 1px dotted #b2b2b2;
-        font-size: 14px;
-    }
-
-    .WishListData td:last-child{
-        border-right:none;
-    }
-
-    .WishListData > table:last-child td{
-        border-bottom:none;
-    } 
-
-
-.WishListData .WishListStatus_Name{
-    padding: 10px 0;
-}
-
-.WishListData .WishListStatus_Name:after{
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.WishListStatus_Name_zhTW{
-    display: inline-block;
-    width: 250px;
-    font-family: "微軟正黑體";
-    line-height: 22px;
-    font-size: 14px;
-    text-align: left;
-    color: #75526F;
-    float: right;
-    margin-right: 5px;
-}
-
-    .WishListStatus_Name_zhTW > a{
-        color: #75526F;
-    }
-
-    .WishListStatus_Name_zhTW > a:hover{
-        text-decoration: underline;
-    }
-
-.WishListStatus_Name_EN{
-    display: inline-block;
-    width: 250px;
-    font-family: "微軟正黑體";
-    line-height: 22px;
-    font-size: 14px;
-    text-align: left;
-    float: right;
-    color: #969551;
-    margin-right: 5px;
-}
-
-    .WishListStatus_Name_EN > a{
-        color: #969551;
-    }
-
-    .WishListStatus_Name_EN > a:hover{
-        text-decoration: underline;
-    }
-
-.WishListStatus_Price{
-    width: 80px;
-    color: #CF3448;
-    font-size: 13px;
-    font-family: Arial, "微軟正黑體";
-    font-weight: 900;
-    text-align: right;
-    float: left; 
-    margin-right: 5px;
-    margin-left: 10px;
-}
-
-.WishListStatus_PriceFast{
-    width: 80px;
-    color: #ef9c00;
-    font-size: 13px;
-    font-family: Arial, "微軟正黑體";
-    font-weight: 900;
-    text-align: right;
-    float: left; 
-    margin-right: 5px;
-    margin-left: 10px;
-}
-
-.WishListStatus_PricePreorder{
-    width: 80px;
-    color: #0071bc;
-    font-size: 13px;
-    font-family: Arial, "微軟正黑體";
-    font-weight: 900;
-    text-align: right;
-    float: left; 
-    margin-right: 5px;
-    margin-left: 10px;
-}
-
-.WishListStatus_BuyIcon{
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    float: left;
-    margin-top:7px; 
-    background-image: url(../images/icon/BuyICON.png);
-    background-size: cover;
-    opacity: 0.7;
-}
-
-.WishListStatus_BuyIcon:hover{
-    cursor: pointer;
-    background-image: url(../images/icon/BuyICONH.png);
-}
-
-.WishListStatus_BuyIconFast{
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    float: left;
-    margin-top:7px; 
-    background-image: url(../images/icon/Fast_Icon.png);
-    background-size: cover;
-    opacity: 0.7;
-}
-
-.WishListStatus_BuyIconFast:hover{
-    cursor: pointer;
-    background-image: url(../images/icon/Fast_IconH.png);
-}
-
-.WishListStatus_BuyIconPreorder{
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    float: left;
-    margin-top:7px; 
-    background-image: url(../images/icon/PreOrder_ICON.png);
-    background-size: cover;
-    opacity: 0.7;
-}
-
-.WishListStatus_BuyIconPreorder:hover{
-    cursor: pointer;
-    background-image: url(../images/icon/PreOrder_ICON_Winelist_hover.png);
-}
-
-.WishListStatus_inputBTN{
-    width: 100px;
-    cursor: pointer;
-    outline: none;
-    margin-top: 5px;
-}
-
-.WishListStatus_inputBTN:last-child{
-    margin-bottom: 5px;
-}
-
-/**********order_progress_wishlist end*******************/
-
-/*20170710 Rogerfix end*/
-
-/*20180731 Roger add keepaccount style*/
-
-.keepaccount{
-    display: inline-block;
-    margin-left: 30%;
+.orderprogress_detail_info .delivery_info .title + .row, .orderprogress_detail_info .invoice_info .title + .row{
     margin-top: 10px;
 }
 
-.keepaccount span{
+.orderprogress_detail_info .delivery_info .row, .orderprogress_detail_info .invoice_info .row{
+    font-size: 18px;
+    line-height: 23px;
     color: #666;
-    font-size: 14px;
-    display: inline-block;
-    height: 24px;
-    line-height: 24px;
+    margin-top: 5px;
 }
 
-/*custuon checkbox*/
-ul.member_Form li input[type=checkbox]{
-    width: auto;
+.orderprogress_detail_info .invoice_info{
+    width: 100%;
+    margin-top: 24px;
+}
+
+.orderprogress_detail_info .btn_editorder{
+    width: 200px;
+    height: 45px;
+    font-size: 18px;
+    background-color: #939334;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
+.memberinfo .one_title{
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 75px;
+    border-bottom: 10px solid #f3f4f5;
+}
+
+.memberinfo .one_title .title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #848484;
+    position: relative;
+}
+
+.memberinfo .one_title:not(:first-child){
+    margin-top: 52px;
+}
+
+.memberinfo .one_title .bonus:before{
+    content: '';
+    width: 53px;
+    height: 53px;
+    left: -64px;
+    top: -17px;
+    display: block;
+    position: absolute;
+    background-image: url(../images/Icon_Pig_2.png);
+}
+
+.memberinfo .one_title .coupon:before{
+    content: '';
+    width: 53px;
+    height: 53px;
+    left: -64px;
+    top: -17px;
+    display: block;
+    position: absolute;
+    background-image: url(../images/Icon_Money_2.png);
+}
+
+.memberinfo .one_block{
+    width: 100%;
+    margin-top: 24px;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.memberinfo .text.one_point{
+    position: relative;
+    padding-left: 24px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.memberinfo .text.one_point:nth-child(2){
+    margin-top: 16px;
+}
+
+.memberinfo .text.one_point:before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #666;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 7px;
+}
+
+.memberinfo .rule_box{
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: #f3f4f5;
+    border-radius: 5px;
+    margin-top: 24px;
+}
+
+.memberinfo .rule_box .rule_title{
+    font-size: 22px;
+    font-weight: bold;
+    color: #666;
+}
+
+.memberinfo .rule_box .rule_row{
+    font-size: 18px;
+    padding-left: 36px;
+    box-sizing: border-box;
+    color: #666;
+    line-height: 27px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.memberinfo .rule_box .rule_row span{
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #878787;
+    color: #fff;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
+    position: absolute;
+    border-radius: 50%;
+    left: 12px;
+    top: 4px;
+}
+
+.memberinfo .coupon_table{
+    width: 100%;
+    margin-top: 24px;
+}
+
+.memberinfo .coupon_table th{
+    height: 45px;
+    background-color: #d7d4cb;
+    font-size: 18px;
+    text-align: center;
+    color: #666;
+}
+
+.memberinfo .coupon_table td{
+    height: 45px;
+    background-color: #f3f1ec;
+    font-size: 18px;
+    text-align: center;
+    color: #666;
+    border-right: 1px solid #d0ccc3;
+    border-bottom: 1px solid #d0ccc3;
+}
+
+.memberinfo .coupon_table td:last-child{
+    border-right: none;
+}
+
+.memberinfo .coupon_table tr:last-child td{
+    border-bottom: none;
+}
+
+.memberinfo .coupon_table td span{
+    color: #296993;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.memberinfo .coupon_table td span:before{
+    content: '[';
+    font-size: 14px;
+    color: #296993;
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.memberinfo .coupon_table td span:after{
+    content: ']';
+    font-size: 14px;
+    color: #296993;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.memberinfo .btn_editinfo{
+    width: calc(100% - 32px);
+    height: 45px;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #939334;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    margin: 0 auto;
+}
+
+.memberinfo .text{
+    font-size: 18px;
+    line-height: 27px;
+    color: #666;
+}
+
+.memberinfo .text span{
+    margin: 0 5px;
+    color: #c29c20;
+    font-weight: bold;
+}
+
+.memberinfo .amount_text{
+    margin-top: 24px;
+}
+
+.memberinfo .amount_condition{
+    padding-left: 24px;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 16px;
+}
+
+.memberinfo .amount_condition:before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #666;
+    border-radius: 50%;
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    display: block;
+}
+
+.memberinfo .amount_notice{
+    font-size: 16px;
+    line-height: 21px;
+    padding-left: 24px;
+    box-sizing: border-box;
+    color: #999;
+    margin-top: 24px;
+}
+
+.memberinfo .btn_member_rating{
+    width: 130px;
+    height: 132px;
+    background-image: url(../images/MemberInformationIcon.png);
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
+.form_editmemberinfo{
+    width: 450px;
+    margin: 0 auto;
+    margin-bottom: 36px;
+}
+
+.member .Left_Menu_layout{
+    margin-left: 0;
+}
+
+.member .Right_content{
+    width: calc(100% - 280px - 16px);
+    margin-left: 16px;
+}
+
+.membercwc_list .Right_content,.membercwc_list .Left_Menu_layout {
+    margin-top: 60px;
+}
+
+.member .Center_content{
+    width: 100%;
+    position: relative;
+}
+
+.member .fliter_box_position{
+    width: 280px;
+    position: absolute;
+    /*padding-top: 40px;*/
+    background-color: #fff;
+    display: none;
+}
+
+.member .fliter_box_position.active{
+    display: block;
+}
+
+.member .fliter_box{
+    width: 280px;
+    height: 580px;
+    /*height: 540px;*/
+    position: relative;
+    background-color: #f7f7f7;
+    border: 1px solid #b9b9b9;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+/*.member .fliter_box_position .btn_close{
+    width: 30px;
+    height: 30px;
+    background-color: #666;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 6;
+}
+
+.member .fliter_box_position .btn_close:before{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #f2f2f2;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: 9;
+    top: 14px;
+    left: 5px;
+}
+
+.member .fliter_box_position .btn_close:after{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #f2f2f2;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    position: absolute;
+    z-index: 9;
+    top: 14px;
+    left: 5px;
+}*/
+
+.cwc_option_row{
+    position: absolute;
+    z-index: 5;
+}
+
+.membercwc_list .cwc_option_row{
+    top: 80px;
+}
+
+.cwc_option_row .one_option{
+    height: 45px;
+    padding: 0 16px;
+    border: 1px solid #acacac;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #acacac;
+    font-size: 18px;
+    line-height: 45px;
+    float: left;
+    position: relative;
+    margin-left: 10px;
+}
+
+.cwc_option_row .one_option:hover{
+    color: #666;
+    border-color: #666;
+}
+
+.cwc_option_row .one_option#Btn_Filter.active{
+    color: #666;
+    border-color: #666;
+}
+
+.cwc_option_row .one_option#Btn_Filter.active .icon_filter{
+    background-position: center bottom;
+}
+
+.cwc_option_row .one_option .icon_filter{
+    display: inline-block;
+    width: 24px;
+    height: 17px;
+    background-image: url(../images/icon/icon_cwc_filter.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    top: 2px;
+}
+
+.cwc_option_row .one_option:hover .icon_filter{
+    background-position: center bottom;
+}
+
+.cwc_option_row .one_option .icon_export{
+    width: 23px;
+    height: 21px;
+    background-image: url(../images/icon/icon_cwc_export.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    top: 1px;
+}
+
+.cwc_option_row .one_option:hover .icon_export{
+    background-position: center bottom;
+}
+
+.membercwc .slide_show{
+    width: 100%;
+    height: 580px;
+    position: relative;
+}
+
+.membercwc .slide_show .btn_prev{
+    width: 24px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 240px;
+    cursor: pointer;
+}
+
+.membercwc .slide_show .btn_prev:before{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(-60deg);
+    position: absolute;
+    top: 24px;
+    left: -12px;
+}
+
+.membercwc .slide_show .btn_prev:after{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(60deg);
+    position: absolute;
+    top: 66px;
+    left: -12px;
+}
+
+.membercwc .slide_show .btn_next{
+    width: 24px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 240px;
+    cursor: pointer;
+}
+
+.membercwc .slide_show .btn_next:before{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(60deg);
+    position: absolute;
+    top: 24px;
+    left: -12px;
+}
+
+.membercwc .slide_show .btn_next:after{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(-60deg);
+    position: absolute;
+    top: 66px;
+    left: -12px;
+}
+
+.membercwc .slide_box{
+    position: relative;
+    width: 90%;
+    height: 580px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.membercwc .slide_box .animate_slide{
+    min-width: 100%;
+    position: absolute;
+    height: 580px;
+    left: 0;
+    top: 0;
+    transition: left 0.5s,right 0.5s;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img{
+    width: calc(1152px/7);
+    height: 580px;
+    background-size: 180%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img img{
+    width: 180%;
+    height: auto;
+    margin-left: -40%;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img.large img{
+    width: 220%;
+    margin-left: -60%;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img.small img{
+    width: 150%;
+    margin-left: -25%;
+}
+
+
+.membercwc .slide_box .animate_slide .one_bottle_img:nth-child(7n){
+    margin-right: 0;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box{
+    width: 114px;
+    padding: 16px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: bottom 0.5s,opacity 0.3s;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img:hover .more_years_box{
+    bottom: 0;
+    opacity: 1;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box .one_year{
+    font-size: 20px;
+    font-weight: bold;
+    color: #666;
+    position: relative;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box .one_year:first-child{
+    margin-top: 0;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box .one_year a{
+    color: #666;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: normal;
+}
+
+.membercwc .slide_box .animate_slide .one_bottle_img .more_years_box .one_year .icon_delivery{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #904d06;
+    border-radius: 50%;
+    position: relative;
+    top: 4px;
+    margin-left: 4px;
+    background-image: url(../images/icon/icon_cwc_delivery.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.CWC_bottledetail_bottleimg{
+    float: left;
+    width: 280px;
+    height: 645px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.CWC_bottledetail_infobox{
+    float: right;
+    width: calc(100% - 280px - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.CWC_bottledetail_infobox .winenameCN{
+    font-size: 24px;
+    line-height: 36px;
+    color: #100a04;
+}
+
+.CWC_bottledetail_infobox .winenameEN{
+    font-size: 24px;
+    line-height: 36px;
+    color: #100a04;
+}
+
+.CWC_bottledetail_infobox .label_box{
+    width: 100%;
+    margin-top: 16px;
+}
+
+.CWC_bottledetail_infobox .label_box .one_label{
+    width: calc((100% - 30px)/7);
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: #666;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.CWC_bottledetail_infobox .label_box .one_label:last-child{
+    margin-right: 0;
+}
+
+.CWC_bottledetail_infobox .label_box .one_label:nth-child(7n){
+    margin-right: 0;
+}
+
+.CWC_bottledetail_infobox .label_box .one_label.active{
+    background-color: #8e6681;
+    border-color: #8e6681;
+    color: #fff;
+}
+
+.CWC_bottledetail_infobox .title{
+    font-size: 18px;
+    color: #666;
+    font-weight: bold;
+    margin-top: 32px;
+}
+
+.CWC_bottledetail_infobox .title span{
+    width: 1px;
+    height: 14px;
+    display: inline-block;
+    background-color: #999;
+    margin: 0 10px;
+    position: relative;
+    top: 0px;
+}
+
+.CWC_bottledetail_infobox .bottle_count{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.CWC_bottledetail_infobox .bottle_count .icon_bottle{
+    float: left;
+    width: 10px;
     height: auto;
 }
 
-/*20180731 Roger add keepaccount style end*/
+.CWC_bottledetail_infobox .bottle_count .numbertext{
+    font-size: 28px;
+    color: #666666;
+    float: left;
+    margin-left: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.CWC_bottledetail_infobox .bottle_count .btn_addcart{
+    width: 65px;
+    height: 40px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #904d06;
+    float: left;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.CWC_bottledetail_infobox .info_table{
+    width: 100%;
+    margin-top: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.CWC_bottledetail_infobox .info_table tr:nth-child(odd){
+    background-color: #fff;
+}
+
+.CWC_bottledetail_infobox .info_table tr:nth-child(even){
+    background-color: #fafafa;
+}
+
+.CWC_bottledetail_infobox .info_table td{
+    padding: 12px 16px;
+    font-size: 18px;
+    color: #666;
+}
+
+.CWC_bottledetail_infobox .info_table td:first-child{
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.CWC_bottledetail_infobox .info_table td .red{
+    color: #d30a0a;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.CWC_bottledetail_infobox .info_table td .green{
+    color: #0b7b62;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.CWC_bottledetail_infobox .info_table td .icon_arrow{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 1px;
+    margin: 0 2px;
+}
+
+.CWC_bottledetail_infobox .info_table td .red .icon_arrow{
+    background-image: url(../images/icon/icon_cwcbottleprice_arrow_red.png);
+}
+
+.CWC_bottledetail_infobox .info_table td .green .icon_arrow{
+    background-image: url(../images/icon/icon_cwcbottleprice_arrow_green.png);
+    transform: rotate(45deg);
+}
+
+.member_FooterALL{
+    display: none;
+}
+
+.member .membercwc_cart{
+    width: 100%;
+}
+
+.member .membercwc_cart .label_box:before,.member .membercwc_cart .label_box:after{
+    display: none;
+}
+
+.member .membercwc_cart .label_box .one_label{
+    padding: 0 8px;
+    font-size: 16px;
+}
+
+.member .membercwc_cart .step3_processbar .textbox .text{
+    width: 64px;
+}
+
+.member .membercwc_cart .step3_processbar .textbox .text:first-child{
+    margin-left: -4px;
+}
+
+.member .membercwc_cart .step3_processbar .gray_line .gray_dot.active{
+    border-color: #904d06;
+}
+
+.member .membercwc_cart .step_option{
+    margin-top: 10px;
+}
+
+.member .membercwc_cart .step_option .bottlecount_note{
+    font-size: 16px;
+    color: #666;
+    margin-top: 28px;
+}
+
+.member .membercwc_cart .step_option .bottlecount_note .number{
+    display: inline-block;
+    margin: 0 8px;
+    font-weight: bold;
+    color: #c29c20;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info{
+    margin-left: 40px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .nameCN{
+    font-size: 16px;
+    color: #000;
+    line-height: 21px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .nameEN{
+    font-size: 16px;
+    color: #666;
+    line-height: 21px;
+    margin-top: 4px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .otherinfo{
+    font-size: 16px;
+    color: #666;
+    line-height: 21px;
+    margin-top: 4px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .otherinfo span{
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #999;
+    position: relative;
+    top: 2px;
+    margin:0 8px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .priceavg{
+    width: 100%;
+    color: #666;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .wine_info .priceavg .icon_info{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+    color: #999;
+    border: 1px solid #999;
+    border-radius: 50%;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 6px;
+    position: relative;
+    top: -2px;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .count_price .price .text{
+    color: #666;
+}
+
+.member .membercwc_cart .cart_list_OneBottle .count_price .price .text span{
+    margin: 0 6px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px){
+    .member_FooterALL{
+        display: block;
+    }
+
+    .member .membercwc_cart{
+        margin-top: 40px;
+        max-width: 1280px;
+    }
+
+    .member .membercwc_cart .label_box:before,.member .membercwc_cart .label_box:after{
+        display: block;
+    }
+
+    .member .membercwc_cart .label_box .one_label {
+        padding: 0 32px;
+        font-size: 20px;
+    }
+
+    .member .membercwc_cart .step3_processbar .textbox .text:first-child{
+        margin-left: 0px;
+    }
+
+    .member .membercwc_cart .step_option{
+        width: 650px;
+        margin: 0 auto;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    .member .membercwc_cart .step_option .options{
+        border: none;
+        margin-left: 0;
+    }
+
+    .member .membercwc_cart .cart_list_layout{
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info{
+        margin-left: 0;
+        width: 60%;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info .nameCN{
+        font-size: 18px;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info .nameEN{
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info .otherinfo{
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .wine_info .otherinfo span{
+        height: 12px;
+        top: 0;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .count_price{
+        width: calc(40% - 40px - 16px);
+        margin-left: 16px;
+    }
+
+    .member .membercwc_cart .cart_list_OneBottle .option_check{
+        margin-top: 7px;
+    }
+
+    .member .membercwc_cart .proclaim{
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+    }
+
+    .member .membercwc_cart .confirm18{
+        position: relative;
+        right: unset;
+        top: unset;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
