@@ -374,6 +374,7 @@ $(window).resize(function(){
 			<div class="icon_nextstep"></div>
 			<div class="one_step">Step&nbsp;4</div>
 		</div>
+		<!--
 		<div class="options">
 			<div class="one_option check_all">
 				<div class="icon_check"></div>
@@ -383,7 +384,8 @@ $(window).resize(function(){
 				<div class="icon_delete"></div>
 				<div class="text">刪除</div>
 			</div>
-		</div>
+		</div>-->
+		<div class="btn_gotosum">小計區</div>
 		<div class="delivery_type_chose">
 			<div class="one_option active" id="t-cat">
 				<span class="text">宅配</span>
@@ -393,6 +395,16 @@ $(window).resize(function(){
 			</div>
 		</div>
 	</section>
+	<div class="options">
+		<div class="one_option" id="Delete_All">
+			<div class="icon_delete"></div>
+			<div class="text">刪除</div>
+		</div>
+		<div class="one_option check_all">
+			<div class="icon_check"></div>
+			<div class="text">選擇全部</div>
+		</div>
+	</div>
 
 	<!--cart內容區-->
 	<div class="cartcontent_position">
@@ -404,8 +416,12 @@ $(window).resize(function(){
 		
 		<div class="cart_list_layout">
 			<div class="cart_list_OneBottle">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="bottle_img">
 					<img src="images/pic/cu01.jpg"/>
@@ -439,7 +455,7 @@ $(window).resize(function(){
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price fast">$&nbsp;3,060</div>
+						<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 				<!--活動連結設在這-->
@@ -453,8 +469,12 @@ $(window).resize(function(){
 			</div>
 			<!--售完需刪除-->
 			<div class="cart_list_OneBottle cart_list_BottleSoldOut">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="bottle_img">
 					<img src="images/pic/cu01.jpg"/>
@@ -486,7 +506,7 @@ $(window).resize(function(){
 					<div class="price">
 						<div class="delete_text">售完需刪除</div>
 						<div class="text">小計</div>
-						<div class="bottle_price">$&nbsp;3,060</div>
+						<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 					</div>
 
 				</div>
@@ -495,8 +515,12 @@ $(window).resize(function(){
 			</div>
 			<!--啤酒樣式-->
 			<div class="cart_list_OneBottle">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="bottle_img">
 					<img src="images/pic/cu01.jpg"/>
@@ -527,15 +551,19 @@ $(window).resize(function(){
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price fast">$&nbsp;3,060</div>
+						<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>				 
 			</div>
 
 			<!--清酒樣式-->
 			<div class="cart_list_OneBottle">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="bottle_img">
 					<img src="images/pic/cu01.jpg"/>
@@ -566,15 +594,19 @@ $(window).resize(function(){
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price fast">$&nbsp;3,060</div>
+						<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>				 
 			</div>
 
 			<!--組合-->
 			<div class="cart_list_OneGroup">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="gropu_name">
 					【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
@@ -594,7 +626,7 @@ $(window).resize(function(){
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price fast">$&nbsp;3,060</div>
+						<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 				<div class="btn_group_wine_detail_extend">
@@ -636,8 +668,12 @@ $(window).resize(function(){
 
 			<!--組合售完-->
 			<div class="cart_list_OneGroup cart_list_BottleSoldOut">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="gropu_name">
 					【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
@@ -658,7 +694,7 @@ $(window).resize(function(){
 					<div class="price">
 						<div class="delete_text">售完需刪除</div>
 						<div class="text">小計</div>
-						<div class="bottle_price">$&nbsp;3,060</div>
+						<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 				<div class="btn_group_wine_detail_extend">
@@ -707,8 +743,12 @@ $(window).resize(function(){
 				Raúl Peréz 到港優惠75折起，滿6瓶再送電動刮鬍刀
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg"/>
@@ -738,13 +778,17 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">小計</div>
-							<div class="bottle_price fast">$&nbsp;3,060</div>
+							<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg"/>
@@ -774,7 +818,7 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">小計</div>
-							<div class="bottle_price fast">$&nbsp;3,060</div>
+							<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -794,8 +838,12 @@ $(window).resize(function(){
 					</div>
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg">
@@ -826,8 +874,12 @@ $(window).resize(function(){
 					</div>				 
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg">
@@ -861,7 +913,7 @@ $(window).resize(function(){
 					<div class="count_price">
 						<div class="price">
 							<div class="text">此區小計</div>
-							<div class="bottle_price fast">$&nbsp;3,060</div>
+							<div class="bottle_price fast"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -895,7 +947,7 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">價值</div>
-							<div class="bottle_price">$&nbsp;3,060</div>
+							<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -922,7 +974,7 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">價值</div>
-							<div class="bottle_price">$&nbsp;3,060</div>
+							<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -937,8 +989,12 @@ $(window).resize(function(){
 
 		<div class="cart_list_layout">
 			<div class="cart_list_OneBottle">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="bottle_img">
 					<img src="images/pic/cu01.jpg"/>
@@ -968,7 +1024,7 @@ $(window).resize(function(){
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price normal">$&nbsp;3,060</div>
+						<div class="bottle_price normal"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 				<!--活動連結設在這-->
@@ -982,8 +1038,12 @@ $(window).resize(function(){
 			</div>
 			<!--組合-->
 			<div class="cart_list_OneGroup">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="gropu_name">
 					【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
@@ -1003,7 +1063,7 @@ $(window).resize(function(){
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price normal">$&nbsp;3,060</div>
+						<div class="bottle_price normal"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 				<div class="btn_group_wine_detail_extend">
@@ -1049,8 +1109,12 @@ $(window).resize(function(){
 				Raúl Peréz 到港優惠75折起，滿6瓶再送電動刮鬍刀
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg"/>
@@ -1080,13 +1144,17 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">小計</div>
-							<div class="bottle_price normal">$&nbsp;3,060</div>
+							<div class="bottle_price normal"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg"/>
@@ -1116,7 +1184,7 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">小計</div>
-							<div class="bottle_price normal">$&nbsp;3,060</div>
+							<div class="bottle_price normal"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -1136,8 +1204,12 @@ $(window).resize(function(){
 					</div>
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg">
@@ -1168,8 +1240,12 @@ $(window).resize(function(){
 					</div>				 
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg">
@@ -1203,7 +1279,7 @@ $(window).resize(function(){
 					<div class="count_price">
 						<div class="price">
 							<div class="text">此區商品小計</div>
-							<div class="bottle_price normal">$&nbsp;3,060</div>
+							<div class="bottle_price normal"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -1237,7 +1313,7 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">價值</div>
-							<div class="bottle_price">$&nbsp;3,060</div>
+							<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -1264,7 +1340,7 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">價值</div>
-							<div class="bottle_price">$&nbsp;3,060</div>
+							<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -1279,8 +1355,12 @@ $(window).resize(function(){
 
 		<div class="cart_list_layout">
 			<div class="cart_list_OneBottle">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="bottle_img">
 					<img src="images/pic/cu01.jpg"/>
@@ -1310,7 +1390,7 @@ $(window).resize(function(){
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price preorder">$&nbsp;3,060</div>
+						<div class="bottle_price preorder"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 				<!--活動連結設在這-->
@@ -1324,8 +1404,12 @@ $(window).resize(function(){
 			</div>
 			<!--組合-->
 			<div class="cart_list_OneGroup">
-				<div class="option_check">
-					<div class="icon_check"></div>
+				<div class="options">
+					<div class="option_check">
+						<div class="icon_check"></div>
+					</div>
+					<div class="option_delete">
+					</div>
 				</div>
 				<div class="gropu_name">
 					【此生必喝的Chablis白酒】Domaine Laroche村莊級雙瓶組$1,999
@@ -1345,7 +1429,7 @@ $(window).resize(function(){
 					</div>
 					<div class="price">
 						<div class="text">小計</div>
-						<div class="bottle_price preorder">$&nbsp;3,060</div>
+						<div class="bottle_price preorder"><span>$</span>&nbsp;3,060</div>
 					</div>
 				</div>
 				<div class="btn_group_wine_detail_extend">
@@ -1391,8 +1475,12 @@ $(window).resize(function(){
 				Raúl Peréz 到港優惠75折起，滿6瓶再送電動刮鬍刀
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg"/>
@@ -1422,13 +1510,17 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">小計</div>
-							<div class="bottle_price preorder">$&nbsp;3,060</div>
+							<div class="bottle_price preorder"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg"/>
@@ -1458,7 +1550,7 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">小計</div>
-							<div class="bottle_price preorder">$&nbsp;3,060</div>
+							<div class="bottle_price preorder"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -1478,8 +1570,12 @@ $(window).resize(function(){
 					</div>
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg">
@@ -1510,8 +1606,12 @@ $(window).resize(function(){
 					</div>				 
 				</div>
 				<div class="cart_list_OneBottle">
-					<div class="option_check">
-						<div class="icon_check"></div>
+					<div class="options">
+						<div class="option_check">
+							<div class="icon_check"></div>
+						</div>
+						<div class="option_delete">
+						</div>
 					</div>
 					<div class="bottle_img">
 						<img src="images/pic/cu01.jpg">
@@ -1545,7 +1645,7 @@ $(window).resize(function(){
 					<div class="count_price">
 						<div class="price">
 							<div class="text">此區商品小計</div>
-							<div class="bottle_price preorder">$&nbsp;3,060</div>
+							<div class="bottle_price preorder"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -1579,7 +1679,7 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">價值</div>
-							<div class="bottle_price">$&nbsp;3,060</div>
+							<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -1606,7 +1706,7 @@ $(window).resize(function(){
 						</div>
 						<div class="price">
 							<div class="text">價值</div>
-							<div class="bottle_price">$&nbsp;3,060</div>
+							<div class="bottle_price"><span>$</span>&nbsp;3,060</div>
 						</div>
 					</div>
 				</div>
@@ -1768,7 +1868,7 @@ $(window).resize(function(){
 				<div style="width: 100%;display: flex;justify-content: flex-end">
 					<div class="price">
 						<div class="text">酒窩價</div>
-						<div class="number">$&nbsp;3,000</div>
+						<div class="number"><span>$</span>&nbsp;3,000</div>
 					</div>	
 					<div class="btn_addcart">加入清單<span class="icon_plus"></span></div>
 				</div>
@@ -1798,7 +1898,7 @@ $(window).resize(function(){
 				<div class="original_price">定價&nbsp;&nbsp;$&nbsp;5,000</div>
 				<div class="price">
 					<div class="text">酒窩價</div>
-					<div class="number">$&nbsp;3,000</div>
+					<div class="number"><span>$</span>&nbsp;3,000</div>
 				</div>	
 				<div class="btn_addcart">加入清單<span class="icon_plus"></span></div>
 			</div>
@@ -1826,7 +1926,7 @@ $(window).resize(function(){
 				<div class="original_price">定價&nbsp;&nbsp;$&nbsp;5,000</div>
 				<div class="price">
 					<div class="text">酒窩價</div>
-					<div class="number">$&nbsp;3,000</div>
+					<div class="number"><span>$</span>&nbsp;3,000</div>
 				</div>	
 				<div class="btn_addcart">加入清單<span class="icon_plus"></span></div>
 			</div>
