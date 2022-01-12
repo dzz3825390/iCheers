@@ -11,43 +11,16 @@
 <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="Scripts/popcontrol.js"/></script>
 <script type="text/javascript" src="Scripts/popdata.js"/></script>
+<script type="text/javascript" src="Scripts/step3.js"/></script>
 <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
         $('#BTN_PurchaseInfoEdit').click(function(){
-            PurchaseInfoEdit();
+            PurchaseInfoEditClick();
         });
     });
 
-    function ConfirmEdit(){
-        ClosePop();
-        $('#BTN_PurchaseInfoEdit').css('display','none');
-        var PurchaseInfo_Name = $('#PurchaseInfo_Name').text();
-        var PurchaseInfo_Sex = $('#PurchaseInfo_Sex').text();
-        var PurchaseInfo_Phone = $('#PurchaseInfo_Phone').text();
-        var PurchaseInfo_Address_PostalCode = $('#PurchaseInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
-        var PurchaseInfo_Address_City = $('#PurchaseInfo_Address').text().substring(3,6);
-        //var PurchaseInfo_Address_District = $('#PurchaseInfo_Address').text().substring(6,9) + '&nbsp;' + PurchaseInfo_Address_PostalCode;
-        var PurchaseInfo_Address_Other = $('#PurchaseInfo_Address').text().slice(9);
-
-        $('#PurchaseInfo_Name').replaceWith('<input type="text" name="" value="'+PurchaseInfo_Name+'">');
-
-        if (PurchaseInfo_Sex == '男') {
-            $('#PurchaseInfo_Sex').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="sex" checked="checked"><span>男</span><input type="radio" name="sex"><span>女</span><input type="radio" name="sex"><span>中性</span></div>');
-        } else if (PurchaseInfo_Sex == '女') {
-            $('#PurchaseInfo_Sex').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="sex"><span>男</span><input type="radio" name="sex" checked="checked"><span>女</span><input type="radio" name="sex"><span>中性</span></div>');
-        } else {
-            $('#PurchaseInfo_Sex').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="sex"><span>男</span><input type="radio" name="sex"><span>女</span><input type="radio" name="sex" checked="checked"><span>中性</span></div>');
-        }
-
-        $('#PurchaseInfo_Phone').replaceWith('<input type="text" name="" value="'+PurchaseInfo_Phone+'">');
-
-        $('#PurchaseInfo_Address').replaceWith('<select id="Address_City"><option>台北市</option><option>新北市</option></select><select id="Address_District"><option value="235">中和區&nbsp;235</option><option value="234">永和區&nbsp;234</option></select><br/><input type="text" name="" value="'+PurchaseInfo_Address_Other+'">');
-
-        $('#Address_City').val(PurchaseInfo_Address_City);
-        $('#Address_District').val(PurchaseInfo_Address_PostalCode);
-    }
 </script>
 
 
@@ -128,21 +101,12 @@
     <div class="small_text">
         客服夥伴會依下列資訊與您聯繫，謝謝！<br/>我們將妥善保管您的個資，僅供訂單聯繫之用，詳見<a href="https://www.icheers.tw/iCheers/Wine/Home/privacy_policy" target="_blank">隱私條款</a>。
     </div>
-    <div class="row">
-        <div class="title">姓名</div>
-        <div class="text" id="PurchaseInfo_Name">劉學涵</div>
-    </div>
-    <div class="row">
-        <div class="title">性別</div>
-        <div class="text" id="PurchaseInfo_Sex">女</div>
-    </div>
-    <div class="row">
-        <div class="title">連絡電話</div>
-        <div class="text" id="PurchaseInfo_Phone">0987654321</div>
-    </div>
-    <div class="row">
-        <div class="title">地址</div>
-        <div class="text" id="PurchaseInfo_Address">234新北市永和區成功路一段80號15樓</div>
+    <div class="recorded_data">
+        <div class="row">
+            <div class="text" id="PurchaseInfo_Name">劉學涵&nbsp;<span id="PurchaseInfo_Sex">小姐</span><span id="PurchaseInfo_OtherSexualText"></span></div>
+            <div class="text" id="PurchaseInfo_Phone">0987654321</div>
+            <div class="text" id="PurchaseInfo_Address">234新北市永和區成功路一段80號15樓</div>
+        </div>
     </div>
     <div class="row btn_row">
         <!--<div class="btn_step prev">上一步</div>-->
