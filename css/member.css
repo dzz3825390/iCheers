@@ -1,5 +1,10 @@
 ﻿@charset "utf-8";
 /* CSS Document */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 /*給Popwindow的部分*/
 .bg_black{
     justify-content: center;
@@ -1522,7 +1527,8 @@
 }
 
 .CWC_bottledetail_infobox .bottle_count .btn_addcart{
-    width: 65px;
+    /*width: 65px;*/
+    padding: 0 10px;
     height: 40px;
     font-size: 18px;
     color: #fff;
@@ -1532,6 +1538,100 @@
     border: none;
     outline: none;
     border-radius: 5px;
+}
+
+.CWC_bottledetail_infobox .bottle_count .count {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    float: left;
+    margin-top: 2px;
+    margin-left: 16px;
+    display: none;
+}
+
+.CWC_bottledetail_infobox .bottle_count .count .icon_minus {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #cccccc;
+    background-color: #e5e5e5;
+    margin-right: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+
+.CWC_bottledetail_infobox .bottle_count .count .icon_minus:after {
+    content: '';
+    width: 13px;
+    height: 3px;
+    background-color: #666666;
+    display: block;
+    position: absolute;
+    top: calc((100% - 3px)/2);
+    left: calc((100% - 13px)/2);
+}
+
+.CWC_bottledetail_infobox .bottle_count .count .bottle_number {
+    width: 80px;
+    height: 35px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 35px;
+    color: #666;
+    outline: none;
+    text-align: center;
+}
+
+.CWC_bottledetail_infobox .bottle_count .count .icon_plus {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #cccccc;
+    background-color: #e5e5e5;
+    margin-left: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+
+.CWC_bottledetail_infobox .bottle_count .count .icon_plus:before {
+    content: '';
+    width: 3px;
+    height: 13px;
+    background-color: #666666;
+    display: block;
+    position: absolute;
+    top: calc((100% - 13px)/2);
+    left: calc((100% - 3px)/2);
+}
+
+.CWC_bottledetail_infobox .bottle_count .count .icon_plus:after {
+    content: '';
+    width: 13px;
+    height: 3px;
+    background-color: #666666;
+    display: block;
+    position: absolute;
+    top: calc((100% - 3px)/2);
+    left: calc((100% - 13px)/2);
+}
+
+.CWC_bottledetail_infobox .bottle_count .count .btn_getwine_comfirm{
+    height: 35px;
+    line-height: 35px;
+    background-color: #939334;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 10px;
+    margin-left: 8px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .CWC_bottledetail_infobox .info_table{
