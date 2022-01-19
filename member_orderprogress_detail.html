@@ -22,6 +22,12 @@
 		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
 
 		    $('.FooterMenu').css('margin-left',FooterPositionX);
+
+            //展開明細
+            $('.btn_extend_detail').click(function(){
+                $(this).children().toggleClass('icon_close');
+                $(this).next().next().slideToggle();
+            });
 		})
 	</script>
 
@@ -77,6 +83,16 @@
             <div class="text_box">
                 <div class="large_text">待匯款</div>
                 <div class="small_text">$12,354,823</div>
+            </div>
+        </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_collecting.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">集貨中</div>
+                <div class="small_text"></div>
             </div>
         </div>
     </div>-->
@@ -199,6 +215,16 @@
                 <div class="small_text">$12,354,823</div>
             </div>
         </div>
+        <div class="dottedline"></div>
+        <div class="one_stauts">
+            <div class="icon_bg">
+                <div class="icon" style="background-image: url(images/icon/icon_member_collecting.png);"></div>
+            </div>
+            <div class="text_box">
+                <div class="large_text">集貨中</div>
+                <div class="small_text"></div>
+            </div>
+        </div> 
     </div>-->
     <!--刷卡 集貨中-->
     <!--
@@ -383,7 +409,12 @@
             </div>
             <div class="text_box">
                 <div class="large_text">分批出貨中</div>
-                <div class="small_text">快速/一般/預訂</div>
+                <div class="small_text">
+                    <em class="finished">快速&nbsp;12/31&nbsp;已出貨</em><br/>
+                    一般&nbsp;出貨中<br/>
+                    預訂(6月)&nbsp;集貨中<br/>
+                    <em class="finished">儲酒&nbsp;12/10&nbsp;已入窖藏</em>
+                </div>
             </div>
         </div>
         <div class="dottedline"></div>
@@ -412,6 +443,10 @@
     </div>-->
     <div class="orderprogress_detail_winelist">
         <div class="one_type">
+            <div class="btn_extend_detail">
+                展開明細
+                <span class="icon_extend"></span>
+            </div>
             <table cellpadding="0" cellspacing="0" border="0" class="list_detail">
                 <tr>
                     <th colspan="4">快速到貨品項</th>
@@ -427,6 +462,9 @@
                         </span>
                     </td>
                 </tr>
+                
+            </table>
+            <table cellpadding="0" cellspacing="0" border="0" class="list_detail_extend">
                 <tr height="40">
                     <td align="center" width="64%">
                         酒名
@@ -473,7 +511,7 @@
                         330ml
                     </td>
                     <td align="center" width="12%">
-                        贈品
+                        $&nbsp;999
                     </td>
                     <td align="center" width="12%">
                         50
@@ -482,10 +520,22 @@
             </table>
         </div>
         <div class="one_type">
+            <div class="btn_extend_detail">
+                展開明細
+                <span class="icon_extend"></span>
+            </div>
             <table cellpadding="0" cellspacing="0" border="0" class="list_detail">
                 <tr>
                     <th colspan="4">一般配送品項</th>
                 </tr>
+                <tr>
+                    <td colspan="4" class="delivery_status" align="center">
+                        集貨中
+                    </td>
+                </tr>
+                
+            </table>
+            <table cellpadding="0" cellspacing="0" border="0" class="list_detail_extend">
                 <tr height="40">
                     <td align="center" width="64%">
                         酒名
@@ -542,6 +592,10 @@
         </div>
         <!--已出貨的預購-->
         <div class="one_type">
+            <div class="btn_extend_detail">
+                展開明細
+                <span class="icon_extend"></span>
+            </div>
             <table cellpadding="0" cellspacing="0" border="0" class="list_detail">
                 <tr>
                     <th colspan="4">預購品項</th>
@@ -552,6 +606,8 @@
                         <span>宅配追蹤單號&nbsp;<a href="#">0000-0000-0000</a></span>
                     </td>
                 </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0" border="0" class="list_detail_extend">
                 <tr height="40">
                     <td align="center" width="64%">
                         酒名
@@ -608,6 +664,10 @@
         </div>
         <!--待確認收貨資訊的預購-->
         <div class="one_type">
+            <div class="btn_extend_detail">
+                展開明細
+                <span class="icon_extend"></span>
+            </div>
             <table cellpadding="0" cellspacing="0" border="0" class="list_detail">
                 <tr>
                     <th colspan="4">預購品項</th>
@@ -617,6 +677,8 @@
                         <span>已到貨待確認&nbsp;<a href="#">確認配送資訊</a></span>
                     </td>
                 </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0" border="0" class="list_detail_extend">
                 <tr height="40">
                     <td align="center" width="64%">
                         酒名
@@ -673,6 +735,10 @@
         </div>
         <!--還沒到貨的預購-->
         <div class="one_type">
+            <div class="btn_extend_detail">
+                展開明細
+                <span class="icon_extend"></span>
+            </div>
             <table cellpadding="0" cellspacing="0" border="0" class="list_detail">
                 <tr>
                     <th colspan="4">預購品項</th>
@@ -682,6 +748,8 @@
                         預計到貨日&nbsp;2021/12
                     </td>
                 </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0" border="0" class="list_detail_extend">
                 <tr height="40">
                     <td align="center" width="64%">
                         酒名
@@ -737,10 +805,21 @@
             </table>
         </div>
         <div class="one_type">
+            <div class="btn_extend_detail">
+                展開明細
+                <span class="icon_extend"></span>
+            </div>
             <table cellpadding="0" cellspacing="0" border="0" class="list_detail">
                 <tr>
                     <th colspan="4">儲酒品項</th>
                 </tr>
+                <tr>
+                    <td colspan="4" class="delivery_status" align="center">
+                        已入窖藏&nbsp;2021/07/05
+                    </td>
+                </tr>
+            </table>
+            <table cellpadding="0" cellspacing="0" border="0" class="list_detail_extend">
                 <tr height="40">
                     <td align="center" width="64%">
                         酒名

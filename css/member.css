@@ -536,14 +536,21 @@
 }
 
 .orderprogress_detail_status{
-    width: 120px;
+    width: 150px;
     float: left;
     margin-left: 16px;
+    margin-top: 20px;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .orderprogress_detail_status .one_stauts{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .orderprogress_detail_status .one_stauts .icon_bg{
@@ -590,8 +597,13 @@
 
 .orderprogress_detail_status .one_stauts .text_box .small_text{
     font-size: 16px;
-    color: #999;
+    color: #666;
     margin-top: 5px;
+    line-height: 23px;
+}
+
+.orderprogress_detail_status .one_stauts .text_box .small_text .finished{
+    color: #999;
 }
 
 .orderprogress_detail_status .dottedline{
@@ -599,13 +611,14 @@
     height: 30px;
     box-sizing: border-box;
     border-right: 3px dotted #cccccc;
-    margin: 8px auto;
+    margin: 8px 0;
+    margin-left: 12px;
 }
 
 .orderprogress_detail_winelist{
     width: 650px;
     float: left;
-    margin-left: 64px;
+    margin-left: 49px;
 }
 
 .orderprogress_detail_winelist .one_type{
@@ -616,6 +629,96 @@
 .orderprogress_detail_winelist .one_type:first-child{
     margin-top: 16px;
 }
+
+.orderprogress_detail_winelist .one_type .btn_extend_detail{
+    text-align: right;
+    padding-right: 25px;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.orderprogress_detail_winelist .one_type .btn_extend_detail .icon_extend{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #999999;
+    margin-left: 2px;
+    text-align: center;
+    font-size: 9px;
+    position: absolute;
+    cursor: pointer;
+    top: 3px;
+    right: 5px;
+}
+
+.orderprogress_detail_winelist .one_type .btn_extend_detail .icon_extend:before{
+    width: 9px;
+    height: 1px;
+    background-color: #999;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 3px;
+    top: 7px;
+}
+
+.orderprogress_detail_winelist .one_type .btn_extend_detail .icon_extend:after{
+    width: 9px;
+    height: 1px;
+    background-color: #999;
+    content: '';
+    display: block;
+    position: absolute;
+    transform: rotate(90deg);
+    left: 3px;
+    top: 7px;
+}
+
+.orderprogress_detail_winelist .one_type .btn_extend_detail .icon_close:after{
+    width: 9px;
+    height: 1px;
+    background-color: #999;
+    content: '';
+    display: none;
+    position: absolute;
+    transform: rotate(90deg);
+    left: 3px;
+    top: 7px;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail_extend{
+    width: 100%;
+    display: none;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail_extend td{
+    min-height: 40px;
+    font-size: 16px;
+    color: #666;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail_extend tr:last-child td{
+    border-bottom: none;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail_extend td .wine_nameCN {
+    line-height: 21px;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+
+.orderprogress_detail_winelist .one_type table.list_detail_extend td .wine_nameEN {
+    line-height: 20px;
+    font-size: 16px;
+    color: #999;
+    padding: 0 10px;
+    padding-bottom: 10px;
+}
+
 
 .orderprogress_detail_winelist .one_type table.list_detail{
     width: 100%;
@@ -687,7 +790,7 @@
 
 .orderprogress_detail_info{
     width: calc(100% - 120px - 650px - 64px - 64px - 32px);
-    margin-left: 64px;
+    margin-left: 49px;
     margin-right: 16px;
     float: right;
 }
@@ -739,7 +842,7 @@
     width: 200px;
     height: 45px;
     font-size: 18px;
-    background-color: #939334;
+    background-color: #9b9b9b;
     border: none;
     border-radius: 5px;
     color: #fff;

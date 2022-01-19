@@ -20,15 +20,6 @@
             $(this).prev().click();
         });
 
-        //儲存此次變更check一起點
-        $('#BTN_InvoiceInfoSave').click(function(){
-            if($(this).find('input[type=checkbox]').prop('checked')){
-                $(this).find('input[type=checkbox]').prop('checked',false);
-            }else {
-                $(this).find('input[type=checkbox]').prop('checked',true);
-            }
-        });
-
         //修改收件人資訊
         $('#BTN_DeliveryInfoEdit').click(function(){
             
@@ -68,7 +59,7 @@
                     case 'Triplicate':
                         $('[invoice_type=Triplicate].invoice_content').css('display','block');
                         $('#InvoiceInfoRow').css('display','block');
-
+                        //$('#BTN_InvoiceInfoEdit').css('display','none');
                     break;
 
                     case 'Donate':
@@ -87,6 +78,15 @@
 
         });
 
+        //儲存此次變更check一起點
+        $('#BTN_InvoiceInfoSave').click(function(){
+            if($(this).find('input[type=checkbox]').prop('checked')){
+                $(this).find('input[type=checkbox]').prop('checked',false);
+            }else {
+                $(this).find('input[type=checkbox]').prop('checked',true);
+            }
+        });
+
     
 
         $('.delivery_info_select').change(function(){
@@ -94,78 +94,36 @@
 
             switch (OptionSelected) {
                 case 'Option_CustomInfo1':
+                    $('.recorded_data').attr('formstatus','TestData_Custom1');
                     ImportInvoiceInfo(TestData_Custom1);
                 break;
 
                 case 'Option_CustomInfo2':
+                    $('.recorded_data').attr('formstatus','TestData_Custom2');
                     ImportInvoiceInfo(TestData_Custom2);
                 break;
 
                 case 'Option_AddNew':
+                    $('.recorded_data').attr('formstatus','AddNew');
                     AddNewCompanyInfo();
                 break;
             }
         });
 
+        //帶入測試用資料TestData_Custom2
         $('#BTN_InvoiceInfoEdit').click(function(){
-            InvoiceInfoEdit();
+            var FormStatus = $('.recorded_data').attr('formstatus');
+            if (FormStatus == 'TestData_Custom1') {
+                InvoiceInfoEdit(TestData_Custom1);
+            } else if (FormStatus == 'TestData_Custom2') {
+                InvoiceInfoEdit(TestData_Custom2);
+            } else {
+                InvoiceInfoEdit(TestData_Custom2);
+            }
+            
         });
     });
 
-    function InvoiceInfoEdit(){
-        $('#BTN_InvoiceInfoEdit').css('display','none');
-        $('#BTN_InvoiceInfoSave').css('display','flex');
-        var InvoiceInfo_CompanyName = $('#InvoiceInfo_CompanyName').text();
-        var InvoiceInfo_BAN = $('#InvoiceInfo_BAN').text();
-        var InvoiceInfo_AnotherAddressRecipient = $('#InvoiceInfo_AnotherAddressRecipient').text();
-        var InvoiceInfo_AnotherAddress_PostalCode = $('#InvoiceInfo_AnotherAddress').text().split(/[^0-9a-zA-Z]+/g)[0];
-        var InvoiceInfo_AnotherAddress_City = $('#InvoiceInfo_AnotherAddress').text().substring(3,6);
-        var InvoiceInfo_AnotherAddress_Other = $('#InvoiceInfo_AnotherAddress').text().slice(9);
-
-        $('#InvoiceInfo_CompanyName').replaceWith('<input id="InvoiceInfo_CompanyName" type="text" name="" value="'+InvoiceInfo_CompanyName+'">');
-
-        $('#InvoiceInfo_BAN').replaceWith('<input id="InvoiceInfo_BAN" type="text" name="" value="'+InvoiceInfo_BAN+'">');
-
-        $('#InvoiceInfo_AnotherAddressRecipient').replaceWith('<input id="InvoiceInfo_AnotherAddressRecipient" type="text" name="" value="'+InvoiceInfo_AnotherAddressRecipient+'">');
-
-        $('#InvoiceInfo_AnotherAddress').replaceWith('<div id="InvoiceInfo_AnotherAddress"><select id="AnotherAddress_City"><option>台北市</option><option>新北市</option></select><select id="AnotherAddress_District"><option value="235">中和區&nbsp;235</option><option value="234">永和區&nbsp;234</option></select><br/><input type="text" name="" value="'+InvoiceInfo_AnotherAddress_Other+'"></div>');
-
-        $('#AnotherAddress_City').val(InvoiceInfo_AnotherAddress_City);
-        $('#AnotherAddress_District').val(InvoiceInfo_AnotherAddress_PostalCode);
-
-
-
-       
-    }
-
-    function ImportInvoiceInfo(data){
-        var InvoiceInfo_Name = data[0].Name;
-        var InvoiceInfo_CompanyName = data[0].CompanyName;
-        var InvoiceInfo_BAN = data[0].BAN;
-        var InvoiceInfo_IsAnotherAddress = data[0].IsAnotherAddress;
-        var InvoiceInfo_AnotherAddress = data[0].AnotherAddress;
-        var InvoiceInfo_AnotherAddressRecipient = data[0].AnotherAddressRecipient;
-        $('#CustomCompany').css('display','none');
-        $('#InvoiceInfo_AnotherAddress_ImportPurchaseInfo').css('display','none');
-
-        $('#InvoiceInfo_CompanyName').replaceWith('<div class="text" id="InvoiceInfo_CompanyName">'+InvoiceInfo_CompanyName+'</div>');
-        $('#InvoiceInfo_BAN').replaceWith('<div class="text" id="InvoiceInfo_BAN">'+InvoiceInfo_BAN+'</div>');
-        $('#InvoiceInfo_Name').replaceWith('<div class="text" id="InvoiceInfo_Name">'+InvoiceInfo_Name+'</div>');
-
-        if (InvoiceInfo_IsAnotherAddress) {
-            $('#InvoiceDeliveryRadio_AnotherAddress').click();
-
-            $('#InvoiceInfo_AnotherAddressRecipient').replaceWith('<div class="text" id="InvoiceInfo_AnotherAddressRecipient">'+InvoiceInfo_AnotherAddressRecipient+'</div>');
-
-            $('#InvoiceInfo_AnotherAddress').replaceWith('<div class="text" id="InvoiceInfo_AnotherAddress">'+InvoiceInfo_AnotherAddress+'</div>');
-
-        } else {
-            $('#InvoiceDeliveryRadio_WithProduct').click();
-        }
-
-
-
-    }
 
 
 </script>
@@ -252,8 +210,8 @@
         <div class="row CLEARBOTH" style="display: none;" id="InvoiceInfoRow">
             <select class="delivery_info_select company_info">
                 <option value="" disabled selected>選擇常用公司資料</option>
-                <!--<option id="Option_CustomInfo1">常用公司資料1</option>
-                <option id="Option_CustomInfo2">常用公司資料2</option>-->
+                <option id="Option_CustomInfo1">佳釀股份有限公司</option>
+                <option id="Option_CustomInfo2" selected="selected">華藝數位股份有限公司</option>
                 <option id="Option_AddNew">新增常用公司</option>
             </select>
             <button class="btn_edit" id="BTN_InvoiceInfoEdit" style="display:none;">修改</button>
@@ -324,17 +282,16 @@
     </div>
     <!--3聯-->
     <div class="invoice_content" invoice_type="Triplicate" style="display: none;">
-        <div class="recorded_data" formstatus="NewCustomer">
+        <div class="recorded_data" formstatus="TestData_Custom2">
             <div class="row" style="margin-top: 20px;">
-                <div class="title">發票抬頭</div>
-                <input type="text" name="" id="InvoiceInfo_CompanyName">
-            </div>
-            <div class="row">
-                <div class="title">發票統編</div>
-                <input type="text" name="" id="InvoiceInfo_BAN">
+                <div class="text" id="CompanyInfo_Name">華藝數位股份有限公司</div>
+                <div class="text" id="CompanyInfo_BAN">35701598</div>
+                <div class="text">發票另外寄送至</div>
+                <div class="text">牛學行&nbsp;收</div>
+                <div class="text">235新北市中和區中正路30號</div>
             </div>
 
-            <div class="row">
+            <!--<div class="row">
                 <div class="invoice_radio">
                     <div class="invoice_radio_oneoption CLEARBOTH">
                         <input type="radio" name="invoice_3" id="InvoiceDeliveryRadio_WithProduct">
@@ -373,7 +330,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
         
     </div>

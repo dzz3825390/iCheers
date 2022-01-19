@@ -532,12 +532,15 @@ input{
 		background-size: 60%;
 	}
 
-	.options .one_option:first-child {
-	    margin-left: -16px;
-	}
-
 	.options .one_option:last-child{
 		margin-left: -16px;
+		padding-left: 0;
+	}
+
+	.options .one_option .text{
+		display: block;
+		font-size: 1rem;
+		color: #666;
 	}
 }
 
@@ -2145,13 +2148,20 @@ input{
 	    margin-top: 50px;
 	}
 
-    .cart_list_OneBottle .option_check{
-        left: -10px;
-    }
+	.cart_list_OneBottle .options{
+		position: relative;
+		right: 0;
+		border-bottom: none;
+		margin-left: 10px;
+		margin-top: 11px;
+	}
 
-	.cart_list_OneBottle .option_check .icon_check {
-	    width: 16px;
-	    height: 16px;
+	.cart_list_OneBottle .options .option_delete{
+		margin-top: 10px;
+	}
+
+	.cart_list_OneBottle .bottle_img{
+		margin-left: 10px;
 	}
 
 	.cart_list_OneBottle .bottle_info {
@@ -2159,7 +2169,8 @@ input{
 	}
 
 	.cart_list_OneBottle .count_price {
-	    width: calc(55% - 40px - 114px - 18px);
+	    width: calc(55% - 60px - 114px - 18px);
+	    margin-top: 0;
 	}
 
 	.cart_list_OneBottle .count_price .count .icon_minus,.cart_list_OneBottle .count_price .count .icon_plus {
@@ -2179,7 +2190,7 @@ input{
 
 	.cart_list_OneBottle .event_notice {
 	    width: calc(100% - 84px);
-	    margin-left: 40px;
+	    margin-left: 60px;
 	    margin-top: 16px;
 	}
 
@@ -2195,6 +2206,14 @@ input{
 
 	.cart_list_OneGroup .gropu_name{
 		width: 50%;
+		margin-left: 16px;
+	}
+
+	.cart_list_OneGroup .options{
+		position: relative;
+	    right: 0;
+	    border-bottom: none;
+	    margin-left: 10px;
 	}
 
     .cart_list_OneGroup .option_check{
@@ -2212,7 +2231,7 @@ input{
 
 	.cart_list_OneGroup .group_wine {
 	    width: calc(45% + 40px + 114px + 18px - 44px);
-        margin-left: 44px;
+        margin-left: 56px;
 	}
 
 
@@ -2245,6 +2264,7 @@ input{
 
 	.cart_list_OneGroup .btn_group_wine_detail_extend{
 		margin-top: 40px;
+		margin-left: 56px;
 	}
 
 	.cart_list_event_special .event_sum .count_price .price .bottle_price {
@@ -2416,18 +2436,17 @@ input{
 }
 
 .order_sum .order_sum_btnrow .btn_linkedcard {
-    width: 100%;
-    height: 40px;
-    box-sizing: border-box;
-    border: 1px solid #939334;
-    border-radius: 4px;
-    background-color: #939334;
-    margin-top: 8px;
-    font-size: 1rem;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-    cursor: pointer;
+	width: 100%;
+	height: auto;
+	border: none;
+	font-size: 15px;
+	background-color: unset;
+	color: #296993;
+	margin-top: 0;
+	text-decoration: underline;
+	cursor: pointer;
+	text-align: right;
+	line-height: 25px;
 }
 
 .order_sum .order_sum_btnrow .only_text {
@@ -2505,19 +2524,6 @@ input{
 
 	.order_sum .order_sum_btnrow .only_text{
 		font-size: 15px;
-		line-height: 25px;
-	}
-
-	.order_sum .order_sum_btnrow .btn_linkedcard {
-	    height: auto;
-	    border: none;
-	    font-size: 15px;
-	    background-color: unset;
-	    color: #296993;
-	    margin-top: 0;
-		text-decoration: underline;
-		cursor: pointer;
-		text-align: right;
 		line-height: 25px;
 	}
 }
@@ -3313,9 +3319,9 @@ input{
 	margin-top: 20px;
 }
 
-.step3_content .row:first-child{
+/*.step3_content .row:first-child{
 	margin-top: 0;
-}
+}*/
 
 @media screen and (min-width: 760px){
     .step3_content .row{
@@ -3331,10 +3337,16 @@ input{
 }
 
 .step3_content .row .text{
-	color: #000;
+	color: #666;
 	font-size: 16px;
 	line-height: 21px;
-	margin-top: 10px;
+	margin-top: 6px;
+}
+
+
+.step3_content .row .text a{
+	color: #296993;
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 760px){
@@ -3355,7 +3367,7 @@ input{
 	border: 1px solid #cccccc;
 	border-radius: 5px;
 	padding: 0 12px;
-	color: #000;
+	color: #666;
 	font-size: 18px;
 	line-height: 45px;
 	box-sizing: border-box;
@@ -3382,8 +3394,16 @@ input{
 	float: left;
 	font-size: 18px;
 	line-height: 45px;
-	color: #000;
+	color: #666;
 	margin-left: 10px;
+	cursor: pointer;
+}
+
+.step3_content .row .sex_radio .othersexual_text{
+	width: 120px;
+	margin-left: 10px;
+	margin-top: 0;
+	float: left;
 }
 
 .step3_content .row .sex_radio span label.icon_question{
@@ -3408,7 +3428,7 @@ input{
 	border-radius: 5px;
 	outline: none;
 	font-size: 18px;
-	color: #000;
+	color: #666;
 	line-height: 45px;
 	padding: 0 12px;
 	box-sizing: border-box;
@@ -3458,7 +3478,9 @@ input{
 	width: 100%;
 	height: 150px;
 	font-size: 16px;
-	color: #000;
+	color: #666;
+	border-color: #cccccc;
+	border-radius: 5px;
 	line-height: 21px;
 	outline: none;
 	box-sizing: border-box;
@@ -3491,6 +3513,7 @@ input{
 .step3_content .row .note span{
 	color: #666;
 	margin-left: 8px;
+	cursor: pointer;
 }
 
 .step3_content .row .note a{
@@ -3562,6 +3585,7 @@ input{
 .step3_content .row .invoice_radio .invoice_radio_oneoption span.radio_text{
 	float: left;
 	margin-left: 8px;
+	cursor: pointer;
 }
 
 .step3_content .row .invoice_radio .invoice_radio_oneoption input[type=text].carrier{

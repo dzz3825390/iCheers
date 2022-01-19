@@ -1974,10 +1974,10 @@ a.WineList_WineName4 {
 }
 
 .member .Right_content .wine_list_box .one_bottle .wine_ordernumber a{
-    color: #666;
+    color: #808080;
+    font-size: 17px;
     width: 100%;
     text-align: center;
-    text-decoration: underline;
     display: block;
 }
 

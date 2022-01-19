@@ -11,10 +11,18 @@
 <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="Scripts/popcontrol.js"/></script>
 <script type="text/javascript" src="Scripts/popdata.js"/></script>
+<script type="text/javascript" src="Scripts/step3.js"/></script>
 <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
+        $('.sex_radio span').click(function(){
+            $(this).prev().click();
+        });
+
+        $('.note span').click(function(){
+            $(this).prev().click();
+        });
 
         //修改收件人資訊
         $('#BTN_DeliveryInfoEdit').click(function(){
@@ -23,61 +31,17 @@
 
 
         
-        //測試資料
-        var TestData_Purchase = [
-            {
-                Name:'劉學涵',
-                Sex:'女',
-                Phone:'0987654321',
-                Address:'234新北市永和區成功路一段80號',
-                Time:'上午(08~13時)',
-                Date:'上班日',
-                CustomAddress:false,
-                BuildingGuardCollect:false,
-                ReuseBox:false,
-                ReusePaperMaterial:true
-            }
-        ]
-
-        var TestData_Custom1 = [
-            {
-                Name:'李佳叡',
-                Sex:'男',
-                Phone:'0912345678',
-                Address:'234新北市永和區成功路一段82號',
-                Time:'下午(14~18時)',
-                Date:'假日',
-                CustomAddress:true,
-                BuildingGuardCollect:true,
-                ReuseBox:false,
-                ReusePaperMaterial:false
-            }
-        ]
-        var TestData_Custom2 = [
-            {
-                Name:'陳怡棻',
-                Sex:'中性',
-                Phone:'0965432189',
-                Address:'234新北市永和區成功路一段84號',
-                Time:'皆可',
-                Date:'皆可',
-                CustomAddress:true,
-                BuildingGuardCollect:false,
-                ReuseBox:true,
-                ReusePaperMaterial:true
-            }
-        ]
-
+        
+        //常用地址下拉
         $('.delivery_info_select').change(function(){
             var OptionSelected = $(this).find('option:selected').attr('id');
 
             switch (OptionSelected) {
                 case 'Option_PurchaseInfo':
-                    $('.delivery_info_select').attr('formstatus','PurchaseInfo');
-                    $('#BTN_DeliveryInfoEdit').css('display','block');
-                    ImportDeliveryInfo(TestData_Purchase);
+                    //$('.recorded_data').attr('formstatus','PurchaseInfo');
+                    ImportDeliveryInfo(PurchaseInfo);
                 break;
-
+                /*
                 case 'Option_CustomInfo1':
                     $('.delivery_info_select').attr('formstatus','CustomInfo');
                     $('#BTN_DeliveryInfoEdit').css('display','block');
@@ -88,7 +52,10 @@
                     $('.delivery_info_select').attr('formstatus','CustomInfo');
                     $('#BTN_DeliveryInfoEdit').css('display','block');
                     ImportDeliveryInfo(TestData_Custom2);
-                break;
+                break;*/
+
+                case 'Option_AddNew':
+                    AddNewDeliveryInfo();
             }
         });
 
@@ -102,162 +69,19 @@
             }
         });
 
-        //儲存此次變更check一起點
+
+        //儲存check一起點
         $('#BTN_DeliveryInfoSave').click(function(){
+
             if($(this).find('input[type=checkbox]').prop('checked')){
                 $(this).find('input[type=checkbox]').prop('checked',false);
             }else {
                 $(this).find('input[type=checkbox]').prop('checked',true);
             }
+
         });
     });
 
-    function DeliveryInfoEdit(){
-        $('#BTN_DeliveryInfoEdit').css('display','none');
-        var DeliveryInfo_Name = $('#DeliveryInfo_Name').text();
-        var DeliveryInfo_Sex = $('#DeliveryInfo_Sex').text();
-        var DeliveryInfo_Phone = $('#DeliveryInfo_Phone').text();
-        var DeliveryInfo_Address_PostalCode = $('#DeliveryInfo_Address').text().split(/[^0-9a-zA-Z]+/g)[0];
-        var DeliveryInfo_Address_City = $('#DeliveryInfo_Address').text().substring(3,6);
-        //var PurchaseInfo_Address_District = $('#PurchaseInfo_Address').text().substring(6,9) + '&nbsp;' + PurchaseInfo_Address_PostalCode;
-        var DeliveryInfo_Address_Other = $('#DeliveryInfo_Address').text().slice(9);
-        var DeliveryInfo_Time = $('#DeliveryInfo_Time').text();
-        var DeliverInfo_Date = $('#DeliverInfo_Date').text();
-
-        var DeliveryInfo_BuildingGuardCollect = $('#BuildingGuardCollect').find('input[type=checkbox]').prop("checked");
-        var DeliveryInfo_ReuseBox = $('#ReuseBox').text();
-        var DeliveryInfo_ReusePaperMaterial = $('#ReusePaperMaterial').text();
- 
-        var DeliveryInfo_FormStatus = $('.delivery_info_select').attr('formstatus');
-        
-
-
-        $('#DeliveryInfo_Name').replaceWith('<input id="DeliveryInfo_Name" type="text" name="" value="'+DeliveryInfo_Name+'">');
-
-        if (DeliveryInfo_Sex == '男') {
-            $('#DeliveryInfo_Sex').replaceWith('<div id="DeliveryInfo_Sex" class="sex_radio CLEARBOTH"><input type="radio" name="sex" checked="checked"><span>男</span><input type="radio" name="sex"><span>女</span><input type="radio" name="sex"><span>中性</span></div>');
-        } else if (DeliveryInfo_Sex == '女') {
-            $('#DeliveryInfo_Sex').replaceWith('<div id="DeliveryInfo_Sex" class="sex_radio CLEARBOTH"><input type="radio" name="sex"><span>男</span><input type="radio" name="sex" checked="checked"><span>女</span><input type="radio" name="sex"><span>中性</span></div>');
-        } else {
-            $('#DeliveryInfo_Sex').replaceWith('<div id="DeliveryInfo_Sex" class="sex_radio CLEARBOTH"><input type="radio" name="sex"><span>男</span><input type="radio" name="sex"><span>女</span><input type="radio" name="sex" checked="checked"><span>中性</span></div>');
-        }
-
-        $('#DeliveryInfo_Phone').replaceWith('<input id="DeliveryInfo_Phone" type="text" name="" value="'+DeliveryInfo_Phone+'">');
-
-        $('#DeliveryInfo_Address').replaceWith('<div id="DeliveryInfo_Address"><select id="Address_City"><option>台北市</option><option>新北市</option></select><select id="Address_District"><option value="235">中和區&nbsp;235</option><option value="234">永和區&nbsp;234</option></select><br/><input type="text" name="" value="'+DeliveryInfo_Address_Other+'"></div>');
-
-        $('#Address_City').val(DeliveryInfo_Address_City);
-        $('#Address_District').val(DeliveryInfo_Address_PostalCode);
-
-
-        if (DeliveryInfo_Time == '上午(08~13時)') {
-            $('#DeliveryInfo_Time').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="time" checked="checked"><span>上午(08~13時)</span><input type="radio" name="time"><span>下午(14~18時)</span><input type="radio" name="time"><span>皆可</span></div>');
-        } else if (DeliveryInfo_Time == '下午(14~18時)') {
-            $('#DeliveryInfo_Time').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="time"><span>上午(08~13時)</span><input type="radio" name="time" checked="checked"><span>下午(14~18時)</span><input type="radio" name="time"><span>皆可</span></div>');
-        } else {
-            $('#DeliveryInfo_Time').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="time"><span>上午(08~13時)</span><input type="radio" name="time"><span>下午(14~18時)</span><input type="radio" name="time" checked="checked"><span>皆可</span></div>');
-        }
-
-        if (DeliverInfo_Date == '上班日') {
-            $('#DeliveryInfo_Date').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="date" checked="checked"><span>上班日</span><input type="radio" name="date"><span>假日</span><input type="radio" name="date"><span>皆可</span></div>');
-        } else if (DeliverInfo_Date == '假日') {
-            $('#DeliveryInfo_Date').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="date"><span>上班日</span><input type="radio" name="date" checked="checked"><span>假日</span><input type="radio" name="date"><span>皆可</span></div>');
-        } else {
-            $('#DeliveryInfo_Date').replaceWith('<div class="sex_radio CLEARBOTH"><input type="radio" name="date"><span>上班日</span><input type="radio" name="date"><span>假日</span><input type="radio" name="date" checked="checked"><span>皆可</span></div>');
-        }
-
-        //管理員代收
-        if (DeliveryInfo_BuildingGuardCollect) {
-            $('#BuildingGuardCollect').replaceWith('<div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name="" checked="checked"><span>管理員可代收</span></div>');   
-            
-        } else if (DeliveryInfo_BuildingGuardCollect == undefined) {
-
-            if ($('#BuildingGuardCollect').text()){
-                $('#BuildingGuardCollect').replaceWith('<div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name="" checked="checked"><span>管理員可代收</span></div>');
-            } else {
-                $('#BuildingGuardCollect').replaceWith('<div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name=""><span>管理員可代收</span></div>');
-            }
-        }
-         else {
-            $('#BuildingGuardCollect').replaceWith('<div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name=""><span>管理員可代收</span></div>');
-        }
-
-        //判斷表格資訊為帶入訂購/常用地址
-        if (DeliveryInfo_FormStatus == 'PurchaseInfo'){
-            //常用地址紀錄
-            $('#CustomAddress').replaceWith('<div class="note CLEARBOTH" id="CustomAddress"><input type="checkbox" name=""><span>儲存為常用地址</span></div>');
-        } else if (DeliveryInfo_FormStatus == 'CustomInfo'){
-            //儲存本次修改
-            $('#BTN_DeliveryInfoSave').css('display','flex');
-        }
-
-        
-        //使用回收紙箱
-        if (DeliveryInfo_ReuseBox){
-            $('#ReuseBox').replaceWith('<div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name="" checked="checked"><span>我不介意用乾淨堅固的二手紙箱。</span></div>');
-        } else {
-            $('#ReuseBox').replaceWith('<div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name="" ><span>我不介意用乾淨堅固的二手紙箱。</span></div>');
-        }
-
-        //使用環保包材
-        if (DeliveryInfo_ReusePaperMaterial) {
-            $('#ReusePaperMaterial').replaceWith('<div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name="" checked="checked"><span>我不介意用回收紙緩衝材(取代塑膠氣泡袋)。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div>');
-        } else {
-            $('#ReusePaperMaterial').replaceWith('<div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我不介意用回收紙緩衝材(取代塑膠氣泡袋)。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div>');
-        }
-
-
-    }
-
-    function ImportDeliveryInfo(data){
-        //隱藏儲存變更按鈕
-        $('#BTN_DeliveryInfoSave').css('display','none');
-        var DeliveryInfo_Name = data[0].Name;
-        var DeliveryInfo_Sex = data[0].Sex;
-        var DeliveryInfo_Phone = data[0].Phone;
-        var DeliveryInfo_Address = data[0].Address;
-        var DeliveryInfo_Time = data[0].Time;
-        var DeliveryInfo_Date = data[0].Date;
-        var DeliveryInfo_CustomAddress = data[0].CustomAddress;
-        var DeliveryInfo_BuildingGuardCollect = data[0].BuildingGuardCollect;
-        var DeliveryInfo_ReuseBox = data[0].ReuseBox;
-        var DeliveryInfo_ReusePaperMaterial = data[0].ReusePaperMaterial;
-
-        $('#DeliveryInfo_Name').replaceWith('<div class="text" id="DeliveryInfo_Name">'+DeliveryInfo_Name+'</div>');
-        $('#DeliveryInfo_Sex').replaceWith('<div class="text" id="DeliveryInfo_Sex">'+DeliveryInfo_Sex+'</div>');
-        $('#DeliveryInfo_Phone').replaceWith('<div class="text" id="DeliveryInfo_Phone">'+DeliveryInfo_Phone+'</div>');
-        $('#DeliveryInfo_Address').replaceWith('<div class="text" id="DeliveryInfo_Address">'+DeliveryInfo_Address+'</div>');
-        $('#DeliveryInfo_Time').replaceWith('<div class="text" id="DeliveryInfo_Time">'+DeliveryInfo_Time+'</div>');
-        $('#DeliveryInfo_Date').replaceWith('<div class="text" id="DeliveryInfo_Date">'+DeliveryInfo_Date+'</div>');
-
-        //管理員代收
-        if (DeliveryInfo_BuildingGuardCollect) {
-            $('#BuildingGuardCollect').replaceWith('<div class="text" id="BuildingGuardCollect">✓&nbsp;管理員可代收</div>');
-        } else {
-            $('#BuildingGuardCollect').replaceWith('<div class="text" id="BuildingGuardCollect"></div>');
-        }
-
-        //常用地址紀錄
-        if (DeliveryInfo_CustomAddress){
-            $('#CustomAddress').replaceWith('<div class="note CLEARBOTH" id="CustomAddress"></div>');
-        } else {
-            $('#CustomAddress').replaceWith('<div class="note CLEARBOTH" id="CustomAddress"><input type="checkbox" name=""><span>儲存為常用地址</span></div>');
-        }
-
-        //使用回收紙箱
-        if (DeliveryInfo_ReuseBox){
-            $('#ReuseBox').replaceWith('<div class="text" id="ReuseBox">✓&nbsp;我不介意用乾淨堅固的二手紙箱。</div>');
-        } else {
-            $('#ReuseBox').replaceWith('<div class="text" id="ReuseBox"></div>');
-        }
-
-        //使用環保包材
-        if (DeliveryInfo_ReusePaperMaterial) {
-            $('#ReusePaperMaterial').replaceWith('<div class="text" id="ReusePaperMaterial">✓&nbsp;我不介意用回收紙緩衝材(取代塑膠氣泡袋)。</div>');
-        } else {
-            $('#ReusePaperMaterial').replaceWith('<div class="text" id="ReusePaperMaterial"></div>');
-        }
-    }
 </script>
 
 
@@ -334,82 +158,66 @@
 
 <div class="step3_content">
     <div class="row CLEARBOTH">
-        <select class="delivery_info_select" formstatus="PurchaseInfo">
+        <select class="delivery_info_select">
             <option id="Option_PurchaseInfo">同訂購人資訊</option>
-            <option id="Option_CustomInfo1">成功路一段80...</option>
-            <option id="Option_CustomInfo2">中正路347號...</option>
+            <!--<option id="Option_CustomInfo1">成功路一段80...</option>
+            <option id="Option_CustomInfo2">中正路347號...</option>-->
+            <option id="Option_AddNew">新增常用地址</option>
         </select>
         <button class="btn_edit" id="BTN_DeliveryInfoEdit">修改</button>
         <button class="btn_save" id="BTN_DeliveryInfoSave">
             <input type="checkbox" name="">
-            <span>儲存此次修改</span>
+            <span>儲存</span>
         </button>
     </div>
-    <!--
-    <div class="row" style="display: none;" id="Row_CustomAddress_Name">
-        <div class="title">常用地址名稱</div>
-        <div class="text" id="DeliveryInfo_CustomAddress_Name"></div>
-    </div>-->
-    <div class="row">
-        <div class="title">收件人姓名</div>
-        <div class="text" id="DeliveryInfo_Name">劉學涵</div>
-    </div>
-    <div class="row">
-        <div class="title">收件人性別</div>
-        <div class="text" id="DeliveryInfo_Sex">女</div>
-    </div>
-    <div class="row">
-        <div class="title">收件聯繫電話</div>
-        <div class="text" id="DeliveryInfo_Phone">0987654321</div>
-    </div>
-    <div class="row">
-        <div class="title">收件地址</div>
-        <div class="text" id="DeliveryInfo_Address">234新北市永和區成功路一段80號15樓</div>
-        <div class="note CLEARBOTH">
-            *離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。
+    <div class="recorded_data" formstatus="NewCustomers">
+        <div class="row">
+            <div class="text" id="PurchaseInfo_Name">劉學涵&nbsp;<span id="PurchaseInfo_Sex">小姐</span><span id="PurchaseInfo_OtherSexualText"></span></div>
+            <div class="text" id="PurchaseInfo_Phone">0987654321</div>
+            <div class="text" id="PurchaseInfo_Address">234新北市永和區成功路一段80號15樓</div>
+            <div class="note CLEARBOTH">
+                *離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。
+            </div>
+            <div class="note CLEARBOTH" id="BuildingGuardCollect">
+                <input type="checkbox" name="">
+                <span>管理員可代收</span>
+            </div>
         </div>
-        <div class="note CLEARBOTH" id="BuildingGuardCollect">
-            <input type="checkbox" name="">
-            <span>管理員可代收</span>
+        <div class="row">
+            <div class="title">希望配送時段</div>
+            <div class="sex_radio CLEARBOTH">
+                <input type="radio" name="time">
+                <span>上午(08~13時)</span>
+                <input type="radio" name="time">
+                <span>下午(14~18時)</span>
+                <input type="radio" name="time">
+                <span>皆可</span>
+            </div>
         </div>
-        <div class="note CLEARBOTH" id="CustomAddress">
-            <input type="checkbox" name="">
-            <span>儲存為常用地址</span>
+        <div class="row">
+            <div class="title">希望配送星期</div>
+            <div class="sex_radio CLEARBOTH">
+                <input type="radio" name="date">
+                <span>平日</span>
+                <input type="radio" name="date">
+                <span>假日</span>
+                <input type="radio" name="date">
+                <span>皆可</span>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="title">希望配送時段</div>
-        <div class="sex_radio CLEARBOTH">
-            <input type="radio" name="time">
-            <span>上午(08~13時)</span>
-            <input type="radio" name="time">
-            <span>下午(14~18時)</span>
-            <input type="radio" name="time">
-            <span>皆可</span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="title">希望配送星期</div>
-        <div class="sex_radio CLEARBOTH">
-            <input type="radio" name="date">
-            <span>上班日</span>
-            <input type="radio" name="date">
-            <span>假日</span>
-            <input type="radio" name="date">
-            <span>皆可</span>
+        <div class="row">
+            <div class="title">環保選項</div>
+            <div class="note CLEARBOTH" id="ReuseBox">
+                <input type="checkbox" name="">
+                <span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span>
+            </div>
+            <div class="note CLEARBOTH" id="ReusePaperMaterial">
+                <input type="checkbox" name="">
+                <span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="title">環保選項</div>
-        <div class="note CLEARBOTH" id="ReuseBox">
-            <input type="checkbox" name="">
-            <span>我不介意用乾淨堅固的二手紙箱。</span>
-        </div>
-        <div class="note CLEARBOTH" id="ReusePaperMaterial">
-            <input type="checkbox" name="">
-            <span>我不介意用回收紙緩衝材(取代塑膠氣泡袋)。<a href="images/green_package.jpg" target="_blank">示意圖</a></span>
-        </div>
-    </div>
+    
     <div class="row">
         <div class="title">備註</div>
         <textarea>請於12/31前送達</textarea>

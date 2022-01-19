@@ -277,12 +277,12 @@ function CartDeleteItem() {
 
 
 //step3 修改訂購人資訊
-function PurchaseInfoEdit(){
+function PurchaseInfoEditClick(){
     InitPop();
 
     var WindowContent = [
         '<p style="text-align:center;">確定要修改訂單聯絡資訊？<br/>若商品有問題，我們會透過此資訊與您聯繫，<br/>如需更改配送資訊，可於下個步驟設定。</p>',
-        '<div class="notice_btn_row"><button class="notice_cancelBTN" onclick="ClosePop();">取消</button><button class="notice_confirmBTN" onclick="ConfirmEdit();">確認</button></div>'
+        '<div class="notice_btn_row"><button class="notice_cancelBTN" onclick="ClosePop();">取消</button><button class="notice_confirmBTN" onclick="PurchaseInfo_Edit();">確認</button></div>'
     ]
 
     //視窗標題
