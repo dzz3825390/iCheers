@@ -3268,6 +3268,10 @@ input{
 	border-color: #666;
 }
 
+.step3_content .btn_save input{
+	margin-right: 5px;
+}
+
 @media screen and (min-width: 760px){
     
     .step3_content .btn_edit{
@@ -3284,10 +3288,6 @@ input{
 	    top: 80px;
 	    right: 20px;
 	    font-size: 16px;
-	}
-
-	.step3_content .btn_save input{
-		margin-right: 5px;
 	}
 
 	.step3_content #InvoiceInfoRow .btn_save, .step3_content #InvoiceInfoRow .btn_edit{

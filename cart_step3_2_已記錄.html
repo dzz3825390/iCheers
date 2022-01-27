@@ -27,6 +27,7 @@
 
         //修改收件人資訊
         $('#BTN_DeliveryInfoEdit').click(function(){
+
             DeliveryInfoEdit();
         });
 
@@ -156,19 +157,19 @@
             <option id="Option_PurchaseInfo">同訂購人資訊</option>
             <option id="Option_CustomInfo1">成功路一段80...</option>
             <option id="Option_CustomInfo2">中正路347號...</option>
-            <option id="Option_AddNew">新增常用地址</option>
+            <option id="Option_AddNew">另行配送</option>
         </select>
-        <button class="btn_edit" id="BTN_DeliveryInfoEdit">修改</button>
+        <button class="btn_edit" id="BTN_DeliveryInfoEdit" style="display:none;">修改</button>
         <button class="btn_save" id="BTN_DeliveryInfoSave">
             <input type="checkbox" name="">
-            <span>儲存</span>
+            <span>儲存地址</span>
         </button>
     </div>
     <div class="recorded_data" formstatus="PurchaseInfo">
         <div class="row">
-            <div class="text" id="PurchaseInfo_Name">劉學涵&nbsp;<span id="PurchaseInfo_Sex">小姐</span><span id="PurchaseInfo_OtherSexualText"></span></div>
-            <div class="text" id="PurchaseInfo_Phone">0987654321</div>
-            <div class="text" id="PurchaseInfo_Address">234新北市永和區成功路一段80號15樓</div>
+            <div class="text" id="DeliveryInfo_Name" sexual="Female">劉學涵</div>
+            <div class="text" id="DeliveryInfo_Phone">0987654321</div>
+            <div class="text" id="DeliveryInfo_Address">234新北市永和區成功路一段80號15樓</div>
             <div class="note CLEARBOTH">
                 *離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。
             </div>
@@ -190,7 +191,7 @@
             <input type="checkbox" name="" id="iCheersPaperbagCheck">
             <span>請隨貨附提袋</span>
             <label id="iCheersPaaerbagCount" style="display: none;">
-                <input type="text" name="" style="float: left;width: 40px;margin-left: 5px;margin-top: -12px;text-align: center;">
+                <input type="text" name="" style="float: left;width: 50px;margin-left: 5px;margin-top: -12px;text-align: center;">
                 <span>個</span>
             </label>
             

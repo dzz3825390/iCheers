@@ -19,6 +19,10 @@
 
 	<script type="text/javascript">
         $(document).ready(function(){
+            $('.invoice_radio_oneoption span').click(function(){
+                $(this).prev().click();
+            });
+
 
             //運費說明
             $('#DeliveryChargeInfo_BTN').click(function(){

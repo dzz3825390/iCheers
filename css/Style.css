@@ -1146,7 +1146,7 @@ a.WineList_WineName4 {
 
     .Left_Menu_ClassifySearch_condition_text div{
         line-height: 18px;
-        height: 18px;
+        height: auto;
         margin-top: 10px;
         padding-left:37px; 
     }

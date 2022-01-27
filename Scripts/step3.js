@@ -22,6 +22,8 @@ var DeliveryInfo = [
         Address_City:'新北市',
         Address_District:'永和區',
         Address_Other:'成功路一段80號15樓',
+        //Motocycle Car T-cat SuperExpress SelfCollect
+        DeliveryType:'SuperExpress',
         Time:'AM',
         Date:'Both',
         BuildingGuardCollect:true,
@@ -46,6 +48,8 @@ var TestData_Custom1 = [
         Address_City:'新北市',
         Address_District:'永和區',
         Address_Other:'成功路一段80號19樓',
+        //Motocycle Car T-cat SuperExpress SelfCollect
+        DeliveryType:'Motocycle',
         Time:'PM',
         Date:'Weekdays',
         BuildingGuardCollect:true,
@@ -63,13 +67,15 @@ var TestData_Custom1 = [
 var TestData_Custom2 = [
     {
         Name:'陳怡棻',
-        Sex:'Other',
-        OtherSexualText:'多色寶山大王',
+        Sex:'Female',
+        OtherSexualText:'',
         Phone:'0965432189',
         Address_PostalCode:'234',
         Address_City:'新北市',
         Address_District:'永和區',
         Address_Other:'成功路一段80號18樓',
+        //Motocycle Car T-cat SuperExpress SelfCollect
+        DeliveryType:'Car',
         Time:'Both',
         Date:'Both',
         BuildingGuardCollect:false,
@@ -138,10 +144,12 @@ function DeliveryInfoEdit(){
         } else {
             $('#BTN_DeliveryInfoSave').css('display','flex');
         }
+        
+        /*var DeliveryInfo_Name = $('#DeliveryInfo_Name').text();
+        var DeliveryInfo_Sex = $('#DeliveryInfo_Name').attr('sexual');
+        var DeliveryInfo_Phone = $('#DeliveryInfo_Phone').text();
+        var DeliveryInfo_Address = $('#DeliveryInfo_Address').text();*/
 
-         
-        
-        
 
         //清空
         $('.recorded_data').text('');
@@ -151,11 +159,11 @@ function DeliveryInfoEdit(){
 
         //收件人性別
         if (DeliveryInfo[0].Sex == 'Male'){
-            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" checked="checked" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span><input type="radio" name="sex" sexual="Other"><span>其他</span><input type="text" class="othersexual_text"></div></div>');
+            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" checked="checked" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span></div></div>');
         } else if (DeliveryInfo[0].Sex == 'Female') {
-            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>女</span><input type="radio" name="sex" sexual="Other"><span>其他</span><input type="text" class="othersexual_text"></div></div>');        
+            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>女</span></div></div>');        
         } else {
-            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span><input type="radio" name="sex" sexual="Other" checked="checked"><span>其他</span><input type="text" class="othersexual_text" value="'+DeliveryInfo[0].OtherSexualText+'"></div></div>');        
+            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span></div></div>');                    
         }
 
         //收件人電話
@@ -173,6 +181,28 @@ function DeliveryInfoEdit(){
             }
         }
 
+        //配送方式
+        switch (DeliveryInfo[0].DeliveryType) {
+            case 'Motocycle':
+                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle" checked="checked"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
+            break;
+
+            case 'Car':
+                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car" checked="checked"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
+            break;
+
+            case 'T-Cat':
+                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat" checked="checked"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
+            break;
+
+            case 'SuperExpress':
+                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress" checked="checked"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
+            break; 
+
+            case 'SelfCollect':
+                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect" checked="checked"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
+            break;            
+            }
         //配送時間
         if (DeliveryInfo_FormStatus == 'NewCustomers'){
             $('.recorded_data').append('<div class="row"><div class="title">希望配送時段</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_DeliveryTime"><input type="radio" name="time"><span>上午(08~13時)</span><input type="radio" name="time"><span>下午(14~18時)</span><input type="radio" name="time"><span>皆可</span></div></div>');
@@ -243,10 +273,10 @@ function AddNewDeliveryInfo() {
     $('.recorded_data').text('');
 
     //收件人姓名
-    $('.recorded_data').append('<div class="row"><div class="title">您的大名</div><input type="text" name="" value="" id="DeliveryInfo_Name"></div>');        
+    $('.recorded_data').append('<div class="row"><div class="title">收件人的大名</div><input type="text" name="" value="" id="DeliveryInfo_Name"></div>');        
 
     //收件人性別
-    $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span><input type="radio" name="sex" sexual="Other"><span>其他</span><input type="text" class="othersexual_text"></div></div>');
+    $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼收件人</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span></div></div>');
 
     //收件人電話
     $('.recorded_data').append('<div class="row"><div class="title">聯絡電話</div><input type="text" name="" value="" id="PurchaseInfo_Phone"></div>');
@@ -288,11 +318,11 @@ function ImportDeliveryInfo(data) {
 
         //姓名
         if (data[0].Sex == 'Male') {
-            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name">'+data[0].Name+'&nbsp;<span id="DeliveryInfo_Sex">先生</span><span id="DeliveryInfo_OtherSexualText"></span></div>');
+            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name" sexual="'+data[0].Sex+'">'+data[0].Name+'</div>');
         } else if (data[0].Sex == 'Female') {
-            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name">'+data[0].Name+'&nbsp;<span id="DeliveryInfo_Sex">小姐</span><span id="DeliveryInfo_OtherSexualText"></span></div>');            
-        } else {
-            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name">'+data[0].Name+'&nbsp;<span id="DeliveryInfo_Sex"></span><span id="DeliveryInfo_OtherSexualText">'+data[0].OtherSexualText+'</span></div>');                        
+            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name" sexual="'+data[0].Sex+'">'+data[0].Name+'</div>');            
+        }else {
+            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name" sexual="'+data[0].Sex+'">'+data[0].Name+'</div>');                        
         }
 
         //電話
@@ -315,11 +345,11 @@ function ImportDeliveryInfo(data) {
         $('.recorded_data').append('<div class="row"></div>');
         //姓名
         if (data[0].Sex == 'Male') {
-            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name">'+data[0].Name+'&nbsp;<span id="DeliveryInfo_Sex">先生</span><span id="DeliveryInfo_OtherSexualText"></span></div>');
+            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name" sexual="'+data[0].Sex+'">'+data[0].Name+'</div>');
         } else if (data[0].Sex == 'Female') {
-            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name">'+data[0].Name+'&nbsp;<span id="DeliveryInfo_Sex">小姐</span><span id="DeliveryInfo_OtherSexualText"></span></div>');            
-        } else {
-            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name">'+data[0].Name+'&nbsp;<span id="DeliveryInfo_Sex"></span><span id="DeliveryInfo_OtherSexualText">'+data[0].OtherSexualText+'</span></div>');                        
+            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name" sexual="'+data[0].Sex+'">'+data[0].Name+'</div>');            
+        }else {
+            $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Name" sexual="'+data[0].Sex+'">'+data[0].Name+'</div>');                        
         }
 
         //電話
@@ -330,6 +360,29 @@ function ImportDeliveryInfo(data) {
             $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Address">'+data[0].Address_PostalCode+data[0].Address_City+data[0].Address_District+data[0].Address_Other+'</div><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="text" id="BuildingGuardCollect">✓&nbsp;管理員可代收</div>');
         } else {
             $('.recorded_data .row').append('<div class="text" id="DeliveryInfo_Address">'+data[0].Address_PostalCode+data[0].Address_City+data[0].Address_District+data[0].Address_Other+'</div><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div>');
+        }
+
+        //配送方式
+        switch (data[0].DeliveryType) {
+            case 'Motocycle':
+                $('.recorded_data .row').append('<div class="text" id="DeliveryType_Motocycle">機車當日配</div>');
+            break;
+
+            case 'Car':
+                $('.recorded_data .row').append('<div class="text" id="DeliveryType_Car">汽車當日配(需下樓自取)</div>');
+            break;
+
+            case 'T-Cat':            
+                $('.recorded_data .row').append('<div class="text" id="DeliveryType_T-Cat">宅配到府</div>');
+            break;
+
+            case 'SuperExpress':
+                $('.recorded_data .row').append('<div class="text" id="DeliveryType_SuperExpress">特急件2hr內到貨</div>');
+            break;
+
+            case 'SelfCollect':
+                $('.recorded_data .row').append('<div class="text" id="DeliveryType_SelfCollect">自取</div>');
+            break;                            
         }
 
         //配送時間

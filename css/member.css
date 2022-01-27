@@ -1729,12 +1729,14 @@ input::-webkit-inner-spin-button {
 
 .member .membercwc_cart .step_option{
     margin-top: 10px;
+    justify-content: space-between;
 }
 
 .member .membercwc_cart .step_option .bottlecount_note{
     font-size: 16px;
     color: #666;
     margin-top: 28px;
+    padding-bottom: 8px;
 }
 
 .member .membercwc_cart .step_option .bottlecount_note .number{
@@ -1840,8 +1842,16 @@ input::-webkit-inner-spin-button {
     }
 
     .member .membercwc_cart .step_option .options{
+        width: auto;
         border: none;
         margin-left: 0;
+        padding: 0;
+        flex-direction: row;
+        margin-left: -16px;
+    }
+
+    .member .membercwc_cart .step_option .options .one_option:last-child{
+        margin-left: 16px;
     }
 
     .member .membercwc_cart .cart_list_layout{
@@ -1881,6 +1891,7 @@ input::-webkit-inner-spin-button {
 
     .member .membercwc_cart .cart_list_OneBottle .option_check{
         margin-top: 7px;
+        left: -8px;
     }
 
     .member .membercwc_cart .proclaim{
