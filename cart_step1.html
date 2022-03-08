@@ -89,6 +89,15 @@ $(document).ready(function(){
 		$('.sum_position, .confirm18').css('position','absolute');
 	}
 
+	//大視窗時防止加價購活動名稱過短破版
+	if (intBrowserW > 1199){
+		$('.addon_event_name').each(function(){
+			var EventNameWidth = $(this).outerWidth(true);
+			var EventNameMarginRight = 'calc(100% - '+EventNameWidth+'px)'
+			$(this).css('margin-right',EventNameMarginRight);
+		});
+	}
+
 	//客製checkbox
 	$('.icon_check').click(function(){
 		$(this).toggleClass('active');
@@ -293,6 +302,8 @@ $(document).ready(function(){
     	$(this).find('.icon_extend').toggleClass('active');
     	$(this).next().slideToggle('fast');
     });
+
+
 
 });
 
@@ -1846,7 +1857,7 @@ $(window).resize(function(){
 		</div>
 		<div class="cart_list_addon">
 			<div class="addon_event_name">
-				防疫在家不無聊，來喝波爾多白酒！名莊出品超值加價購
+				防疫在家不無聊
 			</div>
 			<div class="addon_wine">
 				<div class="bottle_img">
@@ -1906,7 +1917,7 @@ $(window).resize(function(){
 
 		<div class="cart_list_addon">
 			<div class="addon_event_name">
-				防疫在家不無聊，來喝波爾多白酒！名莊出品超值加價購
+				防疫在家不無聊，來喝波爾多白酒！名莊出品超值加價購防疫在家不無聊，來喝波爾多白酒！名莊出品超值加價購防疫在家不無聊，來喝波爾多白酒！名莊出品超值加價購
 			</div>
 			<div class="addon_wine">
 				<div class="bottle_img">

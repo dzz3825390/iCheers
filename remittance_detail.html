@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iCheers 愛酒窩_客戶基本資料填寫</title>
+<link rel="shortcut icon" type="image/x-icon"  href="images/drop.ico" >
+
+<link rel="stylesheet" type="text/css" href="css/Style.css"/>
+<link rel="stylesheet" type="text/css" href="css/cart.css"/>
+<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="Scripts/tabs.js"/></script>
+<script type="text/javascript">
+	
+window.onload = function() {
+
+	for (i=0; i<60; i++) {
+		var option = document.createElement("option");
+		if (i < 10) {
+			var option_text = document.createTextNode('0'+i);
+		} else {
+			var option_text = document.createTextNode(i);
+		}
+		
+		option.appendChild(option_text);
+		document.getElementById("payment_minute").appendChild(option);
+	}
+
+	for (i=0; i<24; i++) {
+		var option = document.createElement("option");
+		if (i < 10) {
+			var option_text = document.createTextNode('0'+i);
+		} else {
+			var option_text = document.createTextNode(i);
+		};
+		option.appendChild(option_text);
+		document.getElementById("payment_hour").appendChild(option);
+	}
+
+}
+
+
+</script>
+</head>
+
+<body>
+<div class="HeadALL">
+    <div class="HeadMenu">
+            <!--a href="" class="LogOut">會員登出</a-->
+            <a href="" class="HeadMenuLogin">會員登入</a>
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <!--span class="AccountNumber">ich***, 您好</span-->
+        </div>
+    <div class="TagALL_Buy">
+    	<ul>
+        	<li class="TagLogo"><a href="index.html"></a></li>
+        </ul>
+    </div>
+    
+</div>
+<!-- HeadALL -->
+
+<!-- CenterALL_BG start -->
+
+<div class="CenterALL_BG"> 
+	
+	<!-- CartALL start -->
+	<div class="CartALL"> 
+		
+		<!-- 訂購人基本 start -->
+		<div class="cart_data cart_paymentinfo">
+			<h5>匯款資訊填寫</h5>
+			<div class="clear"></div>
+            <ul>
+				<li><h1> 訂單資訊 &nbsp </h1></li>
+				<li><p> 訂單編號：<span >XXXXXXXXX</span> 應付總額：$ <span style="color:#F00">XX,XXX</span></p></li>
+			</ul>
+            <!-- 訂單資訊 -->
+            <ul>
+				<li><h1><span class="redword">*</span>匯款人姓名：</h1></li>
+				<li><p><input name="name" type="text" class="textarea1" id="name" placeholder="請輸入姓名" size="30" maxlength="50" /></p></li>
+			</ul>
+            <!-- 匯款人姓名 -->
+			<ul>
+				<li>
+					<h1><span class="redword">*</span>銀行名稱：</h1>
+				</li>
+				<li>
+					<p>
+						<input name="phone" type="text" class="textarea1" id="phone" placeholder="請輸入銀行名稱" size="30" maxlength="50"  />
+					</p>
+				</li>
+			</ul>
+            <!-- 銀行名稱 -->
+			<ul>
+				<li>
+					<h1>匯款時間：</h1>
+				</li>
+				<li>
+					<p>
+						<input name="date" type="date" class="textarea1" style="width: 120px;" />
+						<select style="margin-left: 10px;" id="payment_hour">
+							
+						</select>
+						<span class="radio_text">時</span>
+						<select id="payment_minute">
+							
+						</select>
+						<span class="radio_text">分</span>
+					</p>
+				</li>
+			</ul>
+            <ul>
+				<li>
+					<h1 title="「轉帳」請務必提供後5碼，以利核帳。 到銀行櫃台存款沒有後5碼，則選擇「臨櫃存現」即可"><span class="redword">*</span><span class="tooltips">匯款方式</span>：</h1>
+				</li>
+				<li>
+					<p>
+						<input name="payment" type="radio" checked="checked" class="textarea1" />
+						<span class="radio_text">轉帳</span>
+						<input name="accountnumber" type="text" style="width: 120px;" placeholder="請輸入帳號末五碼" maxlength="10" id="number" />
+						<input name="payment" type="radio" class="textarea1" style="margin-left: 10px;" />
+						<span class="radio_text">臨櫃存現</span>
+					</p>
+				</li>
+			</ul>
+
+            <ul>
+				<li style=" border-bottom:none; padding-top:0px; height:20px;"><h1>匯款資訊：</h1></li>
+				<li style=" border-bottom:none; padding-top:0px; height:20px;"><p>銀行／玉山銀行（代號808），永和分行</p></li>
+			</ul>
+            <ul>
+				<li style=" border-bottom:none; padding-top:0px; height:20px;"><h1> </h1></li>
+				<li style=" border-bottom:none; padding-top:0px; height:20px;"><p>戶名／佳釀股份有限公司</p></li>
+			</ul>
+            <ul>
+				<li style=" border-bottom:none; padding-top:0px; height:20px;"><h1> </h1></li>
+				<li style=" border-bottom:none; padding-top:0px; height:20px;"><p>帳號／0521-940-002-678</p></li>
+			</ul>
+            
+            <!-- 匯款資訊 -->
+            
+            
+            
+            
+		</div>
+		<div class="clear"></div>
+		<!-- 訂購人基本 end --> 
+
+		<div class="BTN_CONSULT" >
+        <button value="確認送出" class="btn_send"  onclick="Pops('notice4')" />	
+        </div>
+</div>
+<!-- CartALL end -->
+
+</div>
+<!-- CenterALL_BG end -->
+
+
+<!-- 資料未填寫完全視窗 start -->
+<div id="notice4">
+	<div class="notice_close"><a onclick="Wops('notice4')">關閉</a></div>
+	    <div id="notice4_body">
+    		<p>資料填寫不正確，<br/>請再次確認資料是否填寫正確！</p>
+	     	<div class="btn"><a onclick="Wops('notice4')" class="btn_confirm">確定</a></div>
+	    </div>
+</div>
+<!-- 資料未填寫完全視窗 end -->
+
+	
+<div class="FooterALL" >
+	<div class="Footer_position">
+        <ul class="FooterMenu">
+            <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+            <li><a href="" target="_parent">條款及細則</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a></li>
+        </ul>
+        <div class="FooterICON">
+           <a href="qualityGarentee.html" target="_blank"><button class="Quality"></button></a>
+           <button class="Join"></button>
+           <button class="Novice"></button>
+        </div>
+    </div>
+</div>
+<!-- FooterALL  頁腳 -->
+
+
+
+<div class="TC_And_UK_ALL">
+	<div class="TC_And_UK">
+		<ul>
+			<li class="Title">熱門葡萄酒類型與品種</li>
+			<li><a href="">
+				<h1>銀橡樹</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>查爾斯海德西克</h1>
+				<h2>Charles Heidsieck</h2>
+				</a></li>
+			<li><a href="">
+				<h1>Cristal酒店</h1>
+				<h2>Cristal</h2>
+				</a></li>
+			<li><a href="">
+				<h1>巴黎之花</h1>
+				<h2>Perrier Jouet</h2>
+				</a></li>
+			<li><a href="">
+				<h1>唐培裡儂</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒觀察家</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>酩和香檳</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒愛好者</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+		</ul>
+		<img src="images/icon/TC_And_UK.gif" />
+		<ul>
+			<li class="Title">熱門葡萄酒類型與品種</li>
+			<li><a href="">
+				<h1>銀橡樹</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>查爾斯海德西克</h1>
+				<h2>Charles Heidsieck</h2>
+				</a></li>
+			<li><a href="">
+				<h1>Cristal酒店</h1>
+				<h2>Cristal</h2>
+				</a></li>
+			<li><a href="">
+				<h1>巴黎之花</h1>
+				<h2>Perrier Jouet</h2>
+				</a></li>
+			<li><a href="">
+				<h1>唐培裡儂</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒觀察家</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>酩和香檳</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒愛好者</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+		</ul>
+		<img src="images/icon/TC_And_UK.gif" />
+		<ul>
+			<li class="Title">熱門葡萄酒類型與品種</li>
+			<li><a href="">
+				<h1>銀橡樹</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>查爾斯海德西克</h1>
+				<h2>Charles Heidsieck</h2>
+				</a></li>
+			<li><a href="">
+				<h1>Cristal酒店</h1>
+				<h2>Cristal</h2>
+				</a></li>
+			<li><a href="">
+				<h1>巴黎之花</h1>
+				<h2>Perrier Jouet</h2>
+				</a></li>
+			<li><a href="">
+				<h1>唐培裡儂</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒觀察家</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>酩和香檳</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+			<li><a href="">
+				<h1>葡萄酒愛好者</h1>
+				<h2>Silver Oak</h2>
+				</a></li>
+		</ul>
+	</div>
+</div>
+<!-- TC_And_UK_ALL 中英翻譯 -->
+<div class="CLEAR"></div>
+<div class="CopyRight"> Copyright © 2012 iCheers.tw All Rrights Reserved </div>
+<div class="Warning"><p></p></div>
+<!-- Warning 警語 -->
+</body>
+
+</html>
