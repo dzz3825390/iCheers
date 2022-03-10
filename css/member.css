@@ -1754,6 +1754,7 @@ input::-webkit-inner-spin-button {
     font-size: 16px;
     color: #000;
     line-height: 21px;
+    cursor: pointer;
 }
 
 .member .membercwc_cart .cart_list_OneBottle .wine_info .nameEN{
@@ -1761,6 +1762,7 @@ input::-webkit-inner-spin-button {
     color: #666;
     line-height: 21px;
     margin-top: 4px;
+    cursor: pointer;
 }
 
 .member .membercwc_cart .cart_list_OneBottle .wine_info .otherinfo{

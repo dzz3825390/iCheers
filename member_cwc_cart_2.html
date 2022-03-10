@@ -43,18 +43,22 @@
 
             switch (OptionSelected) {
                 case 'Option_PurchaseInfo':
+                    $('.recorded_data ').attr('formstatus','PurchaseInfo');
                     ImportDeliveryInfo(PurchaseInfo);
                 break;
 
                 case 'Option_CustomInfo1':
+                    $('.recorded_data ').attr('formstatus','CustomInfo');
                     ImportDeliveryInfo(TestData_Custom1);
                 break;
 
                 case 'Option_CustomInfo2':
+                    $('.recorded_data ').attr('formstatus','CustomInfo');
                     ImportDeliveryInfo(TestData_Custom2);
                 break;
 
                 case 'Option_AddNew':
+                    $('.recorded_data ').attr('formstatus','NewInfo');
                     AddNewDeliveryInfo();
                 break;
             }

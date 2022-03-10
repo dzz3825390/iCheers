@@ -38,7 +38,7 @@
 
             switch (OptionSelected) {
                 case 'Option_PurchaseInfo':
-                    //$('.recorded_data').attr('formstatus','PurchaseInfo');
+                    $('.recorded_data ').attr('formstatus','PurchaseInfo');
                     ImportDeliveryInfo(PurchaseInfo);
                 break;
                 /*
@@ -55,6 +55,7 @@
                 break;*/
 
                 case 'Option_AddNew':
+                    $('.recorded_data ').attr('formstatus','NewInfo');
                     AddNewDeliveryInfo();
             }
         });

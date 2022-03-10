@@ -784,6 +784,7 @@ input{
     height: 68px;
     border: 1px solid #cccccc;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .cart_list_OneBottle .bottle_img img {
@@ -800,12 +801,14 @@ input{
     font-size: 1rem;
     line-height: 1.5rem;
     color: #666;
+    cursor: pointer;
 }
 
 .cart_list_OneBottle .bottle_info .name_en {
     font-size: 1rem;
     line-height: 1.3rem;
     color: #666;
+    cursor: pointer;
 }
 
 .cart_list_OneBottle .bottle_info .status {
@@ -1216,6 +1219,7 @@ input{
     height: 68px;
     border: 1px solid #cccccc;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .cart_list_OneGroup .group_wine .bottle_img img {
@@ -1243,12 +1247,14 @@ input{
     font-size: 1rem;
     line-height: 1.5rem;
     color: #666;
+    cursor: pointer;
 }
 
 .cart_list_OneGroup .group_wine .bottle_info .name_en {
     font-size: 1rem;
     line-height: 1.3rem;
     color: #666;
+    cursor: pointer;
 }
 
 .cart_list_OneGroup .group_wine .bottle_info .status {
@@ -1637,6 +1643,7 @@ input{
     height: 68px;
     border: 1px solid #cccccc;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .cart_list_gift .gift_wine .bottle_img img {
@@ -1653,12 +1660,14 @@ input{
     font-size: 1rem;
     line-height: 1.5rem;
     color: #666;
+    cursor: pointer;
 }
 
 .cart_list_gift .gift_wine .bottle_info .name_en {
     font-size: 1rem;
     line-height: 1.3rem;
     color: #666;
+    cursor: pointer;
 }
 
 .cart_list_gift .gift_wine .count_price {
@@ -2584,6 +2593,7 @@ input{
     height: 68px;
     border: 1px solid #cccccc;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .cart_list_addon .addon_wine .bottle_img img {
@@ -2600,12 +2610,14 @@ input{
     font-size: 1rem;
     line-height: 1.5rem;
     color: #666;
+    cursor: pointer;
 }
 
 .cart_list_addon .addon_wine .bottle_info .name_en {
     font-size: 1rem;
     line-height: 1.3rem;
     color: #666;
+    cursor: pointer;
 }
 
 .cart_list_addon .addon_wine .bottle_info .status {

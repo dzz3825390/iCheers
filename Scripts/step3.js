@@ -120,11 +120,11 @@ function PurchaseInfo_Edit(){
 
     //聯絡人性別
     if (PurchaseInfo[0].Sex == 'Male'){
-        $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" checked="checked" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span><input type="radio" name="sex" sexual="Other"><span>其他</span><input type="text" class="othersexual_text"></div></div>');
+        $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" checked="checked" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span><input type="radio" name="sex" sexual="Other"><span>其他</span><input type="text" class="othersexual_text"></div></div>');
     } else if (PurchaseInfo[0].Sex == 'Female') {
-        $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>女</span><input type="radio" name="sex" sexual="Other"><span>其他</span><input type="text" class="othersexual_text"></div></div>');        
+        $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>小姐</span><input type="radio" name="sex" sexual="Other"><span>其他</span><input type="text" class="othersexual_text"></div></div>');        
     } else {
-        $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span><input type="radio" name="sex" sexual="Other" checked="checked"><span>其他</span><input type="text" class="othersexual_text" value="'+PurchaseInfo[0].OtherSexualText+'"></div></div>');        
+        $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span><input type="radio" name="sex" sexual="Other" checked="checked"><span>其他</span><input type="text" class="othersexual_text" value="'+PurchaseInfo[0].OtherSexualText+'"></div></div>');        
     }
 
     //聯絡人電話
@@ -159,11 +159,11 @@ function DeliveryInfoEdit(){
 
         //收件人性別
         if (DeliveryInfo[0].Sex == 'Male'){
-            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" checked="checked" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span></div></div>');
+            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" checked="checked" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span></div></div>');
         } else if (DeliveryInfo[0].Sex == 'Female') {
-            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>女</span></div></div>');        
+            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>小姐</span></div></div>');        
         } else {
-            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span></div></div>');                    
+            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span></div></div>');                    
         }
 
         //收件人電話
@@ -276,7 +276,7 @@ function AddNewDeliveryInfo() {
     $('.recorded_data').append('<div class="row"><div class="title">收件人的大名</div><input type="text" name="" value="" id="DeliveryInfo_Name"></div>');        
 
     //收件人性別
-    $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼收件人</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>男</span><input type="radio" name="sex" sexual="Female"><span>女</span></div></div>');
+    $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼收件人</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span></div></div>');
 
     //收件人電話
     $('.recorded_data').append('<div class="row"><div class="title">聯絡電話</div><input type="text" name="" value="" id="PurchaseInfo_Phone"></div>');
@@ -306,8 +306,15 @@ function AddNewDeliveryInfo() {
 
 function ImportDeliveryInfo(data) {
     var DeliveryInfo_FormStatus = $('.recorded_data ').attr('formstatus');
-    $('#BTN_DeliveryInfoSave').css('display','none');
-    $('#BTN_DeliveryInfoEdit').css('display','block');
+
+    if (DeliveryInfo_FormStatus == 'PurchaseInfo'){
+        $('#BTN_DeliveryInfoSave').css('display','none');
+        $('#BTN_DeliveryInfoEdit').css('display','none');
+    } else {
+        $('#BTN_DeliveryInfoSave').css('display','none');
+        $('#BTN_DeliveryInfoEdit').css('display','block');
+    }
+    
 
     //清空
     $('.recorded_data').text('');
