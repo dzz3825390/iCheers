@@ -5,13 +5,15 @@
     <title>會員註冊</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico">
 
-
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/Style.css" />
     <link rel="stylesheet" type="text/css" href="css/member.css" />
 
 
 
     <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
     <script type="text/javascript" src="Scripts/popcontrol.js"></script>
     <script type="text/javascript">
     	$(document).ready(function(){
@@ -26,12 +28,17 @@
 		    	$(this).find('.icon_check').toggleClass('active');
 		    });
 
+		    //呼叫會員條款
+		    MemberRegisterTerms();
+
 		    //送出資料後
 		    var PopTitle = '會員註冊';
 		    var PopContent = '<p>就差一步!</p><p>請您至E-mail信箱收取密碼認證信，點選信中的連結網址，完成密碼認證。</p>';
 		    $('.btn_login').click(function(){
 		    	PopOriginalThem(PopTitle,PopContent);
 		    });
+
+
     	});
     </script>
 
