@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iCheers愛酒窩 ─ 會員專區</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/cart_202107.css">
+    <link rel="stylesheet" type="text/css" href="css/member.css" />
+
+
+
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
+    <script type="text/javascript" src="Scripts/step3.js"/></script>
+    <script type="text/javascript" src="Scripts/popcontrol.js"></script>
+
+	<script type="text/javascript">
+    $(document).ready(function(){
+
+        //修改收件人資訊
+        $('#BTN_DeliveryInfoEdit').click(function(){
+            DeliveryInfoEdit();
+        });
+
+        //特急件說明視窗
+        $('#SuperExpressInfo').click(function(){
+            CWC_SuperExpressInfo();
+        });
+
+        //自取說明視窗
+        $('#SelfCollectInfo').click(function(){
+            CWC_SelfCollectInfo();
+        });
+
+
+        
+        $('.delivery_info_select').change(function(){
+            var OptionSelected = $(this).find('option:selected').attr('id');
+
+            switch (OptionSelected) {
+                case 'Option_PurchaseInfo':
+                    $('.recorded_data ').attr('formstatus','PurchaseInfo');
+                    ImportDeliveryInfo(PurchaseInfo);
+                break;
+
+                case 'Option_CustomInfo1':
+                    $('.recorded_data ').attr('formstatus','CustomInfo');
+                    ImportDeliveryInfo(TestData_Custom1);
+                break;
+
+                case 'Option_CustomInfo2':
+                    $('.recorded_data ').attr('formstatus','CustomInfo');
+                    ImportDeliveryInfo(TestData_Custom2);
+                break;
+
+                case 'Option_AddNew':
+                    $('.recorded_data ').attr('formstatus','NewInfo');
+                    AddNewDeliveryInfo();
+                break;
+            }
+        });
+
+        //紙袋check
+        $('#iCheersPaperbagCheck').click(function(){
+            if($(this).prop('checked')){
+                $('#iCheersPaaerbagCount').css('display','block');
+                $('#iCheersPaaerbagCount input[type="text"]').attr('value','0');
+            } else {
+                $('#iCheersPaaerbagCount').css('display','none');
+            }
+        });
+    });
+
+</script>
+
+</head>
+
+
+<body class="member">
+<div class="HeadALL">
+    <div class="HeadMenu_btn">
+        <a class="navicon-button uarr" id="menuBTN">
+            <div class="navicon"></div>
+        </a> 
+    </div>
+    <div class="HeadMenu">
+        <!--a href="" class="LogOut">會員登出</a-->
+        <a href="" class="HeadMenuLogin">登入 / 加入會員</a>
+        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        <a href="" class="MyList">我的清單</a>
+        <a href="" class="TrackingList">追蹤酒款</a>
+        <a href="" class="MobileVer">手機版</a>
+        <!--span class="AccountNumber">ich***, 您好</span-->
+    </div>
+
+
+
+    <div class="TagALL_cart">
+        <div class="TagLogo_layout">
+            <a href="index.html" class="TagLogo"></a>
+        </div>
+    </div>
+    
+</div>
+
+    <!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+<div class="content membercwc membercwc_cart">
+    <div class="label_box">
+        <div class="one_label">會員資料</div>
+        <div class="one_label">訂單查詢</div>
+        <div class="one_label">買過的酒</div>
+        <div class="one_label">追蹤酒款</div>
+        <div class="one_label">線上酒窖</div>
+        <div class="one_label active">配送窖藏</div>
+    </div>
+    <div class="step3_processbar">
+        <div class="textbox">
+            <div class="text">
+                取酒
+            </div>
+            <div class="text">
+                確認品項
+            </div>
+            <div class="text active">
+                配送資訊
+            </div>
+            <div class="text">
+                發票
+            </div>
+            <div class="text">
+                付款方式
+            </div>
+        </div>
+        <div class="gray_line">
+            <div class="gray_dot"></div>
+            <div class="gray_dot"></div>
+            <div class="gray_dot active"></div>
+            <div class="gray_dot"></div>
+            <div class="gray_dot"></div>
+        </div>
+    </div>
+    <div class="step3_content">
+        <div class="row CLEARBOTH">
+            <select class="delivery_info_select" formstatus="Option_CustomInfo1">
+                <option>選擇常用地址</option>
+                <option id="Option_CustomInfo1">成功路一段80...</option>
+                <option id="Option_CustomInfo2">中正路347號...</option>
+                <option id="Option_AddNew">另行配送</option>
+            </select>
+            <button class="btn_edit" id="BTN_DeliveryInfoEdit" style="display:none;">修改</button>
+            <button class="btn_save" id="BTN_DeliveryInfoSave">
+                <input type="checkbox" name="">
+                <span>儲存地址</span>
+            </button>
+        </div>
+        <div class="recorded_data" formstatus="">
+            <div class="row">
+                <div class="title">收件人大名</div>
+                <input id="DeliveryInfo_Name" type="text" name="" value="">
+            </div>
+            <div class="row">
+                <div class="title">怎麼稱呼收件人</div>
+                <div id="DeliveryInfo_Sex" class="sex_radio CLEARBOTH"><input type="radio" name="sex"><span>先生</span><input type="radio" name="sex"><span>小姐</span></div>
+            </div>
+            <div class="row">
+                <div class="title">收件人連絡電話</div>
+                <input id="DeliveryInfo_Phone" type="text" name="" value="">
+            </div>
+            <div class="row">
+                <div class="title">收件地址</div>
+                <div id="DeliveryInfo_Address"><select id="Address_City"><option>台北市</option><option>新北市</option></select><select id="Address_District"><option value="235">中和區&nbsp;235</option><option value="234">永和區&nbsp;234</option></select><br><input type="text" name="" value=""></div>
+                <div class="note CLEARBOTH">
+                    *離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。
+                </div>
+                <div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name=""><span>管理員可代收</span></div>
+                <div class="note CLEARBOTH" id="CustomAddress"><input type="checkbox" name=""><span>儲存為常用地址</span></div>
+                <!--加值保護先留功能欄位 位置未定-->
+                <div class="note CLEARBOTH" id="Insurance"><input type="checkbox" name=""><span>加值保護</span></div>
+            </div>
+            <div class="row">
+                <div class="title">配送方式</div>
+                <div id="DeliveryInfo_project" class="sex_radio CLEARBOTH">
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span>
+                    </div>
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span>
+                    </div>
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span>
+                    </div>
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span>
+                    </div>
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="title">希望配送時段</div>
+                <div class="sex_radio CLEARBOTH">
+                    <input type="radio" name="time">
+                    <span>上午(08~13時)</span>
+                    <input type="radio" name="time">
+                    <span>下午(14~18時)</span>
+                    <input type="radio" name="time">
+                    <span>皆可</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="title">希望配送星期</div>
+                <div class="sex_radio CLEARBOTH">
+                    <input type="radio" name="date">
+                    <span>平日</span>
+                    <input type="radio" name="date">
+                    <span>假日</span>
+                    <input type="radio" name="date">
+                    <span>皆可</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="title">環保選項</div>
+                <div class="text" id="ReuseBox"></div>
+                <div class="note CLEARBOTH" id="ReuseBox">
+                    <input type="checkbox" name="">
+                    <span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span>
+                </div>
+                <div class="note CLEARBOTH" id="ReusePaperMaterial">
+                    <input type="checkbox" name="">
+                    <span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="title">備註</div>
+            <textarea>請於12/31前送達</textarea>
+        </div>
+
+        <div class="row">
+            <div class="note CLEARBOTH">
+                <input type="checkbox" name="" id="iCheersPaperbagCheck">
+                <span>請隨貨附提袋</span>
+                <label id="iCheersPaaerbagCount" style="display: none;">
+                    <input type="text" name="" style="float: left;width: 50px;margin-left: 5px;margin-top: -12px;text-align: center;">
+                    <span>個</span>
+                </label>
+                
+            </div>
+        </div>
+
+        <div class="row btn_row">
+            
+            <div class="btn_step next">下一步</div>
+        </div>
+    </div>
+    <div class="CLEARBOTH"></div>
+</div>
+
+
+
+    <!-- FooterALL  頁腳 -->
+    <div class="member_FooterALL">
+        <div class="Footer_position">
+            <ul class="FooterMenu">
+                <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+                <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+                <li><a href="" target="_parent">條款及細則</a>｜</li>
+                <li><a href="privacy_policy.html" target="_parent">隱私條款</a></li>
+            </ul>
+            <div class="FooterICON">
+                <a href="qualityGarentee.html" target="_blank">
+                    <button class="Quality"></button>
+                </a>
+                <button class="Join"></button>
+                <button class="Novice"></button>
+            </div>
+        </div>
+    </div>
+    <!-- FooterALL  頁腳 -->
+
+
+    <div class="Warning_small_screen">
+    飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+    </div>
+    <div class="Warning"><p></p></div>
+    <!-- Warning 警語 -->
+
+
+<!-- 黑底 start-->
+<div class="bg_black" id="bg_black">
+    <div class="notice_BG">
+        <div class="notice_title_layout">
+            <div class="notice_title"></div>
+            <div class="notice_title_closeBTN" onclick="ClosePop();"></div>
+            <div class="CLEAR"></div>
+        </div>
+        <div class="notice_body CLEARBOTH">
+            
+        </div>
+    </div>
+
+</div>
+<!-- 黑底 end-->
+
+
+</body>
+</html>
