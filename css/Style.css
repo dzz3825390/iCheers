@@ -1795,6 +1795,7 @@ a.WineList_WineName4 {
 
 .member .Right_content .wine_list_box .one_bottle .name_cn,.member .Right_content .wine_list_box .one_bottle .name_en{
     width: 95%;
+    cursor: pointer;
 }
 
 .member .Right_content .wine_list_box .one_bottle .bottle_img{
