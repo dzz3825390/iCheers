@@ -149,6 +149,81 @@ function PopWindow_Submited(){
     LocatePop(PopWindowWidth);
 }
 
+//step1 訂單送出後(老客戶通一方通行)
+function PopWindow_Submited_VIPPass(){
+
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:left;">Cheers!!<br/>系統已偵測確認您為經常消費的老客戶，<br/>日後將直接提供老客戶專屬的「快速通關」功能，下單更加方便！</p>',
+        '<a href="https://www.icheers.tw/iCheers/" target="_self" class="BackhomeBTN">啟動快速通關</a>',
+        '<img src="images/icon/icon_vippass.svg" style="width:120px;height:auto;margin:0 auto;display:block;margin-bottom:16px;">',
+        '<p style="text-align:center;">系統已偵測確認您為經常消費的老客戶，<br/>適用專屬的「快速通關」功能，下單更加方便！</p>',
+        '<div style="display:flex;justify-content:center;"><button class="BackhomeBTN" style="width:38%;">啟動快速通關</button></div>',
+        '<div class="row flex_center"><input type="checkbox"><span class="text">以後不要再出現此提醒</span></div>',
+    ];
+
+    //視窗標題
+    $('.notice_title').text('啟用快速通關功能');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 450;
+
+    LocatePop(PopWindowWidth);
+}
+
+function PopWindow_Submited_VIPPass(){
+
+    InitPop();
+
+    var WindowContent = [
+        '<img src="images/icon/icon_vippass.svg" style="width:120px;height:auto;margin:0 auto;display:block;margin-bottom:16px;">',
+        '<p style="text-align:center;">系統已偵測確認您為經常消費的老客戶，<br/>適用專屬的「快速通關」功能，下單更加方便！</p>',
+        '<div style="display:flex;justify-content:center;"><button class="BackhomeBTN" style="width:38%;">啟動快速通關</button></div>',
+        '<div class="row flex_center"><input type="checkbox"><span class="text">以後不要再出現此提醒</span></div>',
+    ];
+
+    //視窗標題
+    $('.notice_title').text('啟用快速通關功能');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 450;
+
+    LocatePop(PopWindowWidth);
+}
+
+//step1 訂單送出後(老客戶通一方通行_未登入)
+function PopWindow_Submited_VIPPass_NotLogin(){
+
+    InitPop();
+
+    var WindowContent = [
+        '<img src="images/icon/icon_vippass.svg" style="width:120px;height:auto;margin:0 auto;display:block;margin-bottom:16px;">',
+        '<p style="text-align:center;">系統已偵測確認您為經常消費的老客戶，<br/>適用專屬的「快速通關」功能，下單更加方便！</p>',
+        '<div style="display:flex;justify-content:center;margin-top:20px;"><button class="GrayBTN" style="width:38%;margin:0;margin-right:10px;">沒關係謝謝</button><button class="BackhomeBTN" style="margin:0;margin-right:10px;width:38%;">登入並啟動快速通關</button></div>',
+
+    ];
+
+    //視窗標題
+    $('.notice_title').text('老客戶快速通關功能啟用！');
+    $('.notice_title').text('啟用快速通關功能');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 550;
+    var PopWindowWidth = 450;
+
+    LocatePop(PopWindowWidth);
+}
+
 //會員登入
 function MemberLogin(){
 

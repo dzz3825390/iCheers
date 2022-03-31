@@ -76,6 +76,23 @@
                 },100)
             });
 
+            //送出確認信
+            $('#OrderSubmit').click(function(){
+                //如果有儲酒但沒綁定，先call CheckLinkCard告訴客人要綁定
+                //CheckLinkCard();
+                
+                //訂單狀態 一般：normal 含快速3點前:before3pm 含快速3點後:after3pm
+                var OrderTimeStatus = 'normal';  
+                PopWindow_Submit(OrderTimeStatus);
+                $('.SubmitBTN').click(function(){
+                    ClosePop();
+                    //先設timeout 上線接loading畫面後移除
+                    setTimeout(function(){
+                        PopWindow_Submited_VIPPass();
+                    },1000);
+                });
+            });
+
 		})
 	</script>
 
@@ -309,7 +326,7 @@
                     <div class="small">並詳細閱讀與同意網站條款</div>
                 </div>
             </div>
-            <div class="btn_ordersubmit" id="OrderSubmit">下一步</div>
+            <div class="btn_ordersubmit" id="OrderSubmit">發送確認信</div>
         </div>  
     </div>
     <div class="CLEARBOTH"></div>

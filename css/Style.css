@@ -54,6 +54,11 @@ button {
     outline: none;.WineList_Info h1
 }
 
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* Head 刊頭  */
@@ -14542,6 +14547,21 @@ button.notice_cancelBTN{
     margin-top: 10px;
 }
 
+.GrayBTN{
+    width: 30%;
+    height: 50px;
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 7px;
+    background-color: #666;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
 .BackhomeBTN{
     width: 30%;
     height: 50px;
@@ -14729,4 +14749,18 @@ a.BackhomeBTN{
     border-top: 1px dotted #cccccc;
     margin: 0 auto;
     margin-top: 10px;
+}
+
+.notice_body .row{
+    width: 100%;
+    margin-top: 16px;
+}
+
+.notice_body .row input[type=checkbox]{
+    margin-right: 5px;
+}
+
+.notice_body .row .text{
+    font-size: 14px;
+    color: #666;
 }
