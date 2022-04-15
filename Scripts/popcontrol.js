@@ -601,26 +601,6 @@ function CWC_SelfCollectInfo(){
     LocatePop(PopWindowWidth);
 }
 
-function CWC_RentContract() {
-    InitPop();
-
-    var WindowContent = [
-        '<p style="text-align:center;">內容未定</p>'
-    ]
-
-    //視窗標題
-    $('.notice_title').text('租賃合約');
-
-    //視窗內容
-    $('.notice_body').html(WindowContent);
-
-    //指定大視窗時pop寬度
-    var PopWindowWidth = 350;
-    //修正Css
-    $('.notice_title_layout').css('background-color','#ffffff');
-
-    LocatePop(PopWindowWidth);
-}
 
 function CWC_RentRecipeDetail(recipedata){
     InitPop();
@@ -659,46 +639,3 @@ function CWC_RentRecipeDetail(recipedata){
     LocatePop(PopWindowWidth);
 }
 
-function CWC_StorageRecord(recorddata){
-    InitPop();
-
-    var TableRowContent = '';
-    recorddata.forEach(function(item,index){
-        var MoveRecord = '';
-        if (recorddata[index].storage) {
-            MoveRecord = '<span style="color:#d30a0a;">'+recorddata[index].moverecord+'</span>'
-        } else {
-            MoveRecord = '<span style="color:#0b7b62;">'+recorddata[index].moverecord+'</span>'
-        }
-
-        TableRowContent = TableRowContent + '<tr><td>'+recorddata[index].date+'</td><td style="padding: 20px 10px;text-align:left;"><div style="line-height:30px;">'+recorddata[index].nameCN+'</div><div style="line-height:25px;">'+recorddata[index].nameEN+'</div></td><td>'+recorddata[index].year+'</td><td>'+recorddata[index].capacity+'</td><td>'+MoveRecord+'</td><td>'+recorddata[index].allbottlecount+'</td><td><a href="#" style="color:#296993;">'+recorddata[index].order+'</a></td></tr>'
-    });
-
-    var WindowContent = [
-        '<table cellpadding="0" cellspacing="0" border="0" style="font-size:18px;color:#666;width:100%;text-align:center;"><tr><td style="border-bottom:1px solid #cccccc;height:40px;width:12%;">日期</td><td style="border-bottom:1px solid #cccccc;height:40px;width:40%;">酒款</td><td style="border-bottom:1px solid #cccccc;height:40px;width:8%;">年份</td><td style="border-bottom:1px solid #cccccc;height:40px;width:8%;">容量</td><td style="border-bottom:1px solid #cccccc;height:40px;width:8%;">異動</td><td style="border-bottom:1px solid #cccccc;height:40px;">目前窖藏</td><td style="border-bottom:1px solid #cccccc;height:40px;">異動訂單</td></tr>'+TableRowContent+'</table>'
-    ]
-
-    //視窗標題
-    $('.notice_title').text('異動明細');
-
-    //視窗內容
-    $('.notice_body').html(WindowContent);
-
-    //指定大視窗時pop寬度
-    var PopWindowWidth = 1250;
-    //修正Css
-    $('.notice_title_layout').css('background-color','#ffffff');
-    $('.notice_body').css(
-        {
-            'max-height':'60vh',
-            'padding-top':'0'
-        }
-    );
-
-    //安裝scroll bar
-    $(".notice_body").mCustomScrollbar({
-        theme:"minimal-dark"
-    });
-
-    LocatePop(PopWindowWidth);
-}

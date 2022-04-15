@@ -25,6 +25,12 @@
             var CWCOptionsPositionX = (ContentWidth - CWCOptionsWidth)/2;
             $('.cwc_option_row').css('left',CWCOptionsPositionX);
 
+            //cwc選項切換focus
+            $('.cwc_option_row .one_option').click(function(){
+                $('.cwc_option_row .one_option').removeClass('active');
+                $(this).addClass('active');
+            });
+
             
 			//footermenu置中
 		    var FooterMenuWidth = $('.FooterMenu').width();
@@ -187,21 +193,7 @@
 
             //酒款詳目視窗
             CWC_BottleDetail(winedata);
-            
-            //租賃合約
-            $('#RentContract').click(function(){
-                CWC_RentContract();
-            });
-
-            //收費明細
-            $('#RentRecipeDetail').click(function(){
-                CWC_RentRecipeDetail(RecipeData);
-            });
-
-            //異動明細
-            $('#StorageRecord').click(function(){
-                CWC_StorageRecord(StorageRecordData);
-            });
+        
             
 
 
@@ -282,16 +274,19 @@
                 <span class="icon_filter"></span>
                 篩選
             </button>
+            <button class="one_option active">
+                酒瓶模式
+            </button>
             <button class="one_option">
                 清單模式
             </button>
-            <button class="one_option" id="RentContract">
+            <button class="one_option">
                 租賃合約
             </button>
-            <button class="one_option" id="RentRecipeDetail">
+            <button class="one_option">
                 收費明細
             </button>
-            <button class="one_option" id="StorageRecord">
+            <button class="one_option">
                 異動紀錄
             </button>
             <button class="one_option">

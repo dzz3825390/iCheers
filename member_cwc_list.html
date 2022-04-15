@@ -24,6 +24,12 @@
             var CWCOptionsPositionX = (ContentWidth - CWCOptionsWidth)/2;
             $('.cwc_option_row').css('left',CWCOptionsPositionX);
 
+            //cwc選項切換focus
+            $('.cwc_option_row .one_option').click(function(){
+                $('.cwc_option_row .one_option').removeClass('active');
+                $(this).addClass('active');
+            });
+
 			//footermenu置中
 		    var FooterMenuWidth = $('.FooterMenu').width();
 		    var FooterWidth = $('.FooterMenu').parent().width();
@@ -95,6 +101,9 @@
     <div class="cwc_option_row CLEARBOTH">
             <button class="one_option">
                 酒瓶模式
+            </button>
+            <button class="one_option active">
+                清單模式
             </button>
             <button class="one_option">
                 租賃合約

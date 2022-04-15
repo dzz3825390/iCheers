@@ -1189,15 +1189,20 @@ input::-webkit-inner-spin-button {
 .cwc_option_row .one_option{
     height: 45px;
     padding: 0 16px;
-    border: 1px solid #acacac;
+    border: 1px solid #d8d8d8;
     border-radius: 5px;
     background-color: #fff;
-    color: #acacac;
+    color: #d8d8d8;
     font-size: 18px;
     line-height: 45px;
     float: left;
     position: relative;
     margin-left: 10px;
+}
+
+.cwc_option_row .one_option.active{
+    border-color: #666;
+    color: #666;
 }
 
 .cwc_option_row .one_option:hover{
@@ -1913,4 +1918,357 @@ input::-webkit-inner-spin-button {
 
 }
 
+/*庫存異動查詢&租金明細*/
 
+.membercwc .content_LL{
+    width: 260px;
+    float: left;
+    margin-top: 60px;
+}
+
+.membercwc .Right_content .nodata_text{
+    font-size: 18px;
+    color: #666;
+}
+
+.membercwc .Right_content .search_result_text{
+    font-size: 18px;
+    color: #999999;
+    margin-top: 24px;
+}
+
+.membercwc .Right_content .search_result_text span{
+    margin: 0 8px;
+}
+
+.membercwc .Right_content .search_result_row{
+    padding: 24px 0;
+    border-bottom: 1px solid #dcdcdc;
+    cursor: pointer;
+}
+
+.membercwc .Right_content .search_result_row:last-child{
+    border: none;
+    margin-bottom: 32px;
+}
+
+.membercwc .Right_content .search_result_row .name_cn{
+    font-size: 18px;
+    line-height: 27px;
+    color: #666;
+}
+
+.membercwc .Right_content .search_result_row .name_en{
+    font-size: 18px;
+    line-height: 27px;
+    color: #666;
+}
+
+.membercwc .Right_content .search_result_row .name_en .highlight{
+    color: #ce0808;
+}
+
+.membercwc .Right_content .search_result_row .status{
+    font-size: 18px;
+    line-height: 27px;
+    color: #666;
+}
+
+.membercwc .Right_content .table_head{
+    width: 100%;
+    height: 45px;
+    background-color: #f3f4f5;
+    line-height: 45px;
+    font-size: 18px;
+    color: #999;
+    margin-top: 24px;
+}
+
+/*表格寬度控制 bydate*/
+.membercwc .Right_content .table_head .date,.membercwc .Right_content .search_result_row .date{
+    width: 31%;
+    float: left;
+    text-align: center;
+}
+
+.membercwc .Right_content .table_head .shipped,.membercwc .Right_content .table_head .storaged,.membercwc .Right_content .table_row .shipped,.membercwc .Right_content .table_row .storaged{
+    width: 27%;
+    float: left;
+    text-align: center;
+}
+
+/*表格寬度控制 bywine*/
+.membercwc .Right_content .table_head.bywine .date,.membercwc .Right_content .table_head.bywine .order,.membercwc .Right_content .table_row.bywine .date,.membercwc .Right_content .table_row.bywine .order{
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+.membercwc .Right_content .table_head.bywine .changed,.membercwc .Right_content .table_row.bywine .changed{
+    width: 34%;
+    float: left;
+    text-align: center;
+}
+
+
+.membercwc .Right_content .table_head .detail,.membercwc .Right_content .search_result_row .detail{
+    width: 15%;
+    float: left;
+    text-align: center;
+}
+
+
+.membercwc .Right_content .table_row{
+    font-size: 18px;
+    color: #666;
+    min-height: 60px;
+    line-height: 60px;
+    padding: 0;
+}
+
+.membercwc .Right_content .table_row .shipped,.membercwc .Right_content .table_row .storaged{
+    font-weight: bold;
+    color: #666;
+}
+
+.membercwc .Right_content .table_row .highlight{
+    font-weight: bold;
+    color: #ad0b0b;
+}
+
+.membercwc .Right_content .table_row .detail{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.membercwc .Right_content .table_row .detail .detail_btn{
+    cursor: pointer;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    border: 1px solid #cccccc;
+    position: relative;
+}
+
+.membercwc .Right_content .table_row .detail .detail_btn:before{
+    content: '';
+    display: block;
+    width: 9px;
+    height: 1px;
+    border-top: 2px solid #999999;
+    border-radius: 1px;
+    position: absolute;
+    transform: rotate(-35deg);
+    top: 13px;
+    right: 12px;
+}
+
+.membercwc .Right_content .table_row .detail .detail_btn.extend:before{
+    transform: rotate(35deg);
+}
+
+.membercwc .Right_content .table_row .detail .detail_btn:after{
+    content: '';
+    display: block;
+    width: 9px;
+    height: 1px;
+    border-top: 2px solid #999999;
+    border-radius: 1px;
+    position: absolute;
+    transform: rotate(35deg);
+    top: 13px;
+    left: 13px;
+}
+
+.membercwc .Right_content .table_row .detail .detail_btn.extend:after{
+    transform: rotate(-35deg);
+}
+
+.membercwc .Right_content .table_row .detail_content{
+    width: 100%;
+    padding: 0 16px;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+}
+
+.membercwc .Right_content .table_row .detail_content .order_number{
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+    text-decoration: underline;
+    line-height: 30px;
+}
+
+.membercwc .Right_content .table_row .detail_content .one_order + .one_order{
+    margin-top: 24px;
+}
+
+.membercwc .Right_content .table_row .detail_content .one_wine + .one_wine{
+    margin-top: 16px;
+}
+
+.membercwc .Right_content .table_row .detail_content .wine_info{
+    width: 85%;
+    max-width: 85%;
+    float: left;
+}
+
+.membercwc .Right_content .table_row .detail_content .wine_info .wine_name{
+    font-size: 16px;
+    line-height: 21px;
+    margin-top: 4px;
+    color: #999;
+}
+
+.membercwc .Right_content .table_row .detail_content .change_info{
+    width: 13%;
+    margin-left: 1%;
+    height: 30px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.membercwc .Right_content .table_row .detail_content .change_info .title{
+    width: 50%;
+    height: 28px;
+    line-height: 28px;
+    background-color: #cccccc;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    float: left;
+}
+
+.membercwc .Right_content .table_row .detail_content .change_info .count{
+    width: 50%;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    float: left;
+    font-weight: bold;
+}
+
+.membercwc .Right_content .table_row .detail_content .change_info.storaged .count{
+    color: #ad0b0b;
+}
+
+.membercwc .Right_content .table_row.bywine .date,.membercwc .Right_content .table_row.bywine .order{
+    font-size: 18px;
+    color: #666;
+}
+
+.membercwc .Right_content .table_row.bywine .date{
+    cursor: default;
+}
+
+.membercwc .Right_content .table_row.bywine .order a{
+    color: #666;
+    text-decoration: underline;
+}
+
+.membercwc .Right_content .table_row.bywine .changed{
+    font-weight: bold;
+    cursor: default;
+}
+
+.membercwc .Right_content .table_row.bywine .changed.highlight{
+    color: #ad0b0b;
+}
+
+.membercwc .Right_content .wine_info{
+    max-width: calc(100% - 346px - 16px);
+    float: left;
+}
+
+.membercwc .Right_content .wine_info .name_en{
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    line-height: 30px;
+}
+
+.membercwc .Right_content .wine_info .name_cn{
+    font-size: 18px;
+    color: #666;
+    line-height: 27px;
+    margin-top: 6px;
+}
+
+.membercwc .Right_content .wine_info .status{
+    font-size: 18px;
+    color: #666;
+    line-height: 27px;
+    margin-top: 6px;
+}
+
+.membercwc .Right_content .count_box{
+    float: right;
+}
+
+.membercwc .Right_content .count_box .one_box{
+    min-width: 60px;
+    height: 80px;
+    float: left;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+.membercwc .Right_content .count_box .one_box + .one_box{
+    margin-left: 10px;
+}
+
+.membercwc .Right_content .count_box .one_box .title{
+    height: 35px;
+    padding: 0 32px;
+    background-color: #cccccc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.membercwc .Right_content .count_box .one_box .count{
+    height: 45px;
+    color: #666;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.membercwc .Right_content .count_box .one_box .highlight{
+    color: #ad0b0b;
+}
+
+.membercwc .Center_content .contract_title{
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.membercwc .Center_content .text_title{
+    font-size: 18px;
+    color: #666;
+    font-weight: bold;
+    margin-top: 48px;
+}
+
+.membercwc .Center_content .text{
+    font-size: 18px;
+    color: #666;
+    line-height: 28px;
+    margin-top: 12px;
+}
+
+.membercwc .Center_content .text + .text{
+    margin-top: 24px;
+}
