@@ -270,6 +270,7 @@ input::-webkit-inner-spin-button {
     padding-top: 0;
     padding-bottom: 137px;
     position: relative;
+    margin-top: -20px;
 }
 
 .member .content.membercwc_cart{
@@ -444,6 +445,18 @@ input::-webkit-inner-spin-button {
     text-align: center;
     line-height: 45px;
     margin-top: 32px;
+    font-weight: bold;
+}
+
+.order_condition_row  .editbtn{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #9f999d;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 45px;
     font-weight: bold;
 }
 
@@ -1028,7 +1041,7 @@ input::-webkit-inner-spin-button {
     height: 45px;
     border-radius: 5px;
     font-size: 18px;
-    background-color: #939334;
+    background-color: #9f999d;
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -1928,7 +1941,8 @@ input::-webkit-inner-spin-button {
 
 .membercwc .Right_content .nodata_text{
     font-size: 18px;
-    color: #666;
+    color: #999;
+    margin-top: 20px;
 }
 
 .membercwc .Right_content .search_result_text{
@@ -2010,9 +2024,21 @@ input::-webkit-inner-spin-button {
     text-align: center;
 }
 
-
 .membercwc .Right_content .table_head .detail,.membercwc .Right_content .search_result_row .detail{
     width: 15%;
+    float: left;
+    text-align: center;
+}
+
+/*表格寬度控制 租金明細*/
+.membercwc .Right_content .table_head .invoice,.membercwc .Right_content .search_result_row .invoice{
+    width: 15%;
+    float: left;
+    text-align: center;
+}
+
+.membercwc .Right_content .table_head .month,.membercwc .Right_content .table_head .price,.membercwc .Right_content .search_result_row .month,.membercwc .Right_content .search_result_row .price{
+    width: calc(70% / 2);
     float: left;
     text-align: center;
 }
@@ -2271,4 +2297,42 @@ input::-webkit-inner-spin-button {
 
 .membercwc .Center_content .text + .text{
     margin-top: 24px;
+}
+
+.membercwc .Right_content .table_row .detail_content .one_unit{
+    height: 30px;
+    line-height: 30px;
+}
+
+.membercwc .Right_content .table_row .detail_content .one_unit:last-child{
+    padding-bottom: 12px;
+}
+
+.membercwc .Right_content .table_row .detail_content .one_unit .unit,.membercwc .Right_content .table_row .detail_content .one_unit .price{
+    float: left;
+    width: calc(85% / 2);
+    text-align: left;
+    font-size: 16px;
+}
+
+.membercwc .Right_content .table_row .detail_content .one_unit .price{
+    width: 14%;
+    text-align: right;
+}
+
+.membercwc .Right_content .search_result_row .invoice a{
+    color: #666;
+    text-decoration: underline;
+}
+
+.membercwc .Right_content .rent_info{
+    font-size: 18px;
+    color: #666;
+    margin-top: 24px;
+}
+
+.membercwc .Right_content .rent_info span{
+    color: #c29c20;
+    font-weight: bold;
+    margin: 0 5px;
 }

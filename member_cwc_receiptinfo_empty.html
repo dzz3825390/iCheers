@@ -24,19 +24,21 @@
             var CWCOptionsPositionX = (ContentWidth - CWCOptionsWidth)/2;
             $('.cwc_option_row').css('left',CWCOptionsPositionX);
 
-            //cwc選項切換focus
+		    //cwc選項切換focus
             $('.cwc_option_row .one_option').click(function(){
                 $('.cwc_option_row .one_option').removeClass('active');
                 $(this).addClass('active');
             });
 
-			//footermenu置中
+            //footermenu置中
 		    var FooterMenuWidth = $('.FooterMenu').width();
 		    var FooterWidth = $('.FooterMenu').parent().width();
 		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
 
 		    $('.FooterMenu').css('margin-left',FooterPositionX);
 
+            
+            
             
 		})
 	</script>
@@ -83,10 +85,10 @@
             <button class="one_option">
                 租賃合約
             </button>
-            <button class="one_option">
+            <button class="one_option active">
                 收費明細
             </button>
-            <button class="one_option active">
+            <button class="one_option">
                 異動紀錄
             </button>
             <button class="one_option">
@@ -94,10 +96,6 @@
             </button>
         </div>
     <div class="content_LL">
-        <div class="order_condition_row">
-            <div class="title">酒款名稱</div>
-            <input type="text">
-        </div>
         <div class="order_condition_row">
             <div class="title">日期</div>
             <input type="date">
@@ -107,68 +105,21 @@
         <div class="order_condition_row">
             <button class="submitbtn">查詢</button>
         </div>
+        <div class="order_condition_row" style="margin-top:32px;">
+            <button class="editbtn">修改發票資訊</button>
+        </div>
+        <div class="order_condition_row" style="margin-top:10px;">
+            <button class="editbtn">更換綁定信用卡</button>
+        </div>
+        
     </div><!--左邊欄 end-->
     <!--右邊欄-->
     <div class="Right_content">
-        <div class="CLEARBOTH" style="margin-top:24px;">
-            <div class="wine_info">
-                <div class="name_en">
-                    Domaine Robert Sirugue, Vosne-Romanée
-                </div>
-                <div class="name_cn">
-                    羅伯‧蒙岱維酒莊，那帕山谷系列 梅洛紅酒
-                </div>
-                <div class="status">
-                    2018&nbsp;&nbsp;750ml
-                </div>
-            </div>
-            <div class="count_box CLEARBOTH">
-                <div class="one_box">
-                    <div class="title">存入</div>
-                    <div class="count">+2</div>
-                </div>
-                <div class="one_box">
-                    <div class="title">取出</div>
-                    <div class="count highlight">+2</div>
-                </div>
-                <div class="one_box">
-                    <div class="title">目前庫存</div>
-                    <div class="count">120</div>
-                </div>
-            </div>
+        <div class="rent_info">
+            您目前租用<span>X</span>箱，剩餘儲存空間<span>6000</span>ml，每日租金為<span>$250</span>元。
+
         </div>
-        
-        
-        <div class="table_head bywine CLEARBOTH">
-            <div class="date">日期</div>
-            <div class="order">訂單編號</div>
-            <div class="changed">取出/存入</div>
-        </div>
-        <div class="search_result_row table_row bywine CLEARBOTH">
-            <div class="date">2022/12/21</div>
-            <div class="order"><a href="#" target="_blank">W22041200021</a></div>
-            <div class="changed highlight">+10</div>
-        </div>
-        <div class="search_result_row table_row bywine CLEARBOTH">
-            <div class="date">2022/09/01</div>
-            <div class="order"><a href="#" target="_blank">W22041200021</a></div>
-            <div class="changed">-5</div>
-        </div>
-        <div class="search_result_row table_row bywine CLEARBOTH">
-            <div class="date">2022/08/30</div>
-            <div class="order"><a href="#" target="_blank">W22041200021</a></div>
-            <div class="changed">-20</div>
-        </div>
-        <div class="search_result_row table_row bywine CLEARBOTH">
-            <div class="date">2022/05/20</div>
-            <div class="order"><a href="#" target="_blank">W22041200021</a></div>
-            <div class="changed highlight">+30</div>
-        </div>
-        <div class="search_result_row table_row bywine CLEARBOTH">
-            <div class="date">2022/05/20</div>
-            <div class="order"><a href="#" target="_blank">W22041200021</a></div>
-            <div class="changed highlight">+30</div>
-        </div>
+        <div class="nodata_text">目前沒有任何查詢結果</div>
     </div>
     
     <!--右邊欄 end-->

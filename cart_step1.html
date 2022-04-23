@@ -1815,15 +1815,15 @@ $(window).resize(function(){
 			
 		</section>
 		<!--已綁定-->
-		<!--
+		
 		<section class="order_sum order_sum_storage" style="display:none;">
 			<div class="order_sum_row">
-				<div class="title">儲酒租金(/箱/天)<span class="icon_info">i</span></div>
+				<div class="title">儲酒租金(/箱/天)<span class="icon_info" onclick="RentRule();">i</span></div>
 				<div class="number">$&nbsp;1</div>
 			</div>
 			<div class="order_sum_row">
-				<div class="title">已租箱數<span class="icon_info">?</span></div>
-				<div class="number">0</div>
+				<div class="title">已租箱數<span class="icon_info" onclick="RentQuota();">?</span></div>
+				<div class="number">5</div>
 			</div>
 			<div class="order_sum_row">
 				<div class="title">新租箱數</div>
@@ -1833,11 +1833,12 @@ $(window).resize(function(){
 				<div class="only_text">&#10004;&nbsp;已綁定信用卡</div>
 			</div>
 		</section>
-		--> 
+		
 		<!--未綁定-->
+		<!--
 		<section class="order_sum order_sum_storage" style="display: none;">
 			<div class="order_sum_row">
-				<div class="title">儲酒租金(/箱/天)<span class="icon_info">i</span></div>
+				<div class="title">儲酒租金(/箱/天)<span class="icon_info" onclick="RentRule();">i</span></div>
 				<div class="number">$&nbsp;1</div>
 			</div>
 			<div class="order_sum_row">
@@ -1848,6 +1849,7 @@ $(window).resize(function(){
 				<div class="btn_linkedcard">綁定信用卡</div>
 			</div>
 		</section>
+		--> 
 	</div>
 
 	<!--加價購-->

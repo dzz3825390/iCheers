@@ -639,3 +639,46 @@ function CWC_RentRecipeDetail(recipedata){
     LocatePop(PopWindowWidth);
 }
 
+//租金收費規則
+function RentRule(){
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:center;">租金每天<span>3</span>元/箱，每次最少承租1箱、1天，逐日計算。</p>',
+        '<div style="display:flex;align-items:center;justify-content:center;"><img src="images/img_box.jpg" style="width:150px;height:auto;"/><div style="font-size:18px;color:#333;margin-left:16px;text-align:center;"><b>1箱&nbsp;=&nbsp;12瓶750ml</b><br/>(1500ml以2瓶計)</div></div>',
+        '<p style="font-size:14px;color:#999">*每月1日結算自動扣繳上個月租金。</p>',
+        '<p style="font-size:14px;color:#999">*需綁定信用卡後才能啟用儲酒服務，信用卡僅供租金扣繳使用。</p>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('儲酒租金收費規則');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 500;
+
+    LocatePop(PopWindowWidth);
+}
+
+//已租箱數
+function RentQuota(){
+    InitPop();
+
+    var WindowContent = [
+        '<p>您目前租用了<span>5</span>箱、60瓶750ml的儲藏空間，目前已使用了<span>55</span>瓶750ml。</p>',
+        '<div style="display:flex;align-items:center;justify-content:center;"><img src="images/img_box.jpg" style="width:150px;height:auto;"/><div style="font-size:18px;color:#333;margin-left:16px;text-align:center;"><b>1箱&nbsp;=&nbsp;12瓶750ml</b><br/>(1500ml以2瓶計)</div></div>',
+    ]
+
+    //視窗標題
+    $('.notice_title').text('已租箱數');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 500;
+
+    LocatePop(PopWindowWidth);
+}
