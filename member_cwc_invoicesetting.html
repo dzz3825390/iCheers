@@ -25,17 +25,6 @@
             $(this).prev().click();
         });
 
-        //修改收件人資訊
-        $('#BTN_DeliveryInfoEdit').click(function(){
-            
-        });
-
-        var InvoiceFormStauts = $('.recorded_data').attr('formstatus');
-        if (InvoiceFormStauts == 'NewCustomer') {
-            $('#BTN_InvoiceInfoEdit').css('display','none');
-        } else {
-            $('#BTN_InvoiceInfoEdit').css('display','block');
-        }
 
         //自製radio選項
         $('.custom_radio').click(function(){
@@ -83,50 +72,6 @@
 
         });
 
-        //儲存此次變更check一起點
-        $('#BTN_InvoiceInfoSave').click(function(){
-            if($(this).find('input[type=checkbox]').prop('checked')){
-                $(this).find('input[type=checkbox]').prop('checked',false);
-            }else {
-                $(this).find('input[type=checkbox]').prop('checked',true);
-            }
-        });
-
-    
-
-        $('.delivery_info_select').change(function(){
-            var OptionSelected = $(this).find('option:selected').attr('id');
-
-            switch (OptionSelected) {
-                case 'Option_CustomInfo1':
-                    $('.recorded_data').attr('formstatus','TestData_Custom1');
-                    ImportInvoiceInfo(TestData_Custom1);
-                break;
-
-                case 'Option_CustomInfo2':
-                    $('.recorded_data').attr('formstatus','TestData_Custom2');
-                    ImportInvoiceInfo(TestData_Custom2);
-                break;
-
-                case 'Option_AddNew':
-                    $('.recorded_data').attr('formstatus','AddNew');
-                    AddNewCompanyInfo();
-                break;
-            }
-        });
-
-        //帶入測試用資料TestData_Custom2
-        $('#BTN_InvoiceInfoEdit').click(function(){
-            var FormStatus = $('.recorded_data').attr('formstatus');
-            if (FormStatus == 'TestData_Custom1') {
-                InvoiceInfoEdit(TestData_Custom1);
-            } else if (FormStatus == 'TestData_Custom2') {
-                InvoiceInfoEdit(TestData_Custom2);
-            } else {
-                InvoiceInfoEdit(TestData_Custom2);
-            }
-            
-        });
     });
 
 
@@ -181,19 +126,6 @@
             <div class="custom_radio invoice_type active" invoice_type="Duplicate">二聯式電子發票</div>
             <div class="custom_radio invoice_type" invoice_type="Triplicate">三聯式電子發票</div>
             <div class="custom_radio invoice_type" invoice_type="Donate">捐贈發票</div>
-            <div class="row CLEARBOTH" style="display: none;" id="InvoiceInfoRow">
-                <select class="delivery_info_select company_info">
-                    <option value="" disabled selected>選擇常用公司資料</option>
-                    <!--<option id="Option_CustomInfo1">常用公司資料1</option>
-                    <option id="Option_CustomInfo2">常用公司資料2</option>-->
-                    <option id="Option_AddNew">新增常用公司</option>
-                </select>
-                <button class="btn_edit" id="BTN_InvoiceInfoEdit" style="display:none;">修改</button>
-                <button class="btn_save" id="BTN_InvoiceInfoSave">
-                    <input type="checkbox" name="">
-                    <span>儲存</span>
-                </button>
-            </div>
         </div>
         <!--2聯-->
         <div class="invoice_content" invoice_type="Duplicate">
@@ -201,37 +133,7 @@
                 <div class="invoice_radio">
                     <div class="invoice_radio_oneoption CLEARBOTH">
                         <input type="radio" name="invoice_2" checked="checked">
-                        <span class="radio_text">隨商品寄出</span>
-                    </div>
-                    <div class="invoice_radio_oneoption CLEARBOTH">
-                        <input type="radio" name="invoice_2">
-                        <span class="radio_text">分開寄出</span>
-                        <div class="CLEARBOTH"></div>
-                        <div class="extend">
-                            <div class="row">
-                                <div class="note CLEARBOTH">
-                                    <input type="checkbox" name="">
-                                    <span>同訂購人資訊</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="title">發票收件人姓名</div>
-                                <input type="text" name="">
-                            </div>
-                            <div class="row">
-                                <div class="title">發票收件人地址</div>
-                                <select>
-                                    <option>台北市</option>
-                                    <option>新北市</option>
-                                </select>
-                                <select>
-                                    <option>松山區&nbsp;105</option>
-                                    <option>大安區&nbsp;106</option>
-                                </select>
-                                <br/>
-                                <input type="text" name="">
-                            </div>
-                        </div>
+                        <span class="radio_text">寄至會員E-mail</span>
                     </div>
                     <div class="invoice_radio_oneoption CLEARBOTH">
                         <input type="radio" name="invoice_2">
@@ -264,47 +166,6 @@
                 <div class="row">
                     <div class="title">發票統編</div>
                     <input type="text" name="" id="InvoiceInfo_BAN">
-                </div>
-
-                <div class="row">
-                    <div class="invoice_radio">
-                        <div class="invoice_radio_oneoption CLEARBOTH">
-                            <input type="radio" name="invoice_3" id="InvoiceDeliveryRadio_WithProduct">
-                            <span class="radio_text">隨商品寄出</span>
-                        </div>
-                        <div class="invoice_radio_oneoption CLEARBOTH">
-                            <input type="radio" name="invoice_3" id="InvoiceDeliveryRadio_AnotherAddress">
-                            <span class="radio_text">分開寄出</span>
-                            <div class="CLEARBOTH"></div>
-                            <div class="extend">
-                                <div class="row" id="InvoiceInfo_AnotherAddress_ImportPurchaseInfo">
-                                    <div class="note CLEARBOTH">
-                                        <input type="checkbox" name="">
-                                        <span>同訂購人資訊</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="title">發票收件人姓名</div>
-                                    <input type="text" name="" id="InvoiceInfo_AnotherAddressRecipient">
-                                </div>
-                                <div class="row">
-                                    <div class="title">發票收件人地址</div>
-                                    <div id="InvoiceInfo_AnotherAddress">
-                                        <select>
-                                            <option>台北市</option>
-                                            <option>新北市</option>
-                                        </select>
-                                        <select>
-                                            <option>松山區&nbsp;105</option>
-                                            <option>大安區&nbsp;106</option>
-                                        </select>
-                                        <br/>
-                                        <input type="text" name="">
-                                    </div>      
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             
