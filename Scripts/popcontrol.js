@@ -459,24 +459,6 @@ function CheckLinkCard(){
     LocatePop(PopWindowWidth);
 }
 
-function LinkedCard(){
-    InitPop();
-
-    var WindowContent = [
-        '<p style="text-align:center;">您已完成信用卡綁定</p>'
-    ]
-
-    //視窗標題
-    $('.notice_title').text('儲酒服務說明');
-
-    //視窗內容
-    $('.notice_body').html(WindowContent);
-
-    //指定大視窗時pop寬度
-    var PopWindowWidth = 350;
-
-    LocatePop(PopWindowWidth);
-}
 
 function PopOriginalThem(title,content){
     InitPop();
@@ -679,6 +661,144 @@ function RentQuota(){
 
     //指定大視窗時pop寬度
     var PopWindowWidth = 500;
+
+    LocatePop(PopWindowWidth);
+}
+
+//修改綁定卡片
+function Changecreditcard(cardtype){
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:center;">您目前綁定的卡片為</p>',
+        '<div class="popwindow_creditcard_row"><label class="'+cardtype+'"></label><div class="cardnumber">******5678</div><div class="carddate">到期日&nbsp;08/27</div></div>',
+        '<div class="notice_btn_row"><button class="notice_cancelBTN" onclick="ClosePop();">暫不更換</button><button class="notice_confirmBTN">更換卡片</button></div>'
+
+    ]
+
+    //視窗標題
+    $('.notice_title').text('更換綁定信用卡');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 340;
+
+    LocatePop(PopWindowWidth);
+}
+
+//啟用儲酒服務
+function ActiveCWC01(){
+    InitPop();
+
+    var WindowContent = [
+        '<div class="PopWindow_ActiveCWC_progressbar"><div class="text active">使用者條款</div><div class="circle_arrow">></div><div class="text">設定發票資料</div><div class="circle_arrow">></div><div class="text">綁定信用卡</div></div>',
+        '<div class="PopWindow_ActiveCWC_policy"><p style="margin-top:10px;">為了保障您的權益，請務必詳讀iCheers愛酒窩網站服務條款。 依據菸酒管理法規定，iCheers愛酒窩網站（以下簡稱「本網站」）使用者須年滿18歲，方得使用或繼續使用本網站。當使用者使用或繼續使用本網站時，即推定其已滿18歲，且已閱讀、瞭解並同意接受本文之所有內容及其後修改變更。</p><p style="margin-top:10px;"><b>使用者守法義務及承諾</b><br/>使用者承諾絕不為任何非法目的或以任何非法方式使用本網站，並承諾遵守中華民國相關法規及一切使用網際網路之國際慣例。使用者若係中華民國以外之使用者，並同意遵守所屬國家或地域之法令。使用者同意並保證不得利用本網站從事侵害他人權益或違法之行為，包括但不限於：</p><p style="margin-top:10px;">公布或傳送違反公共秩序或善良風俗之文字、圖片或任何形式的檔案。<br/>侵害或毀損本網站或他人名譽、隱私權、營業秘密、商標權、著作權、專利權、其他智慧財產權及其他權利。</br>違反依法律或契約所應負之保密義務。<br/>冒用他人名義使用本網站。<br/>傳輸或散佈電腦病毒。<br/>其他不符本網站所提供的使用目的之行為或本網站有正當理由認為不適當之行為。</p><p style="margin-top:10px;"><b>服務內容之變更與電子報及EDM發送</b><br/>同意本公司所提供本網站之範圍，本公司均得視業務需要及實際情形，增減、變更或終止相關服務的項目或內容，且無需個別通知。<br/>使用者同意本公司得依實際執行情形，增加、修改或終止相關活動，並選擇最適方式告知使用者。<br/>使用者同意本公司得不定期發送電子報或商品訊息（EDM）至使用者所登錄的電子信箱。當使用者收到訊息後表示拒絕接受行銷時，本公司將停止繼續發送行銷訊息。</p><div class="notice_btn_row"><button class="notice_cancelBTN" style="width:auto;">我不同意</button><button class="notice_confirmBTN" style="width:auto;padding:0 8px;" onclick="ActiveCWC02();">我已了解(並)接受上述條款，繼續</button></div></div>'
+
+    ]
+
+    //視窗標題
+    $('.notice_title').text('啟用儲酒服務');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //安裝scroll bar
+    $(".PopWindow_ActiveCWC_policy").mCustomScrollbar({
+        theme:"minimal-dark"
+    });
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 600;
+
+    LocatePop(PopWindowWidth);
+}
+
+function ActiveCWC02(){
+    InitPop();
+
+    var WindowContent = [
+        '<div class="PopWindow_ActiveCWC_progressbar"><div class="text">使用者條款</div><div class="circle_arrow">></div><div class="text active">設定發票資料</div><div class="circle_arrow">></div><div class="text">綁定信用卡</div></div>',
+        '<div class="PopWindow_ActiveCWC_invoice"><div class="row CLEARBOTH"><div class="custom_radio invoice_type active" invoice_type="Duplicate">二聯式電子發票</div><div class="custom_radio invoice_type" invoice_type="Triplicate">三聯式電子發票</div><div class="custom_radio invoice_type" invoice_type="Donate">捐贈發票</div></div><!--2聯--><div class="invoice_content" invoice_type="Duplicate"><div class="row" style="margin-top: 20px;"><div class="invoice_radio"><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_2"><span class="radio_text">寄送至會員E-mail</span></div><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_2"><span class="radio_text">手機載具</span><div class="CLEARBOTH"></div><div class="extend"><input type="text" name="" class="carrier"><div class="notice_text">含斜線英數共8碼，例：/RZREDHQ</div></div></div><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_2"><span class="radio_text">自然人憑證載具</span><div class="CLEARBOTH"></div><div class="extend"><input type="text" name="" class="carrier"><div class="notice_text">含英數共16碼，例：GP00000012345678</div></div></div></div></div></div><!--3聯--><div class="invoice_content" invoice_type="Triplicate" style="display: none;"><div class="recorded_data" formstatus="NewCustomer"><div class="row" style="margin-top: 20px;"><div class="title">發票抬頭</div><input type="text" name="" id="InvoiceInfo_CompanyName"></div><div class="row"><div class="title">發票統編</div><input type="text" name="" id="InvoiceInfo_BAN"></div></div></div><!--捐贈--><div class="invoice_content" invoice_type="Donate" style="display: none;"><div class="row" style="margin-top: 20px;"><div class="invoice_radio"><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_d"><span class="radio_text">伊甸社會福利基金會</span></div><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_d"><span class="radio_text">創世基金會</span></div><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_d"><span class="radio_text">陽光社會福利基金會</span></div><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_d"><span class="radio_text">其他</span><div class="CLEARBOTH"></div><div class="extend"><input type="text" name="" class="carrier"><a href="#">機構代碼查詢</a></div></div></div><div class="note" style="margin-left:22px;">依據法令規定，已捐贈發票無法索回，若需要退換貨，該發票將予以作廢。</div></div></div><div class="notice_btn_row"><button class="notice_cancelBTN" style="width:auto;">上一步</button><button class="notice_confirmBTN" style="width:auto;padding:0 8px;" onclick="ActiveCWC03();">下一步</button></div></div>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('啟用儲酒服務');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //綁定自製radio選項
+        $('.custom_radio').click(function(){
+            CustomRadioBTN(this);
+
+            //check self click
+            var IsSelfClick = $(this).hasClass();
+
+            if (IsSelfClick) {
+                //donothing
+            } else {
+                //init底下選項
+                $('.invoice_radio_oneoption .extend').slideUp();
+
+                //切換不同發票內容選項
+                var InvoiceType = $(this).attr('invoice_type');
+                $('#InvoiceInfoRow').css('display','none');
+                $('.invoice_content').css('display','none');
+                
+                switch (InvoiceType){
+                    case 'Duplicate':
+                        $('#InvoiceInfoRow').css('display','none');
+                        $('[invoice_type=Duplicate].invoice_content').css('display','block');
+                    break;
+
+                    case 'Triplicate':
+                        $('[invoice_type=Triplicate].invoice_content').css('display','block');
+                        $('#InvoiceInfoRow').css('display','block');
+                        //$('#BTN_InvoiceInfoEdit').css('display','none');
+                    break;
+
+                    case 'Donate':
+                        $('#InvoiceInfoRow').css('display','none');
+                        $('[invoice_type=Donate].invoice_content').css('display','block');
+                    break;
+                }
+            }
+        });
+
+
+        //發票分開寄出 捐贈 載具展開
+        $('.invoice_radio_oneoption input[type=radio]').change(function(){
+            $('.invoice_radio_oneoption .extend').slideUp();
+            $('.invoice_radio_oneoption input[type=radio]:checked ~ .extend').slideDown();
+
+        });
+
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 600;
+
+    LocatePop(PopWindowWidth);
+}
+
+function ActiveCWC03(){
+    InitPop();
+
+    var WindowContent = [
+        '<div class="PopWindow_ActiveCWC_progressbar"><div class="text">使用者條款</div><div class="circle_arrow">></div><div class="text">設定發票資料</div><div class="circle_arrow">></div><div class="text active">綁定信用卡</div></div>',
+        '<p style="margin-top:10px;">請注意，您即將離開本頁面至數位鎏綁定信用卡，綁定完成後會自動回到此頁面，完成綁定後即可開始使用儲酒服務。</p>',
+        '<div class="notice_btn_row"><button class="notice_cancelBTN" style="width:auto;">上一步</button><button class="notice_confirmBTN" style="width:auto;padding:0 8px;">去綁卡</button></div>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('啟用儲酒服務');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 600;
 
     LocatePop(PopWindowWidth);
 }

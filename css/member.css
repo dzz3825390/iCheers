@@ -85,7 +85,7 @@ input::-webkit-inner-spin-button {
     margin-bottom: 60px;
 }
 
-.member_form .large_title{
+.member_form .large_title,.step3_content .large_title{
     font-size: 24px;
     color: #555;
     text-align: left;
@@ -93,7 +93,7 @@ input::-webkit-inner-spin-button {
     margin-top: 32px;
 }
 
-.member_form .large_title:before{
+.member_form .large_title:before,.step3_content .large_title:before{
     content: '';
     display: inline-block;
     width: 6px;
@@ -158,7 +158,7 @@ input::-webkit-inner-spin-button {
 }
 
 
-.member_form .btn_login{ 
+.member_form .btn_login, .step3_content .btn_confirm{ 
     width: 175px;
     height: 45px;
     color: #fff;
@@ -2335,4 +2335,42 @@ input::-webkit-inner-spin-button {
     color: #c29c20;
     font-weight: bold;
     margin: 0 5px;
+}
+
+.popwindow_creditcard_row{
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.popwindow_creditcard_row label{
+    width: calc(130px / 3);
+    height: 29px;
+    border: 1px solid #cccccc;
+    background-image: url(../images/letter_creditcard.jpg);
+}
+
+.popwindow_creditcard_row label.V{
+    background-position-x: 0;
+}
+
+.popwindow_creditcard_row label.M{
+    background-position-x: calc((130px / 3)*2 - 2px);
+}
+
+.popwindow_creditcard_row label.J{
+    background-position-x: calc((130px / 3) - 2px);
+}
+
+.popwindow_creditcard_row .cardnumber{
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.popwindow_creditcard_row .carddate{
+    font-size: 16px;
+    color: #666;
+    margin-left: 10px;
 }

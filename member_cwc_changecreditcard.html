@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iCheers愛酒窩 ─ 會員專區</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/drop.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/Style.css" />
+    <link rel="stylesheet" type="text/css" href="css/member.css" />
+
+
+
+    <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.mCustomScrollbar.concat.min.js"/></script>
+    <script type="text/javascript" src="Scripts/popcontrol.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+            //cwc選項置中
+            var ContentWidth = $('.membercwc_list').width();
+            var CWCOptionsWidth = $('.cwc_option_row').width();
+            var CWCOptionsPositionX = (ContentWidth - CWCOptionsWidth)/2;
+            $('.cwc_option_row').css('left',CWCOptionsPositionX);
+
+            //cwc選項切換focus
+            $('.cwc_option_row .one_option').click(function(){
+                $('.cwc_option_row .one_option').removeClass('active');
+                $(this).addClass('active');
+            });
+
+			//footermenu置中
+		    var FooterMenuWidth = $('.FooterMenu').width();
+		    var FooterWidth = $('.FooterMenu').parent().width();
+		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+		    $('.FooterMenu').css('margin-left',FooterPositionX);
+
+            //明細展開收合
+            $('.detail_btn').click(function(){
+                $(this).toggleClass('extend');
+                $(this).parent().next().next().slideToggle('fast');
+            });
+
+            //V=visa M=mastercard J=jcb
+            var CardType = 'J';
+            Changecreditcard(CardType);
+            
+		})
+	</script>
+
+</head>
+
+
+<body class="member">
+<div class="HeadALL">
+    <div class="HeadMenu">
+        <a href="" class="LogOut">會員登出</a>
+            <!--<a href="" class="HeadMenuLogin">登入 / 加入會員</a>-->
+            <a href="" class="Reconfirmed">沒有收到確認信?</a>
+            <a href="" class="MyList">我的清單</a>
+            <a href="" class="TrackingList">追蹤酒款</a>
+            <a href="" class="MobileVer">手機版</a>
+            <span class="AccountNumber">普級會員<em>ich***</em>您好</span>
+    </div>
+    <div class="TagALL_Buy Buy2_margin">
+            <ul>
+                <li class="TagLogo"><a href="index.html"></a></li>
+                <li class="TagMember"></li>
+            </ul>
+        </div>  
+</div>
+    <!-- ================================= HeadALL 刊頭ALL =================================  -->
+
+<div class="content membercwc membercwc_list">
+    <div class="label_box">
+        <div class="one_label">會員資料</div>
+        <div class="one_label">訂單查詢</div>
+        <div class="one_label">買過的酒</div>
+        <div class="one_label">追蹤酒款</div>
+        <div class="one_label active">線上酒窖</div>
+        <div class="one_label">配送窖藏</div>
+    </div>
+    <div class="cwc_option_row CLEARBOTH">
+            <button class="one_option">
+                酒瓶模式
+            </button>
+            <button class="one_option">
+                清單模式
+            </button>
+            <button class="one_option">
+                租賃合約
+            </button>
+            <button class="one_option active">
+                收費明細
+            </button>
+            <button class="one_option">
+                異動紀錄
+            </button>
+            <button class="one_option">
+                匯出清單
+            </button>
+        </div>
+    <div class="content_LL">
+        <div class="order_condition_row">
+            <div class="title">日期</div>
+            <input type="date">
+            <div class="text">至</div>
+            <input type="date">
+        </div>
+        <div class="order_condition_row">
+            <button class="submitbtn">查詢</button>
+        </div>
+        <div class="order_condition_row" style="margin-top:32px;">
+            <button class="editbtn">修改發票資訊</button>
+        </div>
+        <div class="order_condition_row" style="margin-top:10px;">
+            <button class="editbtn">更換綁定信用卡</button>
+        </div>
+    </div><!--左邊欄 end-->
+    <!--右邊欄-->
+    <div class="Right_content">
+        <div class="rent_info">
+            您目前租用<span>X</span>箱，剩餘儲存空間<span>6000</span>ml，每日租金為<span>$250</span>元。
+        </div>
+        <div class="table_head CLEARBOTH">
+            <div class="month">月份</div>
+            <div class="price">金額</div>
+            <div class="invoice">電子發票</div>
+            <div class="detail">明細</div>
+        </div>
+        <div class="search_result_row table_row CLEARBOTH">
+            <div class="month">2022/12</div>
+            <div class="price">$250</div>
+            <div class="invoice"><a href="#">發票內容</a></div>
+            <div class="detail">
+                <div class="detail_btn"></div>
+            </div>
+            <div class="CLEARBOTH"></div>
+            <div class="detail_content" style="display: block;padding: 0 14%;">
+                <div class="one_unit CLEARBOTH">
+                    <div class="unit">2單位&nbsp;&nbsp;25日</div>
+                    <div class="price">$150</div>
+                </div>
+                <div class="one_unit CLEARBOTH">
+                    <div class="unit">1單位&nbsp;&nbsp;3日</div>
+                    <div class="price">$5</div>
+                </div>
+            </div>
+        </div>
+        <div class="search_result_row table_row CLEARBOTH">
+            <div class="month">2022/11</div>
+            <div class="price">$55</div>
+            <div class="invoice"><a href="#">發票內容</a></div>
+            <div class="detail">
+                <div class="detail_btn extend"></div>
+            </div>
+            <div class="CLEARBOTH"></div>
+            <div class="detail_content" style="display: none;padding: 0 14%;">
+                <div class="one_unit CLEARBOTH">
+                    <div class="unit">10單位&nbsp;&nbsp;3日</div>
+                    <div class="price">$55</div>
+                </div>
+            </div>
+        </div>
+        <div class="search_result_row table_row CLEARBOTH">
+            <div class="month">2022/10</div>
+            <div class="price">$500</div>
+            <div class="invoice"><a href="#">發票內容</a></div>
+            <div class="detail">
+                <div class="detail_btn extend"></div>
+            </div>
+            <div class="CLEARBOTH"></div>
+            <div class="detail_content" style="display: none;padding: 0 14%;">
+                <div class="one_unit CLEARBOTH">
+                    <div class="unit">1單位&nbsp;&nbsp;3日</div>
+                    <div class="price">$10</div>
+                </div>
+                <div class="one_unit CLEARBOTH">
+                    <div class="unit">1單位&nbsp;&nbsp;13日</div>
+                    <div class="price">$70</div>
+                </div>
+                <div class="one_unit CLEARBOTH">
+                    <div class="unit">2單位&nbsp;&nbsp;30日</div>
+                    <div class="price">$150</div>
+                </div>
+                <div class="one_unit CLEARBOTH">
+                    <div class="unit">10單位&nbsp;&nbsp;20日</div>
+                    <div class="price">$450</div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    
+    <!--右邊欄 end-->
+    <div class="CLEARBOTH"></div>
+</div>
+
+
+
+    <!-- FooterALL  頁腳 -->
+    <div class="member_FooterALL">
+        <div class="Footer_position">
+            <ul class="FooterMenu">
+                <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+                <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+                <li><a href="" target="_parent">條款及細則</a>｜</li>
+                <li><a href="privacy_policy.html" target="_parent">隱私條款</a></li>
+            </ul>
+            <div class="FooterICON">
+                <a href="qualityGarentee.html" target="_blank">
+                    <button class="Quality"></button>
+                </a>
+                <button class="Join"></button>
+                <button class="Novice"></button>
+            </div>
+        </div>
+    </div>
+    <!-- FooterALL  頁腳 -->
+
+
+    <div class="Warning">
+        <p></p>
+    </div>
+    <!-- Warning 警語 -->
+
+
+<!-- 黑底 start-->
+<div class="bg_black" id="bg_black">
+    <div class="notice_BG">
+        <div class="notice_title_layout">
+            <div class="notice_title"></div>
+            <div class="notice_title_closeBTN" onclick="ClosePop();"></div>
+            <div class="CLEAR"></div>
+        </div>
+        <div class="notice_body CLEARBOTH">
+            
+        </div>
+    </div>
+
+</div>
+<!-- 黑底 end-->
+
+
+</body>
+</html>

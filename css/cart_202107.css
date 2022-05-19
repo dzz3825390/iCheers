@@ -3342,13 +3342,14 @@ input{
 
 }
 
-.step3_content .row .title{
+/*20220517 Roger新增初次啟用儲酒服務綁卡視窗發票設定樣式，寫在一起方便修改*/
+.step3_content .row .title,.PopWindow_ActiveCWC_invoice .row .title{
 	font-size: 16px;
 	line-height: 21px;
 	color: #666;
 }
 
-.step3_content .row .text{
+.step3_content .row .text,.PopWindow_ActiveCWC_invoice .row .text{
 	color: #666;
 	font-size: 16px;
 	line-height: 21px;
@@ -3356,7 +3357,7 @@ input{
 }
 
 
-.step3_content .row .text a{
+.step3_content .row .text a,.PopWindow_ActiveCWC_invoice .row .text a{
 	color: #296993;
     text-decoration: underline;
 }
@@ -3372,7 +3373,7 @@ input{
     }
 }
 
-.step3_content .row input[type=text]{
+.step3_content .row input[type=text],.PopWindow_ActiveCWC_invoice .row input[type=text]{
 	width: 100%;
 	height: 45px;
 	background-color: #fff;
@@ -3507,7 +3508,7 @@ input{
     }
 }
 
-.step3_content .row .note{
+.step3_content .row .note,.PopWindow_ActiveCWC_invoice .row .note{
 	margin-top: 8px;
 	font-size: 16px;
 	color: #c20012;
@@ -3540,7 +3541,8 @@ input{
     }
 }
 
-.step3_content .row .invoice_type{
+/*20220517 Roger新增初次啟用視窗發票設定樣式，放一起之後修改方便*/
+.step3_content .row .invoice_type,.PopWindow_ActiveCWC_invoice .row .invoice_type{
 	height: 35px;
 	padding: 0 10px;
 	box-sizing: border-box;
@@ -3556,11 +3558,11 @@ input{
 	cursor: pointer;
 }
 
-.step3_content .row .invoice_type:first-child{
+.step3_content .row .invoice_type:first-child,.PopWindow_ActiveCWC_invoice .row .invoice_type:first-child{
 	margin-left:0;
 }
 
-.step3_content .row .invoice_type.active{
+.step3_content .row .invoice_type.active,.PopWindow_ActiveCWC_invoice .row .invoice_type.active{
 	color: #fff;
 	background-color: #7c627d;
 }
@@ -3575,13 +3577,13 @@ input{
 
 }
 
-.step3_content .row .invoice_radio{
+.step3_content .row .invoice_radio,.PopWindow_ActiveCWC_invoice .row .invoice_radio{
 	font-size: 16px;
     line-height: 40px;
     color: #000;
 }
 
-.step3_content .row .invoice_radio .invoice_radio_oneoption .extend{
+.step3_content .row .invoice_radio .invoice_radio_oneoption .extend,.PopWindow_ActiveCWC_invoice .row .invoice_radio .invoice_radio_oneoption .extend{
 	display: none;
 	padding: 0 22px;
 	margin: 10px 0;
@@ -3589,24 +3591,24 @@ input{
 }
 
 
-.step3_content .row .invoice_radio .invoice_radio_oneoption input[type=radio]{
+.step3_content .row .invoice_radio .invoice_radio_oneoption input[type=radio],.PopWindow_ActiveCWC_invoice .row .invoice_radio .invoice_radio_oneoption input[type=radio]{
 	float: left;
 	margin-top: 14px;
 }
 
-.step3_content .row .invoice_radio .invoice_radio_oneoption span.radio_text{
+.step3_content .row .invoice_radio .invoice_radio_oneoption span.radio_text,.PopWindow_ActiveCWC_invoice .row .invoice_radio .invoice_radio_oneoption span.radio_text{
 	float: left;
 	margin-left: 8px;
 	cursor: pointer;
 }
 
-.step3_content .row .invoice_radio .invoice_radio_oneoption input[type=text].carrier{
+.step3_content .row .invoice_radio .invoice_radio_oneoption input[type=text].carrier,.PopWindow_ActiveCWC_invoice .row .invoice_radio .invoice_radio_oneoption input[type=text].carrier{
 	float: left;
 	width: 150px;
 	margin-top: -5px;
 }
 
-.step3_content .row .invoice_radio .invoice_radio_oneoption .notice_text{
+.step3_content .row .invoice_radio .invoice_radio_oneoption .notice_text,.PopWindow_ActiveCWC_invoice .row .invoice_radio .invoice_radio_oneoption .notice_text{
 	float: left;
 	font-size: 14px;
 	color: #c20012;
@@ -3614,7 +3616,7 @@ input{
 	margin-top: -5px;
 }
 
-.step3_content .row .invoice_radio .invoice_radio_oneoption a{
+.step3_content .row .invoice_radio .invoice_radio_oneoption a,.PopWindow_ActiveCWC_invoice .row .invoice_radio .invoice_radio_oneoption a{
 	float: left;
 	font-size: 14px;
 	color: #296993;
@@ -3873,3 +3875,41 @@ input{
 	text-align: center;
 	background-color: #f3f4f5;
 }
+
+/*pop用*/
+
+.PopWindow_ActiveCWC_progressbar{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.PopWindow_ActiveCWC_progressbar .text{
+	font-size: 18px;
+	color: #999;
+}
+
+.PopWindow_ActiveCWC_progressbar .text.active{
+	color: #000;
+	font-weight: bold;
+}
+
+.PopWindow_ActiveCWC_progressbar .circle_arrow{
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: #cccccc;
+	font-size: 14px;
+	color: #fff;
+	line-height: 16px;
+	text-align: center;
+	margin: 0 10px;
+}
+
+.PopWindow_ActiveCWC_policy{
+	width: 100%;
+	height: 50vh;
+	margin-top: 10px;
+}
+
+
