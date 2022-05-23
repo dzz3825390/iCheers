@@ -56,6 +56,20 @@ $(document).ready(function(){
 	    window.clearTimeout(Scrolltimer)
 
 	    Scrolltimer = window.setTimeout(function() {
+	    	//重取一次瀏覽器寬高
+	    	//瀏覽器內容寬度
+		    var intBrowserW = 0;
+		    //瀏覽器內容高度
+		    var intBrowserH = 0;
+		    //取得瀏覽器內容寬度/高度
+		    if (document.documentElement) {
+		        intBrowserW = document.documentElement.clientWidth;
+		        intBrowserH = document.documentElement.clientHeight;
+		    } else {
+		        intBrowserW = document.body.clientWidth;
+		        intBrowserH = document.body.clientHeight;
+		    }
+
 	    	if (intBrowserW > 1199){
 	    		
 	    		var ScrollTopPisition = $(window).scrollTop();
@@ -332,6 +346,24 @@ $(window).resize(function(){
 		$('.sum_position, .confirm18').css('position','absolute');
 	} else if (intBrowserW > 1199 && intBrowserH > 799){
 		$('.sum_position, .confirm18').css('position','fixed');
+	} else {
+		$('.sum_position').css('position','unset');
+		$('.confirm18').css('position','relative');
+		$('.sum_position, .confirm18').css('top','unset');
+	}
+
+
+	//加價購活動名稱
+	if (intBrowserW > 1199){
+		$('.addon_event_name').each(function(){
+			var EventNameWidth = $(this).outerWidth(true);
+			var EventNameMarginRight = 'calc(100% - '+EventNameWidth+'px)'
+			$(this).css('margin-right',EventNameMarginRight);
+		});
+	} else {
+		$('.addon_event_name').each(function(){
+			$(this).css('margin-right','unset');
+		});
 	}
 });
 
