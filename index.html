@@ -42,8 +42,7 @@
 
 
 <script type="text/javascript" src="Scripts/index.js"></script> <!-- 首頁輪撥 -->
-<script type="text/javascript" src="Scripts/Head.js"/></script> <!-- 有沒有收到確認信彈出 -->
-
+<script type="text/javascript" src="Scripts/popcontrol.js"></script>
 
 <script type="text/javascript" src="Scripts/language_en.js"/></script><!--英文版用-->
 
@@ -85,21 +84,9 @@ $(document).ready(function(){
 
     //點選任意icon圖示出現說明視窗
     $(".LegendInfo_layout > div").click(function(){
-        $(".bg_black").css("display","block");
-        $(".bg_black").animate({
-            opacity:1
-        },500);
+        LegendInfo();
     });
 
-    //點選關閉按鈕關閉視窗
-    $(".LegendInfo_iframe_closeBTN").click(function(){
-        $(".bg_black").animate({
-            opacity:0
-        },500,function(){
-            $(".bg_black").css("display","none");
-        });
-
-    });
 
     //20180327 Roger add
     //footermenu置中
@@ -108,7 +95,7 @@ $(document).ready(function(){
     var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
 
     $('.FooterMenu').css('margin-left',FooterPositionX);
-    
+
 });
 
 </script>
@@ -124,7 +111,7 @@ $(document).ready(function(){
     <!--20180327 Roger 新增手機板-->
     <div class="HeadMenu">
     	<a href="" class="HeadMenuLogin">登入 / 加入會員</a>
-        <a href="" class="Reconfirmed">沒有收到確認信?</a>
+        <a class="Reconfirmed" onclick="Reconfirmed();">沒有收到確認信?</a>
         
         <a href="" class="MyList">我的清單</a>
         <a href="" class="MobileVer">手機版</a>
@@ -2252,21 +2239,6 @@ Copyright © 2012 iCheers.tw All Rrights Reserved </div>
 
 <!-- Warning 警語 -->
 
-
-
-
-<!-- 發送確認信視窗 start -->
-     <div id="notice">
-    	 <div class="notice_close"><a>關閉</a></div>
-	     <div id="notice_body">
-    	 	<p>依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，客服人員將會盡快與您e-mail聯繫！</p>
-       		<input name="Email" type="text" />
-            <em>若未收到來信，請至垃圾信箱確認，或直接連繫客服人員，謝謝！</em>
-	     	<div class="btn"><a  class="btn_submit">確定</a></div>
-         </div>
-     </div>
-<!-- 發送確認信視窗 end -->
-
 <!--20161223 Roger 移除英文版確認視窗-->
 <!-- 切換英文版本確認視窗 start-->
 <!-- <div id="notice_en" class="notice_en">
@@ -2293,85 +2265,16 @@ Copyright © 2012 iCheers.tw All Rrights Reserved </div>
 <!-- 黑底 start-->
 <div class="bg_black" id="bg_black">
 
-    <!--20161125 Roger 新增icon說明視窗-->
-    <!--icon說明視窗-->
-    <div class="LegendInfo_iframe_layout">
-        <div class="LegendInfo_iframe_title_layout">
-            <!--20161202 Roger 修改文字-->
-            <div class="LegendInfo_iframe_title">到貨時間說明</div>
-            <!--20161202 Roger 修改文字 end-->
-            <div class="LegendInfo_iframe_closeBTN"></div>
+    <div class="notice_BG">
+        <div class="notice_title_layout">
+            <div class="notice_title"></div>
+            <div class="notice_title_closeBTN" onclick="ClosePop();"></div>
             <div class="CLEAR"></div>
-            <div class="LegendInfo_iframe_body">
-                <div class="LegendInfo_iframe_body_title_layout">
-                    <div class="LegendInfo_iframe_body_title_icon">
-                        <img src="images/icon/BuyICONH22.png" />    
-                    </div>
-                    <div class="LegendInfo_iframe_body_title">一般配送</div>
-                    <div class="LegendInfo_iframe_body_title_line"></div>
-                    <div class="CLEAR"></div>
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    完成訂單後3個工作天可收到商品。
-                </div>
-                <!--20161202 Roger 修改結構-->
-                <div class="LegendInfo_iframe_body_Noticetext">
-                    <span>※需知：</span>
-                    <span>若選擇匯款／線下刷卡，則會在收到款項之後才出貨，通常出貨的隔天就會收到商品。</span>
-                    <!--20161208 Roger 新增clear div-->
-                    <div class="CLEAR"></div>
-                    <!--20161208 Roger 新增clear div end-->
-                </div>
-                <!--20161202 Roger 修改結構 end-->
-                <div class="LegendInfo_iframe_body_title_layout" style="margin-top:15px;">
-                    <div class="LegendInfo_iframe_body_title_icon">
-                        <img src="images/icon/Fast_Icon22H.png" />    
-                    </div>
-                    <div class="LegendInfo_iframe_body_title">快速到貨</div>
-                    <div class="LegendInfo_iframe_body_title_line"></div>
-                    <div class="CLEAR"></div>
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    於每日截單時間<span>HH:MM</span>之前完成訂單，下一個工作天即可收到商品！
-                </div>
-                <div class="LegendInfo_iframe_body_Noticetext">
-                    ※如遇國定假日則會順延一天。
-                </div>
-                <div class="LegendInfo_iframe_body_text" style="font-weight:bold;color:#333333;">
-                    舉例說明：
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    狀況A：星期五(上班日)<span>HH:MM</span>前完成訂單，星期六即可收到商品！
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    狀況B：星期六(放假日)<span>HH:MM</span>前完成訂單，要下周二(上班日)才會收到商品喔！
-                </div>
-                <div class="LegendInfo_iframe_body_title_layout" style="margin-top:15px;">
-                    <div class="LegendInfo_iframe_body_title_icon">
-                        <img src="images/icon/PreOrder_ICONH22.png" />    
-                    </div>
-                    <div class="LegendInfo_iframe_body_title">預訂品項</div>
-                    <div class="LegendInfo_iframe_body_title_line"></div>
-                    <div class="CLEAR"></div>
-                </div>
-                <div class="LegendInfo_iframe_body_text">
-                    完成訂單後（限匯款／線下刷卡），依預計到貨月份安排出貨，出貨前會另行Email通知。
-                </div>
-                <!--20161202 Roger 修改結構-->
-                <div class="LegendInfo_iframe_body_Noticetext">
-                    <span>※需知：</span>
-                    <span>預訂商品通常數量有限，需完成付款才能為您保留數量；付款完成後會郵寄收款證明供留存，恕發票僅能於出貨的時候才開立。
-                    </span>
-                    <!--20161208 Roger 新增clear div-->
-                    <div class="CLEAR"></div>
-                    <!--20161208 Roger 新增clear div end-->
-                </div>
-                <!--20161202 Roger 修改結構 end-->
-            </div>
+        </div>
+        <div class="notice_body">
+            
         </div>
     </div>
-    <!--icon說明視窗 end-->
-    <!--20161125 Roger 新增icon說明視窗 end-->
 </div>
 <!-- 黑底 end-->
 

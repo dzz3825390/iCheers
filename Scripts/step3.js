@@ -155,29 +155,29 @@ function DeliveryInfoEdit(){
         $('.recorded_data').text('');
 
         //收件人姓名
-        $('.recorded_data').append('<div class="row"><div class="title">您的大名</div><input type="text" name="" value="'+DeliveryInfo[0].Name+'" id="DeliveryInfo_Name"></div>');        
+        $('.recorded_data').append('<div class="row"><div class="title">收件人的大名</div><input type="text" name="" value="'+DeliveryInfo[0].Name+'" id="DeliveryInfo_Name"></div>');        
 
         //收件人性別
         if (DeliveryInfo[0].Sex == 'Male'){
-            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" checked="checked" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span></div></div>');
+            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼收件人</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" checked="checked" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span></div></div>');
         } else if (DeliveryInfo[0].Sex == 'Female') {
-            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>小姐</span></div></div>');        
+            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼收件人</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>小姐</span></div></div>');        
         } else {
-            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span></div></div>');                    
+            $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼收件人</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span></div></div>');                    
         }
 
         //收件人電話
-        $('.recorded_data').append('<div class="row"><div class="title">聯絡電話</div><input type="text" name="" value="'+DeliveryInfo[0].Phone+'" id="PurchaseInfo_Phone"></div>');
+        $('.recorded_data').append('<div class="row"><div class="title">收件人電話</div><input type="text" name="" value="'+DeliveryInfo[0].Phone+'" id="PurchaseInfo_Phone"></div>');
 
-        //聯絡人地址
+        //收件人地址
         if (DeliveryInfo_FormStatus == 'NewCustomers') {     
-            $('.recorded_data').append('<div class="row"><div class="title">聯絡地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value="'+DeliveryInfo[0].Address_Other+'"><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name=""><span>管理員可代收</span></div></div>');
+            $('.recorded_data').append('<div class="row"><div class="title">收件人地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value="'+DeliveryInfo[0].Address_Other+'"><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name=""><span>管理員可代收</span></div></div>');
         } else {
             //管理員可代收
             if (DeliveryInfo[0].BuildingGuardCollect == true) {
-                $('.recorded_data').append('<div class="row"><div class="title">聯絡地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value="'+DeliveryInfo[0].Address_Other+'"><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name="" checked="checked"><span>管理員可代收</span></div></div>');
+                $('.recorded_data').append('<div class="row"><div class="title">收件人地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value="'+DeliveryInfo[0].Address_Other+'"><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name="" checked="checked"><span>管理員可代收</span></div></div>');
             } else {
-                $('.recorded_data').append('<div class="row"><div class="title">聯絡地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value="'+DeliveryInfo[0].Address_Other+'"><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name=""><span>管理員可代收</span></div></div>');
+                $('.recorded_data').append('<div class="row"><div class="title">收件人地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value="'+DeliveryInfo[0].Address_Other+'"><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name=""><span>管理員可代收</span></div></div>');
             }
         }
 
@@ -279,10 +279,10 @@ function AddNewDeliveryInfo() {
     $('.recorded_data').append('<div class="row"><div class="title">怎麼稱呼收件人</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female"><span>小姐</span></div></div>');
 
     //收件人電話
-    $('.recorded_data').append('<div class="row"><div class="title">聯絡電話</div><input type="text" name="" value="" id="PurchaseInfo_Phone"></div>');
+    $('.recorded_data').append('<div class="row"><div class="title">收件人電話</div><input type="text" name="" value="" id="PurchaseInfo_Phone"></div>');
 
     //收件人地址
-    $('.recorded_data').append('<div class="row"><div class="title">聯絡地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value=""><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name=""><span>管理員可代收</span></div></div>');
+    $('.recorded_data').append('<div class="row"><div class="title">收件人地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value=""><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name=""><span>管理員可代收</span></div></div>');
 
     //配送時間
     $('.recorded_data').append('<div class="row"><div class="title">希望配送時段</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_DeliveryTime"><input type="radio" name="time"><span>上午(08~13時)</span><input type="radio" name="time"><span>下午(14~18時)</span><input type="radio" name="time"><span>皆可</span></div></div>');

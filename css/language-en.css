@@ -1,19 +1,5 @@
 @charset "utf-8";
 /*共用*/
-	/*黑底*/
-	/*20161125 Roger 修改z-index*/
-	.bg_black{
-		background: rgba(0,0,0,0.8);
-		z-index: 9999999;
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		top:0;
-		left:0;
-		opacity: 0;
-		display:none;
-	}
-	/*20161125 Roger 修改z-index end*/
 	
 	/*對話框*/
 	.notice_en{

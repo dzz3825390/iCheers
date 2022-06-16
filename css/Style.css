@@ -1713,17 +1713,17 @@ a.WineList_WineName4 {
 }
 
 .member .Right_content .list .one_title.wine_year{
-    width: 10%;
+    width: 9%;
     float: left;
 }
 
 .member .Right_content .list .one_title.wine_rank{
-    width: 10%;
+    width: 12%;
     float: left;
 }
 
 .member .Right_content .list .one_title.wine_capacity{
-    width: 10%;
+    width: 9%;
     float: left;
 }
 
@@ -1752,33 +1752,37 @@ a.WineList_WineName4 {
     float: left;
 }
 
-/*追蹤酒款表格寬度*/
+/*追蹤酒款表頭寬度*/
 
 .member .membertrackinglist .Right_content .list .one_title.wine_year{
-    width: 7%;
+    width: 10%;
 }
 
 .member .membertrackinglist .Right_content .list .one_title.wine_capacity{
     width: 6%;
 }
 
+.member .membertrackinglist .Right_content .list .one_title.wine_rank{
+    width: 12%;
+}
+
 .member .membertrackinglist .Right_content .list .one_title.wine_name{
-    width: 34%;
+    width: 41%;
 }
 
 .member .membertrackinglist .Right_content .list .one_title.wine_price{
-    width: 14%;
+    width: 16%;
 }
 
-/*追蹤酒款表格寬度 end*/
+/*追蹤酒款表頭寬度 end*/
 
-/*CWC酒款表格寬度*/
+/*CWC酒款表頭寬度*/
 
 .member .membercwc .Right_content .list .one_title.wine_name{
     width: 37%;
 }
 
-/*CWC酒款表格寬度 end*/
+/*CWC酒款表頭寬度 end*/
 
 .member .Right_content .wine_list_box{
     width: 100%;
@@ -1878,17 +1882,17 @@ a.WineList_WineName4 {
 }
 
 .member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_year{
-    width: calc(964px*0.1);
+    width: calc(964px*0.09);
     float: left;
 }
 
 .member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_rank{
-    width: calc(964px*0.1);
+    width: calc(964px*0.12);
     float: left;
 }
 
 .member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_capacity{
-    width: calc(964px*0.1);
+    width: calc(964px*0.09);
     float: left;
 }
 
@@ -1917,23 +1921,27 @@ a.WineList_WineName4 {
 /*追蹤酒款表格寬度*/
 
 .member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_name{
-    width: 34%;
+    width: 41%;
 }
 
 .member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box{
-    width: 66%;
+    width: 59%;
 }
 
 .member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_price{
-    width: calc(964px*0.14);
+    width: calc(964px*0.16);
 }
 
 .member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_capacity{
     width: calc(964px*0.06);
 }
 
+.member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_rank{
+    width: calc(964px*0.12);
+}
+
 .member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_year{
-    width: calc(964px*0.07);
+    width: calc(964px*0.1);
 }
 
 /*追蹤酒款表格寬度 end*/
@@ -1957,7 +1965,7 @@ a.WineList_WineName4 {
 
 .member .Right_content .wine_list_box .one_bottle .wine_year,.member .Right_content .wine_list_box .one_bottle .wine_rank, .member .Right_content .wine_list_box .one_bottle .wine_capacity, .member .Right_content .wine_list_box .one_bottle .wine_ordernumber, .member .Right_content .wine_list_box .one_bottle .wine_expiredate{
     text-align: center;
-    min-height: 27px;
+    min-height: 54px;
     position: relative;
 }
 
@@ -2033,6 +2041,23 @@ a.WineList_WineName4 {
     height: 15px;
     display: inline-block;
     cursor: pointer;
+}
+
+.member .Right_content .wine_list_box .one_bottle .wine_price .normal{
+    color: #CF3448;
+}
+
+.member .Right_content .wine_list_box .one_bottle .wine_price .fast{
+    color: #ef9c00;
+}
+
+.member .Right_content .wine_list_box .one_bottle .wine_price .preorder{
+    color: #0071BC;
+}
+
+.member .Right_content .wine_list_box .one_bottle .wine_price .soldout{
+    color: #999;
+    font-weight: normal;
 }
 
 .member .Right_content .wine_list_box .one_bottle .wine_price .icon_addcart.normal{
@@ -3085,6 +3110,34 @@ img.HOT8_NO {
     background-position: center;
     background-size: cover;
     float: left;
+    position: relative;
+}
+
+.Sign_WineImg .tracking{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url(../images/icon/icon_tracking_large.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: absolute;
+    right: calc(50% - 45px);
+    bottom: 5px;
+    z-index: 1;
+}
+
+.Sign_WineImg .tracking:hover{
+    cursor: pointer;
+    background-position: center bottom;
+}
+
+.Sign_WineImg .tracking.active{
+    background-position: center bottom;
+    animation-name: TrackingBtn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 
 .Sign_WineInfo_layout{
@@ -3735,7 +3788,7 @@ img.HOT8_NO {
     position: relative;
 }
 
-.Result .Wine_Name .tracking{
+.Result .Wine_Name .WinePage .tracking{
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -3746,7 +3799,7 @@ img.HOT8_NO {
     background-position: center top;
     position: absolute;
     left: 0;
-    bottom: 43px;
+    bottom: 20px;
     z-index: 1;
 }
 
@@ -3757,6 +3810,9 @@ img.HOT8_NO {
 
 .Result .Wine_Name .tracking.active{
     background-position: center bottom;
+    animation-name: TrackingBtn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
 }
 
 .Result .Wine_Name .WhiskyBigImg {
@@ -5231,7 +5287,7 @@ h5.Focus {
 
     .wine_detail_wineinfo_layout h1 {
         width: 565px;
-        height: 23px;
+        min-height: 23px;
         line-height: 23px;
         font-size: 18px;
         font-family: Arial, Helvetica, sans-serif;
@@ -5646,6 +5702,9 @@ ul.Detail {
 
             .IntroImg .Tracking.active{
                 background-position: center bottom;
+                animation-name: TrackingBtn;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1;
             }    
 
 
@@ -14002,20 +14061,6 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
 }
 /*20161202 Roger 修改透明度 end*/
 
-/*20161208 Roger 修改高度*/
-.LegendInfo_iframe_layout{
-    width: 700px;
-    height: 510px;
-    background-color: #fff;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    border: 1px solid #666666;
-    box-shadow: 0px 0px 3px rgba(0,0,0,.5);
-    position: fixed;
-}
-/*20161208 Roger 修改高度 end*/
-
 .LegendInfo_iframe_title_layout{
     width: 100%;
     height: 40px;
@@ -14285,6 +14330,34 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
     outline: none;
 }
 
+/*給Popwindow的部分*/
+.bg_black{
+    justify-content: center;
+    align-items: center;
+}
+
+.notice_BG{
+    max-width: 100vw;
+    max-height: 100vh;
+    height: 100vh;
+}
+
+.notice_body p{
+    font-size: 16px;
+    color: #333333;
+    line-height: 28px;
+}
+
+.notice_body_input_layout input[type=text]{
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.notice_body p.hint{
+    font-size: 14px;
+}
+
 /*20191112 Roger fix*/
 .notice_title_layout{
     width: 100%;
@@ -14326,11 +14399,6 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
     box-sizing: border-box;
 }
 
-    .notice_body p{
-        font-size: 14px;
-        color: #333333;
-        line-height: 28px;
-    }
 
      .notice_body p.hint{
         color :#c20012;
@@ -14394,7 +14462,7 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
 
     .notice_body_input_layout input[type=text]{
         display: block;
-        height: 30px;
+        height: 40px;
         font-size: 15px;
         background-color: #fff;
         border:1px solid #cccccc;
@@ -14464,7 +14532,7 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
 }
 
 .notice_confirmBTN{
-    width: 100px;
+    min-width: 100px;
     height: 41px;
     background-image: url(../images/icon/btn_confirm.png);
     margin: 0 auto;
@@ -14477,7 +14545,7 @@ ul.Bottlee_Wine li .Locate2_price h4 span {
 }
 
 button.notice_confirmBTN{
-    width: 100px;
+    min-width: 100px;
     height: 40px;
     display: block;
     font-size: 18px;

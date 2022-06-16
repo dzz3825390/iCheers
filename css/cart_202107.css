@@ -777,6 +777,7 @@ input{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
+    cursor: pointer;
 }
 
 .cart_list_OneBottle .bottle_img {
@@ -829,6 +830,14 @@ input{
 }
 
 .cart_list_OneBottle .bottle_info .status span:nth-child(3):after {
+	display: none;
+}
+
+.cart_list_OneBottle .bottle_info .status.beer span:nth-child(2):after {
+	display: none;
+}
+
+.cart_list_OneBottle .bottle_info .status.sake span:nth-child(2):after {
 	display: none;
 }
 
@@ -1116,6 +1125,7 @@ input{
 	justify-content: center;
 	margin-top: -10px;
 	flex-wrap: wrap;
+	z-index: 1;
 }
 
 .cart_list_OneGroup .option_check {
@@ -2641,10 +2651,25 @@ input{
 	display: none;
 }
 
+.cart_list_addon .addon_wine .bottle_info .status.beer span:nth-child(1):after {
+	display: none;
+}
+
+.cart_list_addon .addon_wine .bottle_info .status.sake span:nth-child(1):after {
+	display: none;
+}
+
 .cart_list_addon .addon_wine .bottle_info .status .icon_nobonus {
     width: 18px;
     height: 18px;
     margin-left: 8px;
+}
+
+.cart_list_addon .addon_wine .bottle_info .expired_date {
+    font-size: 1.125rem;
+    line-height: 1.3rem;
+    margin-top: 8px;
+    color: #666;
 }
 
 .cart_list_addon .addon_addcart_row {
@@ -3077,32 +3102,6 @@ input{
 	.Warning{
 		display: block;
 	}
-}
-
-/*給Popwindow的部分*/
-.bg_black{
-    justify-content: center;
-    align-items: center;
-}
-
-.notice_BG{
-    max-width: 100vw;
-    max-height: 100vh;
-    height: 100vh;
-}
-
-.notice_body p{
-    font-size: 16px;
-}
-
-.notice_body_input_layout input[type=text]{
-    height: 40px;
-    line-height: 40px;
-    font-size: 16px;
-}
-
-.notice_body p.hint{
-    font-size: 14px;
 }
 
 
@@ -3845,7 +3844,8 @@ input{
 	line-height: 18px;
 	font-size: 14px;
 	color: #999;
-	padding:0 10px;
+	padding:10px;
+	padding-top: 5px;
 }
 
 .step3_content .order_detail td .deliveryDate{
@@ -3912,4 +3912,38 @@ input{
 	margin-top: 10px;
 }
 
+.PopWindow_DeliveryFeeInfo_row{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	color: #666;
+	margin-top: 21px;
+}
+
+.PopWindow_DeliveryFeeInfo_row:first-child{
+	margin-top: 0;
+}
+
+.PopWindow_DeliveryFeeInfo_row .normal{
+	color: #CF3448;
+	font-weight: bold;
+	margin-right: 3px;
+}
+
+.PopWindow_DeliveryFeeInfo_row .fast{
+	color: #ef9c00;
+	font-weight: bold;
+	margin-right: 3px;
+}
+
+.PopWindow_DeliveryFeeInfo_row .preorder{
+	color: #0071BC;
+	font-weight: bold;
+	margin-right: 3px;
+}
+
+.PopWindow_DeliveryFeeInfo_row img{
+	margin-right: 8px;
+}
 

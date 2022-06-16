@@ -69,14 +69,6 @@
             }
         });
 
-        //儲存此次變更check一起點
-        $('#BTN_DeliveryInfoSave').click(function(){
-            if($(this).find('input[type=checkbox]').prop('checked')){
-                $(this).find('input[type=checkbox]').prop('checked',false);
-            }else {
-                $(this).find('input[type=checkbox]').prop('checked',true);
-            }
-        });
     });
 
 </script>
@@ -164,10 +156,10 @@
             <option id="Option_AddNew">另行配送</option>
         </select>
         <button class="btn_edit" id="BTN_DeliveryInfoEdit" style="display:none;">修改</button>
-        <button class="btn_save" id="BTN_DeliveryInfoSave">
+        <label class="btn_save" id="BTN_DeliveryInfoSave">
             <input type="checkbox" name="">
             <span>儲存地址</span>
-        </button>
+        </label>
     </div>
     <div class="recorded_data" formstatus="PurchaseInfo">
         <div class="row">

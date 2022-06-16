@@ -224,6 +224,59 @@ function PopWindow_Submited_VIPPass_NotLogin(){
     LocatePop(PopWindowWidth);
 }
 
+//沒有收到確認信
+function Reconfirmed(){
+
+    InitPop();
+    var WindowContent = [
+        '<p>依法令規定，酒類商品無法提供線上交易服務，<br/>請留下您的Email，客服夥伴將會盡快與您聯繫！</p>',
+        '<div class="notice_body_input_layout"><input name="Email" type="text" style="width: 100%" placeholder="請輸入Email"><input type="checkbox" style="margin-top:10px;"><span style="font-size: 14px;font-weight:normal;margin-top: 0px;">記住我</span></div>',
+        '<button class="SubmitBTN">送出</button>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('沒有收到確認信?');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 500;
+
+    LocatePop(PopWindowWidth);
+}
+
+//icon圖示說明
+function LegendInfo(){
+
+    InitPop();
+    var WindowContent = [
+        '<div class="LegendInfo_iframe_body_title_layout"><div class="LegendInfo_iframe_body_title_icon"><img src="images/icon/BuyICONH22.png" /></div><div class="LegendInfo_iframe_body_title">一般配送</div><div class="LegendInfo_iframe_body_title_line"></div><div class="CLEAR"></div></div>',
+        '<div class="LegendInfo_iframe_body_text">完成訂單後3個工作天可收到商品。</div>',
+        '<div class="LegendInfo_iframe_body_Noticetext"><span>※需知：</span><span>若選擇匯款／線下刷卡，則會在收到款項之後才出貨，通常出貨的隔天就會收到商品。</span><div class="CLEAR"></div></div>',
+        '<div class="LegendInfo_iframe_body_title_layout" style="margin-top:15px;"><div class="LegendInfo_iframe_body_title_icon"><img src="images/icon/Fast_Icon22H.png" /></div><div class="LegendInfo_iframe_body_title">快速到貨</div><div class="LegendInfo_iframe_body_title_line"></div><div class="CLEAR"></div></div>',
+        '<div class="LegendInfo_iframe_body_text">於每日截單時間<span>HH:MM</span>之前完成訂單，下一個工作天即可收到商品！</div>',
+        '<div class="LegendInfo_iframe_body_Noticetext">※如遇國定假日則會順延一天。</div>',
+        '<div class="LegendInfo_iframe_body_text" style="font-weight:bold;color:#333333;">舉例說明：</div>',
+        '<div class="LegendInfo_iframe_body_text">狀況A：星期五(上班日)<span>HH:MM</span>前完成訂單，星期六即可收到商品！</div>',
+        '<div class="LegendInfo_iframe_body_text">狀況B：星期六(放假日)<span>HH:MM</span>前完成訂單，要下周二(上班日)才會收到商品喔！</div>',
+        '<div class="LegendInfo_iframe_body_title_layout" style="margin-top:15px;"><div class="LegendInfo_iframe_body_title_icon"><img src="images/icon/PreOrder_ICONH22.png" /></div><div class="LegendInfo_iframe_body_title">預訂品項</div><div class="LegendInfo_iframe_body_title_line"></div><div class="CLEAR"></div></div>',
+        '<div class="LegendInfo_iframe_body_text">完成訂單後（限匯款／線下刷卡），依預計到貨月份安排出貨，出貨前會另行Email通知。</div>',
+        '<div class="LegendInfo_iframe_body_Noticetext"><span>※需知：</span><span>預訂商品通常數量有限，需完成付款才能為您保留數量；付款完成後會郵寄收款證明供留存，恕發票僅能於出貨的時候才開立。</span><div class="CLEAR"></div></div>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('到貨時間說明');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 700;
+
+    LocatePop(PopWindowWidth);
+}
+
 //會員登入
 function MemberLogin(){
 
@@ -382,7 +435,7 @@ function CartDeleteItem() {
     var WindowContent = [
         '<p style="text-align:center;">請問是否將刪除商品加入追蹤清單?</p>',
         '<p style="text-align:center;"><input type="checkbox" name="" style="margin-right:5px;">在我重新造訪網頁前皆使用此設定</p>',
-        '<div class="notice_btn_row"><button class="notice_cancelBTN">直接刪除</button><button class="notice_confirmBTN">確認</button></div>'
+        '<div class="notice_btn_row"><button class="notice_cancelBTN">直接刪除</button><button class="notice_confirmBTN">加入追蹤清單</button></div>'
     ]
 
     //視窗標題
@@ -393,6 +446,28 @@ function CartDeleteItem() {
 
     //指定大視窗時pop寬度
     var PopWindowWidth = 350;
+
+    LocatePop(PopWindowWidth);
+}
+
+//購物車運費說明
+function CartDeliveryFeeInfo(){
+    InitPop();
+
+    var WindowContent = [
+        '<div class="PopWindow_DeliveryFeeInfo_row"><span class="normal">一般配送</span><img src="images/icon/BuyICON.png"/>折扣後商品總額未滿$2,000&nbsp;需酌收運費$200</div>',
+        '<div class="PopWindow_DeliveryFeeInfo_row"><span class="fast">快速到貨</span><img src="images/icon/Fast_Icon.png"/>折扣後商品總額未滿$2,000&nbsp;需酌收運費$200</div>',        
+        '<div class="PopWindow_DeliveryFeeInfo_row"><span class="preorder">預訂商品</span><img src="images/icon/PreOrder_ICON.png"/>折扣後商品總額未滿$2,000&nbsp;需酌收運費$200</div>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('運費說明');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 500;
 
     LocatePop(PopWindowWidth);
 }
@@ -414,7 +489,7 @@ function PurchaseInfoEditClick(){
     $('.notice_body').html(WindowContent);
 
     //指定大視窗時pop寬度
-    var PopWindowWidth = 350;
+    var PopWindowWidth = 450;
 
     LocatePop(PopWindowWidth);
 }
@@ -799,6 +874,51 @@ function ActiveCWC03(){
 
     //指定大視窗時pop寬度
     var PopWindowWidth = 600;
+
+    LocatePop(PopWindowWidth);
+}
+
+//綁卡完成
+function ActiveCWC04(){
+    InitPop();
+
+    var WindowContent = [
+        '<div class="PopWindow_ActiveCWC_progressbar"><div class="text">使用者條款</div><div class="circle_arrow">></div><div class="text">設定發票資料</div><div class="circle_arrow">></div><div class="text active">綁定信用卡</div></div>',
+        '<p style="margin-top:20px;text-align:center;">您已完成信用卡綁卡登記</p>',
+        '<p style="text-align:center;">(卡號末四碼&nbsp;<b>1234</b>，到期日&nbsp;<b>99/99</b>)</p>',
+        '<div class="notice_btn_row"><button class="notice_confirmBTN" style="width:auto;padding:0 8px;">回我的清單</button></div>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('啟用儲酒服務');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 500;
+
+    LocatePop(PopWindowWidth);
+}
+
+//組合商品不單賣提示
+function GroupItemNotice() {
+
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:center;">此商品僅限綁定組合銷售，暫不個別單品銷售</p>',
+        '<div class="notice_btn_row"><button class="notice_cancelBTN">取消</button><button class="notice_confirmBTN">查看組合</button></div>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('刪除商品');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 350;
 
     LocatePop(PopWindowWidth);
 }

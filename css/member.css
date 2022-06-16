@@ -273,6 +273,7 @@ input::-webkit-inner-spin-button {
     margin-top: -20px;
 }
 
+
 .member .content.membercwc_cart{
     padding-bottom: 0;
 }
@@ -1116,6 +1117,7 @@ input::-webkit-inner-spin-button {
 .member .Right_content{
     width: calc(100% - 280px - 16px);
     margin-left: 16px;
+    margin-bottom: 100px;
 }
 
 .membercwc_list .Right_content,.membercwc_list .Left_Menu_layout {
@@ -1130,6 +1132,7 @@ input::-webkit-inner-spin-button {
 .member .fliter_box_position{
     width: 280px;
     position: absolute;
+    left: -40px;
     /*padding-top: 40px;*/
     background-color: #fff;
     display: none;
@@ -1655,6 +1658,7 @@ input::-webkit-inner-spin-button {
 .CWC_bottledetail_infobox .info_table{
     width: 100%;
     margin-top: 40px;
+    margin-bottom: 20px;
     border: 1px solid #cccccc;
     border-radius: 5px;
     overflow: hidden;
