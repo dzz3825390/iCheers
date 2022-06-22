@@ -457,7 +457,8 @@ function CartDeliveryFeeInfo(){
     var WindowContent = [
         '<div class="PopWindow_DeliveryFeeInfo_row"><span class="normal">一般配送</span><img src="images/icon/BuyICON.png"/>折扣後商品總額未滿$2,000&nbsp;需酌收運費$200</div>',
         '<div class="PopWindow_DeliveryFeeInfo_row"><span class="fast">快速到貨</span><img src="images/icon/Fast_Icon.png"/>折扣後商品總額未滿$2,000&nbsp;需酌收運費$200</div>',        
-        '<div class="PopWindow_DeliveryFeeInfo_row"><span class="preorder">預訂商品</span><img src="images/icon/PreOrder_ICON.png"/>折扣後商品總額未滿$2,000&nbsp;需酌收運費$200</div>'
+        '<div class="PopWindow_DeliveryFeeInfo_row"><span class="preorder">預訂商品</span><img src="images/icon/PreOrder_ICON.png"/>折扣後商品總額未滿$2,000&nbsp;需酌收運費$200</div>',
+        '<div class="PopWindow_DeliveryFeeInfo_row"><span class="preorder">預訂商品&nbsp;2022/12</span><img src="images/icon/PreOrder_ICON.png"/>折扣後商品總額未滿$2,000&nbsp;需酌收運費$200</div>'
     ]
 
     //視窗標題
@@ -467,7 +468,7 @@ function CartDeliveryFeeInfo(){
     $('.notice_body').html(WindowContent);
 
     //指定大視窗時pop寬度
-    var PopWindowWidth = 500;
+    var PopWindowWidth = 600;
 
     LocatePop(PopWindowWidth);
 }

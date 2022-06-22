@@ -102,6 +102,10 @@ button {
     background-image: url(../images/icon/TrackingList.png);
 }
 
+.HeadMenu .CWC{
+    background-image: url(../images/icon/CWC.png);
+}
+
 /*
 .BuyALot {
     background-image: url(../images/icon/BuyALot.png);
@@ -1713,12 +1717,12 @@ a.WineList_WineName4 {
 }
 
 .member .Right_content .list .one_title.wine_year{
-    width: 9%;
+    width: 8%;
     float: left;
 }
 
 .member .Right_content .list .one_title.wine_rank{
-    width: 12%;
+    width: 13%;
     float: left;
 }
 
@@ -1755,7 +1759,7 @@ a.WineList_WineName4 {
 /*追蹤酒款表頭寬度*/
 
 .member .membertrackinglist .Right_content .list .one_title.wine_year{
-    width: 10%;
+    width: 9%;
 }
 
 .member .membertrackinglist .Right_content .list .one_title.wine_capacity{
@@ -1763,7 +1767,7 @@ a.WineList_WineName4 {
 }
 
 .member .membertrackinglist .Right_content .list .one_title.wine_rank{
-    width: 12%;
+    width: 13%;
 }
 
 .member .membertrackinglist .Right_content .list .one_title.wine_name{
@@ -1882,12 +1886,12 @@ a.WineList_WineName4 {
 }
 
 .member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_year{
-    width: calc(964px*0.09);
+    width: calc(964px*0.08);
     float: left;
 }
 
 .member .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_rank{
-    width: calc(964px*0.12);
+    width: calc(964px*0.13);
     float: left;
 }
 
@@ -1937,11 +1941,11 @@ a.WineList_WineName4 {
 }
 
 .member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_rank{
-    width: calc(964px*0.12);
+    width: calc(964px*0.13);
 }
 
 .member .membertrackinglist .Right_content .wine_list_box .one_bottle .wine_detailinfo_box .wine_detailinfo_row .wine_year{
-    width: calc(964px*0.1);
+    width: calc(964px*0.09);
 }
 
 /*追蹤酒款表格寬度 end*/
