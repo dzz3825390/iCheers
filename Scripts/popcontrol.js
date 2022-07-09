@@ -586,7 +586,7 @@ function CWC_BottleDetail(winedata){
 
     var WindowContent = [
         '<div class="CWC_bottledetail_bottleimg" style="background-image:url(images/pic/wine_bottle_sample.jpg)"></div>',
-        '<div class="CWC_bottledetail_infobox"><div class="winenameCN">'+winedata[0].WineNameCN+'</div><div class="winenameEN">'+winedata[0].WineNameEN+'</div><div class="label_box year CLEARBOTH">'+YearsLabel+'</div><div class="label_box capacity CLEARBOTH">'+CapacityLabel+'</div><div class="bottle_count CLEARBOTH"><img class="icon_bottle" src="images/icon/icon_CWC_bottle_number.svg"><div class="numbertext">x'+winedata[0].BottleCount+'&nbsp;('+winedata[0].BottleAmount+')</div><button class="btn_addcart">配送窖藏</button><div class="count delivery"><div class="icon_minus"></div><input type="number" class="bottle_number" value="4"><div class="icon_plus"></div><div class="btn_getwine_comfirm">確認</div></div></div><table cellpadding="0" cellspacing="0" border="0" class="info_table"><tr><td>購入價格</td><td>'+winedata[0].PriceBuy+'</td></tr><tr><td>目前市價</td><td>'+winedata[0].PriceNow+PriceUpDown+'</td></tr><tr><td>評價</td><td>'+winedata[0].Rate+'</td></tr><tr><td>試飲期</td><td>'+winedata[0].ReadytoDrink+'</td></tr><tr><td>類型</td><td>'+winedata[0].Type+'</td></tr><tr><td>產區</td><td>'+winedata[0].Region+'</td></tr></table></div>'
+        '<div class="CWC_bottledetail_infobox"><div class="winenameCN">'+winedata[0].WineNameCN+'</div><div class="winenameEN">'+winedata[0].WineNameEN+'</div><div class="label_box year CLEARBOTH">'+YearsLabel+'</div><div class="label_box capacity CLEARBOTH">'+CapacityLabel+'</div><div class="bottle_count CLEARBOTH"><img class="icon_bottle" src="images/icon/icon_CWC_bottle_number.svg"><div class="numbertext">x'+winedata[0].BottleCount+'&nbsp;('+winedata[0].BottleAmount+')</div><button class="btn_addcart">配送窖藏</button><div class="count delivery"><div class="icon_minus"></div><input type="number" class="bottle_number" value="4"><div class="icon_plus"></div><div class="btn_getwine_comfirm" onclick="CWC_NotEnoughWineNotice(winedata);">確認</div></div></div><table cellpadding="0" cellspacing="0" border="0" class="info_table"><tr><td>購入價格</td><td>'+winedata[0].PriceBuy+'</td></tr><tr><td>目前市價</td><td>'+winedata[0].PriceNow+PriceUpDown+'</td></tr><tr><td>評價</td><td>'+winedata[0].Rate+'</td></tr><tr><td>試飲期</td><td>'+winedata[0].ReadytoDrink+'</td></tr><tr><td>類型</td><td>'+winedata[0].Type+'</td></tr><tr><td>產區</td><td>'+winedata[0].Region+'</td></tr></table></div>'
     ]
 
     //視窗標題
@@ -617,6 +617,26 @@ function CWC_BottleDetail(winedata){
     $(".notice_body").mCustomScrollbar({
         theme:"minimal-dark"
     });
+
+    LocatePop(PopWindowWidth);
+}
+
+function CWC_NotEnoughWineNotice(winedata) {
+    InitPop();
+
+    var WindowContent = [
+        '<p>提醒您，您的窖藏配送清單中已有<span style="font-weight:bold;">X</span>瓶&nbsp;'+winedata[0].WineNameEN+'&nbsp;'+winedata[0].Year+'尚未配送，請至窖藏配送清單確認。</p>',
+        '<div class="notice_btn_row"><button class="notice_confirmBTN">前往確認</button></div>'        
+    ]
+
+    //視窗標題
+    $('.notice_title').text('窖藏配送確認');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 550;
 
     LocatePop(PopWindowWidth);
 }

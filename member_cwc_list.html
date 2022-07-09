@@ -17,28 +17,7 @@
     <script type="text/javascript" src="Scripts/popcontrol.js"></script>
 
 	<script type="text/javascript">
-		$(document).ready(function(){
-            //cwc選項置中
-            var ContentWidth = $('.membercwc_list').width();
-            var CWCOptionsWidth = $('.cwc_option_row').width();
-            var CWCOptionsPositionX = (ContentWidth - CWCOptionsWidth)/2;
-            $('.cwc_option_row').css('left',CWCOptionsPositionX);
-
-            //cwc選項切換focus
-            $('.cwc_option_row .one_option').click(function(){
-                $('.cwc_option_row .one_option').removeClass('active');
-                $(this).addClass('active');
-            });
-
-			//footermenu置中
-		    var FooterMenuWidth = $('.FooterMenu').width();
-		    var FooterWidth = $('.FooterMenu').parent().width();
-		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
-
-		    $('.FooterMenu').css('margin-left',FooterPositionX);
-
-            //test data
-            var winedata = [
+        var winedata = [
                 {
                     WineNameCN:'作品一號．第一樂章紅酒',
                     WineNameEN:'Opus One, Opus One',
@@ -59,6 +38,26 @@
                     Region:'Napa Valley'
                 }
             ];
+		$(document).ready(function(){
+            //cwc選項置中
+            var ContentWidth = $('.membercwc_list').width();
+            var CWCOptionsWidth = $('.cwc_option_row').width();
+            var CWCOptionsPositionX = (ContentWidth - CWCOptionsWidth)/2;
+            $('.cwc_option_row').css('left',CWCOptionsPositionX);
+
+            //cwc選項切換focus
+            $('.cwc_option_row .one_option').click(function(){
+                $('.cwc_option_row .one_option').removeClass('active');
+                $(this).addClass('active');
+            });
+
+			//footermenu置中
+		    var FooterMenuWidth = $('.FooterMenu').width();
+		    var FooterWidth = $('.FooterMenu').parent().width();
+		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+		    $('.FooterMenu').css('margin-left',FooterPositionX);
+
 
             //酒款詳目視窗
             CWC_BottleDetail(winedata);
