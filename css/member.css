@@ -2295,12 +2295,37 @@ input::-webkit-inner-spin-button {
 .membercwc .Center_content .text{
     font-size: 18px;
     color: #666;
-    line-height: 28px;
+    line-height: 32px;
     margin-top: 12px;
+}
+
+.membercwc .Center_content .highlight{
+    color: #c29c20;
 }
 
 .membercwc .Center_content .text + .text{
     margin-top: 24px;
+}
+
+.membercwc .Center_content .text .textindent16{
+    width: calc(100% - 16px);
+    margin-left: 16px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.membercwc .Center_content .text .textindent48{
+    width: calc(100% - 48px);
+    margin-left: 48px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.membercwc .Center_content .text .textindent96{
+    width: calc(100% - 96px);
+    margin-left: 96px;
+    margin-top: 10px;
+    display: flex;
 }
 
 .membercwc .Right_content .table_row .detail_content .one_unit{

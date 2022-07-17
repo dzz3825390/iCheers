@@ -3912,6 +3912,62 @@ input{
 	margin-top: 10px;
 }
 
+.PopWindow_ActiveCWC_policy input[type=text]{
+	width: 80%;
+    height: 35px;
+    font-size: 15px;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    line-height: 35px;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-top: 10px;
+    color: #333333;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.PopWindow_ActiveCWC_policy input[type=text]::placeholder { 
+  color: #cccccc;
+  opacity: 1; /* Firefox */
+}
+
+.PopWindow_ActiveCWC_policy input[type=text]:-ms-input-placeholder { 
+  color: #cccccc;
+}
+
+.PopWindow_ActiveCWC_policy input[type=text]::-ms-input-placeholder { 
+  color: #cccccc;
+}
+
+.PopWindow_ActiveCWC_policy .textindent16{
+    width: calc(100% - 16px);
+    margin-left: 16px;
+    display: flex;
+    font-size: 16px;
+    color: #333333;
+    line-height: 28px;
+}
+
+.PopWindow_ActiveCWC_policy .textindent48{
+    width: calc(100% - 48px);
+    margin-left: 48px;
+    font-size: 16px;
+    display: flex;
+    color: #333333;
+    line-height: 28px;
+}
+
+.PopWindow_ActiveCWC_policy .textindent96{
+    width: calc(100% - 96px);
+    margin-left: 96px;
+    font-size: 16px;
+    display: flex;
+    color: #333333;
+    line-height: 28px;
+}
+
 .PopWindow_DeliveryFeeInfo_row{
 	display: flex;
 	justify-content: center;
