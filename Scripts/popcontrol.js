@@ -645,7 +645,7 @@ function CWC_SuperExpressInfo() {
     InitPop();
 
     var WindowContent = [
-        '<p style="text-align:center;">內容未定</p>'
+        '<p style="text-align:left;">將於上班時間（周一至周五09:00~17:00，國定假日除外）盡速出貨，歡迎備註說明，我們會盡力達成您的期望；若您於「非」上班時間下達需求，我們將於下一個工作日火速出貨。</p>'
     ]
 
     //視窗標題
@@ -655,7 +655,26 @@ function CWC_SuperExpressInfo() {
     $('.notice_body').html(WindowContent);
 
     //指定大視窗時pop寬度
-    var PopWindowWidth = 350;
+    var PopWindowWidth = 550;
+
+    LocatePop(PopWindowWidth);
+}
+
+function CWC_ExpressInfo() {
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:left;">將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00前到貨；若您於「非」上班時間下達需求，將順延至下一個工作當日出貨。</p>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('特急件說明');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 550;
 
     LocatePop(PopWindowWidth);
 }
@@ -664,7 +683,7 @@ function CWC_SelfCollectInfo(){
     InitPop();
 
     var WindowContent = [
-        '<p style="text-align:center;">內容未定</p>'
+        '<p style="text-align:left;"><b>請於抵達前1小時來電，</b></p><p>可預約時段：上班日11:00~12:00、16:00~18:00。</p><p style="display:flex;"><label>地址：</label><label>新北市汐止區中興路43號1樓 國揚矽谷大廳<br/>（開車可臨停在大廳對面）</label></p>'
     ]
 
     //視窗標題
@@ -674,7 +693,7 @@ function CWC_SelfCollectInfo(){
     $('.notice_body').html(WindowContent);
 
     //指定大視窗時pop寬度
-    var PopWindowWidth = 350;
+    var PopWindowWidth = 550;
 
     LocatePop(PopWindowWidth);
 }

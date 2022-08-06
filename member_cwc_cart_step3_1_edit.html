@@ -31,6 +31,11 @@
             CWC_SuperExpressInfo();
         });
 
+        //當日配說明視窗
+        $('#ExpressInfo').click(function(){
+            CWC_ExpressInfo();
+        });
+
         //自取說明視窗
         $('#SelfCollectInfo').click(function(){
             CWC_SelfCollectInfo();
@@ -185,19 +190,22 @@
                 <div class="title">配送方式</div>
                 <div id="DeliveryInfo_project" class="sex_radio CLEARBOTH">
                     <div class="CLEARBOTH">
-                        <input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span>
+                        <input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件<label class="icon_question" id="SuperExpressInfo">?</label> 運費$300 (限雙北區域、付款方式僅限匯款/刷卡)</span>
                     </div>
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_Motocycle"><span>當日配<label class="icon_question" id="ExpressInfo">?</label> 運費$200 (限雙北區域、付款方式僅限匯款/刷卡)</span>
+                    </div>
+                    <!--
                     <div class="CLEARBOTH">
                         <input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span>
                     </div>
+                    -->
                     <div class="CLEARBOTH">
                         <input type="radio" name="project" id="DeliveryType_T-Cat" checked="checked"><span>宅配到府</span>
                     </div>
+                    
                     <div class="CLEARBOTH">
-                        <input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span>
-                    </div>
-                    <div class="CLEARBOTH">
-                        <input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span>
+                        <input type="radio" name="project" id="DeliveryType_SelfCollect"><span>預約自取<label class="icon_question" id="SelfCollectInfo">?</label> </span>
                     </div>
                 </div>
             </div>

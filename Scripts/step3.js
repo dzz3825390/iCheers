@@ -183,24 +183,24 @@ function DeliveryInfoEdit(){
 
         //配送方式
         switch (DeliveryInfo[0].DeliveryType) {
-            case 'Motocycle':
-                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle" checked="checked"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
-            break;
+            case 'SuperExpress':
+                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress" checked="checked"><span>特急件<label class="icon_question" id="SuperExpressInfo">?</label> 運費$300 (限雙北區域、付款方式僅限匯款/刷卡)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>當日配<label class="icon_question" id="ExpressInfo">?</label> 運費$200 (限雙北區域、付款方式僅限匯款/刷卡)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>預約自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
+            break; 
 
+            case 'Motocycle':
+                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件<label class="icon_question" id="SuperExpressInfo">?</label> 運費$300 (限雙北區域、付款方式僅限匯款/刷卡)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle" checked="checked"><span>當日配<label class="icon_question" id="ExpressInfo">?</label> 運費$200 (限雙北區域、付款方式僅限匯款/刷卡)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div>                    <div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>預約自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div>');
+            break;
+            /*
             case 'Car':
                 $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car" checked="checked"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
             break;
-
+            */
             case 'T-Cat':
-                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat" checked="checked"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
+                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件<label class="icon_question" id="SuperExpressInfo">?</label> 運費$300 (限雙北區域、付款方式僅限匯款/刷卡)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>當日配<label class="icon_question" id="ExpressInfo">?</label> 運費$200 (限雙北區域、付款方式僅限匯款/刷卡)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat" checked="checked"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>預約自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
             break;
 
-            case 'SuperExpress':
-                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress" checked="checked"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
-            break; 
-
             case 'SelfCollect':
-                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>機車當日配到府 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件2hr內到貨<label class="icon_question" id="SuperExpressInfo">?</label> (雙北特定區域、1700前)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect" checked="checked"><span>自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
+                $('.recorded_data').append('<div class="row"><div class="title">配送方式</div><div id="DeliveryInfo_project" class="sex_radio CLEARBOTH"><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件<label class="icon_question" id="SuperExpressInfo">?</label> 運費$300 (限雙北區域、付款方式僅限匯款/刷卡)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_Motocycle"><span>當日配<label class="icon_question" id="ExpressInfo">?</label> 運費$200 (限雙北區域、付款方式僅限匯款/刷卡)</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_T-Cat"><span>宅配到府</span></div><div class="CLEARBOTH"><input type="radio" name="project" id="DeliveryType_SelfCollect" checked="checked"><span>預約自取<label class="icon_question" id="SelfCollectInfo">?</label> </span></div></div></div>');
             break;            
             }
         //配送時間
@@ -241,9 +241,9 @@ function DeliveryInfoEdit(){
 
         //環保選項
         if (DeliveryInfo_FormStatus == 'NewCustomers'){
-            $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div></div>');
+            $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="note">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
         } else {
-            $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div></div>');
+            $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="note">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
             //紙箱
             if (DeliveryInfo[0].ReuseBox == true) {
                 $('#ReuseBox input[type=checkbox]').attr('checked','checked');
@@ -263,6 +263,23 @@ function DeliveryInfoEdit(){
         $('.note span').click(function(){
             $(this).prev().click();
         });
+
+        //重綁一次說明
+        //特急件說明視窗
+        $('#SuperExpressInfo').click(function(){
+            CWC_SuperExpressInfo();
+        });
+
+        //當日配說明視窗
+        $('#ExpressInfo').click(function(){
+            CWC_ExpressInfo();
+        });
+
+        //自取說明視窗
+        $('#SelfCollectInfo').click(function(){
+            CWC_SelfCollectInfo();
+        });
+
 }
 
 function AddNewDeliveryInfo() {
@@ -291,7 +308,7 @@ function AddNewDeliveryInfo() {
     $('.recorded_data').append('<div class="row"><div class="title">希望配送星期</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_DeliveryDate"><input type="radio" name="date"><span>平日</span><input type="radio" name="date"><span>假日</span><input type="radio" name="date"><span>皆可</span></div></div>');
 
     //環保選項
-    $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div></div>');
+    $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="note">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
 
     //重綁一次點checkbox、radio後面的文字
     $('.sex_radio span').click(function(){
@@ -345,7 +362,7 @@ function ImportDeliveryInfo(data) {
         $('.recorded_data').append('<div class="row"><div class="title">希望配送星期</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_Date"><input type="radio" name="date"><span>平日</span><input type="radio" name="date"><span>假日</span><input type="radio" name="date"><span>皆可</span></div></div>');
 
         //環保選項
-        $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div></div>');
+        $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="note">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
     } 
     //舊客人
     else {
@@ -372,23 +389,23 @@ function ImportDeliveryInfo(data) {
         //配送方式
         switch (data[0].DeliveryType) {
             case 'Motocycle':
-                $('.recorded_data .row').append('<div class="text" id="DeliveryType_Motocycle">機車當日配</div>');
+                $('.recorded_data .row').append('<div class="text" id="DeliveryType_Motocycle">當日配</div>');
             break;
-
+            /*
             case 'Car':
                 $('.recorded_data .row').append('<div class="text" id="DeliveryType_Car">汽車當日配(需下樓自取)</div>');
             break;
-
+            */
             case 'T-Cat':            
                 $('.recorded_data .row').append('<div class="text" id="DeliveryType_T-Cat">宅配到府</div>');
             break;
 
             case 'SuperExpress':
-                $('.recorded_data .row').append('<div class="text" id="DeliveryType_SuperExpress">特急件2hr內到貨</div>');
+                $('.recorded_data .row').append('<div class="text" id="DeliveryType_SuperExpress">特急件</div>');
             break;
 
             case 'SelfCollect':
-                $('.recorded_data .row').append('<div class="text" id="DeliveryType_SelfCollect">自取</div>');
+                $('.recorded_data .row').append('<div class="text" id="DeliveryType_SelfCollect">預約自取</div>');
             break;                            
         }
 
