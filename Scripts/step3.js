@@ -241,9 +241,9 @@ function DeliveryInfoEdit(){
 
         //環保選項
         if (DeliveryInfo_FormStatus == 'NewCustomers'){
-            $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="note">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
+            $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="text" style="line-height: 25px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
         } else {
-            $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="note">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
+            $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="text" style="line-height: 25px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
             //紙箱
             if (DeliveryInfo[0].ReuseBox == true) {
                 $('#ReuseBox input[type=checkbox]').attr('checked','checked');
@@ -308,7 +308,7 @@ function AddNewDeliveryInfo() {
     $('.recorded_data').append('<div class="row"><div class="title">希望配送星期</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_DeliveryDate"><input type="radio" name="date"><span>平日</span><input type="radio" name="date"><span>假日</span><input type="radio" name="date"><span>皆可</span></div></div>');
 
     //環保選項
-    $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="note">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
+    $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="text" style="line-height: 25px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
 
     //重綁一次點checkbox、radio後面的文字
     $('.sex_radio span').click(function(){
@@ -362,7 +362,7 @@ function ImportDeliveryInfo(data) {
         $('.recorded_data').append('<div class="row"><div class="title">希望配送星期</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_Date"><input type="radio" name="date"><span>平日</span><input type="radio" name="date"><span>假日</span><input type="radio" name="date"><span>皆可</span></div></div>');
 
         //環保選項
-        $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="note">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
+        $('.recorded_data').append('<div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name=""><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name=""><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="text" style="line-height: 25px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div>');
     } 
     //舊客人
     else {
