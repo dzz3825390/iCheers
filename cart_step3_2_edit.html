@@ -31,6 +31,11 @@
             DeliveryInfoEdit();
         });
 
+        //當日配說明視窗
+        $('#ExpressInfo').click(function(){
+            CWC_ExpressInfo();
+        });
+
 
 
         $('.delivery_info_select').change(function(){
@@ -169,7 +174,30 @@
         </button>
     </div>
 
-   <div class="recorded_data" formstatus="PurchaseInfo"><div class="row"><div class="title">您的大名</div><input type="text" name="" value="劉學涵" id="DeliveryInfo_Name"></div><div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>小姐</span></div></div><div class="row"><div class="title">聯絡電話</div><input type="text" name="" value="0987654321" id="PurchaseInfo_Phone"></div><div class="row"><div class="title">聯絡地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value="成功路一段80號15樓"><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name="" checked="checked"><span>管理員可代收</span></div></div><div class="row"><div class="title">希望配送時段</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_DeliveryTime"><input type="radio" name="time" checked="checked"><span>上午(08~13時)</span><input type="radio" name="time"><span>下午(14~18時)</span><input type="radio" name="time"><span>皆可</span></div></div><div class="row"><div class="title">希望配送星期</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_DeliveryDate"><input type="radio" name="date"><span>平日</span><input type="radio" name="date"><span>假日</span><input type="radio" name="date" checked="checked"><span>皆可</span></div></div><div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name="" checked="checked"><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name="" checked="checked"><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="text" style="line-height: 25px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div></div>
+   <div class="recorded_data" formstatus="PurchaseInfo"><div class="row"><div class="title">您的大名</div><input type="text" name="" value="劉學涵" id="DeliveryInfo_Name"></div><div class="row"><div class="title">怎麼稱呼您</div><div class="sex_radio CLEARBOTH" id="PurchaseInfo_Sex"><input type="radio" name="sex" sexual="Male"><span>先生</span><input type="radio" name="sex" sexual="Female" checked="checked"><span>小姐</span></div></div><div class="row"><div class="title">聯絡電話</div><input type="text" name="" value="0987654321" id="PurchaseInfo_Phone"></div><div class="row"><div class="title">聯絡地址</div><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name="" value="成功路一段80號15樓"><div class="note CLEARBOTH">*離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。</div><div class="note CLEARBOTH" id="BuildingGuardCollect"><input type="checkbox" name="" checked="checked"><span>管理員可代收</span></div></div><div class="row">
+                <div class="title">配送方式</div>
+                <div id="DeliveryInfo_project" class="sex_radio CLEARBOTH">
+                    <!--
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件<label class="icon_question" id="SuperExpressInfo">?</label> 運費$300 (限雙北區域、付款方式僅限匯款/刷卡)</span>
+                    </div>-->
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_Motocycle"><span>當日配<label class="icon_question" id="ExpressInfo">?</label>(限雙北區域、付款方式僅限匯款/刷卡)</span>
+                    </div>
+                    <!--
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span>
+                    </div>
+                    -->
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_T-Cat" checked="checked"><span>宅配到府</span>
+                    </div>
+                    <!--
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_SelfCollect"><span>預約自取<label class="icon_question" id="SelfCollectInfo">?</label> </span>
+                    </div>-->
+                </div>
+        </div><div class="row"><div class="title">希望配送時段</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_DeliveryTime"><input type="radio" name="time" checked="checked"><span>上午(08~13時)</span><input type="radio" name="time"><span>下午(14~18時)</span><input type="radio" name="time"><span>皆可</span></div></div><div class="row"><div class="title">希望配送星期</div><div class="sex_radio CLEARBOTH" id="DeliveryInfo_DeliveryDate"><input type="radio" name="date"><span>平日</span><input type="radio" name="date"><span>假日</span><input type="radio" name="date" checked="checked"><span>皆可</span></div></div><div class="row"><div class="title">環保選項</div><div class="note CLEARBOTH" id="ReuseBox"><input type="checkbox" name="" checked="checked"><span>我愛地球我選用乾淨堅固的二手紙箱出貨。</span></div><div class="note CLEARBOTH" id="ReusePaperMaterial"><input type="checkbox" name="" checked="checked"><span>我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></span></div><div class="text" style="line-height: 25px;">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div></div></div>
     <div class="row">
         <div class="title">備註</div>
         <textarea>請於12/31前送達</textarea>
