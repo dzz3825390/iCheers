@@ -620,18 +620,8 @@ function InvoiceInfoEdit(data) {
     //統編
     $('.recorded_data').append('<div class="row"><div class="title">發票統編</div><input type="text" name="" id="InvoiceInfo_BAN" value="'+data[0].BAN+'"></div>');
 
-    //發票另寄
-    if (data[0].IsAnotherAddress == true){
-        $('.recorded_data').append('<div class="row"><div class="invoice_radio"><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_3" id="InvoiceDeliveryRadio_WithProduct"><span class="radio_text">隨商品寄出</span></div><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_3" id="InvoiceDeliveryRadio_AnotherAddress" checked="checked"><span class="radio_text">分開寄出</span><div class="CLEARBOTH"></div><div class="extend" style="display: block;"><div class="row" id="InvoiceInfo_AnotherAddress_ImportPurchaseInfo"><div class="note CLEARBOTH"><input type="checkbox" name=""><span>同訂購人資訊</span></div></div><div class="row"><div class="title">發票收件人姓名</div><input type="text" name="" id="InvoiceInfo_AnotherAddressRecipient" value="'+data[0].AnotherAddressRecipient+'"></div><div class="row"><div class="title">發票收件人地址</div><div id="InvoiceInfo_AnotherAddress"><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name=""></div></div></div></div></div></div>');
-    } else {
-        $('.recorded_data').append('<div class="row"><div class="invoice_radio"><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_3" id="InvoiceDeliveryRadio_WithProduct" checked="checked"><span class="radio_text">隨商品寄出</span></div><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_3" id="InvoiceDeliveryRadio_AnotherAddress"><span class="radio_text">分開寄出</span><div class="CLEARBOTH"></div><div class="extend" style="display: none;"><div class="row" id="InvoiceInfo_AnotherAddress_ImportPurchaseInfo"><div class="note CLEARBOTH"><input type="checkbox" name=""><span>同訂購人資訊</span></div></div><div class="row"><div class="title">發票收件人姓名</div><input type="text" name="" id="InvoiceInfo_AnotherAddressRecipient" value="'+data[0].AnotherAddressRecipient+'"></div><div class="row"><div class="title">發票收件人地址</div><div id="InvoiceInfo_AnotherAddress"><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name=""></div></div></div></div></div></div>');
-    }
-
-    //重綁一次radio後面的文字一起點
-    $('.invoice_radio_oneoption span').click(function(){
-        $(this).prev().click();
-    });
-
+    //提示文字
+    $('.recorded_data').append('<div class="row"><div class="note">發票將於出貨後開立並Email至您的信箱，亦可至「訂單查詢」自行下載列印，恕不再提供紙本發票。</div><div class="text">發票聯式一經開立後，恕無法再行更改。</div></div>');
 
 }
 
@@ -650,15 +640,8 @@ function ImportInvoiceInfo(data){
     //統編
     $('.recorded_data .row').append('<div class="text" id="CompanyInfo_BAN">'+data[0].BAN+'</div>');
 
-    //發票另寄
-    if (data[0].IsAnotherAddress == true) {
-        $('.recorded_data .row').append('<div class="text">發票另外寄送至</div><div class="text">'+data[0].AnotherAddressRecipient+'&nbsp;收</div><div class="text">'+data[0].AnotherAddress_Address_PostalCode+data[0].AnotherAddress_Address_City+data[0].AnotherAddress_Address_District+data[0].AnotherAddress_Address_Other+'</div>');
-    }
-
-    //重綁一次radio後面的文字一起點
-    $('.invoice_radio_oneoption span').click(function(){
-        $(this).prev().click();
-    });
+    //提示文字
+    $('.recorded_data').append('<div class="row"><div class="note">發票將於出貨後開立並Email至您的信箱，亦可至「訂單查詢」自行下載列印，恕不再提供紙本發票。</div><div class="text">發票聯式一經開立後，恕無法再行更改。</div></div>');
 }
 
 function AddNewCompanyInfo() {
@@ -674,18 +657,6 @@ function AddNewCompanyInfo() {
     //統編
     $('.recorded_data').append('<div class="row"><div class="title">發票統編</div><input type="text" name="" id="InvoiceInfo_BAN"></div>');
 
-    //發票另寄
-    $('.recorded_data').append('<div class="row"><div class="invoice_radio"><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_3" id="InvoiceDeliveryRadio_WithProduct"><span class="radio_text">隨商品寄出</span></div><div class="invoice_radio_oneoption CLEARBOTH"><input type="radio" name="invoice_3" id="InvoiceDeliveryRadio_AnotherAddress"><span class="radio_text">分開寄出</span><div class="CLEARBOTH"></div><div class="extend" style="display: none;"><div class="row" id="InvoiceInfo_AnotherAddress_ImportPurchaseInfo"><div class="note CLEARBOTH"><input type="checkbox" name=""><span>同訂購人資訊</span></div></div><div class="row"><div class="title">發票收件人姓名</div><input type="text" name="" id="InvoiceInfo_AnotherAddressRecipient" value=""></div><div class="row"><div class="title">發票收件人地址</div><div id="InvoiceInfo_AnotherAddress"><select><option>台北市</option><option>新北市</option></select><select><option>松山區&nbsp;105</option><option>大安區&nbsp;106</option></select><br><input type="text" name=""></div></div></div></div></div></div>');
-
-    //重綁一次radio後面的文字一起點
-    $('.invoice_radio_oneoption span').click(function(){
-        $(this).prev().click();
-    });
-
-    //重綁一次 發票分開寄出 捐贈 載具展開
-    $('.invoice_radio_oneoption input[type=radio]').change(function(){
-            $('.invoice_radio_oneoption .extend').slideUp();
-            $('.invoice_radio_oneoption input[type=radio]:checked ~ .extend').slideDown();
-
-    });
+    //提示文字
+    $('.recorded_data').append('<div class="row"><div class="note">發票將於出貨後開立並Email至您的信箱，亦可至「訂單查詢」自行下載列印，恕不再提供紙本發票。</div><div class="text">發票聯式一經開立後，恕無法再行更改。</div></div>');
 }

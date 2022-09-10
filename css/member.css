@@ -852,6 +852,12 @@ input::-webkit-inner-spin-button {
     margin-top: 5px;
 }
 
+.orderprogress_detail_info .invoice_info .row a{
+    color: #296993;
+    display: inline-block;
+    text-decoration: underline;
+}
+
 .orderprogress_detail_info .invoice_info{
     width: 100%;
     margin-top: 24px;
@@ -2350,7 +2356,7 @@ input::-webkit-inner-spin-button {
 }
 
 .membercwc .Right_content .search_result_row .invoice a{
-    color: #666;
+    color: #296993;
     text-decoration: underline;
 }
 
