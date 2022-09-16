@@ -2035,14 +2035,14 @@ input::-webkit-inner-spin-button {
 }
 
 .membercwc .Right_content .table_head .detail,.membercwc .Right_content .search_result_row .detail{
-    width: 15%;
+    width: 10%;
     float: left;
     text-align: center;
 }
 
 /*表格寬度控制 租金明細*/
 .membercwc .Right_content .table_head .invoice,.membercwc .Right_content .search_result_row .invoice{
-    width: 15%;
+    width: 20%;
     float: left;
     text-align: center;
 }
