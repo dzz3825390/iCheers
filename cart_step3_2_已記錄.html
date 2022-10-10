@@ -31,6 +31,11 @@
             DeliveryInfoEdit();
         });
 
+        //酒標瑕疵說明
+        $('#LabelCheckInfo').click(function(){
+            LabelCheckInfo();
+        });
+
 
 
         $('.delivery_info_select').change(function(){
@@ -172,8 +177,20 @@
             <div class="text" id="BuildingGuardCollect">✓&nbsp;管理員可代收</div>
             <div class="text" id="DeliveryInfo_Time">希望於上午(08~13時)送達</div>
             <div class="text" id="DeliveryInfo_Date">平日、假日皆可配送</div>
-            <div class="text" id="ReuseBox">✓&nbsp;我愛地球我選用乾淨堅固的二手紙箱出貨。</div>
-            <div class="text" id="ReusePaperMaterial">✓&nbsp;我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）<a href="images/green_package.jpg" target="_blank">示意圖</a></div>
+            <div class="text" id="ReusePaperMaterial">✓&nbsp; 我不介意用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></div>
+            <div class="text" id="ReuseBox">✓&nbsp;我我不介意用乾淨堅固的二手紙箱。</div>
+            <div class="text" id="LabelCheck">✓&nbsp; 我不介意酒標有微小瑕疵。<label class="icon_question" id="LabelCheckInfo">?</label></div>
+        </div>
+        <div class="row">
+            <div class="note CLEARBOTH">
+                <input type="checkbox" name="" id="iCheersPaperbagCheck">
+                <span>請隨貨附提袋</span>
+                <label id="iCheersPaaerbagCount" style="display: none;">
+                    <input type="text" name="" style="float: left;width: 50px;margin-left: 5px;margin-top: -12px;text-align: center;">
+                    <span>個</span>
+                </label>
+                
+            </div>
         </div>
     </div>
 
@@ -182,17 +199,7 @@
         <textarea>請於12/31前送達</textarea>
     </div>
 
-    <div class="row">
-        <div class="note CLEARBOTH">
-            <input type="checkbox" name="" id="iCheersPaperbagCheck">
-            <span>請隨貨附提袋</span>
-            <label id="iCheersPaaerbagCount" style="display: none;">
-                <input type="text" name="" style="float: left;width: 50px;margin-left: 5px;margin-top: -12px;text-align: center;">
-                <span>個</span>
-            </label>
-            
-        </div>
-    </div>
+    
 
     <div class="row btn_row">
         <div class="btn_step prev">上一步</div>

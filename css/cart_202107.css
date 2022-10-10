@@ -1045,68 +1045,6 @@ input{
     cursor: pointer;
 }
 
-.cart_list_BottleSoldOut .bottle_img {
-    opacity: 0.4;
-}
-
-.cart_list_BottleSoldOut .bottle_info .name_cn {
-    color: #d9d9d9;
-}
-
-.cart_list_BottleSoldOut .bottle_info .name_en {
-    color: #d9d9d9;
-}
-
-.cart_list_BottleSoldOut .bottle_info .status {
-    color: #d9d9d9;
-}
-
-.cart_list_BottleSoldOut .bottle_info .status span:after {
-    background-color: #d9d9d9;
-}
-
-.cart_list_BottleSoldOut .count_price .count .text {
-    color: #d9d9d9;
-}
-
-.cart_list_BottleSoldOut .count_price .count .icon_minus {
-    border: 1px solid #e6e6e6;
-    background-color: #f2f2f2;
-}
-
-.cart_list_BottleSoldOut .count_price .count .icon_minus:after {
-    background-color: #d9d9d9;
-}
-
-.cart_list_BottleSoldOut .count_price .count .icon_plus {
-    border: 1px solid #e6e6e6;
-    background-color: #f2f2f2;
-}
-
-.cart_list_BottleSoldOut .count_price .count .icon_plus:before, .cart_list_BottleSoldOut .count_price .count .icon_plus:after{
-    background-color: #d9d9d9;
-}
-
-.cart_list_BottleSoldOut .count_price .count .bottle_number {
-    color: #d9d9d9;
-    border: 1px solid #e6e6e6;
-    background-color: #f2f2f2;
-}
-
-.cart_list_BottleSoldOut .count_price .price .text {
-    color: #d9d9d9;
-}
-
-.cart_list_BottleSoldOut .count_price .price .bottle_price {
-    color: #d9d9d9;
-}
-
-.cart_list_BottleSoldOut .delete_text {
-    font-size: 1rem;
-    color: #ea3333;
-    margin-right: 10px;
-}
-
 .cart_list_OneGroup {
     width: 100%;
     position: relative;
@@ -1796,6 +1734,70 @@ input{
 
 .cart_list_gift .gift_wine .count_price .price .bottle_price span{
 	font-weight: normal;
+}
+
+.cart_list_BottleSoldOut .bottle_img {
+    opacity: 0.4;
+}
+
+.cart_list_BottleSoldOut .bottle_info .name_cn, .cart_list_BottleSoldOut .gift_wine .bottle_info .name_cn{
+    color: #d9d9d9;
+}
+
+.cart_list_BottleSoldOut .bottle_info .name_en, .cart_list_BottleSoldOut .gift_wine .bottle_info .name_en{
+    color: #d9d9d9;
+}
+
+.cart_list_BottleSoldOut .bottle_info .status, .cart_list_BottleSoldOut .gift_wine .bottle_info .status {
+    color: #d9d9d9;
+}
+
+.cart_list_BottleSoldOut .bottle_info .status span:after, .cart_list_BottleSoldOut .gift_wine .bottle_info .status span:after{
+    background-color: #d9d9d9;
+}
+
+.cart_list_BottleSoldOut .count_price .count .text, .cart_list_BottleSoldOut .gift_wine .count_price .count .text{
+    color: #d9d9d9;
+}
+
+.cart_list_BottleSoldOut .count_price .count .icon_minus,.cart_list_BottleSoldOut .gift_wine .count_price .count .icon_minus {
+    border: 1px solid #e6e6e6;
+    background-color: #f2f2f2;
+    cursor: default;
+}
+
+.cart_list_BottleSoldOut .count_price .count .icon_minus:after, .cart_list_BottleSoldOut .gift_wine .count_price .count .icon_minus:after{
+    background-color: #d9d9d9;
+}
+
+.cart_list_BottleSoldOut .count_price .count .icon_plus, .cart_list_BottleSoldOut .gift_wine .count_price .count .icon_plus{
+    border: 1px solid #e6e6e6;
+    background-color: #f2f2f2;
+    cursor: default;
+}
+
+.cart_list_BottleSoldOut .count_price .count .icon_plus:before, .cart_list_BottleSoldOut .count_price .count .icon_plus:after, .cart_list_BottleSoldOut .gift_wine .count_price .count .icon_plus:before, .cart_list_BottleSoldOut .gift_wine .count_price .count .icon_plus:after{
+    background-color: #d9d9d9;
+}
+
+.cart_list_BottleSoldOut .count_price .count .bottle_number, .cart_list_BottleSoldOut .gift_wine .count_price .count .bottle_number {
+    color: #d9d9d9;
+    border: 1px solid #e6e6e6;
+    background-color: #f2f2f2;
+}
+
+.cart_list_BottleSoldOut .count_price .price .text, .cart_list_BottleSoldOut .gift_wine .count_price .price .text{
+    color: #d9d9d9;
+}
+
+.cart_list_BottleSoldOut .count_price .price .bottle_price, .cart_list_BottleSoldOut .gift_wine .count_price .price .bottle_price {
+    color: #d9d9d9;
+}
+
+.cart_list_BottleSoldOut .delete_text, .cart_list_BottleSoldOut .gift_wine .delete_text {
+    font-size: 1.125rem;
+    color: #ea3333;
+    margin-right: 10px;
 }
 
 .cart_list_BonusCoupon {
@@ -3418,7 +3420,7 @@ input{
 	float: left;
 }
 
-.step3_content .row .sex_radio span label.icon_question{
+label.icon_question{
 	width: 20px;
 	height: 20px;
 	line-height: 20px;
@@ -3432,6 +3434,23 @@ input{
 	display: inline-block;
 	top: -2px;
 	cursor: pointer;
+}
+
+.step3_content .row .sex_radio .extend{
+	float: left;
+	width: 100%;
+	font-size: 16px;
+    line-height: 24px;
+   	margin-left: 24px;
+    color: #666;
+    background-color: #f5f5f5;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.step3_content .row .sex_radio input:checked ~ .extend{
+	display: block;
 }
 
 .step3_content .row select{
@@ -3531,6 +3550,24 @@ input{
 .step3_content .row .note a{
 	color: #296993;
 	text-decoration: underline;
+}
+
+.step3_content .row .note .extend{
+	float: left;
+	background-color: #f5f5f5;
+	padding: 10px 16px;
+	box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 22px;
+    color: #666;
+    margin-top: 5px;
+    display: none;
+}
+
+.step3_content .row .note input[type=checkbox]:checked ~ .extend{
+	display: block;
 }
 
 @media screen and (min-width: 760px){
@@ -3875,6 +3912,8 @@ input{
 	text-align: center;
 	background-color: #f3f4f5;
 }
+
+
 
 /*pop用*/
 
