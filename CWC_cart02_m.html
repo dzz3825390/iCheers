@@ -150,12 +150,12 @@
 	        	switch (ImportDataName){
 	        		case 'Option_CustomInfo1' :
 	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
-	        			ImportDeliveryInfo(TestData_Custom1);
+	        			ImportDeliveryInfoCWC(TestData_Custom1);
 	        		break;
 
 	        		case 'Option_CustomInfo2' :
 	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
-	        			ImportDeliveryInfo(TestData_Custom2);
+	        			ImportDeliveryInfoCWC(TestData_Custom2);
 	        		break;
 
 	        		case 'Option_AddNew' :
@@ -321,7 +321,7 @@
 
 				<div class="cart_form_row form_Address">
 					<div class="formTitle">配送方式</div>
-					<div id="DeliveryInfo_Type">
+					<div id="DeliveryInfo_Type" delivery_type="T-cat">
 						<div class="dropdown district">
 							<div class="dropdown_text">
 								<span>宅配到府</span>
@@ -665,6 +665,23 @@
 		</div>
 	</div>
 	<!--使用coupon end-->
+
+	<!--當日配提醒-->
+	<div class="PopWindow_layout" id="DeliveryTypeMotocycleNotice">
+		<div class="PopWindow_title">
+			當日配注意事項
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			
+			<div class="PopWindow_content_text">
+				您的訂單金額已超出當日配/特急件<em style="font-weight: bold;color:#B00808;">貨故最高賠償上限（5,000 元）</em>，若運送過程造成商品破損，超額部分我方將不予賠償，請問是否願意自行負擔貨物受損風險，繼續使用當日配/特急件配送服務？
+			</div>
+			<div class="Popwindow_ConfirmBtn">我願意</div>
+			<div class="Popwindow_ConfirmBtn">我不願意</div>
+		</div>
+	</div>
+	<!--當日配提醒 end-->
 
 	<!--年齡確認-->
 	<div class="PopWindow_layout" id="AgeConfrimWindow">

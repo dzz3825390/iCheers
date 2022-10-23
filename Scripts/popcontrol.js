@@ -925,3 +925,25 @@ function LabelCheckInfo(){
 
     LocatePop(PopWindowWidth);
 }
+
+//當日配提示文字
+function DeliveryTypeMotocycleNotice() {
+
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:left;">您的訂單金額已超出當日配/特急件貨故<span style="font-weight:bold;">最高賠償上限（5,000 元）</span>，若運送過程造成商品破損，超額部分我方將不予賠償，請問是否願意自行負擔貨物受損風險，繼續使用當日配/特急件配送服務？</p>',
+        '<div class="notice_btn_row"><button class="notice_confirmBTN">我不願意</button><button class="notice_confirmBTN">我願意</button></div>'
+    ]
+
+    //視窗標題
+    $('.notice_title').text('當日配注意事項');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 450;
+
+    LocatePop(PopWindowWidth);
+}

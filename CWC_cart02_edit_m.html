@@ -192,16 +192,16 @@
 	        		
 	        		case 'Option_CustomInfo1' :
 	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
-	        			ImportDeliveryInfo(TestData_Custom1);
+	        			ImportDeliveryInfoCWC(TestData_Custom1);
 	        		break;
 
 	        		case 'Option_CustomInfo2' :
 	        			$('#Form_RecordedAddress').attr('formstatus','CustomAddress');
-	        			ImportDeliveryInfo(TestData_Custom2);
+	        			ImportDeliveryInfoCWC(TestData_Custom2);
 	        		break;
 
 	        		case 'Option_AddNew' :
-	        			DeliveryInfoAddNew(intBrowserW);
+	        			DeliveryInfoAddNewCWC(intBrowserW);
 	        		break;
 	        	}
 	        });
@@ -261,7 +261,20 @@
 		    	} else{
 		    		$('.number_paperbag span').css('display','none');
 		    	}
+
+		    	//包裝說明文字
+		    	if ($(this).find('.icon_check').hasClass('active')){
+		    		$(this).parent().next('.Package_Info_extend').css('display','block');
+		    		//$('.Package_Info_extend').css('display','block');
+		    	} else{
+		    		$(this).parent().next('.Package_Info_extend').css('display','none');
+		    		//$('.Package_Info_extend').css('display','none');
+		    	}
 		    });
+
+		    //配送方式說明文字
+		    DeliveryTypeInfoText();
+
 
 
 		});
@@ -318,9 +331,9 @@
 						成功路一段80號..
 					</span></div>
 				<div class="dropdown_extend" style="display: none;">
-					<div class="dropdown_option" id="Option_PurchaseInfo">
+					<!--<div class="dropdown_option" id="Option_PurchaseInfo">
 						同訂購人
-					</div>
+					</div>-->
 					<div class="dropdown_option" id="Option_CustomInfo1">
 						成功路一段80號..
 					</div>
@@ -343,25 +356,81 @@
 					<div class="checkbox_text">儲存地址</div>
 				</div>	
 			</div>
-			<div class="cart_form_row recorded_data"><div class="cart_form_row"><div class="formTitle">收件人大名</div><input id="DeliveryInfo_Name" type="text" name="" value="李佳叡"></div><div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual RadioBox_active" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual" name="sex" sexual="Female">小姐</div></div></div><div class="cart_form_row"><div class="formTitle">收件人連絡電話</div><input id="DeliveryInfo_Phone" type="text" name="" value="0912345678"></div><div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="成功路一段82號"></div><div class="NoticeText" style="display: none;">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div></div><div class="cart_form_row"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">下午(14~18時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">皆可</div></div></div><div class="cart_form_row"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">皆可</div></div></div><div class="cart_form_row" id="ECO_Options"><div class="formTitle">環保選項</div><div class="checkbox_layout" id="ReuseBox"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用乾淨堅固的二手紙箱出貨。</div></div><div class="checkbox_layout" id="ReusePaperMaterial"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">我愛地球，我選擇用回收紙緩衝材(取代塑膠氣泡袋)。<a href="#">示意圖</a></div></div></div></div>
+			<div class="cart_form_row recorded_data">
+				<div class="cart_form_row"><div class="formTitle">收件人大名</div><input id="DeliveryInfo_Name" type="text" name="" value="劉學涵"></div>
+				<div class="cart_form_row"><div class="formTitle">怎麼稱呼收件人</div><div class="Radio_Sexual_row" id="DeliveryInfo_Sex"><div class="RadioBox Radio_Sexual" name="sex" sexual="Male">先生</div><div class="RadioBox Radio_Sexual RadioBox_active" name="sex" sexual="Female">小姐</div></div></div>
+				<div class="cart_form_row" style="display:none;margin-top: 0;">
+					<input type="text" name="sex" value="" id="OtherSexualText">
+				</div>
+				<div class="cart_form_row">
+					<div class="formTitle">收件人連絡電話</div>
+					<input id="DeliveryInfo_Phone" type="text" name="" value="09123645863">
+				</div>
+				<div class="cart_form_row form_Address"><div class="formTitle">收件人地址</div><div id="DeliveryInfo_Address"><div class="dropdown district"><div class="dropdown_text"><span>新北市</span></div><div class="dropdown_extend"><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div><div class="dropdown_option">澎湖縣</div><div class="dropdown_option">連江縣</div><div class="dropdown_option">金門縣</div><div class="dropdown_option">台北市</div><div class="dropdown_option">新北市</div><div class="dropdown_option">桃園市</div></div></div><div class="dropdown district"><div class="dropdown_text"><span>234&nbsp;永和區</span></div><div class="dropdown_extend"><div class="dropdown_option">aaa</div><div class="dropdown_option">bbb</div><div class="dropdown_option">ccc</div></div></div><input type="text" value="成功路一段80號15樓"></div><div class="NoticeText" style="display: none;">*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。</div><div class="checkbox_layout" id="BuildingGuardCollect"><div class="option_check"><div class="icon_check"></div></div><div class="checkbox_text">管理員可代收</div></div></div>
+
+				<div class="cart_form_row form_Address">
+					<div class="formTitle">配送方式</div>
+					<div id="DeliveryInfo_Type">
+						<div class="dropdown district">
+							<div class="dropdown_text">
+								<span>宅配到府</span>
+							</div>
+							<div class="dropdown_extend">
+								<div class="dropdown_option" id="DeliveryInfo_Type_TCat">宅配到府</div>	
+								<div class="dropdown_option" id="DeliveryInfo_Type_Motocycle">當日配</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_SuperExpress">特急件</div>
+								<div class="dropdown_option" id="DeliveryInfo_Type_SelfCollect">預約自取</div>		
+							</div>
+
+						</div>
+					</div>
+					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_Motocycle_text" style="display:none;text-align: left;">將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00到貨；若已截單（超過當日14:00）將順延至下一個工作當日出貨。</div>
+					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SelfCollect_text" style="display:none;text-align: left;">請於抵達前1小時來電確認已備好貨，可預約時段：上班日11:00~12:00、16:00~18:00。地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面</div>
+					<div class="text DeliveryTypeInfoText" id="DeliveryInfo_Type_SuperExpress_text" style="display:none;text-align: left;">將於上班日（周一至周五，國定假日除外）火速出貨，歡迎備註說明，我們會盡力達成您的期望；若已截單（超過當日17:00）將順延至下個工作日急件出貨。特急件將加收運費$300，若滿免運門檻則加收$100。</div>
+
+				</div>
+				<div class="cart_form_row"  id="DeliveryInfo_Time"><div class="formTitle">希望配送時段</div><div class="Radio_Delivery_row" id="DeliveryInfo_Time"><div class="RadioBox Radio_DeliveryTime" name="deliverytime">上午(08~13時)</div><div class="RadioBox Radio_DeliveryTime" name="deliverytime">下午(14~18時)</div>	<div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverytime">皆可</div></div></div>
+				<div class="cart_form_row"  id="DeliveryInfo_Date"><div class="formTitle">希望配送星期</div><div class="Radio_Delivery_row" id="DeliveryInfo_Date"><div class="RadioBox Radio_DeliveryTime" name="deliverydate">平日</div><div class="RadioBox Radio_DeliveryTime" name="deliverydate">假日</div><div class="RadioBox Radio_DeliveryTime RadioBox_active" name="deliverydate">皆可</div></div></div>
+				<div class="cart_form_row">
+					<div class="formTitle">包裝選項</div>
+					<div class="checkbox_layout" >
+						<div class="option_check Package_Info" id="Checkbox_Paperbag">
+							<div class="icon_check"></div>
+						</div>
+						<div class="checkbox_text number_paperbag">
+							請隨貨附提袋
+							<span  style="display: none;">
+								<input type="number" name="" style="width:60px;">個
+							</span>
+						</div>
+					</div>
+					<div class="text Package_Info_extend">敬請知悉：iCheers提袋為單入常規尺寸，若商品屬於下列情況，我們將<b style="color:#c20012">「不會」</b>隨貨附贈，恕不另行通知：1) 商品已有附贈原廠提袋、2)特殊瓶身無法裝入、3)禮盒型商品無法裝入。</div>
+					<div class="checkbox_layout checkbox_layout_mutiRowText">
+						<div class="option_check Package_Info" id="ReusePaperMaterial">
+							<div class="icon_check"></div>
+						</div>
+						<div class="checkbox_text">
+							我不介意用回收紙緩衝材（取代塑膠氣泡袋）。
+							<a href="#">示意圖</a>
+						</div>
+					</div>
+					<div class="text Package_Info_extend">敬請知悉：環保包材有可能不適用於部分商品，譬如禮盒，我們將會斟酌替換為氣泡袋。</div>
+					<div class="checkbox_layout checkbox_layout_mutiRowText">
+						<div class="option_check" id="ReuseBox">
+							<div class="icon_check active"></div>
+						</div>
+						<div class="checkbox_text">我不介意用乾淨堅固的二手紙箱。</div>
+					</div>
+				</div>
+
+
+			</div>
 		</div>
 		<div class="cart_form_row">
 			<div class="formTitle">備註</div>
 			<textarea placeholder="可指定到貨日，但國定假日及周日恕無法配送喔！"></textarea>
 		</div>
-		<div class="cart_form_row">
-			<div class="checkbox_layout">
-				<div class="option_check" id="Checkbox_Paperbag">
-					<div class="icon_check"></div>
-				</div>
-				<div class="checkbox_text number_paperbag">
-					請隨貨附提袋
-					<span style="display: none;">
-						<input type="number" name="" style="width:60px;">個
-					</span>
-				</div>
-			</div>
-		</div>
+
 		
 	</section>
 	<!--商品配送訊息 end-->
@@ -374,12 +443,12 @@
 			</div>
 		</div>
 		<div class="cart_form_row form_invoice">
-			<div class="RadioBox Radio_invoice" name='invoice'>捐贈發票</div>
+			<div class="RadioBox Radio_invoice" name="invoice">捐贈發票</div>
 			<div style="display:none;">
 				<div class="invoice_radiobox_layout">
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>伊甸<br/>基金會</span></div>
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>創世<br/>基金會</span></div>
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>陽光<br/>基金會</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>伊甸<br>基金會</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>創世<br>基金會</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>陽光<br>基金會</span></div>
 					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1" id="invoice_donate_other"><span>其他</span></div>
 				</div>
 				<div class="invoice_donate_other_input invoice_hide" style="display: none;">
@@ -391,67 +460,36 @@
 				
 				<div class="Radio_infotext">依據法令規定，已捐贈發票無法索回，若需要退換貨，該發票將予以作廢。</div>
 			</div>
-			<div class="RadioBox Radio_invoice RadioBox_active" name='invoice'>二聯式電子發票</div>
-			<div class="invoice_radiobox_layout">
-				<div class="RadioBox Radio_invoice_unit RadioBox_active" name="invoice_unit2" id="invoice_SameAddress_2"><span>隨商品寄出</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="invoice_AnotherAddress_2"><span>發票分開寄出</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_phone"><span>手機<br/>條碼</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_idcard"><span>自然人<br/>憑證</span></div>
-			</div>
-			<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
-				<div class="cart_form_row">
-						<div class="formTitle">發票收件人姓名</div>
-						<input type='text' />
-				</div>
-				<div class="cart_form_row form_Address">
-					<div class="formTitle">發票收件人地址</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>縣市</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								台北市
-							</div>
-							<div class="dropdown_option">
-								新北市
-							</div>
-							<div class="dropdown_option">
-								桃園市
-							</div>
-						</div>
-					</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>鄉鎮區</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								aaa
-							</div>
-							<div class="dropdown_option">
-								bbb
-							</div>
-							<div class="dropdown_option">
-								ccc
-							</div>
-						</div>
-					</div>
-					<input type='text' placeholder="請輸入地址" />
+			<div class="RadioBox Radio_invoice" name="invoice">二聯式電子發票</div>
+			<div style="display:none;">
+				<div class="invoice_radiobox_layout">
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_phone"><span>手機<br/>條碼</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_idcard"><span>自然人<br/>憑證</span></div>
+					<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_nocarries"><span>我沒有<br/>載具</span></div>
 				</div>
 			</div>
+
 			<div class="electroic_invoice_input_phone invoice_hide" style="display: none;">
 				<div class="cart_form_row">
 					<div class="formTitle">手機條碼</div>
-					<input type='text' />
+					<input type="text">
 				</div>
 			</div>
 			<div class="electroic_invoice_input_idcard invoice_hide" style="display: none;">
 				<div class="cart_form_row">
 					<div class="formTitle">自然人憑證條碼</div>
-					<input type='text' />
+					<input type="text">
 				</div>
 			</div>
-			<div class="RadioBox Radio_invoice" name='invoice'>三聯式電子發票</div>
+			<div class="electroic_invoice_input_nocarries invoice_hide" style="display: none;">
+				<div class="cart_form_row">
+					<div class="Radio_infotext">發票將於扣款後開立並Email至您的信箱，您可透過<a href="#">財政部電子發票整合平台</a>查詢及兌獎，若有任何需要協助之處，歡迎連繫iCheers愛酒窩客服團隊。</div>
+				</div>
+			</div>
+			<div class="RadioBox Radio_invoice" name="invoice">三聯式電子發票</div>
 			<div class="invoice_hide" style="display: none;">
 				<div class="cart_form_row form_Recorded">
-					<div class="dropdown" id="RecordedCompany_Selector">
+					<div class="dropdown" id="RecordedCompany_Selector" style="width: 100%;">
 						<div class="dropdown_text"><span>選擇常用公司資料</span></div>
 						<div class="dropdown_extend">
 							<div class="dropdown_option" id="CustomCompany1">
@@ -479,58 +517,19 @@
 					<div class="cart_form_row recorded_data">
 						<div class="cart_form_row">
 							<div class="formTitle">發票抬頭</div>
-							<input type='text' value="" id="CompanyIfo_CompanyName"/>
+							<input type="text" value="" id="CompanyIfo_CompanyName">
 						</div>
 						<div class="cart_form_row">
 							<div class="formTitle">統一編號</div>
-							<input type='text' value="" id="CompanyIfo_BAN"/>
+							<input type="text" value="" id="CompanyIfo_BAN">
 						</div>
-						<div class="invoice_radiobox_layout">
-							<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_SameAddress_3"><span>隨商品寄出</span></div>
-							<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div>
-						</div>
-						<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
-							<div class="cart_form_row">
-									<div class="formTitle">發票收件人姓名</div>
-									<input type='text' id="CompanyInfo_Name" />
-							</div>
-							<div class="cart_form_row form_Address">
-								<div class="formTitle">發票收件人地址</div>
-								<div id="CompanyInfo_Address">
-									<div class="dropdown">
-										<div class="dropdown_text"><span>縣市</span></div>
-										<div class="dropdown_extend">
-											<div class="dropdown_option">
-												台北市
-											</div>
-											<div class="dropdown_option">
-												新北市
-											</div>
-											<div class="dropdown_option">
-												桃園市
-											</div>
-										</div>
-									</div>
-									<div class="dropdown">
-										<div class="dropdown_text"><span>鄉鎮區</span></div>
-										<div class="dropdown_extend">
-											<div class="dropdown_option">
-												aaa
-											</div>
-											<div class="dropdown_option">
-												bbb
-											</div>
-											<div class="dropdown_option">
-												ccc
-											</div>
-										</div>
-									</div>
-									<input type='text' placeholder="請輸入地址" />
-								</div>
-							</div>
+						
+					</div>
+					<div class="cart_form_row">
+						<div class="NoticeText">
+							發票將於每月扣款後開立並Email至您的信箱，亦可至「訂單查詢」自行下載列印，恕不再提供紙本發票。
 						</div>
 					</div>
-					
 					
 				</div>
 				

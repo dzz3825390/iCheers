@@ -53,17 +53,17 @@
             switch (OptionSelected) {
                 case 'Option_PurchaseInfo':
                     $('.recorded_data ').attr('formstatus','PurchaseInfo');
-                    ImportDeliveryInfo(PurchaseInfo);
+                    CWC_ImportDeliveryInfo(PurchaseInfo);
                 break;
 
                 case 'Option_CustomInfo1':
                     $('.recorded_data ').attr('formstatus','CustomInfo');
-                    ImportDeliveryInfo(TestData_Custom1);
+                    CWC_ImportDeliveryInfo(TestData_Custom1);
                 break;
 
                 case 'Option_CustomInfo2':
                     $('.recorded_data ').attr('formstatus','CustomInfo');
-                    ImportDeliveryInfo(TestData_Custom2);
+                    CWC_ImportDeliveryInfo(TestData_Custom2);
                 break;
 
                 case 'Option_AddNew':
@@ -273,11 +273,11 @@
                 </div>
 
             </div>
-            <div class="row">
+        </div>
+        <div class="row">
                 <div class="title">備註</div>
                 <textarea>請於12/31前送達</textarea>
             </div>
-        </div>
         <div class="row btn_row">
             
             <div class="btn_step next">下一步</div>
