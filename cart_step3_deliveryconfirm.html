@@ -31,6 +31,11 @@
             DeliveryInfoEdit();
         });
 
+        //酒標瑕疵說明
+        $('#LabelCheckInfo').click(function(){
+            LabelCheckInfo();
+        });
+
 
 
         $('.delivery_info_select').change(function(){
@@ -69,14 +74,6 @@
             }
         });
 
-        //儲存此次變更check一起點
-        $('#BTN_DeliveryInfoSave').click(function(){
-            if($(this).find('input[type=checkbox]').prop('checked')){
-                $(this).find('input[type=checkbox]').prop('checked',false);
-            }else {
-                $(this).find('input[type=checkbox]').prop('checked',true);
-            }
-        });
     });
 
 </script>
@@ -128,16 +125,15 @@
     
     <div class="row CLEARBOTH">
         <select class="delivery_info_select">
-            <option id="Option_PurchaseInfo">同訂購人資訊</option>
             <option id="Option_CustomInfo1">成功路一段80...</option>
             <option id="Option_CustomInfo2">中正路347號...</option>
             <option id="Option_AddNew">另行配送</option>
         </select>
         <button class="btn_edit" id="BTN_DeliveryInfoEdit" style="display:none;">修改</button>
-        <button class="btn_save" id="BTN_DeliveryInfoSave">
+        <label class="btn_save" id="BTN_DeliveryInfoSave">
             <input type="checkbox" name="">
             <span>儲存地址</span>
-        </button>
+        </label>
     </div>
     <div class="recorded_data" formstatus="PurchaseInfo">
         <div class="row">
@@ -148,10 +144,74 @@
                 *離島冷藏宅配統一收取200元運費，恕無法享有滿額免運費優惠。
             </div>
             <div class="text" id="BuildingGuardCollect">✓&nbsp;管理員可代收</div>
-            <div class="text" id="DeliveryInfo_Time">希望於上午(08~13時)送達</div>
-            <div class="text" id="DeliveryInfo_Date">平日、假日皆可配送</div>
-            <div class="text" id="ReuseBox">✓&nbsp;我愛地球我選用乾淨堅固的二手紙箱出貨。</div>
-            <div class="text" id="ReusePaperMaterial">✓&nbsp;我愛地球我選用回收紙緩衝材（取代塑膠氣泡袋）<a href="images/green_package.jpg" target="_blank">示意圖</a></div>
+            <div class="text" id="ReusePaperMaterial">✓&nbsp;我不介意用回收紙緩衝材（取代塑膠氣泡袋）。<a href="images/green_package.jpg" target="_blank">示意圖</a></div>
+            <div class="text" id="ReuseBox">✓&nbsp;我不介意用乾淨堅固的二手紙箱。</div>
+            <div class="text" id="LabelCheck">✓&nbsp;我不介意酒標有微小瑕疵。<label class="icon_question" id="LabelCheckInfo">?</label></div>
+        </div>
+        <div class="row">
+                <div class="title">配送方式</div>
+                <div id="DeliveryInfo_project" class="sex_radio CLEARBOTH">
+                    <!--
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_SuperExpress"><span>特急件<label class="icon_question" id="SuperExpressInfo">?</label> 運費$300 (限雙北區域、付款方式僅限匯款/刷卡)</span>
+                    </div>-->
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_T-Cat" checked="checked"><span>宅配到府</span>
+                    </div>
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_Motocycle"><span>當日配(限雙北區域、付款方式僅限匯款/刷卡)</span>
+                        <div class="extend">
+                            將於上班日（周一至周五，國定假日除外）15:00前出貨、最晚19:00到貨；若已截單（超過當日14:00）將順延至下一個工作當日出貨。
+                        </div>
+                    </div>
+                    <!--
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_Car"><span>汽車當日配需下樓自取 (雙北特定區域、1400前)</span>
+                    </div>
+                    -->
+                    
+                    
+                    <div class="CLEARBOTH">
+                        <input type="radio" name="project" id="DeliveryType_SelfCollect"><span>預約自取(免運費)</span>
+                        <div class="extend">
+                            請於抵達前1小時來電確認已備好貨，<br/>可預約時段：上班日11:00~12:00、16:00~18:00。<br/>
+                            地址：新北市汐止區中興路43號1樓 國揚矽谷大廳（開車可臨停在大廳對面）
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="row delivery_time">
+            <div class="title">希望配送時段</div>
+            <div class="sex_radio CLEARBOTH">
+                <input type="radio" name="time">
+                <span>上午(08~13時)</span>
+                <input type="radio" name="time">
+                <span>下午(14~18時)</span>
+                <input type="radio" name="time" checked="checked">
+                <span>皆可</span>
+            </div>
+        </div>
+        <div class="row delivery_date">
+            <div class="title">希望配送星期</div>
+            <div class="sex_radio CLEARBOTH">
+                <input type="radio" name="date">
+                <span>平日</span>
+                <input type="radio" name="date">
+                <span>假日</span>
+                <input type="radio" name="date" checked="checked">
+                <span>皆可</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="note CLEARBOTH">
+                <input type="checkbox" name="" id="iCheersPaperbagCheck">
+                <span>請隨貨附提袋</span>
+                <label id="iCheersPaaerbagCount" style="display: none;">
+                    <input type="text" name="" style="float: left;width: 50px;margin-left: 5px;margin-top: -12px;text-align: center;">
+                    <span>個</span>
+                </label>
+                
+            </div>
         </div>
     </div>
 
@@ -160,20 +220,11 @@
         <textarea>請於12/31前送達</textarea>
     </div>
 
-    <div class="row">
-        <div class="note CLEARBOTH">
-            <input type="checkbox" name="" id="iCheersPaperbagCheck">
-            <span>請隨貨附提袋</span>
-            <label id="iCheersPaaerbagCount" style="display: none;">
-                <input type="text" name="" style="float: left;width: 50px;margin-left: 5px;margin-top: -12px;text-align: center;">
-                <span>個</span>
-            </label>
-            
-        </div>
-    </div>
+    
 
     <div class="row btn_row">
-        <div class="btn_step next" style="padding-left:10px;">確認出貨</div>
+        <div class="btn_step prev">上一步</div>
+        <div class="btn_step next">下一步</div>
     </div>
 </div>
 <div class="Warning_small_screen">
