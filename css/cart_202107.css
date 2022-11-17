@@ -1736,65 +1736,65 @@ input{
 	font-weight: normal;
 }
 
-.cart_list_BottleSoldOut .bottle_img {
+.cart_list_BottleSoldOut .bottle_img, .cart_list_gift .gift_wine_soldout .bottle_img {
     opacity: 0.4;
 }
 
-.cart_list_BottleSoldOut .bottle_info .name_cn, .cart_list_BottleSoldOut .gift_wine .bottle_info .name_cn{
+.cart_list_BottleSoldOut .bottle_info .name_cn, .cart_list_gift .gift_wine_soldout .bottle_info .name_cn{
     color: #d9d9d9;
 }
 
-.cart_list_BottleSoldOut .bottle_info .name_en, .cart_list_BottleSoldOut .gift_wine .bottle_info .name_en{
+.cart_list_BottleSoldOut .bottle_info .name_en, .cart_list_gift .gift_wine_soldout .bottle_info .name_en{
     color: #d9d9d9;
 }
 
-.cart_list_BottleSoldOut .bottle_info .status, .cart_list_BottleSoldOut .gift_wine .bottle_info .status {
+.cart_list_BottleSoldOut .bottle_info .status, .cart_list_gift .gift_wine_soldout .bottle_info .status {
     color: #d9d9d9;
 }
 
-.cart_list_BottleSoldOut .bottle_info .status span:after, .cart_list_BottleSoldOut .gift_wine .bottle_info .status span:after{
+.cart_list_BottleSoldOut .bottle_info .status span:after, .cart_list_gift .gift_wine_soldout .bottle_info .status span:after{
     background-color: #d9d9d9;
 }
 
-.cart_list_BottleSoldOut .count_price .count .text, .cart_list_BottleSoldOut .gift_wine .count_price .count .text{
+.cart_list_BottleSoldOut .count_price .count .text, .cart_list_gift .gift_wine_soldout .count_price .count .text{
     color: #d9d9d9;
 }
 
-.cart_list_BottleSoldOut .count_price .count .icon_minus,.cart_list_BottleSoldOut .gift_wine .count_price .count .icon_minus {
+.cart_list_BottleSoldOut .count_price .count .icon_minus,.cart_list_gift .gift_wine_soldout .count_price .count .icon_minus {
     border: 1px solid #e6e6e6;
     background-color: #f2f2f2;
     cursor: default;
 }
 
-.cart_list_BottleSoldOut .count_price .count .icon_minus:after, .cart_list_BottleSoldOut .gift_wine .count_price .count .icon_minus:after{
+.cart_list_BottleSoldOut .count_price .count .icon_minus:after, .cart_list_gift .gift_wine_soldout .count_price .count .icon_minus:after{
     background-color: #d9d9d9;
 }
 
-.cart_list_BottleSoldOut .count_price .count .icon_plus, .cart_list_BottleSoldOut .gift_wine .count_price .count .icon_plus{
+.cart_list_BottleSoldOut .count_price .count .icon_plus, .cart_list_gift .gift_wine_soldout .count_price .count .icon_plus{
     border: 1px solid #e6e6e6;
     background-color: #f2f2f2;
     cursor: default;
 }
 
-.cart_list_BottleSoldOut .count_price .count .icon_plus:before, .cart_list_BottleSoldOut .count_price .count .icon_plus:after, .cart_list_BottleSoldOut .gift_wine .count_price .count .icon_plus:before, .cart_list_BottleSoldOut .gift_wine .count_price .count .icon_plus:after{
+.cart_list_BottleSoldOut .count_price .count .icon_plus:before, .cart_list_BottleSoldOut .count_price .count .icon_plus:after, .cart_list_gift .gift_wine_soldout .count_price .count .icon_plus:before, .cart_list_gift .gift_wine_soldout .count_price .count .icon_plus:after{
     background-color: #d9d9d9;
 }
 
-.cart_list_BottleSoldOut .count_price .count .bottle_number, .cart_list_BottleSoldOut .gift_wine .count_price .count .bottle_number {
+.cart_list_BottleSoldOut .count_price .count .bottle_number, .cart_list_gift .gift_wine_soldout .count_price .count .bottle_number {
     color: #d9d9d9;
     border: 1px solid #e6e6e6;
     background-color: #f2f2f2;
 }
 
-.cart_list_BottleSoldOut .count_price .price .text, .cart_list_BottleSoldOut .gift_wine .count_price .price .text{
+.cart_list_BottleSoldOut .count_price .price .text, .cart_list_gift .gift_wine_soldout .count_price .price .text{
     color: #d9d9d9;
 }
 
-.cart_list_BottleSoldOut .count_price .price .bottle_price, .cart_list_BottleSoldOut .gift_wine .count_price .price .bottle_price {
+.cart_list_BottleSoldOut .count_price .price .bottle_price, .cart_list_gift .gift_wine_soldout .count_price .price .bottle_price {
     color: #d9d9d9;
 }
 
-.cart_list_BottleSoldOut .delete_text, .cart_list_BottleSoldOut .gift_wine .delete_text {
+.cart_list_BottleSoldOut .delete_text, .cart_list_gift .gift_wine_soldout .delete_text {
     font-size: 1.125rem;
     color: #ea3333;
     margin-right: 10px;
