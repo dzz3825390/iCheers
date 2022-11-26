@@ -473,6 +473,26 @@ function CartDeliveryFeeInfo(){
     LocatePop(PopWindowWidth);
 }
 
+//窖藏配送免運券說明
+function DeliveryFreeTicketInfo(){
+    InitPop();
+
+    var WindowContent = [
+        '<p style="text-align:center;">您目前有<span>n</span>張免運劵可使用</p>',
+    ]
+
+    //視窗標題
+    $('.notice_title').text('免運券說明');
+
+    //視窗內容
+    $('.notice_body').html(WindowContent);
+
+    //指定大視窗時pop寬度
+    var PopWindowWidth = 350;
+
+    LocatePop(PopWindowWidth);
+}
+
 
 //step3 修改訂購人資訊
 function PurchaseInfoEditClick(){
