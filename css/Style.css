@@ -4471,8 +4471,14 @@ margin-top: 5px;
     font-family: "微軟正黑體","新細明體";
     color: #666;
     margin-right: 10px;
+    /* margin-bottom: 10px; */
 }
 /*20170220 Roger 調整寬度*/
+
+    .WineDetail_Rank:nth-child(n+6) {
+        margin-top: 10px;
+    }
+/*20220111 Joan 增加每列間距*/
 
     .WineDetail_Rank h1 {
         display: block;
@@ -4770,7 +4776,7 @@ h5.Focus {
     background-color: #F3F3F3;
     margin-left: 1px;
     padding: 10px 0;
-    padding-left: 5px;
+    padding-left: 10px;
     overflow: hidden;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -4921,7 +4927,7 @@ h5.Focus {
     background-color: #F3F3F3;
     margin-left: 1px;
     padding: 10px 0;
-    padding-left: 5px;
+    padding-left: 10px;
     overflow: hidden;
     margin-bottom: 10px;
     margin-top: 20px;
