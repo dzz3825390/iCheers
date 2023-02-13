@@ -3434,6 +3434,23 @@ input{
 	cursor: pointer;
 }
 
+.step3_content .row .sex_radio .extend{
+	float: left;
+	width: 100%;
+	font-size: 16px;
+    line-height: 24px;
+   	margin-left: 24px;
+    color: #666;
+    background-color: #f5f5f5;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.step3_content .row .sex_radio input:checked ~ .extend{
+	display: block;
+}
+
 .step3_content .row select{
 	height: 45px;
 	border: 1px solid #ccc;
