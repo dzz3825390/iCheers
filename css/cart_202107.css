@@ -3418,7 +3418,7 @@ input{
 	float: left;
 }
 
-.step3_content .row .sex_radio span label.icon_question{
+label.icon_question{
 	width: 20px;
 	height: 20px;
 	line-height: 20px;
@@ -3430,7 +3430,7 @@ input{
 	position: relative;
 	margin: 0 6px;
 	display: inline-block;
-	top: -2px;
+	top: 0;
 	cursor: pointer;
 }
 
@@ -3448,6 +3448,25 @@ input{
 }
 
 .step3_content .row .sex_radio input:checked ~ .extend{
+	display: block;
+}
+
+
+.step3_content .row .note .extend{
+	float: left;
+	background-color: #f5f5f5;
+	padding: 10px 16px;
+	box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 22px;
+    color: #666;
+    margin-top: 5px;
+    display: none;
+}
+
+.step3_content .row .note input[type=checkbox]:checked ~ .extend{
 	display: block;
 }
 
