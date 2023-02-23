@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="iCheers愛酒窩">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
 	<title>iCheers愛酒窩 ─ 讓你窩在家就能享受葡萄酒</title>
 	
 	<link href="css_m/all.css" rel="stylesheet" type="text/css" />
@@ -39,16 +45,6 @@
 				    intBrowserH = document.body.clientHeight;
 				}
 
-			$("#SuggestBottleScroll").mCustomScrollbar({
-				axis:"x",
-		        theme:"minimal-dark",
-		        autoHideScrollbar: true,
-		        alwaysShowScrollbar: 0,
-		        mouseWheel: { preventDefault: true }//防止scroll沸升
-		    });
-
-		    
-		    
 		    //酒瓶大小
 		    if (intBrowserW < 768) {
 		    	$('.BottleImg').each(function(){
@@ -134,20 +130,6 @@
 		    	}
 		    });
 
-		    PopWindow('#RemittanceDetail',intBrowserH,intBrowserW);
-
-		    //另行配送地址展開/收合
-		    $('.Radio_remittance').on('click',function(){
-		    	var Transfer = $(this).attr('id');
-		    	if (Transfer == 'Transfer') {
-		    		Radiobox(this);
-		    		$('#Transfer_Input').slideDown(300);
-		    	} else {
-		    		Radiobox(this);
-		    		$('#Transfer_Input').slideUp(300);
-		    	}
-		    });
-
 		    		   	
 		});
 
@@ -173,6 +155,7 @@
 
 	<!--logo svg-->
 	<div class="logo">
+
 	</div>
 	<!--logo svg end-->
 
@@ -187,30 +170,24 @@
 
 <!--content-->
 <div class="content_layout">
-	<div class="cart_large_title">我的清單</div>
-	<div class="cart_step_row">
-		<div class="OneStep OneStep_active">
-			<span>Step1</span>
-		</div>
-		<div class="OneStep">
-			<span>Step2</span>
-		</div>
-		<div class="OneStep">
-			<span>Step3</span>
-		</div>
-		<div class="OneStep">
-			<span>Step4</span>
-		</div>
+	<div class="cart_large_title">修改我的清單</div>
+	<div class="ReviseOrder_text">
+		在您送出確認信至訂單成立間，因下列因素訂購資料有變更，需請您再次確認訂單明細：
 	</div>
-
+	<div class="ReviseOrder_text">
+		1. 太多英雄與您所見略同，部分商品目前庫存不足，<span>愛酒窩已自動將您原本所填寫的訂購數量更改為目前僅剩的庫存數量</span>。
+	</div>
+	<div class="ReviseOrder_text">
+		2. iCheer限時優惠活動已截止，下此請把握良機。
+	</div>
 	<!--商品清單-->
 	<section class="cart_list_layout">
 		<!--一瓶酒-->
-		<div class="cart_list_OneBottle">
+		<div class="cart_list_OneBottle cart_list_OneBottle_unchange">
 			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
-				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Name_cn">無異動的單瓶紅酒</div>
 				<div class="Info">
 					<span>2017</span>
 					<span>750ml</span>
@@ -241,7 +218,38 @@
 			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
-				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Name_cn">有異動的單瓶紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price PriceChangeFast">
+					<div class="Count">
+						<div class="btn fast" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn fast" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Fast FastChange">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--一瓶酒 end-->
+		<!--一瓶酒-->
+		<div class="cart_list_OneBottle cart_list_OneBottle_soldout">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">完全無貨的單瓶紅酒</div>
 				<div class="Info">
 					<span>2017</span>
 					<span>750ml</span>
@@ -255,12 +263,12 @@
 				<div class="Price">
 					<div class="Count">
 						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
-						<input type="text" value="5"/>
+						<input type="text" value="0"/>
 						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
 					</div>
-					<div class="Subtotal Fast">
+					<div class="Subtotal Normal">
 						<span>小計</span>
-						$1,232,560
+						$0
 					</div>
 				</div>
 			</div>
@@ -270,13 +278,13 @@
 		<!--一個組合-->
 		<div class="AllTitle_layout">
 			<div class="largeT">
-				歡樂春節套組
+				無異動的組合
 			</div>
 			<div class="secondT">
 				波爾多超值組合優惠
 			</div>
 		</div>
-		<div class="cart_list_OneGroup">
+		<div class="cart_list_OneGroup cart_list_OneGroup_unchange">
 			<div class="GroupBottle">
 				<div class="GroupBottleImg">
 					<img src="images/mobile/bottle-s.jpg" />
@@ -354,13 +362,188 @@
 			<div class="btn_delete"></div>
 		</div>
 		<!--一個組合 end-->
+		<!--一個組合-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				有異動的組合
+			</div>
+			<div class="secondT">
+				波爾多超值組合優惠
+			</div>
+		</div>
+		<div class="cart_list_OneGroup">
+			<div class="GroupBottle">
+				<div class="GroupBottleImg">
+					<img src="images/mobile/bottle-s.jpg" />
+				</div>
+				<div class="GroupBottleInfo">
+					<div class="Name_en">
+						Bourgogne Chardonnay
+					</div>
+					<div class="Name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="Info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>法國</span>
+					</div>
+				</div>
+			</div>
+			<div class="dottedline"></div>
+			<div class="GroupBottle">
+				<div class="GroupBottleImg">
+					<img src="images/mobile/bottle-s.jpg" />
+				</div>
+				<div class="GroupBottleInfo">
+					<div class="Name_en">
+						Bourgogne Chardonnay
+					</div>
+					<div class="Name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="Info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>法國</span>
+					</div>
+				</div>
+			</div>
+			<div class="dottedline"></div>
+			<div class="GroupBottle">
+				<div class="GroupBottleImg">
+					<img src="images/mobile/bottle-s.jpg" />
+				</div>
+				<div class="GroupBottleInfo">
+					<div class="Name_en">
+						Bourgogne Chardonnay
+					</div>
+					<div class="Name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="Info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>法國</span>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="Status">
+				<div>無紅利</div>
+				<div>限匯款</div>
+				<div>需運費</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="Price PriceChangeNormal">
+				<div class="Count">
+					<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+					<input type="text" value="5"/>
+					<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+				</div>
+				<div class="Subtotal Normal NormalChange">
+					<span>小計</span>
+					$1,232,560
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--一個組合 end-->
+		
+		<!--一個組合-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				完全沒貨的的組合
+			</div>
+			<div class="secondT">
+				波爾多超值組合優惠
+			</div>
+		</div>
+		<div class="cart_list_OneGroup cart_list_OneGroup_soldout">
+			<div class="GroupBottle">
+				<div class="GroupBottleImg">
+					<img src="images/mobile/bottle-s.jpg" />
+				</div>
+				<div class="GroupBottleInfo">
+					<div class="Name_en">
+						Bourgogne Chardonnay
+					</div>
+					<div class="Name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="Info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>法國</span>
+					</div>
+				</div>
+			</div>
+			<div class="dottedline"></div>
+			<div class="GroupBottle">
+				<div class="GroupBottleImg">
+					<img src="images/mobile/bottle-s.jpg" />
+				</div>
+				<div class="GroupBottleInfo">
+					<div class="Name_en">
+						Bourgogne Chardonnay
+					</div>
+					<div class="Name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="Info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>法國</span>
+					</div>
+				</div>
+			</div>
+			<div class="dottedline"></div>
+			<div class="GroupBottle">
+				<div class="GroupBottleImg">
+					<img src="images/mobile/bottle-s.jpg" />
+				</div>
+				<div class="GroupBottleInfo">
+					<div class="Name_en">
+						Bourgogne Chardonnay
+					</div>
+					<div class="Name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="Info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>法國</span>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="Status">
+				<div>無紅利</div>
+				<div>限匯款</div>
+				<div>需運費</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="Price">
+				<div class="Count">
+					<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+					<input type="text" value="0"/>
+					<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+				</div>
+				<div class="Subtotal Normal">
+					<span>小計</span>
+					$0
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--一個組合 end-->
 		<!--加價商品-->
 		<div class="AllTitle_layout">
 			<div class="largeT">
 				Raúl Peréz 任選六瓶8折加999元再送電動刮鬍刀
 			</div>
 		</div>
-		<div class="cart_list_OneBottle">
+		<div class="cart_list_OneBottle cart_list_OneBottle_unchange">
 			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
@@ -404,13 +587,13 @@
 					<div>限匯款</div>
 					<div>需運費</div>
 				</div>
-				<div class="Price">
+				<div class="Price PriceChangeNormal">
 					<div class="Count">
 						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
 						<input type="text" value="5"/>
 						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
 					</div>
-					<div class="Subtotal Normal">
+					<div class="Subtotal Normal NormalChange">
 						<span>小計</span>
 						$1,232,560
 					</div>
@@ -491,13 +674,13 @@
 		<!--預訂商品-->
 		<div class="AllTitle_layout">
 			<div class="largeT">
-				預訂商品
+				無異動的預訂商品
 			</div>
 			<div class="secondT">
 				預計到貨日：2017 年 12 月
 			</div>
 		</div>
-		<div class="cart_list_OneBottle">
+		<div class="cart_list_OneBottle cart_list_OneBottle_unchange">
 			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
@@ -526,7 +709,7 @@
 			</div>
 			<div class="btn_delete"></div>
 		</div>
-		<div class="cart_list_OneBottle">
+		<div class="cart_list_OneBottle cart_list_OneBottle_unchange">
 			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
@@ -559,7 +742,7 @@
 		<!--預訂商品2-->
 		<div class="AllTitle_layout">
 			<div class="largeT">
-				預訂商品
+				有異動的預訂商品
 			</div>
 			<div class="secondT">
 				預計到貨日：2018 年 8 月
@@ -580,15 +763,54 @@
 					<div>限匯款</div>
 					<div>需運費</div>
 				</div>
-				<div class="Price">
+				<div class="Price PriceChangePreorder">
 					<div class="Count">
 						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
 						<input type="text" value="5"/>
 						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
 					</div>
-					<div class="Subtotal Preorder">
+					<div class="Subtotal Preorder PreorderChange">
 						<span>小計</span>
 						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--預訂商品2 end-->
+		<!--預訂商品2-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				完全無貨的預訂商品
+			</div>
+			<div class="secondT">
+				預計到貨日：2018 年 8 月
+			</div>
+		</div>
+		<div class="cart_list_OneBottle cart_list_OneBottle_soldout">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="0"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Preorder">
+						<span>小計</span>
+						$0
 					</div>
 				</div>
 			</div>
@@ -598,13 +820,13 @@
 		<!--贈品任選-->
 		<div class="AllTitle_layout">
 			<div class="largeT">
-				贈品
+				無異動的贈品
 			</div>
 			<div class="secondT">
 				icheers六月份限時送好禮
 			</div>
 		</div>
-		<div class="cart_list_OneBottle cart_list_gift">
+		<div class="cart_list_OneBottle cart_list_gift cart_list_OneBottle_unchange">
 			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
@@ -613,6 +835,54 @@
 					<div class="Count">
 						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
 						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Gift">
+						<span>價值</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--贈品任選 end-->
+		<!--贈品任選-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				有異動的贈品
+			</div>
+			<div class="secondT">
+				icheers六月份限時送好禮
+			</div>
+		</div>
+		<div class="cart_list_OneBottle cart_list_gift cart_list_OneBottle_soldout">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="0"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Gift">
+						<span>價值</span>
+						$0
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="cart_list_OneBottle cart_list_gift">
+			<div class="BottleImg" style="background-image: url(&quot;images/mobile/bottle.jpg&quot;); height: 494.7px;"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5">
 						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
 					</div>
 					<div class="Subtotal Gift">
@@ -629,19 +899,19 @@
 			</div>
 		</div>
 		<div class="cart_list_OneBottle cart_list_gift cart_list_gift_unchecked">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleImg" style="background-image: url(&quot;images/mobile/bottle.jpg&quot;); height: 494.7px;"></div>
 			<div class="BottleInfo">
 				<div class="Name_en">Jester Sangiovese Rosé</div>
 				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
 				<div class="Price">
 					<div class="Count">
 						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
-						<input type="text" value="5"/>
+						<input type="text" value="0">
 						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
 					</div>
 					<div class="Subtotal Gift">
 						<span>價值</span>
-						$1,232,560
+						$0
 					</div>
 				</div>
 			</div>
@@ -653,52 +923,6 @@
 			</div>
 		</div>
 		<!--贈品任選 end-->
-		<!--贈品全部贈送-->
-		<div class="AllTitle_layout">
-			<div class="largeT">
-				贈品
-			</div>
-			<div class="secondT">
-				icheers六月份限時送好禮
-			</div>
-		</div>
-		<div class="cart_list_OneBottle cart_list_gift">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
-			<div class="BottleInfo">
-				<div class="Name_en">Jester Sangiovese Rosé</div>
-				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
-				<div class="Price">
-					<div class="Count">
-						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
-						<input type="text" value="5"/>
-						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
-					</div>
-					<div class="Subtotal Gift">
-						<span>價值</span>
-						$1,232,560
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="cart_list_OneBottle cart_list_gift">
-			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
-			<div class="BottleInfo">
-				<div class="Name_en">Jester Sangiovese Rosé</div>
-				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
-				<div class="Price">
-					<div class="Count">
-						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
-						<input type="text" value="5"/>
-						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
-					</div>
-					<div class="Subtotal Gift">
-						<span>價值</span>
-						$1,232,560
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--贈品全部贈送 end-->
 	</section>
 	<!--商品清單 end-->
 	
@@ -710,19 +934,27 @@
 		<div class="LargeTitle_info">
 			(普級會員 消費滿20元，送1點，出貨後7日寄出紅利贈送通知信)
 		</div>
+		<div class="OneItem_Row OneItem_Row_unchange">
+			<div class="OneItem_title">無異動紅利點數贈送</div>
+			<div class="OneItem_text"><span>600</span>點</div>
+		</div>
 		<div class="OneItem_Row">
 			<div class="OneItem_title">紅利點數贈送</div>
 			<div class="OneItem_text"><span>600</span>點</div>
 		</div>
 		<div class="OneItem_Row">
-			<div class="OneItem_title">紅利點數加倍贈送</div>
-			<div class="OneItem_text"><span>1200</span>點</div>
+			<div class="OneItem_title">歸零紅利點數贈送</div>
+			<div class="OneItem_text"><span>0</span>點</div>
 		</div>
 		<div class="LargeTitle">
 			全館消費滿2000折300
 		</div>
 		<div class="LargeTitle_info">
 			(出貨後7日寄出e-Coupon贈送通知信)
+		</div>
+		<div class="OneItem_Row OneItem_Row_unchange">
+			<div class="OneItem_title">無異動e-Coupon贈送</div>
+			<div class="OneItem_text"><span>2</span>張</div>
 		</div>
 		<div class="OneItem_Row">
 			<div class="OneItem_title">e-Coupon贈送</div>
@@ -784,180 +1016,6 @@
 	</section>
 	<!--總計 end-->
 
-	<!--相關酒款推薦-->
-	<section class="BottlesZone_layout">
-		<h2 class="LargeTitle NormalZone_title">
-			<div class="text">
-				<span>加價商品</span>
-			</div>
-			<span class="line"></span>
-		</h2>
-		<div class="SmallTitle">
-			icheers十月份滿額加價商品(任選一項)
-		</div>
-		<div class="NormalZone_bottles_layout" id="SuggestBottleScroll">
-			<div class="content_bottle_scrollX">
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/mobile/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/mobile/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/mobile/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/mobile/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/mobile/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-				<!--1瓶酒-->
-				<div class="BottlesZone_onebottle NormalZone_onebottle">
-					<div class="bottle_img">
-						<img src="images/mobile/bottle-s.jpg">
-					</div>
-					<h3 class="bottle_name_en">
-						Maison Louis Jadot,Chateau dyes Jacques, Moulin-à-Vent "Clos du Grand Carquelin"
-					</h3>
-					<h3 class="bottle_name_cn">
-						風車磨坊特級村莊「大卡園」紅酒
-					</h3>
-					<div class="bottle_info">
-						<span>2017</span>
-						<span>750 ml</span>
-						<span>RP&nbsp;95</span>
-					</div>
-					<div class="bottle_price">
-						$1,350
-						<span class="normalicon"></span>
-					</div>
-					<div class="bottle_price_preorder">
-						$1,350
-						<span class="preordericon"></span>
-					</div>
-				</div>
-				<!--1瓶酒 end-->
-			</div>
-		</div>
-	</section>
-	<!--相關酒款推薦 end-->
-
 	<!--須知-->
 	<div class="cart_Terms_layout">
 		<div class="cart_Terms_border">
@@ -984,20 +1042,8 @@
 	<!--須知 end-->
 
 	<!--check-->
-	<div class="cart_YearCheck_layout">
-		<div class="checkbox_layout">
-			<label class="checkbox">
-				<input type="checkbox">
-				<span class="checked"></span>
-			</label>
-		</div>
-		<div class="cart_YearCheck_text"> 
-			<span class="large">我已年滿18歲</span>
-			<span class="small">並詳細閱讀與同意上述條款</span>
-		</div>
-	</div>
-	<div class="cart_YearCheck_btn cart_YearCheck_btn_unchecked" id="YearCheckBtn">
-		送出確認信
+	<div class="cart_YearCheck_btn">
+		確認，填寫配送資訊
 	</div>
 	<!--check end-->
 
@@ -1047,48 +1093,116 @@
 </div>
 
 <div class="warning">
-	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+	飲酒過量有礙健康&nbsp;禁止酒駕
 </div>
 
 <div class="black_BG" id="black_BG02">
-	<!--匯款資訊填寫-->
-	<div class="PopWindow_layout" id="RemittanceDetail">
+	<!--使用bouns-->
+	<div class="PopWindow_layout" id="UseBounsWindow">
 		<div class="PopWindow_title">
-			匯款資訊填寫
+			紅利折抵
 			<span class="CloseBTN"></span>
 		</div>
 		<div class="PopWindow_content">
-			<div class="PopWindow_content_text">訂單編號：XXXXXXXXX </div>
-			<div class="PopWindow_content_text">應付總額：$ <span>45,678</span> </div>
+			<div class="PopWindow_content_text">您目前的紅利累計有<span>12345</span>點，可折抵<span>12345</span>元。</div>
 			<div class="Popwindow_form">
-				<div class="title">匯款人姓名<span>*</span></div>
+				<div class="title">本次折抵點數</div>
 				<input type="text" />
 			</div>
-			<div class="Popwindow_form">
-				<div class="title">銀行名稱<span>*</span></div>
-				<input type="text" />
-			</div>
-			<div class="Popwindow_form">
-				<div class="title">匯款時間</div>
-				<input type="datetime-local" />
-			</div>
-			<div class="Popwindow_form">
-				<div class="title">匯款方式<span>*</span></div>
-				<div class="remittance_infotext">
-					「轉帳」請務必提供後5碼，以利核帳。 到銀行櫃台存款沒有後5碼，則選擇「臨櫃存現」即可。 
-				</div>
-				<div class="cart_form_row">
-					<div class="RadioBox Radio_remittance" name="remittance" id="Transfer">轉帳</div>
-					<div class="Radio_remittance_extend" style="display: none;" id="Transfer_Input">
-						<input type="text" placeholder="請輸入後5碼" />
-					</div>
-					<div class="RadioBox Radio_remittance" name="remittance">臨櫃存現</div>
-				</div>
-			</div>
-			<div class="Popwindow_ConfirmBtn">確認送出</div>
+			<div class="Popwindow_ConfirmBtn">確定</div>
 		</div>
 	</div>
-	<!--匯款資訊填寫 end-->
+	<!--使用bouns end-->
+
+	<!--使用coupon-->
+	<div class="PopWindow_layout" id="UseCouponWindow">
+		<div class="PopWindow_title">
+			e-eoupon優惠
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			
+			<div class="Popwindow_form">
+				<div class="title">請輸入e-Coupon號碼</div>
+				<input type="text" />
+			</div>
+			<div class="Popwindow_ConfirmBtn">確定</div>
+		</div>
+	</div>
+	<!--使用coupon end-->
+
+	<!--運費說明-->
+	<div class="PopWindow_layout" id="FreightInfoWindow">
+		<div class="PopWindow_title">
+			運費說明
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">折扣後商品總額</div>
+			<div class="FreightInfoRow">
+				<div><span>1,499</span>元以下</div>
+				<div>200元</div>
+			</div>
+			<div class="FreightInfoRow">
+				<div><span>1,500</span>元(含)以上</div>
+				<div>0元</div>
+			</div>
+			<div class="FreightInfo_notice">
+				*若有選購任一需運費商品，則不適用滿額  免運費之優惠。
+			</div>
+
+			<div class="FreightInfo_notice">
+				*離島冷藏宅配將統一收取200元運費，離島訂單恕無法享有滿額免運費優惠。
+			</div>
+			<div class="Popwindow_ConfirmBtn">回購物車</div>
+		</div>
+	</div>
+	<!--運費說明 end-->
+
+	<!--分批出貨check-->
+	<div class="PopWindow_layout" id="SeparateCheckWindow">
+		<div class="PopWindow_title">
+			分批出貨
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">您的清單內含有<span>快速到貨∕預訂商品</span>，可能會影響到出貨時間；請問是否分批出貨？</div>
+			
+			<div class="Popwindow_ConfirmBtn" id="ConfirmBtn01">不用了，謝謝</div>
+			<div class="Popwindow_ConfirmBtn">我要分批出貨</div>
+		</div>
+	</div>
+	<!--分批出貨check end-->
+	
+	<!--發送確認信1 範本-->
+	<div class="PopWindow_layout" id="MailWindow1">
+		<div class="PopWindow_title">
+			發送確認信
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，客服人員將會盡快與您e-mail聯繫！</div>
+			<div class="Popwindow_form">
+				<div class="title">請輸入e-mail</div>
+				<input type="text" />
+			</div>
+			<div class="PopWindow_content_text">
+				您所選擇的快速到貨品項已超過截單時間<span>15:00</span>，為了以最快速度安排出貨，請於下個截單時間之前完成流程(至Step4)，為求出貨效率，建議使用宅配貨到付款(現金)：
+			</div>
+			<div class="PopWindow_RadioBox PopWindow_RadioBox_active" name='G1'>
+				 我需要快速到貨，宅配貨到付款(現金)OK！<b>（提醒：需依出貨批次<em>分批付款</em>！）</b>
+			</div>
+			<div class="PopWindow_RadioBox" name='G1'>
+				 我需要快速到貨，我會在<em>下個工作天15:00之前</em>，以線下刷卡/匯款方式，擇一完成付款(Step4)。<b>（提醒：款項需<em>一次付清</em>，且逾時恕無法快速到貨！）</b>
+			</div>
+			<div class="PopWindow_RadioBox" name='G1'>
+				 我不急著用酒，以一般配送方式合併出貨即可。
+			</div>
+			<div class="Popwindow_ConfirmBtn">送出</div>
+			
+		</div>
+	</div>
+	<!--發送確認信1 end-->
 
 </div>
 <!--side menu-->

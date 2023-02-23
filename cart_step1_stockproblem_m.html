@@ -9,6 +9,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="address=no">
 	<title>iCheers愛酒窩 ─ 讓你窩在家就能享受葡萄酒</title>
+	
 	<link href="css_m/all.css" rel="stylesheet" type="text/css" />
 	<link href="css_m/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
@@ -29,6 +30,7 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
+
 			var intBrowserW = 0;
 
 			//瀏覽器內容高度
@@ -43,13 +45,74 @@
 				    intBrowserH = document.body.clientHeight;
 				}
 
-			
-		   
-		   
-		    
+		    //酒瓶大小
+		    if (intBrowserW < 768) {
+		    	$('.BottleImg').each(function(){
+			    	var BottleWidth = $(this).width();
+			    	var BorrleHeight = BottleWidth*2.4;
+			    	$(this).css('height',BorrleHeight);
+			    });
+		    } else if (intBrowserW < 1366) {
+		    	$('.BottleImg').each(function(){
+			    	var BottleWidth = $(this).width();
+			    	var BorrleHeight = BottleWidth*1.7 ;
+			    	$(this).css('height',BorrleHeight);
+			    });
+		    } else {
+		    	$('.BottleImg').each(function(){
+			    	var BottleWidth = $(this).width();
+			    	var BorrleHeight = BottleWidth*1.2 ;
+			    	$(this).css('height',BorrleHeight);
+			    });
+		    }
+
+		    //酒款資訊位置(1366)
+		    if (intBrowserW < 1366) {
+
+		    } else {
+		    	var BottleInfoWidth = $('.BottleInfo').width();
+		    	var BottleInfoHeight = $('.BottleInfo').height();
+		    	var BottleInfoOuterWidth = $('.cart_list_OneBottle').width()*0.6;
+		    	var BottleInfoOuterHeight = $('.BottleImg').height();
+
+		    	var BottleInfoPositionX = (BottleInfoOuterWidth - BottleInfoWidth)/2 + 40;
+		    	var BottleInfoPositionY = (BottleInfoOuterHeight - BottleInfoHeight)/2;
+		    	$('.BottleInfo').css({
+		    		'top':BottleInfoPositionY,
+		    		'right':BottleInfoPositionX
+		    	});
+		    }
+
+		    //斜瓶大小
+
+		    $('.GroupBottleImg').each(function(){
+		    	var GroupBottleHeight = $(this).width();
+		    	$(this).css('height',GroupBottleHeight);
+		    });
+
+		    //斜瓶酒款資訊位置(1366)
+		    if (intBrowserW < 1366) {
+
+		    } else {
+		    	$('.GroupBottleInfo').each(function(){
+		    		var GroupBottleInfoHeight = $(this).height();
+		    		var GroupBottleInfoPositionY = (250 - GroupBottleInfoHeight)/2;
+		    		$(this).css('margin-top',GroupBottleInfoPositionY);
+		    	});
+		    }
 		    
 
-		    
+		    //贈品勾選
+		    $('.cart_list_gift .checkbox').click(function(){
+		    	var isChecked = $(this).find('input[type=checkbox]').prop('checked');
+		    	//console.log(isChecked);
+		    	if (isChecked) {
+		    		$(this).parent().parent().removeClass('cart_list_gift_unchecked');
+		    		
+		    	} else {
+		    		$(this).parent().parent().addClass('cart_list_gift_unchecked');
+		    	}
+		    });
 
 		    //年齡確認置中
 		    var YearCheckWidth = $('.cart_YearCheck_layout').width();
@@ -67,169 +130,15 @@
 		    	}
 		    });
 
-		    
-		    //發票第二層radio box置中
-		    $('.invoice_radiobox_layout').each(function(){
-		    	var RadioBoxWidth = $(this).width();
-		    	var RowWidth = $(this).parent().width();
-		    	var RadioBoxPositionX = (RowWidth - RadioBoxWidth)/2;
-		    	$(this).css('margin-left',RadioBoxPositionX);
-		    });
-
-
-		    //發票第二層radio box文字置中
-		    $('.invoice_radiobox_layout span').each(function(){
-		    	var TextHeight = $(this).height();
-		    	$(this).css('height',TextHeight);
-		    });
-
-		    //性別radio
-		    $('.Radio_Sexual').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   		} else {
-		   			//do nothing
-		   		}
-		    });
-
-		    //貨運時間Radio
-		    $('.Radio_DeliveryTime').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   		} else {
-		   			//do nothing
-		   		}
-		    });
-
-		    //發票寄送第二層Radio
-		    $('.Radio_invoice_unit').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			//其他配送地址 打開/收合
-		   			var AnotherAddress = $(this).attr('id');
-		   			if (AnotherAddress == 'invoice_AnotherAddress_2') {
-		   				Radiobox(this);
-		   				$(this).parent().next().slideDown(300);
-		   			} else if (AnotherAddress == 'invoice_AnotherAddress_3') {
-		   				Radiobox(this);
-		   				$(this).parent().parent().next().slideDown(300);
-		   			}
-		   			else {
-		   				Radiobox(this);
-		   			}
-		   			
-		   		} else {
-		   			//do nothing
-		   		}
-		    });
-
-		    //另行配送地址展開/收合
-		    $('.Radio_Delivery').on('click',function(){
-		    	var isAnotherAddress = $(this).attr('id');
-		    	if (isAnotherAddress == 'AnotherAddress') {
-		    		Radiobox(this);
-		    		$('#Form_AnotherAddress').slideDown(300);
-		    	} else {
-		    		Radiobox(this);
-		    		$('#Form_AnotherAddress').slideUp(300);
-		    	}
-		    });
-
-		    //電子發票、捐贈發票其他 打開/收合
-		    $('.Radio_invoice_unit').on('click',function () {
-		    	var isActive = $(this).hasClass('RadioBox_active');
-		    	if (isActive && $(this).attr('id') == 'invoice_donate_other') {
-		    		$('.invoice_hide').css('display','none');
-		    		$('.invoice_donate_other_input').slideDown(300);
-		    	} else if (isActive && $(this).attr('id') == 'electroic_invoice_phone'){
-		    		$('.invoice_hide').css('display','none');
-		    		$('.electroic_invoice_input_phone').slideDown(300);
-		    	} else if (isActive && $(this).attr('id') == 'electroic_invoice_idcard'){
-		    		$('.invoice_hide').css('display','none');
-		    		$('.electroic_invoice_input_idcard').slideDown(300);
-		    	} else {
-		    		
-		    	}
-		    });
-
-		    //匯款方式說明打開/收合
-		   	$('.Radio_Payment').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$('.Radio_Payment').next().css('display','none');
-		   			$(this).next().slideDown(300);
-		   		} else {
-		   			//do nothing
-		   		}
-		   		
-		   	});
-
-		   	//發票第一層
-		   	//先隱藏
-		   	$('.Radio_invoice').next().hide();
-		   	$('.Radio_invoice').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active')
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$('.invoice_hide').css('display','none');
-		   			$('.Radio_invoice_unit').removeClass('RadioBox_active');
-		   			$('.Radio_invoice').next().css('display','none');
-		   			$(this).next().slideDown(300);
-		   		} else {
-		   			//do nothing
-		   		}
-		   	});
-
-		   	//二連發票
-		   	$('#invoice_AnotherAddress_2').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active');
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$(this).parent().next().slideDown(300);
-		   		} else {
-		   			//do nothing
-		   		}
-		   	})
-
-		   	//三連發票
-		   	$('#invoice_AnotherAddress_3').on('click',function(){
-		   		var isSelfClick = $(this).hasClass('RadioBox_active');
-		   		if (!isSelfClick) {
-		   			Radiobox(this);
-		   			$(this).parent().next().slideDown(300);
-		   		} else {
-		   			//do nothing
-		   		}
-		   	});
-
-		   	//loading視窗
-		   	PopWindow('#LoadingWindow',intBrowserH,intBrowserW);
-
-		   	//加購紙袋
-		   	$('.add_paperbag').click(function(){
-		    	var isChecked = $(this).find('input[type=checkbox]').prop('checked');
-		    	//console.log(isChecked);
-		    	if (isChecked) {
-		    		$(this).next().slideDown();
-		    		
-		    	} else {
-		    		$(this).next().css('display','none');
-		    	}
-		    });
-		   
-
-		  
-
+		    //active stock check window
+		    PopWindow('#StockCheckWindow',intBrowserH,intBrowserW);	
+		    		   	
 		});
 
 
 	</script>
 </head>
 <body>
-
 <!--假body-->
 <div class="wapper">
 
@@ -264,254 +173,585 @@
 <div class="content_layout">
 	<div class="cart_large_title">我的清單</div>
 	<div class="cart_step_row">
-		<div class="OneStep">
+		<div class="OneStep OneStep_active">
 			<span>Step1</span>
 		</div>
 		<div class="OneStep">
 			<span>Step2</span>
 		</div>
-		<div class="OneStep OneStep_active">
+		<div class="OneStep">
 			<span>Step3</span>
 		</div>
 		<div class="OneStep">
 			<span>Step4</span>
 		</div>
 	</div>
-	
-	<!--基本資料填寫-->
-	<section class="cart_list_layout">
-		<div class="AllTitle_layout">
-			<div class="largeT">
-				訂購人基本資料
-			</div>
-		</div>
-		<div class="cart_form_row">
-			<div class="formTitle">姓名</div>
-			<input type='text' />
-		</div>
-		<div class="cart_form_row">
-			<div class="formTitle">性別</div>
-			<div class="RadioBox Radio_Sexual" name='sex'>男性</div>
-			<div class="RadioBox Radio_Sexual" name='sex'>女性</div>
-		</div>
-		<div class="cart_form_row form_phone">
-			<div class="formTitle">連絡電話</div>
-			<input type='text' placeholder="請輸入手機" />
-			<div class="center_text">或是</div>
-			<div class="dropdown ZoneCode">
-				<div class="dropdown_text"><span>區碼</span></div>
-				<div class="dropdown_extend">
-					<div class="dropdown_option">
-						02
-					</div>
-					<div class="dropdown_option">
-						03
-					</div>
-					<div class="dropdown_option">
-						04
-					</div>
-				</div>
-			</div>
-			<input type="text" class="ZoneCodeinput" placeholder="請輸入市話" />
-			<input type="text" class="ZoneCodeinput2" placeholder="請輸入分機"/>
-		</div>
-		<div class="cart_form_row form_Address">
-			<div class="formTitle">地址</div>
-			<div class="dropdown">
-				<div class="dropdown_text"><span>縣市</span></div>
-				<div class="dropdown_extend">
-					<div class="dropdown_option">
-						台北市
-					</div>
-					<div class="dropdown_option">
-						新北市
-					</div>
-					<div class="dropdown_option">
-						桃園市
-					</div>
-					<div class="dropdown_option">
-						台北市
-					</div>
-					<div class="dropdown_option">
-						新北市
-					</div>
-					<div class="dropdown_option">
-						桃園市
-					</div>
-					<div class="dropdown_option">
-						台北市
-					</div>
-					<div class="dropdown_option">
-						新北市
-					</div>
-					<div class="dropdown_option">
-						桃園市
-					</div>
-				</div>
-			</div>
-			<div class="dropdown">
-				<div class="dropdown_text"><span>鄉鎮區</span></div>
-				<div class="dropdown_extend">
-					<div class="dropdown_option">
-						aaa
-					</div>
-					<div class="dropdown_option">
-						bbb
-					</div>
-					<div class="dropdown_option">
-						ccc
-					</div>
-				</div>
-			</div>
-			<input type='text' placeholder="請輸入地址" />
-			<div class="NoticeText">
-				離島冷藏宅配訂單將統一收取200元運費，恕無法提供滿額免運費優惠，還請見諒，謝謝！
-			</div>
-		</div>
-	</section>
-	<!--基本資料填寫 end-->
 
-	<!--商品配送訊息-->
+	<!--商品清單-->
 	<section class="cart_list_layout">
+		<!--20180521 Roger add-->
+		<!--一瓶酒(售完需刪除)-->
+		<div class="cart_list_OneBottle cart_list_BottleSoldOut">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="0"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Normal">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+			<div class="delete_text">售完需刪除</div>
+		</div>
+		<!--一瓶酒 end-->
+		<!--20180521 Roger add end-->
+		<!--一瓶酒-->
+		<div class="cart_list_OneBottle">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Normal">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--一瓶酒 end-->
+		<!--一瓶酒-->
+		<div class="cart_list_OneBottle">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Fast">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--一瓶酒 end-->
+		<!--一個組合-->
 		<div class="AllTitle_layout">
 			<div class="largeT">
-				商品配送
+				歡樂春節套組
 			</div>
 			<div class="secondT">
-				全面提供低溫宅配到府服務
+				波爾多超值組合優惠
 			</div>
 		</div>
-		<div class="cart_form_row form_delivery_noticeText">
-			<div class="NoticeText">
-				本次訂單您已指定分批出貨，將分為99批出貨，僅限同一地址，若需配送至不同地址，請分開下單，或與客服聯繫！
-			</div>
-		</div>
-		<div class="cart_form_row">
-			<div class="RadioBox Radio_Delivery" name='delivery'>同訂購人</div>
-			<div class="RadioBox Radio_Delivery" name='delivery' id="AnotherAddress">另行配送</div>
-		</div>
-		<div id="Form_AnotherAddress" style="display: none;">
-			<div class="cart_form_row">
-				<div class="formTitle">姓名</div>
-				<input type='text' />
-			</div>
-			<div class="cart_form_row">
-				<div class="formTitle">性別</div>
-				<div class="RadioBox Radio_Sexual" name='sex'>男性</div>
-				<div class="RadioBox Radio_Sexual" name='sex'>女性</div>
-			</div>
-			<div class="cart_form_row form_phone">
-				<div class="formTitle">連絡電話</div>
-				<input type='text' placeholder="請輸入手機" />
-				<div class="center_text">或是</div>
-				<div class="dropdown ZoneCode">
-					<div class="dropdown_text"><span>區碼</span></div>
-					<div class="dropdown_extend">
-						<div class="dropdown_option">
-							02
-						</div>
-						<div class="dropdown_option">
-							03
-						</div>
-						<div class="dropdown_option">
-							04
-						</div>
+		<div class="cart_list_OneGroup">
+			<div class="GroupBottle">
+				<div class="GroupBottleImg">
+					<img src="images/mobile/bottle-s.jpg" />
+					<div class="BottleNumber">x2</div>
+				</div>
+				<div class="GroupBottleInfo">
+					<div class="Name_en">
+						Bourgogne Chardonnay
+					</div>
+					<div class="Name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="Info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>法國</span>
 					</div>
 				</div>
-				<input type="text" class="ZoneCodeinput" placeholder="請輸入市話" />
-				<input type="text" class="ZoneCodeinput2" placeholder="請輸入分機"/>
 			</div>
-			<div class="cart_form_row form_Address">
-				<div class="formTitle">地址</div>
-				<div class="dropdown">
-					<div class="dropdown_text"><span>縣市</span></div>
-					<div class="dropdown_extend">
-						<div class="dropdown_option">
-							台北市
-						</div>
-						<div class="dropdown_option">
-							新北市
-						</div>
-						<div class="dropdown_option">
-							桃園市
-						</div>
+			<div class="dottedline"></div>
+			<div class="GroupBottle">
+				<div class="GroupBottleImg">
+					<img src="images/mobile/bottle-s.jpg" />
+				</div>
+				<div class="GroupBottleInfo">
+					<div class="Name_en">
+						Bourgogne Chardonnay
+					</div>
+					<div class="Name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="Info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>法國</span>
 					</div>
 				</div>
-				<div class="dropdown">
-					<div class="dropdown_text"><span>鄉鎮區</span></div>
-					<div class="dropdown_extend">
-						<div class="dropdown_option">
-							aaa
-						</div>
-						<div class="dropdown_option">
-							bbb
-						</div>
-						<div class="dropdown_option">
-							ccc
-						</div>
+			</div>
+			<div class="dottedline"></div>
+			<div class="GroupBottle">
+				<div class="GroupBottleImg">
+					<img src="images/mobile/bottle-s.jpg" />
+				</div>
+				<div class="GroupBottleInfo">
+					<div class="Name_en">
+						Bourgogne Chardonnay
+					</div>
+					<div class="Name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="Info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>法國</span>
 					</div>
 				</div>
-				<input type='text' placeholder="請輸入地址" />
+			</div>
+			<div class="clearfix"></div>
+			<div class="Status">
+				<div>無紅利</div>
+				<div>限匯款</div>
+				<div>需運費</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="Price">
+				<div class="Count">
+					<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+					<input type="text" value="5"/>
+					<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+				</div>
+				<div class="Subtotal Normal">
+					<span>小計</span>
+					$1,232,560
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--一個組合 end-->
+		<!--加價商品-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				Raúl Peréz 任選六瓶8折加999元再送電動刮鬍刀
 			</div>
 		</div>
-		<div class="cart_form_row">
-			<div class="formTitle">希望配送時段</div>
-			<div class="RadioBox Radio_DeliveryTime" name='deliverytime'>上午 (08~13 時)</div>
-			<div class="RadioBox Radio_DeliveryTime" name='deliverytime'>下午 (14~18 時)</div>
-			<div class="RadioBox Radio_DeliveryTime" name='deliverytime'>皆可</div>
+		<div class="cart_list_OneBottle">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Normal">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
 		</div>
-		<div class="cart_form_row FlexBoxCenter-v">
-			<div class="checkbox_layout" >
+		<div class="cart_list_OneBottle">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Normal">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--加價商品 end-->
+		<!--任選商品-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				iCheers推薦任選3瓶限時優惠價3500元
+			</div>
+		</div>
+		<div class="cart_list_EventNotice">
+			<div class="text">※此區商品總金額為$ <span>999</span>元</div>
+			<div class="text">※此區優惠商品僅能統一出貨，目前時態：一般出貨，約<span>3-5</span>個工作日</div>
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Normal">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Normal">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--任選商品 end-->
+		<!--預訂商品-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				預訂商品
+			</div>
+			<div class="secondT">
+				預計到貨日：2017 年 12 月
+			</div>
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Preorder">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Preorder">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--預訂商品 end-->
+		<!--預訂商品2-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				預訂商品
+			</div>
+			<div class="secondT">
+				預計到貨日：2018 年 8 月
+			</div>
+		</div>
+		<div class="cart_list_OneBottle">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Info">
+					<span>2017</span>
+					<span>750ml</span>
+					<span>法國</span>
+				</div>
+				<div class="Status">
+					<div>無紅利</div>
+					<div>限匯款</div>
+					<div>需運費</div>
+				</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Preorder">
+						<span>小計</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="btn_delete"></div>
+		</div>
+		<!--預訂商品2 end-->
+		<!--贈品任選-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				贈品
+			</div>
+			<div class="secondT">
+				icheers六月份限時送好禮
+			</div>
+		</div>
+		<div class="cart_list_OneBottle cart_list_gift">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Gift">
+						<span>價值</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
+			<div class="checkbox_layout">
 				<label class="checkbox">
-					<input type="checkbox">
+					<input type="checkbox" checked="checked">
 					<span class="checked"></span>
 				</label>
 			</div>
-			<div class="checkbox_text">我不介意用舊但堅固的紙箱出貨，大家一起環保護地球。</div>
 		</div>
-		<div class="cart_form_row FlexBoxCenter-v add_paperbag">
+		<div class="cart_list_OneBottle cart_list_gift cart_list_gift_unchecked">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Gift">
+						<span>價值</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
 			<div class="checkbox_layout">
 				<label class="checkbox">
 					<input type="checkbox">
 					<span class="checked"></span>
 				</label>
 			</div>
-			<div class="checkbox_text">我想加購iCheers愛酒窩提袋。</div>
 		</div>
-		<div class="cart_list_OneBottle" style="display: none;">
-			<div class="BottleImg" style="background-image: url(&quot;images/mobile/paperbag.jpg&quot;); height: 271.2px;"></div>
+		<!--贈品任選 end-->
+		<!--贈品全部贈送-->
+		<div class="AllTitle_layout">
+			<div class="largeT">
+				贈品
+			</div>
+			<div class="secondT">
+				icheers六月份限時送好禮
+			</div>
+		</div>
+		<div class="cart_list_OneBottle cart_list_gift">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
 			<div class="BottleInfo">
-				<div class="Name_en">iCheers Paper Wine Bag (for single bottle)</div>
-				<div class="Name_cn">iCheers愛酒窩提袋(單入)</div>
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
 				<div class="Price">
 					<div class="Count">
 						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
-						<input type="text" value="1">
+						<input type="text" value="5"/>
 						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
 					</div>
-					<div class="Subtotal Normal">
-						<span>小計</span>
-						$15
+					<div class="Subtotal Gift">
+						<span>價值</span>
+						$1,232,560
 					</div>
 				</div>
 			</div>
-			<div class="btn_delete"></div>
 		</div>
-		<div class="cart_form_row">
-			<div class="formTitle">備註</div>
-			<textarea placeholder="可指定到貨日，但國定假日及周日恕無法配送喔！"></textarea>
+		<div class="cart_list_OneBottle cart_list_gift">
+			<div class="BottleImg" style="background-image:url(images/mobile/bottle.jpg);"></div>
+			<div class="BottleInfo">
+				<div class="Name_en">Jester Sangiovese Rosé</div>
+				<div class="Name_cn">米斗羅酒莊 丑山吉歐維榭粉紅酒</div>
+				<div class="Price">
+					<div class="Count">
+						<div class="btn" style="background-image:url(images/mobile/icon_minus.png);"></div>
+						<input type="text" value="5"/>
+						<div class="btn" style="background-image:url(images/mobile/icon_plus.png);"></div>
+					</div>
+					<div class="Subtotal Gift">
+						<span>價值</span>
+						$1,232,560
+					</div>
+				</div>
+			</div>
 		</div>
-		
+		<!--贈品全部贈送 end-->
 	</section>
-	<!--商品配送訊息 end-->
+	<!--商品清單 end-->
+	
+	<!--紅利 coupon-->
+	<section class="cart_bouns_layout">
+		<div class="LargeTitle">
+			會員消費送紅利
+		</div>
+		<div class="LargeTitle_info">
+			(普級會員 消費滿20元，送1點，出貨後7日寄出紅利贈送通知信)
+		</div>
+		<div class="OneItem_Row">
+			<div class="OneItem_title">紅利點數贈送</div>
+			<div class="OneItem_text"><span>600</span>點</div>
+		</div>
+		<div class="OneItem_Row">
+			<div class="OneItem_title">紅利點數加倍贈送</div>
+			<div class="OneItem_text"><span>1200</span>點</div>
+		</div>
+		<div class="LargeTitle">
+			全館消費滿2000折300
+		</div>
+		<div class="LargeTitle_info">
+			(出貨後7日寄出e-Coupon贈送通知信)
+		</div>
+		<div class="OneItem_Row">
+			<div class="OneItem_title">e-Coupon贈送</div>
+			<div class="OneItem_text"><span>2</span>張</div>
+		</div>
+	</section>
+	<!--紅利 coupon end-->
 
 	<!--總計-->
 	<section class="cart_sum_layout">
-		<div class="AllTitle_layout">
-			<div class="largeT">
-				訂單優惠
-			</div>
-		</div>
 		<div class="OneItem_Row">
 			<div class="OneItem_title">商品總額</div>
 			<div class="OneItem_text">$ 95,687</div>
@@ -563,177 +803,162 @@
 	</section>
 	<!--總計 end-->
 
-	<!--付款方式-->
-	<section class="cart_sum_layout">
-		<div class="AllTitle_layout">
-			<div class="largeT">
-				付款方式
+	<!--20180615 replace additional purchase-->
+	<section class="section_additional_purchase">
+		<div class="AddPriceProduct">
+			<div class="AllTitle_layout">
+				<div class="largeT">加價優惠商品</div>
+				<div class="secondT">娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」</div>
 			</div>
-		</div>
-		<div class="payment_infotext">
-			您所訂購商品包含[快速到貨]品項，建議您選擇以宅配貨到付款方式完成訂購及貨到時付款(全部訂單金額)，若刷卡/匯款等方式完成訂購及付款(全部訂單金額)，則需於今日結單時間<span>HH:MM</span>之前完成訂購及付款(全部訂單金額) ，方可以快速到貨方式進行出貨（逾時恕無法快速出貨），謝謝。
-		</div>
-		<div class="cart_form_row">
-			<div class="RadioBox Radio_Payment" name='payment'>匯款</div>
-			<div class="Radio_infotext" style="display:none;">請於24小時內完成付款，逾期將取消訂單。</div>
-			<div class="RadioBox Radio_Payment" name='payment'>傳真刷卡單</div>
-			<div class="Radio_infotext" style="display:none;">請於24小時內完成付款，逾期將取消訂單。</div>
-			<div class="RadioBox Radio_Payment" name='payment'>宅配貨到付款</div>
-			<div class="Radio_infotext" style="display:none;">現金</div>
-		</div>
-	</section>
-	<!--付款方式 end-->
+			<div class="OneWine">
+				<div class="img-s" style="background-image:url(images/mobile/bottle-s.jpg);">
+				</div>
+				<div class="info">
+					<div class="name_en">Bourgogne ChardonnayBourgogne</div>
+					<div class="name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>RP 96</span>
+					</div>
+				</div>
+			</div>
+			<div class="detail_price_row">
 
-	<!--發票寄送-->
-	<section class="cart_sum_layout">
-		<div class="AllTitle_layout">
-			<div class="largeT">
-				發票寄送
+				<div class="addcart_normal">
+					<span>$1,350</span>
+					<button></button>
+				</div>
+				<div class="additional_purchase">加購價</div>
+				<div class="origin_price">定價&nbsp;$1,900</div>
+			</div>
+			<div class="DottedLine"></div>
+			<div class="OneWine">
+				<div class="img-s" style="background-image:url(images/mobile/bottle-s.jpg);">
+				</div>
+				<div class="info">
+					<div class="name_en">Bourgogne ChardonnayBourgogne</div>
+					<div class="name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>RP 96</span>
+					</div>
+				</div>
+			</div>
+			<div class="detail_price_row">
+
+				<div class="addcart_normal">
+					<span>$1,350</span>
+					<button></button>
+				</div>
+				<div class="additional_purchase">加購價</div>
+				<div class="origin_price">定價&nbsp;$1,900</div>
 			</div>
 		</div>
-		<div class="payment_infotext">
-			我同意訂購人及收貨人皆已年滿18歲，並請在收貨時出示身分證件。若未攜帶身分證，無法辨識收貨人是否年滿18歲，恕不交貨。
-		</div>
-		<div class="cart_form_row form_invoice">
-			<div class="RadioBox Radio_invoice" name='invoice'>捐贈發票</div>
-			<div>
-				<div class="invoice_radiobox_layout">
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>伊甸<br/>基金會</span></div>
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>創世<br/>基金會</span></div>
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1"><span>陽光<br/>基金會</span></div>
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit1" id="invoice_donate_other"><span>其他</span></div>
+		<div class="AddPriceProduct">
+			<div class="AllTitle_layout">
+				<div class="largeT">加價優惠商品</div>
+				<div class="secondT">娥蘇拉˙勒瑰恩嶄新奇幻力作「西岸三部曲」</div>
+			</div>
+			<div class="OneWine">
+				<div class="img-s" style="background-image:url(images/mobile/bottle-s.jpg);">
 				</div>
-				<div class="invoice_donate_other_input invoice_hide" style="display: none;">
-					<div class="cart_form_row">
-						<input type="text" placeholder="請輸入機構代碼">
-						<a href="#">機構代碼查詢</a>
+				<div class="info">
+					<div class="name_en">Bourgogne ChardonnayBourgogne</div>
+					<div class="name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
+					</div>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>RP 96</span>
 					</div>
 				</div>
-				
-				<div class="Radio_infotext">依據法令規定，已捐贈發票無法索回，若需要退換貨，該發票將予以作廢。</div>
 			</div>
-			<div class="RadioBox Radio_invoice" name='invoice'>二聯式電子發票</div>
-			<div class="invoice_radiobox_layout">
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2"><span>隨商品寄出</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="invoice_AnotherAddress_2"><span>發票分開寄出</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_phone"><span>手機<br/>條碼</span></div>
-				<div class="RadioBox Radio_invoice_unit" name="invoice_unit2" id="electroic_invoice_idcard"><span>自然人<br/>憑證</span></div>
-			</div>
-			<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
-				<div class="cart_form_row">
-						<div class="formTitle">發票收件人姓名</div>
-						<input type='text' />
+			<div class="detail_price_row">
+
+				<div class="addcart_normal">
+					<span>$1,350</span>
+					<button></button>
 				</div>
-				<div class="cart_form_row form_Address">
-					<div class="formTitle">發票收件人地址</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>縣市</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								台北市
-							</div>
-							<div class="dropdown_option">
-								新北市
-							</div>
-							<div class="dropdown_option">
-								桃園市
-							</div>
-						</div>
+				<div class="additional_purchase">加購價</div>
+				<div class="origin_price">定價&nbsp;$1,900</div>
+			</div>
+			<div class="DottedLine"></div>
+			<div class="OneWine">
+				<div class="img-s" style="background-image:url(images/mobile/bottle-s.jpg);">
+				</div>
+				<div class="info">
+					<div class="name_en">Bourgogne ChardonnayBourgogne</div>
+					<div class="name_cn">
+						愛米歐．賽薇拉酒莊 地區級夏多內白酒
 					</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>鄉鎮區</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								aaa
-							</div>
-							<div class="dropdown_option">
-								bbb
-							</div>
-							<div class="dropdown_option">
-								ccc
-							</div>
-						</div>
+					<div class="bottle_info">
+						<span>2017</span>
+						<span>750ml</span>
+						<span>RP 96</span>
 					</div>
-					<input type='text' placeholder="請輸入地址" />
 				</div>
 			</div>
-			<div class="electroic_invoice_input_phone invoice_hide" style="display: none;">
-				<div class="cart_form_row">
-					<div class="formTitle">手機條碼</div>
-					<input type='text' />
+			<div class="detail_price_row">
+
+				<div class="addcart_normal">
+					<span>$1,350</span>
+					<button></button>
 				</div>
-			</div>
-			<div class="electroic_invoice_input_idcard invoice_hide" style="display: none;">
-				<div class="cart_form_row">
-					<div class="formTitle">自然人憑證條碼</div>
-					<input type='text' />
-				</div>
-			</div>
-			<div class="RadioBox Radio_invoice" name='invoice'>三聯式電子發票</div>
-			<div class="invoice_hide">
-				<div class="cart_form_row">
-						<div class="formTitle">發票抬頭</div>
-						<input type='text' />
-				</div>
-				<div class="cart_form_row">
-						<div class="formTitle">統一編號</div>
-						<input type='text' />
-				</div>
-				<div class="invoice_radiobox_layout">
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit3"><span>隨商品寄出</span></div>
-					<div class="RadioBox Radio_invoice_unit" name="invoice_unit3" id="invoice_AnotherAddress_3"><span>發票分開寄出</span></div>
-				</div>
-			</div>
-			
-			<div class="invoice_AnotherAddress invoice_hide" style="display: none;">
-				
-				<div class="cart_form_row">
-						<div class="formTitle">發票收件人姓名</div>
-						<input type='text' />
-				</div>
-				<div class="cart_form_row form_Address">
-					<div class="formTitle">發票收件人地址</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>縣市</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								台北市
-							</div>
-							<div class="dropdown_option">
-								新北市
-							</div>
-							<div class="dropdown_option">
-								桃園市
-							</div>
-						</div>
-					</div>
-					<div class="dropdown">
-						<div class="dropdown_text"><span>鄉鎮區</span></div>
-						<div class="dropdown_extend">
-							<div class="dropdown_option">
-								aaa
-							</div>
-							<div class="dropdown_option">
-								bbb
-							</div>
-							<div class="dropdown_option">
-								ccc
-							</div>
-						</div>
-					</div>
-					<input type='text' placeholder="請輸入地址" />
-				</div>
+				<div class="additional_purchase">加購價</div>
+				<div class="origin_price">定價&nbsp;$1,900</div>
 			</div>
 		</div>
 	</section>
-	<!--發票寄送 end-->
-
-	<div class="cart_YearCheck_btn">
-		確認送出
+	<!--20180615 replace additional purchase end-->
+	<!--須知-->
+	<div class="cart_Terms_layout">
+		<div class="cart_Terms_border">
+			<div class="OneTerm">
+				本網站不鼓勵、不提倡飲酒。未成年請勿飲酒，飲酒過量有害健康，酒後不開車。
+			</div>
+			<div class="OneTerm">
+				本網站僅提供商品資訊，恕不提供線上交易服務，網站上不可接受訂單或完成訂單確認。如果對本網站所陳列的商品有興趣，請詳閱本宣告文後，點選「送出確認信」洽詢，本公司收到您的訊息後將有客服人員Email與您聯繫。
+			</div>
+			<div class="OneTerm">
+				本網站酒類商品不得售予未滿十八歲之青少年，因此欲發送詢問希望進一步訊息時，請務必確認訂購人及收貨人均為年滿十八歲以上之成年人。如本網站服務人員與送貨人員在難以辨識訂購人或收貨人之年齡時，必會請對方提供證明文件，屆時敬請務必配合。
+			</div>
+			<div class="OneTerm">
+				本公司保有隨時更動價格、取消或拒絕交易之權力，若造成不便，敬請見諒。
+			</div>
+			<div class="OneTerm">
+				iCheers愛酒窩非常重視您的隱私權，<a href="#">瞭解更多隱私權政策</a>。
+			</div>
+			<div class="OneTerm">
+				威士忌商品恕無法使用e-Coupon，敬請見諒。
+			</div>
+		</div>
 	</div>
+	<!--須知 end-->
 
-
-	
+	<!--check-->
+	<div class="cart_YearCheck_layout">
+		<div class="checkbox_layout">
+			<label class="checkbox">
+				<input type="checkbox">
+				<span class="checked"></span>
+			</label>
+		</div>
+		<div class="cart_YearCheck_text"> 
+			<span class="large">我已年滿18歲</span>
+			<span class="small">並詳細閱讀與同意上述條款</span>
+		</div>
+	</div>
+	<div class="cart_YearCheck_btn cart_YearCheck_btn_unchecked" id="YearCheckBtn">
+		送出確認信
+	</div>
+	<!--check end-->
 
 </div>
 <!--content end-->
@@ -847,29 +1072,69 @@
 	</div>
 	<!--運費說明 end-->
 
-	<!--年齡確認-->
-	<div class="PopWindow_layout" id="AgeConfrimWindow">
+	<!--分批出貨check-->
+	<div class="PopWindow_layout" id="SeparateCheckWindow">
 		<div class="PopWindow_title">
-			請問您滿18歲了嗎
+			分批出貨
 			<span class="CloseBTN"></span>
 		</div>
 		<div class="PopWindow_content">
-			<div class="PopWindow_content_text">我同意訂購人及收貨人皆已年滿18歲，並請在收貨時出示身分證件。若未攜帶身分證，無法辨識是否年滿18歲，恕不交貨。</div>
-			<div class="Popwindow_ConfirmBtn">我已年滿十八歲</div>
+			<div class="PopWindow_content_text">您的清單內含有<span>快速到貨∕預訂商品</span>，可能會影響到出貨時間；請問是否分批出貨？</div>
+			
+			<div class="Popwindow_ConfirmBtn" id="ConfirmBtn01">不用了，謝謝</div>
+			<div class="Popwindow_ConfirmBtn">我要分批出貨</div>
 		</div>
 	</div>
-	<!--年齡確認 end-->
-
-	<!--loading視窗-->
-	<div class="PopWindow_layout" id="LoadingWindow">
+	<!--分批出貨check end-->
+	
+	<!--發送確認信1 範本-->
+	<div class="PopWindow_layout" id="MailWindow1">
 		<div class="PopWindow_title">
-			資料處理中
+			發送確認信
+			<span class="CloseBTN"></span>
 		</div>
 		<div class="PopWindow_content">
-			<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+			<div class="PopWindow_content_text">依法令規定，酒類商品無法提供線上交易服務，請留下您的e-mail，客服人員將會盡快與您e-mail聯繫！</div>
+			<div class="Popwindow_form">
+				<div class="title">請輸入e-mail</div>
+				<input type="text" />
+			</div>
+			<div class="PopWindow_content_text">
+				您所選擇的快速到貨品項已超過截單時間<span>15:00</span>，為了以最快速度安排出貨，請於下個截單時間之前完成流程(至Step4)，為求出貨效率，建議使用宅配貨到付款(現金)：
+			</div>
+			<div class="PopWindow_RadioBox PopWindow_RadioBox_active" name='G1'>
+				 我需要快速到貨，宅配貨到付款(現金)OK！<b>（提醒：需依出貨批次<em>分批付款</em>！）</b>
+			</div>
+			<div class="PopWindow_RadioBox" name='G1'>
+				 我需要快速到貨，我會在<em>下個工作天15:00之前</em>，以線下刷卡/匯款方式，擇一完成付款(Step4)。<b>（提醒：款項需<em>一次付清</em>，且逾時恕無法快速到貨！）</b>
+			</div>
+			<div class="PopWindow_RadioBox" name='G1'>
+				 我不急著用酒，以一般配送方式合併出貨即可。
+			</div>
+			<!--20180614 add notice text sample-->
+			<div class="PopWindow_noticetext">*如遇例假日及國定假日，則截單時間順延至下個工作天當日15:00，到貨日亦順延至「隔日」。</div>
+			<div class="Popwindow_ConfirmBtn">送出</div>
+			
 		</div>
 	</div>
-	<!--loading視窗 end-->
+	<!--發送確認信1 end-->
+
+	<!--20180619 add stock problem window sample-->
+	<div class="PopWindow_layout" id="StockCheckWindow">
+		<div class="PopWindow_title">
+			快速到貨商品數量不足
+			<span class="CloseBTN"></span>
+		</div>
+		<div class="PopWindow_content">
+			<div class="PopWindow_content_text">可快速到貨商品數量不足!目前僅剩<span>10</span>瓶，若您需要較多的數量，將以常態方式出貨？</div>
+			<div class="PopWindow_content_text">
+				<span>*如遇例假日及國定假日則出貨時間順延。</span>
+			</div>
+			<div class="Popwindow_ConfirmBtn" id="ConfirmBtn01">好，我願意多等幾天</div>
+			<div class="Popwindow_ConfirmBtn">不好，我要快速到貨</div>
+		</div>
+	</div>
+	<!--20180619 add stock problem window sample end-->
 
 </div>
 <!--side menu-->
@@ -884,18 +1149,8 @@
 			</div>
 			<div class="SideMenu_SignInBTN"></div>
 			<div class="SideMenu_SearchInput">
-				<!--20180626 fix input type-->
-				<form action="" name="search" id="SearchInput">
-					<input type="search">
-				</form>
+				<input type="text" name="">
 				<span class="search_icon"></span>
-			</div>
-			<!--add auto complete sample max:4-->
-			<div class="SideMenu_AutoComplete">
-				<div class="OneResult"><span>au</span>to complete1</div>
-				<div class="OneResult"><span>au</span>to complete2</div>
-				<div class="OneResult"><span>au</span>to complete3</div>
-				<div class="OneResult"><span>au</span>to complete4</div>
 			</div>
 		</div>
 		<!--頂端search row end-->

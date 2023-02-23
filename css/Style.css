@@ -4,6 +4,9 @@
 
 @import url("reset.css");
 
+/*20230220 Joan 新增 google font*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
+
 
 
 
@@ -292,26 +295,75 @@ button {
 
 
 /*  警語   */
+/* 20230220 Joan 修改警語樣式 */
 
 .Warning {
     background: #252525;
-    text-align: center;
+    /* text-align: center; */
     width: 100%;
+    height: 77px;
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 99999;
+    padding: ;
 }
 
 
-    .Warning p {
-        width: 1023px;
+    /* .Warning p {
+        width: 100%;
         height: 77px;
         margin: 0 auto;
         background-image: url(../images/Warning.png);
+
+    } */
+    /* .Warning p::after {
+        content: '飲酒過量有礙健康 禁止酒駕';
+        display: block;
+        margin: 3px auto 0 auto;
+        border: yellow solid 0.75px;
+        width: 80%;
+        height: 100%;
+        color: #d1d1d1;
+        font-family: 'IBM Plex Sans JP', sans-serif;
+        font-size: 50px;
+        line-height: 77px;
+        font-weight: 200;
+        text-align-last: justify; //這個很酷但是safari要更新到16以上才能用哭
+    } */
+    .Warning p::after {
+        content: '飲酒過量有礙健康 禁止酒駕';
+        display: block;
+        margin: 3px auto 0 auto;
+        padding-left: 45px;
+        /* border: yellow solid 0.75px; */
+        width: 1280px;
+        height: 100%;
+        color: #d1d1d1;
+        font-family: 'IBM Plex Sans JP', sans-serif;
+        font-size: 50px;
+        line-height: 77px;
+        /* vertical-align: bottom; */
+        letter-spacing: 45px;
+        font-weight: 200;
+        text-align: center;
     }
-
-
+    @media (max-width: 1280px) {
+        .Warning p::after {
+            width: 90%;
+            font-size: 40px;
+            letter-spacing: 20px;
+            padding-left: 0;
+        }
+    }
+    @media (max-width: 855px) {
+        .Warning p::after {
+            width: 90%;
+            font-size: 25px;
+            letter-spacing: 10px;
+            padding-left: 0;
+        }
+    }
 
 /****************************快速選單 start**************************/
 

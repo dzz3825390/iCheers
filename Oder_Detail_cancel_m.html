@@ -107,17 +107,14 @@
 		    	$(window).on('touchstart.HeaderShow',HeaderShow())
 		    });
 
-		    //商品內容展開
 		    $('.BTN_Order_Detail_extend').click(function(){
 		    	//check isExtend
-		    	var IsExtend = $(this).hasClass('Extend');
+		    	var IsExtend = $('.Order_Detail_extend').hasClass('Extend');
 
 		    	if (IsExtend) {
-		    		$(this).removeClass('Extend');
-		    		$(this).next().removeClass('Extend');
+		    		$('.Order_Detail_extend').removeClass('Extend');
 		    	} else {
-		    		$(this).addClass('Extend');
-		    		$(this).next().addClass('Extend');
+		    		$('.Order_Detail_extend').addClass('Extend');
 		    	}
 		    });
 
@@ -449,7 +446,7 @@
 
 
 <div class="warning">
-	飲酒過量有害健康、禁止酒駕、未滿十八歲禁止飲酒
+	飲酒過量有礙健康&nbsp;禁止酒駕
 </div>
 
 <!--side menu-->
