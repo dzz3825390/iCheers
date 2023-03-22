@@ -685,13 +685,13 @@ li.MenuIE7 {
     margin: 0 auto;
     z-index: 1;
 }
-
+/* 20230321 JOAN 調整高度 */
 .AD_Big {
     display: block;
     width: 1160px;
-    height: 360px;
+    height: 420px; /* 20230321 JOAN 調整高度 */
     margin-left: 57px;
-    border: 1px solid #E6E6E6;
+    /* border: 1px solid #E6E6E6; 20230321 JOAN 刪除輪播器框線 */
     overflow: hidden;
     color: #808088;
     position: relative;
@@ -2171,7 +2171,7 @@ a.WineList_WineName4 {
 .Right_content_SmallBanner{
     width: 276px;
     height: 158px;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #e6e6e6; 
     float: left;
     margin-left: 16px;
     cursor: pointer;
