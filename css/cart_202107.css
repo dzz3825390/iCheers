@@ -2372,6 +2372,11 @@ input{
     color: #666;
 }
 
+#DeliveryFeeRow .number{
+	font-weight: bold;
+	color: #B00808;
+}
+
 .step3_content .order_sum .order_sum_row:first-child {
     margin-top: 0;
 }
