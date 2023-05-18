@@ -2171,7 +2171,7 @@ a.WineList_WineName4 {
 .Right_content_SmallBanner{
     width: 276px;
     height: 158px;
-    border: 1px solid #e6e6e6; 
+    /* border: 1px solid #e6e6e6; 20230321 JOAN 刪除三小框線*/
     float: left;
     margin-left: 16px;
     cursor: pointer;
@@ -5701,23 +5701,32 @@ ul.Detail {
     position: relative;
     margin-top: 15px;
 }
-
+/* 20230503 JOAN 酒瓶圖 tag 修改 */
 .DetailedIMG {
     display: block;
     float: left;
     width: 250px;
     height: 540px;
-    background-image: url(../images/pic/wine_bottle_sample.jpg);
-    background-position: center;
-    background-size: cover;
+    /* background-image: url(../images/pic/wine_bottle_sample.jpg); */
+    /* background-position: center;
+    background-size: cover; */
     margin-top: 25px;
+    position: relative;
+    overflow: hidden;
 }
 
     .DetailedIMG img {
-        margin-left: -15px;
+        /* margin-left: -15px;
         max-width: 150px;
         height: auto;
-        margin-top: 20px;
+        margin-top: 20px; */
+        display: block;
+        width: auto;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,0);
     }
 
 
