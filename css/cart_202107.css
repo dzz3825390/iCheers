@@ -1797,6 +1797,69 @@ input{
 .cart_list_gift .gift_wine .count_price .price .bottle_price span{
 	font-weight: normal;
 }
+/* 20230522 JOAN 贈品已送完 樣式修改 */
+.cart_list_gift .gift_wine_soldout .bottle_img {
+    opacity: 0.4;
+}
+
+.cart_list_gift .gift_wine_soldout .bottle_info .name_cn {
+    color: #d9d9d9;
+}
+
+.cart_list_gift .gift_wine_soldout .bottle_info .name_en {
+    color: #d9d9d9;
+}
+
+.cart_list_gift .gift_wine_soldout .bottle_info .status {
+    color: #d9d9d9;
+}
+
+.cart_list_gift .gift_wine_soldout .bottle_info .status span:after {
+    background-color: #d9d9d9;
+}
+
+.cart_list_gift .gift_wine_soldout .count_price .count .text {
+    color: #d9d9d9;
+}
+
+.cart_list_gift .gift_wine_soldout .count_price .count .icon_minus {
+    border: 1px solid #e6e6e6;
+    background-color: #f2f2f2;
+}
+
+.cart_list_gift .gift_wine_soldout .count_price .count .icon_minus:after {
+    background-color: #d9d9d9;
+}
+
+.cart_list_gift .gift_wine_soldout .count_price .count .icon_plus {
+    border: 1px solid #e6e6e6;
+    background-color: #f2f2f2;
+}
+
+.cart_list_gift .gift_wine_soldout .count_price .count .icon_plus:before,
+.cart_list_gift .gift_wine_soldout .count_price .count .icon_plus:after {
+    background-color: #d9d9d9;
+}
+
+.cart_list_gift .gift_wine_soldout .count_price .count .bottle_number {
+    color: #d9d9d9;
+    border: 1px solid #e6e6e6;
+    background-color: #f2f2f2;
+}
+
+.cart_list_gift .gift_wine_soldout .count_price .price .text {
+    color: #d9d9d9;
+}
+
+.cart_list_gift .gift_wine_soldout .count_price .price .bottle_price {
+    color: #d9d9d9;
+}
+
+.cart_list_gift .gift_wine_soldout .delete_text {
+    font-size: 1rem;
+    color: #ea3333;
+    margin-right: 10px;
+}
 
 .cart_list_BonusCoupon {
     width: 100%;
@@ -1947,7 +2010,8 @@ input{
 	    line-height: 1.5rem;
 	}
 
-	.cart_list_BottleSoldOut .delete_text {
+	.cart_list_BottleSoldOut .delete_text,
+    .cart_list_gift .gift_wine_soldout .delete_text {
 	    font-size: 1.125rem;
 	}
 
@@ -2213,7 +2277,8 @@ input{
 	    margin-top: 16px;
 	}
 
-    .cart_list_BottleSoldOut .delete_text {
+    .cart_list_BottleSoldOut .delete_text,
+    .cart_list_gift .gift_wine_soldout .delete_text {
         font-size: 1.125rem;
     }
 
@@ -2370,11 +2435,6 @@ input{
     margin-top: 24px;
     font-size: 1rem;
     color: #666;
-}
-
-#DeliveryFeeRow .number{
-	font-weight: bold;
-	color: #B00808;
 }
 
 .step3_content .order_sum .order_sum_row:first-child {
