@@ -3235,13 +3235,15 @@ img.HOT8_NO {
     min-height: 145px;
     vertical-align: middle;
 }
-
+/* 20230602 JOAN 增加行高 修正文字露出問題 */
 .Sign_WineInfo_text_ChineseName{
     font-size: 18px;
     color: #333333;
     width: 216px;
     height: 24px;
     overflow: hidden;
+    line-height: 24px;
+
 }
 
 .Sign_WineInfo_text_EnglishName{
@@ -3251,6 +3253,7 @@ img.HOT8_NO {
     width: 216px;
     height: 22px;
     overflow: hidden;
+    line-height: 22px;
 }
 
 /*20170202 Roger 調整css*/
@@ -4225,6 +4228,7 @@ img.HOT8_NO {
 .List_Buy:hover {
     background-image: url(../images/icon/BuyICONH.png);
 }
+
 
 .List_Sign_Price{
     float: left;
@@ -5377,6 +5381,7 @@ h5.Focus {
 .wine_detail_wineinfo_OrginalPrice{
     min-width: 60px;
     display: inline-block;
+    color: #999999;
 }
 /*20161202 Roger 新增定價樣式 end*/
 
@@ -5510,18 +5515,87 @@ ul.Detail {
     ul.Detail li#price {
         border-bottom: none;
     }
-
+/* 20230530 JOAN 調整多重售價結構＆樣式 */
 .wine_detail_wineinfo_price{
     position: relative;
+    width: 100%;
+    color: #666666;
+}
+.wine_detail_wineinfo_price > div {
+    display: flex;
+}
+.wine_detail_wineinfo_onePrice > span {
+    width: 58%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: right;
+    display: inline-block;
+    line-height: 35px;
+}
+.__SecretLabel {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    line-height: 100%;
+    text-align: center;
+    color: #fff;
+    margin-right: 10px;
+    letter-spacing: 1px;
+    padding: 2px;
+    vertical-align: middle;
+    font-size: 16px;
+}
+.__SecretLabel::before {
+    content: '';
+    background-color: #929697;
+    z-index: -1;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    transform: skew(-30deg);
+}
+.WineInformation li {
+    position: relative;
+}
+.WineInformation .__SecretLabel {
+    position: absolute;
+    width: 58px;
+    height: 14px;
+    right: -12px;bottom: -10px;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+}
+.Sign_WineInfo_price {
+    position: relative;
+}
+.Sign_WineInfo_price .__SecretLabel {
+    position: absolute;
+    width: 58px;
+    height: 14px;
+    right: 10px;bottom: -15px;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0;
+}
+.wine_detail_wineinfo_onePrice .__PriceNumber {
+    display: inline-block;
+    min-width: 110px;
+}
+.Price_disable span,
+.Price_disable .__PriceNumber strong {
+    color: #d9d9d9;
+}
+.Price_disable .__SecretLabel {
+    display: none;
 }
 
 /*20161202 Roger 修改左間距*/
-.wine_detail_wineinfo_price_preorder{
+/* .wine_detail_wineinfo_price_preorder{
     margin-left: 100px;
     margin-top: 8px;
     margin-bottom: 10px;
     height: 38px;
-}
+} */
 /*20161202 Roger 修改左間距 end*/
 
 .wine_detail_wineinfo_addcartBTN{
@@ -5534,6 +5608,7 @@ ul.Detail {
     padding-bottom: 5px;
     margin-left: 5px;
 }
+
 
 .wine_detail_wineinfo_addcartBTN:hover{
     background-image: url(../images/icon/ShoppingCart_101x31_hover.png);
@@ -5554,7 +5629,7 @@ ul.Detail {
 .wine_detail_wineinfo_preorderBTN:hover{
     background-image: url(../images/icon/PreOrder_ICON_101x31_hover.png);
 }
-
+/* 20230601 JOAN button 樣式修改 */
 .wine_detail_wineinfo_FastaddcartBTN{
     display: inline-block;
     background-image: url(../images/icon/Fast_addcartBTN_101x31.png);
@@ -5570,11 +5645,34 @@ ul.Detail {
     background-image: url(../images/icon/Fast_addcartBTN_101x31_hover.png);
 }
 
+.Price_disable button,
+.wine_detail_wineinfo_FastaddcartBTN.__btn-disable,
+.List_FastIcon.__btn-disable,
+.button_addCart_fast.__btn-disable {
+    pointer-events:none;
+    filter: saturate(0%) brightness(125%);
+}
+
+.Price_disable .wine_detail_wineinfo_preorderBTN,
+.wine_detail_wineinfo_preorderBTN.__btn-disable,
+.List_PreorderIcon.__btn-disable,
+.button_addCart_preorder.__btn-disable {
+    filter: saturate(0%) brightness(200%);
+    pointer-events:none;
+}
+.Price_disable .wine_detail_wineinfo_addcartBTN,
+.wine_detail_wineinfo_addcartBTN.__btn-disable,
+.List_Buy.__btn-disable,
+.button_addCart.__btn-disable {
+    filter: saturate(0%) brightness(225%);
+    pointer-events:none;
+}
+
+/* 20230530 JOAN 調整多重售價結構＆樣式 end*/
 .wine_detail_wineinfo_soldout{
     display: inline-block;
     color: #999999;
 }
-
 /*20160922 Roger 修改可訂時通知按鈕樣式*/
 .wine_detail_wineinfo_soldoutBTN{
     display: inline-block;
@@ -5598,6 +5696,7 @@ ul.Detail {
     color:#666;
     vertical-align: super;
     margin-left: 20px;
+    line-height: 30px;
 }
 
 .wine_detail_wineinfo_inventory.fast{
@@ -5628,20 +5727,20 @@ ul.Detail {
     left: 4px;
     top: -2px;
 }
-
-#Price > div span{
+/* 20230531 JOAN 註解 */
+/* #Price > div span{
     display: inline-block;
     width: 155px;
     height: 100%;
     line-height: 35px;
     text-align: right;
-}
+} */
 
-#Price > div span:after{
+/* #Price > div span:after{
     content: "";
     clear: both;
     display: block;
-}
+} */
 
 /*#Price > div span strong{
     float: right;
@@ -7306,6 +7405,7 @@ button.Novice {
     padding: 0px 2px;
     font-family: Arial, Helvetica, sans-serif;
 }
+/* 20230531 JOAN 新增 */
 
 /*20170904 Roger 新增*/
 .gray16 {

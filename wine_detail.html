@@ -60,10 +60,10 @@ ddsmoothmenu.init({
 
     $(document).ready(function(){
         //定價超出4位數時的價格位置設定
-        var PriceWidth = $(".wine_detail_wineinfo_OrginalPrice").width();
-        if (PriceWidth > 60){
-            $(".wine_detail_wineinfo_price_preorder").css("margin-left",PriceWidth+40);
-        }
+        // var PriceWidth = $(".wine_detail_wineinfo_OrginalPrice").width();
+        // if (PriceWidth > 60){
+        //     $(".wine_detail_wineinfo_price_preorder").css("margin-left",PriceWidth+40);
+        // }
 
 
         //追蹤酒款按鈕
@@ -1433,59 +1433,212 @@ ddsmoothmenu.init({
                             
                         </li>
                         <!--20170821 Roger 移除比價icon、新增需運費、限匯款 end-->
+
+                        <!-- 20230530 JOAN 調整多重售價結構＆樣式 -->
                         <li id="Price" class="wine_detail_wineinfo_price">
-                            <div>
-                                定價
-                                <strong style="text-decoration:line-through" class="wine_detail_wineinfo_OrginalPrice">$ 1,100</strong>
-                                ／ 酒窩價
-                                <span>
-                                    <strong class="Detail_RED16">$</strong>
-                                    <strong class="RED28">5,548,000</strong>
+                            <!-- 定價 -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_OrginalPrice">
+                                    定價 <strong style="text-decoration:line-through">$ 62,000</strong>
                                 </span>
-                                <button class="wine_detail_wineinfo_addcartBTN"></button>
-                                <div class="wine_detail_wineinfo_inventory">3-5工作天到貨</div>
                             </div>
-                            <div class="wine_detail_wineinfo_price_preorder">
-                                
-                                
-                                ／ 酒窩價
-                                <span>
-                                    <strong class="Detail_RED16"></strong>
-                                    <strong class="RED28"></strong>
-                                </span>
-                                <button class="wine_detail_wineinfo_soldoutBTN"></button>
-                                
-                            </div>
-                            <div>
-                                定價
-                                <strong style="text-decoration:line-through" class="wine_detail_wineinfo_OrginalPrice">$ 1,100</strong>
-                                ／ 預訂價
-                                <span>
-                                    <strong class="Detail_blue16">$</strong>
-                                    <strong class="blue28">5,548,000</strong>
-                                </span>
-                                <button class="wine_detail_wineinfo_preorderBTN"></button>
-                                <div class="wine_detail_wineinfo_inventory">2019/07 到貨</div>
-                            </div>
-                            <div class="wine_detail_wineinfo_price_preorder">
-                                ／ 酒窩價
-                                <span>
-                                    <strong class="Detail_orange16">$</strong>
-                                    <strong class="orange28">48,000</strong>
+                            <!-- 酒窩快速 -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_NormalPrice">
+                                    <span class="__PriceName">酒窩價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_orange16">$</strong>
+                                        <strong class="orange28">48,000</strong>
+                                    </span>
                                 </span>
                                 <button class="wine_detail_wineinfo_FastaddcartBTN"></button>
                                 <div class="wine_detail_wineinfo_inventory fast">快速到貨<div class="infomark"></div></div>
                             </div>
-                            <div class="wine_detail_wineinfo_price_preorder">
-                                ／ 預訂價
-                                <span>
-                                    <strong class="Detail_blue16">$</strong>
-                                    <strong class="blue28">48,000</strong>
+                            <!-- 酒窩快速disable -->
+                            <div class="wine_detail_wineinfo_onePrice Price_disable">
+                                <span class="wine_detail_wineinfo_NormalPrice">
+                                    <span class="__PriceName">酒窩價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_orange16">$</strong>
+                                        <strong class="orange28">48,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_FastaddcartBTN"></button>
+                            </div>
+                            <!-- 酒窩一般 -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_NormalPrice">
+                                    <span class="__PriceName">酒窩價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_RED16">$</strong>
+                                        <strong class="RED28">48,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_addcartBTN"></button>
+                                <div class="wine_detail_wineinfo_inventory">3-5工作天到貨</div>
+                            </div>
+                            <!-- 酒窩一般disable -->
+                            <div class="wine_detail_wineinfo_onePrice Price_disable">
+                                <span class="wine_detail_wineinfo_NormalPrice">
+                                    <span class="__PriceName">酒窩價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_RED16">$</strong>
+                                        <strong class="RED28">48,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_addcartBTN"></button>
+                            </div>
+                            <!-- 鑽白價快速 -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_VIPprice">
+                                    <span class="__SecretLabel">私密限定</span>
+                                    <span class="__PriceName">鑽白價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_orange16">$</strong>
+                                        <strong class="orange28">4,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_FastaddcartBTN"></button>
+                                <div class="wine_detail_wineinfo_inventory fast">快速到貨<div class="infomark"></div></div>
+                            </div> 
+                            <!-- 鑽白價快速 disable -->
+                            <!-- 'Price_disable'規則為套入後'私密限定'標籤會消失，並且整體轉為灰階，且按鈕失效。 -->
+                            <div class="wine_detail_wineinfo_onePrice Price_disable">
+                                <span class="wine_detail_wineinfo_VIPprice">
+                                    <span class="__SecretLabel">私密限定</span>
+                                    <span class="__PriceName">鑽白價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_orange16">$</strong>
+                                        <strong class="orange28">4,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_FastaddcartBTN"></button>
+                            </div>
+                            <!-- 鑽白快速+按鈕disable -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_VIPprice">
+                                    <span class="__SecretLabel">私密限定</span>
+                                    <span class="__PriceName">鑽白價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_orange16">$</strong>
+                                        <strong class="orange28">4,000</strong>
+                                    </span>
+                                </span>
+                                <!-- 插入‘__btn-disable’樣式則只有按鈕禁用 for viponly -->
+                                <button class="wine_detail_wineinfo_FastaddcartBTN __btn-disable"></button>
+                            </div> 
+                            <!-- 鑽白一般 -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_VIPprice">
+                                    <span class="__SecretLabel">私密限定</span>
+                                    <span class="__PriceName">鑽白價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_RED16">$</strong>
+                                        <strong class="RED28">48,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_addcartBTN"></button>
+                                <div class="wine_detail_wineinfo_inventory">3-5工作天到貨</div>
+                            </div>
+                            <!-- 鑽白一般 disable -->
+                            <div class="wine_detail_wineinfo_onePrice Price_disable">
+                                <span class="wine_detail_wineinfo_VIPprice">
+                                    <span class="__SecretLabel">私密限定</span>
+                                    <span class="__PriceName">鑽白價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_RED16">$</strong>
+                                        <strong class="RED28">48,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_addcartBTN"></button>
+                            </div>
+                            <!-- 鑽白一般+按鈕disable -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_VIPprice">
+                                    <span class="__SecretLabel">私密限定</span>
+                                    <span class="__PriceName">鑽白價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_RED16">$</strong>
+                                        <strong class="RED28">48,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_addcartBTN __btn-disable"></button>
+                            </div>
+                            <!-- 酒窩預購價 -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_price_preorder">
+                                    <span class="__PriceName">預訂價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_blue16">$</strong>
+                                        <strong class="blue28">48,000</strong>
+                                    </span>
                                 </span>
                                 <button class="wine_detail_wineinfo_preorderBTN"></button>
                                 <div class="wine_detail_wineinfo_inventory">2019/07 到貨</div>
                             </div>
+                            <!-- 酒窩預購 disable -->
+                            <div class="wine_detail_wineinfo_onePrice Price_disable">
+                                <span class="wine_detail_wineinfo_price_preorder">
+                                    <span class="__PriceName">預訂價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_blue16">$</strong>
+                                        <strong class="blue28">48,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_preorderBTN"></button>
+                            </div>
+                            <!-- 鑽白預購價 -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_price_VIPprice">
+                                    <span class="__SecretLabel">私密限定</span>
+                                    <span class="__PriceName">老闆跳樓價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_blue16">$</strong>
+                                        <strong class="blue28">5,125,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_preorderBTN"></button>
+                                <div class="wine_detail_wineinfo_inventory">2019/07 到貨</div>
+                            </div>
+                            <!-- 鑽白預購價 disable -->
+                            <div class="wine_detail_wineinfo_onePrice Price_disable">
+                                <span class="wine_detail_wineinfo_price_VIPprice">
+                                    <span class="__SecretLabel">私密限定</span>
+                                    <span class="__PriceName">老闆跳樓價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_blue16">$</strong>
+                                        <strong class="blue28">5,125,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_preorderBTN"></button>
+                            </div>
+                            <!-- 鑽白預購價+按鈕disable -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_price_VIPprice">
+                                    <span class="__SecretLabel">私密限定</span>
+                                    <span class="__PriceName">老闆跳樓價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_blue16">$</strong>
+                                        <strong class="blue28">5,125,000</strong>
+                                    </span>
+                                </span>
+                                <!-- 插入‘__btn-disable’樣式則只有按鈕禁用 for viponly -->
+                                <button class="wine_detail_wineinfo_preorderBTN __btn-disable"></button>
+                            </div>
+                            <!-- 可訂通知 -->
+                            <div class="wine_detail_wineinfo_onePrice">
+                                <span class="wine_detail_wineinfo_NormalPrice">
+                                    <span class="__PriceName">酒窩價</span>
+                                    <span class="__PriceNumber">
+                                        <strong class="Detail_RED16">$</strong>
+                                        <strong class="RED28">48,000</strong>
+                                    </span>
+                                </span>
+                                <button class="wine_detail_wineinfo_soldoutBTN"></button>
+                            </div>
                         </li>
+                        <!-- 20230530 JOAN 調整多重售價結構＆樣式 end-->
+
                         <!--20161202 Roger 修改html結構-->
                         <li>
                             <em class="Tittle">產區：</em>

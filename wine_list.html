@@ -1439,7 +1439,7 @@ ddsmoothmenu.init({
                 <div class="Sign_WineInfo_layout">
                     <div class="Sign_WineInfo_text_layout">
                         <div class="Sign_WineInfo_text_positionbox">
-                            <div class="Sign_WineInfo_text_ChineseName">史坦因布赫麗絲玲白酒史坦</div>
+                            <div class="Sign_WineInfo_text_ChineseName">史坦因布赫麗絲玲白酒史坦 史坦因布赫麗絲玲白酒史坦</div>
                             <div class="Sign_WineInfo_text_EnglishName">Domaine Weinbach Riesling Domaine Weinbach Riesling</div>
                             <!--20161130 Roger 修改獎牌樣式範例-->
                             <div class="Sign_WineInfo_Award Award1">
@@ -1453,9 +1453,12 @@ ddsmoothmenu.init({
                             <div class="CLEAR"></div>
                             <div class="Sign_WineInfo_price">
                                 <span class="Sign_WineInfo_price_dollar_icon">$</span>
-                                    <span class="orange20">114,010</span>
-                                    <span class="button_addCart_float">
-                                    <button title="快速到貨" class="button_addCart_fast"></button>
+                                <span class="orange20">114,010</span>
+                                <!-- 20230601 JOAN 新增私密限定標籤 -->
+                                <span class="__SecretLabel">私密限定</span>
+                                <span class="button_addCart_float">
+                                    <!--20230607 JOAN table價格＋disable-->
+                                    <button title="快速到貨" class="button_addCart_fast __btn-disable"></button>
                                 </span>
                             </div>
                             <div class="Sign_WineInfo_price">
@@ -1583,12 +1586,11 @@ ddsmoothmenu.init({
                             
     	                    <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
         	                <li class="List_Discount">8.5折</li>
-            	            <li class="List_Save">
-                	        	<img src="images/icon/wine_list_save_icon.png" width="17" height="17" class="List_Discount_save_icon">
-                        	</li>
-	                        <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
+            	            <li class="List_Save"></li>
+                            <!-- 20230530 JOAN 加入'私密限定'標籤 -->
+	                        <li class="List_SellingPrice"><span class="__SecretLabel">私密限定</span><a href="#" target="_blank">90,285</a></li>
     	                    <li class="List_Buy"></li>
-        	                <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+        	                <li class="List_PreorderPrice"><span class="__SecretLabel">私密限定</span><a href="#" target="_blank">90,285</a></li>
             	            <li class="List_PreorderIcon"></li>
                 	        <div class="CLEAR"></div>
                     	    <!-- 一個容量 --> 
@@ -1596,22 +1598,20 @@ ddsmoothmenu.init({
 	                        <li class="List_Award"></li>
     	                    <li class="List_Capacity"><a href="#" target="_blank">1.5ml</a></li>
         	                <li class="List_Discount">
-                              
                             </li>
-            	            <li class="List_Save">
-                                <img src="images/icon/wine_list_save_icon.png" width="17" height="17" class="List_Discount_save_icon">
-                            </li>
-                	        <li class="List_SellingPrice"><a href="#" target="_blank">90,285</a></li>
-                    	    <li class="List_Buy"></li>
-                        	<li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-	                        <li class="List_PreorderIcon"></li>
+            	            <li class="List_Save"></li>
+                	        <li class="List_SellingPrice"><span class="__SecretLabel">私密限定</span><a href="#" target="_blank">90,285</a></li>
+                            <!-- 插入'__btn-disable'則按鈕不顯示且禁用 -->
+                    	    <li class="List_Buy __btn-disable"></li>
+                        	<li class="List_PreorderPrice"><span class="__SecretLabel">私密限定</span><a href="#" target="_blank">90,285</a></li>
+	                        <li class="List_PreorderIcon __btn-disable"></li>
     	                    <div class="CLEAR"></div>
         	                <!-- 一個容量 --> 
             	            <li class="List_Year"></li>
                 	        <li class="List_Award"></li>
                     	    <li class="List_Capacity"><a href="" target="">3ml</a></li>
                         	<li class="List_Discount"> </li>
-                        	<li class="List_Save"><img src="images/icon/wine_list_save_icon.png" width="17" height="17" class="List_Discount_save_icon"></li>
+                        	<li class="List_Save"></li>
                         	<li class="List_SellingPrice"><a href="" target="">170,455</a></li>
 	                        <li class="List_Buy"></li>
     	                    <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
@@ -1621,13 +1621,13 @@ ddsmoothmenu.init({
                     	<!-- WineInformation 一個年份-->
                     	<ul class="WineInformation">
                         	<li class="List_Year"><a href="#" target="_blank">2012</a><div class="tracking_icon"></div></li>
-	                        <li class="List_Award"><a href="#" target="_blank"><img src="images/Award/decanterStar.png"  class="decanterStar" /></a></li>
+	                        <li class="List_Award"><a href="#" target="_blank"></li>
     	                    <li class="List_Capacity"><a href="#" target="_blank">750m</a></li>
         	                <li class="List_Discount">8.5折</li>
             	            <li class="List_Save"></li>
-                	        <li class="List_FastPrice"><a href="#" target="_blank">90,285</a></li>
+                	        <li class="List_FastPrice"><span class="__SecretLabel">私密限定</span><a href="#" target="_blank">90,285</a></li>
                     	    <li class="List_FastIcon"></li>
-                        	<li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
+                        	<li class="List_PreorderPrice"><span class="__SecretLabel">私密限定</span><a href="#" target="_blank">90,285</a></li>
 	                        <li class="List_PreorderIcon"></li>
     	                    <div class="CLEAR"></div>
         	                <!-- 一個容量 --> 
@@ -1636,16 +1636,16 @@ ddsmoothmenu.init({
                     	    <li class="List_Capacity"><a href="#" target="_blank">1.5ml</a></li>
                         	<li class="List_Discount"></li>
 	                        <li class="List_Save"></li>
-    	                    <li class="List_FastPrice"><a href="#" target="_blank">90,285</a></li>
-        	                <li class="List_FastIcon"></li>
-            	            <li class="List_PreorderPrice"><a href="#" target="_blank">90,285</a></li>
-                	        <li class="List_PreorderIcon"></li>
+    	                    <li class="List_FastPrice"><span class="__SecretLabel">私密限定</span><a href="#" target="_blank">90,285</a></li>
+        	                <li class="List_FastIcon __btn-disable"></li>
+            	            <li class="List_PreorderPrice"><span class="__SecretLabel">私密限定</span><a href="#" target="_blank">90,285</a></li>
+                	        <li class="List_PreorderIcon __btn-disable"></li>
                     	    <div class="CLEAR"></div>
                         	<!-- 一個容量 --> 
 	                        <li class="List_Year"></li>
     	                    <li class="List_Award"></li>
         	                <li class="List_Capacity"><a href="" target="">3ml</a></li>
-            	            <li class="List_Discount"> </li>
+            	            <li class="List_Discount"></li>
                 	        <li class="List_Save"></li>
                     	    <li class="List_FastPrice"><a href="" target="">170,455</a></li>
                         	<li class="List_FastIcon"></li>

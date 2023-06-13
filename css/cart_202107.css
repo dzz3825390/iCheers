@@ -819,8 +819,8 @@ input{
     color: #666;
     margin-top: 5px;
 }
-
-.cart_list_OneBottle .bottle_info .status span:after {
+/* 20230601 JOAN 修改樣式 */
+.cart_list_OneBottle .bottle_info .status > span:not(:first-child)::before {
     content: '';
     display: inline-block;
     width: 1px;
@@ -828,8 +828,8 @@ input{
     background-color: #999999;
     margin: 0 8px;
 }
-
-.cart_list_OneBottle .bottle_info .status span:nth-child(3):after {
+/* 20230601 JOAN 註解 */
+/* .cart_list_OneBottle .bottle_info .status span:nth-child(3):after {
 	display: none;
 }
 
@@ -839,7 +839,8 @@ input{
 
 .cart_list_OneBottle .bottle_info .status.sake span:nth-child(2):after {
 	display: none;
-}
+} */
+
 
 .cart_list_OneBottle .bottle_info .status .icon_nobonus {
     width: 18px;
