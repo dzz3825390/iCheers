@@ -292,10 +292,16 @@ button {
 }
 /*20161206 Roger 修改寬度、left end*/
 
+/*20230712 Roger新增公司資訊樣式*/
+.GVCompanyInfo{
+    margin-bottom: 90px;
+    color:#999;
+    text-align: center;
+}
 
+/*20230712 Roger新增公司資訊樣式 end*/
 
 /*  警語   */
-/* 20230220 Joan 修改警語樣式 */
 
 .Warning {
     background: #252525;
@@ -309,28 +315,6 @@ button {
     padding: ;
 }
 
-
-    /* .Warning p {
-        width: 100%;
-        height: 77px;
-        margin: 0 auto;
-        background-image: url(../images/Warning.png);
-
-    } */
-    /* .Warning p::after {
-        content: '飲酒過量有礙健康 禁止酒駕';
-        display: block;
-        margin: 3px auto 0 auto;
-        border: yellow solid 0.75px;
-        width: 80%;
-        height: 100%;
-        color: #d1d1d1;
-        font-family: 'IBM Plex Sans JP', sans-serif;
-        font-size: 50px;
-        line-height: 77px;
-        font-weight: 200;
-        text-align-last: justify; //這個很酷但是safari要更新到16以上才能用哭
-    } */
     .Warning p::after {
         content: '飲酒過量有礙健康 禁止酒駕';
         display: block;

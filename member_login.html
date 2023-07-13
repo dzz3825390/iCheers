@@ -25,6 +25,13 @@
 		    	$(this).find('.icon_check').toggleClass('active');
 		    });
 
+		    //footermenu置中
+		    var FooterMenuWidth = $('.FooterMenu').width();
+		    var FooterWidth = $('.FooterMenu').parent().width();
+		    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+		    $('.FooterMenu').css('margin-left',FooterPositionX);
+
 
     	});
     </script>
@@ -111,7 +118,28 @@
 	</div>
 	
 </div>
-
+<!-- FooterALL  頁腳 -->
+    <div class="member_FooterALL">
+        <div class="Footer_position">
+            <ul class="FooterMenu">
+                <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+                <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+                <li><a href="" target="_parent">條款及細則</a>｜</li>
+                <li><a href="privacy_policy.html" target="_parent">隱私條款</a></li>
+            </ul>
+            <div class="FooterICON">
+                <a href="qualityGarentee.html" target="_blank">
+                    <button class="Quality"></button>
+                </a>
+                <button class="Join"></button>
+                <button class="Novice"></button>
+            </div>
+        </div>
+        <div class="GVCompanyInfo">
+            佳釀股份有限公司&nbsp;&nbsp;統一編號&nbsp;29081831
+        </div>
+    </div>
+    <!-- FooterALL  頁腳 -->
 
 
 <div class="Warning_small_screen">

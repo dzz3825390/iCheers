@@ -18,6 +18,15 @@ ddsmoothmenu.init({
 	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
 })
 
+$(document).ready(function(){
+    //footermenu置中
+    var FooterMenuWidth = $('.FooterMenu').width();
+    var FooterWidth = $('.FooterMenu').parent().width();
+    var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+    $('.FooterMenu').css('margin-left',FooterPositionX);
+});
+
 </script>
 </head>
 
@@ -1776,137 +1785,76 @@ ddsmoothmenu.init({
 </div>
 <!-- CenterALLBG  中段全部 -->
 
-<div class="FooterALL">
-  <div class="Footer_position">
-    <ul class="FooterMenu">
-      <li><a href="about_us.html">關於我們</a>｜</li>
-      <li><a href="contact_us.html">聯絡我們</a>｜</li>
-      <li><a href="terms_n_condition.html">條款及細則</a>｜</li>
-      <li><a href="privacy_policy.html">隱私條款</a></li>
-    </ul>
-    <div class="FooterICON">
-      <button class="Quality"></button>
-      <button class="Join"></button>
-      <button class="Novice"></button>
+<div class="FooterALL" >
+    <div class="Footer_position">
+        <!--201803 Roger 新增手機板連結-->
+        <ul class="FooterMenu">
+            <li><a href="about_us.html" target="_parent">關於我們</a>｜</li>
+            <li><a href="contact_us.html" target="_parent">聯絡我們</a>｜</li>
+            <li><a href="" target="_parent">條款及細則</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >隱私條款</a>｜</li>
+            <li><a href="privacy_policy.html" target="_parent" >手機版</a></li>
+        </ul>
+        <!--201803 Roger 新增手機板連結 end-->
+        <div class="FooterICON">
+           <a href="qualityGarentee.html" target="_blank"><button class="Quality"></button></a>
+           <button class="Join"></button>
+           <button class="Novice"></button>
+        </div>
     </div>
-  </div>
 </div>
 <!-- FooterALL  頁腳 -->
 
+
+
 <div class="TC_And_UK_ALL">
-  <div class="TC_And_UK">
-    <ul>
-      <li class="Title">熱門葡萄酒類型與品種</li>
-      <li><a href="">
-        <h1>銀橡樹</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>查爾斯海德西克</h1>
-        <h2>Charles Heidsieck</h2>
-        </a></li>
-      <li><a href="">
-        <h1>Cristal酒店</h1>
-        <h2>Cristal</h2>
-        </a></li>
-      <li><a href="">
-        <h1>巴黎之花</h1>
-        <h2>Perrier Jouet</h2>
-        </a></li>
-      <li><a href="">
-        <h1>唐培裡儂</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>葡萄酒觀察家</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>酩和香檳</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>葡萄酒愛好者</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-    </ul>
-    <img src="images/icon/TC_And_UK.gif" />
-    <ul>
-      <li class="Title">熱門葡萄酒類型與品種</li>
-      <li><a href="">
-        <h1>銀橡樹</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>查爾斯海德西克</h1>
-        <h2>Charles Heidsieck</h2>
-        </a></li>
-      <li><a href="">
-        <h1>Cristal酒店</h1>
-        <h2>Cristal</h2>
-        </a></li>
-      <li><a href="">
-        <h1>巴黎之花</h1>
-        <h2>Perrier Jouet</h2>
-        </a></li>
-      <li><a href="">
-        <h1>唐培裡儂</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>葡萄酒觀察家</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>酩和香檳</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>葡萄酒愛好者</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-    </ul>
-    <img src="images/icon/TC_And_UK.gif" />
-    <ul>
-      <li class="Title">熱門葡萄酒類型與品種</li>
-      <li><a href="">
-        <h1>銀橡樹</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>查爾斯海德西克</h1>
-        <h2>Charles Heidsieck</h2>
-        </a></li>
-      <li><a href="">
-        <h1>Cristal酒店</h1>
-        <h2>Cristal</h2>
-        </a></li>
-      <li><a href="">
-        <h1>巴黎之花</h1>
-        <h2>Perrier Jouet</h2>
-        </a></li>
-      <li><a href="">
-        <h1>唐培裡儂</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>葡萄酒觀察家</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>酩和香檳</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-      <li><a href="">
-        <h1>葡萄酒愛好者</h1>
-        <h2>Silver Oak</h2>
-        </a></li>
-    </ul>
-  </div>
-</div>
+    <div class="TC_And_UK">
+      <ul>
+        <li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+        <li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul>
+      <img src="images/icon/TC_And_UK.gif" />
+      <ul>
+        <li class="Title">熱門葡萄酒類型與品種</li>
+        <li><a href=""><h1>銀橡樹</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>查爾斯海德西克</h1><h2>Charles Heidsieck</h2></a></li>
+        <li><a href=""><h1>Cristal酒店</h1><h2>Cristal</h2></a></li>
+        <li><a href=""><h1>巴黎之花</h1><h2>Perrier Jouet</h2></a></li>
+        <li><a href=""><h1>唐培裡儂</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒觀察家</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>酩和香檳</h1><h2>Silver Oak</h2></a></li>
+        <li><a href=""><h1>葡萄酒愛好者</h1><h2>Silver Oak</h2></a></li>
+      </ul> 
+    
+    </div>
+</div> 
 <!-- TC_And_UK_ALL 中英翻譯 -->
+
+
+
 <div class="CLEAR"></div>
-<div class="CopyRight"> Copyright © 2012 iCheers.tw All Rrights Reserved </div>
+
+<div class="CopyRight"> 本網站內任何內容，含文字敘述、攝影、圖片、錄音、影像及所使用之軟體、程式，其著作權及其他智慧財產權，均屬本網站所有或經合法授權使用，受有著作權法及其他智慧財產權法之保護。非經本網站之同意或合法授權，任何人皆不得擅自以任何形式進行複製、改作、編輯、散佈、引用、傳輸、公開發表、進行還原工程或為其他足以侵害著作權人權益之行為，否則應負所有法律責任。如有發現違反者，本網站必依法追究其法律責任。
+Copyright © 2023 iCheers.tw 佳釀股份有限公司 統一編號29081831 All Rrights Reserved </div>
 <div class="Warning"><p></p></div>
 
 <!-- Warning 警語 -->

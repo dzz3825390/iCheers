@@ -19,6 +19,14 @@
 
 	<script type="text/javascript">
         $(document).ready(function(){
+
+            //footermenu置中
+            var FooterMenuWidth = $('.FooterMenu').width();
+            var FooterWidth = $('.FooterMenu').parent().width();
+            var FooterPositionX = (FooterWidth - FooterMenuWidth)/2;
+
+            $('.FooterMenu').css('margin-left',FooterPositionX);
+
             $('.invoice_radio_oneoption span').click(function(){
                 $(this).prev().click();
             });
@@ -232,6 +240,9 @@
                 <button class="Join"></button>
                 <button class="Novice"></button>
             </div>
+        </div>
+        <div class="GVCompanyInfo">
+            佳釀股份有限公司&nbsp;&nbsp;統一編號&nbsp;29081831
         </div>
     </div>
     <!-- FooterALL  頁腳 -->
